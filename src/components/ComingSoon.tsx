@@ -50,7 +50,7 @@ export const ComingSoon = () => {
           <div className="font-extrabold">Coming Soon</div>
         </h1>
         <div className="text-[#A9AFC3] ">
-        We are working hard to bring you something amazing.
+          We are working hard to bring you something amazing.
         </div>
       </div>
     </div>

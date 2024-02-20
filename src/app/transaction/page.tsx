@@ -1,4 +1,4 @@
-import { ComingSoon } from "@/components/coming-soon";
+import { ComingSoon } from "@/components/ComingSoon";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import React from "react";
 

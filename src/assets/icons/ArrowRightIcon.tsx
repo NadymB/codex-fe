@@ -1,28 +1,14 @@
 import React from "react";
 
-export const ArrowRightIcon = ({ color }: { color?: string }) => (
+export const ArrowRightIcon = () => (
   <svg
-    width="25"
-    height="24"
-    viewBox="0 0 25 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+    focusable="false"
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    data-testid="ArrowForwardIcon"
+    width="24px"
+    fill="#9098A3"
   >
-    <mask
-      id="mask0_7_269"
-      maskUnits="userSpaceOnUse"
-      x="0"
-      y="0"
-      width="25"
-      height="24"
-    >
-      <rect x="0.5" width="24" height="24" fill="#D9D9D9" />
-    </mask>
-    <g mask="url(#mask0_7_269)">
-      <path
-        d="M14.5 17.6538L8.84618 12L14.5 6.34619L15.5538 7.40002L10.9538 12L15.5538 16.6L14.5 17.6538Z"
-        fill={color}
-      />
-    </g>
+    <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
   </svg>
 );

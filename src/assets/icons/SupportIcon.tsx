@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export const SupportIcon = () => {
   return (
@@ -16,5 +16,5 @@ export const SupportIcon = () => {
         d="M11 16h2v2h-2zm1-10c-2.2 0-4 1.8-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.8-3 5h2c0-2.2 3-2.5 3-5 0-2.2-1.8-4-4-4z"
       />
     </svg>
-  )
-}
+  );
+};

@@ -123,8 +123,8 @@ export default function Home() {
                 <NextIcon />
               </div>
             </div>
-             {/*  */}
-             <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            {/*  */}
+            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">BNB</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -201,7 +201,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <FeatureSection/>
+        <FeatureSection />
       </div>
     </DefaultLayout>
   );
