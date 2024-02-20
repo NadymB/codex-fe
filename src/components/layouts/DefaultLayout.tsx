@@ -45,7 +45,7 @@ export const DefaultLayout = ({
         >
           {children}
         </div>
-        <div ref={menuBarRef} className="fixed w-full  bottom-0 left-0">
+        <div ref={menuBarRef} className="fixed w-full bottom-0 left-0">
           <MenuBar />
         </div>
       </div>

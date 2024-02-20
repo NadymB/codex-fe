@@ -12,8 +12,8 @@ export default function Home() {
       pageTitle="Dashboard"
       containerStyle="bg-[#000000] dark:bg-[#000000]"
     >
-      <Header/>
-     <div>home</div>
+      <Header />
+      <div>home</div>
     </DefaultLayout>
   );
 }

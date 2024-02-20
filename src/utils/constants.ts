@@ -1,4 +1,6 @@
-export const getStaticURL = () =>"http://localhost:3000"
+import { TabOptions } from "@/components/layouts/Tab";
+
+export const getStaticURL = () => "http://localhost:3000";
 export const OptionsLanguage = [
   {
     label: "English",
@@ -81,3 +83,24 @@ export const optionFilterScan = [
   },
 ];
 
+export enum PATH {
+  HOME = "/",
+  MARKET = "/markets/commodity",
+  TRANSACTION = "/transaction",
+  ASSET = "/asset",
+}
+
+export const marketTabOption: TabOptions = [
+  {
+    label: "Commodity",
+    link: "/markets/commodity",
+  },
+  {
+    label: "Cryptocurrency",
+    link: "/markets/crypto",
+  },
+  {
+    label: "Foreign Exchange",
+    link: "/markets/forex",
+  },
+];
