@@ -13,12 +13,11 @@ export default function ComingSoon() {
   const { t } = useTranslation();
   return (
     <DefaultLayout
-    pageTitle="Dashboard"
-    containerStyle="bg-[#000000] dark:bg-[#000000]"
+      pageTitle="Dashboard"
+      containerStyle="bg-[#000000] dark:bg-[#000000]"
     >
       <LazyLoad once={true} placeholder={<Loader />}>
-        <div
-          className="relative flex flex-col gap-[22px] xs:items-center justify-center text-[40px] w-full h-[100vh] xs:px-4 xs:py-8 xs:mt-0 bg-cover ">
+        <div className="relative flex flex-col gap-[22px] xs:items-center justify-center text-[40px] w-full h-[100vh] xs:px-4 xs:py-8 xs:mt-0 bg-cover ">
           <h2 className="z-10 xs:text-[32px] md:text-[64px] font-semibold text-white">
             COMING SOON!
           </h2>
