@@ -1,3 +1,4 @@
+import { ComingSoon } from "@/components/coming-soon";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import React from "react";
 
@@ -7,7 +8,7 @@ const TransactionPage = () => {
       pageTitle="Dashboard"
       containerStyle="bg-[#000000] dark:bg-[#000000]"
     >
-      <div className="text-white">TransactionPage</div>
+      <ComingSoon />
     </DefaultLayout>
   );
 };
