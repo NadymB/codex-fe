@@ -2,13 +2,15 @@
 "use client";
 import { RingIcon } from "@/assets/icons/RingIcon";
 import { UserIcon } from "@/assets/icons/UserIcon";
-import { getStaticURL } from "@/utils/constants";
+import { OptionsLanguage, getStaticURL } from "@/utils/constants";
+import i18next from "i18next";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const { i18n } = useTranslation();
-  const pathname = usePathname();
+  const [currentLang, setCurrentLang] = useState(OptionsLanguage.find((lang)=>lang.value===i18next.language))
   return (
     <>
       <div className="w-full px-4 py-4 flex justify-between  bg-[#100F14] ">
@@ -21,15 +23,15 @@ const Header = () => {
           <span className="text-[16px] font-bold text-white">newuser</span>
         </div>
         <div className="flex items-center gap-3">
-          <RingIcon />
-          <div className="flex items-center gap-2">
+          <div className="cursor-pointer"><RingIcon /></div>
+          <Link href={"/setting/locale"} className="flex items-center gap-2 cursor-pointer p-1 rounded hover:bg-[#19181d]">
             <img
               className="w-[20px]"
-              src={`/assets/images/flags/vn.svg`}
+              src={`${getStaticURL()}${currentLang?.flag}`}
               alt=""
             />
-            <span className="text-[14px] text-white">Việt Nam</span>
-          </div>
+            <span className="text-[14px] text-white">{currentLang?.label}</span>
+          </Link>
         </div>
       </div>
     </>

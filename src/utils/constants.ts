@@ -4,11 +4,16 @@ export const getStaticURL = () => "http://localhost:3000";
 export const OptionsLanguage = [
   {
     label: "English",
+    International: "English",
     value: "en",
+    flag:"/assets/images/flags/us.svg"
   },
   {
-    label: "VietNam",
+    label: "Việt Nam",
+    International: "Vietnamese",
     value: "vi",
+    flag:"/assets/images/flags/vn.svg"
+
   },
 ];
 export const FooterData = [

@@ -9,6 +9,9 @@ import { NextIcon } from "@/assets/icons/NextIcon";
 import { DepositIcon } from "@/assets/icons/DepositIcon";
 import { TelesaleIcon } from "@/assets/icons/TelesaleIcon";
 import FeatureSection from "@/components/Home/FeatureSection";
+import { LoudspeakerIcon } from "@/assets/icons/LoudspeakerIcon";
+import { MenuIcon } from "@/assets/icons/MenuIcon";
+import Link from "next/link";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -28,23 +31,25 @@ export default function Home() {
           />
         </div>
         <div className="flex gap-4 p-4">
-          <div className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#202125]">
-            <div className="">
+          <Link href={"/coming-soon"} className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#202125] hover:bg-[#121212] duration-200 ease-in-out">
+            <div className="flex items-center gap-3">
               <DepositIcon />
+              <span className="text-[#fff]">Nạp tiền</span>
             </div>
             <NextIcon />
-          </div>
-          <div className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#3D5AFE]">
-            <div className="">
+          </Link>
+          <Link href={"/coming-soon"} className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#3D5AFE] hover:bg-[#2a3eb1] duration-200 ease-in-out">
+            <div className="flex items-center gap-3">
               <TelesaleIcon />
+              <span className="text-[#fff]">Dịch vụ khách hàng</span>
             </div>
             <NextIcon />
-          </div>
+          </Link>
         </div>
         <div className="flex flex-col gap-2 p-4">
           <h5 className="text-[24px] text-white">Cặp giao dịch phổ biến</h5>
           <div className="flex gap-1 pb-3 overflow-auto ">
-            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">BTC</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -58,9 +63,9 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
+            </Link>
             {/*  */}
-            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">ETH</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -74,9 +79,9 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
+            </Link>
             {/*  */}
-            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">ALUMINIUM</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -90,9 +95,9 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
+            </Link>
             {/*  */}
-            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">GOLD</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -106,9 +111,9 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
+            </Link>
             {/*  */}
-            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">PLATINUM</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -122,9 +127,9 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
-             {/*  */}
-             <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            </Link>
+            {/*  */}
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">BNB</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -138,8 +143,8 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
-            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            </Link>
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">COFFEE</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -153,8 +158,8 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
-            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            </Link>
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">SOL</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -168,8 +173,8 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
-            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            </Link>
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">OIL</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -183,8 +188,8 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
-            <div className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            </Link>
+            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
               <div>
                 <span className="text-[#fff]">LTC</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -198,10 +203,14 @@ export default function Home() {
                 <span className="text-[#fff] text-nowrap">Giao dịch</span>
                 <NextIcon />
               </div>
-            </div>
+            </Link>
           </div>
         </div>
-        <FeatureSection/>
+        <div className="flex justify-between items-center px-4 ">
+          <LoudspeakerIcon/>
+          <MenuIcon/>
+        </div>
+        <FeatureSection />
       </div>
     </DefaultLayout>
   );

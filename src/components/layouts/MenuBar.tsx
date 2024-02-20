@@ -20,7 +20,7 @@ export const MenuBar = () => {
             color={`${pathname === PATH.HOME ? "#3D5AFE" : "#888888"}`}
           />
           <span
-            className={`text-[16px] font-semibold ${pathname === PATH.HOME ? "text-[#3D5AFE]" : "text-[#888888]"} `}
+            className={`text-[14px] font-semibold ${pathname === PATH.HOME ? "text-[#3D5AFE]" : "text-[#888888]"} `}
           >
             Home
           </span>
@@ -33,7 +33,7 @@ export const MenuBar = () => {
             color={`${pathname === PATH.MARKET || pathname === "/markets/crypto" || pathname === "/markets/forex" ? "#3D5AFE" : "#888888"}`}
           />
           <span
-            className={`text-[16px] font-semibold ${pathname === PATH.MARKET || pathname === "/markets/crypto" || pathname === "/markets/forex" ? "text-[#3D5AFE]" : "text-[#888888]"} `}
+            className={`text-[14px] font-semibold ${pathname === PATH.MARKET || pathname === "/markets/crypto" || pathname === "/markets/forex" ? "text-[#3D5AFE]" : "text-[#888888]"} `}
           >
             Thị trường
           </span>
@@ -46,7 +46,7 @@ export const MenuBar = () => {
             color={`${pathname === PATH.TRANSACTION ? "#3D5AFE" : "#888888"}`}
           />
           <span
-            className={`text-[16px] font-semibold ${pathname === PATH.TRANSACTION ? "text-[#3D5AFE]" : "text-[#888888]"} `}
+            className={`text-[14px] font-semibold ${pathname === PATH.TRANSACTION ? "text-[#3D5AFE]" : "text-[#888888]"} `}
           >
             Giao dịch
           </span>
@@ -59,7 +59,7 @@ export const MenuBar = () => {
             color={`${pathname === PATH.ASSET ? "#3D5AFE" : "#888888"}`}
           />
           <span
-            className={`text-[16px] font-semibold ${pathname === PATH.ASSET ? "text-[#3D5AFE]" : "text-[#888888]"} `}
+            className={`text-[14px] font-semibold ${pathname === PATH.ASSET ? "text-[#3D5AFE]" : "text-[#888888]"} `}
           >
             Tài sản
           </span>

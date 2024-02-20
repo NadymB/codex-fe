@@ -3,7 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost", "greensoftware-seven.vercel.app"],
+    domains: ["localhost"],
   },
 };
 
