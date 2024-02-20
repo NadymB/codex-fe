@@ -19,8 +19,8 @@ export const AuthenticatedProfile = () => {
         />
         <ProfileItem
           icon={<MailIcon />}
-          filedName={"Username"}
-          value={"tyha"}
+          filedName={"Email"}
+          value={"tyha@greensoftware.asia"}
         />
         <ProfileItem
           icon={<PhoneIcon />}

@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 
 const MarketPage = () => {
   const router = useRouter();
-  const userInfo = false;
+  const userInfo = true;
 
   return (
     <div className="bg-black min-h-screen">
