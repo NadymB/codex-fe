@@ -1,23 +1,16 @@
 "use client";
 
-import { ArrowLeftIcon } from "@/assets/icons/ArrowLeftIcon";
+import { GoBack } from "@/components/layouts/GoBack";
 import { AuthenticatedProfile } from "@/components/profile/AuthenticatedProfile";
 import { PublicProfile } from "@/components/profile/PublicProfile";
 import { UnauthenticatedProfile } from "@/components/profile/UnauthenticatedProfile";
-import { useRouter } from "next/navigation";
 
 const MarketPage = () => {
-  const router = useRouter();
   const userInfo = true;
 
   return (
     <div className="bg-black min-h-screen">
-      <div className="flex items-center gap-2 bg-[#110F15] p-4">
-        <div className="cursor-pointer" onClick={() => router.back()}>
-          <ArrowLeftIcon />
-        </div>
-        <div className="text-white text-xl font-semibold">Personal center</div>
-      </div>
+      <GoBack title="Personal center" />
       {userInfo ? <AuthenticatedProfile /> : <UnauthenticatedProfile />}
       <PublicProfile />
       {userInfo && (

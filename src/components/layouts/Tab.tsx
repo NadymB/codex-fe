@@ -1,5 +1,4 @@
 "use client";
-import { HomeIcon } from "@/assets/icons/HomeIcon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC } from "react";
