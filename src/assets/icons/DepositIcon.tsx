@@ -8,14 +8,7 @@ export const DepositIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect
-        x={6}
-        y={11.9999}
-        width={20}
-        height={14}
-        rx={1}
-        stroke="#fff"
-      />
+      <rect x={6} y={11.9999} width={20} height={14} rx={1} stroke="#fff" />
       <path
         stroke="#fff"
         d="M6 18.5l-1.777-7.998a1 1 0 01.785-1.198L21.07 6.181a1 1 0 011.161.74L23.5 12"
