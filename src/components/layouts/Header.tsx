@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import { AvatarIcon } from "@/assets/icons/AvatarIcon";
 import { RingIcon } from "@/assets/icons/RingIcon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,11 +14,12 @@ const Header = () => {
       <div className="w-full px-4 py-4 flex justify-between  bg-[#100F14] ">
         <div className=" flex items-center gap-4 ">
           <Link href="/profile">
-            <img
+            <AvatarIcon />
+            {/* <img
               className="w-[40px] h-[40px] rounded-[50%] bg-[green]"
               src={`/assets/images/user_avatar.svg`}
               alt=""
-            />
+            /> */}
           </Link>
           <span className="text-[16px] font-bold text-white">newuser</span>
         </div>
