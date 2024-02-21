@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
   const router = useRouter();
-  
+
   return (
     <div className="min-h-screen overflow-auto bg-[#000000]">
       <div className="sticky top-0 left-0 w-full px-6 py-6  flex items-center justify-between gap-2">
@@ -21,7 +21,7 @@ const LoginPage = () => {
         <h4 className="text-[32px] text-[#fff]">Vui lòng đăng nhập!</h4>
         <div>Tab</div>
 
-        <LoginWithEmail/>
+        <LoginWithEmail />
       </div>
     </div>
   );

@@ -21,7 +21,9 @@ const FeatureSection = () => {
       <div className="flex item-center justify-center pt-2 cursor-pointer">
         <div className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1">
           <SupportIcon />
-          <span className="text-[#fff] font-medium text-center">Trung tâm trợ giúp</span>
+          <span className="text-[#fff] font-medium text-center">
+            Trung tâm trợ giúp
+          </span>
         </div>
       </div>
       {/*  */}
@@ -42,7 +44,9 @@ const FeatureSection = () => {
       <div className="flex item-center justify-center pt-2 cursor-pointer">
         <div className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1">
           <ShareIcon />
-          <span className="text-[#fff] font-medium text-center">Mời bạn bè</span>
+          <span className="text-[#fff] font-medium text-center">
+            Mời bạn bè
+          </span>
         </div>
       </div>
       {/*  */}
@@ -56,14 +60,18 @@ const FeatureSection = () => {
       <div className="flex item-center justify-center pt-2 cursor-pointer">
         <div className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1">
           <RobotIcon />
-          <span className="text-[#fff] font-medium text-center">Robot giao dịch</span>
+          <span className="text-[#fff] font-medium text-center">
+            Robot giao dịch
+          </span>
         </div>
       </div>
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
         <div className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1">
           <ExploitIcon />
-          <span className="text-[#fff] font-medium text-center">Khai thác mỏ</span>
+          <span className="text-[#fff] font-medium text-center">
+            Khai thác mỏ
+          </span>
         </div>
       </div>
       {/*  */}

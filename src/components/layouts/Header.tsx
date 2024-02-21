@@ -11,7 +11,9 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
-  const [currentLang, setCurrentLang] = useState(OptionsLanguage.find((lang)=>lang.value===i18next.language))
+  const [currentLang, setCurrentLang] = useState(
+    OptionsLanguage.find((lang) => lang.value === i18next.language),
+  );
   return (
     <>
       <div className="w-full px-4 py-4 flex justify-between  bg-[#100F14] ">
@@ -27,8 +29,13 @@ const Header = () => {
           <span className="text-[16px] font-bold text-white">newuser</span>
         </div>
         <div className="flex items-center gap-3">
-          <div className="cursor-pointer"><RingIcon /></div>
-          <Link href={"/setting/locale"} className="flex items-center gap-2 cursor-pointer p-1 rounded hover:bg-[#19181d]">
+          <div className="cursor-pointer">
+            <RingIcon />
+          </div>
+          <Link
+            href={"/setting/locale"}
+            className="flex items-center gap-2 cursor-pointer p-1 rounded hover:bg-[#19181d]"
+          >
             <img
               className="w-[20px]"
               src={`${getStaticURL()}${currentLang?.flag}`}

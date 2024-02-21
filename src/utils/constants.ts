@@ -6,14 +6,13 @@ export const OptionsLanguage = [
     label: "English",
     International: "English",
     value: "en",
-    flag:"/assets/images/flags/us.svg"
+    flag: "/assets/images/flags/us.svg",
   },
   {
     label: "Việt Nam",
     International: "Vietnamese",
     value: "vi",
-    flag:"/assets/images/flags/vn.svg"
-
+    flag: "/assets/images/flags/vn.svg",
   },
 ];
 export const FooterData = [
@@ -87,6 +86,12 @@ export const optionFilterScan = [
     value: "websites",
   },
 ];
+
+export enum PRICE_TYPE {
+  COMMODITY = "commodity",
+  FOREIGN_EXCHANGE = "foreign_exchange",
+  CRYPTO = "crypto",
+}
 
 export enum PATH {
   HOME = "/",
