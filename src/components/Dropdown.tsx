@@ -44,7 +44,7 @@ export const Dropdown: FC<Props> = ({
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
-          className={`inline-flex w-full justify-center gap-x-1.5 rounded-lg bg-gray-200 px-3 py-2 text-sm shadow-sm whitespace-nowrap ${className}`}
+          className={`inline-flex w-full justify-center gap-x-1.5 rounded-lg px-3 py-2 text-sm shadow-sm whitespace-nowrap ${className}`}
         >
           {(defaultVal?.label as string) || chosen || title || "Options"}
 
