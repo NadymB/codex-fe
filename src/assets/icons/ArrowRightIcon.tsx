@@ -1,14 +1,17 @@
 import React from "react";
 
-export const ArrowRightIcon = () => (
-  <svg
-    focusable="false"
-    aria-hidden="true"
-    viewBox="0 0 24 24"
-    data-testid="ArrowForwardIcon"
-    width="24px"
-    fill="#9098A3"
+export const ArrowRightIcon = ({ color }: { color?: string }) => (
+  <svg 
+    focusable="false" 
+    aria-hidden="true" 
+    viewBox="0 0 24 24" 
+    width={24}
+    height={24}
+    data-testid="ArrowBackIcon"
   >
-    <path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+    <path 
+      d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z"
+      fill={color||"#9098A3"}
+    ></path>
   </svg>
 );

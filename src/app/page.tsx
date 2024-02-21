@@ -31,14 +31,20 @@ export default function Home() {
           />
         </div>
         <div className="flex gap-4 p-4">
-          <Link href={"/coming-soon"} className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#202125] hover:bg-[#121212] duration-200 ease-in-out">
+          <Link
+            href={"/coming-soon"}
+            className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#202125] hover:bg-[#121212] duration-200 ease-in-out"
+          >
             <div className="flex items-center gap-3">
               <DepositIcon />
               <span className="text-[#fff]">Nạp tiền</span>
             </div>
             <NextIcon />
           </Link>
-          <Link href={"/coming-soon"} className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#3D5AFE] hover:bg-[#2a3eb1] duration-200 ease-in-out">
+          <Link
+            href={"/coming-soon"}
+            className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#3D5AFE] hover:bg-[#2a3eb1] duration-200 ease-in-out"
+          >
             <div className="flex items-center gap-3">
               <TelesaleIcon />
               <span className="text-[#fff]">Dịch vụ khách hàng</span>
@@ -49,7 +55,10 @@ export default function Home() {
         <div className="flex flex-col gap-2 p-4">
           <h5 className="text-[24px] text-white">Cặp giao dịch phổ biến</h5>
           <div className="flex gap-1 pb-3 overflow-auto ">
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">BTC</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -65,7 +74,10 @@ export default function Home() {
               </div>
             </Link>
             {/*  */}
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">ETH</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -81,7 +93,10 @@ export default function Home() {
               </div>
             </Link>
             {/*  */}
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">ALUMINIUM</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -97,7 +112,10 @@ export default function Home() {
               </div>
             </Link>
             {/*  */}
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">GOLD</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -113,7 +131,10 @@ export default function Home() {
               </div>
             </Link>
             {/*  */}
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">PLATINUM</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -129,7 +150,10 @@ export default function Home() {
               </div>
             </Link>
             {/*  */}
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">BNB</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -144,7 +168,10 @@ export default function Home() {
                 <NextIcon />
               </div>
             </Link>
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">COFFEE</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -159,7 +186,10 @@ export default function Home() {
                 <NextIcon />
               </div>
             </Link>
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">SOL</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -174,7 +204,10 @@ export default function Home() {
                 <NextIcon />
               </div>
             </Link>
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">OIL</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -189,7 +222,10 @@ export default function Home() {
                 <NextIcon />
               </div>
             </Link>
-            <Link href={"/coming-soon"} className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]">
+            <Link
+              href={"/coming-soon"}
+              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+            >
               <div>
                 <span className="text-[#fff]">LTC</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
@@ -207,8 +243,8 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-between items-center px-4 ">
-          <LoudspeakerIcon/>
-          <MenuIcon/>
+          <LoudspeakerIcon />
+          <MenuIcon />
         </div>
         <FeatureSection />
       </div>
