@@ -96,7 +96,7 @@ export enum PRICE_TYPE {
 }
 
 export enum PATH {
-  HOME = "/",
+  HOME = "/home",
   MARKET = "/markets/commodity",
   TRANSACTION = "/transaction",
   ASSET = "/asset",
