@@ -1,5 +1,6 @@
 import React from "react";
 import { TabOptions } from "@/components/layouts/Tab";
+import i18next from "i18next";
 
 export const getStaticURL = () => "http://localhost:3000";
 export const OptionsLanguage = [
@@ -99,26 +100,29 @@ export enum PATH {
   MARKET = "/markets/commodity",
   TRANSACTION = "/transaction",
   ASSET = "/asset",
+  COMING_SOON = "/coming-soon",
+  LOGIN="/login",
+  SIGNUP="/sign-up"
 }
 
 export const marketTabOption: TabOptions = [
   {
-    label: "Commodity",
+    label: `${i18next.t("marketPage.commodity")}`,
     link: "/markets/commodity",
   },
   {
-    label: "Cryptocurrency",
+    label: i18next.t("marketPage.cryptoCurrency"),
     link: "/markets/crypto",
   },
   {
-    label: "Foreign Exchange",
+    label: i18next.t("marketPage.foreignExchange"),
     link: "/markets/forex",
   },
 ];
 
 export const ASSET_LIST = [
   {
-    label: "Nạp Tiền",
+    label: "deposit",
     link: "/coming-soon",
     path: [
       {
@@ -135,7 +139,7 @@ export const ASSET_LIST = [
     viewBox: '0 0 48 48',
   },
   {
-    label: "Rút",
+    label: "withdraw",
     link: "/coming-soon",
     path: [
       {
@@ -152,7 +156,7 @@ export const ASSET_LIST = [
     viewBox: '0 0 48 48',
   },
   {
-    label: "Đặt hàng",
+    label: "order",
     link: "/coming-soon",
     path: [
       {
@@ -173,7 +177,7 @@ export const ASSET_LIST = [
     viewBox: '0 0 24 24',
   },
   {
-    label: "Hoá đơn",
+    label: "bill",
     link: "/coming-soon",
     path: [
       {
@@ -193,19 +197,19 @@ export const ASSET_LIST = [
 
 export const ACCOUNT_LIST = [
   {
-    label: "Tiền",
+    label: "funds",
     amount: "0.00"
   },
   {
-    label: "Quản lý tài chính",
+    label: "financialManagement",
     amount: "0.00"
   },
   {
-    label: "Robot giao dịch",
+    label: "tradingRobot",
     amount: "0.00"
   },
   {
-    label: "Đang lành lại",
+    label: "healing",
     amount: "0.00"
   }
 ];

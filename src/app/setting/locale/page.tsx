@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { BackIcon } from "@/assets/icons/BackIcon";
-import React, { useEffect, useState } from "react";
-import i18next, { changeLanguage } from "i18next";
-import { OptionsLanguage, getStaticURL } from "@/utils/constants";
 import { CheckIcon } from "@/assets/icons/CheckIcon";
-import { useTranslation } from "react-i18next";
+import { OptionsLanguage, getStaticURL } from "@/utils/constants";
+import i18next, { changeLanguage } from "i18next";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const LocaleSettingPage = () => {
   const [currentLang, setLangCurrentLang] = useState(i18next.language);
@@ -15,7 +14,7 @@ const LocaleSettingPage = () => {
     <div className="min-h-screen overflow-auto bg-[#000000]">
       <div className="sticky top-0 left-0 w-full px-4 py-4  bg-[#100F14] flex items-center gap-2">
         <div className="cursor-pointer" onClick={()=>router.back()}><BackIcon /></div>
-        <span className="text-[#fff]">Ngôn Ngữ</span>
+        <span className="text-[#fff]">{i18next.t("language")}</span>
       </div>
       <div className="flex flex-col">
         {OptionsLanguage.map((lang, idx) => {
@@ -26,6 +25,7 @@ const LocaleSettingPage = () => {
               onClick={() => {
                 changeLanguage(lang.value) 
                 setLangCurrentLang(lang.value);
+                localStorage.setItem("locale",lang.value)
               }}
             >
               <div className="flex items-center gap-4">

@@ -7,6 +7,7 @@ import { SecurityIcon } from "@/assets/icons/SecurityIcon";
 import { UsernameIcon } from "@/assets/icons/UsernameIcon";
 import { VisaIcon } from "@/assets/icons/VisaIcon";
 import { ProfileItem } from "./ProfileItem";
+import i18next from "i18next";
 
 export const AuthenticatedProfile = () => {
   return (
@@ -14,39 +15,39 @@ export const AuthenticatedProfile = () => {
       <div className="bg-[#1C1C1E] mt-2 rounded-sm">
         <ProfileItem
           icon={<UsernameIcon />}
-          filedName={"Username"}
+          filedName={i18next.t("profilePage.username")}
           value={"tyha"}
         />
         <ProfileItem
           icon={<MailIcon />}
-          filedName={"Email"}
+          filedName={i18next.t("profilePage.email")}
           value={"tyha@greensoftware.asia"}
         />
         <ProfileItem
           icon={<PhoneIcon />}
-          filedName={"Phone number"}
+          filedName={i18next.t("profilePage.phoneNumber")}
           value={"Not set"}
         />
         <ProfileItem
           icon={<LockIcon />}
-          filedName={"Login password"}
+          filedName={i18next.t("profilePage.loginPassword")}
           rightIcon={<ArrowRightIcon />}
         />
         <ProfileItem
           icon={<SecurityIcon />}
-          filedName={"Username"}
+          filedName={i18next.t("profilePage.securityCode")}
           rightIcon={<ArrowRightIcon />}
         />
       </div>
       <div className="bg-[#1C1C1E] mt-2 rounded-sm">
         <ProfileItem
           icon={<BankIcon />}
-          filedName={"Withdrawal account"}
+          filedName={i18next.t("profilePage.withdrawAccount")}
           rightIcon={<ArrowRightIcon />}
         />
         <ProfileItem
           icon={<VisaIcon />}
-          filedName={"Authentication"}
+          filedName={i18next.t("profilePage.authentication")}
           value={"Not certified"}
           rightIcon={<ArrowRightIcon />}
         />

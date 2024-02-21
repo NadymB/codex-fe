@@ -14,6 +14,7 @@ const Header = () => {
   const [currentLang, setCurrentLang] = useState(
     OptionsLanguage.find((lang) => lang.value === i18next.language),
   );
+  console.log('currentLang',currentLang)
   return (
     <>
       <div className="w-full px-4 py-4 flex justify-between  bg-[#100F14] ">

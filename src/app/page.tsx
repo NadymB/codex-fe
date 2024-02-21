@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useTranslation } from "react-i18next";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { useEffect, useState } from "react";
 import Header from "@/components/layouts/Header";
@@ -12,9 +11,9 @@ import FeatureSection from "@/components/Home/FeatureSection";
 import { LoudspeakerIcon } from "@/assets/icons/LoudspeakerIcon";
 import { MenuIcon } from "@/assets/icons/MenuIcon";
 import Link from "next/link";
+import i18next from "i18next";
 
 export default function Home() {
-  const { t } = useTranslation();
 
   return (
     <DefaultLayout
@@ -37,7 +36,7 @@ export default function Home() {
           >
             <div className="flex items-center gap-3">
               <DepositIcon />
-              <span className="text-[#fff]">Nạp tiền</span>
+              <span className="text-[#fff]">{i18next.t("homePage.deposit")}</span>
             </div>
             <NextIcon />
           </Link>
@@ -47,13 +46,13 @@ export default function Home() {
           >
             <div className="flex items-center gap-3">
               <TelesaleIcon />
-              <span className="text-[#fff]">Dịch vụ khách hàng</span>
+              <span className="text-[#fff]">{i18next.t("homePage.service")}</span>
             </div>
             <NextIcon />
           </Link>
         </div>
         <div className="flex flex-col gap-2 p-4">
-          <h5 className="text-[24px] text-white">Cặp giao dịch phổ biến</h5>
+          <h5 className="text-[24px] text-white">{i18next.t("homePage.popularTransactionPair")}</h5>
           <div className="flex gap-1 pb-3 overflow-auto ">
             <Link
               href={"/coming-soon"}
@@ -69,7 +68,7 @@ export default function Home() {
                 <span className="text-[#dd5350] text-[12px]">-0.76%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -88,7 +87,7 @@ export default function Home() {
                 <span className="text-[#55af72] text-[12px]">+1.53%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -107,7 +106,7 @@ export default function Home() {
                 <span className="text-[#55af72] text-[12px]">+0.19%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -126,7 +125,7 @@ export default function Home() {
                 <span className="text-[#55af72] text-[12px]">+1.53%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -145,7 +144,7 @@ export default function Home() {
                 <span className="text-[#dd5350] text-[12px]">-0.76%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -164,7 +163,7 @@ export default function Home() {
                 <span className="text-[#55af72] text-[12px]">+1.53%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -182,7 +181,7 @@ export default function Home() {
                 <span className="text-[#dd5350] text-[12px]">-0.76%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -200,7 +199,7 @@ export default function Home() {
                 <span className="text-[#dd5350] text-[12px]">-0.76%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -218,7 +217,7 @@ export default function Home() {
                 <span className="text-[#dd5350] text-[12px]">-0.76%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -236,7 +235,7 @@ export default function Home() {
                 <span className="text-[#dd5350] text-[12px]">-0.76%</span>
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">Giao dịch</span>
+                <span className="text-[#fff] text-nowrap">{i18next.t("homePage.trade")}</span>
                 <NextIcon />
               </div>
             </Link>
@@ -244,7 +243,9 @@ export default function Home() {
         </div>
         <div className="flex justify-between items-center px-4 ">
           <LoudspeakerIcon />
+          <Link href={'/announcement'}>
           <MenuIcon />
+          </Link>
         </div>
         <FeatureSection />
       </div>
