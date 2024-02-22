@@ -11,9 +11,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const locale = localStorage.getItem("locale");
-  if (locale && i18next.language && locale !== i18next.language) {
-    i18next.changeLanguage(locale);
+  if (typeof localStorage !== "undefined") {
+    const locale = localStorage.getItem("locale");
+    if (locale && i18next.language && locale !== i18next.language) {
+      i18next.changeLanguage(locale);
+    }
   }
   return (
     <>

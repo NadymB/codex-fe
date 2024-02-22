@@ -14,18 +14,22 @@ import i18next from "i18next";
 const MarketPage = () => {
   const [data, setData] = useState([]);
   const handleCrawlDataFeed = async () => {
-    const response = await priceFeedService.getPriceFeed(
-      PRICE_TYPE.FOREIGN_EXCHANGE
-    );
-    if (response.success) {
-      const mappedData = response.data.map((item: any) => {
-        return [
-          <TrandingCell tradingName={item.name} totalValue="99.14M" />,
-          <PriceCell usdtPrice={item.value} usdPrice={item.value} />,
-          <Button text="+3.06%" className="bg-[#54AF71]" />,
-        ];
-      });
-      setData(mappedData);
+    try {
+      const response = await priceFeedService.getPriceFeed(
+        PRICE_TYPE.FOREIGN_EXCHANGE
+      );
+      if (response.success) {
+        const mappedData = response.data.map((item: any) => {
+          return [
+            <TrandingCell tradingName={item.name} totalValue="99.14M" />,
+            <PriceCell usdtPrice={item.value} usdPrice={item.value} />,
+            <Button text="+3.06%" className="bg-[#54AF71]" />,
+          ];
+        });
+        setData(mappedData);
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -35,7 +39,7 @@ const MarketPage = () => {
 
     return () => clearInterval(inteval);
   }, []);
-const marketTabOption=[
+  const marketTabOption = [
     {
       label: `${i18next.t("marketPage.commodity")}`,
       link: "/markets/commodity",
@@ -48,7 +52,7 @@ const marketTabOption=[
       label: i18next.t("marketPage.foreignExchange"),
       link: "/markets/forex",
     },
-  ]
+  ];
   return (
     <DefaultLayout
       pageTitle="Dashboard"
