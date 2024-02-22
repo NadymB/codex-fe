@@ -2,10 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import Header from "./Header";
 import "../../../i18n";
-import { Footer } from "./Footer";
-import { MenuIcon } from "@/assets/icons/MenuIcon";
 import { MenuBar } from "./MenuBar";
 
 export const DefaultLayout = ({
@@ -13,11 +10,13 @@ export const DefaultLayout = ({
   pageTitle,
   containerStyle,
   headerStyle,
+  isShowMenubar=true,
 }: {
   children: React.ReactNode;
   pageTitle?: string;
   containerStyle: string;
   headerStyle?: string;
+  isShowMenubar?: boolean;
 }) => {
   const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if ((event.ctrlKey || event.metaKey) && event.key === "k") {
@@ -45,9 +44,11 @@ export const DefaultLayout = ({
         >
           {children}
         </div>
-        <div ref={menuBarRef} className="fixed w-full bottom-0 left-0">
-          <MenuBar />
-        </div>
+        {isShowMenubar && (
+          <div ref={menuBarRef} className="fixed w-full bottom-0 left-0">
+            <MenuBar />
+          </div>
+        )}
       </div>
     </main>
   );

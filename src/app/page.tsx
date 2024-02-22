@@ -4,10 +4,10 @@ import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import '../styles/index.css';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "../styles/index.css";
 import { Pagination } from "swiper/modules";
 import { SWIPER_SLIDER_DATA } from "@/utils/constants";
 import { SwiperItem } from "@/components/SwiperItem";
@@ -15,14 +15,14 @@ import Link from "next/link";
 import i18next from "i18next";
 
 export default function Home() {
-
   return (
-    <>
+    <DefaultLayout
+      isShowMenubar
+      pageTitle="Dashboard"
+      containerStyle="bg-[#000000] dark:bg-[#000000]"
+    >
       <div className="flex items-center justify-end bg-white dark:bg-black px-6 h-16">
-        <Link 
-          className="text-sm text-black dark:text-white"
-          href={"/home"}
-        > 
+        <Link className="text-sm text-black dark:text-white" href={"/home"}>
           {i18next.t("onBoarding.skipBtn")}
         </Link>
       </div>
@@ -34,9 +34,13 @@ export default function Home() {
         modules={[Pagination]}
         className="mySwiper bg-white dark:bg-black"
       >
-        {SWIPER_SLIDER_DATA.map((item,index) => (
+        {SWIPER_SLIDER_DATA.map((item, index) => (
           <SwiperSlide key={index}>
-            <SwiperItem url={item.url} title={i18next.t(`onBoarding.${item.title}`)} content={i18next.t(`onBoarding.${item.content}`)}/>
+            <SwiperItem
+              url={item.url}
+              title={i18next.t(`onBoarding.${item.title}`)}
+              content={i18next.t(`onBoarding.${item.content}`)}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -48,6 +52,6 @@ export default function Home() {
           {i18next.t("onBoarding.startNowBtn")}
         </Link>
       </div>
-    </>
+    </DefaultLayout>
   );
 }
