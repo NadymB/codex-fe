@@ -17,26 +17,31 @@ export const AuthenticatedProfile = () => {
           icon={<UsernameIcon />}
           filedName={i18next.t("profilePage.username")}
           value={"tyha"}
+          link="/"
         />
         <ProfileItem
           icon={<MailIcon />}
           filedName={i18next.t("profilePage.email")}
           value={"tyha@greensoftware.asia"}
+          link="/"
         />
         <ProfileItem
           icon={<PhoneIcon />}
           filedName={i18next.t("profilePage.phoneNumber")}
           value={"Not set"}
+          link="/"
         />
         <ProfileItem
           icon={<LockIcon />}
           filedName={i18next.t("profilePage.loginPassword")}
           rightIcon={<ArrowRightIcon />}
+          link="/"
         />
         <ProfileItem
           icon={<SecurityIcon />}
           filedName={i18next.t("profilePage.securityCode")}
           rightIcon={<ArrowRightIcon />}
+          link="/"
         />
       </div>
       <div className="bg-[#1C1C1E] mt-2 rounded-sm">
@@ -44,12 +49,14 @@ export const AuthenticatedProfile = () => {
           icon={<BankIcon />}
           filedName={i18next.t("profilePage.withdrawAccount")}
           rightIcon={<ArrowRightIcon />}
+          link="/withdraw-account"
         />
         <ProfileItem
           icon={<VisaIcon />}
           filedName={i18next.t("profilePage.authentication")}
           value={"Not certified"}
           rightIcon={<ArrowRightIcon />}
+          link="/authentication"
         />
       </div>
     </div>

@@ -65,5 +65,27 @@
 	},
   "announcementPage":{
     "title":"Announce"
+  },
+  "withdrawAccount":{
+    "title":"Withdraw Account",
+    "noWithdrawalAccount": "No withdrawal account set",
+    "withdrawAccountBtn": "Add withdrawal account"
+  },
+  "authentication": {
+    "title": "Authentication",
+    "lv1": "Lv.1",
+    "rightsAndInterests": "Rights and interests",
+    "fiatCurrencyDeposit": "Fiat currency deposit",
+    "withdrawalAmount": "Withdrawal Amount",
+    "unlimited": "Unlimited",
+    "other": "Other",
+    "moreRewards": "More rewards",
+    "id": "ID",
+    "selfie": "Selfie",
+    "certifyBtnLv1": "Immediately certify",
+    "lv2": "Lv.2",
+    "moreTradingProducts": "More trading products",
+    "proofOfAddress": "Proof of address",
+    "certifyBtnLv2": "You need to complete the LV.1 certification first"
   }
 }

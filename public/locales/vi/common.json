@@ -64,5 +64,27 @@
 	},
 	"announcementPage": {
 		"title": "Thông báo"
-	}
+	},
+	"withdrawAccount":{
+		"title":"Tài khoản rút tiền",
+		"noWithdrawalAccount": "Không có tài khoản rút tiền",
+		"withdrawAccountBtn": "Thêm tài khoản rút tiền"
+	},
+	"authentication": {
+		"title": "Authentication",
+		"lv1": "Lv.1",
+		"rightsAndInterests": "Quyền và lợi ích",
+		"fiatCurrencyDeposit": "Tái chế tiền tệ fiat",
+		"withdrawalAmount": "Số tiền rút",
+		"unlimited": "Vô hạn",
+		"other": "Khác",
+		"moreRewards": "Nhiều phần thưởng hơn",
+		"id": "NHẬN DẠNG",
+		"selfie": "Chụp ảnh tự sướng",
+		"certifyBtnLv1": "Chứng nhận ngay lập tức",
+		"lv2": "Lv.2",
+		"moreTradingProducts": "Nhiều sản phẩm giao dịch hơn",
+		"proofOfAddress": "Chứng minh địa chỉ",
+		"certifyBtnLv2": "Bạn cần hoàn thành chứng nhận LV.1 trước"
+	  }
 }
