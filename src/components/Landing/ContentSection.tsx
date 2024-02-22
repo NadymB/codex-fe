@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { MediaCheckIcon } from "@/assets/icons/MediaCheckIcon";
 import { getStaticURL } from "@/utils/constants";
+import Link from "next/link";
 import React from "react";
 
 export const ContentSection = () => {
@@ -106,12 +107,15 @@ export const ContentSection = () => {
                 While the concept is simple a place to store your assets & use
                 choosing CMEcan be an incredibly experience.
               </span>
-              <div className="relative group  w-fit flex items-center justify-center cursor-pointer ">
+              <Link
+                href={"/m"}
+                className="relative group  w-fit flex items-center justify-center cursor-pointer "
+              >
                 <div className="absolute top-0 left-0 group-hover:top-[5px] group-hover:left-[5px] bg-[#fff] duration-300 ease-in-out w-full h-full rounded-[4px]"></div>
                 <div className="relative text-[#000] bg-[#f7a600] px-[36px] py-4 font-bold  rounded-[4px]">
                   Go To Exchange
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

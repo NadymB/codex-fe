@@ -20,7 +20,7 @@ export const SwiperItem = ({url, title, content} : SwiperItemProps) => {
                     width: "fit-content",
                 }}
             />
-            <h2 className="text-[32px] dark:text-white text-black pt-8">{title}</h2>
+            <h2 className="text-[32px] text-white pt-8">{title}</h2>
             <span className="text-xs text-[#888]">{content}</span>
         </div>
     )

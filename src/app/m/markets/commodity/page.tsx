@@ -1,4 +1,5 @@
 "use client";
+
 /* eslint-disable react/jsx-key */
 import { Table } from "@/components/table/Table";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
@@ -15,7 +16,9 @@ const MarketPage = () => {
   const [data, setData] = useState([]);
   const handleCrawlDataFeed = async () => {
     try {
-      const response = await priceFeedService.getPriceFeed(PRICE_TYPE.CRYPTO);
+      const response = await priceFeedService.getPriceFeed(
+        PRICE_TYPE.COMMODITY
+      );
       if (response.success) {
         const mappedData = response.data.map((item: any) => {
           return [
@@ -40,15 +43,15 @@ const MarketPage = () => {
   const marketTabOption = [
     {
       label: `${i18next.t("marketPage.commodity")}`,
-      link: "/markets/commodity",
+      link: "/m/markets/commodity",
     },
     {
       label: i18next.t("marketPage.cryptoCurrency"),
-      link: "/markets/crypto",
+      link: "/m/markets/crypto",
     },
     {
       label: i18next.t("marketPage.foreignExchange"),
-      link: "/markets/forex",
+      link: "/m/markets/forex",
     },
   ];
   return (

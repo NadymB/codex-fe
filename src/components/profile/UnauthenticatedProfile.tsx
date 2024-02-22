@@ -19,10 +19,10 @@ export const UnauthenticatedProfile = () => {
           </div>
         </div>
         <div className="flex justify-between gap-4 items-center mt-8">
-          <button onClick={()=>router.push('/login')} className="border border-[#3D5AFE] text-[#3D5AFE] w-1/2 rounded-md py-1.5 text-sm">
+          <button onClick={()=>router.push('/m/login')} className="border border-[#3D5AFE] text-[#3D5AFE] w-1/2 rounded-md py-1.5 text-sm">
             {i18next.t("profilePage.login")}
           </button>
-          <button onClick={()=>router.push('/signup')} className="text-white bg-[#3D5AFE] w-1/2 rounded-md py-1.5 text-sm">
+          <button onClick={()=>router.push('/m/signup')} className="text-white bg-[#3D5AFE] w-1/2 rounded-md py-1.5 text-sm">
             {i18next.t("profilePage.signup")}
           </button>
         </div>

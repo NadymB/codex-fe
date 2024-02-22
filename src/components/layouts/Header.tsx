@@ -19,7 +19,7 @@ const Header = () => {
     <>
       <div className="w-full px-4 py-4 flex justify-between  bg-[#100F14] ">
         <div className=" flex items-center gap-4 ">
-          <Link href="/profile">
+          <Link href="/m/profile">
             <AvatarIcon />
             {/* <img
               className="w-[40px] h-[40px] rounded-[50%] bg-[green]"
@@ -34,7 +34,7 @@ const Header = () => {
             <RingIcon />
           </div>
           <Link
-            href={"/setting/locale"}
+            href={"/m/setting/locale"}
             className="flex items-center gap-2 cursor-pointer p-1 rounded hover:bg-[#19181d]"
           >
             <img

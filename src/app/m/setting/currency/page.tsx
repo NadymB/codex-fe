@@ -1,12 +1,12 @@
 "use client";
 
-import { OptionProps } from "@/app/asset/page";
-import { ArrowRightIcon } from "@/assets/icons/ArrowRightIcon";
+import { BackIcon } from "@/assets/icons/BackIcon";
 import { CheckIcon } from "@/assets/icons/CheckIcon";
 import { DEFAULT_CURRENCY, OPTIONS_CURRENCY } from "@/utils/constants";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import "../../../../i18n";
+import "../../../../../i18n";
+import { OptionProps } from "../../asset/page";
 
 const CurrencySetting = () => {
   const [currency, setCurrency] = useState<OptionProps>(DEFAULT_CURRENCY);
@@ -26,7 +26,7 @@ const CurrencySetting = () => {
               router.back();
             }}
           >
-            <ArrowRightIcon color="#fff" />
+            <BackIcon  />
           </button>
           <h2 className="text-xl text-white mb-0">Hiển thị tiền tệ</h2>
         </div>

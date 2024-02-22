@@ -243,7 +243,7 @@ export default function Home() {
         </div>
         <div className="flex justify-between items-center px-4 ">
           <LoudspeakerIcon />
-          <Link href={'/announcement'}>
+          <Link href={'/m/announcement'}>
           <MenuIcon />
           </Link>
         </div>

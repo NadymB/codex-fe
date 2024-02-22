@@ -45,7 +45,7 @@ const AssetPage = () => {
                 </button>
               </div>
               <div className="relative inline-block text-right">
-                <Link href={"setting/currency"} className="text-[#888] text-base">
+                <Link href={"/m/setting/currency"} className="text-[#888] text-base">
                   ≈ 0.00 USD
                   <svg
                     className="-mr-1 h-5 w-5"

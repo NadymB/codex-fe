@@ -15,7 +15,7 @@ const FeatureSection = () => {
     <div className="grid grid-cols-4 bg-[#121212] pb-8">
       <div className="flex item-center justify-center pt-2 cursor-pointer">
         <Link 
-          href={"/learn"}
+          href={"/m/learn"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <InstructIcon />
@@ -25,7 +25,7 @@ const FeatureSection = () => {
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
         <Link
-          href={"/help-center"}
+          href={"/m/help-center"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
          >
           <SupportIcon />
@@ -37,7 +37,7 @@ const FeatureSection = () => {
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
         <Link 
-          href={"/vip"}
+          href={"/m/vip"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <HightClassIcon />

@@ -96,13 +96,20 @@ export enum PRICE_TYPE {
 }
 
 export enum PATH {
-  HOME = "/home",
-  MARKET = "/markets/commodity",
-  TRANSACTION = "/transaction",
-  ASSET = "/asset",
+  HOME = "/m/home",
+  MARKET = "/m/markets/commodity",
+  TRANSACTION = "/m/transaction",
+  ASSET = "/m/asset",
   COMING_SOON = "/coming-soon",
-  LOGIN="/login",
-  SIGNUP="/sign-up"
+  LOGIN="/m/login",
+  SIGNUP="/m/sign-up",
+  PROFILE="/m/profile",
+  ANNOUNCEMENT="/m/announcement",
+  HELP_CENTER="/m/help-center",
+  LEARN="/m/learn",
+  SETTING_LOCALE="/m/setting/locale",
+  SETTING_CURRENCY="/m/setting/currency",
+  VIP="/m/vip",
 }
 
 export const marketTabOption: TabOptions = [

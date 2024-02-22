@@ -3,7 +3,7 @@
 import { AuthenticationCard } from "@/components/authentication/AuthenticationCard";
 import { GoBack } from "@/components/layouts/GoBack";
 import { AUTHENTICATION_DATA } from "@/utils/constants";
-import "../../../../i18n";
+import "../../../../../i18n";
 import i18next from "i18next";
 
 const Authentication = () => {
