@@ -1,5 +1,17 @@
 {
 	"language": "Ngôn ngữ",
+	"onBoarding": {
+		"sliderTitleFirst": "Chào mừng đến với",
+		"sliderContentFirst": "Nơi giao dịch toàn diện đáng tin cậy cao, với tuyển chọn các sản phẩm giao dịch chất lượng cao.",
+		"sliderTitleSecond": "Mức phí cực thấp",
+		"sliderContentSecond": "Tất cả các giao dịch đều được hưởng mức phí siêu cao, thậm chí là 0 phí.",
+		"sliderTitleThird": "Giao dịch một khóa",
+		"sliderContentThird": "Các công cụ sáng tạo để tạo ra trải nghiệm giao dịch sản phẩm tài chính kỹ thuật số nhanh chóng.",
+		"sliderTitleFourth": "Toàn Bộ Sản Phẩm",
+		"sliderContentFourth": "Luôn có sản phẩm giao dịch phong phú phù hợp với bạn.",
+		"skipBtn": "Nhảy qua",
+		"startNowBtn": "BẠN CẦN SỬA NÓ THÀNH TIẾNG ANH"
+	},
 	"menuBar": {
 		"home": "Trang chủ",
 		"market": "Thị trường",
@@ -64,5 +76,29 @@
 	},
 	"announcementPage": {
 		"title": "Thông báo"
+	},
+	"learn": {
+		"title": "Learn",
+		"howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
+		"howAreTheyDifferentContent": "Stablecoins are cryptocurrencies whose values are pegged to a stable asset, mostly fiat currencies. Tether (USDT), USD Coin (USDC) and Binance USD (BUSD) are the three most popular stablecoins, with a combined market cap of $120 billion. However, with the recent buzz around BUSD, there’s no doubt that most investors would be curious to know if BUSD is still worth investing in — or if you should simply pile your investments into USDT, USDC or other stablecoins instead.",
+		"whichOneIsRightForYouTitle": "Traditional Debit Card vs. Crypto Debit Card: Which One Is Right For You?",
+		"whichOneIsRightForYouContent": "Modern society increasingly focuses on cashless transactions. Being able to pay by scanning a card can make a lot of transactions faster, easier and more secure. However, it brings up some new questions for consumers. How do you pick which card you want to pay with? There are a lot of options, and they all have their pros and cons. Traditional debit cards and crypto debit cards are two of the most popular choices. To find the right option, you'll need to carefully consider your personal budget and preferences.",
+		"cotiCryptoTitle": "Coti Crypto: Instant Payment Around The World",
+		"cotiCryptoContent": "As we know, traditional finance is plagued with many pressing issues such as merchant fees and cross-border barriers. Digital currency transactions powered by blockchain technology offer a potential solution. However, it is not perfect either because of its low transaction speeds, delays in payment confirmations and many scalability issues.",
+		"whatIsPoWInBlockchainTitle": "Explained: What Is Proof of Work (PoW) in Blockchain?",
+		"whatIsPoWInBlockchainContent": "The blockchain is commonly perceived through the prism of Bitcoin’s Nakamoto Consensus. But in order to learn more about what Proof of Work is, it is essential to look closely into the sustainable PoW implementation."
+	},
+	"helpCenter": {
+		"title": "Trung tâm trợ giúp",
+		"howToMakeADepositTitle": "How to make a deposit?",
+		"howToMakeADepositContent": "Looking for a guide on how to deposit funds? We hear you! Here is a detailed operation process so that you can easily make a deposit by transferring cryptocurrency from your wallet or depositing fiat currency to your account."
+	},
+	"vip": {
+	  "title": "Kế hoạch đặc quyền thành viên",
+	  "upgradeMyMemberLevelTitle": "Nâng cấp cấp độ thành viên của tôi",
+	  "upgradeMyMemberLevelContent": "Chúng tôi điều chỉnh các cấp độ thành viên khác nhau theo người dùng khác nhau. Bạn có thể nâng cấp cấp độ thành viên của mình bằng cách hoàn thành nhiệm vụ và được hưởng nhiều đặc quyền hơn. Để biết chi tiết, nhấp vào nút bên dưới để tham khảo ý kiến.",
+	  "currentLevelTitle": "Cấp độ hiện tại:",
+	  "currentLevelContent": "Bạn chưa phải là thành viên",
+	  "contactBtn": "Liên hệ với tư vấn dịch vụ khách hàng"
 	}
 }

@@ -229,3 +229,56 @@ export const OPTIONS_CURRENCY = [
     value: "vnd",
   },
 ];
+
+export const SWIPER_SLIDER_DATA = [
+  {
+    url: `${getStaticURL()}/assets/images/welcome.svg`,
+    title: "sliderTitleFirst",
+    content: "sliderContentFirst",
+  },
+  {
+    url: `${getStaticURL()}/assets/images/fee.svg`,
+    title: "sliderTitleSecond",
+    content: "sliderContentSecond",
+  },
+  {
+    url: `${getStaticURL()}/assets/images/onekey.svg`,
+    title: "sliderTitleThird",
+    content: "sliderContentThird",
+  },
+  {
+    url: `${getStaticURL()}/assets/images/full.svg`,
+    title: "sliderTitleFourth",
+    content: "sliderTitleFourth",
+  },
+]
+export const LEARN_ARTICLE_DATA = [
+  {
+    url: "/assets/images/how_are_they_different.png",
+    title: "howAreTheyDifferentTitle",
+    content: "howAreTheyDifferentContent"
+  },
+  {
+    url: "/assets/images/which_one_is_right_for_you.png",
+    title: "whichOneIsRightForYouTitle",
+    content: "whichOneIsRightForYouContent"
+  },
+  {
+    url: "/assets/images/coti_crypto.png",
+    title: "cotiCryptoTitle",
+    content: "cotiCryptoContent"
+  },
+  {
+    url: "/assets/images/what_is_PoW_in_blockchain.png",
+    title: "whatIsPoWInBlockchainTitle",
+    content: "whatIsPoWInBlockchainContent"
+  },
+];
+
+export const HELP_CENTER_DATA = [
+  {
+    url: "/assets/images/how_are_they_different.png",
+    title: "howToMakeADepositTitle",
+    content: "howToMakeADepositContent"
+  }
+];
