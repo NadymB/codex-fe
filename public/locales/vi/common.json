@@ -1,5 +1,17 @@
 {
 	"language": "Ngôn ngữ",
+	"onBoarding": {
+		"sliderTitleFirst": "Chào mừng đến với",
+		"sliderContentFirst": "Nơi giao dịch toàn diện đáng tin cậy cao, với tuyển chọn các sản phẩm giao dịch chất lượng cao.",
+		"sliderTitleSecond": "Mức phí cực thấp",
+		"sliderContentSecond": "Tất cả các giao dịch đều được hưởng mức phí siêu cao, thậm chí là 0 phí.",
+		"sliderTitleThird": "Giao dịch một khóa",
+		"sliderContentThird": "Các công cụ sáng tạo để tạo ra trải nghiệm giao dịch sản phẩm tài chính kỹ thuật số nhanh chóng.",
+		"sliderTitleFourth": "Toàn Bộ Sản Phẩm",
+		"sliderContentFourth": "Luôn có sản phẩm giao dịch phong phú phù hợp với bạn.",
+		"skipBtn": "Nhảy qua",
+		"startNowBtn": "BẠN CẦN SỬA NÓ THÀNH TIẾNG ANH"
+	},
 	"menuBar": {
 		"home": "Trang chủ",
 		"market": "Thị trường",

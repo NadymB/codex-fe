@@ -229,3 +229,26 @@ export const OPTIONS_CURRENCY = [
     value: "vnd",
   },
 ];
+
+export const SWIPER_SLIDER_DATA = [
+  {
+    url: `${getStaticURL()}/assets/images/welcome.svg`,
+    title: "sliderTitleFirst",
+    content: "sliderContentFirst",
+  },
+  {
+    url: `${getStaticURL()}/assets/images/fee.svg`,
+    title: "sliderTitleSecond",
+    content: "sliderContentSecond",
+  },
+  {
+    url: `${getStaticURL()}/assets/images/onekey.svg`,
+    title: "sliderTitleThird",
+    content: "sliderContentThird",
+  },
+  {
+    url: `${getStaticURL()}/assets/images/full.svg`,
+    title: "sliderTitleFourth",
+    content: "sliderTitleFourth",
+  },
+];

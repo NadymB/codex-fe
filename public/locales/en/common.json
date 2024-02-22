@@ -1,5 +1,17 @@
 {
   "language":"Language",
+  "onBoarding": {
+    "sliderTitleFirst": "Welcome to",
+		"sliderContentFirst": "A highly trusted comprehensive trading place, with a selection of high-quality trading products.",
+		"sliderTitleSecond": "Ultra-low fee rate",
+		"sliderContentSecond": "All transactions enjoy super fee rate, even 0 fee.",
+		"sliderTitleThird": "One Key Trading",
+		"sliderContentThird": "Innovative tools to create a fast digital financial product trading experience.",
+		"sliderTitleFourth": "Full Product",
+		"sliderContentFourth": "There is always a rich trading product suitable for you.",
+		"skipBtn": "Skip",
+		"startNowBtn": "Start Now"
+  },
   "menuBar": {
     "home": "Home",
     "market": "Market",
