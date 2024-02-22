@@ -17,7 +17,7 @@ import i18next from "i18next";
 export default function Home() {
   return (
     <DefaultLayout
-      isShowMenubar
+      isShowMenubar={false}
       pageTitle="Dashboard"
       containerStyle="bg-[#000000] dark:bg-[#000000]"
     >
