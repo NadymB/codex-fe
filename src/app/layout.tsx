@@ -2,21 +2,24 @@
 import { ToastContainer } from "react-toastify";
 
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import i18next from "i18next";
+import { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/index.css";
-import { useEffect } from "react";
-import i18next from "i18next";
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  if (typeof localStorage !== "undefined") {
-    const locale = localStorage.getItem("locale");
+  const [isRerender, setIsRerender] = useState(false);
+  if (typeof window !== 'undefined' && window.localStorage) {
+    const locale = window.localStorage.getItem("locale");
     if (locale && i18next.language && locale !== i18next.language) {
       i18next.changeLanguage(locale);
+      setIsRerender(!isRerender);
     }
   }
+
   return (
     <>
       <html lang="en">

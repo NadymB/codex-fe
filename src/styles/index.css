@@ -404,11 +404,12 @@ input:-webkit-autofill {
 }
 
 
-.scroll-text {
+.scroll-partner {
 	white-space: nowrap;
-	overflow: hidden;
-	animation: scrollText 200s linear infinite;
+	/* overflow: hidden; */
+	animation: scrollPartner 35s linear infinite;
 }
+
 
 .title-rotate {
 	opacity: 0;
@@ -511,7 +512,7 @@ input:-webkit-autofill {
 	}
 }
 
-@keyframes scrollText {
+@keyframes scrollPartner {
 	0% {
 		transform: translateX(0%);
 	}
@@ -557,8 +558,8 @@ input:-webkit-autofill {
 
 .map-img {
 	opacity: 0;
-	animation: 1s rotateText2 ease-in-out forwards ;
-	
+	animation: 1s rotateText2 ease-in-out forwards;
+
 }
 
 .line {
@@ -569,15 +570,19 @@ input:-webkit-autofill {
 	0% {
 		transform: translateX(-100%);
 	}
+
 	100% {
 		transform: translateX(0);
 	}
 }
 
 @keyframes opacityImg {
-	0%, 99% {
+
+	0%,
+	99% {
 		opacity: 0;
 	}
+
 	100% {
 		opacity: 1;
 	}
@@ -592,14 +597,17 @@ input:-webkit-autofill {
 	60% {
 		opacity: 0.5;
 	}
+
 	90% {
 		opacity: 0;
 	}
+
 	100% {
 		transform: rotate(360deg);
 		opacity: 0;
 	}
 }
+
 @keyframes rotateText2 {
 	0% {
 		transform: rotate(0deg);
@@ -609,9 +617,51 @@ input:-webkit-autofill {
 	70% {
 		opacity: 0.5;
 	}
+
 	100% {
 		transform: rotate(360deg);
 		opacity: 1;
 	}
 }
 
+.hero-animate .bitcoin {
+	position: absolute;
+	transform: translateY(0);
+	animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+
+}
+
+.hero-animate .waves {
+	animation: waves 3s ease-in-out infinite;
+}
+
+@keyframes waves {
+	0% {
+		transform: scale(.2);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: .9;
+	}
+
+	100% {
+		transform: scale(.9);
+		opacity: 0;
+	}
+
+}
