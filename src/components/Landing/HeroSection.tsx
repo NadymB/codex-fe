@@ -53,7 +53,7 @@ export const HeroSection = () => {
           </Link>
         </div>
       </div>
-      <div className="col-span-12 lg:col-span-5 text-right">
+      <div className="col-span-12 lg:col-span-5 text-right mt-[150px] lg:mt-0">
         <div className="relative inline-block ">
           <img
             className=""

@@ -717,3 +717,6 @@ input:-webkit-autofill {
 	background-color: #afafaf;
 }
 
+.feature-box-bg{
+	background: linear-gradient(118.28deg,#17181a -8.97%,#636675 141.84%);
+}
