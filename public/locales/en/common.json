@@ -122,5 +122,17 @@
     "currentLevelTitle": "Current level:",
     "currentLevelContent": "You are not yet a member",
     "contactBtn": "Contact customer service consultation"
+  },
+  "color": {
+    "title": "Colors of ups and downs",
+    "greenRise": "Green rise and red",
+    "redRise": "Red rise and green down"
+  },
+  "about": {
+    "title": "About Us",
+    "eUREX": "EUREX",
+    "version": "Version 1.39.2",
+    "checkForUpdates": "Check for updates",
+    "upgradedLatestVersion": "Has been upgraded to the latest version"
   }
 }

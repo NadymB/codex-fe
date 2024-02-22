@@ -122,5 +122,17 @@
 	  "currentLevelTitle": "Cấp độ hiện tại:",
 	  "currentLevelContent": "Bạn chưa phải là thành viên",
 	  "contactBtn": "Liên hệ với tư vấn dịch vụ khách hàng"
+	},
+	"color": {
+		"title": "Màu sắc của thăng trầm",
+		"greenRise": "Tăng màu xanh lá cây và màu đỏ",
+		"redRise": "Red Rise và Green Down"
+	},
+	"about": {
+		"title": "Về chúng tôi",
+		"eUREX": "EUREX",
+		"version": "Phiên bản 1.39.2",
+		"checkForUpdates": "Kiểm tra cập nhật",
+		"upgradedLatestVersion": "Has been upgraded to the latest version"
 	}
 }

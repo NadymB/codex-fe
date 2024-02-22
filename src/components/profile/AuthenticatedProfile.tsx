@@ -49,14 +49,14 @@ export const AuthenticatedProfile = () => {
           icon={<BankIcon />}
           filedName={i18next.t("profilePage.withdrawAccount")}
           rightIcon={<ArrowRightIcon />}
-          link="/withdraw-account"
+          link="setting/withdraw-account"
         />
         <ProfileItem
           icon={<VisaIcon />}
           filedName={i18next.t("profilePage.authentication")}
           value={"Not certified"}
           rightIcon={<ArrowRightIcon />}
-          link="/authentication"
+          link="setting/authentication"
         />
       </div>
     </div>

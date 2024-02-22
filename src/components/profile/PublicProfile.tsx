@@ -14,14 +14,14 @@ export const PublicProfile = () => {
         filedName={i18next.t("profilePage.language")}
         value={"English"}
         rightIcon={<ArrowRightIcon />}
-        link=""
+        link="/setting/locale"
       />
       <ProfileItem
         icon={<MultiArrowIcon />}
         filedName={i18next.t("profilePage.colorsOfUpsAndDowns")}
         value={"Green rise and red"}
         rightIcon={<ArrowRightIcon />}
-        link=""
+        link="/setting/color"
       />
       <ProfileItem
         icon={<DisplayCurrencyIcon />}
@@ -34,7 +34,7 @@ export const PublicProfile = () => {
         icon={<TooltipIcon />}
         filedName={i18next.t("profilePage.aboutUs")}
         rightIcon={<ArrowRightIcon />}
-        link=""
+        link="/setting/about"
       />
     </div>
   );

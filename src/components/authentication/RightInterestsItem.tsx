@@ -1,9 +1,9 @@
-interface IRightInterests {
+export interface IRightInterests {
     title: string;
     content: string;
 }
 
-export const RightInterests = ({title, content}: IRightInterests) => {
+export const RightInterestItem = ({title, content}: IRightInterests) => {
     return (
         <div className="flex justify-between">
             <span className="text-sm text-[#888]">{title}</span>

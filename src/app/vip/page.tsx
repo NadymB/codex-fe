@@ -27,7 +27,7 @@ const VipPage = () => {
                 </div>
                 <Link
                     href={"/coming-soon"}
-                    className="py-[6px] px-4 bg-[#3d5afe] rounded text-center text-white text-sm font-medium"
+                    className="py-[6px] px-4 bg-[#3d5afe] hover:bg-[#2a3db0] rounded text-center text-white text-sm font-medium"
                 >
                     {i18next.t("vip.contactBtn")}
                 </Link>
