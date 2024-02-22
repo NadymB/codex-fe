@@ -9,8 +9,8 @@ export const Logo = () => {
   return (
     <Link className="z-20" href={"/"}>
       <img
-        className="w-[180px] h-full "
-        src={`assets/images/logo.svg`}
+        className="w-[98px] h-full "
+        src={`assets/images/logo.png`}
         alt="green_software"
       />
     </Link>
