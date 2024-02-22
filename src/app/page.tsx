@@ -36,7 +36,7 @@ export default function Home() {
       >
         {SWIPER_SLIDER_DATA.map((item,index) => (
           <SwiperSlide key={index}>
-            <SwiperItem url={item.url} title={i18next.t(`onBoarding.sliderTitleFirst`)} content={i18next.t(`onBoarding.sliderContentFirst`)}/>
+            <SwiperItem url={item.url} title={i18next.t(`onBoarding.${item.title}`)} content={i18next.t(`onBoarding.${item.content}`)}/>
           </SwiperSlide>
         ))}
       </Swiper>
