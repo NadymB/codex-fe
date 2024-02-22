@@ -5,7 +5,7 @@ import React from "react";
 export const VideoSection = () => {
   return (
     <div className="grid grid-cols-12 mx-auto max-full lg:max-w-[1140px] 2xl:max-w-[1320px] px-6 hero-animate items-center ">
-      <div className="col-span-6 lg:mr-[50px]  ">
+      <div className="col-span-12 lg:col-span-6 mb-[30px] lg:mb-0 lg:mr-[50px]  ">
         <div className="relative z-[4] w-full ">
           <div className="absolute z-[3]  left-[32%] top-[38%] translate-x-[-50%] translate-y-[-50%]">
             <div className="absolute w-[150px] h-[150px] top-[-35px] left-[-35px] rounded-[100%] bg-[#ffdd0080] waves"></div>
@@ -39,7 +39,7 @@ export const VideoSection = () => {
           </div>
         </div>
       </div>
-      <div className="col-span-6 ">
+      <div className="col-span-12 lg:col-span-6 ">
         <div className="w-full">
           <h2 className="text-[#fff] text-[32px] mt-0 mb-2 leading-[1.2]">
             CME is the most trusted digital exchange platform
