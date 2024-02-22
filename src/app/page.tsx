@@ -17,9 +17,9 @@ import "../../i18n";
 
 export default function Home() {
   return (
-    <>
-      <div className="flex items-center justify-end px-6 h-16">
-        <Link className="text-sm text-black dark:text-white" href={"/home"}>
+    <div className="bg-black h-screen">
+      <div className="flex items-center justify-end px-6 h-16 ">
+        <Link className="text-sm text-white" href={"/home"}>
           {i18next.t("onBoarding.skipBtn")}
         </Link>
       </div>
@@ -49,6 +49,6 @@ export default function Home() {
           {i18next.t("onBoarding.startNowBtn")}
         </Link>
       </div>
-    </>
+    </div>
   );
 }
