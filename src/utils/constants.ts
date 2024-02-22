@@ -251,4 +251,34 @@ export const SWIPER_SLIDER_DATA = [
     title: "sliderTitleFourth",
     content: "sliderTitleFourth",
   },
+]
+export const LEARN_ARTICLE_DATA = [
+  {
+    url: "/assets/images/how_are_they_different.png",
+    title: "howAreTheyDifferentTitle",
+    content: "howAreTheyDifferentContent"
+  },
+  {
+    url: "/assets/images/which_one_is_right_for_you.png",
+    title: "whichOneIsRightForYouTitle",
+    content: "whichOneIsRightForYouContent"
+  },
+  {
+    url: "/assets/images/coti_crypto.png",
+    title: "cotiCryptoTitle",
+    content: "cotiCryptoContent"
+  },
+  {
+    url: "/assets/images/what_is_PoW_in_blockchain.png",
+    title: "whatIsPoWInBlockchainTitle",
+    content: "whatIsPoWInBlockchainContent"
+  },
+];
+
+export const HELP_CENTER_DATA = [
+  {
+    url: "/assets/images/how_are_they_different.png",
+    title: "howToMakeADepositTitle",
+    content: "howToMakeADepositContent"
+  }
 ];
