@@ -77,6 +77,28 @@
 	"announcementPage": {
 		"title": "Thông báo"
 	},
+	"withdrawAccount":{
+		"title":"Tài khoản rút tiền",
+		"noWithdrawalAccount": "Không có tài khoản rút tiền",
+		"withdrawAccountBtn": "Thêm tài khoản rút tiền"
+	},
+	"authentication": {
+		"title": "Authentication",
+		"lv1": "Lv.1",
+		"rightsAndInterests": "Quyền và lợi ích",
+		"fiatCurrencyDeposit": "Tái chế tiền tệ fiat",
+		"withdrawalAmount": "Số tiền rút",
+		"unlimited": "Vô hạn",
+		"other": "Khác",
+		"moreRewards": "Nhiều phần thưởng hơn",
+		"id": "NHẬN DẠNG",
+		"selfie": "Chụp ảnh tự sướng",
+		"certifyBtnLv1": "Chứng nhận ngay lập tức",
+		"lv2": "Lv.2",
+		"moreTradingProducts": "Nhiều sản phẩm giao dịch hơn",
+		"proofOfAddress": "Chứng minh địa chỉ",
+		"certifyBtnLv2": "Bạn cần hoàn thành chứng nhận LV.1 trước"
+	},
 	"learn": {
 		"title": "Learn",
 		"howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
@@ -100,5 +122,17 @@
 	  "currentLevelTitle": "Cấp độ hiện tại:",
 	  "currentLevelContent": "Bạn chưa phải là thành viên",
 	  "contactBtn": "Liên hệ với tư vấn dịch vụ khách hàng"
+	},
+	"color": {
+		"title": "Màu sắc của thăng trầm",
+		"greenRise": "Tăng màu xanh lá cây và màu đỏ",
+		"redRise": "Red Rise và Green Down"
+	},
+	"about": {
+		"title": "Về chúng tôi",
+		"eUREX": "EUREX",
+		"version": "Phiên bản 1.39.2",
+		"checkForUpdates": "Kiểm tra cập nhật",
+		"upgradedLatestVersion": "Has been upgraded to the latest version"
 	}
 }

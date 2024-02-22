@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FC, ReactNode } from "react";
 
 interface Props {
@@ -5,6 +6,7 @@ interface Props {
   filedName: string;
   value?: string;
   rightIcon?: ReactNode;
+  link: string;
 }
 
 export const ProfileItem: FC<Props> = ({
@@ -12,9 +14,13 @@ export const ProfileItem: FC<Props> = ({
   filedName,
   value,
   rightIcon,
+  link,
 }) => {
   return (
-    <div className="flex justify-between items-center text-white p-4">
+    <Link 
+      href={link}
+      className="flex justify-between items-center text-white p-4"
+    >
       <div className="flex items-center gap-2">
         {icon}
         <span className="text-[13px]">{filedName}</span>
@@ -23,6 +29,6 @@ export const ProfileItem: FC<Props> = ({
         {value && <div className="text-[12px] text-gray-400">{value}</div>}
         {rightIcon}
       </div>
-    </div>
+    </Link>
   );
 };

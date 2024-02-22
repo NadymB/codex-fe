@@ -682,13 +682,16 @@ input:-webkit-autofill {
 
 .swiper {
 	width: 100%;
-	height: 60% !important;
+	height: 70% !important;
+}
+
+.swiper-wrapper {
+	padding-top: 70px;
 }
 
 .swiper-slide {
 	text-align: center;
 	font-size: 18px;
-	background: #fff;
 
 	/* Center slide text vertically */
 	display: flex;

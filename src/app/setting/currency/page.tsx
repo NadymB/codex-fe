@@ -6,6 +6,7 @@ import { CheckIcon } from "@/assets/icons/CheckIcon";
 import { DEFAULT_CURRENCY, OPTIONS_CURRENCY } from "@/utils/constants";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import "../../../../i18n";
 
 const CurrencySetting = () => {
   const [currency, setCurrency] = useState<OptionProps>(DEFAULT_CURRENCY);

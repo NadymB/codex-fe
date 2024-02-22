@@ -77,6 +77,28 @@
   "announcementPage":{
     "title":"Announce"
   },
+  "withdrawAccount":{
+    "title":"Withdraw Account",
+    "noWithdrawalAccount": "No withdrawal account set",
+    "withdrawAccountBtn": "Add withdrawal account"
+  },
+  "authentication": {
+    "title": "Authentication",
+    "lv1": "Lv.1",
+    "rightsAndInterests": "Rights and interests",
+    "fiatCurrencyDeposit": "Fiat currency deposit",
+    "withdrawalAmount": "Withdrawal Amount",
+    "unlimited": "Unlimited",
+    "other": "Other",
+    "moreRewards": "More rewards",
+    "id": "ID",
+    "selfie": "Selfie",
+    "certifyBtnLv1": "Immediately certify",
+    "lv2": "Lv.2",
+    "moreTradingProducts": "More trading products",
+    "proofOfAddress": "Proof of address",
+    "certifyBtnLv2": "You need to complete the LV.1 certification first"
+  },
   "learn": {
     "title": "Learn",
     "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
@@ -100,5 +122,17 @@
     "currentLevelTitle": "Current level:",
     "currentLevelContent": "You are not yet a member",
     "contactBtn": "Contact customer service consultation"
+  },
+  "color": {
+    "title": "Colors of ups and downs",
+    "greenRise": "Green rise and red",
+    "redRise": "Red rise and green down"
+  },
+  "about": {
+    "title": "About Us",
+    "eUREX": "EUREX",
+    "version": "Version 1.39.2",
+    "checkForUpdates": "Check for updates",
+    "upgradedLatestVersion": "Has been upgraded to the latest version"
   }
 }

@@ -282,3 +282,100 @@ export const HELP_CENTER_DATA = [
     content: "howToMakeADepositContent"
   }
 ];
+
+export const AUTHENTICATION_DATA = [
+  {
+    level: "lv1",
+    rightInterests: [
+      {
+        title: "fiatCurrencyDeposit",
+        content: "unlimited"
+      },
+      {
+        title: "withdrawalAmount",
+        content: "unlimited"
+      },
+      {
+        title: "other",
+        content: "moreRewards"
+      }
+    ],
+    method: [
+      {
+        title: "id",
+        path: [
+          {
+            d: "M9.715 12c1.151 0 2-.849 2-2s-.849-2-2-2-2 .849-2 2 .848 2 2 2z",
+            fill: "#fff"
+          },
+          {
+            d: "M20 4H4c-1.103 0-2 .841-2 1.875v12.25C2 19.159 2.897 20 4 20h16c1.103 0 2-.841 2-1.875V5.875C22 4.841 21.103 4 20 4zm0 14-16-.011V6l16 .011V18z",
+            fill: "#fff"
+          },
+          {
+            d: "M14 9h4v2h-4zm1 4h3v2h-3zm-1.57 2.536c0-1.374-1.676-2.786-3.715-2.786S6 14.162 6 15.536V16h7.43v-.464z",
+            fill: "#3d5afe"
+          }
+        ],
+        width: 20,
+        height: 20,
+        viewBox: '0 0 24 24',
+      },
+      {
+        title: "selfie",
+        path: [
+          {
+            d: "M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z",
+            fill: "#fff"
+          },
+          {
+            d: "M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
+            fill: "#3d5afe"
+          },
+        ],
+        width: 20,
+        height: 20,
+        viewBox: '0 0 16 16',
+      }
+    ],
+    textBtn: "certifyBtnLv1",
+    link: "/coming-soon",
+  },
+  {
+    level: "lv2",
+    rightInterests: [
+      {
+        title: "fiatCurrencyDeposit",
+        content: "unlimited"
+      },
+      {
+        title: "withdrawalAmount",
+        content: "unlimited"
+      },
+      {
+        title: "other",
+        content: "moreTradingProducts"
+      }
+    ],
+    method: [
+      {
+        title: "proofOfAddress",
+        path: [
+          {
+            d: "M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z",
+            fill: "#3d5afe"
+          },
+          {
+            d: "M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8l3-4z",
+            fill: "#fff"
+          }
+        ],
+        width: 20,
+        height: 20,
+        viewBox: '0 0 16 16',
+      }
+    ],
+    textBtn: "certifyBtnLv2",
+    link: "/coming-soon",
+  },
+];
