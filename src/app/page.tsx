@@ -18,8 +18,8 @@ import "../../i18n";
 export default function Home() {
   return (
     <>
-      <div className="flex items-center justify-end px-6 h-16">
-        <Link className="text-sm text-black dark:text-white" href={"/home"}>
+      <div className="flex items-center justify-end px-6 h-16 bg-black">
+        <Link className="text-sm text-white" href={"/home"}>
           {i18next.t("onBoarding.skipBtn")}
         </Link>
       </div>
@@ -29,7 +29,7 @@ export default function Home() {
           clickable: true,
         }}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mySwiper bg-black"
       >
         {SWIPER_SLIDER_DATA.map((item, index) => (
           <SwiperSlide key={index}>
@@ -41,7 +41,7 @@ export default function Home() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex-1 flex px-4">
+      <div className="flex-1 flex px-4 bg-black">
         <Link
           href={"/home"}
           className="h-fit self-end mb-[70px] flex-1 py-[6px] px-4 bg-[#3d5afe] hover:bg-[#2a3eb1] text-sm text-white text-center rounded"

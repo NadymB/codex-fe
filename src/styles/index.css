@@ -713,3 +713,7 @@ input:-webkit-autofill {
 	border-radius: 4px;
 }
 
+.swiper-pagination .swiper-pagination-bullet, .swiper-pagination .swiper-pagination-bullet-active {
+	background-color: #afafaf;
+}
+
