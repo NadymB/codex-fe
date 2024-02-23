@@ -1,6 +1,6 @@
 "use client";
 import { BackIcon } from "@/assets/icons/BackIcon";
-import LoginWithEmail from "@/components/Login/LoginWithEmail";
+import LoginWithEmail from "@/components/login/LoginWithEmail";
 import Tabs from "@/components/Tabs";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
