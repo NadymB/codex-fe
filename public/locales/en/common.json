@@ -140,5 +140,26 @@
     "chooseYourDepositMethod": "Choose your deposit method",
     "artificialDeposit": "Artificial deposit",
     "contactArtificial": "Contact artificial customer service to get deposit guidelines"
+  },
+  "withdraw": {
+    "title": "Withdraw",
+    "account": "Account",
+    "amount": "Amount",
+    "currentBalance": "Current balance:",
+    "allBalance": "All balance",
+    "managementOfWithdrawal": "Management of withdrawal",
+    "fees": "Fees",
+    "amountReceived": "Amount Received",
+    "confirm": "Confirm",
+    "msgAccountError": "Please fill in the receiving account",
+		"msgAmountError": "The minimum amount is 1"
+  },
+  "order": {
+    "title": "Order",
+    "noData": "No data"
+  },
+  "bill": {
+    "title": "Bill",
+    "noData": "No data"
   }
 }
