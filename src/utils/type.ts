@@ -1,5 +1,5 @@
 export type ChangeEventHandler = (
-  event: React.ChangeEvent<HTMLInputElement>,
+  event: React.ChangeEvent<HTMLInputElement>
 ) => void;
 
 export interface TokenCardProp {
@@ -13,4 +13,12 @@ export type DataSectionProps = {
   isCopyable?: boolean;
   short?: boolean;
   keyIcon?: JSX.Element;
+};
+
+export type ChartData = {
+  intervalStart: string | number | Date;
+  openingValue: any;
+  highestValue: any;
+  lowestValue: any;
+  closingValue: any;
 };
