@@ -1,11 +1,13 @@
+import { Button } from '@mui/material';
 import React, { useState, useRef, useEffect } from 'react';
 interface IProp{
     tabs:{
         name:string,
         content:any
     }[]
+    className?:string
 }
-const Tabs = ({ tabs }:IProp) => {
+const Tabs = ({ tabs,className }:IProp) => {
   const [activeTab, setActiveTab] = useState(0);
   const [tabPosition, setTabPosition] = useState({ left: 0, width: 0 });
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -26,14 +28,14 @@ const Tabs = ({ tabs }:IProp) => {
     <div>
       <div className="flex relative">
         {tabs.map((tab:any, index) => (
-          <button
+          <Button
             key={index}
             ref={(element) => tabRefs.current[index] = element}
-            className={`tab-button ${activeTab === index ? "text-[#3D5AFE]":"text-[#fff]"} font-medium px-4 py-3`}
+            className={`${className} tab-button ${activeTab === index ? "text-[#3D5AFE]":"text-[#fff]"} font-medium px-4 py-3 rounded-[0px]`}
             onClick={() => changeTab(index)}
           >
             {tab.name}
-          </button>
+          </Button>
         ))}
         <div
           className="absolute bottom-0 left-0 h-[2px] bg-[#3D5AFE] transition-transform duration-300"

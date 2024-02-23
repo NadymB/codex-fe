@@ -19,10 +19,6 @@ const LoginPage = () => {
       setTabPosition({ left: offsetLeft, width: offsetWidth });
     }
   }, [activeTab]);
-
-  const changeTab = (tabNumber: number) => {
-    setActiveTab(tabNumber);
-  };
   const tabs = [
     {
       name: "Email",
@@ -37,6 +33,11 @@ const LoginPage = () => {
       content: <></>,
     },
   ];
+  const [value, setValue] = useState("1");
+
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
 
   return (
     <div className="min-h-screen overflow-auto bg-[#000000]">
