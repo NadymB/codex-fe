@@ -134,5 +134,11 @@
 		"version": "Phiên bản 1.39.2",
 		"checkForUpdates": "Kiểm tra cập nhật",
 		"upgradedLatestVersion": "Has been upgraded to the latest version"
+	},
+	"deposit": {
+		"title": "Nạp Tiền",
+		"chooseYourDepositMethod": "Chọn phương pháp nạp tiền của bạn",
+		"artificialDeposit": "Tái chế nhân tạo",
+		"contactArtificial": "Liên hệ với Dịch vụ khách hàng nhân tạo để nhận hướng dẫn nạp tiền"
 	}
 }
