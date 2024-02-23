@@ -26,6 +26,8 @@
     "clsx": "^2.0.0",
     "dayjs": "^1.11.10",
     "formik": "^2.4.5",
+    "highcharts": "^11.3.0",
+    "highcharts-react-official": "^3.2.1",
     "i18next": "^23.7.7",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.293.0",
