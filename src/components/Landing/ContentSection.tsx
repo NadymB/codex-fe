@@ -18,7 +18,7 @@ export const ContentSection = () => {
               digital wallets provide a good mix of security tools and
               user-facing features at a reasonable cost.
             </div>
-            <ul className="flex flex-col">
+            <ul className="flex flex-col mt-[35px]">
               <li className="flex gap-3 mb-[15px] pl-8">
                 <div>
                   <MediaCheckIcon />

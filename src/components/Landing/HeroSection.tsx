@@ -30,7 +30,7 @@ export const HeroSection = () => {
           Get started with one of the easiest and most secure platforms for
           buying, selling, trading, and earning digital exchange in one place.
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mt-[35px] lg:mt-[55px]">
           <Link
             href={"/coming-soon"}
             className="flex-1 flex items-center justify-center"
