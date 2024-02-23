@@ -24,14 +24,14 @@ export const VideoSection = () => {
             src={`${getStaticURL()}/assets/images/video-thumb.webp`}
             alt=""
           />
-          <div className="absolute z-[1] w-[84%] h-[100%] bottom-[-46px] left-[-26%] ">
+          <div className=" hidden lg:block absolute z-[1] w-[84%] h-[100%] bottom-[-46px] left-[-26%] ">
             <img
               className="w-full rounded-[3px]"
               src={`${getStaticURL()}/assets/images/shape-video.webp`}
               alt=""
             />
           </div>
-          <div className="absolute z-[1] w-[71%] h-[130%] top-[-95px] right-[-80px] ">
+          <div className="hidden lg:block absolute z-[1] w-[71%] h-[130%] top-[-95px] right-[-80px] ">
             <img
               className="w-full h-full rounded-[3px]"
               src={`${getStaticURL()}/assets/images/shape-video.webp`}

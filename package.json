@@ -13,6 +13,12 @@
   },
   "dependencies": {
     "@bedrock-layout/use-media-query": "^1.1.6",
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/lab": "^5.0.0-alpha.165",
+    "@mui/material": "^5.15.10",
+    "@mui/material-nextjs": "^5.15.11",
     "@tanstack/react-table": "^8.10.7",
     "@types/react-lazyload": "^3.2.3",
     "axios": "^1.6.2",

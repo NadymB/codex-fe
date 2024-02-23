@@ -7,8 +7,8 @@ import React from "react";
 export const ContentSection = () => {
   return (
     <div className="mx-auto max-full lg:max-w-[1140px] 2xl:max-w-[1320px] px-6 hero-animate">
-      <div className="grid grid-cols-12 mb-[80px] lg:mb-[120px]  items-center ">
-        <div className="col-span-12 lg:col-span-6 mb-[30px] lg:mb-0 lg:mr-[50px]  ">
+      <div className="grid grid-cols-12 pb-[80px] lg:pb-[120px]  items-center ">
+        <div className="col-span-12 lg:col-span-6 lg:mr-[50px] order-[2] lg:order-[1]  ">
           <div className="w-full">
             <h2 className="text-[#fff] text-[32px] mt-0 mb-2 leading-[1.2] font-medium">
               In the digital world, we are secure & trustworthy
@@ -46,7 +46,7 @@ export const ContentSection = () => {
             </ul>
           </div>
         </div>
-        <div className="relative text-right  col-span-12 lg:col-span-6 ">
+        <div className="relative text-right  col-span-12 lg:col-span-6  order-[1] lg:order-[2] mb-[50px] lg:mb-0 ">
           <div className="relative z-[4] inline-block ">
             <div className="absolute z-[3] top-[-23%] right-[0%] ">
               <img
@@ -65,7 +65,7 @@ export const ContentSection = () => {
               <div className="absolute z-[1] w-[150px] h-[150px] top-[-35px] left-[-35px] rounded-[100%] bg-[#2c04fe26] waves"></div>
             </div>
             <img
-              className=" relative z-[4]"
+              className=" relative z-[4] max-w-full"
               src={`${getStaticURL()}/assets/images/content-thumb.webp`}
               alt=""
             />
@@ -77,18 +77,18 @@ export const ContentSection = () => {
         <div className="col-span-12 lg:col-span-6 text-left mb-[30px] lg:mb-0 lg:mr-[50px]  ">
           <div className="relative  z-[2] inline-block ">
             <img
-              className="relative z-[2] "
+              className="relative z-[2] max-w-full "
               src={`${getStaticURL()}/assets/images/content-thumb2.webp`}
               alt=""
             />
-            <div className="absolute z-[2] bottom-[10px] right-[-90px]  bitcoin">
+            <div className="absolute z-[2] bottom-[10px] right-0 lg:right-[-90px]  bitcoin">
               <img
                 className=""
                 src={`${getStaticURL()}/assets/images/bitcoin4.webp `}
                 alt=""
               />
             </div>
-            <div className="absolute z-[1] w-[161%] h-[90%] top-[0%] left-[-35%] ">
+            <div className=" hidden lg:block absolute z-[1] w-[161%] h-[90%] top-[0%] left-[-35%] ">
               <img
                 className="w-full h-full rounded-[3px]"
                 src={`${getStaticURL()}/assets/images/shape-video.webp`}

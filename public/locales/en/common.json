@@ -15,7 +15,7 @@
   "menuBar": {
     "home": "Home",
     "market": "Market",
-    "transaction": "Transaction",
+    "transaction": "Trade",
     "asset": "Asset"
   },
   "homePage": {
