@@ -1,5 +1,8 @@
 "use client";
 
+import { tradeService } from "@/services/TradeService";
+import { PRICE_TYPE } from "@/utils/constants";
+import { ChartData } from "@/utils/type";
 import {
   KLineData,
   LineType,
@@ -7,12 +10,37 @@ import {
   dispose,
   init,
 } from "klinecharts";
-import { FC, useEffect } from "react";
+import { useEffect } from "react";
 
-interface Props {
-  data: Array<KLineData>;
-}
-export const CandleStickChart: FC<Props> = ({ data }) => {
+export const TradingChart = () => {
+  const applyDataToChart = async (chart: {
+    applyNewData: (arg0: KLineData[]) => void;
+  }) => {
+    const response = await tradeService.getChartData(PRICE_TYPE.CRYPTO);
+    if (response.success) {
+      const formattedData: KLineData[] = response.data
+        .map((data: ChartData) => {
+          const dateObject = new Date(data.intervalStart);
+          const unixTimestamp = dateObject.getTime();
+          return {
+            close: data.closingValue,
+            high: data.highestValue,
+            low: data.lowestValue,
+            open: data.openingValue,
+            timestamp: unixTimestamp,
+            volume: data.totalValue,
+          };
+        })
+        .sort(
+          (a: { timestamp: number }, b: { timestamp: number }) =>
+            a.timestamp - b.timestamp
+        );
+
+      // add data to the chart
+      chart?.applyNewData(formattedData);
+    }
+  };
+
   useEffect(() => {
     // initialize the chart
     const chart = init("chart");
@@ -35,46 +63,6 @@ export const CandleStickChart: FC<Props> = ({ data }) => {
           color: "#EDEDED",
           style: "solid" as LineType,
         },
-      },
-      indicator: {
-        lines: [
-          {
-            // 'solid' | 'dashed'
-            style: "solid" as LineType,
-            smooth: false,
-            size: 1,
-            dashedValue: [2, 2],
-            color: "#FF9600",
-          },
-          {
-            style: "solid" as LineType,
-            smooth: false,
-            size: 1,
-            dashedValue: [2, 2],
-            color: "#935EBD",
-          },
-          {
-            style: "solid" as LineType,
-            smooth: false,
-            size: 1,
-            dashedValue: [2, 2],
-            color: "#2196F3",
-          },
-          {
-            style: "solid" as LineType,
-            smooth: false,
-            size: 1,
-            dashedValue: [2, 2],
-            color: "#E11D74",
-          },
-          {
-            style: "solid" as LineType,
-            smooth: false,
-            size: 1,
-            dashedValue: [2, 2],
-            color: "#01C5C4",
-          },
-        ],
       },
       crosshair: {
         show: true,
@@ -101,14 +89,17 @@ export const CandleStickChart: FC<Props> = ({ data }) => {
       },
     });
 
-    // add data to the chart
-    chart?.applyNewData(data);
+    applyDataToChart(chart as any);
+    const interval = setInterval(() => {
+      applyDataToChart(chart as any);
+    }, 10000);
 
     return () => {
       // destroy chart
       dispose("chart");
+      clearInterval(interval);
     };
-  }, [data]);
+  }, []);
 
   return <div id="chart" style={{ width: "100%", height: "100vh" }} />;
 };
