@@ -1,6 +1,12 @@
 "use client";
 
-import { KLineData, LineType, dispose, init } from "klinecharts";
+import {
+  KLineData,
+  LineType,
+  TooltipShowType,
+  dispose,
+  init,
+} from "klinecharts";
 import { FC, useEffect } from "react";
 
 interface Props {
@@ -11,9 +17,10 @@ export const CandleStickChart: FC<Props> = ({ data }) => {
     // initialize the chart
     const chart = init("chart");
 
-    chart?.createIndicator("VOL");
+    chart?.createIndicator("MA");
 
     chart?.setStyles({
+      candle: { tooltip: { showType: "rect" as TooltipShowType } },
       grid: {
         show: true,
         horizontal: {
