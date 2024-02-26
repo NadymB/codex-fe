@@ -16,6 +16,7 @@ export type DataSectionProps = {
 };
 
 export type ChartData = {
+  totalValue: any;
   intervalStart: string | number | Date;
   openingValue: any;
   highestValue: any;

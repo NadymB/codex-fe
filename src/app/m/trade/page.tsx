@@ -5,28 +5,32 @@ import { CandleStickChart } from "@/components/trade/CandleStickChart";
 import { tradeService } from "@/services/TradeService";
 import { PRICE_TYPE } from "@/utils/constants";
 import { ChartData } from "@/utils/type";
+import { KLineData } from "klinecharts";
 import { useEffect, useState } from "react";
 
 const TradePage = () => {
-  const [chartData, setChartData] = useState<Array<ChartData>>([]);
+  const [chartData, setChartData] = useState<Array<KLineData>>([]);
   const getChartData = async () => {
     const response = await tradeService.getChartData(PRICE_TYPE.CRYPTO);
 
     if (response.success) {
-      const formattedData: ChartData[] = response.data
+      const formattedData: any = response.data
         .map((data: ChartData) => {
           const dateObject = new Date(data.intervalStart);
           const unixTimestamp = dateObject.getTime();
-
-          return [
-            unixTimestamp,
-            data.openingValue,
-            data.highestValue,
-            data.lowestValue,
-            data.closingValue,
-          ];
+          return {
+            close: data.closingValue,
+            high: data.highestValue,
+            low: data.lowestValue,
+            open: data.openingValue,
+            timestamp: unixTimestamp,
+            volume: data.totalValue,
+          };
         })
-        .sort((a: number[], b: number[]) => a[0] - b[0]);
+        .sort(
+          (a: { timestamp: number }, b: { timestamp: number }) =>
+            a.timestamp - b.timestamp
+        );
 
       setChartData(formattedData);
     }
@@ -47,7 +51,6 @@ const TradePage = () => {
       pageTitle="Dashboard"
       containerStyle="bg-[#13111a] dark:bg-[#13111a]"
     >
-      <div className="text-white">heheh</div>
       {chartData && <CandleStickChart data={chartData} />}
     </DefaultLayout>
   );
