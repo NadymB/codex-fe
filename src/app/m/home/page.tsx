@@ -31,7 +31,7 @@ export default function Home() {
         </div>
         <div className="flex gap-4 p-4">
           <Link
-            href={"/coming-soon"}
+            href={"/m/deposit"}
             className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#202125] hover:bg-[#121212] duration-200 ease-in-out"
           >
             <div className="flex items-center gap-3">
