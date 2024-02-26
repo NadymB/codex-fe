@@ -10,7 +10,7 @@ const HelpCenterPage = () => {
   return (
     <div className="bg-black min-h-screen">
         <GoBack title={i18next.t("helpCenter.title")} />
-        <div className="flex flex-col gap-4 p-2">
+        <div className="flex flex-col gap-4 p-2 bg-black">
             {HELP_CENTER_DATA.map((item, index) => (
                 <LearnArticle 
                     key={index}

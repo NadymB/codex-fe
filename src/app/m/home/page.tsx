@@ -7,7 +7,7 @@ import { getStaticURL } from "@/utils/constants";
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { DepositIcon } from "@/assets/icons/DepositIcon";
 import { TelesaleIcon } from "@/assets/icons/TelesaleIcon";
-import FeatureSection from "@/components/Home/FeatureSection";
+import FeatureSection from "@/components/home/FeatureSection";
 import { LoudspeakerIcon } from "@/assets/icons/LoudspeakerIcon";
 import { MenuIcon } from "@/assets/icons/MenuIcon";
 import Link from "next/link";
@@ -31,7 +31,7 @@ export default function Home() {
         </div>
         <div className="flex gap-4 p-4">
           <Link
-            href={"/coming-soon"}
+            href={"/m/deposit"}
             className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#202125] hover:bg-[#121212] duration-200 ease-in-out"
           >
             <div className="flex items-center gap-3">

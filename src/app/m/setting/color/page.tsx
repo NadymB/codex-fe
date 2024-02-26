@@ -5,6 +5,7 @@ import { GoBack } from "@/components/layouts/GoBack";
 import i18next from "i18next";
 import { useState } from "react";
 import "../../../../../i18n";
+import { RedRiseIcon } from "@/assets/icons/RedRiseIcon";
 
 const ColorPage = () => {
     const [isGreenRise, setIsGreenRise] = useState(true);
@@ -15,7 +16,7 @@ const ColorPage = () => {
       <div className="py-1">
         <div
           onClick={() => setIsGreenRise(true)}
-          className="flex items-center gap-6 px-4 py-1 cursor-pointer"
+          className="flex items-center gap-6 px-4 py-2 cursor-pointer"
         >
           <GreenRiseIcon />
           <span className="flex-1 text-base">{i18next.t("color.greenRise")}</span>
@@ -23,9 +24,9 @@ const ColorPage = () => {
         </div>
         <div
           onClick={() => setIsGreenRise(false)}
-          className="flex items-center gap-6 px-4 py-1 cursor-pointer"
+          className="flex items-center gap-6 px-4 py-2 cursor-pointer"
         >
-          <GreenRiseIcon />
+          <RedRiseIcon />
           <span className="flex-1 text-base">{i18next.t("color.redRise")}</span>
           {!isGreenRise && <CheckIcon />}
         </div>
