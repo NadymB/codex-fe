@@ -134,5 +134,19 @@
     "version": "Version 1.39.2",
     "checkForUpdates": "Check for updates",
     "upgradedLatestVersion": "Has been upgraded to the latest version"
+  },
+  "password": {
+    "title": "Login password",
+		"oldPassword": "Old Password",
+		"newPassword": "New Password",
+		"oldPasswordInvalidError": "Please enter the old password",
+		"newPasswordInvalidError": "6-20 individual characters",
+		"confirmBtn": "Confirm"
+  },
+  "securityCode": {
+    "title": "Set a security password",
+		"newPassword": "New Password",
+		"newPasswordInvalidError": "6-20 individual characters",
+		"confirmBtn": "Confirm"
   }
 }

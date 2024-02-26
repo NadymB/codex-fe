@@ -134,5 +134,19 @@
 		"version": "Phiên bản 1.39.2",
 		"checkForUpdates": "Kiểm tra cập nhật",
 		"upgradedLatestVersion": "Has been upgraded to the latest version"
+	},
+	"password": {
+		"title": "Mật khẩu đăng nhập",
+		"oldPassword": "Mật khẩu cũ",
+		"newPassword": "Mật khẩu mới",
+		"oldPasswordInvalidError": "Vui lòng nhập mật khẩu cũ",
+		"newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
+		"confirmBtn": "Xác nhận"
+	},
+	"securityCode": {
+		"title": "Đặt mật khẩu bảo mật",
+		"newPassword": "Mật khẩu mới",
+		"newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
+		"confirmBtn": "Xác nhận"
 	}
 }
