@@ -10,7 +10,7 @@ export class PriceFeedService {
   }
 
   public getCommonPriceFeed = async () => {
-    const { data } = await this.restConnector.get("/price-histories/common");
+    const { data } = await this.restConnector.get("/price-feed/common");
 
     return data;
   };
