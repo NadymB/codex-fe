@@ -10,8 +10,8 @@ export const Logo = () => {
     <Link className="z-20" href={"/"}>
       <img
         className="w-[98px] h-full "
-        src={`assets/images/logo.png`}
-        alt="green_software"
+        src={`${getStaticURL()}/assets/images/logo.png`}
+        alt="codex"
       />
     </Link>
   );

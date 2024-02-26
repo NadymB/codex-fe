@@ -134,5 +134,17 @@
     "version": "Version 1.39.2",
     "checkForUpdates": "Check for updates",
     "upgradedLatestVersion": "Has been upgraded to the latest version"
-  }
+  },
+  "authenticationPage":{
+		"loginTitle":"Login please!",
+		"signupTitle":"Đăng ký ngay lập tức",
+		"login":"Login",
+		"register":"Register",
+		"email":"E-mail",
+		"username":"User name",
+		"phoneNumber":"Phone number",
+		"setPassword":"Set password",
+		"loginPassword":"Login password",
+		"invitationCode":"Invitation Code"
+	}
 }

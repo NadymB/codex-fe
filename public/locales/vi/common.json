@@ -134,5 +134,17 @@
 		"version": "Phiên bản 1.39.2",
 		"checkForUpdates": "Kiểm tra cập nhật",
 		"upgradedLatestVersion": "Has been upgraded to the latest version"
+	},
+	"authenticationPage":{
+		"loginTitle":"Vui lòng đăng nhập!",
+		"signupTitle":"Đăng ký ngay lập tức",
+		"login":"Đăng nhập",
+		"register":"Đăng ký",
+		"email":"E-mail",
+		"username":"Tên tài khoản",
+		"phoneNumber":"Số điện thoại",
+		"setPassword":"Đặt mật khẩu",
+		"loginPassword":"Mật khẩu đăng nhập",
+		"invitationCode":"Invitation Code"
 	}
 }

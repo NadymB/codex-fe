@@ -31,19 +31,16 @@ const CssTextField = styled(TextField)({
     },
   },
 });
-const LoginWithEmail = () => {
+const LoginWithUserName= () => {
   const router = useRouter();
   const validationSchema = Yup.object({
-    email: Yup.string()
-      .email("Email is invalid")
-      .matches(/@[^.]*\./, "Email is invalid")
-      .required("Email is invalid")
-      .max(255, "Email too long"),
+    userName: Yup.string()
+      .required("User name is invalid"),
     password: Yup.string().required("Password is invalid"),
   });
   const formik = useFormik({
     initialValues: {
-      email: "",
+      userName: "",
       password: "",
     },
     validationSchema: validationSchema,
@@ -58,18 +55,18 @@ const LoginWithEmail = () => {
     >
       <div className="bg-[#1D1C22]">
         <CssTextField
-          error={formik.touched.email && formik.errors.email ? true : false}
+          error={formik.touched.userName && formik.errors.userName ? true : false}
           className=" bg-transparent w-full text-[16px]"
-          label="E-mail"
-          name="email"
+          label="user name"
+          name="userName"
           autoComplete="new-email"
-          value={formik.values.email}
+          value={formik.values.userName}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
-        {formik.touched.email && formik.errors.email ? (
+        {formik.touched.userName && formik.errors.userName ? (
           <div className="text-[#FF4444] text-[14px] px-4 py-1">
-            {formik.errors.email}
+            {formik.errors.userName}
           </div>
         ) : null}
       </div>
@@ -104,4 +101,4 @@ const LoginWithEmail = () => {
   );
 };
 
-export default LoginWithEmail;
+export default LoginWithUserName

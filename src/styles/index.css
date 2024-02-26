@@ -678,6 +678,7 @@ input:-webkit-autofill {
 	}
 
 }
+
 /* Swiper */
 
 .swiper {
@@ -713,10 +714,13 @@ input:-webkit-autofill {
 	border-radius: 4px;
 }
 
-.swiper-pagination .swiper-pagination-bullet, .swiper-pagination .swiper-pagination-bullet-active {
+.swiper-pagination .swiper-pagination-bullet,
+.swiper-pagination .swiper-pagination-bullet-active {
 	background-color: #afafaf;
 }
 
-.feature-box-bg{
-	background: linear-gradient(118.28deg,#17181a -8.97%,#636675 141.84%);
+.feature-box-bg {
+	background: linear-gradient(118.28deg, #17181a -8.97%, #636675 141.84%);
 }
+
+/*  */

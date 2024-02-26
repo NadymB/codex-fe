@@ -1,11 +1,9 @@
 "use client";
-import { BackIcon } from "@/assets/icons/BackIcon";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
-import * as Yup from "yup";
-import { useFormik } from "formik";
 import { Button, TextField, styled } from "@mui/material";
+import { useFormik } from "formik";
+import { useRouter } from "next/navigation";
+import React from "react";
+import * as Yup from "yup";
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
     color: "#3D5AFE",
@@ -31,7 +29,7 @@ const CssTextField = styled(TextField)({
     },
   },
 });
-const LoginWithEmail = () => {
+const SignupWithEmail = () => {
   const router = useRouter();
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -39,12 +37,15 @@ const LoginWithEmail = () => {
       .matches(/@[^.]*\./, "Email is invalid")
       .required("Email is invalid")
       .max(255, "Email too long"),
+    userName: Yup.string().required("User name is invalid"),
     password: Yup.string().required("Password is invalid"),
   });
   const formik = useFormik({
     initialValues: {
       email: "",
+      userName: "",
       password: "",
+      inviteCode:""
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {},
@@ -56,6 +57,25 @@ const LoginWithEmail = () => {
       className="flex flex-col gap-2"
       autoComplete="off"
     >
+      <div className="bg-[#1D1C22]">
+        <CssTextField
+          error={
+            formik.touched.userName && formik.errors.userName ? true : false
+          }
+          className=" bg-transparent w-full text-[16px]"
+          label="user name"
+          name="userName"
+          autoComplete="new-email"
+          value={formik.values.userName}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        />
+        {formik.touched.userName && formik.errors.userName ? (
+          <div className="text-[#FF4444] text-[14px] px-4 py-1">
+            {formik.errors.userName}
+          </div>
+        ) : null}
+      </div>
       <div className="bg-[#1D1C22]">
         <CssTextField
           error={formik.touched.email && formik.errors.email ? true : false}
@@ -93,15 +113,27 @@ const LoginWithEmail = () => {
           </div>
         ) : null}
       </div>
+      <div className="bg-[#1D1C22]">
+        <CssTextField
+          className=" bg-transparent w-full text-[16px]"
+          label="Invite code"
+          name="inviteCode"
+          autoComplete="new-email"
+          value={formik.values.inviteCode}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          placeholder="(Optional)"
+        />
+      </div>
       <Button
         type="submit"
         style={{ background: "#3D5AFE" }}
         className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
       >
-        Login
+        Register
       </Button>
     </form>
   );
 };
 
-export default LoginWithEmail;
+export default SignupWithEmail;
