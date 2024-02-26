@@ -17,31 +17,31 @@ export const AuthenticatedProfile = () => {
           icon={<UsernameIcon />}
           filedName={i18next.t("profilePage.username")}
           value={"tyha"}
-          link="/coming-soon"
+          link=""
         />
         <ProfileItem
           icon={<MailIcon />}
           filedName={i18next.t("profilePage.email")}
           value={"tyha@greensoftware.asia"}
-          link="/coming-soon"
+          link=""
         />
         <ProfileItem
           icon={<PhoneIcon />}
           filedName={i18next.t("profilePage.phoneNumber")}
           value={"Not set"}
-          link="/coming-soon"
+          link=""
         />
         <ProfileItem
           icon={<LockIcon />}
           filedName={i18next.t("profilePage.loginPassword")}
           rightIcon={<ArrowRightIcon />}
-          link="/coming-soon"
+          link="/m/setting/password"
         />
         <ProfileItem
           icon={<SecurityIcon />}
           filedName={i18next.t("profilePage.securityCode")}
           rightIcon={<ArrowRightIcon />}
-          link="/coming-soon"
+          link="/m/setting/password/security"
         />
       </div>
       <div className="bg-[#1C1C1E] mt-2 rounded-sm">

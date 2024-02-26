@@ -7,7 +7,7 @@ import { getStaticURL } from "@/utils/constants";
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { DepositIcon } from "@/assets/icons/DepositIcon";
 import { TelesaleIcon } from "@/assets/icons/TelesaleIcon";
-import FeatureSection from "@/components/Home/FeatureSection";
+import FeatureSection from "@/components/home/FeatureSection";
 import { LoudspeakerIcon } from "@/assets/icons/LoudspeakerIcon";
 import { MenuIcon } from "@/assets/icons/MenuIcon";
 import Link from "next/link";

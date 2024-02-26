@@ -161,5 +161,19 @@
   "bill": {
     "title": "Bill",
     "noData": "No data"
+  },
+  "password": {
+    "title": "Login password",
+		"oldPassword": "Old Password",
+		"newPassword": "New Password",
+		"oldPasswordInvalidError": "Please enter the old password",
+		"newPasswordInvalidError": "6-20 individual characters",
+		"confirmBtn": "Confirm"
+  },
+  "securityCode": {
+    "title": "Set a security password",
+		"newPassword": "New Password",
+		"newPasswordInvalidError": "6-20 individual characters",
+		"confirmBtn": "Confirm"
   }
 }

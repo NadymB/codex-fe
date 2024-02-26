@@ -77,8 +77,8 @@
 	"announcementPage": {
 		"title": "Thông báo"
 	},
-	"withdrawAccount":{
-		"title":"Tài khoản rút tiền",
+	"withdrawAccount": {
+		"title": "Tài khoản rút tiền",
 		"noWithdrawalAccount": "Không có tài khoản rút tiền",
 		"withdrawAccountBtn": "Thêm tài khoản rút tiền"
 	},
@@ -116,12 +116,12 @@
 		"howToMakeADepositContent": "Looking for a guide on how to deposit funds? We hear you! Here is a detailed operation process so that you can easily make a deposit by transferring cryptocurrency from your wallet or depositing fiat currency to your account."
 	},
 	"vip": {
-	  "title": "Kế hoạch đặc quyền thành viên",
-	  "upgradeMyMemberLevelTitle": "Nâng cấp cấp độ thành viên của tôi",
-	  "upgradeMyMemberLevelContent": "Chúng tôi điều chỉnh các cấp độ thành viên khác nhau theo người dùng khác nhau. Bạn có thể nâng cấp cấp độ thành viên của mình bằng cách hoàn thành nhiệm vụ và được hưởng nhiều đặc quyền hơn. Để biết chi tiết, nhấp vào nút bên dưới để tham khảo ý kiến.",
-	  "currentLevelTitle": "Cấp độ hiện tại:",
-	  "currentLevelContent": "Bạn chưa phải là thành viên",
-	  "contactBtn": "Liên hệ với tư vấn dịch vụ khách hàng"
+		"title": "Kế hoạch đặc quyền thành viên",
+		"upgradeMyMemberLevelTitle": "Nâng cấp cấp độ thành viên của tôi",
+		"upgradeMyMemberLevelContent": "Chúng tôi điều chỉnh các cấp độ thành viên khác nhau theo người dùng khác nhau. Bạn có thể nâng cấp cấp độ thành viên của mình bằng cách hoàn thành nhiệm vụ và được hưởng nhiều đặc quyền hơn. Để biết chi tiết, nhấp vào nút bên dưới để tham khảo ý kiến.",
+		"currentLevelTitle": "Cấp độ hiện tại:",
+		"currentLevelContent": "Bạn chưa phải là thành viên",
+		"contactBtn": "Liên hệ với tư vấn dịch vụ khách hàng"
 	},
 	"color": {
 		"title": "Màu sắc của thăng trầm",
@@ -158,8 +158,22 @@
 		"title": "Order",
 		"noData": "No data"
 	},
-		"bill": {
+	"bill": {
 		"title": "Bill",
 		"noData": "No data"
+	},
+	"password": {
+		"title": "Mật khẩu đăng nhập",
+		"oldPassword": "Mật khẩu cũ",
+		"newPassword": "Mật khẩu mới",
+		"oldPasswordInvalidError": "Vui lòng nhập mật khẩu cũ",
+		"newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
+		"confirmBtn": "Xác nhận"
+	},
+	"securityCode": {
+		"title": "Đặt mật khẩu bảo mật",
+		"newPassword": "Mật khẩu mới",
+		"newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
+		"confirmBtn": "Xác nhận"
 	}
 }
