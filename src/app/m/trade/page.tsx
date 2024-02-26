@@ -24,7 +24,6 @@ const TradePage = () => {
             data.highestValue,
             data.lowestValue,
             data.closingValue,
-            48908700,
           ];
         })
         .sort((a: number[], b: number[]) => a[0] - b[0]);
@@ -35,6 +34,11 @@ const TradePage = () => {
 
   useEffect(() => {
     getChartData();
+    const interval = setInterval(() => {
+      getChartData();
+    }, 10000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
