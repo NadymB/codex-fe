@@ -7,6 +7,7 @@ import { Tab } from "@/components/layouts/Tab";
 import Trading from "@/components/trade/Trading";
 import { TradingChart } from "@/components/trade/TradingChart";
 import { getStaticURL } from "@/utils/constants";
+import { Button } from "@mui/material";
 import i18next from "i18next";
 import Image from "next/image";
 import Link from "next/link";
@@ -111,6 +112,29 @@ const TradePage = () => {
     <DefaultLayout
       pageTitle="Dashboard"
       containerStyle="bg-[#13111a] dark:bg-[#13111a]  "
+      childrenMenuBar={
+        <>
+          <div className="flex items-center gap-3 px-4 py-2">
+            {" "}
+            <Button
+              className="p-0 w-full overflow-hidden normal-case"
+              variant="contained"
+            >
+              <div className="w-full bg-[#55af72] py-[6px] px-4 ">
+                {i18next.t("tradePage.long")}
+              </div>
+            </Button>
+            <Button
+              className="p-0 w-full overflow-hidden normal-case"
+              variant="contained"
+            >
+              <div className="w-full bg-[#dd5350] py-[6px] px-4 ">
+                {i18next.t("tradePage.short")}
+              </div>
+            </Button>
+          </div>
+        </>
+      }
     >
       <Tabs
         tabs={tabs}

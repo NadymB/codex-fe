@@ -10,13 +10,15 @@ export const DefaultLayout = ({
   pageTitle,
   containerStyle,
   headerStyle,
-  isShowMenubar=true,
+  isShowMenubar = true,
+  childrenMenuBar,
 }: {
   children: React.ReactNode;
   pageTitle?: string;
   containerStyle: string;
   headerStyle?: string;
   isShowMenubar?: boolean;
+  childrenMenuBar?: React.ReactNode;
 }) => {
   const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if ((event.ctrlKey || event.metaKey) && event.key === "k") {
@@ -46,6 +48,7 @@ export const DefaultLayout = ({
         </div>
         {isShowMenubar && (
           <div ref={menuBarRef} className="fixed w-full bottom-0 left-0">
+            {childrenMenuBar}
             <MenuBar />
           </div>
         )}
