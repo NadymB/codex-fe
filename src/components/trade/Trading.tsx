@@ -64,7 +64,10 @@ const Trading = () => {
           <div className="flex gap-1 pb-3 overflow-auto">
             {/*  */}
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
-              <span className="text-[12px] text-[#fff]"> {i18next.t("tradePage.trade.profit")}</span>
+              <span className="text-[12px] text-[#fff]">
+                {" "}
+                {i18next.t("tradePage.trade.profit")}
+              </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 10%
               </h6>
@@ -75,7 +78,9 @@ const Trading = () => {
             {/*  */}
             {/*  */}
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
-              <span className="text-[12px] text-[#fff]">{i18next.t("tradePage.trade.profit")}</span>
+              <span className="text-[12px] text-[#fff]">
+                {i18next.t("tradePage.trade.profit")}
+              </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 20%
               </h6>
@@ -86,7 +91,9 @@ const Trading = () => {
             {/*  */}
             {/*  */}
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
-              <span className="text-[12px] text-[#fff]">{i18next.t("tradePage.trade.profit")}</span>
+              <span className="text-[12px] text-[#fff]">
+                {i18next.t("tradePage.trade.profit")}
+              </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 30%
               </h6>
@@ -97,7 +104,9 @@ const Trading = () => {
             {/*  */}
             {/*  */}
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
-              <span className="text-[12px] text-[#fff]">{i18next.t("tradePage.trade.profit")}</span>
+              <span className="text-[12px] text-[#fff]">
+                {i18next.t("tradePage.trade.profit")}
+              </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 50%
               </h6>
@@ -108,7 +117,9 @@ const Trading = () => {
             {/*  */}
             {/*  */}
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
-              <span className="text-[12px] text-[#fff]">{i18next.t("tradePage.trade.profit")}</span>
+              <span className="text-[12px] text-[#fff]">
+                {i18next.t("tradePage.trade.profit")}
+              </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 80%
               </h6>
@@ -119,7 +130,9 @@ const Trading = () => {
             {/*  */}
             {/*  */}
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
-              <span className="text-[12px] text-[#fff]">{i18next.t("tradePage.trade.profit")}</span>
+              <span className="text-[12px] text-[#fff]">
+                {i18next.t("tradePage.trade.profit")}
+              </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 100%
               </h6>
@@ -130,7 +143,9 @@ const Trading = () => {
             {/*  */}
           </div>
           <div className="flex items-center justify-between mt-2">
-            <span className="text-[12px] text-[#888888]">{i18next.t("tradePage.trade.balance")}</span>
+            <span className="text-[12px] text-[#888888]">
+              {i18next.t("tradePage.trade.balance")}
+            </span>
             <span className="text-[12px] text-[#fff]">0.00 USDT</span>
           </div>
           <div className="px-3 mt-2 ">
@@ -162,19 +177,27 @@ const Trading = () => {
             <span className="text-[#fff] mt-2">≈0.00 AED</span>
           </div>
           <Button
-            className="p-0 w-full overflow-hidden mt-2 normal-case"
+            sx={{ padding: 0 ,marginTop:"8px",textTransform: "none" }}
+            className="w-full overflow-hidden"
             variant="contained"
           >
-            <div className="w-full bg-[#55af72] py-[6px] px-4 ">{i18next.t("tradePage.long")}</div>
+            <div className="w-full bg-[#55af72] py-[6px] px-4 ">
+              {i18next.t("tradePage.long")}
+            </div>
           </Button>
           <Button
-            className="p-0 w-full overflow-hidden mt-2 normal-case"
+            sx={{ padding: 0,marginTop:'8px',textTransform: "none"  }}
+            className="w-full overflow-hidden"
             variant="contained"
           >
-            <div className="w-full bg-[#dd5350] py-[6px] px-4 ">{i18next.t("tradePage.short")}</div>
+            <div className="w-full bg-[#dd5350] py-[6px] px-4 ">
+              {i18next.t("tradePage.short")}
+            </div>
           </Button>
         </div>
-        <div className="col-span-5 ml-4"><TradingChartBar/></div>
+        <div className="col-span-5 ml-4">
+          <TradingChartBar />
+        </div>
       </div>
     </div>
   );
