@@ -11,10 +11,52 @@ export const OptionsLanguage = [
     flag: "/assets/images/flags/us.svg",
   },
   {
+    label: "Français",
+    International: "French",
+    value: "fr",
+    flag: "/assets/images/flags/fr.svg",
+  },
+  {
+    label: "español",
+    International: "Spanish",
+    value: "es",
+    flag: "/assets/images/flags/es.svg",
+  },
+  {
+    label: "Deutsch",
+    International: "German",
+    value: "de",
+    flag: "/assets/images/flags/de.svg",
+  },
+  {
+    label: "Italiano",
+    International: "Italian",
+    value: "it",
+    flag: "/assets/images/flags/it.svg",
+  },
+  {
+    label: "简体中文",
+    International: "Simplified Chinese",
+    value: "cn",
+    flag: "/assets/images/flags/cn.svg",
+  },
+  {
+    label: "日本語",
+    International: "Japanese",
+    value: "jp",
+    flag: "/assets/images/flags/jp.svg",
+  },
+  {
     label: "Việt Nam",
     International: "Vietnamese",
     value: "vi",
     flag: "/assets/images/flags/vn.svg",
+  },
+  {
+    label: "한국인",
+    International: "Korean",
+    value: "kr",
+    flag: "/assets/images/flags/kr.svg",
   },
 ];
 export const FooterData = [
