@@ -4,6 +4,7 @@
 import Tabs from "@/components/Tabs";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { Tab } from "@/components/layouts/Tab";
+import { OrderSection } from "@/components/trade/OrderSection";
 import Trading from "@/components/trade/Trading";
 import { TradingChart } from "@/components/trade/TradingChart";
 import { getStaticURL } from "@/utils/constants";
@@ -16,7 +17,33 @@ const tabs = [
   {
     name: `${i18next.t("tradePage.chart.title")}`,
     content: (
-      <>
+      <DefaultLayout
+        pageTitle="Dashboard"
+        containerStyle="bg-[#13111a] dark:bg-[#13111a]  "
+        childrenMenuBar={
+          <>
+            <div className="flex items-center gap-3 px-4 py-2">
+              {" "}
+              <Button
+                className="p-0 w-full overflow-hidden normal-case"
+                variant="contained"
+              >
+                <div className="w-full bg-[#55af72] py-[6px] px-4 ">
+                  {i18next.t("tradePage.long")}
+                </div>
+              </Button>
+              <Button
+                className="p-0 w-full overflow-hidden normal-case"
+                variant="contained"
+              >
+                <div className="w-full bg-[#dd5350] py-[6px] px-4 ">
+                  {i18next.t("tradePage.short")}
+                </div>
+              </Button>
+            </div>
+          </>
+        }
+      >
         <div className=" flex flex-col ">
           <div className="py-3 px-2">
             <div>
@@ -59,7 +86,8 @@ const tabs = [
             <TradingChart />
           </div>
         </div>
-      </>
+        <OrderSection />
+      </DefaultLayout>
     ),
   },
   {
@@ -67,93 +95,23 @@ const tabs = [
     content: (
       <>
         <Trading />
+        <OrderSection />
       </>
     ),
   },
 ];
-const tabOrder = [
-  {
-    name: `${i18next.t("tradePage.position")}`,
-    content: (
-      <div className="flex flex-col items-center justify-center  p-4 ">
-        <Image
-          src={`${getStaticURL()}/assets/images/empty.svg`}
-          alt={i18next.t("order.noData")}
-          width={100}
-          height={100}
-          className="w-80 h-80"
-        />
-        <span className="text-base text-[#737373]">
-          {i18next.t("order.noData")}
-        </span>
-      </div>
-    ),
-  },
-  {
-    name: `${i18next.t("tradePage.order")}`,
-    content: (
-      <div className="flex flex-col items-center justify-center  p-4 ">
-        <Image
-          src={`${getStaticURL()}/assets/images/empty.svg`}
-          alt={i18next.t("order.noData")}
-          width={100}
-          height={100}
-          className="w-80 h-80"
-        />
-        <span className="text-base text-[#737373]">
-          {i18next.t("order.noData")}
-        </span>
-      </div>
-    ),
-  },
-];
+
 const TradePage = () => {
   return (
     <DefaultLayout
-      pageTitle="Dashboard"
       containerStyle="bg-[#13111a] dark:bg-[#13111a]  "
-      childrenMenuBar={
-        <>
-          <div className="flex items-center gap-3 px-4 py-2">
-            {" "}
-            <Button
-              className="p-0 w-full overflow-hidden normal-case"
-              variant="contained"
-            >
-              <div className="w-full bg-[#55af72] py-[6px] px-4 ">
-                {i18next.t("tradePage.long")}
-              </div>
-            </Button>
-            <Button
-              className="p-0 w-full overflow-hidden normal-case"
-              variant="contained"
-            >
-              <div className="w-full bg-[#dd5350] py-[6px] px-4 ">
-                {i18next.t("tradePage.short")}
-              </div>
-            </Button>
-          </div>
-        </>
-      }
+      isShowMenubar={false}
     >
       <Tabs
         tabs={tabs}
         classNameTab="sticky top-0 left-0 bg-[#13111a] z-[100]"
         classNameItem="flex-1 "
       />
-      <div className="relative">
-        <Tabs
-          tabs={tabOrder}
-          classNameTab="last:ml-4 w-full"
-          classNameItem="px-0 mx-2 py-0 pb-2 bg-transparent "
-        />
-        <Link
-          href={"/m/order"}
-          className="text-[#3D5AFE] absolute top-0 right-4 "
-        >
-          Tất cả đơn hàng
-        </Link>
-      </div>
     </DefaultLayout>
   );
 };
