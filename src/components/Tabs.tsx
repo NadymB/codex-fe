@@ -26,8 +26,8 @@ const Tabs = ({ tabs, classNameItem,classNameTab }: IProp) => {
   };
 
   return (
-    <div className="overflow-x-hidden">
-      <div className={`${classNameTab}`}>
+    <div className="">
+      <div className={`${classNameTab} overflow-x-hidden`}>
         <div className="flex relative">
           {tabs.map((tab: any, index) => (
             <Button
