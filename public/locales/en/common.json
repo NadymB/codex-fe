@@ -137,7 +137,7 @@
   },
   "authenticationPage":{
 		"loginTitle":"Login please!",
-		"signupTitle":"Đăng ký ngay lập tức",
+		"signupTitle":"Register immediately!",
 		"login":"Login",
 		"register":"Register",
 		"email":"E-mail",
@@ -145,7 +145,11 @@
 		"phoneNumber":"Phone number",
 		"setPassword":"Set password",
 		"loginPassword":"Login password",
-		"invitationCode":"Invitation Code"
+		"invitationCode":"Invitation Code",
+    "userNameIsInvalid": "User name is invalid",
+    "passwordIsInvalid": "Password is invalid",
+    "phoneNumberIsInvalid": "Phone number is invalid",
+    "emailIsInvalid": "Email is invalid"
 	},
   "deposit": {
     "title": "Deposit",
