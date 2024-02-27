@@ -724,3 +724,27 @@ input:-webkit-autofill {
 }
 
 /*  */
+.chat-input-custom {
+	background-color: transparent;
+	border-radius: 3px;
+	border: none;
+	outline: none;
+	width: 100%;
+	resize: none;
+	line-height: 1.2;
+	white-space: pre-line;
+	max-height: 240px;
+	/* Tối đa 6 dòng */
+	padding: 0;
+	overflow-y: auto;
+	background: blue;
+	/* Hiển thị thanh cuộn khi cần thiết */
+
+}
+.chat-input-custom ::-webkit-scrollbar {
+	width: 0;
+}
+
+.chat-input-custom ::-webkit-scrollbar-thumb {
+	background-color: #ccc;
+}

@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import * as Yup from "yup";
 import SelectCountries from "../SelectCountries";
+import i18next from "i18next";
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
     color: "#3D5AFE",
@@ -44,8 +45,8 @@ const LoginWithPhoneNumber = () => {
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
     phoneNumber: Yup.string()
-      .required("Phone number is invalid"),
-    password: Yup.string().required("Password is invalid"),
+      .required(i18next.t("authenticationPage.phoneNumberIsInvalid")),
+    password: Yup.string().required(i18next.t("authenticationPage.passwordIsInvalid")),
   });
   const formik = useFormik({
     initialValues: {
@@ -88,7 +89,7 @@ const LoginWithPhoneNumber = () => {
             <CssTextField
               error={formik.touched.phoneNumber && formik.errors.phoneNumber ? true : false}
               className=" bg-transparent w-full text-[16px]"
-              label="Phone number"
+              label={i18next.t("authenticationPage.phoneNumber")}
               name="phoneNumber"
               autoComplete="new-phoneNumber"
               value={formik.values.phoneNumber}
@@ -108,7 +109,7 @@ const LoginWithPhoneNumber = () => {
               formik.touched.password && formik.errors.password ? true : false
             }
             className="text-[#fff] bg-transparent w-full text-[16px]"
-            label="Login Password"
+            label={i18next.t("authenticationPage.loginPassword")}
             name="password"
             type="password"
             autoComplete="new-password"
@@ -127,7 +128,7 @@ const LoginWithPhoneNumber = () => {
           style={{ background: "#3D5AFE" }}
           className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
         >
-          Login
+          {i18next.t("authenticationPage.login")}
         </Button>
       </form>
       {isOpen && (

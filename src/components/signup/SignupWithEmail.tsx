@@ -1,6 +1,7 @@
 "use client";
 import { Button, TextField, styled } from "@mui/material";
 import { useFormik } from "formik";
+import i18next from "i18next";
 import { useRouter } from "next/navigation";
 import React from "react";
 import * as Yup from "yup";
@@ -33,12 +34,12 @@ const SignupWithEmail = () => {
   const router = useRouter();
   const validationSchema = Yup.object({
     email: Yup.string()
-      .email("Email is invalid")
-      .matches(/@[^.]*\./, "Email is invalid")
-      .required("Email is invalid")
+      .email(i18next.t("authenticationPage.emailIsInvalid"))
+      .matches(/@[^.]*\./, i18next.t("authenticationPage.emailIsInvalid"))
+      .required(i18next.t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
-    userName: Yup.string().required("User name is invalid"),
-    password: Yup.string().required("Password is invalid"),
+    userName: Yup.string().required(i18next.t("authenticationPage.userNameIsInvalid")),
+    password: Yup.string().required(i18next.t("authenticationPage.passwordIsInvalid")),
   });
   const formik = useFormik({
     initialValues: {
@@ -63,7 +64,7 @@ const SignupWithEmail = () => {
             formik.touched.userName && formik.errors.userName ? true : false
           }
           className=" bg-transparent w-full text-[16px]"
-          label="user name"
+          label={i18next.t("authenticationPage.username")}
           name="userName"
           autoComplete="new-email"
           value={formik.values.userName}
@@ -80,7 +81,7 @@ const SignupWithEmail = () => {
         <CssTextField
           error={formik.touched.email && formik.errors.email ? true : false}
           className=" bg-transparent w-full text-[16px]"
-          label="E-mail"
+          label={i18next.t("authenticationPage.email")}
           name="email"
           autoComplete="new-email"
           value={formik.values.email}
@@ -99,7 +100,7 @@ const SignupWithEmail = () => {
             formik.touched.password && formik.errors.password ? true : false
           }
           className="text-[#fff] bg-transparent w-full text-[16px]"
-          label="Login Password"
+          label={i18next.t("authenticationPage.loginPassword")}
           name="password"
           type="password"
           autoComplete="new-password"
@@ -116,7 +117,7 @@ const SignupWithEmail = () => {
       <div className="bg-[#1D1C22]">
         <CssTextField
           className=" bg-transparent w-full text-[16px]"
-          label="Invite code"
+          label={i18next.t("authenticationPage.invitationCode")}
           name="inviteCode"
           autoComplete="new-email"
           value={formik.values.inviteCode}
@@ -130,7 +131,7 @@ const SignupWithEmail = () => {
         style={{ background: "#3D5AFE" }}
         className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
       >
-        Register
+        {i18next.t("authenticationPage.register")}
       </Button>
     </form>
   );
