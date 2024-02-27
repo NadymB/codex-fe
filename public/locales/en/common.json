@@ -1,16 +1,16 @@
 {
-  "language":"Language",
+  "language": "Language",
   "onBoarding": {
     "sliderTitleFirst": "Welcome to",
-		"sliderContentFirst": "A highly trusted comprehensive trading place, with a selection of high-quality trading products.",
-		"sliderTitleSecond": "Ultra-low fee rate",
-		"sliderContentSecond": "All transactions enjoy super fee rate, even 0 fee.",
-		"sliderTitleThird": "One Key Trading",
-		"sliderContentThird": "Innovative tools to create a fast digital financial product trading experience.",
-		"sliderTitleFourth": "Full Product",
-		"sliderContentFourth": "There is always a rich trading product suitable for you.",
-		"skipBtn": "Skip",
-		"startNowBtn": "Start Now"
+    "sliderContentFirst": "A highly trusted comprehensive trading place, with a selection of high-quality trading products.",
+    "sliderTitleSecond": "Ultra-low fee rate",
+    "sliderContentSecond": "All transactions enjoy super fee rate, even 0 fee.",
+    "sliderTitleThird": "One Key Trading",
+    "sliderContentThird": "Innovative tools to create a fast digital financial product trading experience.",
+    "sliderTitleFourth": "Full Product",
+    "sliderContentFourth": "There is always a rich trading product suitable for you.",
+    "skipBtn": "Skip",
+    "startNowBtn": "Start Now"
   },
   "menuBar": {
     "home": "Home",
@@ -38,47 +38,47 @@
     "foreignExchange": "Foreign Exchange",
     "transaction": "Transaction",
     "tradingVolume": "Trading volume",
-    "price":"Price",
-    "24HRisingDecline":"24H rising decline"
+    "price": "Price",
+    "24HRisingDecline": "24H rising decline"
   },
-  "assetPage":{
-		"myAssets":"My assets",
-		"totalAssets":"Total assets",
-		"TodayProfitability":"Today's profitability",
-		"deposit":"Deposit",
-		"withdraw":"Withdraw",
-		"order":"Order",
-		"bill":"Bill",
-		"myAccount":"My account",
-		"funds":"Funds",
-		"financialManagement":"Financial Management",
-		"tradingRobot":"Trading robot",
-		"healing":"Healing"
-	},
-  "profilePage":{
-		"title":"Personal center",
-		"username":"Username",
-		"email":"Email",
-		"phoneNumber":"Phone number",
-		"loginPassword":"Login password",
-		"withdrawAccount":"Withdrawal account",
-		"authentication":"Authentication",
-		"securityCode":"Security Code",
-		"language":"Language",
-		"colorsOfUpsAndDowns":"Colors of ups and downs",
-		"displayCurrency":"Display currency",
-		"aboutUs":"About Us",
-    "quit":"Quit",
-    "welcome":"Welcome to",
-		"messageLogin":"Please log in to your account or signup a account",
-		"login":"Log in",
-		"signup":"Signup"
-	},
-  "announcementPage":{
-    "title":"Announce"
+  "assetPage": {
+    "myAssets": "My assets",
+    "totalAssets": "Total assets",
+    "TodayProfitability": "Today's profitability",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "order": "Order",
+    "bill": "Bill",
+    "myAccount": "My account",
+    "funds": "Funds",
+    "financialManagement": "Financial Management",
+    "tradingRobot": "Trading robot",
+    "healing": "Healing"
   },
-  "withdrawAccount":{
-    "title":"Withdraw Account",
+  "profilePage": {
+    "title": "Personal center",
+    "username": "Username",
+    "email": "Email",
+    "phoneNumber": "Phone number",
+    "loginPassword": "Login password",
+    "withdrawAccount": "Withdrawal account",
+    "authentication": "Authentication",
+    "securityCode": "Security Code",
+    "language": "Language",
+    "colorsOfUpsAndDowns": "Colors of ups and downs",
+    "displayCurrency": "Display currency",
+    "aboutUs": "About Us",
+    "quit": "Quit",
+    "welcome": "Welcome to",
+    "messageLogin": "Please log in to your account or signup a account",
+    "login": "Log in",
+    "signup": "Signup"
+  },
+  "announcementPage": {
+    "title": "Announce"
+  },
+  "withdrawAccount": {
+    "title": "Withdraw Account",
     "noWithdrawalAccount": "No withdrawal account set",
     "withdrawAccountBtn": "Add withdrawal account"
   },
@@ -135,22 +135,22 @@
     "checkForUpdates": "Check for updates",
     "upgradedLatestVersion": "Has been upgraded to the latest version"
   },
-  "authenticationPage":{
-		"loginTitle":"Login please!",
-		"signupTitle":"Register immediately!",
-		"login":"Login",
-		"register":"Register",
-		"email":"E-mail",
-		"username":"User name",
-		"phoneNumber":"Phone number",
-		"setPassword":"Set password",
-		"loginPassword":"Login password",
-		"invitationCode":"Invitation Code",
+  "authenticationPage": {
+    "loginTitle": "Login please!",
+    "signupTitle": "Register immediately!",
+    "login": "Login",
+    "register": "Register",
+    "email": "E-mail",
+    "username": "User name",
+    "phoneNumber": "Phone number",
+    "setPassword": "Set password",
+    "loginPassword": "Login password",
+    "invitationCode": "Invitation Code",
     "userNameIsInvalid": "User name is invalid",
     "passwordIsInvalid": "Password is invalid",
     "phoneNumberIsInvalid": "Phone number is invalid",
     "emailIsInvalid": "Email is invalid"
-	},
+  },
   "deposit": {
     "title": "Deposit",
     "chooseYourDepositMethod": "Choose your deposit method",
@@ -168,7 +168,7 @@
     "amountReceived": "Amount Received",
     "confirm": "Confirm",
     "msgAccountError": "Please fill in the receiving account",
-		"msgAmountError": "The minimum amount is 1"
+    "msgAmountError": "The minimum amount is 1"
   },
   "order": {
     "title": "Order",
@@ -180,16 +180,37 @@
   },
   "password": {
     "title": "Login password",
-		"oldPassword": "Old Password",
-		"newPassword": "New Password",
-		"oldPasswordInvalidError": "Please enter the old password",
-		"newPasswordInvalidError": "6-20 individual characters",
-		"confirmBtn": "Confirm"
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
+    "oldPasswordInvalidError": "Please enter the old password",
+    "newPasswordInvalidError": "6-20 individual characters",
+    "confirmBtn": "Confirm"
   },
   "securityCode": {
     "title": "Set a security password",
-		"newPassword": "New Password",
-		"newPasswordInvalidError": "6-20 individual characters",
-		"confirmBtn": "Confirm"
+    "newPassword": "New Password",
+    "newPasswordInvalidError": "6-20 individual characters",
+    "confirmBtn": "Confirm"
+  },
+  "tradePage": {
+    "position": "Position",
+    "order": "Order",
+    "long": "Long",
+    "short": "Short",
+    "trade": {
+      "title": "Trade",
+      "profit": "Profit",
+      "minute": "Minute",
+      "balance": "Balance",
+      "price": "Price",
+      "amount": "Quantity",
+      "quantity:": "Quantity"
+    },
+    "chart": {
+      "title": "Charts",
+      "24HourHigh": "24-hour High",
+      "24HourLow": "24-hour Low",
+      "24HourTurnover": "24-hour Turnover"
+    }
   }
 }

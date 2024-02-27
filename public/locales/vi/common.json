@@ -135,17 +135,17 @@
 		"checkForUpdates": "Kiểm tra cập nhật",
 		"upgradedLatestVersion": "Has been upgraded to the latest version"
 	},
-	"authenticationPage":{
-		"loginTitle":"Vui lòng đăng nhập!",
-		"signupTitle":"Đăng ký ngay lập tức",
-		"login":"Đăng nhập",
-		"register":"Đăng ký",
-		"email":"E-mail",
-		"username":"Tên tài khoản",
-		"phoneNumber":"Số điện thoại",
-		"setPassword":"Đặt mật khẩu",
-		"loginPassword":"Mật khẩu đăng nhập",
-		"invitationCode":"Invitation Code",
+	"authenticationPage": {
+		"loginTitle": "Vui lòng đăng nhập!",
+		"signupTitle": "Đăng ký ngay lập tức",
+		"login": "Đăng nhập",
+		"register": "Đăng ký",
+		"email": "E-mail",
+		"username": "Tên tài khoản",
+		"phoneNumber": "Số điện thoại",
+		"setPassword": "Đặt mật khẩu",
+		"loginPassword": "Mật khẩu đăng nhập",
+		"invitationCode": "Invitation Code",
 		"userNameIsInvalid": "Tên tài khoản không hợp lệ",
 		"passwordIsInvalid": "Mật khẩu không hợp lệ",
 		"phoneNumberIsInvalid": "Số điện thoại không hợp lệ",
@@ -191,5 +191,26 @@
 		"newPassword": "Mật khẩu mới",
 		"newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
 		"confirmBtn": "Xác nhận"
+	},
+	"tradePage": {
+		"position":"Vị trí",
+		"order":"Đơn hàng",
+		"long": "Mua lên",
+		"short": "Mua xuống",
+		"trade": {
+			"title": "Giao dịch",
+			"profit": "Lợi nhuận",
+			"minute": "Phút",
+			"balance": "Số dư",
+			"price": "Gía",
+			"amount": "Số lượng",
+			"quantity:": "Số lượng"
+		},
+		"chart": {
+			"title": "Biểu đồ",
+			"24HourHigh": "Cao nhát 24 giờ",
+			"24HourLow": "Thấp nhát 24 giờ",
+			"24HourTurnover": "Doanh thu 24 giờ"
+		}
 	}
 }
