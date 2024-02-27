@@ -145,7 +145,11 @@
 		"phoneNumber":"Số điện thoại",
 		"setPassword":"Đặt mật khẩu",
 		"loginPassword":"Mật khẩu đăng nhập",
-		"invitationCode":"Invitation Code"
+		"invitationCode":"Invitation Code",
+		"userNameIsInvalid": "Tên tài khoản không hợp lệ",
+		"passwordIsInvalid": "Mật khẩu không hợp lệ",
+		"phoneNumberIsInvalid": "Số điện thoại không hợp lệ",
+		"emailIsInvalid": "Email không hợp lệ"
 	},
 	"deposit": {
 		"title": "Nạp Tiền",
@@ -168,11 +172,11 @@
 	},
 	"order": {
 		"title": "Order",
-		"noData": "No data"
+		"noData": "Không có dữ liệu"
 	},
 	"bill": {
 		"title": "Bill",
-		"noData": "No data"
+		"noData": "Không có dữ liệu"
 	},
 	"password": {
 		"title": "Mật khẩu đăng nhập",

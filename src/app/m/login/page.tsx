@@ -31,7 +31,7 @@ const LoginPage = () => {
   }, [activeTab]);
   const tabs = [
     {
-      name: "Email",
+      name: `${i18next.t("authenticationPage.email")}`,
       content: (
         <>
           <LoginWithEmail />
@@ -39,7 +39,7 @@ const LoginPage = () => {
       ),
     },
     {
-      name: "Phone number",
+      name: `${i18next.t("authenticationPage.phoneNumber")}`,
       content: (
         <>
           <LoginWithPhoneNumber />
@@ -47,7 +47,7 @@ const LoginPage = () => {
       ),
     },
     {
-      name: "User name",
+      name: `${i18next.t("authenticationPage.username")}`,
       content: (
         <>
           <LoginWithUserName />
@@ -69,11 +69,11 @@ const LoginPage = () => {
             <BackIcon />
           </div>
           <Link href={"/m/signup"}>
-            <span className="text-[#3D5AFE]">Đăng ký</span>
+            <span className="text-[#3D5AFE]">{i18next.t("authenticationPage.register")}</span>
           </Link>
         </div>
         <div className="p-4">
-          <h4 className="text-[32px] text-[#fff]">Vui lòng đăng nhập!</h4>
+          <h4 className="text-[32px] text-[#fff]">{i18next.t("authenticationPage.loginTitle")}</h4>
           <Tabs tabs={tabs} />
           <div className="flex  flex-col items-center justify-center mt-2">
             <Logo />

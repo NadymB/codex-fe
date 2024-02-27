@@ -6,6 +6,7 @@ import LoginWithUserName from "@/components/Login/LoginWithUserName";
 import Tabs from "@/components/Tabs";
 import SignupWithEmail from "@/components/signup/SignupWithEmail";
 import SignupWithPhoneNumber from "@/components/signup/SignupWithPhoneNumber";
+import i18next from "i18next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -25,7 +26,7 @@ const SignUpPage = () => {
   }, [activeTab]);
   const tabs = [
     {
-      name: "Email",
+      name: `${i18next.t("authenticationPage.email")}`,
       content: (
         <>
           <SignupWithEmail />
@@ -33,7 +34,7 @@ const SignUpPage = () => {
       ),
     },
     {
-      name: "Phone number",
+      name: `${i18next.t("authenticationPage.phoneNumber")}`,
       content: <><SignupWithPhoneNumber/></>,
     }
   ];
@@ -50,11 +51,11 @@ const SignUpPage = () => {
           <BackIcon />
         </div>
         <Link href={"/m/login"}>
-          <span className="text-[#3D5AFE]">Login</span>
+          <span className="text-[#3D5AFE]">{i18next.t("authenticationPage.login")}</span>
         </Link>
       </div>
       <div className="p-4">
-        <h4 className="text-[32px] text-[#fff]">Vui lòng đăng nhập!</h4>
+        <h4 className="text-[32px] text-[#fff]">{i18next.t("authenticationPage.signupTitle")}</h4>
         <Tabs tabs={tabs} />
       </div>
     </div>
