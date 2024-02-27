@@ -40,14 +40,14 @@ export const MenuBar = () => {
           </span>
         </Link>
         <Link
-          href={PATH.COMING_SOON}
-          className={`flex-1 flex flex-col items-center justify-center  text-center px-4 py-2 cursor-pointer border-b-2 ${pathname === PATH.TRANSACTION ? "border-b-[#3D5AFE]" : "border-b-transparent"}`}
+          href={PATH.TRADE}
+          className={`flex-1 flex flex-col items-center justify-center  text-center px-4 py-2 cursor-pointer border-b-2 ${pathname === PATH.TRADE ? "border-b-[#3D5AFE]" : "border-b-transparent"}`}
         >
           <TransactionIcon
-            color={`${pathname === PATH.TRANSACTION ? "#3D5AFE" : "#888888"}`}
+            color={`${pathname === PATH.TRADE ? "#3D5AFE" : "#888888"}`}
           />
           <span
-            className={`text-[14px] font-semibold ${pathname === PATH.TRANSACTION ? "text-[#3D5AFE]" : "text-[#888888]"} `}
+            className={`text-[14px] font-semibold ${pathname === PATH.TRADE ? "text-[#3D5AFE]" : "text-[#888888]"} `}
           >
             {i18next.t("menuBar.transaction")}
           </span>
