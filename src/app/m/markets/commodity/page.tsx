@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { priceFeedService } from "@/services/PriceFeedService";
 import i18next from "i18next";
 import { Loading } from "@/components/Loading";
+import Link from "next/link";
 
 const MarketPage = () => {
   const [data, setData] = useState([]);
@@ -22,17 +23,27 @@ const MarketPage = () => {
       if (response.success) {
         const mappedData = response.data.map((item: any, index: number) => {
           return [
-            <TrandingCell
+            <Link
+              href={`/m/trade/${item.metadata.name.split("_")[0].toUpperCase()}/USDT`}
               key={index}
-              tradingName={item.metadata.name.split("_")[0].toUpperCase()}
-              totalValue="99.14M"
-            />,
-            <PriceCell
+            >
+              <TrandingCell
+                tradingName={item.metadata.name.split("_")[0].toUpperCase()}
+                totalValue="99.14M"
+              />
+            </Link>,
+            <Link
+              href={`/m/trade/${item.metadata.name.split("_")[0].toUpperCase()}/USDT`}
               key={index}
-              usdtPrice={item.value}
-              usdPrice={item.value}
-            />,
-            <Button key={index} text="+3.06%" className="bg-[#54AF71]" />,
+            >
+              <PriceCell usdtPrice={item.value} usdPrice={item.value} />
+            </Link>,
+            <Link
+              href={`/m/trade/${item.metadata.name.split("_")[0].toUpperCase()}/USDT`}
+              key={index}
+            >
+              <Button text="+3.06%" className="bg-[#54AF71] text-white" />
+            </Link>,
           ];
         });
         setData(mappedData);
