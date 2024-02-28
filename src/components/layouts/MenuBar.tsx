@@ -4,11 +4,17 @@ import { TransactionIcon } from "@/assets/icons/TransactionIcon";
 import { WalletIcon } from "@/assets/icons/WalletIcon";
 import { PATH } from "@/utils/constants";
 import i18next from "i18next";
+import Cookies from "js-cookie";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export const MenuBar = () => {
   const pathname = usePathname();
+
+  const crypto = Cookies.get("crypto");
+  const cookiesData = crypto
+    ? JSON.parse(crypto)
+    : { token: "GOLD", values: "USDT" };
 
   return (
     <>
@@ -40,7 +46,7 @@ export const MenuBar = () => {
           </span>
         </Link>
         <Link
-          href={PATH.TRADE}
+          href={`${PATH.TRADE}/${cookiesData.token}/${cookiesData.values}`}
           className={`flex-1 flex flex-col items-center justify-center  text-center px-4 py-2 cursor-pointer border-b-2 ${pathname === PATH.TRADE ? "border-b-[#3D5AFE]" : "border-b-transparent"}`}
         >
           <TransactionIcon
