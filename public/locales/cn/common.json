@@ -1,0 +1,216 @@
+{
+  "language": "语言",
+  "onBoarding": {
+    "sliderTitleFirst": "欢迎来到",
+    "sliderContentFirst": "备受信任的综合交易场所，精选的优质交易产品。",
+    "sliderTitleSecond": "超低手续费率",
+    "sliderContentSecond": "所有交易均享受超级的手续费率，甚至是0手续费。",
+    "sliderTitleThird": "一键交易",
+    "sliderContentThird": "创新工具，打造迅捷数字金融品交易体验。",
+    "sliderTitleFourth": "丰富的产品",
+    "sliderContentFourth": "丰富的交易产品总有一种适合你。",
+    "skipBtn": "跳过",
+    "startNowBtn": "立即体验"
+  },
+  "menuBar": {
+    "home": "首页",
+    "market": "市场",
+    "transaction": "交易",
+    "asset": "资产"
+  },
+  "homePage": {
+    "deposit": "充值",
+    "service": "客服",
+    "popularTransactionPair": "热门交易对",
+    "trade": "交易",
+    "study": "学习",
+    "helpCenter": "帮助中心",
+    "vip": "VIP",
+    "leaderBoard": "排行榜",
+    "inviteFriends": "邀请好友",
+    "savings": "储蓄",
+    "tradingRobot": "交易机器人",
+    "mining": "挖矿"
+  },
+  "marketPage": {
+    "commodity": "大宗商品",
+    "cryptoCurrency": "加密货币",
+    "foreignExchange": "外汇",
+    "transaction": "交易对",
+    "tradingVolume": "交易量",
+    "price": "价格",
+    "24HRisingDecline": "24小时涨跌幅"
+  },
+  "assetPage": {
+    "myAssets": "我的资产",
+    "totalAssets": "总资产",
+    "TodayProfitability": "今日盈利",
+    "deposit": "充值",
+    "withdraw": "提现",
+    "order": "订单",
+    "bill": "账单",
+    "myAccount": "我的账户",
+    "funds": "资金",
+    "financialManagement": "理财",
+    "tradingRobot": "交易机器人",
+    "healing": "跟单"
+  },
+  "profilePage": {
+    "title": "个人中心",
+    "username": "用户名",
+    "email": "邮箱",
+    "phoneNumber": "手机号",
+    "loginPassword": "登录密码",
+    "withdrawAccount": "提现账户",
+    "authentication": "身份认证",
+    "securityCode": "安全密码",
+    "language": "语言",
+    "colorsOfUpsAndDowns": "涨跌颜色",
+    "displayCurrency": "展示货币",
+    "aboutUs": "关于我们",
+    "quit": "退出",
+    "welcome": "欢迎来到",
+    "messageLogin": "请登录您的账户或注册一个账户",
+    "login": "登录",
+    "signup": "注册"
+  },
+  "announcementPage": {
+    "title": "Announce"
+  },
+  "withdrawAccount": {
+    "title": "Withdraw Account",
+    "noWithdrawalAccount": "No withdrawal account set",
+    "withdrawAccountBtn": "Add withdrawal account"
+  },
+  "authentication": {
+    "title": "Authentication",
+    "lv1": "Lv.1",
+    "rightsAndInterests": "Rights and interests",
+    "fiatCurrencyDeposit": "Fiat currency deposit",
+    "withdrawalAmount": "Withdrawal Amount",
+    "unlimited": "Unlimited",
+    "other": "Other",
+    "moreRewards": "More rewards",
+    "id": "ID",
+    "selfie": "Selfie",
+    "certifyBtnLv1": "Immediately certify",
+    "lv2": "Lv.2",
+    "moreTradingProducts": "More trading products",
+    "proofOfAddress": "Proof of address",
+    "certifyBtnLv2": "You need to complete the LV.1 certification first"
+  },
+  "learn": {
+    "title": "Learn",
+    "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
+    "howAreTheyDifferentContent": "Stablecoins are cryptocurrencies whose values are pegged to a stable asset, mostly fiat currencies. Tether (USDT), USD Coin (USDC) and Binance USD (BUSD) are the three most popular stablecoins, with a combined market cap of $120 billion. However, with the recent buzz around BUSD, there’s no doubt that most investors would be curious to know if BUSD is still worth investing in — or if you should simply pile your investments into USDT, USDC or other stablecoins instead.",
+    "whichOneIsRightForYouTitle": "Traditional Debit Card vs. Crypto Debit Card: Which One Is Right For You?",
+    "whichOneIsRightForYouContent": "Modern society increasingly focuses on cashless transactions. Being able to pay by scanning a card can make a lot of transactions faster, easier and more secure. However, it brings up some new questions for consumers. How do you pick which card you want to pay with? There are a lot of options, and they all have their pros and cons. Traditional debit cards and crypto debit cards are two of the most popular choices. To find the right option, you'll need to carefully consider your personal budget and preferences.",
+    "cotiCryptoTitle": "Coti Crypto: Instant Payment Around The World",
+    "cotiCryptoContent": "As we know, traditional finance is plagued with many pressing issues such as merchant fees and cross-border barriers. Digital currency transactions powered by blockchain technology offer a potential solution. However, it is not perfect either because of its low transaction speeds, delays in payment confirmations and many scalability issues.",
+    "whatIsPoWInBlockchainTitle": "Explained: What Is Proof of Work (PoW) in Blockchain?",
+    "whatIsPoWInBlockchainContent": "The blockchain is commonly perceived through the prism of Bitcoin’s Nakamoto Consensus. But in order to learn more about what Proof of Work is, it is essential to look closely into the sustainable PoW implementation."
+  },
+  "helpCenter": {
+    "title": "Help Center",
+    "howToMakeADepositTitle": "How to make a deposit?",
+    "howToMakeADepositContent": "Looking for a guide on how to deposit funds? We hear you! Here is a detailed operation process so that you can easily make a deposit by transferring cryptocurrency from your wallet or depositing fiat currency to your account."
+  },
+  "vip": {
+    "title": "Member Privilege Plan",
+    "upgradeMyMemberLevelTitle": "Upgrade my member level",
+    "upgradeMyMemberLevelContent": "We tailor different membership levels according to different users. You can upgrade your membership level by completing the task and enjoy more privileges. For details, click the button below for consultation.",
+    "currentLevelTitle": "Current level:",
+    "currentLevelContent": "You are not yet a member",
+    "contactBtn": "Contact customer service consultation"
+  },
+  "color": {
+    "title": "Colors of ups and downs",
+    "greenRise": "Green rise and red",
+    "redRise": "Red rise and green down"
+  },
+  "about": {
+    "title": "About Us",
+    "eUREX": "EUREX",
+    "version": "Version 1.39.2",
+    "checkForUpdates": "Check for updates",
+    "upgradedLatestVersion": "Has been upgraded to the latest version"
+  },
+  "authenticationPage": {
+    "loginTitle": "Login please!",
+    "signupTitle": "Register immediately!",
+    "login": "Login",
+    "register": "Register",
+    "email": "E-mail",
+    "username": "User name",
+    "phoneNumber": "Phone number",
+    "setPassword": "Set password",
+    "loginPassword": "Login password",
+    "invitationCode": "Invitation Code",
+    "userNameIsInvalid": "User name is invalid",
+    "passwordIsInvalid": "Password is invalid",
+    "phoneNumberIsInvalid": "Phone number is invalid",
+    "emailIsInvalid": "Email is invalid"
+  },
+  "deposit": {
+    "title": "Deposit",
+    "chooseYourDepositMethod": "Choose your deposit method",
+    "artificialDeposit": "Artificial deposit",
+    "contactArtificial": "Contact artificial customer service to get deposit guidelines"
+  },
+  "withdraw": {
+    "title": "Withdraw",
+    "account": "Account",
+    "amount": "Amount",
+    "currentBalance": "Current balance:",
+    "allBalance": "All balance",
+    "managementOfWithdrawal": "Management of withdrawal",
+    "fees": "Fees",
+    "amountReceived": "Amount Received",
+    "confirm": "Confirm",
+    "msgAccountError": "Please fill in the receiving account",
+    "msgAmountError": "The minimum amount is 1"
+  },
+  "order": {
+    "title": "Order",
+    "noData": "No data"
+  },
+  "bill": {
+    "title": "Bill",
+    "noData": "No data"
+  },
+  "password": {
+    "title": "Login password",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
+    "oldPasswordInvalidError": "Please enter the old password",
+    "newPasswordInvalidError": "6-20 individual characters",
+    "confirmBtn": "Confirm"
+  },
+  "securityCode": {
+    "title": "Set a security password",
+    "newPassword": "New Password",
+    "newPasswordInvalidError": "6-20 individual characters",
+    "confirmBtn": "Confirm"
+  },
+  "tradePage": {
+    "position": "持仓",
+    "order": "订单",
+    "long": "看多",
+    "short": "看空",
+    "trade": {
+      "title": "交易",
+      "profit": "收益",
+      "minute": "分钟",
+      "balance": "余额",
+      "price": "价格",
+      "amount": "数量",
+      "quantity:": "数量"
+    },
+    "chart": {
+      "title": "走势图",
+      "24HourHigh": "24小时最高",
+      "24HourLow": "24小时最低",
+      "24HourTurnover": "24小时成交额"
+    }
+  }
+}

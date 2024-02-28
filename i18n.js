@@ -2,6 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import enJson from './public/locales/en/common.json'
 import viJson from './public/locales/vi/common.json'
+import cnJson from './public/locales/cn/common.json'
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -12,7 +13,10 @@ const resources = {
   },
 	vi: {
     translation: viJson
-  }
+  },
+  cn: {
+    translation: cnJson
+  },
 };
 
 i18n
