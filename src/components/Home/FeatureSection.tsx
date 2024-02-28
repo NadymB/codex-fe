@@ -14,12 +14,14 @@ const FeatureSection = () => {
   return (
     <div className="grid grid-cols-4 bg-[#121212] pb-8">
       <div className="flex item-center justify-center pt-2 cursor-pointer">
-        <Link 
+        <Link
           href={"/m/learn"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <InstructIcon />
-          <span className="text-[#fff] font-medium text-center">{i18next.t("homePage.study")}</span>
+          <span className="text-[#fff] font-medium text-center">
+            {i18next.t("homePage.study")}
+          </span>
         </Link>
       </div>
       {/*  */}
@@ -27,64 +29,70 @@ const FeatureSection = () => {
         <Link
           href={"/m/help-center"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
-         >
+        >
           <SupportIcon />
           <span className="text-[#fff] font-medium text-center">
-          {i18next.t("homePage.helpCenter")}
+            {i18next.t("homePage.helpCenter")}
           </span>
         </Link>
       </div>
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
-        <Link 
+        <Link
           href={"/m/vip"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <HightClassIcon />
-          <span className="text-[#fff] font-medium text-center">{i18next.t("homePage.vip")}</span>
+          <span className="text-[#fff] font-medium text-center">
+            {i18next.t("homePage.vip")}
+          </span>
         </Link>
       </div>
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
-        <Link 
+        <Link
           href={"/coming-soon"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <RankIcon />
-          <span className="text-[#fff] font-medium text-center">{i18next.t("homePage.leaderBoard")}</span>
+          <span className="text-[#fff] font-medium text-center">
+            {i18next.t("homePage.leaderBoard")}
+          </span>
         </Link>
       </div>
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
-        <Link 
+        <Link
           href={"/coming-soon"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <ShareIcon />
           <span className="text-[#fff] font-medium text-center">
-          {i18next.t("homePage.inviteFriends")}
+            {i18next.t("homePage.inviteFriends")}
           </span>
         </Link>
       </div>
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
-        <Link 
+        <Link
           href={"/coming-soon"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <SaveIcon />
-          <span className="text-[#fff] font-medium text-center">{i18next.t("homePage.savings")}</span>
+          <span className="text-[#fff] font-medium text-center">
+            {i18next.t("homePage.savings")}
+          </span>
         </Link>
       </div>
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
-        <Link 
+        <Link
           href={"/coming-soon"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <RobotIcon />
           <span className="text-[#fff] font-medium text-center">
-          {i18next.t("homePage.tradingRobot")}
+            {i18next.t("homePage.tradingRobot")}
           </span>
         </Link>
       </div>
@@ -96,7 +104,7 @@ const FeatureSection = () => {
         >
           <ExploitIcon />
           <span className="text-[#fff] font-medium text-center">
-          {i18next.t("homePage.mining")}
+            {i18next.t("homePage.mining")}
           </span>
         </Link>
       </div>

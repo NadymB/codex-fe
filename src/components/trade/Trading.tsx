@@ -177,7 +177,7 @@ const Trading = () => {
             <span className="text-[#fff] mt-2">≈0.00 AED</span>
           </div>
           <Button
-            sx={{ padding: 0 ,marginTop:"8px",textTransform: "none" }}
+            sx={{ padding: 0, marginTop: "8px", textTransform: "none" }}
             className="w-full overflow-hidden"
             variant="contained"
           >
@@ -186,7 +186,7 @@ const Trading = () => {
             </div>
           </Button>
           <Button
-            sx={{ padding: 0,marginTop:'8px',textTransform: "none"  }}
+            sx={{ padding: 0, marginTop: "8px", textTransform: "none" }}
             className="w-full overflow-hidden"
             variant="contained"
           >

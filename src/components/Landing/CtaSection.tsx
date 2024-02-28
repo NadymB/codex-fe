@@ -25,10 +25,17 @@ export const CtaSection = () => {
             </span>
             <div className="relative  flex flex-wrap lg:flex-nowrap gap-2 lg:gap-0 items-center justify-center cursor-pointer mt-[45px] w-full max-w-[460px] rounded overflow-hidden">
               <div className="bg-[#fff]  h-[55px] w-full">
-
-              <input className="text-[#000] bg-transparent w-full h-full border-none outline-none py-[10px] pl-[25px] pr-[10px] " type="text" placeholder="Type your email here" name="" id="" />
+                <input
+                  className="text-[#000] bg-transparent w-full h-full border-none outline-none py-[10px] pl-[25px] pr-[10px] "
+                  type="text"
+                  placeholder="Type your email here"
+                  name=""
+                  id=""
+                />
               </div>
-              <button className="bg-[#13111a] text-[#fff] h-[55px] xs:w-full lg:w-[150px]">Subscribe</button>
+              <button className="bg-[#13111a] text-[#fff] h-[55px] xs:w-full lg:w-[150px]">
+                Subscribe
+              </button>
             </div>
           </div>
         </div>

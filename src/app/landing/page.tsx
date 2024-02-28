@@ -24,10 +24,10 @@ const LandingPage = () => {
       <VideoSection />
       <FeatureSection />
       <ContentSection />
-      <TestimonialSection/>
-      <QASection/>
-      <CtaSection/>
-      <FooterSection/>
+      <TestimonialSection />
+      <QASection />
+      <CtaSection />
+      <FooterSection />
     </DefaultLayout>
   );
 };

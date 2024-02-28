@@ -1,8 +1,8 @@
 import React from "react";
 
-const Icon = (props : any) => (
+const Icon = (props: any) => (
   <svg
-    viewBox={props.viewBox || '0 0 24 24'}
+    viewBox={props.viewBox || "0 0 24 24"}
     width={props.width}
     height={props.height}
     fill={props.fill}

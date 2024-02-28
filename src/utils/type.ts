@@ -1,5 +1,5 @@
 export type ChangeEventHandler = (
-  event: React.ChangeEvent<HTMLInputElement>
+  event: React.ChangeEvent<HTMLInputElement>,
 ) => void;
 
 export interface TokenCardProp {

@@ -23,8 +23,8 @@ export const InputCustom = styled(TextField)({
     "&.Mui-focused fieldset": {
       borderColor: "#3D5AFE",
     },
-    "& .MuiInputAdornment-root p":{
-      color:'#fff !important'
-    }
+    "& .MuiInputAdornment-root p": {
+      color: "#fff !important",
+    },
   },
 });
