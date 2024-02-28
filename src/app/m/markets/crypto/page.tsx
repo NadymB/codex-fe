@@ -1,49 +1,59 @@
 "use client";
 
-import { Table } from "@/components/table/Table";
+import { Loading } from "@/components/Loading";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { Tab } from "@/components/layouts/Tab";
-import { PRICE_TYPE } from "@/utils/constants";
-import { TrandingCell } from "@/components/table/TradingCell";
-import { PriceCell } from "@/components/table/PriceCell";
 import { Button } from "@/components/table/Button";
-import { useEffect, useState } from "react";
+import { PriceCell } from "@/components/table/PriceCell";
+import { Table } from "@/components/table/Table";
+import { TrandingCell } from "@/components/table/TradingCell";
 import { priceFeedService } from "@/services/PriceFeedService";
+import { PRICE_TYPE } from "@/utils/constants";
 import i18next from "i18next";
-import { Loading } from "@/components/Loading";
-import Link from "next/link";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const MarketPage = () => {
   const [data, setData] = useState([]);
+  const router = useRouter();
+
   const handleCrawlDataFeed = async () => {
     try {
       const response = await priceFeedService.getPriceFeed(PRICE_TYPE.CRYPTO);
       if (response.success) {
         const mappedData = response.data.map((item: any, index: number) => {
           return [
-            <Link
-              href={`/m/trade/${item.metadata.name.replace("usdt", "").toUpperCase()}/USDT`}
+            <div
               key={index}
+              className="cursor-pointer"
+              onClick={() =>
+                onSelect(item.metadata.name.replace("usdt", "").toUpperCase())
+              }
             >
               <TrandingCell
-                tradingName={item.metadata.name
-                  .replace("usdt", "")
-                  .toUpperCase()}
+                token={item.metadata.name.replace("usdt", "").toUpperCase()}
                 totalValue="99.14M"
               />
-            </Link>,
-            <Link
-              href={`/m/trade/${item.metadata.name.replace("usdt", "").toUpperCase()}/USDT`}
+            </div>,
+            <div
               key={index}
+              className="cursor-pointer"
+              onClick={() =>
+                onSelect(item.metadata.name.replace("usdt", "").toUpperCase())
+              }
             >
               <PriceCell usdtPrice={item.value} usdPrice={item.value} />
-            </Link>,
-            <Link
-              href={`/m/trade/${item.metadata.name.replace("usdt", "").toUpperCase()}/USDT`}
+            </div>,
+            <div
               key={index}
+              className="cursor-pointer"
+              onClick={() =>
+                onSelect(item.metadata.name.replace("usdt", "").toUpperCase())
+              }
             >
               <Button text="+3.06%" className="bg-[#54AF71] text-white" />
-            </Link>,
+            </div>,
           ];
         });
         setData(mappedData);
@@ -59,6 +69,12 @@ const MarketPage = () => {
 
     return () => clearInterval(inteval);
   }, []);
+
+  const onSelect = (token: string) => {
+    Cookies.set("crypto", JSON.stringify({ token, values: "USDT" }));
+    router.push(`/m/trade/${token}/USDT`);
+  };
+
   const marketTabOption = [
     {
       label: `${i18next.t("marketPage.commodity")}`,
