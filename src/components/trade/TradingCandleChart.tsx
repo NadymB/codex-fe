@@ -32,9 +32,11 @@ interface Props {
 export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
   const [currentTradingSessionTime, setCurrentTradingSessionTime] = useState(0);
   const [tokenPrice, setTokenPrice] = useState<string>("0");
+  const [lastCandleDirection, setLastCandleDirection] = useState<string>("up");
 
   const applyDataToChart = async (
     chart: {
+      getDataList(): any;
       updateData(cleared: KLineData): unknown;
       applyNewData: (arg0: KLineData[]) => void;
     },
@@ -85,6 +87,17 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
       } else {
         // add new data to the chart
         chart?.applyNewData(formattedData);
+      }
+
+      const dataList = chart.getDataList();
+      const lastCandle = dataList[dataList.length - 1];
+      const openPrice = lastCandle.open;
+      const closePrice = lastCandle.close;
+
+      if (closePrice > openPrice) {
+        setLastCandleDirection("up");
+      } else if (closePrice < openPrice) {
+        setLastCandleDirection("down");
       }
     }
   };
@@ -140,7 +153,7 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
     applyDataToChart(chart as any, { loadMore: false });
     const interval = setInterval(() => {
       applyDataToChart(chart as any, { loadMore: true });
-    }, 3000);
+    }, 10000);
 
     return () => {
       // destroy chart
@@ -154,7 +167,11 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
       <div>
         <div className="flex justify-between pb-6">
           <div className="">
-            <h2 className="text-[#55af72] font-bold m-0">{tokenPrice}</h2>
+            <h2
+              className={`${lastCandleDirection === "up" ? "text-[#55af72]" : "text-[#F92954]"} font-bold m-0`}
+            >
+              {tokenPrice}
+            </h2>
             <span className="text-[#fff] text-[14px]">≈{tokenPrice} USD</span>
           </div>
           <div className="flex flex-col">
