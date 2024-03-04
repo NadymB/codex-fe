@@ -7,7 +7,7 @@ class GeolocationService {
     const userIp = ipResponse.data.ip;
 
     const locationResponse = await axios.get(
-      `https://ipinfo.io/${userIp}/json?token=${TOKEN_IP_INFO}`
+      `https://ipinfo.io/${userIp}/json?token=${TOKEN_IP_INFO}`,
     );
     const locationData = locationResponse.data;
 

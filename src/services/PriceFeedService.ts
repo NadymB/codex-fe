@@ -17,7 +17,7 @@ export class PriceFeedService {
 
   public getPriceFeed = async (type: PRICE_TYPE) => {
     const { data } = await this.restConnector.get(
-      `/price-histories/feed?type=${type}`,
+      `/price-feed/poll?type=${type}`,
     );
 
     return data;

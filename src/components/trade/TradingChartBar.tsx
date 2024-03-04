@@ -12,11 +12,11 @@ export const TradingChartBar = () => {
 
   const generateRandomHeights = () => {
     const newWidthLong = columnWidthLong.map(() =>
-      Math.floor(Math.random() * 100)
+      Math.floor(Math.random() * 100),
     );
     setColumnWidthLong(newWidthLong);
     const newWidthShort = columnWidthShort.map(() =>
-      Math.floor(Math.random() * 100)
+      Math.floor(Math.random() * 100),
     );
     setColumnWidthShort(newWidthShort);
   };
@@ -30,13 +30,21 @@ export const TradingChartBar = () => {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <span className="text-[12px] text-[#fff] opacity-30">{i18next.t("tradePage.trade.price")}</span>
-        <span className="text-[12px] text-[#fff] opacity-30">{i18next.t("tradePage.trade.amount")}</span>
+        <span className="text-[12px] text-[#fff] opacity-30">
+          {i18next.t("tradePage.trade.price")}
+        </span>
+        <span className="text-[12px] text-[#fff] opacity-30">
+          {i18next.t("tradePage.trade.amount")}
+        </span>
       </div>
       {columnWidthLong.map((width, index) => (
         <div key={index} className="flex relative justify-between">
           <span className="text-[#55af72] text-[12px]">24.137</span>
-          <span className="text-[#fff] text-[12px]">{((Math.random() * 1000)*width).toFixed(4).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</span>
+          <span className="text-[#fff] text-[12px]">
+            {(Math.random() * 1000 * width)
+              .toFixed(4)
+              .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
+          </span>
           <div
             style={{ width: `${width}%` }}
             className="absolute top-0 right-0 h-full  bg-[#55af7233] duration-300 ease-in-out"
@@ -50,7 +58,11 @@ export const TradingChartBar = () => {
       {columnWidthShort.map((width, index) => (
         <div key={index} className="flex relative justify-between">
           <span className="text-[#dd5350] text-[12px]">24.137</span>
-          <span className="text-[#fff] text-[12px]">{((Math.random() * 1000)*width).toFixed(4).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</span>
+          <span className="text-[#fff] text-[12px]">
+            {(Math.random() * 1000 * width)
+              .toFixed(4)
+              .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
+          </span>
           <div
             style={{ width: `${width}%` }}
             className="absolute top-0 right-0 h-full  bg-[#dd535033] duration-300 ease-in-out"

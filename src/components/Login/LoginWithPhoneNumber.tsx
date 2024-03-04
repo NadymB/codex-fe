@@ -44,9 +44,12 @@ const LoginWithPhoneNumber = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
-    phoneNumber: Yup.string()
-      .required(i18next.t("authenticationPage.phoneNumberIsInvalid")),
-    password: Yup.string().required(i18next.t("authenticationPage.passwordIsInvalid")),
+    phoneNumber: Yup.string().required(
+      i18next.t("authenticationPage.phoneNumberIsInvalid"),
+    ),
+    password: Yup.string().required(
+      i18next.t("authenticationPage.passwordIsInvalid"),
+    ),
   });
   const formik = useFormik({
     initialValues: {
@@ -61,7 +64,8 @@ const LoginWithPhoneNumber = () => {
     const locationData = await geolocationService.getLocation();
     if (locationData) {
       const country = COUNTRIES.find(
-        (item) => item.code.toLowerCase() === locationData.country.toLowerCase()
+        (item) =>
+          item.code.toLowerCase() === locationData.country.toLowerCase(),
       );
       setCurrentCountry(country);
     }
@@ -87,7 +91,11 @@ const LoginWithPhoneNumber = () => {
           </Button>
           <div className="bg-[#1D1C22] w-full flex flex-col">
             <CssTextField
-              error={formik.touched.phoneNumber && formik.errors.phoneNumber ? true : false}
+              error={
+                formik.touched.phoneNumber && formik.errors.phoneNumber
+                  ? true
+                  : false
+              }
               className=" bg-transparent w-full text-[16px]"
               label={i18next.t("authenticationPage.phoneNumber")}
               name="phoneNumber"
@@ -96,11 +104,11 @@ const LoginWithPhoneNumber = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
-          {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-            <div className="text-[#FF4444] text-[14px] px-4 py-1">
-              {formik.errors.phoneNumber}
-            </div>
-          ) : null}
+            {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
+              <div className="text-[#FF4444] text-[14px] px-4 py-1">
+                {formik.errors.phoneNumber}
+              </div>
+            ) : null}
           </div>
         </div>
         <div className="bg-[#1D1C22]">

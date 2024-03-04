@@ -3,7 +3,7 @@ import React from "react";
 export const SendingIcon = () => {
   return (
     <svg
-    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium animate-spin "
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium animate-spin "
       aria-hidden="true"
       width={24}
       height={24}

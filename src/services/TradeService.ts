@@ -11,7 +11,7 @@ export class TradeService {
 
   public getChartData = async (type: PRICE_TYPE) => {
     const { data } = await this.restConnector.get(
-      `/price-feed/chart-data?type=${type}&itemName=ethusdt&intervalInMinutes=60`
+      `/price-feed/chart-data?type=${type}&itemName=ethusdt&intervalInMinutes=60`,
     );
 
     return data;

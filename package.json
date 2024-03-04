@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "prettier --check ./src/**/*.{js,jsx,ts,tsx} && eslint ./src/**/*.{js,jsx,ts,tsx}",
-    "format": "prettier --write ./src/**/*.{js,jsx,ts,tsx} --write ./src/**/**/*.{js,jsx,ts,tsx}",
+    "lint": "prettier --check ./src/**/*.{ts,tsx} && eslint ./src/**/*.{ts,tsx}",
+    "format": "prettier --write ./src/**/*.{ts,tsx} --write ./src/**/**/*.{ts,tsx}",
     "prepare": "husky install",
     "lint-fix": "eslint --fix"
   },

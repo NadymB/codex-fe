@@ -33,7 +33,7 @@ export const TradingChart = () => {
         })
         .sort(
           (a: { timestamp: number }, b: { timestamp: number }) =>
-            a.timestamp - b.timestamp
+            a.timestamp - b.timestamp,
         );
 
       // add data to the chart

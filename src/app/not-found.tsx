@@ -15,7 +15,11 @@ export default function ComingSoon() {
           <BackIcon />
         </div>
       </div>
-      <img className="max-w-[80%] w-96" src={`${getStaticURL()}/assets/images/coming-soon.svg`} alt="" />
+      <img
+        className="max-w-[80%] w-96"
+        src={`${getStaticURL()}/assets/images/coming-soon.svg`}
+        alt=""
+      />
     </div>
   );
 }
