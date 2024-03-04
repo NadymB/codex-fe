@@ -8,31 +8,8 @@ import { useEffect, useState } from "react";
 import * as Yup from "yup";
 import SelectCountries from "../SelectCountries";
 import i18next from "i18next";
-const CssTextField = styled(TextField)({
-  "& label.Mui-focused": {
-    color: "#3D5AFE",
-  },
-  "& label": {
-    color: "#fff",
-  },
-  "& .MuiInput-underline:after": {
-    borderBottomColor: "#B2BAC2",
-  },
-  "& .MuiInputBase-input": {
-    color: "#fff",
-  },
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "transparent",
-    },
-    "&:hover fieldset": {
-      borderColor: "#fff",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "#3D5AFE",
-    },
-  },
-});
+import { InputCustom } from "../InputCustom";
+
 interface country {
   code: string;
   label: string;
@@ -79,7 +56,7 @@ const SignupWithPhoneNumber = () => {
         autoComplete="off"
       >
         <div className="bg-[#1D1C22]">
-          <CssTextField
+          <InputCustom
             error={
               formik.touched.userName && formik.errors.userName ? true : false
             }
@@ -107,7 +84,7 @@ const SignupWithPhoneNumber = () => {
             +{currentCountry && currentCountry.phone}
           </Button>
           <div className="bg-[#1D1C22] w-full flex flex-col">
-            <CssTextField
+            <InputCustom
               error={
                 formik.touched.phoneNumber && formik.errors.phoneNumber
                   ? true
@@ -129,7 +106,7 @@ const SignupWithPhoneNumber = () => {
           </div>
         </div>
         <div className="bg-[#1D1C22]">
-          <CssTextField
+          <InputCustom
             error={
               formik.touched.password && formik.errors.password ? true : false
             }
@@ -149,7 +126,7 @@ const SignupWithPhoneNumber = () => {
           ) : null}
         </div>
         <div className="bg-[#1D1C22]">
-          <CssTextField
+          <InputCustom
             className=" bg-transparent w-full text-[16px]"
             label="Invite code"
             name="inviteCode"

@@ -7,31 +7,8 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Button, TextField, styled } from "@mui/material";
 import i18next from "i18next";
-const CssTextField = styled(TextField)({
-  "& label.Mui-focused": {
-    color: "#3D5AFE",
-  },
-  "& label": {
-    color: "#fff",
-  },
-  "& .MuiInput-underline:after": {
-    borderBottomColor: "#B2BAC2",
-  },
-  "& .MuiInputBase-input": {
-    color: "#fff",
-  },
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "transparent",
-    },
-    "&:hover fieldset": {
-      borderColor: "#fff",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "#3D5AFE",
-    },
-  },
-});
+import { InputCustom } from "../InputCustom";
+
 const LoginWithEmail = () => {
   const router = useRouter();
   const validationSchema = Yup.object({
@@ -58,7 +35,7 @@ const LoginWithEmail = () => {
       autoComplete="off"
     >
       <div className="bg-[#1D1C22]">
-        <CssTextField
+        <InputCustom
           error={formik.touched.email && formik.errors.email ? true : false}
           className=" bg-transparent w-full text-[16px]"
           label={i18next.t("authenticationPage.email")}
@@ -75,7 +52,7 @@ const LoginWithEmail = () => {
         ) : null}
       </div>
       <div className="bg-[#1D1C22]">
-        <CssTextField
+        <InputCustom
           error={
             formik.touched.password && formik.errors.password ? true : false
           }

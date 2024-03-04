@@ -32,7 +32,7 @@ const PaymentPage = () => {
           variant="contained"
         >
           <Link
-            href={"/coming-soon"}
+            href={"/m/setting/payment/create"}
             className=" flex justify-center w-full px-4 py-[6px]  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded"
           >
             {i18next.t("withdrawAccount.withdrawAccountBtn")}

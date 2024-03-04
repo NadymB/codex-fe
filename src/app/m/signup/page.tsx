@@ -46,7 +46,7 @@ const SignUpPage = () => {
 
   return (
     <div className="min-h-screen overflow-auto bg-[#000000]">
-      <div className="sticky top-0 left-0 w-full px-6 py-6  flex items-center justify-between gap-2">
+      <div className="sticky top-0 left-0 w-full px-6 py-6  flex items-center justify-between gap-2 bg-[#000000]">
         <div className="cursor-pointer" onClick={() => router.back()}>
           <BackIcon />
         </div>
