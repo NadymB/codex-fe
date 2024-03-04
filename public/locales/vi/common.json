@@ -216,5 +216,16 @@
 			"24HourLow": "Thấp nhát 24 giờ",
 			"24HourTurnover": "Doanh thu 24 giờ"
 		}
+	}, 
+	"displayCurrency": {
+		"title": "Hiển thị tiền tệ",
+		"commonlyUsed": "Thường được sử dụng",
+		"more": "Hơn"
+	},
+	"servicePage": {
+		"title": "Liên hệ chúng tôi",
+		"onlineService": "Dịch vụ trực tuyến",
+		"onlineServiceContent": "Chào mừng bạn đến với dịch vụ khách hàng trực tuyến!",
+		"placeholderMessage": "Tin nhắn sẽ được gửi..."
 	}
 }

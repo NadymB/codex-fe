@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import "../../../../../i18n";
 import { OptionProps } from "../../asset/page";
+import i18next from "i18next";
 
 const CurrencySetting = () => {
   const [currency, setCurrency] = useState<OptionProps>(DEFAULT_CURRENCY);
@@ -28,13 +29,13 @@ const CurrencySetting = () => {
           >
             <BackIcon  />
           </button>
-          <h2 className="text-xl text-white mb-0">Hiển thị tiền tệ</h2>
+          <h2 className="text-xl text-white mb-0">{i18next.t("displayCurrency.title")}</h2>
         </div>
-        <span className="text-base text-[#888] px-4">Thường được sử dụng</span>
+        <span className="text-base text-[#888] px-4">{i18next.t("displayCurrency.commonlyUsed")}</span>
         <div className="flex justify-center w-1/2 mx-4 px-4 py-[6px] border border-[#3d5afe80] hover:border-[#3d5afe] text-[#3d5afe] rounded cursor-pointer">
           {DEFAULT_CURRENCY.value.toUpperCase()}
         </div>
-        <span className="text-base text-[#888] px-4">Hơn</span>
+        <span className="text-base text-[#888] px-4">{i18next.t("displayCurrency.more")}</span>
         <div className="grid grid-cols-2 gap-4 px-4">
           {OPTIONS_CURRENCY.map((option, i) => (
             <div

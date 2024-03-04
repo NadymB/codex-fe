@@ -1,0 +1,230 @@
+{
+  "language": "Langue",
+  "onBoarding": {
+    "sliderTitleFirst": "Bienvenue sur",
+    "sliderContentFirst": "Un lieu de trading complet et très fiable, avec une sélection de produits de trading de haute qualité.",
+    "sliderTitleSecond": "Taux de frais ultra bas",
+    "sliderContentSecond": "Toutes les transactions bénéficient d'un super taux de frais, voire de 0 frais.",
+    "sliderTitleThird": "Trading en un clic",
+    "sliderContentThird": "Des outils innovants pour créer une expérience de trading de produits financiers numériques rapide.",
+    "sliderTitleFourth": "Produit complet",
+    "sliderContentFourth": "Il y a toujours un produit de trading riche qui vous convient.",
+    "skipBtn": "Sauter",
+    "startNowBtn": "Commencer maintenant"
+  },
+  "menuBar": {
+    "home": "Accueil",
+    "market": "Marché",
+    "transaction": "Trade",
+    "asset": "Actif"
+  },
+  "homePage": {
+    "deposit": "Dépôt",
+    "service": "Service",
+    "popularTransactionPair": "Paire de transactions populaires",
+    "trade": "Trade",
+    "study": "Étude",
+    "helpCenter": "Centre d'aide",
+    "vip": "VIP",
+    "leaderBoard": "Classement",
+    "inviteFriends": "Inviter des amis",
+    "savings": "Épargne",
+    "tradingRobot": "Robot de trading",
+    "mining": "Minage"
+  },
+  "marketPage": {
+    "commodity": "Marchandise",
+    "cryptoCurrency": "Crypto-monnaie",
+    "foreignExchange": "Change",
+    "transaction": "Trade",
+    "tradingVolume": "Volume de trading",
+    "price": "Prix",
+    "24HRisingDecline": "24H variation"
+  },
+  "assetPage": {
+    "myAssets": "Mes actifs",
+    "totalAssets": "Total des actifs",
+    "TodayProfitability": "Rentabilité aujourd'hui",
+    "deposit": "Dépôt",
+    "withdraw": "Retrait",
+    "order": "Commande",
+    "bill": "Facture",
+    "myAccount": "Mon compte",
+    "funds": "Fonds",
+    "financialManagement": "Gestion financière",
+    "tradingRobot": "Robot de trading",
+    "healing": "Guérison"
+  },
+  "profilePage": {
+    "title": "Centre personnel",
+    "username": "Nom d'utilisateur",
+    "email": "E-mail",
+    "phoneNumber": "Numéro de téléphone",
+    "loginPassword": "Mot de passe de connexion",
+    "withdrawAccount": "Compte de retrait",
+    "authentication": "Authentification",
+    "securityCode": "Code de sécurité",
+    "language": "Langue",
+    "colorsOfUpsAndDowns": "Couleurs des hausses et des baisses",
+    "displayCurrency": "Afficher la devise",
+    "aboutUs": "À propos de nous",
+    "quit": "Quitter",
+    "welcome": "Bienvenue sur",
+    "messageLogin": "Veuillez vous connecter à votre compte ou créer un compte",
+    "login": "Connexion",
+    "signup": "Inscription",
+    "notCertified": "Non certifié",
+    "greenRiseAndRed": "Hausse verte et rouge",
+    "notSet": "Non défini"
+  },
+  "announcementPage": {
+    "title": "Annonce"
+  },
+  "withdrawAccount": {
+    "title": "Compte de retrait",
+    "noWithdrawalAccount": "Aucun compte de retrait défini",
+    "withdrawAccountBtn": "Ajouter un compte de retrait"
+  },
+  "authentication": {
+    "title": "Authentification",
+    "lv1": "Niveau 1",
+    "rightsAndInterests": "Droits et intérêts",
+    "fiatCurrencyDeposit": "Dépôt de monnaie fiduciaire",
+    "withdrawalAmount": "Montant du retrait",
+    "unlimited": "Illimité",
+    "other": "Autre",
+    "moreRewards": "Plus de récompenses",
+    "id": "ID",
+    "selfie": "Selfie",
+    "certifyBtnLv1": "Certification immédiate",
+    "lv2": "Niveau 2",
+    "moreTradingProducts": "Plus de produits de trading",
+    "proofOfAddress": "Preuve d'adresse",
+    "certifyBtnLv2": "Vous devez d'abord terminer la certification LV.1"
+  },
+  "learn": {
+    "title": "Apprendre",
+    "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD : Quelle est la différence ?",
+    "howAreTheyDifferentContent": "Les stablecoins sont des cryptomonnaies dont les valeurs sont ancrées à un actif stable, principalement des devises fiduciaires. Tether (USDT), USD Coin (USDC) et Binance USD (BUSD) sont les trois stablecoins les plus populaires, avec une capitalisation boursière combinée de 120 milliards de dollars. Cependant, avec le récent engouement pour BUSD, il ne fait aucun doute que la plupart des investisseurs seraient curieux de savoir si BUSD vaut toujours la peine d'être investi, ou s'il faut simplement investir dans USDT, USDC ou d'autres stablecoins à la place.",
+    "whichOneIsRightForYouTitle": "Carte de débit traditionnelle vs. carte de débit crypto : laquelle vous convient le mieux ?",
+    "whichOneIsRightForYouContent": "La société moderne se concentre de plus en plus sur les transactions sans numéraire. Pouvoir payer en scannant une carte peut rendre de nombreuses transactions plus rapides, plus faciles et plus sécurisées. Cependant, cela pose de nouvelles questions pour les consommateurs. Comment choisissez-vous la carte avec laquelle vous souhaitez payer ? Il y a beaucoup d'options, et elles ont toutes leurs avantages et leurs inconvénients. Les cartes de débit traditionnelles et les cartes de débit crypto sont deux des choix les plus populaires. Pour trouver la bonne option, vous devrez tenir compte attentivement de votre budget personnel et de vos préférences.",
+    "cotiCryptoTitle": "Coti Crypto : Paiement instantané dans le monde entier",
+    "cotiCryptoContent": "Comme nous le savons, la finance traditionnelle est confrontée à de nombreux problèmes pressants tels que les frais de commerçants et les barrières transfrontalières. Les transactions de monnaie numérique alimentées par la technologie",
+    "whatIsPoWInBlockchainTitle": "Expliqué : Qu'est-ce que la preuve de travail (PoW) dans la blockchain ?",
+    "whatIsPoWInBlockchainContent": "La blockchain est communément perçue à travers le prisme du consensus de Nakamoto de Bitcoin. Mais pour en savoir plus sur ce qu'est la preuve de travail, il est essentiel d'examiner de près la mise en œuvre durable de la PoW."
+  },
+  "helpCenter": {
+    "title": "Centre d'aide",
+    "howToMakeADepositTitle": "Comment effectuer un dépôt ?",
+    "howToMakeADepositContent": "Vous cherchez un guide sur la façon de déposer des fonds ? Nous vous entendons ! Voici un processus opérationnel détaillé pour que vous puissiez facilement effectuer un dépôt en transférant des cryptomonnaies depuis votre portefeuille ou en déposant de la monnaie fiduciaire sur votre compte."
+  },
+  "vip": {
+    "title": "Plan de privilèges des membres",
+    "upgradeMyMemberLevelTitle": "Mettre à niveau mon niveau de membre",
+    "upgradeMyMemberLevelContent": "Nous adaptons différents niveaux de membres en fonction des différents utilisateurs. Vous pouvez mettre à niveau votre niveau de membre en remplissant la tâche et profiter de plus de privilèges. Pour plus de détails, cliquez sur le bouton ci-dessous pour une consultation.",
+    "currentLevelTitle": "Niveau actuel :",
+    "currentLevelContent": "Vous n'êtes pas encore membre",
+    "contactBtn": "Contactez le service client pour une consultation"
+  },
+  "color": {
+    "title": "Couleurs des hausses et des baisses",
+    "greenRise": "Hausse verte et baisse rouge",
+    "redRise": "Hausse rouge et baisse verte"
+  },
+  "about": {
+    "title": "À propos de nous",
+    "eUREX": "EUREX",
+    "version": "Version 1.39.2",
+    "checkForUpdates": "Vérifier les mises à jour",
+    "upgradedLatestVersion": "A été mis à niveau vers la dernière version"
+  },
+  "authenticationPage": {
+    "loginTitle": "Connectez-vous s'il vous plaît !",
+    "signupTitle": "Inscrivez-vous immédiatement !",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "email": "E-mail",
+    "username": "Nom d'utilisateur",
+    "phoneNumber": "Numéro de téléphone",
+    "setPassword": "Définir le mot de passe",
+    "loginPassword": "Mot de passe de connexion",
+    "invitationCode": "Code d'invitation",
+    "userNameIsInvalid": "Veuillez saisir votre nom d'utilisateur",
+    "passwordIsInvalid": "Veuillez remplir le mot de passe",
+    "phoneNumberIsInvalid": "Veuillez remplir votre numéro de téléphone",
+    "emailIsInvalid": "Veuillez saisir votre e-mail"
+  },
+  "deposit": {
+    "title": "Dépôt",
+    "chooseYourDepositMethod": "Choisissez votre méthode de dépôt",
+    "artificialDeposit": "Dépôt artificiel",
+    "contactArtificial": "Contactez le service client artificiel pour obtenir des directives de dépôt"
+  },
+  "withdraw": {
+    "title": "Retrait",
+    "account": "Compte",
+    "amount": "Montant",
+    "currentBalance": "Solde actuel :",
+    "allBalance": "Solde total",
+    "managementOfWithdrawal": "Gestion du retrait",
+    "fees": "Frais",
+    "amountReceived": "Montant reçu",
+    "confirm": "Confirmer",
+    "msgAccountError": "Veuillez remplir le compte de réception",
+    "msgAmountError": "Le montant minimum est de 1"
+  },
+  "order": {
+    "title": "Commande",
+    "noData": "Aucune donnée"
+  },
+  "bill": {
+    "title": "Facture",
+    "noData": "Aucune donnée"
+  },
+  "password": {
+    "title": "Mot de passe de connexion",
+    "oldPassword": "Ancien mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "oldPasswordInvalidError": "Veuillez saisir l'ancien mot de passe",
+    "newPasswordInvalidError": "6 à 20 caractères individuels",
+    "confirmBtn": "Confirmer"
+  },
+  "securityCode": {
+    "title": "Définir un mot de passe de sécurité",
+    "newPassword": "Nouveau mot de passe",
+    "newPasswordInvalidError": "6 à 20 caractères individuels",
+    "confirmBtn": "Confirmer"
+  },
+  "tradePage": {
+    "position": "Position",
+    "order": "Commande",
+    "long": "Long",
+    "short": "Court",
+    "trade": {
+      "title": "Trade",
+      "profit": "Profit",
+      "minute": "Minute",
+      "balance": "Solde",
+      "price": "Prix",
+      "amount": "Quantité",
+      "quantity:": "Quantité"
+    },
+    "chart": {
+      "title": "Graphiques",
+      "24HourHigh": "Plus haut sur 24 heures",
+      "24HourLow": "Plus bas sur 24 heures",
+      "24HourTurnover": "Chiffre d'affaires sur 24 heures"
+    }
+  },
+  "displayCurrency": {
+    "title": "Devise d'affichage",
+    "commonlyUsed": "Couramment utilisé",
+    "more": "Plus"
+  },
+  "servicePage": {
+    "title": "Contactez-nous",
+    "onlineService": "Service en ligne",
+    "onlineServiceContent": "Bienvenue pour nous contacter si vous avez besoin de quelque chose",
+    "placeholderMessage": "Le message sera envoyé..."
+  }
+}

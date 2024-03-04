@@ -215,5 +215,16 @@
       "24HourLow": "24-hour Low",
       "24HourTurnover": "24-hour Turnover"
     }
-  }
+  },
+  "displayCurrency": {
+		"title": "Display Currency",
+		"commonlyUsed": "Commonly used",
+		"more": "More"
+	},
+  "servicePage": {
+		"title": "Contact us",
+		"onlineService": "Online service",
+		"onlineServiceContent": "Welcome to contact us if you need any need",
+    "placeholderMessage": "The message to be sent..."
+	}
 }

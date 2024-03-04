@@ -1,0 +1,230 @@
+{
+  "language": "言語",
+  "onBoarding": {
+    "sliderTitleFirst": "ようこそ",
+    "sliderContentFirst": "高い信頼性を持つ包括的な取引所で、高品質の取引商品が選択できます。",
+    "sliderTitleSecond": "超低手数料率",
+    "sliderContentSecond": "すべての取引が超低手数料率を享受し、手数料はゼロです。",
+    "sliderTitleThird": "ワンキートレード",
+    "sliderContentThird": "革新的なツールを使用して、迅速なデジタル金融商品の取引体験を提供します。",
+    "sliderTitleFourth": "豊富な商品",
+    "sliderContentFourth": "常に適した豊富な取引商品が用意されています。",
+    "skipBtn": "スキップ",
+    "startNowBtn": "今すぐ開始"
+  },
+  "menuBar": {
+    "home": "ホーム",
+    "market": "市場",
+    "transaction": "取引",
+    "asset": "資産"
+  },
+  "homePage": {
+    "deposit": "入金",
+    "service": "サービス",
+    "popularTransactionPair": "人気の取引ペア",
+    "trade": "取引",
+    "study": "学習",
+    "helpCenter": "ヘルプセンター",
+    "vip": "VIP",
+    "leaderBoard": "リーダーボード",
+    "inviteFriends": "友達を招待",
+    "savings": "貯蓄",
+    "tradingRobot": "取引ロボット",
+    "mining": "マイニング"
+  },
+  "marketPage": {
+    "commodity": "商品",
+    "cryptoCurrency": "暗号通貨",
+    "foreignExchange": "外国為替",
+    "transaction": "取引",
+    "tradingVolume": "取引量",
+    "price": "価格",
+    "24HRisingDecline": "24時間の上昇と下降"
+  },
+  "assetPage": {
+    "myAssets": "私の資産",
+    "totalAssets": "総資産",
+    "TodayProfitability": "今日の収益性",
+    "deposit": "入金",
+    "withdraw": "引き出し",
+    "order": "注文",
+    "bill": "請求書",
+    "myAccount": "マイアカウント",
+    "funds": "資金",
+    "financialManagement": "財務管理",
+    "tradingRobot": "取引ロボット",
+    "healing": "ヒーリング"
+  },
+  "profilePage": {
+    "title": "個人センター",
+    "username": "ユーザー名",
+    "email": "Eメール",
+    "phoneNumber": "電話番号",
+    "loginPassword": "ログインパスワード",
+    "withdrawAccount": "出金口座",
+    "authentication": "認証",
+    "securityCode": "セキュリティコード",
+    "language": "言語",
+    "colorsOfUpsAndDowns": "上昇と下降の色",
+    "displayCurrency": "表示通貨",
+    "aboutUs": "会社概要",
+    "quit": "終了",
+    "welcome": "ようこそ",
+    "messageLogin": "アカウントにログインするか、新しいアカウントを登録してください",
+    "login": "ログイン",
+    "signup": "サインアップ",
+    "notCertified": "未認証",
+    "greenRiseAndRed": "緑の上昇と赤",
+    "notSet": "未設定"
+  },
+  "announcementPage": {
+    "title": "お知らせ"
+  },
+  "withdrawAccount": {
+    "title": "出金口座",
+    "noWithdrawalAccount": "出金口座が設定されていません",
+    "withdrawAccountBtn": "出金口座を追加"
+  },
+  "authentication": {
+    "title": "認証",
+    "lv1": "Lv.1",
+    "rightsAndInterests": "権利と利益",
+    "fiatCurrencyDeposit": "法定通貨の入金",
+    "withdrawalAmount": "出金額",
+    "unlimited": "制限なし",
+    "other": "その他",
+    "moreRewards": "さらなる報酬",
+    "id": "ID",
+    "selfie": "自撮り",
+    "certifyBtnLv1": "即時認証",
+    "lv2": "Lv.2",
+    "moreTradingProducts": "さらなる取引商品",
+    "proofOfAddress": "住所の証明",
+    "certifyBtnLv2": "まずLv.1の認証を完了する必要があります"
+  },
+  "learn": {
+    "title": "学ぶ",
+    "howAreTheyDifferentTitle": "USDTとUSDCとBUSDの違いは？",
+    "howAreTheyDifferentContent": "ステーブルコインは、価値が安定した資産にペッグされた暗号通貨です。主に法定通貨です。Tether（USDT）、USD Coin（USDC）、Binance USD（BUSD）は、市場規模が合計1200億ドルという三大人気ステーブルコインです。しかし、最近BUSDに関する話題が出ているため、BUSDへの投資の価値がまだあるか、それとも単にUSDT、USDC、または他のステーブルコインに投資すべきか、多くの投資家が気になるでしょう。",
+    "whichOneIsRightForYouTitle": "従来のデビットカード vs 暗号デビットカード: あなたにとってどちらが適していますか？",
+    "whichOneIsRightForYouContent": "現代社会はますますキャッシュレス取引に焦点を当てています。カードをスキャンして支払いができることは、多くの取引をより速く、簡単で安全にします。しかし、これには消費者に新しい疑問が生じます。どのカードで支払いをしたいかをどのように選択しますか？ 多くの選択肢があり、それぞれに長所と短所があります。 従来のデビットカードと暗号デビットカードは、最も人気のある選択肢の2つです。 正しいオプションを見つけるには、個人の予算と好みを慎重に考慮する必要があります。",
+    "cotiCryptoTitle": "Coti Crypto: 世界中で即時支払い",
+    "cotiCryptoContent": "我々が知っているように、伝統的な金融は多くの問題に苦しんでいます。 例えば、商人手数料や国境を越える障壁などです。 ブロックチェーン技術によって支えられたデジタル通貨取引は、そのような問題の潜在的な解決策を提供します。 しかし、それもまた完璧ではなく、取引速度が遅い、支払いの確認が遅れる、多くのスケーラビリティの問題があります。",
+    "whatIsPoWInBlockchainTitle": "解説: ブロックチェーンにおけるプルーフ・オブ・ワーク（PoW）とは？",
+    "whatIsPoWInBlockchainContent": "ブロックチェーンは一般的にビットコインのナカモト合意を通して理解されています。 しかし、プルーフ・オブ・ワークについて詳しく知るためには、持続可能なPoWの実装について注意深く調べることが重要です。"
+  },
+  "helpCenter": {
+    "title": "ヘルプセンター",
+    "howToMakeADepositTitle": "入金方法",
+    "howToMakeADepositContent": "資金を入金する方法についてのガイドをお探しですか？ 了解しました！ 以下に、ウォレットからの暗号通貨の送金や法定通貨の口座への入金により、簡単に入金できるように、詳細な操作手順を示します。"
+  },
+  "vip": {
+    "title": "会員特典プラン",
+    "upgradeMyMemberLevelTitle": "会員レベルをアップグレード",
+    "upgradeMyMemberLevelContent": "我々は異なるユーザーに合わせて異なる会員レベルを提供しています。 タスクを完了して会員レベルをアップグレードし、さらに多くの特典をお楽しみください。 詳細については、以下のボタンをクリックして相談してください。",
+    "currentLevelTitle": "現在のレベル：",
+    "currentLevelContent": "まだ会員ではありません",
+    "contactBtn": "カスタマーサービスに相談する"
+  },
+  "color": {
+    "title": "上昇と下降の色",
+    "greenRise": "上昇は緑、下降は赤",
+    "redRise": "上昇は赤、下降は緑"
+  },
+  "about": {
+    "title": "私たちについて",
+    "eUREX": "EUREX",
+    "version": "バージョン 1.39.2",
+    "checkForUpdates": "更新を確認",
+    "upgradedLatestVersion": "最新バージョンにアップグレードされました"
+  },
+  "authenticationPage": {
+    "loginTitle": "ログインしてください！",
+    "signupTitle": "すぐに登録！",
+    "login": "ログイン",
+    "register": "登録",
+    "email": "Eメール",
+    "username": "ユーザー名",
+    "phoneNumber": "電話番号",
+    "setPassword": "パスワードを設定",
+    "loginPassword": "ログインパスワード",
+    "invitationCode": "招待コード",
+    "userNameIsInvalid": "ユーザー名を入力してください",
+    "passwordIsInvalid": "パスワードを入力してください",
+    "phoneNumberIsInvalid": "電話番号を入力してください",
+    "emailIsInvalid": "Eメールを入力してください"
+  },
+  "deposit": {
+    "title": "入金",
+    "chooseYourDepositMethod": "入金方法を選択",
+    "artificialDeposit": "人工入金",
+    "contactArtificial": "人工的なカスタマーサービスに連絡して入金ガイドラインを取得してください"
+  },
+  "withdraw": {
+    "title": "出金",
+    "account": "アカウント",
+    "amount": "金額",
+    "currentBalance": "現在の残高：",
+    "allBalance": "すべての残高",
+    "managementOfWithdrawal": "出金管理",
+    "fees": "手数料",
+    "amountReceived": "受取金額",
+    "confirm": "確認",
+    "msgAccountError": "受取口座を入力してください",
+    "msgAmountError": "最小金額は1です"
+  },
+  "order": {
+    "title": "注文",
+    "noData": "データなし"
+  },
+  "bill": {
+    "title": "請求書",
+    "noData": "データなし"
+  },
+  "password": {
+    "title": "ログインパスワード",
+    "oldPassword": "旧パスワード",
+    "newPassword": "新しいパスワード",
+    "oldPasswordInvalidError": "古いパスワードを入力してください",
+    "newPasswordInvalidError": "6〜20の文字を入力してください",
+    "confirmBtn": "確認"
+  },
+  "securityCode": {
+    "title": "セキュリティパスワードを設定する",
+    "newPassword": "新しいパスワード",
+    "newPasswordInvalidError": "6〜20の文字を入力してください",
+    "confirmBtn": "確認"
+  },
+  "tradePage": {
+    "position": "ポジション",
+    "order": "注文",
+    "long": "買い",
+    "short": "売り",
+    "trade": {
+      "title": "取引",
+      "profit": "利益",
+      "minute": "分",
+      "balance": "残高",
+      "price": "価格",
+      "amount": "数量",
+      "quantity:": "数量"
+    },
+    "chart": {
+      "title": "チャート",
+      "24HourHigh": "24時間高値",
+      "24HourLow": "24時間安値",
+      "24HourTurnover": "24時間の取引高"
+    }
+  },
+  "displayCurrency": {
+    "title": "表示通貨",
+    "commonlyUsed": "よく使われる",
+    "more": "その他"
+  },
+  "servicePage": {
+    "title": "お問い合わせ",
+    "onlineService": "オンラインサービス",
+    "onlineServiceContent": "何かお困りのことがあれば、お気軽にお問い合わせください",
+    "placeholderMessage": "メッセージが送信されます..."
+  }
+}

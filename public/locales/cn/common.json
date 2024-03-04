@@ -25,7 +25,7 @@
     "trade": "交易",
     "study": "学习",
     "helpCenter": "帮助中心",
-    "vip": "VIP",
+    "vip": "貴賓",
     "leaderBoard": "排行榜",
     "inviteFriends": "邀请好友",
     "savings": "储蓄",
@@ -104,19 +104,19 @@
   },
   "learn": {
     "title": "学习",
-    "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
-    "howAreTheyDifferentContent": "Stablecoins are cryptocurrencies whose values are pegged to a stable asset, mostly fiat currencies. Tether (USDT), USD Coin (USDC) and Binance USD (BUSD) are the three most popular stablecoins, with a combined market cap of $120 billion. However, with the recent buzz around BUSD, there’s no doubt that most investors would be curious to know if BUSD is still worth investing in — or if you should simply pile your investments into USDT, USDC or other stablecoins instead.",
-    "whichOneIsRightForYouTitle": "Traditional Debit Card vs. Crypto Debit Card: Which One Is Right For You?",
-    "whichOneIsRightForYouContent": "Modern society increasingly focuses on cashless transactions. Being able to pay by scanning a card can make a lot of transactions faster, easier and more secure. However, it brings up some new questions for consumers. How do you pick which card you want to pay with? There are a lot of options, and they all have their pros and cons. Traditional debit cards and crypto debit cards are two of the most popular choices. To find the right option, you'll need to carefully consider your personal budget and preferences.",
-    "cotiCryptoTitle": "Coti Crypto: Instant Payment Around The World",
-    "cotiCryptoContent": "As we know, traditional finance is plagued with many pressing issues such as merchant fees and cross-border barriers. Digital currency transactions powered by blockchain technology offer a potential solution. However, it is not perfect either because of its low transaction speeds, delays in payment confirmations and many scalability issues.",
-    "whatIsPoWInBlockchainTitle": "Explained: What Is Proof of Work (PoW) in Blockchain?",
-    "whatIsPoWInBlockchainContent": "The blockchain is commonly perceived through the prism of Bitcoin’s Nakamoto Consensus. But in order to learn more about what Proof of Work is, it is essential to look closely into the sustainable PoW implementation."
+    "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD：它们有何不同？",
+    "howAreTheyDifferentContent": "稳定币是加密货币，其价值与稳定资产挂钩，主要是法定货币。泰达币（USDT）、美元币（USDC）和币安美元（BUSD）是三种最受欢迎的稳定币，市值总额达到1200亿美元。然而，随着对BUSD最近的关注，毫无疑问，大多数投资者会好奇BUSD是否仍值得投资，或者是否应该简单地将投资集中到USDT、USDC或其他稳定币中。",
+    "whichOneIsRightForYouTitle": "传统借记卡 vs. 加密借记卡：哪个适合您？",
+    "whichOneIsRightForYouContent": "现代社会越来越注重无现金交易。通过扫描卡支付可以使许多交易更快、更便捷、更安全。然而，这也给消费者带来了一些新问题。您如何选择要支付的卡？有很多选择，它们都有各自的优缺点。传统借记卡和加密借记卡是最受欢迎的两种选择。要找到合适的选项，您需要仔细考虑个人预算和偏好。",
+    "cotiCryptoTitle": "Coti加密货币：全球即时支付",
+    "cotiCryptoContent": "众所周知，传统金融面临诸多问题，如商家费用和跨境障碍。由区块链技术支持的数字货币交易提供了潜在解决方案。然而，由于其低交易速度、支付确认延迟和许多可扩展性问题，它也不是完美的。",
+    "whatIsPoWInBlockchainTitle": "解释：区块链中的工作证明（PoW）是什么？",
+    "whatIsPoWInBlockchainContent": "区块链通常通过比特币的中本聪共识来理解。但要更多地了解工作证明是什么，有必要仔细研究可持续的PoW实施。"
   },
   "helpCenter": {
     "title": "帮助中心",
-    "howToMakeADepositTitle": "How to make a deposit?",
-    "howToMakeADepositContent": "Looking for a guide on how to deposit funds? We hear you! Here is a detailed operation process so that you can easily make a deposit by transferring cryptocurrency from your wallet or depositing fiat currency to your account."
+    "howToMakeADepositTitle": "如何进行存款？",
+    "howToMakeADepositContent": "正在寻找如何存款资金的指南？我们听到了您的声音！以下是一个详细的操作过程，让您可以轻松地通过从您的钱包转移加密货币或将法定货币存入您的账户来进行存款。"
   },
   "vip": {
     "title": "会员特权计划",
@@ -215,5 +215,16 @@
       "24HourLow": "24小时最低",
       "24HourTurnover": "24小时成交额"
     }
+  },
+  "displayCurrency": {
+    "title": "显示货币",
+    "commonlyUsed": "常用",
+    "more": "更多"
+  },
+  "servicePage": {
+    "title": "联系我们",
+    "onlineService": "在线服务",
+    "onlineServiceContent": "如果您有任何需求，欢迎与我们联系",
+    "placeholderMessage": "訊息將會傳送..."
   }
 }

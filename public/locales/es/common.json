@@ -1,0 +1,230 @@
+{
+  "language": "Idioma",
+  "onBoarding": {
+    "sliderTitleFirst": "Bienvenido a",
+    "sliderContentFirst": "Un lugar de negociación altamente confiable y completo, con una selección de productos de negociación de alta calidad.",
+    "sliderTitleSecond": "Tarifa de comisión ultra baja",
+    "sliderContentSecond": "Todas las transacciones disfrutan de una tarifa súper baja, incluso 0 tarifas.",
+    "sliderTitleThird": "Negociación de una tecla",
+    "sliderContentThird": "Herramientas innovadoras para crear una experiencia de negociación de productos financieros digitales rápidos.",
+    "sliderTitleFourth": "Producto completo",
+    "sliderContentFourth": "Siempre hay un producto de negociación rico y adecuado para ti.",
+    "skipBtn": "Saltar",
+    "startNowBtn": "Comenzar ahora"
+  },
+  "menuBar": {
+    "home": "Inicio",
+    "market": "Mercado",
+    "transaction": "Negociar",
+    "asset": "Activo"
+  },
+  "homePage": {
+    "deposit": "Depósito",
+    "service": "Servicio",
+    "popularTransactionPair": "Par de transacciones populares",
+    "trade": "Comercio",
+    "study": "Estudio",
+    "helpCenter": "Centro de ayuda",
+    "vip": "VIP",
+    "leaderBoard": "Tablero de líderes",
+    "inviteFriends": "Invitar amigos",
+    "savings": "Ahorros",
+    "tradingRobot": "Robot de negociación",
+    "mining": "Minería"
+  },
+  "marketPage": {
+    "commodity": "Mercancía",
+    "cryptoCurrency": "Criptomoneda",
+    "foreignExchange": "Divisas",
+    "transaction": "Transacción",
+    "tradingVolume": "Volumen de negociación",
+    "price": "Precio",
+    "24HRisingDecline": "24H aumento disminución"
+  },
+  "assetPage": {
+    "myAssets": "Mis activos",
+    "totalAssets": "Total de activos",
+    "TodayProfitability": "Rentabilidad de hoy",
+    "deposit": "Depósito",
+    "withdraw": "Retiro",
+    "order": "Orden",
+    "bill": "Factura",
+    "myAccount": "Mi cuenta",
+    "funds": "Fondos",
+    "financialManagement": "Gestión financiera",
+    "tradingRobot": "Robot de negociación",
+    "healing": "Curación"
+  },
+  "profilePage": {
+    "title": "Centro personal",
+    "username": "Nombre de usuario",
+    "email": "Correo electrónico",
+    "phoneNumber": "Número de teléfono",
+    "loginPassword": "Contraseña de inicio de sesión",
+    "withdrawAccount": "Cuenta de retiro",
+    "authentication": "Autenticación",
+    "securityCode": "Código de seguridad",
+    "language": "Idioma",
+    "colorsOfUpsAndDowns": "Colores de subidas y bajadas",
+    "displayCurrency": "Moneda de visualización",
+    "aboutUs": "Sobre nosotros",
+    "quit": "Salir",
+    "welcome": "Bienvenido a",
+    "messageLogin": "Por favor inicie sesión en su cuenta o regístrese una cuenta",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse",
+    "notCertified": "No certificado",
+    "greenRiseAndRed": "Aumento verde y rojo",
+    "notSet": "No establecido"
+  },
+  "announcementPage": {
+    "title": "Anuncio"
+  },
+  "withdrawAccount": {
+    "title": "Cuenta de retiro",
+    "noWithdrawalAccount": "No se ha configurado ninguna cuenta de retiro",
+    "withdrawAccountBtn": "Agregar cuenta de retiro"
+  },
+  "authentication": {
+    "title": "Autenticación",
+    "lv1": "Nivel 1",
+    "rightsAndInterests": "Derechos e intereses",
+    "fiatCurrencyDeposit": "Depósito de moneda fiduciaria",
+    "withdrawalAmount": "Cantidad de retiro",
+    "unlimited": "Ilimitado",
+    "other": "Otro",
+    "moreRewards": "Más recompensas",
+    "id": "ID",
+    "selfie": "Selfie",
+    "certifyBtnLv1": "Certificar de inmediato",
+    "lv2": "Nivel 2",
+    "moreTradingProducts": "Más productos de negociación",
+    "proofOfAddress": "Comprobante de domicilio",
+    "certifyBtnLv2": "Debe completar primero la certificación de nivel 1"
+  },
+  "learn": {
+    "title": "Aprender",
+    "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: ¿Cómo son diferentes?",
+    "howAreTheyDifferentContent": "Las stablecoins son criptomonedas cuyos valores están vinculados a un activo estable, en su mayoría monedas fiduciarias. Tether (USDT), USD Coin (USDC) y Binance USD (BUSD) son las tres stablecoins más populares, con una capitalización de mercado combinada de $120 mil millones. Sin embargo, con el reciente revuelo en torno a BUSD, no hay duda de que la mayoría de los inversores estarían curiosos por saber si BUSD sigue siendo una buena inversión, o si deberían simplemente invertir en USDT, USDC u otras stablecoins en su lugar.",
+    "whichOneIsRightForYouTitle": "Tarjeta de débito tradicional vs. Tarjeta de débito de criptomonedas: ¿Cuál es adecuada para ti?",
+    "whichOneIsRightForYouContent": "La sociedad moderna se centra cada vez más en las transacciones sin efectivo. Poder pagar escaneando una tarjeta puede hacer que muchas transacciones sean más rápidas, fáciles y seguras. Sin embargo, plantea algunas nuevas preguntas para los consumidores. ¿Cómo eliges con qué tarjeta quieres pagar? Hay muchas opciones, y todas tienen sus pros y sus contras. Las tarjetas de débito tradicionales y las tarjetas de débito de criptomonedas son dos de las opciones más populares. Para encontrar la opción adecuada, deberás considerar cuidadosamente tu presupuesto personal y tus preferencias.",
+    "cotiCryptoTitle": "Coti Crypto: Pago instantáneo en todo el mundo",
+    "cotiCryptoContent": "Como sabemos, las finanzas tradicionales están plagadas de muchos problemas urgentes, como las tarifas de los comerciantes y las barreras transfronterizas",
+    "whatIsPoWInBlockchainTitle": "Explicado: ¿Qué es la Prueba de Trabajo (PoW) en Blockchain?",
+    "whatIsPoWInBlockchainContent": "La blockchain es comúnmente percibida a través del prisma del Consenso de Nakamoto de Bitcoin. Pero para aprender más sobre qué es la Prueba de Trabajo, es esencial examinar de cerca la implementación sostenible de PoW."
+  },
+  "helpCenter": {
+    "title": "Centro de ayuda",
+    "howToMakeADepositTitle": "¿Cómo hacer un depósito?",
+    "howToMakeADepositContent": "¿Buscas una guía sobre cómo depositar fondos? ¡Te escuchamos! Aquí tienes un proceso detallado para que puedas hacer un depósito fácilmente transfiriendo criptomonedas desde tu billetera o depositando moneda fiduciaria en tu cuenta."
+  },
+  "vip": {
+    "title": "Plan de Privilegio de Miembros",
+    "upgradeMyMemberLevelTitle": "Actualizar mi nivel de membresía",
+    "upgradeMyMemberLevelContent": "Adaptamos diferentes niveles de membresía según diferentes usuarios. Puedes mejorar tu nivel de membresía completando la tarea y disfrutar de más privilegios. Para más detalles, haz clic en el botón de abajo para consultar.",
+    "currentLevelTitle": "Nivel actual:",
+    "currentLevelContent": "Todavía no eres miembro",
+    "contactBtn": "Contactar para consulta de servicio al cliente"
+  },
+  "color": {
+    "title": "Colores de alzas y bajas",
+    "greenRise": "Aumento verde y rojo",
+    "redRise": "Aumento rojo y baja verde"
+  },
+  "about": {
+    "title": "Sobre nosotros",
+    "eUREX": "EUREX",
+    "version": "Versión 1.39.2",
+    "checkForUpdates": "Buscar actualizaciones",
+    "upgradedLatestVersion": "Ha sido actualizado a la última versión"
+  },
+  "authenticationPage": {
+    "loginTitle": "¡Inicia sesión por favor!",
+    "signupTitle": "¡Regístrate inmediatamente!",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "email": "Correo electrónico",
+    "username": "Nombre de usuario",
+    "phoneNumber": "Número de teléfono",
+    "setPassword": "Establecer contraseña",
+    "loginPassword": "Contraseña de inicio de sesión",
+    "invitationCode": "Código de invitación",
+    "userNameIsInvalid": "Por favor ingresa tu nombre de usuario",
+    "passwordIsInvalid": "Por favor completa la contraseña",
+    "phoneNumberIsInvalid": "Por favor completa tu número de teléfono",
+    "emailIsInvalid": "Por favor ingresa tu correo electrónico"
+  },
+  "deposit": {
+    "title": "Depósito",
+    "chooseYourDepositMethod": "Elige tu método de depósito",
+    "artificialDeposit": "Depósito artificial",
+    "contactArtificial": "Contacta al servicio de atención al cliente artificial para obtener instrucciones de depósito"
+  },
+  "withdraw": {
+    "title": "Retirar",
+    "account": "Cuenta",
+    "amount": "Cantidad",
+    "currentBalance": "Saldo actual:",
+    "allBalance": "Todo el saldo",
+    "managementOfWithdrawal": "Gestión de retiros",
+    "fees": "Tarifas",
+    "amountReceived": "Cantidad recibida",
+    "confirm": "Confirmar",
+    "msgAccountError": "Por favor completa la cuenta receptora",
+    "msgAmountError": "La cantidad mínima es 1"
+  },
+  "order": {
+    "title": "Orden",
+    "noData": "Sin datos"
+  },
+  "bill": {
+    "title": "Factura",
+    "noData": "Sin datos"
+  },
+  "password": {
+    "title": "Contraseña de inicio de sesión",
+    "oldPassword": "Contraseña anterior",
+    "newPassword": "Nueva contraseña",
+    "oldPasswordInvalidError": "Por favor ingresa la contraseña anterior",
+    "newPasswordInvalidError": "6-20 caracteres individuales",
+    "confirmBtn": "Confirmar"
+  },
+  "securityCode": {
+    "title": "Establecer una contraseña de seguridad",
+    "newPassword": "Nueva contraseña",
+    "newPasswordInvalidError": "6-20 caracteres individuales",
+    "confirmBtn": "Confirmar"
+  },
+  "tradePage": {
+    "position": "Posición",
+    "order": "Orden",
+    "long": "Largo",
+    "short": "Corto",
+    "trade": {
+      "title": "Negociar",
+      "profit": "Beneficio",
+      "minute": "Minuto",
+      "balance": "Saldo",
+      "price": "Precio",
+      "amount": "Cantidad",
+      "quantity:": "Cantidad"
+    },
+    "chart": {
+      "title": "Gráficos",
+      "24HourHigh": "Alta de 24 horas",
+      "24HourLow": "Baja de 24 horas",
+      "24HourTurnover": "Volumen de 24 horas"
+    }
+  },
+  "displayCurrency": {
+    "title": "Moneda de visualización",
+    "commonlyUsed": "Comúnmente usado",
+    "more": "Más"
+  },
+  "servicePage": {
+    "title": "Contáctanos",
+    "onlineService": "Servicio en línea",
+    "onlineServiceContent": "Bienvenido a contactarnos si necesitas algo",
+    "placeholderMessage": "El mensaje será enviado..."
+  }
+}
