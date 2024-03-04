@@ -48,7 +48,7 @@ const SelectCountries = (props: IProps) => {
           <div className="cursor-pointer" onClick={onBack}>
             <BackIcon />
           </div>
-          <span className="text-[#fff]">{i18next.t("language")}</span>
+          <span className="text-[#fff]">{i18next.t("withdrawAccount.pleaseSelectCryptocurrencies")}</span>
         </div>
         <div className="relative w-fit px-2 flex items-center gap-2 bg-[#4C4B4F] rounded mt-4">
           <SearchIcon />
@@ -57,7 +57,7 @@ const SelectCountries = (props: IProps) => {
             type="text"
             name=""
             id=""
-            placeholder="Search country or region"
+            placeholder={i18next.t("withdrawAccount.searchCountryOrRegion")}
             onChange={(e) => setSearchValue(e.target.value)}
           />
         </div>

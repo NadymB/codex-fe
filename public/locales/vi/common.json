@@ -82,8 +82,26 @@
   },
   "withdrawAccount": {
     "title": "Tài khoản rút tiền",
-    "noWithdrawalAccount": "Không có tài khoản rút tiền",
-    "withdrawAccountBtn": "Thêm tài khoản rút tiền"
+    "type": "Kiểu",
+    "fiatCurrency": "Đấu thầu hợp pháp",
+    "cryptocurrency": "Tiền điện tử",
+    "country": "Quốc gia",
+    "clickToSelectCountry": "Bấm để chọn quốc gia",
+    "bank": "Ngân hàng",
+    "placeholderBank": "Điền vào tổ chức ngân hàng của ngân hàng",
+    "bankAccount": "Tài khoản ngân hàng",
+    "realName": "Tên thực tế",
+    "placeholderRealName": "Tên thật của chủ tài khoản",
+    "contactAddress": "Địa chỉ liên hệ",
+    "placeholderContactAddress": "Địa chỉ liên hệ chi tiết",
+    "contactPhone": "Số liên lạc",
+    "idNumber": "Thẻ ID",
+    "remark": "Nhận xét (tùy chọn)(không bắt buộc)",
+    "placeholderRemark": "Thêm ghi chú",
+    "confirm": "Xác nhận",
+    "pleaseSelectCryptocurrencies": "Vui lòng chọn quốc gia hoặc khu vực",
+    "searchCountryOrRegion": "Tìm kiếm quốc gia hoặc khu vực",
+    "required": "Bắt buộc"
   },
   "authentication": {
     "title": "Authentication",

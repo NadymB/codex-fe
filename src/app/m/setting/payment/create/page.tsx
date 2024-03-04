@@ -83,7 +83,7 @@ const CreatePaymentPage = () => {
           <div className="cursor-pointer" onClick={() => router.back()}>
             <BackIcon />
           </div>
-          <span className="text-[#fff]">Thêm tài khoản rút tiền</span>
+          <span className="text-[#fff]">{i18next.t("withdrawAccount.withdrawAccountBtn")}</span>
         </div>
         <div className="flex flex-col p-4">
           <div className="p-4 my-2 flex items-center justify-center">
@@ -101,7 +101,7 @@ const CreatePaymentPage = () => {
             <div className="bg-[#1D1C22]">
               {/* KIỂU */}
               <FormControlCustom fullWidth>
-                <InputLabel id="select-method">Kiểu</InputLabel>
+                <InputLabel id="select-method">{i18next.t("withdrawAccount.type")}</InputLabel>
                 <Select
                   labelId="select-method"
                   id="demo-simple-select"
@@ -117,16 +117,16 @@ const CreatePaymentPage = () => {
                     },
                   }}
                 >
-                  <MenuItem value={10}>Đấu thầu hợp pháp</MenuItem>
-                  <MenuItem value={20}>Tiền điện tử</MenuItem>
+                  <MenuItem value={10}>{i18next.t("withdrawAccount.fiatCurrency")}</MenuItem>
+                  <MenuItem value={20}>{i18next.t("withdrawAccount.cryptocurrency")}</MenuItem>
                 </Select>
               </FormControlCustom>
             </div>
             {/* QUỐC GIA */}
             <div className="bg-[#1D1C22]">
               <InputCustom
-                label="Quốc gia"
-                placeholder="Bấm để chọn quốc gia"
+                label={i18next.t("withdrawAccount.country")}
+                placeholder={i18next.t("withdrawAccount.clickToSelectCountry")}
                 className="w-full"
                 InputProps={{
                   endAdornment: (
@@ -144,12 +144,13 @@ const CreatePaymentPage = () => {
               <InputCustom
                 error={formik.touched.bank && formik.errors.bank ? true : false}
                 className=" bg-transparent w-full text-[16px]"
-                label="Ngân hàng"
+                label={i18next.t("withdrawAccount.bank")}
                 name="bank"
                 autoComplete="new-email"
                 value={formik.values.bank}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
+                placeholder={i18next.t("withdrawAccount.placeholderBank")}
               />
               {formik.touched.bank && formik.errors.bank ? (
                 <div className="text-[#FF4444] text-[14px] px-4 py-1">
@@ -166,7 +167,7 @@ const CreatePaymentPage = () => {
                     : false
                 }
                 className=" bg-transparent w-full text-[16px]"
-                label="Tài khoản ngân hàng"
+                label={i18next.t("withdrawAccount.bankAccount")}
                 name="accountBank"
                 autoComplete="new-email"
                 value={formik.values.accountBank}
@@ -188,12 +189,13 @@ const CreatePaymentPage = () => {
                     : false
                 }
                 className=" bg-transparent w-full text-[16px]"
-                label="Tên thực tế"
+                label={i18next.t("withdrawAccount.realName")}
                 name="realName"
                 autoComplete="new-real-name"
                 value={formik.values.realName}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
+                placeholder={i18next.t("withdrawAccount.placeholderRealName")}
               />
               {formik.touched.realName && formik.errors.realName ? (
                 <div className="text-[#FF4444] text-[14px] px-4 py-1">
@@ -208,12 +210,13 @@ const CreatePaymentPage = () => {
                   formik.touched.address && formik.errors.address ? true : false
                 }
                 className="text-[#fff] bg-transparent w-full text-[16px]"
-                label="Địa chỉ liên hệ"
+                label={i18next.t("withdrawAccount.contactAddress")}
                 name="address"
                 type="text"
                 value={formik.values.address}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
+                placeholder={i18next.t("withdrawAccount.placeholderContactAddress")}
               />
               {formik.touched.address && formik.errors.address ? (
                 <div className="text-[#FF4444]  text-[14px] px-4 py-1">
@@ -230,7 +233,7 @@ const CreatePaymentPage = () => {
                     : false
                 }
                 className="text-[#fff] bg-transparent w-full text-[16px]"
-                label="Số liên lạc"
+                label={i18next.t("withdrawAccount.contactPhone")}
                 name="phoneNumber"
                 type="text"
                 value={formik.values.phoneNumber}
@@ -250,7 +253,7 @@ const CreatePaymentPage = () => {
                   formik.touched.cardId && formik.errors.cardId ? true : false
                 }
                 className="text-[#fff] bg-transparent w-full text-[16px]"
-                label="Thẻ ID"
+                label={i18next.t("withdrawAccount.idNumber")}
                 name="cardId"
                 type="text"
                 value={formik.values.cardId}
@@ -267,13 +270,13 @@ const CreatePaymentPage = () => {
             <div className="bg-[#1D1C22]">
               <InputCustom
                 className=" bg-transparent w-full text-[16px]"
-                label="Nhận xet (tùy chọn)(không bắt buộc)"
+                label={i18next.t("withdrawAccount.remark")}
                 name="comment"
                 autoComplete="new-email"
                 value={formik.values.comment}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder="Thêm ghi chú"
+                placeholder={i18next.t("withdrawAccount.placeholderRemark")}
               />
             </div>
             <Button
@@ -281,7 +284,7 @@ const CreatePaymentPage = () => {
               style={{ background: "#3D5AFE" }}
               className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
             >
-              {i18next.t("authenticationPage.register")}
+              {i18next.t("withdrawAccount.confirm")}
             </Button>
           </form>
         </div>
