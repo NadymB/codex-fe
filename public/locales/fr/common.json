@@ -1,109 +1,109 @@
 {
   "language": "Langue",
   "onBoarding": {
-    "sliderTitleFirst": "Bienvenue sur",
-    "sliderContentFirst": "Un lieu de trading complet et très fiable, avec une sélection de produits de trading de haute qualité.",
+    "sliderTitleFirst": "Bienvenue à",
+    "sliderContentFirst": "Une place de trading complète et hautement fiable, avec une sélection de produits de trading de haute qualité.",
     "sliderTitleSecond": "Taux de frais ultra bas",
-    "sliderContentSecond": "Toutes les transactions bénéficient d'un super taux de frais, voire de 0 frais.",
-    "sliderTitleThird": "Trading en un clic",
+    "sliderContentSecond": "Toutes les transactions bénéficient d'un taux de frais super, même sans frais.",
+    "sliderTitleThird": "Une clé d'échange",
     "sliderContentThird": "Des outils innovants pour créer une expérience de trading de produits financiers numériques rapide.",
     "sliderTitleFourth": "Produit complet",
     "sliderContentFourth": "Il y a toujours un produit de trading riche qui vous convient.",
-    "skipBtn": "Sauter",
-    "startNowBtn": "Commencer maintenant"
+    "skipBtn": "franchir",
+    "startNowBtn": "expérimentez maintenant"
   },
   "menuBar": {
-    "home": "Accueil",
-    "market": "Marché",
-    "transaction": "Trade",
-    "asset": "Actif"
+    "home": "page de garde",
+    "market": "marché",
+    "transaction": "commerce",
+    "asset": "actifs"
   },
   "homePage": {
-    "deposit": "Dépôt",
-    "service": "Service",
-    "popularTransactionPair": "Paire de transactions populaires",
-    "trade": "Trade",
-    "study": "Étude",
-    "helpCenter": "Centre d'aide",
+    "deposit": "recharger",
+    "service": "service Clients",
+    "popularTransactionPair": "Paires de négociation populaires",
+    "trade": "commerce",
+    "study": "étude",
+    "helpCenter": "centre d'aide",
     "vip": "VIP",
-    "leaderBoard": "Classement",
+    "leaderBoard": "classement",
     "inviteFriends": "Inviter des amis",
-    "savings": "Épargne",
-    "tradingRobot": "Robot de trading",
-    "mining": "Minage"
+    "savings": "des économies",
+    "tradingRobot": "robot commercial",
+    "mining": "exploitation minière"
   },
   "marketPage": {
-    "commodity": "Marchandise",
-    "cryptoCurrency": "Crypto-monnaie",
-    "foreignExchange": "Change",
-    "transaction": "Trade",
-    "tradingVolume": "Volume de trading",
-    "price": "Prix",
-    "24HRisingDecline": "24H variation"
+    "commodity": "Produit de base",
+    "cryptoCurrency": "crypto-monnaie",
+    "foreignExchange": "change",
+    "transaction": "paire commerciale",
+    "tradingVolume": "Volume d'échanges",
+    "price": "prix",
+    "24HRisingDecline": "24 heures de montée et de descente"
   },
   "assetPage": {
-    "myAssets": "Mes actifs",
+    "myAssets": "mes atouts",
     "totalAssets": "Total des actifs",
-    "TodayProfitability": "Rentabilité aujourd'hui",
-    "deposit": "Dépôt",
-    "withdraw": "Retrait",
+    "TodayProfitability": "profit aujourd'hui",
+    "deposit": "recharger",
+    "withdraw": "retirer",
     "order": "Commande",
-    "bill": "Facture",
+    "bill": "facture",
     "myAccount": "Mon compte",
-    "funds": "Fonds",
-    "financialManagement": "Gestion financière",
-    "tradingRobot": "Robot de trading",
-    "healing": "Guérison"
+    "funds": "fonds",
+    "financialManagement": "direction financière",
+    "tradingRobot": "robot commercial",
+    "healing": "documentaire"
   },
   "profilePage": {
-    "title": "Centre personnel",
-    "username": "Nom d'utilisateur",
-    "email": "E-mail",
+    "title": "centre personnel",
+    "username": "nom d'utilisateur",
+    "email": "Poster",
     "phoneNumber": "Numéro de téléphone",
-    "loginPassword": "Mot de passe de connexion",
+    "loginPassword": "mot de passe",
     "withdrawAccount": "Compte de retrait",
     "authentication": "Authentification",
     "securityCode": "Code de sécurité",
     "language": "Langue",
-    "colorsOfUpsAndDowns": "Couleurs des hausses et des baisses",
-    "displayCurrency": "Afficher la devise",
-    "aboutUs": "À propos de nous",
-    "quit": "Quitter",
-    "welcome": "Bienvenue sur",
+    "colorsOfUpsAndDowns": "couleur de haut en bas",
+    "displayCurrency": "devise d'affichage",
+    "aboutUs": "à propos de nous",
+    "quit": "arrêter",
+    "welcome": "Bienvenue à",
     "messageLogin": "Veuillez vous connecter à votre compte ou créer un compte",
     "login": "Connexion",
-    "signup": "Inscription",
-    "notCertified": "Non certifié",
-    "greenRiseAndRed": "Hausse verte et rouge",
-    "notSet": "Non défini"
+    "signup": "enregistrer",
+    "notCertified": "pas encore certifié",
+    "greenRiseAndRed": "rouge vers le haut vert vers le bas",
+    "notSet": "pas encore défini"
   },
   "announcementPage": {
-    "title": "Annonce"
+    "title": "Avis d'annonce"
   },
   "withdrawAccount": {
     "title": "Compte de retrait",
-    "noWithdrawalAccount": "Aucun compte de retrait défini",
+    "noWithdrawalAccount": "Compte de retrait non configuré",
     "withdrawAccountBtn": "Ajouter un compte de retrait"
   },
   "authentication": {
     "title": "Authentification",
-    "lv1": "Niveau 1",
-    "rightsAndInterests": "Droits et intérêts",
-    "fiatCurrencyDeposit": "Dépôt de monnaie fiduciaire",
-    "withdrawalAmount": "Montant du retrait",
-    "unlimited": "Illimité",
-    "other": "Autre",
-    "moreRewards": "Plus de récompenses",
-    "id": "ID",
-    "selfie": "Selfie",
-    "certifyBtnLv1": "Certification immédiate",
-    "lv2": "Niveau 2",
-    "moreTradingProducts": "Plus de produits de trading",
-    "proofOfAddress": "Preuve d'adresse",
-    "certifyBtnLv2": "Vous devez d'abord terminer la certification LV.1"
+    "lv1": "Lv.1",
+    "rightsAndInterests": "droits et intérêts",
+    "fiatCurrencyDeposit": "Recharge en devise légale",
+    "withdrawalAmount": "Montant de retrait",
+    "unlimited": "illimité",
+    "other": "autre",
+    "moreRewards": "plus de récompenses",
+    "id": "IDENTIFIANT",
+    "selfie": "selfie",
+    "certifyBtnLv1": "Authentifiez-vous maintenant",
+    "lv2": "Lv.2",
+    "moreTradingProducts": "Plus de produits commerciaux",
+    "proofOfAddress": "un justificatif de domicile",
+    "certifyBtnLv2": "Vous devez d'abord terminer la certification Lv.1"
   },
   "learn": {
-    "title": "Apprendre",
+    "title": "étude",
     "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD : Quelle est la différence ?",
     "howAreTheyDifferentContent": "Les stablecoins sont des cryptomonnaies dont les valeurs sont ancrées à un actif stable, principalement des devises fiduciaires. Tether (USDT), USD Coin (USDC) et Binance USD (BUSD) sont les trois stablecoins les plus populaires, avec une capitalisation boursière combinée de 120 milliards de dollars. Cependant, avec le récent engouement pour BUSD, il ne fait aucun doute que la plupart des investisseurs seraient curieux de savoir si BUSD vaut toujours la peine d'être investi, ou s'il faut simplement investir dans USDT, USDC ou d'autres stablecoins à la place.",
     "whichOneIsRightForYouTitle": "Carte de débit traditionnelle vs. carte de débit crypto : laquelle vous convient le mieux ?",
@@ -114,117 +114,117 @@
     "whatIsPoWInBlockchainContent": "La blockchain est communément perçue à travers le prisme du consensus de Nakamoto de Bitcoin. Mais pour en savoir plus sur ce qu'est la preuve de travail, il est essentiel d'examiner de près la mise en œuvre durable de la PoW."
   },
   "helpCenter": {
-    "title": "Centre d'aide",
+    "title": "centre d'aide",
     "howToMakeADepositTitle": "Comment effectuer un dépôt ?",
     "howToMakeADepositContent": "Vous cherchez un guide sur la façon de déposer des fonds ? Nous vous entendons ! Voici un processus opérationnel détaillé pour que vous puissiez facilement effectuer un dépôt en transférant des cryptomonnaies depuis votre portefeuille ou en déposant de la monnaie fiduciaire sur votre compte."
   },
   "vip": {
-    "title": "Plan de privilèges des membres",
-    "upgradeMyMemberLevelTitle": "Mettre à niveau mon niveau de membre",
-    "upgradeMyMemberLevelContent": "Nous adaptons différents niveaux de membres en fonction des différents utilisateurs. Vous pouvez mettre à niveau votre niveau de membre en remplissant la tâche et profiter de plus de privilèges. Pour plus de détails, cliquez sur le bouton ci-dessous pour une consultation.",
-    "currentLevelTitle": "Niveau actuel :",
+    "title": "Programme de privilèges d'adhésion",
+    "upgradeMyMemberLevelTitle": "mettre à niveau mon niveau d'adhésion",
+    "upgradeMyMemberLevelContent": "Nous adaptons différents niveaux d'adhésion en fonction des différents utilisateurs. Vous pouvez mettre à niveau votre niveau d'adhésion en effectuant des tâches et profiter de plus de privilèges. Cliquez sur le bouton ci-dessous pour plus de détails.",
+    "currentLevelTitle": "niveau actuel:",
     "currentLevelContent": "Vous n'êtes pas encore membre",
-    "contactBtn": "Contactez le service client pour une consultation"
+    "contactBtn": "Contacter le service client"
   },
   "color": {
-    "title": "Couleurs des hausses et des baisses",
-    "greenRise": "Hausse verte et baisse rouge",
-    "redRise": "Hausse rouge et baisse verte"
+    "title": "couleur de haut en bas",
+    "greenRise": "vert vers le haut rouge vers le bas",
+    "redRise": "rouge vers le haut vert vers le bas"
   },
   "about": {
-    "title": "À propos de nous",
+    "title": "à propos de nous",
     "eUREX": "EUREX",
     "version": "Version 1.39.2",
     "checkForUpdates": "Vérifier les mises à jour",
-    "upgradedLatestVersion": "A été mis à niveau vers la dernière version"
+    "upgradedLatestVersion": "Mise à niveau vers la dernière version"
   },
   "authenticationPage": {
-    "loginTitle": "Connectez-vous s'il vous plaît !",
+    "loginTitle": "Connectez-vous s'il vous plaît!",
     "signupTitle": "Inscrivez-vous immédiatement !",
     "login": "Connexion",
-    "register": "S'inscrire",
+    "register": "enregistrer",
     "email": "E-mail",
-    "username": "Nom d'utilisateur",
+    "username": "nom d'utilisateur",
     "phoneNumber": "Numéro de téléphone",
-    "setPassword": "Définir le mot de passe",
-    "loginPassword": "Mot de passe de connexion",
+    "setPassword": "définir le mot de passe",
+    "loginPassword": "mot de passe",
     "invitationCode": "Code d'invitation",
-    "userNameIsInvalid": "Veuillez saisir votre nom d'utilisateur",
-    "passwordIsInvalid": "Veuillez remplir le mot de passe",
-    "phoneNumberIsInvalid": "Veuillez remplir votre numéro de téléphone",
-    "emailIsInvalid": "Veuillez saisir votre e-mail"
+    "userNameIsInvalid": "Nom d'utilisateur est nécessaire",
+    "passwordIsInvalid": "6-20 caractères",
+    "phoneNumberIsInvalid": "Le numéro de portable est incorrect",
+    "emailIsInvalid": "Le format de l'e-mail est incorrect"
   },
   "deposit": {
-    "title": "Dépôt",
-    "chooseYourDepositMethod": "Choisissez votre méthode de dépôt",
-    "artificialDeposit": "Dépôt artificiel",
-    "contactArtificial": "Contactez le service client artificiel pour obtenir des directives de dépôt"
+    "title": "recharger",
+    "chooseYourDepositMethod": "Choisissez votre mode de recharge",
+    "artificialDeposit": "Recharge manuelle",
+    "contactArtificial": "Contactez le service client manuel pour obtenir le guide de recharge"
   },
   "withdraw": {
-    "title": "Retrait",
-    "account": "Compte",
-    "amount": "Montant",
+    "title": "retirer",
+    "account": "compte",
+    "amount": "la quantité",
     "currentBalance": "Solde actuel :",
-    "allBalance": "Solde total",
-    "managementOfWithdrawal": "Gestion du retrait",
-    "fees": "Frais",
-    "amountReceived": "Montant reçu",
-    "confirm": "Confirmer",
+    "allBalance": "solde complet",
+    "managementOfWithdrawal": "Gérer les méthodes de retrait",
+    "fees": "frais de gestion",
+    "amountReceived": "Montant du reçu",
+    "confirm": "confirmer",
     "msgAccountError": "Veuillez remplir le compte de réception",
-    "msgAmountError": "Le montant minimum est de 1"
+    "msgAmountError": "Le montant est d'au moins 1"
   },
   "order": {
     "title": "Commande",
-    "noData": "Aucune donnée"
+    "noData": "Pas de données"
   },
   "bill": {
-    "title": "Facture",
-    "noData": "Aucune donnée"
+    "title": "facture",
+    "noData": "Pas de données"
   },
   "password": {
-    "title": "Mot de passe de connexion",
-    "oldPassword": "Ancien mot de passe",
-    "newPassword": "Nouveau mot de passe",
-    "oldPasswordInvalidError": "Veuillez saisir l'ancien mot de passe",
-    "newPasswordInvalidError": "6 à 20 caractères individuels",
-    "confirmBtn": "Confirmer"
+    "title": "Définition du mot de passe de connexion",
+    "oldPassword": "ancien mot de passe",
+    "newPassword": "nouveau mot de passe",
+    "oldPasswordInvalidError": "nouveau mot de passe",
+    "newPasswordInvalidError": "6-20 caractères",
+    "confirmBtn": "confirmer"
   },
   "securityCode": {
-    "title": "Définir un mot de passe de sécurité",
-    "newPassword": "Nouveau mot de passe",
-    "newPasswordInvalidError": "6 à 20 caractères individuels",
-    "confirmBtn": "Confirmer"
+    "title": "Définir un mot de passe sécurisé",
+    "newPassword": "nouveau mot de passe",
+    "newPasswordInvalidError": "6-30 caractères",
+    "confirmBtn": "confirmer"
   },
   "tradePage": {
-    "position": "Position",
+    "position": "position",
     "order": "Commande",
-    "long": "Long",
-    "short": "Court",
+    "long": "voir plus",
+    "short": "baissier",
     "trade": {
-      "title": "Trade",
-      "profit": "Profit",
-      "minute": "Minute",
-      "balance": "Solde",
-      "price": "Prix",
-      "amount": "Quantité",
-      "quantity:": "Quantité"
+      "title": "commerce",
+      "profit": "revenu",
+      "minute": "minute",
+      "balance": "équilibre",
+      "price": "prix",
+      "amount": "quantité",
+      "quantity:": "quantité"
     },
     "chart": {
-      "title": "Graphiques",
-      "24HourHigh": "Plus haut sur 24 heures",
-      "24HourLow": "Plus bas sur 24 heures",
-      "24HourTurnover": "Chiffre d'affaires sur 24 heures"
+      "title": "s'orienter",
+      "24HourHigh": "24 heures maximum",
+      "24HourLow": "24 heures minimum",
+      "24HourTurnover": "24 heures de chiffre d'affaires"
     }
   },
   "displayCurrency": {
-    "title": "Devise d'affichage",
-    "commonlyUsed": "Couramment utilisé",
+    "title": "devise d'affichage",
+    "commonlyUsed": "couramment utilisé",
     "more": "Plus"
   },
   "servicePage": {
     "title": "Contactez-nous",
-    "onlineService": "Service en ligne",
-    "onlineServiceContent": "Bienvenue pour nous contacter si vous avez besoin de quelque chose",
-    "placeholderMessage": "Le message sera envoyé..."
+    "onlineService": "un service en ligne",
+    "onlineServiceContent": "Si vous avez besoin de quoi que ce soit, veuillez nous contacter",
+    "placeholderMessage": "Message à envoyer..."
   }
 }

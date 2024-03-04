@@ -1,81 +1,81 @@
 {
-  "language": "Lingua",
+  "language": "lingua",
   "onBoarding": {
-    "sliderTitleFirst": "Benvenuto su",
-    "sliderContentFirst": "Un luogo di trading altamente affidabile e completo, con una selezione di prodotti di trading di alta qualità.",
-    "sliderTitleSecond": "Tasso di commissioni ultra basso",
-    "sliderContentSecond": "Tutte le transazioni godono di un tasso di commissioni super, anche 0 commissioni.",
-    "sliderTitleThird": "Trading con un solo clic",
-    "sliderContentThird": "Strumenti innovativi per creare un'esperienza di trading di prodotti finanziari digitali veloce.",
+    "sliderTitleFirst": "Benvenuto a",
+    "sliderContentFirst": "Un luogo di scambio completo altamente affidabile, con una selezione di prodotti commerciali di alta qualità.",
+    "sliderTitleSecond": "Tariffa ultra bassa",
+    "sliderContentSecond": "Tutte le transazioni usufruiscono di tariffe super, anche senza commissioni.",
+    "sliderTitleThird": "Una chiave commerciale",
+    "sliderContentThird": "Strumenti innovativi per creare un'esperienza di trading veloce di prodotti finanziari digitali.",
     "sliderTitleFourth": "Prodotto completo",
     "sliderContentFourth": "C'è sempre un ricco prodotto di trading adatto a te.",
-    "skipBtn": "Salta",
-    "startNowBtn": "Inizia ora"
+    "skipBtn": "saltare",
+    "startNowBtn": "esperienza adesso"
   },
   "menuBar": {
-    "home": "Home",
-    "market": "Mercato",
-    "transaction": "Commercio",
-    "asset": "Attività"
+    "home": "prima pagina",
+    "market": "mercato",
+    "transaction": "commercio",
+    "asset": "risorse"
   },
   "homePage": {
-    "deposit": "Deposito",
-    "service": "Servizio",
-    "popularTransactionPair": "Coppia di transazioni popolare",
-    "trade": "Commercio",
-    "study": "Studio",
-    "helpCenter": "Centro assistenza",
+    "deposit": "ricaricare",
+    "service": "assistenza clienti",
+    "popularTransactionPair": "Coppie di scambio popolari",
+    "trade": "commercio",
+    "study": "studio",
+    "helpCenter": "centro assistenza",
     "vip": "VIP",
-    "leaderBoard": "Classifica",
-    "inviteFriends": "Invita amici",
-    "savings": "Risparmi",
-    "tradingRobot": "Robot di trading",
-    "mining": "Mining"
+    "leaderBoard": "classifica",
+    "inviteFriends": "invita gli amici",
+    "savings": "risparmio",
+    "tradingRobot": "robot commerciale",
+    "mining": "estrazione"
   },
   "marketPage": {
-    "commodity": "Commodity",
-    "cryptoCurrency": "Crypto Valuta",
-    "foreignExchange": "Cambio",
-    "transaction": "Transazione",
-    "tradingVolume": "Volume di trading",
-    "price": "Prezzo",
-    "24HRisingDecline": "Variazione in 24 ore"
+    "commodity": "Merce",
+    "cryptoCurrency": "criptovaluta",
+    "foreignExchange": "valuta estera",
+    "transaction": "coppia di scambio",
+    "tradingVolume": "Volume degli scambi",
+    "price": "prezzo",
+    "24HRisingDecline": "24 ore di salita e discesa"
   },
   "assetPage": {
-    "myAssets": "Le mie risorse",
-    "totalAssets": "Totale risorse",
-    "TodayProfitability": "Redditività di oggi",
-    "deposit": "Deposito",
-    "withdraw": "Prelievo",
+    "myAssets": "i miei beni",
+    "totalAssets": "Totale attivo",
+    "TodayProfitability": "profitto oggi:",
+    "deposit": "ricaricare",
+    "withdraw": "ritirare",
     "order": "Ordine",
-    "bill": "Fattura",
-    "myAccount": "Il mio account",
-    "funds": "Fondi",
-    "financialManagement": "Gestione finanziaria",
-    "tradingRobot": "Robot di trading",
-    "healing": "Guarigione"
+    "bill": "conto",
+    "myAccount": "il mio conto",
+    "funds": "fondi",
+    "financialManagement": "gestione finanziaria",
+    "tradingRobot": "robot commerciale",
+    "healing": "documentario"
   },
   "profilePage": {
-    "title": "Centro personale",
-    "username": "Nome utente",
-    "email": "Email",
+    "title": "centro personale",
+    "username": "nome utente",
+    "email": "Posta",
     "phoneNumber": "Numero di telefono",
-    "loginPassword": "Password di accesso",
-    "withdrawAccount": "Account di prelievo",
+    "loginPassword": "password per il login",
+    "withdrawAccount": "Conto di prelievo",
     "authentication": "Autenticazione",
     "securityCode": "Codice di sicurezza",
-    "language": "Lingua",
-    "colorsOfUpsAndDowns": "Colori di salita e discesa",
-    "displayCurrency": "Valuta visualizzata",
-    "aboutUs": "Chi siamo",
-    "quit": "Esci",
-    "welcome": "Benvenuto su",
-    "messageLogin": "Effettua l'accesso al tuo account o registrane uno",
-    "login": "Accesso",
-    "signup": "Iscriviti",
-    "notCertified": "Non certificato",
-    "greenRiseAndRed": "Salita verde e rossa",
-    "notSet": "Non impostato"
+    "language": "lingua",
+    "colorsOfUpsAndDowns": "colore su e giù",
+    "displayCurrency": "visualizzare la valuta",
+    "aboutUs": "chi siamo",
+    "quit": "esentato",
+    "welcome": "Benvenuto a",
+    "messageLogin": "Accedi al tuo account o registra un account",
+    "login": "Login",
+    "signup": "Registrati",
+    "notCertified": "rosso su verde giù",
+    "greenRiseAndRed": "rosso su verde giù",
+    "notSet": "non impostato"
   },
   "announcementPage": {
     "title": "Annuncio"
@@ -139,92 +139,92 @@
     "upgradedLatestVersion": "È stata aggiornata all'ultima versione"
   },
   "authenticationPage": {
-    "loginTitle": "Effettua il login, per favore!",
-    "signupTitle": "Registrati immediatamente!",
+    "loginTitle": "Accedi per favore!",
+    "signupTitle": "Iscriviti ora!",
     "login": "Login",
     "register": "Registrati",
     "email": "E-mail",
-    "username": "Nome utente",
+    "username": "nome utente",
     "phoneNumber": "Numero di telefono",
-    "setPassword": "Imposta la password",
-    "loginPassword": "Password di accesso",
-    "invitationCode": "Codice di invito",
-    "userNameIsInvalid": "Per favore inserisci il tuo nome utente",
-    "passwordIsInvalid": "Per favore inserisci la password",
-    "phoneNumberIsInvalid": "Per favore inserisci il tuo numero di telefono",
-    "emailIsInvalid": "Per favore inserisci la tua email"
+    "setPassword": "impostare la password",
+    "loginPassword": "password per il login",
+    "invitationCode": "Codice invito",
+    "userNameIsInvalid": "è richiesto il nome utente",
+    "passwordIsInvalid": "6-20 caratteri",
+    "phoneNumberIsInvalid": "Il numero di cellulare non è corretto",
+    "emailIsInvalid": "Il formato dell'e-mail non è corretto"
   },
   "deposit": {
-    "title": "Deposito",
-    "chooseYourDepositMethod": "Scegli il tuo metodo di deposito",
-    "artificialDeposit": "Deposito artificiale",
-    "contactArtificial": "Contatta il servizio clienti artificiale per ottenere linee guida sul deposito"
+    "title": "ricaricare",
+    "chooseYourDepositMethod": "Scegli il tuo metodo di ricarica",
+    "artificialDeposit": "Ricarica manuale",
+    "contactArtificial": "Contatta il servizio clienti manuale per ottenere la guida alla ricarica"
   },
   "withdraw": {
-    "title": "Prelievo",
-    "account": "Account",
-    "amount": "Importo",
-    "currentBalance": "Saldo attuale:",
-    "allBalance": "Saldo totale",
-    "managementOfWithdrawal": "Gestione del prelievo",
-    "fees": "Commissioni",
-    "amountReceived": "Importo ricevuto",
-    "confirm": "Conferma",
-    "msgAccountError": "Per favore inserisci l'account ricevente",
-    "msgAmountError": "L'importo minimo è 1"
+    "title": "ritirare",
+    "account": "account",
+    "amount": "I'importo",
+    "currentBalance": "bilancio corrente:",
+    "allBalance": "pieno equilibrio",
+    "managementOfWithdrawal": "Gestisci i metodi di prelievo",
+    "fees": "tassa di gestione",
+    "amountReceived": "Importo Ricevuta",
+    "confirm": "Confermare",
+    "msgAccountError": "Si prega di compilare il conto ricevente",
+    "msgAmountError": "L'importo è di almeno 1"
   },
   "order": {
     "title": "Ordine",
     "noData": "Nessun dato"
   },
   "bill": {
-    "title": "Fattura",
+    "title": "conto",
     "noData": "Nessun dato"
   },
   "password": {
-    "title": "Password di accesso",
-    "oldPassword": "Vecchia password",
-    "newPassword": "Nuova password",
-    "oldPasswordInvalidError": "Per favore inserisci la vecchia password",
-    "newPasswordInvalidError": "6-20 caratteri individuali",
-    "confirmBtn": "Conferma"
+    "title": "Impostazione della password di accesso",
+    "oldPassword": "vecchia password",
+    "newPassword": "nuova password",
+    "oldPasswordInvalidError": "Inserisci la vecchia password",
+    "newPasswordInvalidError": "6-20 caratteri",
+    "confirmBtn": "Confermare"
   },
   "securityCode": {
-    "title": "Imposta una password di sicurezza",
-    "newPassword": "Nuova password",
-    "newPasswordInvalidError": "6-20 caratteri individuali",
-    "confirmBtn": "Conferma"
+    "title": "Imposta una password sicura",
+    "newPassword": "nuova password",
+    "newPasswordInvalidError": "Imposta una password sicura",
+    "confirmBtn": "Confermare"
   },
   "tradePage": {
-    "position": "Posizione",
+    "position": "posizione",
     "order": "Ordine",
-    "long": "Lungo",
-    "short": "Corto",
+    "long": "Vedi altro",
+    "short": "ribassista",
     "trade": {
-      "title": "Trading",
-      "profit": "Profitto",
-      "minute": "Minuto",
-      "balance": "Bilancio",
-      "price": "Prezzo",
-      "amount": "Quantità",
-      "quantity:": "Quantità"
+      "title": "commercio",
+      "profit": "reddito",
+      "minute": "minuto",
+      "balance": "bilancia",
+      "price": "prezzo",
+      "amount": "quantità",
+      "quantity:": "quantità"
     },
     "chart": {
-      "title": "Grafici",
-      "24HourHigh": "Massimo delle ultime 24 ore",
-      "24HourLow": "Minimo delle ultime 24 ore",
-      "24HourTurnover": "Fatturato delle ultime 24 ore"
+      "title": "tendenza",
+      "24HourHigh": "Massimo 24 ore",
+      "24HourLow": "Minimo 24 ore",
+      "24HourTurnover": "Turnover 24 ore"
     }
   },
   "displayCurrency": {
-    "title": "Visualizza valuta",
-    "commonlyUsed": "Comunemente usato",
-    "more": "Altro"
+    "title": "visualizzare la valuta",
+    "commonlyUsed": "usato comunemente",
+    "more": "Di più"
   },
   "servicePage": {
     "title": "Contattaci",
-    "onlineService": "Servizio online",
-    "onlineServiceContent": "Benvenuto nel contattarci se hai bisogno di assistenza",
-    "placeholderMessage": "Il messaggio verrà inviato..."
+    "onlineService": "Servizio Online",
+    "onlineServiceContent": "Se hai bisogno di qualcosa, ti preghiamo di contattarci",
+    "placeholderMessage": "Messaggio da inviare..."
   }
 }

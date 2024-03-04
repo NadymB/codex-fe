@@ -89,7 +89,7 @@ const ServicePage = () => {
             {i18next.t("servicePage.onlineServiceContent")}
           </div>
           <div className="flex flex-col">
-            <OutComingMessage />
+            {/* <OutComingMessage /> */}
             <InComingMessage />
           </div>
         </div>

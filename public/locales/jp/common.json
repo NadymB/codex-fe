@@ -2,34 +2,34 @@
   "language": "言語",
   "onBoarding": {
     "sliderTitleFirst": "ようこそ",
-    "sliderContentFirst": "高い信頼性を持つ包括的な取引所で、高品質の取引商品が選択できます。",
-    "sliderTitleSecond": "超低手数料率",
-    "sliderContentSecond": "すべての取引が超低手数料率を享受し、手数料はゼロです。",
-    "sliderTitleThird": "ワンキートレード",
-    "sliderContentThird": "革新的なツールを使用して、迅速なデジタル金融商品の取引体験を提供します。",
-    "sliderTitleFourth": "豊富な商品",
-    "sliderContentFourth": "常に適した豊富な取引商品が用意されています。",
-    "skipBtn": "スキップ",
-    "startNowBtn": "今すぐ開始"
+    "sliderContentFirst": "高品質な取引商品を取り揃えた、信頼性の高い総合取引所です。",
+    "sliderTitleSecond": "超低料金率",
+    "sliderContentSecond": "すべての取引では、たとえ手数料が 0 であっても、スーパー手数料率が適用されます。",
+    "sliderTitleThird": "ワンキー取引",
+    "sliderContentThird": "高速なデジタル金融商品取引エクスペリエンスを作成する革新的なツール。",
+    "sliderTitleFourth": "完全な製品",
+    "sliderContentFourth": "あなたに合った豊富な取引商品が常にあります。",
+    "skipBtn": "飛び越える",
+    "startNowBtn": "すぐに経験します"
   },
   "menuBar": {
-    "home": "ホーム",
+    "home": "表紙",
     "market": "市場",
-    "transaction": "取引",
+    "transaction": "トレード",
     "asset": "資産"
   },
   "homePage": {
-    "deposit": "入金",
-    "service": "サービス",
-    "popularTransactionPair": "人気の取引ペア",
-    "trade": "取引",
-    "study": "学習",
+    "deposit": "充電",
+    "service": "顧客サービス",
+    "popularTransactionPair": "人気のあるトランザクションペア",
+    "trade": "トレード",
+    "study": "勉強",
     "helpCenter": "ヘルプセンター",
     "vip": "VIP",
-    "leaderBoard": "リーダーボード",
+    "leaderBoard": "ランキング",
     "inviteFriends": "友達を招待",
-    "savings": "貯蓄",
-    "tradingRobot": "取引ロボット",
+    "savings": "節約",
+    "tradingRobot": "トレーディングロボット",
     "mining": "マイニング"
   },
   "marketPage": {
@@ -39,43 +39,43 @@
     "transaction": "取引",
     "tradingVolume": "取引量",
     "price": "価格",
-    "24HRisingDecline": "24時間の上昇と下降"
+    "24HRisingDecline": "24時間変動"
   },
   "assetPage": {
     "myAssets": "私の資産",
     "totalAssets": "総資産",
     "TodayProfitability": "今日の収益性",
-    "deposit": "入金",
-    "withdraw": "引き出し",
+    "deposit": "充電",
+    "withdraw": "撤退",
     "order": "注文",
-    "bill": "請求書",
+    "bill": "明細書",
     "myAccount": "マイアカウント",
     "funds": "資金",
     "financialManagement": "財務管理",
-    "tradingRobot": "取引ロボット",
+    "tradingRobot": "トレーディングロボット",
     "healing": "ヒーリング"
   },
   "profilePage": {
-    "title": "個人センター",
+    "title": "パーソナルセンター",
     "username": "ユーザー名",
-    "email": "Eメール",
+    "email": "郵便",
     "phoneNumber": "電話番号",
     "loginPassword": "ログインパスワード",
-    "withdrawAccount": "出金口座",
+    "withdrawAccount": "撤退口座",
     "authentication": "認証",
     "securityCode": "セキュリティコード",
     "language": "言語",
-    "colorsOfUpsAndDowns": "上昇と下降の色",
-    "displayCurrency": "表示通貨",
-    "aboutUs": "会社概要",
-    "quit": "終了",
+    "colorsOfUpsAndDowns": "浮き沈みの色",
+    "displayCurrency": "通貨を表示します",
+    "aboutUs": "私たちに関しては",
+    "quit": "やめる",
     "welcome": "ようこそ",
     "messageLogin": "アカウントにログインするか、新しいアカウントを登録してください",
     "login": "ログイン",
-    "signup": "サインアップ",
-    "notCertified": "未認証",
-    "greenRiseAndRed": "緑の上昇と赤",
-    "notSet": "未設定"
+    "signup": "登録",
+    "notCertified": "認定されていません",
+    "greenRiseAndRed": "赤い上昇と緑",
+    "notSet": "設定されていません"
   },
   "announcementPage": {
     "title": "お知らせ"
@@ -103,7 +103,7 @@
     "certifyBtnLv2": "まずLv.1の認証を完了する必要があります"
   },
   "learn": {
-    "title": "学ぶ",
+    "title": "勉強",
     "howAreTheyDifferentTitle": "USDTとUSDCとBUSDの違いは？",
     "howAreTheyDifferentContent": "ステーブルコインは、価値が安定した資産にペッグされた暗号通貨です。主に法定通貨です。Tether（USDT）、USD Coin（USDC）、Binance USD（BUSD）は、市場規模が合計1200億ドルという三大人気ステーブルコインです。しかし、最近BUSDに関する話題が出ているため、BUSDへの投資の価値がまだあるか、それとも単にUSDT、USDC、または他のステーブルコインに投資すべきか、多くの投資家が気になるでしょう。",
     "whichOneIsRightForYouTitle": "従来のデビットカード vs 暗号デビットカード: あなたにとってどちらが適していますか？",
@@ -119,23 +119,23 @@
     "howToMakeADepositContent": "資金を入金する方法についてのガイドをお探しですか？ 了解しました！ 以下に、ウォレットからの暗号通貨の送金や法定通貨の口座への入金により、簡単に入金できるように、詳細な操作手順を示します。"
   },
   "vip": {
-    "title": "会員特典プラン",
-    "upgradeMyMemberLevelTitle": "会員レベルをアップグレード",
-    "upgradeMyMemberLevelContent": "我々は異なるユーザーに合わせて異なる会員レベルを提供しています。 タスクを完了して会員レベルをアップグレードし、さらに多くの特典をお楽しみください。 詳細については、以下のボタンをクリックして相談してください。",
-    "currentLevelTitle": "現在のレベル：",
-    "currentLevelContent": "まだ会員ではありません",
-    "contactBtn": "カスタマーサービスに相談する"
+    "title": "メンバー特権計画",
+    "upgradeMyMemberLevelTitle": "メンバーレベルをアップグレードします",
+    "upgradeMyMemberLevelContent": "さまざまなユーザーに応じてさまざまなメンバーシップレベルを調整します。タスクを完了することでメンバーシップレベルをアップグレードし、より多くの特権を享受できます。 詳細については、以下のボタンをクリックして相談してください。",
+    "currentLevelTitle": "現在のレベル:",
+    "currentLevelContent": "ではありません",
+    "contactBtn": "カスタマーサービスの相談に連絡してください"
   },
   "color": {
-    "title": "上昇と下降の色",
-    "greenRise": "上昇は緑、下降は赤",
-    "redRise": "上昇は赤、下降は緑"
+    "title": "浮き沈みの色",
+    "greenRise": "緑の上昇と赤",
+    "redRise": "赤い上昇と緑"
   },
   "about": {
-    "title": "私たちについて",
+    "title": "私たちに関しては",
     "eUREX": "EUREX",
     "version": "バージョン 1.39.2",
-    "checkForUpdates": "更新を確認",
+    "checkForUpdates": "1アップデートを確認",
     "upgradedLatestVersion": "最新バージョンにアップグレードされました"
   },
   "authenticationPage": {
@@ -146,60 +146,60 @@
     "email": "Eメール",
     "username": "ユーザー名",
     "phoneNumber": "電話番号",
-    "setPassword": "パスワードを設定",
+    "setPassword": "パスワードを設定してください",
     "loginPassword": "ログインパスワード",
     "invitationCode": "招待コード",
-    "userNameIsInvalid": "ユーザー名を入力してください",
-    "passwordIsInvalid": "パスワードを入力してください",
-    "phoneNumberIsInvalid": "電話番号を入力してください",
-    "emailIsInvalid": "Eメールを入力してください"
+    "userNameIsInvalid": "ユーザー名は入力する必要があります",
+    "passwordIsInvalid": "6 - 20個々の文字",
+    "phoneNumberIsInvalid": "携帯電話番号が正しくありません",
+    "emailIsInvalid": "電子メール形式が正しくありません"
   },
   "deposit": {
-    "title": "入金",
-    "chooseYourDepositMethod": "入金方法を選択",
-    "artificialDeposit": "人工入金",
-    "contactArtificial": "人工的なカスタマーサービスに連絡して入金ガイドラインを取得してください"
+    "title": "充電",
+    "chooseYourDepositMethod": "リチャージメソッドを選択してください",
+    "artificialDeposit": "人工充電",
+    "contactArtificial": "人工顧客サービスに連絡して、充電ガイドラインを取得してください"
   },
   "withdraw": {
-    "title": "出金",
+    "title": "撤退",
     "account": "アカウント",
-    "amount": "金額",
-    "currentBalance": "現在の残高：",
-    "allBalance": "すべての残高",
-    "managementOfWithdrawal": "出金管理",
+    "amount": "額",
+    "currentBalance": "経常収支:",
+    "allBalance": "すべてのバランス",
+    "managementOfWithdrawal": "撤退の管理",
     "fees": "手数料",
-    "amountReceived": "受取金額",
+    "amountReceived": "アカウントの金額",
     "confirm": "確認",
-    "msgAccountError": "受取口座を入力してください",
-    "msgAmountError": "最小金額は1です"
+    "msgAccountError": "受信アカウントに記入してください",
+    "msgAmountError": "最小金額は1"
   },
   "order": {
     "title": "注文",
     "noData": "データなし"
   },
   "bill": {
-    "title": "請求書",
+    "title": "注文",
     "noData": "データなし"
   },
   "password": {
     "title": "ログインパスワード",
-    "oldPassword": "旧パスワード",
+    "oldPassword": "以前のパスワード",
     "newPassword": "新しいパスワード",
     "oldPasswordInvalidError": "古いパスワードを入力してください",
-    "newPasswordInvalidError": "6〜20の文字を入力してください",
+    "newPasswordInvalidError": "6 - 20個々の文字",
     "confirmBtn": "確認"
   },
   "securityCode": {
-    "title": "セキュリティパスワードを設定する",
+    "title": "セキュリティパスワードを設定します",
     "newPassword": "新しいパスワード",
-    "newPasswordInvalidError": "6〜20の文字を入力してください",
+    "newPasswordInvalidError": "6  -  30個々の文字",
     "confirmBtn": "確認"
   },
   "tradePage": {
     "position": "ポジション",
     "order": "注文",
-    "long": "買い",
-    "short": "売り",
+    "long": "買い上げる",
+    "short": "売り下げる",
     "trade": {
       "title": "取引",
       "profit": "利益",
@@ -211,20 +211,20 @@
     },
     "chart": {
       "title": "チャート",
-      "24HourHigh": "24時間高値",
-      "24HourLow": "24時間安値",
-      "24HourTurnover": "24時間の取引高"
+      "24HourHigh": "24時間最高",
+      "24HourLow": "24時間最低",
+      "24HourTurnover": "24時間取引高"
     }
   },
   "displayCurrency": {
     "title": "表示通貨",
-    "commonlyUsed": "よく使われる",
-    "more": "その他"
+    "commonlyUsed": "一般的に使用されます",
+    "more": "もっと"
   },
   "servicePage": {
     "title": "お問い合わせ",
     "onlineService": "オンラインサービス",
-    "onlineServiceContent": "何かお困りのことがあれば、お気軽にお問い合わせください",
-    "placeholderMessage": "メッセージが送信されます..."
+    "onlineServiceContent": "必要な場合はお問い合わせください",
+    "placeholderMessage": "送信されるメッセージ..."
   }
 }

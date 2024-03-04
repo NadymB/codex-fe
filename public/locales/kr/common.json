@@ -2,79 +2,79 @@
   "language": "언어",
   "onBoarding": {
     "sliderTitleFirst": "환영합니다",
-    "sliderContentFirst": "고품질의 거래 제품을 선택할 수 있는 신뢰할 수 있는 종합 거래 장소입니다.",
-    "sliderTitleSecond": "초저 수수료율",
-    "sliderContentSecond": "모든 거래는 초저 수수료율을 적용받으며, 심지어 수수료가 없습니다.",
-    "sliderTitleThird": "원 클릭 거래",
-    "sliderContentThird": "빠른 디지털 금융 제품 거래 경험을 위한 혁신적인 도구를 제공합니다.",
-    "sliderTitleFourth": "완전한 제품",
-    "sliderContentFourth": "항상 사용자에게 적합한 다양한 거래 제품이 있습니다.",
-    "skipBtn": "건너뛰기",
-    "startNowBtn": "지금 시작"
+    "sliderContentFirst": "높은 품질의 거래 상품을 엄선하여 신뢰할 수 있는 종합 거래 장소입니다.",
+    "sliderTitleSecond": "매우 낮은 수수료율",
+    "sliderContentSecond": "모든 거래에는 수수료가 0인 경우에도 최고 수수료율이 적용됩니다.",
+    "sliderTitleThird": "원 키 거래",
+    "sliderContentThird": "빠른 디지털 금융 상품 거래 경험을 제공하는 혁신적인 도구입니다.",
+    "sliderTitleFourth": "전체 제품",
+    "sliderContentFourth": "항상 귀하에게 적합한 풍부한 거래 상품이 있습니다.",
+    "skipBtn": "뛰어 넘다",
+    "startNowBtn": "지금 경험"
   },
   "menuBar": {
-    "home": "홈",
+    "home": "첫 장",
     "market": "시장",
     "transaction": "거래",
     "asset": "자산"
   },
   "homePage": {
-    "deposit": "입금",
-    "service": "서비스",
-    "popularTransactionPair": "인기 거래 쌍",
+    "deposit": "재충전",
+    "service": "고객 서비스",
+    "popularTransactionPair": "인기 거래쌍",
     "trade": "거래",
-    "study": "학습",
-    "helpCenter": "도움말 센터",
-    "vip": "VIP",
-    "leaderBoard": "리더 보드",
-    "inviteFriends": "친구 초대",
-    "savings": "저축",
+    "study": "공부하다",
+    "helpCenter": "지원 센터",
+    "vip": "요인",
+    "leaderBoard": "리더보드",
+    "inviteFriends": "친구를 초대",
+    "savings": "저금",
     "tradingRobot": "거래 로봇",
-    "mining": "마이닝"
+    "mining": "채광"
   },
   "marketPage": {
     "commodity": "상품",
     "cryptoCurrency": "암호화폐",
     "foreignExchange": "외환",
-    "transaction": "거래",
+    "transaction": "거래 쌍",
     "tradingVolume": "거래량",
     "price": "가격",
-    "24HRisingDecline": "24시간 상승/하락"
+    "24HRisingDecline": "24시간 흥망성쇠"
   },
   "assetPage": {
     "myAssets": "내 자산",
     "totalAssets": "총 자산",
-    "TodayProfitability": "오늘의 수익률",
-    "deposit": "입금",
-    "withdraw": "출금",
-    "order": "주문",
+    "TodayProfitability": "오늘 이익",
+    "deposit": "재충전",
+    "withdraw": "철회하다",
+    "order": "주문하다",
     "bill": "청구서",
     "myAccount": "내 계정",
     "funds": "자금",
     "financialManagement": "재무 관리",
     "tradingRobot": "거래 로봇",
-    "healing": "치유"
+    "healing": "기록한 것"
   },
   "profilePage": {
     "title": "개인 센터",
     "username": "사용자 이름",
-    "email": "이메일",
-    "phoneNumber": "전화번호",
+    "email": "우편",
+    "phoneNumber": "전화 번호",
     "loginPassword": "로그인 비밀번호",
-    "withdrawAccount": "출금 계정",
-    "authentication": "인증",
+    "withdrawAccount": "출금계좌",
+    "authentication": "입증",
     "securityCode": "보안 코드",
     "language": "언어",
-    "colorsOfUpsAndDowns": "상승과 하락의 색",
+    "colorsOfUpsAndDowns": "위 아래 색상",
     "displayCurrency": "표시 통화",
     "aboutUs": "회사 소개",
-    "quit": "종료",
-    "welcome": "환영합니다",
-    "messageLogin": "계정에 로그인하거나 계정을 등록하십시오",
+    "quit": "그만두다",
+    "welcome": "에 오신 것을 환영합니다",
+    "messageLogin": "귀하의 계정에 로그인하거나 계정을 등록하십시오",
     "login": "로그인",
-    "signup": "가입",
-    "notCertified": "인증되지 않음",
-    "greenRiseAndRed": "녹색 상승 및 빨간색",
+    "signup": "등록하다",
+    "notCertified": "아직 인증되지 않음",
+    "greenRiseAndRed": "빨간색 위로 녹색 아래로",
     "notSet": "설정되지 않음"
   },
   "announcementPage": {
@@ -103,7 +103,7 @@
     "certifyBtnLv2": "LV.1 인증을 먼저 완료해야 합니다"
   },
   "learn": {
-    "title": "학습",
+    "title": "공부하다",
     "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: 그들의 차이점은 무엇인가?",
     "howAreTheyDifferentContent": "스테이블 코인은 주로 법정 통화에 고정된 암호화폐입니다. 테더 (USDT), USD 코인 (USDC) 및 바이낸스 USD (BUSD)는 시가 총액이 1200억 달러에 달하는 가장 인기 있는 세 가지 스테이블 코인입니다. 그러나 최근 BUSD 주변의 소문이 있기 때문에 BUSD에 여전히 투자할 가치가 있는지, 아니면 단순히 USDT, USDC 또는 다른 스테이블 코인에 투자해야 하는지에 대해 대부분의 투자자가 궁금해할 것입니다.",
     "whichOneIsRightForYouTitle": "전통적인 직불 카드 대 암호화",
@@ -114,67 +114,67 @@
     "whatIsPoWInBlockchainContent": "블록체인은 일반적으로 비트코인의 나카모토 합의를 통해 인식됩니다. 그러나 작업 증명이 무엇인지 더 자세히 알아보기 위해서는 지속 가능한 PoW 구현을 면밀히 살펴봐야 합니다."
   },
   "helpCenter": {
-    "title": "도움말 센터",
+    "title": "지원 센터",
     "howToMakeADepositTitle": "예금하는 방법?",
     "howToMakeADepositContent": "자금을 예금하는 방법에 대한 안내서를 찾고 계신가요? 우리가 듣고 있습니다! 여기에는 암호화폐를 지갑에서 이체하거나 당신의 계정에 법정 통화를 예금하는 것으로 쉽게 예금을 할 수 있는 상세한 운영 절차가 있습니다."
   },
   "vip": {
-    "title": "회원 혜택 계획",
-    "upgradeMyMemberLevelTitle": "나의 회원 등급 업그레이드",
-    "upgradeMyMemberLevelContent": "우리는 다양한 사용자에 따라 다른 회원 등급을 맞춤 설정합니다. 과제를 완료하여 회원 등급을 업그레이드하고 더 많은 혜택을 누릴 수 있습니다. 자세한 내용은 아래의 버튼을 클릭하여 상담하세요.",
-    "currentLevelTitle": "현재 등급:",
-    "currentLevelContent": "아직 회원이 아닙니다",
-    "contactBtn": "고객 서비스 상담 연락"
+    "title": "회원 특전 프로그램",
+    "upgradeMyMemberLevelTitle": "내 회원 등급 업그레이드",
+    "upgradeMyMemberLevelContent": "우리는 다양한 사용자에 따라 다양한 회원 등급을 조정합니다.작업을 완료하여 회원 등급을 업그레이드하고 더 많은 특권을 누릴 수 있습니다. 자세한 내용은 아래 버튼을 클릭하세요.",
+    "currentLevelTitle": "현재 레벨:",
+    "currentLevelContent": "아직 회원이 아닙니다.",
+    "contactBtn": "고객센터 상담문의"
   },
   "color": {
-    "title": "상승과 하락의 색상",
-    "greenRise": "녹색 상승 및 붉은색",
-    "redRise": "빨간색 상승 및 녹색 하락"
+    "title": "위 아래 색상",
+    "greenRise": "초록색 위로 빨간색 아래로",
+    "redRise": "빨간색 위로 녹색 아래로"
   },
   "about": {
     "title": "회사 소개",
     "eUREX": "EUREX",
     "version": "버전 1.39.2",
     "checkForUpdates": "업데이트 확인",
-    "upgradedLatestVersion": "최신 버전으로 업그레이드되었습니다"
+    "upgradedLatestVersion": "최신 버전으로 업그레이드"
   },
   "authenticationPage": {
-    "loginTitle": "로그인 해주세요!",
+    "loginTitle": "로그인하세요!",
     "signupTitle": "즉시 등록하세요!",
     "login": "로그인",
-    "register": "등록",
+    "register": "등록하다",
     "email": "이메일",
     "username": "사용자 이름",
     "phoneNumber": "전화 번호",
-    "setPassword": "비밀번호 설정",
+    "setPassword": "암호를 설정하세요",
     "loginPassword": "로그인 비밀번호",
     "invitationCode": "초대 코드",
-    "userNameIsInvalid": "사용자 이름을 입력해주세요",
-    "passwordIsInvalid": "비밀번호를 입력하세요",
-    "phoneNumberIsInvalid": "전화 번호를 입력하세요",
-    "emailIsInvalid": "이메일을 입력하세요"
+    "userNameIsInvalid": "사용자 이름이 필요합니다",
+    "passwordIsInvalid": "6-20자",
+    "phoneNumberIsInvalid": "휴대폰 번호가 잘못되었습니다.",
+    "emailIsInvalid": "이메일 형식이 잘못되었습니다."
   },
   "deposit": {
-    "title": "예금",
-    "chooseYourDepositMethod": "예금 방법 선택",
-    "artificialDeposit": "인공 예금",
-    "contactArtificial": "인공 고객 서비스에 문의하여 예금 안내를 받으세요"
+    "title": "재충전",
+    "chooseYourDepositMethod": "충전 방법을 선택하세요",
+    "artificialDeposit": "수동 충전",
+    "contactArtificial": "충전 가이드를 받으려면 수동 고객 서비스에 문의하십시오."
   },
   "withdraw": {
-    "title": "출금",
+    "title": "철회하다",
     "account": "계정",
     "amount": "금액",
-    "currentBalance": "현재 잔액:",
-    "allBalance": "전체 잔액",
-    "managementOfWithdrawal": "출금 관리",
+    "currentBalance": "현재의 균형:",
+    "allBalance": "전체 균형",
+    "managementOfWithdrawal": "인출 방법 관리",
     "fees": "수수료",
-    "amountReceived": "받은 금액",
-    "confirm": "확인",
-    "msgAccountError": "수령 계정을 입력하세요",
-    "msgAmountError": "최소 금액은 1입니다"
+    "amountReceived": "영수증 금액",
+    "confirm": "확인하다",
+    "msgAccountError": "수취계좌를 작성해주세요",
+    "msgAmountError": "금액이 1 이상입니다."
   },
   "order": {
-    "title": "주문",
+    "title": "주문하다",
     "noData": "데이터 없음"
   },
   "bill": {
@@ -182,49 +182,49 @@
     "noData": "데이터 없음"
   },
   "password": {
-    "title": "로그인 비밀번호",
-    "oldPassword": "이전 비밀번호",
+    "title": "로그인 비밀번호 설정",
+    "oldPassword": "기존 비밀번호",
     "newPassword": "새 비밀번호",
-    "oldPasswordInvalidError": "이전 비밀번호를 입력하세요",
-    "newPasswordInvalidError": "6-20개의 문자를 입력하세요",
-    "confirmBtn": "확인"
+    "oldPasswordInvalidError": "이전 비밀번호를 입력하세요.",
+    "newPasswordInvalidError": "6-20자",
+    "confirmBtn": "확인하다"
   },
   "securityCode": {
-    "title": "보안 비밀번호 설정",
+    "title": "안전한 비밀번호 설정",
     "newPassword": "새 비밀번호",
-    "newPasswordInvalidError": "6-20개의 문자를 입력하세요",
-    "confirmBtn": "확인"
+    "newPasswordInvalidError": "6-30자",
+    "confirmBtn": "확인하다"
   },
   "tradePage": {
-    "position": "포지션",
-    "order": "주문",
-    "long": "롱",
-    "short": "숏",
+    "position": "위치",
+    "order": "주문하다",
+    "long": "더보기",
+    "short": "약세",
     "trade": {
       "title": "거래",
-      "profit": "이익",
+      "profit": "소득",
       "minute": "분",
-      "balance": "잔고",
+      "balance": "균형",
       "price": "가격",
       "amount": "수량",
       "quantity:": "수량"
     },
     "chart": {
-      "title": "차트",
-      "24HourHigh": "24시간 최고",
-      "24HourLow": "24시간 최저",
-      "24HourTurnover": "24시간 거래량"
+      "title": "경향",
+      "24HourHigh": "최대 24시간",
+      "24HourLow": "최소 24시간",
+      "24HourTurnover": "24시간 회전율"
     }
   },
   "displayCurrency": {
     "title": "표시 통화",
     "commonlyUsed": "일반적으로 사용되는",
-    "more": "더보기"
+    "more": "더"
   },
   "servicePage": {
     "title": "문의하기",
     "onlineService": "온라인 서비스",
-    "onlineServiceContent": "문의 사항이 있으시면 언제든지 연락 주세요",
-    "placeholderMessage": "메시지가 전송됩니다..."
+    "onlineServiceContent": "필요하신 사항이 있으시면 연락주세요",
+    "placeholderMessage": "보낼 메시지..."
   }
 }
