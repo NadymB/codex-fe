@@ -26,7 +26,7 @@ const Tabs = ({ tabs, classNameItem, classNameTab }: IProp) => {
   };
 
   return (
-    <div className="">
+    <div>
       <div className={`${classNameTab} overflow-x-hidden`}>
         <div className="flex relative">
           {tabs.map((tab: any, index) => (
@@ -34,7 +34,7 @@ const Tabs = ({ tabs, classNameItem, classNameTab }: IProp) => {
               sx={{ textTransform: "none" }}
               key={index}
               ref={(element) => (tabRefs.current[index] = element)}
-              className={`${classNameItem} tab-button ${activeTab === index ? "text-[#3D5AFE]" : "text-[#fff]"} font-medium px-4 py-3 rounded-[0px] normal-case`}
+              className={`${classNameItem} tab-button ${activeTab === index ? "text-[#3D5AFE]" : "text-[#999]"} font-medium px-4 py-3 rounded-[0px] normal-case`}
               onClick={() => changeTab(index)}
             >
               {tab.name}
@@ -49,7 +49,7 @@ const Tabs = ({ tabs, classNameItem, classNameTab }: IProp) => {
           />
         </div>
       </div>
-      <div className="mt-4">
+      <div>
         {tabs.map((tab, index) => (
           <div
             key={index}
