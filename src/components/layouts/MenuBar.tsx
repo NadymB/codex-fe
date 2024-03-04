@@ -14,7 +14,7 @@ export const MenuBar = () => {
   const crypto = Cookies.get("crypto");
   const cookiesData = crypto
     ? JSON.parse(crypto)
-    : { token: "BNB", values: "USDT" };
+    : { token: "BNB", values: "USDT", type: "crypto" };
 
   return (
     <>

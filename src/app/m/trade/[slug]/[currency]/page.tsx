@@ -26,7 +26,7 @@ const TradePage = ({
               <div className="flex items-center gap-3">
                 <img
                   className="w-8 h-8"
-                  src={`${getStaticURL()}/assets/images/${params.slug}.svg`}
+                  src={`${getStaticURL()}/assets/images/tokens/${params.slug}.svg`}
                   alt=""
                 />
                 <div className="text-[16px]">

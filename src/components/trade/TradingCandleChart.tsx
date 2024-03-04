@@ -1,10 +1,10 @@
 "use client";
 
 import { tradeService } from "@/services/TradeService";
-import { PRICE_TYPE } from "@/utils/constants";
 import { numberToLocaleString } from "@/utils/formatNumber";
 import { ChartData } from "@/utils/type";
 import i18next from "i18next";
+import Cookies from "js-cookie";
 import {
   KLineData,
   LineType,
@@ -40,11 +40,16 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
     },
     { loadMore }: { loadMore: boolean }
   ) => {
+    const crypto = Cookies.get("crypto");
+    const cookiesData = crypto
+      ? JSON.parse(crypto)
+      : { token: "BNB", values: "USDT", type: "crypto" };
     const response = await tradeService.getChartData(
-      PRICE_TYPE.CRYPTO,
+      cookiesData.type,
       (token + currency).toLowerCase(),
       tradingSessionTimes[currentTradingSessionTime].value
     );
+
     if (response.success) {
       const formattedData: KLineData[] = response.data
         .map((data: ChartData) => {

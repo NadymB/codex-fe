@@ -73,7 +73,10 @@ const MarketPage = () => {
   }, []);
 
   const onSelect = (token: string) => {
-    Cookies.set("crypto", JSON.stringify({ token, values: "USDT" }));
+    Cookies.set(
+      "crypto",
+      JSON.stringify({ token, values: "USDT", type: PRICE_TYPE.COMMODITY })
+    );
     router.push(`/m/trade/${token}/USDT`);
   };
 

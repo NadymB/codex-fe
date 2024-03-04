@@ -4,7 +4,6 @@ import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 import { getStaticURL } from "@/utils/constants";
 import { Button, InputAdornment, Slider, styled } from "@mui/material";
 import i18next from "i18next";
-import { useRouter } from "next/navigation";
 import { FC } from "react";
 import { InputCustom } from "../InputCustom";
 import { TradingChartBar } from "./TradingChartBar";
@@ -47,7 +46,6 @@ interface Props {
 }
 
 const Trading: FC<Props> = ({ token, currency }) => {
-  const router = useRouter();
   return (
     <div>
       <div className="py-3 px-4">
@@ -55,7 +53,7 @@ const Trading: FC<Props> = ({ token, currency }) => {
           <div className="flex items-center gap-3">
             <img
               className="w-8 h-8"
-              src={`${getStaticURL()}/assets/images/${token}.svg`}
+              src={`${getStaticURL()}/assets/images/tokens/${token}.svg`}
               alt=""
             />
             <div className="text-[16px]">
