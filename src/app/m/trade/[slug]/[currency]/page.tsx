@@ -6,7 +6,7 @@ import Tabs from "@/components/Tabs";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { OrderSection } from "@/components/trade/OrderSection";
 import Trading from "@/components/trade/Trading";
-import { TradingChart } from "@/components/trade/TradingChart";
+import { TradingChart } from "@/components/trade/TradingCandleChart";
 import { getStaticURL } from "@/utils/constants";
 import { Button } from "@mui/material";
 import i18next from "i18next";
@@ -115,7 +115,7 @@ const TradePage = ({
       name: `${i18next.t("tradePage.trade.title")}`,
       content: (
         <>
-          <Trading />
+          <Trading token={params.slug} currency={params.currency} />
           <OrderSection />
         </>
       ),

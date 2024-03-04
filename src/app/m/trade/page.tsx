@@ -6,7 +6,7 @@ import Tabs from "@/components/Tabs";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { OrderSection } from "@/components/trade/OrderSection";
 import Trading from "@/components/trade/Trading";
-import { TradingChart } from "@/components/trade/TradingChart";
+import { TradingChart } from "@/components/trade/TradingCandleChart";
 import { Button } from "@mui/material";
 import i18next from "i18next";
 

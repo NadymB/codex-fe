@@ -1,18 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { BackIcon } from "@/assets/icons/BackIcon";
-import {
-  Button,
-  InputAdornment,
-  OutlinedInput,
-  Slider,
-  styled,
-} from "@mui/material";
+import { Button, InputAdornment, Slider, styled } from "@mui/material";
 import i18next from "i18next";
 import { useRouter } from "next/navigation";
-import React from "react";
 import { InputCustom } from "../InputCustom";
 import { TradingChartBar } from "./TradingChartBar";
+import { FC } from "react";
+import { getStaticURL } from "@/utils/constants";
+import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 
 const CssSlider = styled(Slider)({
   "& .MuiSlider-mark": {
@@ -46,23 +41,40 @@ function valueLabelFormat(value: number) {
   return `${value}%`;
 }
 
-const Trading = () => {
+interface Props {
+  token: string;
+  currency: string;
+}
+
+const Trading: FC<Props> = ({ token, currency }) => {
   const router = useRouter();
   return (
     <div>
       <div className="py-3 px-4">
-        <div>
-          <img className="w-10 h-10" src="" alt="" />
-          <span className="text-[#fff] ml-1">SILVER/USDT</span>
-          <span className="text-[#fff] bg-[#55AF7233] px-2 py-1 rounded ml-1">
-            +0.44%
-          </span>
+        <div className="flex flex-row space-x-1 items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              className="w-8 h-8"
+              src={`${getStaticURL()}/assets/images/commodity/GOLD.svg`}
+              alt=""
+            />
+            <div className="text-[16px]">
+              <span className="text-white">
+                {token} / {currency}
+              </span>
+              <span className="text-green-600 bg-[#55AF7233] px-2 py-1 rounded ml-1 text-[14px]">
+                +0.44%
+              </span>
+            </div>
+          </div>
+          <div>
+            <FavoriteIcon />
+          </div>
         </div>
       </div>
       <div className="grid grid-cols-12 p-4">
         <div className="col-span-7">
-          <div className="flex gap-1 pb-3 overflow-auto">
-            {/*  */}
+          <div className="flex gap-2 pb-3 overflow-auto">
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
               <span className="text-[12px] text-[#fff]">
                 {" "}
@@ -75,8 +87,7 @@ const Trading = () => {
                 1 {i18next.t("tradePage.trade.minute")}
               </div>
             </div>
-            {/*  */}
-            {/*  */}
+
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
@@ -88,8 +99,7 @@ const Trading = () => {
                 1 {i18next.t("tradePage.trade.minute")}
               </div>
             </div>
-            {/*  */}
-            {/*  */}
+
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
@@ -101,8 +111,7 @@ const Trading = () => {
                 1 {i18next.t("tradePage.trade.minute")}
               </div>
             </div>
-            {/*  */}
-            {/*  */}
+
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
@@ -114,8 +123,7 @@ const Trading = () => {
                 1 {i18next.t("tradePage.trade.minute")}
               </div>
             </div>
-            {/*  */}
-            {/*  */}
+
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
@@ -127,8 +135,7 @@ const Trading = () => {
                 1 {i18next.t("tradePage.trade.minute")}
               </div>
             </div>
-            {/*  */}
-            {/*  */}
+
             <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
@@ -140,7 +147,6 @@ const Trading = () => {
                 1 {i18next.t("tradePage.trade.minute")}
               </div>
             </div>
-            {/*  */}
           </div>
           <div className="flex items-center justify-between mt-2">
             <span className="text-[12px] text-[#888888]">
@@ -166,9 +172,15 @@ const Trading = () => {
               <InputCustom
                 size="small"
                 className="w-full"
+                placeholder="0.00"
                 InputProps={{
                   endAdornment: (
-                    <InputAdornment position="end">USDT</InputAdornment>
+                    <InputAdornment
+                      position="end"
+                      component={() => (
+                        <div className="text-gray-500 font-thin">USDT</div>
+                      )}
+                    />
                   ),
                 }}
                 aria-describedby="outlined-weight-helper-text"
