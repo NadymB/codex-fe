@@ -11,7 +11,7 @@ import { IncomingMessage } from "http";
 
 import i18next from "i18next";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useRef, useState } from "react";
+import React, { Fragment, useEffect, useRef, useState } from "react";
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
     color: "#3D5AFE",
@@ -43,8 +43,24 @@ const ServicePage = () => {
   const router = useRouter();
   const headerRef = useRef<any>(null);
   const inputRef = useRef<any>(null);
+  const messageListRef = useRef<any>(null);
+  const imageRef = useRef<any>(null);
+  const [inputMessage, setInputMessage] = useState("");
+  const [sendingMessageId, setSendingMessageId] = useState<
+    undefined | number
+  >();
   const [heightHeader, setHeightHeader] = useState(0);
   const [heighInput, setHeighInput] = useState(0);
+  const [listMessage, setListMessage] = useState([
+    {
+      type: "in",
+      content: {
+        text: "Xin chào tôi có thể giúp gì được cho bạn?",
+      },
+      time: new Date().getTime(),
+      messageId: Math.random(),
+    },
+  ]);
 
   useEffect(() => {
     if (headerRef.current) {
@@ -56,6 +72,66 @@ const ServicePage = () => {
       setHeighInput(height);
     }
   }, []);
+  const handleSendMessage = ({
+    text = "",
+    image = "",
+  }: {
+    text?: string;
+    image?: string;
+  }) => {
+    if (text !== "" || image !== "") {
+      const messageId = Math.random();
+      const newMessage = {
+        type: "out",
+        content: {
+          text: text,
+          image: image,
+        },
+        time: new Date().getTime(),
+        status: "sending",
+        messageId,
+      };
+      setListMessage((prev) => [...prev, newMessage]);
+      setInputMessage("");
+      setSendingMessageId(messageId);
+    }
+  };
+  useEffect(() => {
+    scrollToBottom();
+    const updateMessageStatusById = (idToUpdate: number, newStatus: string) => {
+      const ListMessageUpdate = listMessage.map((message) => {
+        if (message.messageId === idToUpdate) {
+          return { ...message, status: newStatus };
+        }
+        return message;
+      });
+      setListMessage(ListMessageUpdate);
+    };
+    const timeOutSendMessage = setTimeout(() => {
+      if (sendingMessageId) {
+        updateMessageStatusById(Number(sendingMessageId), "sent");
+        setSendingMessageId(undefined);
+      }
+    }, 1500);
+  }, [listMessage]);
+
+  const scrollToBottom = () => {
+    const lastMessage = messageListRef.current.lastElementChild;
+    if (lastMessage) {
+      lastMessage.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  };
+  const handleFileChange = (event: any) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = (e: any) => {
+        let image = e.target.result;
+        handleSendMessage({ image: image })
+      };
+    }
+  };
   return (
     <div className="h-screen overflow-hidden bg-[#1C1C1E]">
       <div
@@ -68,11 +144,13 @@ const ServicePage = () => {
         <span className="text-[#fff]">{i18next.t("servicePage.title")}</span>
       </div>
       <div
-        className=" relative flex flex-col overflow-auto px-4 py-4"
+        ref={messageListRef}
+        className=" relative overflow-auto flex flex-col px-4 py-4"
         style={{
-          height: `calc(100% - ${heightHeader + heighInput}px)`,
+          height: `calc(100% - ${heightHeader + heighInput + 10}px)`,
           marginTop: `${heightHeader}px`,
           marginBottom: `${heighInput}px`,
+          scrollBehavior: "smooth",
         }}
       >
         <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-[#22C55E]"></div>
@@ -89,14 +167,29 @@ const ServicePage = () => {
             Chào mừng bạn đến với dịch vụ khách hàng trực tuyến!
           </div>
           <div className="flex flex-col">
-            <OutComingMessage />
-            <InComingMessage />
+            {listMessage.map((message, index) => {
+              if (message.type === "in") {
+                return (
+                  <Fragment key={index}>
+                    {" "}
+                    <InComingMessage message={message} />
+                  </Fragment>
+                );
+              } else if (message.type === "out") {
+                return (
+                  <Fragment key={index}>
+                    {" "}
+                    <OutComingMessage message={message} />
+                  </Fragment>
+                );
+              }
+            })}
           </div>
         </div>
       </div>
       <div
         ref={inputRef}
-        className="fixed bottom-0 left-0 w-full px-4 py-4  bg-[#000000] flex items-center h-auto"
+        className="fixed bottom-0 left-0 w-full px-2 py-2  bg-[#000000] flex items-center h-auto"
       >
         <div className="relative  flex flex-col justify-center rounded-md w-full bg-[#1D1C22]  ">
           <CssTextField
@@ -104,12 +197,31 @@ const ServicePage = () => {
             id="outlined-multiline-flexible"
             multiline
             maxRows={4}
+            value={inputMessage}
+            onChange={(e) => setInputMessage(e.target.value)}
           />
         </div>
-        <IconButton size="large">
+        <input
+          ref={imageRef}
+          type="file"
+          accept="image/*"
+          name="image"
+          id="imgUpload"
+          onChange={handleFileChange}
+          hidden
+        />
+        <IconButton
+          size="large"
+          onClick={() => {
+            return imageRef.current && imageRef.current.click();
+          }}
+        >
           <ImageIcon />
         </IconButton>
-        <IconButton size="large">
+        <IconButton
+          size="large"
+          onClick={() => handleSendMessage({ text: inputMessage })}
+        >
           <SendIcon />
         </IconButton>
       </div>

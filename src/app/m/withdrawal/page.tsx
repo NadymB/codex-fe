@@ -72,7 +72,7 @@ const WithdrawPage = () => {
                     <span className="text-[#3d5afe]">{i18next.t("withdraw.allBalance")}</span>
                 </div>
                 <Link
-                    href={"/m/setting/withdraw-account"}
+                    href={"/m/setting/payment"}
                     className="w-full py-[6px] px-4 border border-[#3d5afe80] hover:border-[#3d5afe] text-sm font-medium text-[#3d5afe] text-center rounded"
                 >
                     {i18next.t("withdraw.managementOfWithdrawal")}
