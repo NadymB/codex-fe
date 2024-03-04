@@ -40,7 +40,7 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
       updateData(cleared: KLineData): unknown;
       applyNewData: (arg0: KLineData[]) => void;
     },
-    { loadMore }: { loadMore: boolean }
+    { loadMore }: { loadMore: boolean },
   ) => {
     const crypto = Cookies.get("crypto");
     const cookiesData = crypto
@@ -49,7 +49,7 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
     const response = await tradeService.getChartData(
       cookiesData.type,
       (token + currency).toLowerCase(),
-      tradingSessionTimes[currentTradingSessionTime].value
+      tradingSessionTimes[currentTradingSessionTime].value,
     );
 
     if (response.success) {
@@ -68,20 +68,20 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
         })
         .sort(
           (a: { timestamp: number }, b: { timestamp: number }) =>
-            a.timestamp - b.timestamp
+            a.timestamp - b.timestamp,
         );
 
       setTokenPrice(
         numberToLocaleString(
           formattedData[formattedData.length - 1].close,
-          "USC"
-        )
+          "USC",
+        ),
       );
 
       if (loadMore) {
         const cleared = formattedData.filter(
           (data) =>
-            data.timestamp >= formattedData[formattedData.length - 1].timestamp
+            data.timestamp >= formattedData[formattedData.length - 1].timestamp,
         );
         chart.updateData(cleared[0]);
       } else {
@@ -107,7 +107,7 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
     const chart = init("chart");
 
     chart?.createIndicator("MA");
-
+    chart?.resize();
     chart?.setStyles({
       candle: { tooltip: { showType: "rect" as TooltipShowType } },
       grid: {

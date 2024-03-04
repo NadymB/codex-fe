@@ -12,10 +12,10 @@ export class TradeService {
   public getChartData = async (
     type: PRICE_TYPE,
     token: string,
-    currentTradingSessionTime: number
+    currentTradingSessionTime: number,
   ) => {
     const { data } = await this.restConnector.get(
-      `/price-feed/chart-data?type=${type}&itemName=${token}&intervalInMinutes=${currentTradingSessionTime}`
+      `/price-feed/chart-data?type=${type}&itemName=${token}&intervalInMinutes=${currentTradingSessionTime}`,
     );
 
     return data;
