@@ -49,7 +49,7 @@ const Tabs = ({ tabs, classNameItem, classNameTab }: IProp) => {
           />
         </div>
       </div>
-      <div className="mt-4">
+      <div>
         {tabs.map((tab, index) => (
           <div
             key={index}
