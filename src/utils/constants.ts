@@ -524,6 +524,33 @@ export const OPTIONS_CURRENCY = [
 
 ];
 
+export enum COMMODITY_CODE {
+  GOLD = "Gold Futures",
+  ALUMINIUM = "Aluminium Futures",
+  SILVER = "Silver Futures",
+  SUGAR = "Sugar Futures",
+  COFFEE = "Coffee",
+  COPPER = "Copper",
+  OIL = "Crude Oil",
+  RICE = "Rough Rice Futures",
+  PLATINUM = "Platinum",
+}
+
+export enum FOREX_CODE {
+  CNYUSDT = "CNY_USD",
+  GBPUSDT = "GBP_USD",
+  JPYUSDT = "JPY_USD",
+}
+
+export enum CRYPTOCURRENCY_CODE {
+  DOGEUSDT = "DOGEUSDT",
+  XRPUSDT = "XRPUSDT",
+  ETHUSDT = "ETHUSDT",
+  MATICUSDT = "MATICUSDT",
+  BNBUSDT = "BNBUSDT",
+  BTCUSDT = "BTCUSDT",
+}
+
 export const SWIPER_SLIDER_DATA = [
   {
     url: `${getStaticURL()}/assets/images/welcome.svg`,
