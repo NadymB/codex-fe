@@ -72,35 +72,38 @@
     "welcome": "欢迎来到",
     "messageLogin": "请登录您的账户或注册一个账户",
     "login": "登录",
-    "signup": "注册"
+    "signup": "注册",
+    "notCertified":"尚未认证",
+		"greenRiseAndRed":"绿涨红跌",
+		"notSet":"未设置"
   },
   "announcementPage": {
-    "title": "Announce"
+    "title": "公告通知"
   },
   "withdrawAccount": {
-    "title": "Withdraw Account",
-    "noWithdrawalAccount": "No withdrawal account set",
-    "withdrawAccountBtn": "Add withdrawal account"
+    "title": "提现账户",
+    "noWithdrawalAccount": "未设置提现账户",
+    "withdrawAccountBtn": "添加提现账户"
   },
   "authentication": {
-    "title": "Authentication",
+    "title": "身份认证",
     "lv1": "Lv.1",
-    "rightsAndInterests": "Rights and interests",
-    "fiatCurrencyDeposit": "Fiat currency deposit",
-    "withdrawalAmount": "Withdrawal Amount",
-    "unlimited": "Unlimited",
-    "other": "Other",
-    "moreRewards": "More rewards",
-    "id": "ID",
-    "selfie": "Selfie",
-    "certifyBtnLv1": "Immediately certify",
+    "rightsAndInterests": "权益",
+    "fiatCurrencyDeposit": "法定货币充值",
+    "withdrawalAmount": "提现金额",
+    "unlimited": "无限制",
+    "other": "其他",
+    "moreRewards": "更多奖励",
+    "id": "身份证件",
+    "selfie": "自拍照",
+    "certifyBtnLv1": "立即认证",
     "lv2": "Lv.2",
-    "moreTradingProducts": "More trading products",
-    "proofOfAddress": "Proof of address",
-    "certifyBtnLv2": "You need to complete the LV.1 certification first"
+    "moreTradingProducts": "更多交易产品",
+    "proofOfAddress": "地址证明",
+    "certifyBtnLv2": "你需要先完成Lv.1认证"
   },
   "learn": {
-    "title": "Learn",
+    "title": "学习",
     "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
     "howAreTheyDifferentContent": "Stablecoins are cryptocurrencies whose values are pegged to a stable asset, mostly fiat currencies. Tether (USDT), USD Coin (USDC) and Binance USD (BUSD) are the three most popular stablecoins, with a combined market cap of $120 billion. However, with the recent buzz around BUSD, there’s no doubt that most investors would be curious to know if BUSD is still worth investing in — or if you should simply pile your investments into USDT, USDC or other stablecoins instead.",
     "whichOneIsRightForYouTitle": "Traditional Debit Card vs. Crypto Debit Card: Which One Is Right For You?",
@@ -111,86 +114,86 @@
     "whatIsPoWInBlockchainContent": "The blockchain is commonly perceived through the prism of Bitcoin’s Nakamoto Consensus. But in order to learn more about what Proof of Work is, it is essential to look closely into the sustainable PoW implementation."
   },
   "helpCenter": {
-    "title": "Help Center",
+    "title": "帮助中心",
     "howToMakeADepositTitle": "How to make a deposit?",
     "howToMakeADepositContent": "Looking for a guide on how to deposit funds? We hear you! Here is a detailed operation process so that you can easily make a deposit by transferring cryptocurrency from your wallet or depositing fiat currency to your account."
   },
   "vip": {
-    "title": "Member Privilege Plan",
-    "upgradeMyMemberLevelTitle": "Upgrade my member level",
-    "upgradeMyMemberLevelContent": "We tailor different membership levels according to different users. You can upgrade your membership level by completing the task and enjoy more privileges. For details, click the button below for consultation.",
-    "currentLevelTitle": "Current level:",
-    "currentLevelContent": "You are not yet a member",
-    "contactBtn": "Contact customer service consultation"
+    "title": "会员特权计划",
+    "upgradeMyMemberLevelTitle": "升级我的会员等级",
+    "upgradeMyMemberLevelContent": "我们根据不同的用户量身定制不同的会员等级，您可以通过完成任务来升级您的会员等级，享受更多的特权。详情点击下方按钮咨询。",
+    "currentLevelTitle": "当前等级:",
+    "currentLevelContent": "您还不是会员",
+    "contactBtn": "联系客服咨询"
   },
   "color": {
-    "title": "Colors of ups and downs",
-    "greenRise": "Green rise and red",
-    "redRise": "Red rise and green down"
+    "title": "涨跌颜色",
+    "greenRise": "绿涨红跌",
+    "redRise": "红涨绿跌"
   },
   "about": {
-    "title": "About Us",
+    "title": "关于我们",
     "eUREX": "EUREX",
-    "version": "Version 1.39.2",
-    "checkForUpdates": "Check for updates",
-    "upgradedLatestVersion": "Has been upgraded to the latest version"
+    "version": "版本 1.39.2",
+    "checkForUpdates": "检查更新",
+    "upgradedLatestVersion": "已升级到最新版本"
   },
   "authenticationPage": {
-    "loginTitle": "Login please!",
-    "signupTitle": "Register immediately!",
-    "login": "Login",
-    "register": "Register",
-    "email": "E-mail",
-    "username": "User name",
-    "phoneNumber": "Phone number",
-    "setPassword": "Set password",
-    "loginPassword": "Login password",
-    "invitationCode": "Invitation Code",
-    "userNameIsInvalid": "User name is invalid",
-    "passwordIsInvalid": "Password is invalid",
-    "phoneNumberIsInvalid": "Phone number is invalid",
-    "emailIsInvalid": "Email is invalid"
+    "loginTitle": "欢迎登录!",
+    "signupTitle": "即刻注册吧!",
+    "login": "登录",
+    "register": "注册",
+    "email": "电子邮箱",
+    "username": "用户名",
+    "phoneNumber": "手机号",
+    "setPassword": "设置密码",
+    "loginPassword": "登录密码",
+    "invitationCode": "邀请码",
+    "userNameIsInvalid": "请填写用户名",
+    "passwordIsInvalid": "请填写密码",
+    "phoneNumberIsInvalid": "请填写手机号",
+    "emailIsInvalid": "请填写邮箱"
   },
   "deposit": {
-    "title": "Deposit",
-    "chooseYourDepositMethod": "Choose your deposit method",
-    "artificialDeposit": "Artificial deposit",
-    "contactArtificial": "Contact artificial customer service to get deposit guidelines"
+    "title": "充值",
+    "chooseYourDepositMethod": "选择您的充值方式",
+    "artificialDeposit": "人工充值",
+    "contactArtificial": "联系人工客服，获得充值指引"
   },
   "withdraw": {
-    "title": "Withdraw",
-    "account": "Account",
-    "amount": "Amount",
-    "currentBalance": "Current balance:",
-    "allBalance": "All balance",
-    "managementOfWithdrawal": "Management of withdrawal",
-    "fees": "Fees",
-    "amountReceived": "Amount Received",
-    "confirm": "Confirm",
-    "msgAccountError": "Please fill in the receiving account",
-    "msgAmountError": "The minimum amount is 1"
+    "title": "提现",
+    "account": "账户",
+    "amount": "金额",
+    "currentBalance": "当前余额:",
+    "allBalance": "全部余额",
+    "managementOfWithdrawal": "管理提现方式",
+    "fees": "手续费",
+    "amountReceived": "到账金额",
+    "confirm": "确认",
+    "msgAccountError": "请填写收款账户",
+    "msgAmountError": "金额最少为1"
   },
   "order": {
-    "title": "Order",
-    "noData": "No data"
+    "title": "订单",
+    "noData": "暂无数据"
   },
   "bill": {
-    "title": "Bill",
-    "noData": "No data"
+    "title": "账单",
+    "noData": "暂无数据"
   },
   "password": {
-    "title": "Login password",
-    "oldPassword": "Old Password",
-    "newPassword": "New Password",
-    "oldPasswordInvalidError": "Please enter the old password",
-    "newPasswordInvalidError": "6-20 individual characters",
-    "confirmBtn": "Confirm"
+    "title": "设置登录密码",
+    "oldPassword": "旧密码",
+    "newPassword": "新密码",
+    "oldPasswordInvalidError": "请输入旧密码",
+    "newPasswordInvalidError": "6-20个字符",
+    "confirmBtn": "确认"
   },
   "securityCode": {
-    "title": "Set a security password",
-    "newPassword": "New Password",
-    "newPasswordInvalidError": "6-20 individual characters",
-    "confirmBtn": "Confirm"
+    "title": "设置安全密码",
+    "newPassword": "新密码",
+    "newPasswordInvalidError": "6-30个字符",
+    "confirmBtn": "确认"
   },
   "tradePage": {
     "position": "持仓",

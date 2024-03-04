@@ -72,7 +72,10 @@
 		"welcome": "Chào mừng đến với",
 		"messageLogin": "Vui lòng đăng nhập vào tài khoản của bạn hoặc đăng ký một tài khoản",
 		"login": "Đăng nhập",
-		"signup": "Đăng ký"
+		"signup": "Đăng ký",
+		"notCertified":"Not certified",
+		"greenRiseAndRed":"Green rise and red",
+		"notSet":"Not set"
 	},
 	"announcementPage": {
 		"title": "Thông báo"
@@ -146,10 +149,11 @@
 		"setPassword": "Đặt mật khẩu",
 		"loginPassword": "Mật khẩu đăng nhập",
 		"invitationCode": "Invitation Code",
-		"userNameIsInvalid": "Tên tài khoản không hợp lệ",
-		"passwordIsInvalid": "Mật khẩu không hợp lệ",
-		"phoneNumberIsInvalid": "Số điện thoại không hợp lệ",
-		"emailIsInvalid": "Email không hợp lệ"
+		"userNameIsInvalid": "Xin hãy điền tên đăng nhập",
+		"passwordIsInvalid": "Vui lòng điền mật khẩu",
+		"phoneNumberIsInvalid": "Vui lòng điền vào số điện thoại của bạn",
+		"phoneNumberIsNotTrue": "Số điện thoại di động không chính xác",
+		"emailIsInvalid": "Vui lòng nhập email"
 	},
 	"deposit": {
 		"title": "Nạp Tiền",

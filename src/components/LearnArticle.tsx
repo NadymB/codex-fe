@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { getStaticURL } from "@/utils/constants";
 import i18next from "i18next";
 import Image from "next/image";
@@ -11,11 +12,9 @@ interface ILearnArticle {
 export const LearnArticle = ({bannerUrl, title, content}:ILearnArticle) => {
     return (
         <div className="bg-[#1c1c1e] rounded">
-            <Image
+            <img
                 src={`${getStaticURL()}${bannerUrl}`}
                 alt={title}
-                height={100}
-                width={100}
                 className="w-full"
             />
             <div className="flex flex-col gap-2 p-4">
