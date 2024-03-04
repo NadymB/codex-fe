@@ -33,9 +33,13 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
   const [currentTradingSessionTime, setCurrentTradingSessionTime] = useState(0);
   const [tokenPrice, setTokenPrice] = useState<string>("0");
 
-  const applyDataToChart = async (chart: {
-    applyNewData: (arg0: KLineData[]) => void;
-  }) => {
+  const applyDataToChart = async (
+    chart: {
+      updateData(cleared: KLineData): unknown;
+      applyNewData: (arg0: KLineData[]) => void;
+    },
+    { loadMore }: { loadMore: boolean }
+  ) => {
     const response = await tradeService.getChartData(
       PRICE_TYPE.CRYPTO,
       (token + currency).toLowerCase(),
@@ -67,8 +71,16 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
         )
       );
 
-      // add data to the chart
-      chart?.applyNewData(formattedData);
+      if (loadMore) {
+        const cleared = formattedData.filter(
+          (data) =>
+            data.timestamp >= formattedData[formattedData.length - 1].timestamp
+        );
+        chart.updateData(cleared[0]);
+      } else {
+        // add new data to the chart
+        chart?.applyNewData(formattedData);
+      }
     }
   };
 
@@ -120,10 +132,10 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
       },
     });
 
-    applyDataToChart(chart as any);
+    applyDataToChart(chart as any, { loadMore: false });
     const interval = setInterval(() => {
-      applyDataToChart(chart as any);
-    }, 10000);
+      applyDataToChart(chart as any, { loadMore: true });
+    }, 3000);
 
     return () => {
       // destroy chart
