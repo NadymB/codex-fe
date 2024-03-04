@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
+import { getStaticURL } from "@/utils/constants";
 import { Button, InputAdornment, Slider, styled } from "@mui/material";
 import i18next from "i18next";
 import { useRouter } from "next/navigation";
+import { FC } from "react";
 import { InputCustom } from "../InputCustom";
 import { TradingChartBar } from "./TradingChartBar";
-import { FC } from "react";
-import { getStaticURL } from "@/utils/constants";
-import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 
 const CssSlider = styled(Slider)({
   "& .MuiSlider-mark": {
@@ -55,7 +55,7 @@ const Trading: FC<Props> = ({ token, currency }) => {
           <div className="flex items-center gap-3">
             <img
               className="w-8 h-8"
-              src={`${getStaticURL()}/assets/images/commodity/GOLD.svg`}
+              src={`${getStaticURL()}/assets/images/${token}.svg`}
               alt=""
             />
             <div className="text-[16px]">

@@ -2,7 +2,9 @@
 
 import { tradeService } from "@/services/TradeService";
 import { PRICE_TYPE } from "@/utils/constants";
+import { numberToLocaleString } from "@/utils/formatNumber";
 import { ChartData } from "@/utils/type";
+import i18next from "i18next";
 import {
   KLineData,
   LineType,
@@ -10,13 +12,35 @@ import {
   dispose,
   init,
 } from "klinecharts";
-import { useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 
-export const TradingChart = () => {
+const tradingSessionTimes = [
+  { lable: "15m", value: 15 },
+  { lable: "30m", value: 30 },
+  { lable: "1h", value: 60 },
+  { lable: "5h", value: 300 },
+  { lable: "1d", value: 1440 },
+  { lable: "1w", value: 10080 },
+  { lable: "1M", value: 43200 },
+];
+
+interface Props {
+  token: string;
+  currency: string;
+}
+
+export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
+  const [currentTradingSessionTime, setCurrentTradingSessionTime] = useState(0);
+  const [tokenPrice, setTokenPrice] = useState<string>("0");
+
   const applyDataToChart = async (chart: {
     applyNewData: (arg0: KLineData[]) => void;
   }) => {
-    const response = await tradeService.getChartData(PRICE_TYPE.CRYPTO);
+    const response = await tradeService.getChartData(
+      PRICE_TYPE.CRYPTO,
+      (token + currency).toLowerCase(),
+      tradingSessionTimes[currentTradingSessionTime].value
+    );
     if (response.success) {
       const formattedData: KLineData[] = response.data
         .map((data: ChartData) => {
@@ -33,8 +57,15 @@ export const TradingChart = () => {
         })
         .sort(
           (a: { timestamp: number }, b: { timestamp: number }) =>
-            a.timestamp - b.timestamp,
+            a.timestamp - b.timestamp
         );
+
+      setTokenPrice(
+        numberToLocaleString(
+          formattedData[formattedData.length - 1].close,
+          "USC"
+        )
+      );
 
       // add data to the chart
       chart?.applyNewData(formattedData);
@@ -99,7 +130,50 @@ export const TradingChart = () => {
       dispose("chart");
       clearInterval(interval);
     };
-  }, []);
+  }, [currentTradingSessionTime]);
 
-  return <div id="chart" style={{ width: "100%", height: "100vh" }} />;
+  return (
+    <>
+      <div>
+        <div className="flex justify-between pb-6">
+          <div className="">
+            <h2 className="text-[#55af72] font-bold m-0">{tokenPrice}</h2>
+            <span className="text-[#fff] text-[14px]">≈{tokenPrice} USD</span>
+          </div>
+          <div className="flex flex-col">
+            <div className="flex items-center justify-between">
+              <div className="text-[#fff] text-[14px] opacity-30">
+                {i18next.t("tradePage.chart.24HourHigh")}
+              </div>
+              <div className="text-[#fff] text-[14px] ml-6">24.127</div>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="text-[#fff] text-[14px] opacity-30">
+                {i18next.t("tradePage.chart.24HourLow")}
+              </div>
+              <div className="text-[#fff] text-[14px] ml-6">24.127</div>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="text-[#fff] text-[14px] opacity-30">
+                {i18next.t("tradePage.chart.24HourTurnover")}
+              </div>
+              <div className="text-[#fff] text-[14px] ml-6">2.27B</div>
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center gap-1">
+          {tradingSessionTimes.map((time, index: number) => (
+            <div
+              key={index}
+              className={`${currentTradingSessionTime === index ? "text-white hover:bg-[#1F1F1F]" : "text-gray-500"} ${tradingSessionTimes.length - 1 === index ? "rounded-r-lg" : ""} ${index === 0 ? "rounded-l-lg" : ""} text-[12.5px] font-[600] cursor-pointer  py-2 px-1.5`}
+              onClick={() => setCurrentTradingSessionTime(index)}
+            >
+              {time.lable}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div id="chart" style={{ width: "100%", height: "100vh" }} />;
+    </>
+  );
 };
