@@ -152,6 +152,7 @@
     "userNameIsInvalid": "Please enter your username",
     "passwordIsInvalid": "Please fill in the password",
     "phoneNumberIsInvalid": "Please fill in your phone number",
+    "phoneNumberIsNotTrue": "Mobile phone number is incorrect",
     "emailIsInvalid": "Please enter your email"
   },
   "deposit": {

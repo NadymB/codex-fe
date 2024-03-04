@@ -1,231 +1,231 @@
 {
-	"language": "Ngôn ngữ",
-	"onBoarding": {
-		"sliderTitleFirst": "Chào mừng đến với",
-		"sliderContentFirst": "Nơi giao dịch toàn diện đáng tin cậy cao, với tuyển chọn các sản phẩm giao dịch chất lượng cao.",
-		"sliderTitleSecond": "Mức phí cực thấp",
-		"sliderContentSecond": "Tất cả các giao dịch đều được hưởng mức phí siêu cao, thậm chí là 0 phí.",
-		"sliderTitleThird": "Giao dịch một khóa",
-		"sliderContentThird": "Các công cụ sáng tạo để tạo ra trải nghiệm giao dịch sản phẩm tài chính kỹ thuật số nhanh chóng.",
-		"sliderTitleFourth": "Toàn Bộ Sản Phẩm",
-		"sliderContentFourth": "Luôn có sản phẩm giao dịch phong phú phù hợp với bạn.",
-		"skipBtn": "Nhảy qua",
-		"startNowBtn": "BẠN CẦN SỬA NÓ THÀNH TIẾNG ANH"
-	},
-	"menuBar": {
-		"home": "Trang chủ",
-		"market": "Thị trường",
-		"transaction": "Giao dịch",
-		"asset": "Tài sản"
-	},
-	"homePage": {
-		"deposit": "Nạp tiền",
-		"service": "Dịch vụ khách hàng",
-		"popularTransactionPair": "Cặp giao dịch phổ biến",
-		"trade": "Giao dịch",
-		"study": "Hướng dẫn",
-		"helpCenter": "Trung tâm trợ giúp",
-		"vip": "Cao cấp",
-		"leaderBoard": "Xếp hạng",
-		"inviteFriends": "Mời bạn bè",
-		"savings": "Tiết kiệm",
-		"tradingRobot": "Robot giao dịch",
-		"mining": "khai thác mỏ"
-	},
-	"marketPage": {
-		"commodity": "HÀNG HÓA",
-		"cryptoCurrency": "TIỀN ĐIỆN TỬ",
-		"foreignExchange": "TIỀN TỆ",
-		"transaction": "Giao dịch",
-		"tradingVolume": "Khối lượng giao dịch",
-		"price": "Giá",
-		"24HRisingDecline": "24 giờ tăng và giảm"
-	},
-	"assetPage": {
-		"myAssets": "Tài sản của tôi",
-		"totalAssets": "Tổng tài sản",
-		"TodayProfitability": "Lợi nhuận ngày nay",
-		"deposit": "Nạp tiền",
-		"withdraw": "Rút",
-		"order": "Đặt hàng",
-		"bill": "Hóa đơn",
-		"myAccount": "Tài khoản của tôi",
-		"funds": "Tiền",
-		"financialManagement": "Quản lý tài chính",
-		"tradingRobot": "Robot giao dịch",
-		"healing": "Đang lành lại"
-	},
-	"profilePage": {
-		"title": "Trung tâm cá nhân",
-		"username": "Tên người dùng",
-		"email": "Hộp thư",
-		"phoneNumber": "Số điện thoại",
-		"loginPassword": "Mật khẩu đăng nhập",
-		"withdrawAccount": "Tài khoản rút tiền",
-		"authentication": "Xác thực danh tính",
-		"securityCode": "Mã bảo mật",
-		"language": "Ngôn ngữ",
-		"colorsOfUpsAndDowns": "Màu biến động",
-		"displayCurrency": "Tiền tệ hiển thị",
-		"aboutUs": "Về chúng tôi",
-		"quit": "Đăng xuất",
-		"welcome": "Chào mừng đến với",
-		"messageLogin": "Vui lòng đăng nhập vào tài khoản của bạn hoặc đăng ký một tài khoản",
-		"login": "Đăng nhập",
-		"signup": "Đăng ký",
-		"notCertified":"Not certified",
-		"greenRiseAndRed":"Green rise and red",
-		"notSet":"Not set"
-	},
-	"announcementPage": {
-		"title": "Thông báo"
-	},
-	"withdrawAccount": {
-		"title": "Tài khoản rút tiền",
-		"noWithdrawalAccount": "Không có tài khoản rút tiền",
-		"withdrawAccountBtn": "Thêm tài khoản rút tiền"
-	},
-	"authentication": {
-		"title": "Authentication",
-		"lv1": "Lv.1",
-		"rightsAndInterests": "Quyền và lợi ích",
-		"fiatCurrencyDeposit": "Tái chế tiền tệ fiat",
-		"withdrawalAmount": "Số tiền rút",
-		"unlimited": "Vô hạn",
-		"other": "Khác",
-		"moreRewards": "Nhiều phần thưởng hơn",
-		"id": "NHẬN DẠNG",
-		"selfie": "Chụp ảnh tự sướng",
-		"certifyBtnLv1": "Chứng nhận ngay lập tức",
-		"lv2": "Lv.2",
-		"moreTradingProducts": "Nhiều sản phẩm giao dịch hơn",
-		"proofOfAddress": "Chứng minh địa chỉ",
-		"certifyBtnLv2": "Bạn cần hoàn thành chứng nhận LV.1 trước"
-	},
-	"learn": {
-		"title": "Learn",
-		"howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
-		"howAreTheyDifferentContent": "Stablecoins are cryptocurrencies whose values are pegged to a stable asset, mostly fiat currencies. Tether (USDT), USD Coin (USDC) and Binance USD (BUSD) are the three most popular stablecoins, with a combined market cap of $120 billion. However, with the recent buzz around BUSD, there’s no doubt that most investors would be curious to know if BUSD is still worth investing in — or if you should simply pile your investments into USDT, USDC or other stablecoins instead.",
-		"whichOneIsRightForYouTitle": "Traditional Debit Card vs. Crypto Debit Card: Which One Is Right For You?",
-		"whichOneIsRightForYouContent": "Modern society increasingly focuses on cashless transactions. Being able to pay by scanning a card can make a lot of transactions faster, easier and more secure. However, it brings up some new questions for consumers. How do you pick which card you want to pay with? There are a lot of options, and they all have their pros and cons. Traditional debit cards and crypto debit cards are two of the most popular choices. To find the right option, you'll need to carefully consider your personal budget and preferences.",
-		"cotiCryptoTitle": "Coti Crypto: Instant Payment Around The World",
-		"cotiCryptoContent": "As we know, traditional finance is plagued with many pressing issues such as merchant fees and cross-border barriers. Digital currency transactions powered by blockchain technology offer a potential solution. However, it is not perfect either because of its low transaction speeds, delays in payment confirmations and many scalability issues.",
-		"whatIsPoWInBlockchainTitle": "Explained: What Is Proof of Work (PoW) in Blockchain?",
-		"whatIsPoWInBlockchainContent": "The blockchain is commonly perceived through the prism of Bitcoin’s Nakamoto Consensus. But in order to learn more about what Proof of Work is, it is essential to look closely into the sustainable PoW implementation."
-	},
-	"helpCenter": {
-		"title": "Trung tâm trợ giúp",
-		"howToMakeADepositTitle": "How to make a deposit?",
-		"howToMakeADepositContent": "Looking for a guide on how to deposit funds? We hear you! Here is a detailed operation process so that you can easily make a deposit by transferring cryptocurrency from your wallet or depositing fiat currency to your account."
-	},
-	"vip": {
-		"title": "Kế hoạch đặc quyền thành viên",
-		"upgradeMyMemberLevelTitle": "Nâng cấp cấp độ thành viên của tôi",
-		"upgradeMyMemberLevelContent": "Chúng tôi điều chỉnh các cấp độ thành viên khác nhau theo người dùng khác nhau. Bạn có thể nâng cấp cấp độ thành viên của mình bằng cách hoàn thành nhiệm vụ và được hưởng nhiều đặc quyền hơn. Để biết chi tiết, nhấp vào nút bên dưới để tham khảo ý kiến.",
-		"currentLevelTitle": "Cấp độ hiện tại:",
-		"currentLevelContent": "Bạn chưa phải là thành viên",
-		"contactBtn": "Liên hệ với tư vấn dịch vụ khách hàng"
-	},
-	"color": {
-		"title": "Màu sắc của thăng trầm",
-		"greenRise": "Tăng màu xanh lá cây và màu đỏ",
-		"redRise": "Red Rise và Green Down"
-	},
-	"about": {
-		"title": "Về chúng tôi",
-		"eUREX": "EUREX",
-		"version": "Phiên bản 1.39.2",
-		"checkForUpdates": "Kiểm tra cập nhật",
-		"upgradedLatestVersion": "Has been upgraded to the latest version"
-	},
-	"authenticationPage": {
-		"loginTitle": "Vui lòng đăng nhập!",
-		"signupTitle": "Đăng ký ngay lập tức",
-		"login": "Đăng nhập",
-		"register": "Đăng ký",
-		"email": "E-mail",
-		"username": "Tên tài khoản",
-		"phoneNumber": "Số điện thoại",
-		"setPassword": "Đặt mật khẩu",
-		"loginPassword": "Mật khẩu đăng nhập",
-		"invitationCode": "Invitation Code",
-		"userNameIsInvalid": "Xin hãy điền tên đăng nhập",
-		"passwordIsInvalid": "Vui lòng điền mật khẩu",
-		"phoneNumberIsInvalid": "Vui lòng điền vào số điện thoại của bạn",
-		"phoneNumberIsNotTrue": "Số điện thoại di động không chính xác",
-		"emailIsInvalid": "Vui lòng nhập email"
-	},
-	"deposit": {
-		"title": "Nạp Tiền",
-		"chooseYourDepositMethod": "Chọn phương pháp nạp tiền của bạn",
-		"artificialDeposit": "Tái chế nhân tạo",
-		"contactArtificial": "Liên hệ với Dịch vụ khách hàng nhân tạo để nhận hướng dẫn nạp tiền"
-	},
-	"withdraw": {
-		"title": "Rút",
-		"account": "Account",
-		"amount": "Amount",
-		"currentBalance": "Số dư hiện tại:",
-		"allBalance": "Tất cả sự cân bằng",
-		"managementOfWithdrawal": "Quản lý rút tiền",
-		"fees": "Phí xử lý",
-		"amountReceived": "Số tiền tài khoản",
-		"confirm": "xác nhận",
-		"msgAccountError": "Vui lòng điền vào tài khoản nhận",
-		"msgAmountError": "Số tiền tối thiểu là 1"
-	},
-	"order": {
-		"title": "Order",
-		"noData": "Không có dữ liệu"
-	},
-	"bill": {
-		"title": "Bill",
-		"noData": "Không có dữ liệu"
-	},
-	"password": {
-		"title": "Mật khẩu đăng nhập",
-		"oldPassword": "Mật khẩu cũ",
-		"newPassword": "Mật khẩu mới",
-		"oldPasswordInvalidError": "Vui lòng nhập mật khẩu cũ",
-		"newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
-		"confirmBtn": "Xác nhận"
-	},
-	"securityCode": {
-		"title": "Đặt mật khẩu bảo mật",
-		"newPassword": "Mật khẩu mới",
-		"newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
-		"confirmBtn": "Xác nhận"
-	},
-	"tradePage": {
-		"position":"Vị trí",
-		"order":"Đơn hàng",
-		"long": "Mua lên",
-		"short": "Mua xuống",
-		"trade": {
-			"title": "Giao dịch",
-			"profit": "Lợi nhuận",
-			"minute": "Phút",
-			"balance": "Số dư",
-			"price": "Gía",
-			"amount": "Số lượng",
-			"quantity:": "Số lượng"
-		},
-		"chart": {
-			"title": "Biểu đồ",
-			"24HourHigh": "Cao nhát 24 giờ",
-			"24HourLow": "Thấp nhát 24 giờ",
-			"24HourTurnover": "Doanh thu 24 giờ"
-		}
-	}, 
-	"displayCurrency": {
-		"title": "Hiển thị tiền tệ",
-		"commonlyUsed": "Thường được sử dụng",
-		"more": "Hơn"
-	},
-	"servicePage": {
-		"title": "Liên hệ chúng tôi",
-		"onlineService": "Dịch vụ trực tuyến",
-		"onlineServiceContent": "Chào mừng bạn đến với dịch vụ khách hàng trực tuyến!",
-		"placeholderMessage": "Tin nhắn sẽ được gửi..."
-	}
+  "language": "Ngôn ngữ",
+  "onBoarding": {
+    "sliderTitleFirst": "Chào mừng đến với",
+    "sliderContentFirst": "Nơi giao dịch toàn diện đáng tin cậy cao, với tuyển chọn các sản phẩm giao dịch chất lượng cao.",
+    "sliderTitleSecond": "Mức phí cực thấp",
+    "sliderContentSecond": "Tất cả các giao dịch đều được hưởng mức phí siêu cao, thậm chí là 0 phí.",
+    "sliderTitleThird": "Giao dịch một khóa",
+    "sliderContentThird": "Các công cụ sáng tạo để tạo ra trải nghiệm giao dịch sản phẩm tài chính kỹ thuật số nhanh chóng.",
+    "sliderTitleFourth": "Toàn Bộ Sản Phẩm",
+    "sliderContentFourth": "Luôn có sản phẩm giao dịch phong phú phù hợp với bạn.",
+    "skipBtn": "Nhảy qua",
+    "startNowBtn": "BẠN CẦN SỬA NÓ THÀNH TIẾNG ANH"
+  },
+  "menuBar": {
+    "home": "Trang chủ",
+    "market": "Thị trường",
+    "transaction": "Giao dịch",
+    "asset": "Tài sản"
+  },
+  "homePage": {
+    "deposit": "Nạp tiền",
+    "service": "Dịch vụ khách hàng",
+    "popularTransactionPair": "Cặp giao dịch phổ biến",
+    "trade": "Giao dịch",
+    "study": "Hướng dẫn",
+    "helpCenter": "Trung tâm trợ giúp",
+    "vip": "Cao cấp",
+    "leaderBoard": "Xếp hạng",
+    "inviteFriends": "Mời bạn bè",
+    "savings": "Tiết kiệm",
+    "tradingRobot": "Robot giao dịch",
+    "mining": "khai thác mỏ"
+  },
+  "marketPage": {
+    "commodity": "HÀNG HÓA",
+    "cryptoCurrency": "TIỀN ĐIỆN TỬ",
+    "foreignExchange": "TIỀN TỆ",
+    "transaction": "Giao dịch",
+    "tradingVolume": "Khối lượng giao dịch",
+    "price": "Giá",
+    "24HRisingDecline": "24 giờ tăng và giảm"
+  },
+  "assetPage": {
+    "myAssets": "Tài sản của tôi",
+    "totalAssets": "Tổng tài sản",
+    "TodayProfitability": "Lợi nhuận ngày nay",
+    "deposit": "Nạp tiền",
+    "withdraw": "Rút",
+    "order": "Đặt hàng",
+    "bill": "Hóa đơn",
+    "myAccount": "Tài khoản của tôi",
+    "funds": "Tiền",
+    "financialManagement": "Quản lý tài chính",
+    "tradingRobot": "Robot giao dịch",
+    "healing": "Đang lành lại"
+  },
+  "profilePage": {
+    "title": "Trung tâm cá nhân",
+    "username": "Tên người dùng",
+    "email": "Hộp thư",
+    "phoneNumber": "Số điện thoại",
+    "loginPassword": "Mật khẩu đăng nhập",
+    "withdrawAccount": "Tài khoản rút tiền",
+    "authentication": "Xác thực danh tính",
+    "securityCode": "Mã bảo mật",
+    "language": "Ngôn ngữ",
+    "colorsOfUpsAndDowns": "Màu biến động",
+    "displayCurrency": "Tiền tệ hiển thị",
+    "aboutUs": "Về chúng tôi",
+    "quit": "Đăng xuất",
+    "welcome": "Chào mừng đến với",
+    "messageLogin": "Vui lòng đăng nhập vào tài khoản của bạn hoặc đăng ký một tài khoản",
+    "login": "Đăng nhập",
+    "signup": "Đăng ký",
+    "notCertified": "Not certified",
+    "greenRiseAndRed": "Green rise and red",
+    "notSet": "Not set"
+  },
+  "announcementPage": {
+    "title": "Thông báo"
+  },
+  "withdrawAccount": {
+    "title": "Tài khoản rút tiền",
+    "noWithdrawalAccount": "Không có tài khoản rút tiền",
+    "withdrawAccountBtn": "Thêm tài khoản rút tiền"
+  },
+  "authentication": {
+    "title": "Authentication",
+    "lv1": "Lv.1",
+    "rightsAndInterests": "Quyền và lợi ích",
+    "fiatCurrencyDeposit": "Tái chế tiền tệ fiat",
+    "withdrawalAmount": "Số tiền rút",
+    "unlimited": "Vô hạn",
+    "other": "Khác",
+    "moreRewards": "Nhiều phần thưởng hơn",
+    "id": "NHẬN DẠNG",
+    "selfie": "Chụp ảnh tự sướng",
+    "certifyBtnLv1": "Chứng nhận ngay lập tức",
+    "lv2": "Lv.2",
+    "moreTradingProducts": "Nhiều sản phẩm giao dịch hơn",
+    "proofOfAddress": "Chứng minh địa chỉ",
+    "certifyBtnLv2": "Bạn cần hoàn thành chứng nhận LV.1 trước"
+  },
+  "learn": {
+    "title": "Learn",
+    "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
+    "howAreTheyDifferentContent": "Stablecoins are cryptocurrencies whose values are pegged to a stable asset, mostly fiat currencies. Tether (USDT), USD Coin (USDC) and Binance USD (BUSD) are the three most popular stablecoins, with a combined market cap of $120 billion. However, with the recent buzz around BUSD, there’s no doubt that most investors would be curious to know if BUSD is still worth investing in — or if you should simply pile your investments into USDT, USDC or other stablecoins instead.",
+    "whichOneIsRightForYouTitle": "Traditional Debit Card vs. Crypto Debit Card: Which One Is Right For You?",
+    "whichOneIsRightForYouContent": "Modern society increasingly focuses on cashless transactions. Being able to pay by scanning a card can make a lot of transactions faster, easier and more secure. However, it brings up some new questions for consumers. How do you pick which card you want to pay with? There are a lot of options, and they all have their pros and cons. Traditional debit cards and crypto debit cards are two of the most popular choices. To find the right option, you'll need to carefully consider your personal budget and preferences.",
+    "cotiCryptoTitle": "Coti Crypto: Instant Payment Around The World",
+    "cotiCryptoContent": "As we know, traditional finance is plagued with many pressing issues such as merchant fees and cross-border barriers. Digital currency transactions powered by blockchain technology offer a potential solution. However, it is not perfect either because of its low transaction speeds, delays in payment confirmations and many scalability issues.",
+    "whatIsPoWInBlockchainTitle": "Explained: What Is Proof of Work (PoW) in Blockchain?",
+    "whatIsPoWInBlockchainContent": "The blockchain is commonly perceived through the prism of Bitcoin’s Nakamoto Consensus. But in order to learn more about what Proof of Work is, it is essential to look closely into the sustainable PoW implementation."
+  },
+  "helpCenter": {
+    "title": "Trung tâm trợ giúp",
+    "howToMakeADepositTitle": "How to make a deposit?",
+    "howToMakeADepositContent": "Looking for a guide on how to deposit funds? We hear you! Here is a detailed operation process so that you can easily make a deposit by transferring cryptocurrency from your wallet or depositing fiat currency to your account."
+  },
+  "vip": {
+    "title": "Kế hoạch đặc quyền thành viên",
+    "upgradeMyMemberLevelTitle": "Nâng cấp cấp độ thành viên của tôi",
+    "upgradeMyMemberLevelContent": "Chúng tôi điều chỉnh các cấp độ thành viên khác nhau theo người dùng khác nhau. Bạn có thể nâng cấp cấp độ thành viên của mình bằng cách hoàn thành nhiệm vụ và được hưởng nhiều đặc quyền hơn. Để biết chi tiết, nhấp vào nút bên dưới để tham khảo ý kiến.",
+    "currentLevelTitle": "Cấp độ hiện tại:",
+    "currentLevelContent": "Bạn chưa phải là thành viên",
+    "contactBtn": "Liên hệ với tư vấn dịch vụ khách hàng"
+  },
+  "color": {
+    "title": "Màu sắc của thăng trầm",
+    "greenRise": "Tăng màu xanh lá cây và màu đỏ",
+    "redRise": "Red Rise và Green Down"
+  },
+  "about": {
+    "title": "Về chúng tôi",
+    "eUREX": "EUREX",
+    "version": "Phiên bản 1.39.2",
+    "checkForUpdates": "Kiểm tra cập nhật",
+    "upgradedLatestVersion": "Has been upgraded to the latest version"
+  },
+  "authenticationPage": {
+    "loginTitle": "Vui lòng đăng nhập!",
+    "signupTitle": "Đăng ký ngay lập tức",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "email": "E-mail",
+    "username": "Tên tài khoản",
+    "phoneNumber": "Số điện thoại",
+    "setPassword": "Đặt mật khẩu",
+    "loginPassword": "Mật khẩu đăng nhập",
+    "invitationCode": "Invitation Code",
+    "userNameIsInvalid": "Xin hãy điền tên đăng nhập",
+    "passwordIsInvalid": "Vui lòng điền mật khẩu",
+    "phoneNumberIsInvalid": "Vui lòng điền vào số điện thoại của bạn",
+    "phoneNumberIsNotTrue": "Số điện thoại di động không chính xác",
+    "emailIsInvalid": "Vui lòng nhập email"
+  },
+  "deposit": {
+    "title": "Nạp Tiền",
+    "chooseYourDepositMethod": "Chọn phương pháp nạp tiền của bạn",
+    "artificialDeposit": "Tái chế nhân tạo",
+    "contactArtificial": "Liên hệ với Dịch vụ khách hàng nhân tạo để nhận hướng dẫn nạp tiền"
+  },
+  "withdraw": {
+    "title": "Rút",
+    "account": "Account",
+    "amount": "Amount",
+    "currentBalance": "Số dư hiện tại:",
+    "allBalance": "Tất cả sự cân bằng",
+    "managementOfWithdrawal": "Quản lý rút tiền",
+    "fees": "Phí xử lý",
+    "amountReceived": "Số tiền tài khoản",
+    "confirm": "xác nhận",
+    "msgAccountError": "Vui lòng điền vào tài khoản nhận",
+    "msgAmountError": "Số tiền tối thiểu là 1"
+  },
+  "order": {
+    "title": "Order",
+    "noData": "Không có dữ liệu"
+  },
+  "bill": {
+    "title": "Bill",
+    "noData": "Không có dữ liệu"
+  },
+  "password": {
+    "title": "Mật khẩu đăng nhập",
+    "oldPassword": "Mật khẩu cũ",
+    "newPassword": "Mật khẩu mới",
+    "oldPasswordInvalidError": "Vui lòng nhập mật khẩu cũ",
+    "newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
+    "confirmBtn": "Xác nhận"
+  },
+  "securityCode": {
+    "title": "Đặt mật khẩu bảo mật",
+    "newPassword": "Mật khẩu mới",
+    "newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
+    "confirmBtn": "Xác nhận"
+  },
+  "tradePage": {
+    "position": "Vị trí",
+    "order": "Đơn hàng",
+    "long": "Mua lên",
+    "short": "Mua xuống",
+    "trade": {
+      "title": "Giao dịch",
+      "profit": "Lợi nhuận",
+      "minute": "Phút",
+      "balance": "Số dư",
+      "price": "Gía",
+      "amount": "Số lượng",
+      "quantity:": "Số lượng"
+    },
+    "chart": {
+      "title": "Biểu đồ",
+      "24HourHigh": "Cao nhát 24 giờ",
+      "24HourLow": "Thấp nhát 24 giờ",
+      "24HourTurnover": "Doanh thu 24 giờ"
+    }
+  },
+  "displayCurrency": {
+    "title": "Hiển thị tiền tệ",
+    "commonlyUsed": "Thường được sử dụng",
+    "more": "Hơn"
+  },
+  "servicePage": {
+    "title": "Liên hệ chúng tôi",
+    "onlineService": "Dịch vụ trực tuyến",
+    "onlineServiceContent": "Chào mừng bạn đến với dịch vụ khách hàng trực tuyến!",
+    "placeholderMessage": "Tin nhắn sẽ được gửi..."
+  }
 }
