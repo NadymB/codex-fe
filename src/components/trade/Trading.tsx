@@ -4,7 +4,7 @@ import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 import { getStaticURL } from "@/utils/constants";
 import { Button, InputAdornment, Slider, styled } from "@mui/material";
 import i18next from "i18next";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { InputCustom } from "../InputCustom";
 import { TradingChartBar } from "./TradingChartBar";
 
@@ -46,6 +46,7 @@ interface Props {
 }
 
 const Trading: FC<Props> = ({ token, currency }) => {
+  const [percentIsSelected, setPercentIsSelected] = useState(10);
   return (
     <div>
       <div className="py-3 px-4">
@@ -73,7 +74,10 @@ const Trading: FC<Props> = ({ token, currency }) => {
       <div className="grid grid-cols-12 p-4">
         <div className="col-span-7">
           <div className="flex gap-2 pb-3 overflow-auto">
-            <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
+            <div
+              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 10 && "border-[#3D5AFE]"} `}
+              onClick={() => setPercentIsSelected(10)}
+            >
               <span className="text-[12px] text-[#fff]">
                 {" "}
                 {i18next.t("tradePage.trade.profit")}
@@ -86,7 +90,10 @@ const Trading: FC<Props> = ({ token, currency }) => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
+            <div
+              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 20 && "border-[#3D5AFE]"} `}
+              onClick={() => setPercentIsSelected(20)}
+            >
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
               </span>
@@ -98,7 +105,10 @@ const Trading: FC<Props> = ({ token, currency }) => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
+            <div
+              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 30 && "border-[#3D5AFE]"} `}
+              onClick={() => setPercentIsSelected(30)}
+            >
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
               </span>
@@ -110,7 +120,10 @@ const Trading: FC<Props> = ({ token, currency }) => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
+            <div
+              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 50 && "border-[#3D5AFE]"} `}
+              onClick={() => setPercentIsSelected(50)}
+            >
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
               </span>
@@ -122,7 +135,10 @@ const Trading: FC<Props> = ({ token, currency }) => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
+            <div
+              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 80 && "border-[#3D5AFE]"} `}
+              onClick={() => setPercentIsSelected(80)}
+            >
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
               </span>
@@ -134,7 +150,10 @@ const Trading: FC<Props> = ({ token, currency }) => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center rounded-lg bg-[#1c1c1e] border border-[#3D5AFE] ">
+            <div
+              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 100 && "border-[#3D5AFE]"} `}
+              onClick={() => setPercentIsSelected(100)}
+            >
               <span className="text-[12px] text-[#fff]">
                 {i18next.t("tradePage.trade.profit")}
               </span>
