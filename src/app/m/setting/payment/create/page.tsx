@@ -22,7 +22,7 @@ import "../../../../../../i18n";
 import { InputCustom } from "@/components/InputCustom";
 import { ArrowRightIcon } from "@/assets/icons/ArrowRightIcon";
 import SelectCountries from "@/components/SelectCountries";
-import { FormControlCustom } from "@/components/formControlCustom";
+import { FormControlCustom } from "@/components/FormControlCustom";
 
 const CreatePaymentPage = () => {
   const [currentLang, setLangCurrentLang] = useState(i18next.language);

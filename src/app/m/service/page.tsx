@@ -79,7 +79,7 @@ const ServicePage = () => {
     text?: string;
     image?: string;
   }) => {
-    if (text !== "" || image !== "") {
+    if (text.trim() !== "" || image !== "") {
       const messageId = Math.random();
       const newMessage = {
         type: "out",
@@ -130,6 +130,12 @@ const ServicePage = () => {
         let image = e.target.result;
         handleSendMessage({ image: image })
       };
+    }
+  };
+  const handleKeyDown = (event:any) => {
+    if (event.key === 'Enter') {
+      event.preventDefault()
+      handleSendMessage({ text: inputMessage })
     }
   };
   return (
@@ -199,6 +205,7 @@ const ServicePage = () => {
             maxRows={4}
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
         </div>
         <input
