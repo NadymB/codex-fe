@@ -5,9 +5,9 @@ import { CheckIcon } from "@/assets/icons/CheckIcon";
 import { DEFAULT_CURRENCY, OPTIONS_CURRENCY } from "@/utils/constants";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import "../../../../../i18n";
 import { OptionProps } from "../../asset/page";
 import i18next from "i18next";
+import "../../../../../i18n";
 
 const CurrencySetting = () => {
   const [currency, setCurrency] = useState<OptionProps>(DEFAULT_CURRENCY);
@@ -19,7 +19,7 @@ const CurrencySetting = () => {
   return (
     <div className="">
       <div
-        className={`absolute flex flex-col gap-4 bg-black w-full h-screen top-0 right-0 z-10 mt-2 rounded-md shadow-lg focus:outline-none`}
+        className={`absolute flex flex-col gap-4 bg-black w-full min-h-screen top-0 right-0 z-10 mt-2 rounded-md shadow-lg focus:outline-none`}
       >
         <div className="sticky top-0 w-full bg-[#100f14] flex gap-1 items-center h-14 px-6">
           <button
@@ -36,7 +36,7 @@ const CurrencySetting = () => {
           {DEFAULT_CURRENCY.value.toUpperCase()}
         </div>
         <span className="text-base text-[#888] px-4">{i18next.t("displayCurrency.more")}</span>
-        <div className="grid grid-cols-2 gap-4 px-4">
+        <div className="grid grid-cols-2 gap-4 p-4">
           {OPTIONS_CURRENCY.map((option, i) => (
             <div
               key={i}

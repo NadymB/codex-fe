@@ -270,14 +270,286 @@ export const DEFAULT_CURRENCY = {
 
 export const OPTIONS_CURRENCY = [
   {
-    label: "≈ 0.00 USD",
-    value: "usd",
+    label: "≈ 0.00 AED",
+    value: "AED",
   },
   {
-    label: "≈ 0.00 VND",
-    value: "vnd",
+    label: "≈ 0.00 AFN",
+    value: "AFN",
   },
+  {
+    label: "≈ 0.00 ALL",
+    value: "ALL",
+  },
+  {
+    label: "≈ 0.00 AMD",
+    value: "AMD",
+  },
+  {
+    label: "≈ 0.00 ANG",
+    value: "ANG",
+  },
+  {
+    label: "≈ 0.00 AOA",
+    value: "AOA",
+  },
+  {
+    label: "≈ 0.00 ARS",
+    value: "ARS",
+  },
+  {
+    label: "≈ 0.00 AUD",
+    value: "AUD",
+  },
+  {
+    label: "≈ 0.00 AWG",
+    value: "AWG",
+  },
+  {
+    label: "≈ 0.00 AZN",
+    value: "AZN",
+  }, {
+    label: "≈ 0.00 BAM",
+    value: "BAM",
+  },
+  {
+    label: "≈ 0.00 BBD",
+    value: "BBD",
+  },
+  {
+    label: "≈ 0.00 BDT",
+    value: "BDT",
+  },
+  {
+    label: "≈ 0.00 BGN",
+    value: "BGN",
+  },
+  {
+    label: "≈ 0.00 BHD",
+    value: "BHD",
+  }, {
+    label: "≈ 0.00 BIF",
+    value: "BIF",
+  },
+  {
+    label: "≈ 0.00 BMD",
+    value: "BMD",
+  },
+  {
+    label: "≈ 0.00 BND",
+    value: "BND",
+  },
+  {
+    label: "≈ 0.00 BOB",
+    value: "BOB",
+  },
+  {
+    label: "≈ 0.00 BRL",
+    value: "BRL",
+  },
+  {
+    label: "≈ 0.00 BSD",
+    value: "BSD",
+  },
+  {
+    label: "≈ 0.00 BTN",
+    value: "BTN",
+  },
+  {
+    label: "≈ 0.00 BWP",
+    value: "BWP",
+  },
+  {
+    label: "≈ 0.00 BYN",
+    value: "BYN",
+  },
+  {
+    label: "≈ 0.00 BZD",
+    value: "BZD",
+  },
+  {
+    label: "≈ 0.00 CAD",
+    value: "CAD",
+  }, {
+    label: "≈ 0.00 CDF",
+    value: "CDF",
+  },
+  {
+    label: "≈ 0.00 CHF",
+    value: "CHF",
+  },
+  {
+    label: "≈ 0.00 CLP",
+    value: "CLP",
+  },
+  {
+    label: "≈ 0.00 CYN",
+    value: "CYN",
+  },
+  {
+    label: "≈ 0.00 COP",
+    value: "COP",
+  }, {
+    label: "≈ 0.00 CRC",
+    value: "CRC",
+  },
+  
+
+
+
+  {
+    label: "≈ 0.00 CUP",
+    value: "CUP",
+  },
+  {
+    label: "≈ 0.00 CVE",
+    value: "CVE",
+  },
+  {
+    label: "≈ 0.00 CZK",
+    value: "CZK",
+  },
+  {
+    label: "≈ 0.00 DJF",
+    value: "DJF",
+  },
+  {
+    label: "≈ 0.00 DKK",
+    value: "DKK",
+  },
+  {
+    label: "≈ 0.00 DOP",
+    value: "DOP",
+  },
+  {
+    label: "≈ 0.00 DZD",
+    value: "DZD",
+  },
+  {
+    label: "≈ 0.00 EGP",
+    value: "EGP",
+  },
+  {
+    label: "≈ 0.00 ERN",
+    value: "ERN",
+  },
+  {
+    label: "≈ 0.00 AZN",
+    value: "AZN",
+  }, {
+    label: "≈ 0.00 ETB",
+    value: "ETB",
+  },
+  {
+    label: "≈ 0.00 EUG",
+    value: "EUG",
+  },
+  {
+    label: "≈ 0.00 FJD",
+    value: "FJD",
+  },
+  {
+    label: "≈ 0.00 FKP",
+    value: "FKP",
+  },
+  {
+    label: "≈ 0.00 FOK",
+    value: "FOK",
+  }, {
+    label: "≈ 0.00 GBP",
+    value: "GBP",
+  },
+  {
+    label: "≈ 0.00 GEL",
+    value: "GEL",
+  },
+  {
+    label: "≈ 0.00 GGP",
+    value: "GGP",
+  },
+  {
+    label: "≈ 0.00 GSH",
+    value: "GSH",
+  },
+  {
+    label: "≈ 0.00 GIP",
+    value: "GIP",
+  },
+  {
+    label: "≈ 0.00 GMD",
+    value: "GMD",
+  },
+  {
+    label: "≈ 0.00 GFN",
+    value: "GFN",
+  },
+  {
+    label: "≈ 0.00 GTQ",
+    value: "GTQ",
+  },
+  {
+    label: "≈ 0.00 GYD",
+    value: "GYD",
+  },
+  {
+    label: "≈ 0.00 HKD",
+    value: "HKD",
+  },
+  {
+    label: "≈ 0.00 HNL",
+    value: "HNL",
+  }, {
+    label: "≈ 0.00 HRK",
+    value: "HRK",
+  },
+  {
+    label: "≈ 0.00 HTG",
+    value: "HTG",
+  },
+  {
+    label: "≈ 0.00 HUF",
+    value: "HUF",
+  },
+  {
+    label: "≈ 0.00 IDR",
+    value: "IDR",
+  },
+  {
+    label: "≈ 0.00 ILS",
+    value: "ILS",
+  }, {
+    label: "≈ 0.00 IMP",
+    value: "INR",
+  },
+
 ];
+
+export enum COMMODITY_CODE {
+  GOLD = "Gold Futures",
+  ALUMINIUM = "Aluminium Futures",
+  SILVER = "Silver Futures",
+  SUGAR = "Sugar Futures",
+  COFFEE = "Coffee",
+  COPPER = "Copper",
+  OIL = "Crude Oil",
+  RICE = "Rough Rice Futures",
+  PLATINUM = "Platinum",
+}
+
+export enum FOREX_CODE {
+  CNYUSDT = "CNY_USD",
+  GBPUSDT = "GBP_USD",
+  JPYUSDT = "JPY_USD",
+}
+
+export enum CRYPTOCURRENCY_CODE {
+  DOGEUSDT = "DOGEUSDT",
+  XRPUSDT = "XRPUSDT",
+  ETHUSDT = "ETHUSDT",
+  MATICUSDT = "MATICUSDT",
+  BNBUSDT = "BNBUSDT",
+  BTCUSDT = "BTCUSDT",
+}
 
 export const SWIPER_SLIDER_DATA = [
   {
