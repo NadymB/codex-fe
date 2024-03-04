@@ -72,7 +72,10 @@
     "welcome": "Welcome to",
     "messageLogin": "Please log in to your account or signup a account",
     "login": "Log in",
-    "signup": "Signup"
+    "signup": "Signup",
+    "notCertified":"Not certified",
+		"greenRiseAndRed":"Green rise and red",
+		"notSet":"Not set"
   },
   "announcementPage": {
     "title": "Announce"
@@ -146,10 +149,10 @@
     "setPassword": "Set password",
     "loginPassword": "Login password",
     "invitationCode": "Invitation Code",
-    "userNameIsInvalid": "User name is invalid",
-    "passwordIsInvalid": "Password is invalid",
-    "phoneNumberIsInvalid": "Phone number is invalid",
-    "emailIsInvalid": "Email is invalid"
+    "userNameIsInvalid": "Please enter your username",
+    "passwordIsInvalid": "Please fill in the password",
+    "phoneNumberIsInvalid": "Please fill in your phone number",
+    "emailIsInvalid": "Please enter your email"
   },
   "deposit": {
     "title": "Deposit",
@@ -212,5 +215,16 @@
       "24HourLow": "24-hour Low",
       "24HourTurnover": "24-hour Turnover"
     }
-  }
+  },
+  "displayCurrency": {
+		"title": "Display Currency",
+		"commonlyUsed": "Commonly used",
+		"more": "More"
+	},
+  "servicePage": {
+		"title": "Contact us",
+		"onlineService": "Online service",
+		"onlineServiceContent": "Welcome to contact us if you need any need",
+    "placeholderMessage": "The message to be sent..."
+	}
 }

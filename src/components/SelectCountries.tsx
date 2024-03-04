@@ -28,7 +28,7 @@ const SelectCountries = (props: IProps) => {
   useEffect(() => {
     if (searchValue !== "") {
       const newListCounty = COUNTRIES.filter((item) =>
-        item.label.toLowerCase().includes(searchValue.toLowerCase())
+        item.label.toLowerCase().includes(searchValue.toLowerCase()),
       );
       setListCountry(newListCounty);
       return;

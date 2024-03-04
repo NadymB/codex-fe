@@ -17,7 +17,9 @@ const LoginWithEmail = () => {
       .matches(/@[^.]*\./, i18next.t("authenticationPage.emailIsInvalid"))
       .required(i18next.t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
-    password: Yup.string().required(i18next.t("authenticationPage.passwordIsInvalid")),
+    password: Yup.string().required(
+      i18next.t("authenticationPage.passwordIsInvalid"),
+    ),
   });
   const formik = useFormik({
     initialValues: {

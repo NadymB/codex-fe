@@ -161,10 +161,10 @@ const ServicePage = () => {
             </div>
           </div>
           <div className="text-[#fff] text-[18px] font-bold text-center my-2">
-            Dịch vụ trực tuyến
+            {i18next.t("servicePage.onlineService")}
           </div>
           <div className="text-[#9CA3AF] text-center">
-            Chào mừng bạn đến với dịch vụ khách hàng trực tuyến!
+            {i18next.t("servicePage.onlineServiceContent")}
           </div>
           <div className="flex flex-col">
             {listMessage.map((message, index) => {
@@ -193,7 +193,7 @@ const ServicePage = () => {
       >
         <div className="relative  flex flex-col justify-center rounded-md w-full bg-[#1D1C22]  ">
           <CssTextField
-            placeholder="Tin nhắn sẽ được gửi..."
+            placeholder={i18next.t("servicePage.placeholderMessage")}
             id="outlined-multiline-flexible"
             multiline
             maxRows={4}

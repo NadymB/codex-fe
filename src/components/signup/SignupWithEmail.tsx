@@ -15,15 +15,19 @@ const SignupWithEmail = () => {
       .matches(/@[^.]*\./, i18next.t("authenticationPage.emailIsInvalid"))
       .required(i18next.t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
-    userName: Yup.string().required(i18next.t("authenticationPage.userNameIsInvalid")),
-    password: Yup.string().required(i18next.t("authenticationPage.passwordIsInvalid")),
+    userName: Yup.string().required(
+      i18next.t("authenticationPage.userNameIsInvalid"),
+    ),
+    password: Yup.string().required(
+      i18next.t("authenticationPage.passwordIsInvalid"),
+    ),
   });
   const formik = useFormik({
     initialValues: {
       email: "",
       userName: "",
       password: "",
-      inviteCode:""
+      inviteCode: "",
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {},

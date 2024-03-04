@@ -32,12 +32,15 @@ const CssTextField = styled(TextField)({
     },
   },
 });
-const LoginWithUserName= () => {
+const LoginWithUserName = () => {
   const router = useRouter();
   const validationSchema = Yup.object({
-    userName: Yup.string()
-      .required(i18next.t("authenticationPage.userNameIsInvalid")),
-    password: Yup.string().required(i18next.t("authenticationPage.passwordIsInvalid")),
+    userName: Yup.string().required(
+      i18next.t("authenticationPage.userNameIsInvalid"),
+    ),
+    password: Yup.string().required(
+      i18next.t("authenticationPage.passwordIsInvalid"),
+    ),
   });
   const formik = useFormik({
     initialValues: {
@@ -56,7 +59,9 @@ const LoginWithUserName= () => {
     >
       <div className="bg-[#1D1C22]">
         <CssTextField
-          error={formik.touched.userName && formik.errors.userName ? true : false}
+          error={
+            formik.touched.userName && formik.errors.userName ? true : false
+          }
           className=" bg-transparent w-full text-[16px]"
           label={i18next.t("authenticationPage.username")}
           name="userName"
@@ -102,4 +107,4 @@ const LoginWithUserName= () => {
   );
 };
 
-export default LoginWithUserName
+export default LoginWithUserName;

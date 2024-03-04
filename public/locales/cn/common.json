@@ -1,0 +1,230 @@
+{
+  "language": "语言",
+  "onBoarding": {
+    "sliderTitleFirst": "欢迎来到",
+    "sliderContentFirst": "备受信任的综合交易场所，精选的优质交易产品。",
+    "sliderTitleSecond": "超低手续费率",
+    "sliderContentSecond": "所有交易均享受超级的手续费率，甚至是0手续费。",
+    "sliderTitleThird": "一键交易",
+    "sliderContentThird": "创新工具，打造迅捷数字金融品交易体验。",
+    "sliderTitleFourth": "丰富的产品",
+    "sliderContentFourth": "丰富的交易产品总有一种适合你。",
+    "skipBtn": "跳过",
+    "startNowBtn": "立即体验"
+  },
+  "menuBar": {
+    "home": "首页",
+    "market": "市场",
+    "transaction": "交易",
+    "asset": "资产"
+  },
+  "homePage": {
+    "deposit": "充值",
+    "service": "客服",
+    "popularTransactionPair": "热门交易对",
+    "trade": "交易",
+    "study": "学习",
+    "helpCenter": "帮助中心",
+    "vip": "VIP",
+    "leaderBoard": "排行榜",
+    "inviteFriends": "邀请好友",
+    "savings": "储蓄",
+    "tradingRobot": "交易机器人",
+    "mining": "挖矿"
+  },
+  "marketPage": {
+    "commodity": "大宗商品",
+    "cryptoCurrency": "加密货币",
+    "foreignExchange": "外汇",
+    "transaction": "交易对",
+    "tradingVolume": "交易量",
+    "price": "价格",
+    "24HRisingDecline": "24小时涨跌幅"
+  },
+  "assetPage": {
+    "myAssets": "我的资产",
+    "totalAssets": "总资产",
+    "TodayProfitability": "今日盈利",
+    "deposit": "充值",
+    "withdraw": "提现",
+    "order": "提现",
+    "bill": "账单",
+    "myAccount": "我的账户",
+    "funds": "资金",
+    "financialManagement": "理财",
+    "tradingRobot": "交易机器人",
+    "healing": "跟单"
+  },
+  "profilePage": {
+    "title": "个人中心",
+    "username": "用户名",
+    "email": "邮箱",
+    "phoneNumber": "手机号",
+    "loginPassword": "登录密码",
+    "withdrawAccount": "提现账户",
+    "authentication": "身份认证",
+    "securityCode": "安全密码",
+    "language": "语言",
+    "colorsOfUpsAndDowns": "涨跌颜色",
+    "displayCurrency": "展示货币",
+    "aboutUs": "关于我们",
+    "quit": "退出",
+    "welcome": "欢迎来到",
+    "messageLogin": "请登录您的账户或注册一个账户",
+    "login": "登录",
+    "signup": "注册",
+    "notCertified":"尚未认证",
+		"greenRiseAndRed":"红涨绿跌",
+		"notSet":"未设置"
+  },
+  "announcementPage": {
+    "title": "公告通知"
+  },
+  "withdrawAccount": {
+    "title": "提现账户",
+    "noWithdrawalAccount": "未设置提现账户",
+    "withdrawAccountBtn": "添加提现账户"
+  },
+  "authentication": {
+    "title": "身份认证",
+    "lv1": "Lv.1",
+    "rightsAndInterests": "权益",
+    "fiatCurrencyDeposit": "法定货币充值",
+    "withdrawalAmount": "提现金额",
+    "unlimited": "无限制",
+    "other": "其他",
+    "moreRewards": "更多奖励",
+    "id": "身份证件",
+    "selfie": "自拍照",
+    "certifyBtnLv1": "立即认证",
+    "lv2": "Lv.2",
+    "moreTradingProducts": "更多交易产品",
+    "proofOfAddress": "地址证明",
+    "certifyBtnLv2": "你需要先完成Lv.1认证"
+  },
+  "learn": {
+    "title": "学习",
+    "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD：它们有何不同？",
+    "howAreTheyDifferentContent": "稳定币是加密货币，其价值与稳定资产挂钩，主要是法定货币。泰达币（USDT）、美元币（USDC）和币安美元（BUSD）是三种最受欢迎的稳定币，市值总额达到1200亿美元。然而，随着对BUSD最近的关注，毫无疑问，大多数投资者会好奇BUSD是否仍值得投资，或者是否应该简单地将投资集中到USDT、USDC或其他稳定币中。",
+    "whichOneIsRightForYouTitle": "传统借记卡 vs. 加密借记卡：哪个适合您？",
+    "whichOneIsRightForYouContent": "现代社会越来越注重无现金交易。通过扫描卡支付可以使许多交易更快、更便捷、更安全。然而，这也给消费者带来了一些新问题。您如何选择要支付的卡？有很多选择，它们都有各自的优缺点。传统借记卡和加密借记卡是最受欢迎的两种选择。要找到合适的选项，您需要仔细考虑个人预算和偏好。",
+    "cotiCryptoTitle": "Coti加密货币：全球即时支付",
+    "cotiCryptoContent": "众所周知，传统金融面临诸多问题，如商家费用和跨境障碍。由区块链技术支持的数字货币交易提供了潜在解决方案。然而，由于其低交易速度、支付确认延迟和许多可扩展性问题，它也不是完美的。",
+    "whatIsPoWInBlockchainTitle": "解释：区块链中的工作证明（PoW）是什么？",
+    "whatIsPoWInBlockchainContent": "区块链通常通过比特币的中本聪共识来理解。但要更多地了解工作证明是什么，有必要仔细研究可持续的PoW实施。"
+  },
+  "helpCenter": {
+    "title": "帮助中心",
+    "howToMakeADepositTitle": "如何进行存款？",
+    "howToMakeADepositContent": "正在寻找如何存款资金的指南？我们听到了您的声音！以下是一个详细的操作过程，让您可以轻松地通过从您的钱包转移加密货币或将法定货币存入您的账户来进行存款。"
+  },
+  "vip": {
+    "title": "会员特权计划",
+    "upgradeMyMemberLevelTitle": "升级我的会员等级",
+    "upgradeMyMemberLevelContent": "我们根据不同的用户量身定制不同的会员等级，您可以通过完成任务来升级您的会员等级，享受更多的特权。详情点击下方按钮咨询。",
+    "currentLevelTitle": "当前等级:",
+    "currentLevelContent": "您还不是会员",
+    "contactBtn": "联系客服咨询"
+  },
+  "color": {
+    "title": "涨跌颜色",
+    "greenRise": "绿涨红跌",
+    "redRise": "红涨绿跌"
+  },
+  "about": {
+    "title": "关于我们",
+    "eUREX": "EUREX",
+    "version": "版本 1.39.2",
+    "checkForUpdates": "检查更新",
+    "upgradedLatestVersion": "已升级到最新版本"
+  },
+  "authenticationPage": {
+    "loginTitle": "欢迎登录!",
+    "signupTitle": "即刻注册吧!",
+    "login": "登录",
+    "register": "注册",
+    "email": "电子邮箱",
+    "username": "用户名",
+    "phoneNumber": "手机号",
+    "setPassword": "设置密码",
+    "loginPassword": "登录密码",
+    "invitationCode": "邀请码",
+    "userNameIsInvalid": "用户名必填",
+    "passwordIsInvalid": "6-20个字符",
+    "phoneNumberIsInvalid": "手机号不正确",
+    "emailIsInvalid": "邮箱格式不正确"
+  },
+  "deposit": {
+    "title": "学习",
+    "chooseYourDepositMethod": "选择您的充值方式",
+    "artificialDeposit": "人工充值",
+    "contactArtificial": "联系人工客服，获得充值指引"
+  },
+  "withdraw": {
+    "title": "提现",
+    "account": "账户",
+    "amount": "金额",
+    "currentBalance": "当前余额:",
+    "allBalance": "全部余额",
+    "managementOfWithdrawal": "管理提现方式",
+    "fees": "手续费",
+    "amountReceived": "到账金额",
+    "confirm": "确认",
+    "msgAccountError": "请填写收款账户",
+    "msgAmountError": "金额最少为1"
+  },
+  "order": {
+    "title": "订单",
+    "noData": "暂无数据"
+  },
+  "bill": {
+    "title": "账单",
+    "noData": "暂无数据"
+  },
+  "password": {
+    "title": "设置登录密码",
+    "oldPassword": "旧密码",
+    "newPassword": "新密码",
+    "oldPasswordInvalidError": "请输入旧密码",
+    "newPasswordInvalidError": "6-20个字符",
+    "confirmBtn": "确认"
+  },
+  "securityCode": {
+    "title": "设置安全密码",
+    "newPassword": "新密码",
+    "newPasswordInvalidError": "6-30个字符",
+    "confirmBtn": "确认"
+  },
+  "tradePage": {
+    "position": "持仓",
+    "order": "订单",
+    "long": "看多",
+    "short": "看空",
+    "trade": {
+      "title": "交易",
+      "profit": "收益",
+      "minute": "分钟",
+      "balance": "余额",
+      "price": "价格",
+      "amount": "数量",
+      "quantity:": "数量"
+    },
+    "chart": {
+      "title": "走势图",
+      "24HourHigh": "24小时最高",
+      "24HourLow": "24小时最低",
+      "24HourTurnover": "24小时成交额"
+    }
+  },
+  "displayCurrency": {
+    "title": "展示货币",
+    "commonlyUsed": "常用",
+    "more": "更多"
+  },
+  "servicePage": {
+    "title": "联系我们",
+    "onlineService": "在线客服",
+    "onlineServiceContent": "有任何需要欢迎联系我们",
+    "placeholderMessage": "要发送的消息..."
+  }
+}

@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isRerender, setIsRerender] = useState(false);
-  if (typeof window !== 'undefined' && window.localStorage) {
+  if (typeof window !== "undefined" && window.localStorage) {
     const locale = window.localStorage.getItem("locale");
     if (locale && i18next.language && locale !== i18next.language) {
       i18next.changeLanguage(locale);

@@ -13,7 +13,7 @@ const DepositPage = () => {
             <div className="flex flex-col gap-4 p-4">
                 <h2 className="text-[32px] text-white text-center">{i18next.t("deposit.chooseYourDepositMethod")}</h2>
                 <Link 
-                    href="/m/contact"
+                    href="/m/service"
                     className="flex py-[6px] gap-2 bg-[#202125] px-4 rounded"
                 >
                     <ArtificialIcon />
