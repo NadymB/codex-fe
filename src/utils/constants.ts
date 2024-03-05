@@ -580,21 +580,25 @@ export const SWIPER_SLIDER_DATA = [
 export const LEARN_ARTICLE_DATA = [
   {
     url: "/assets/images/how_are_they_different.png",
+    articleQuery: "usdt-vs-usdc-vs-busd-differences",
     title: "howAreTheyDifferentTitle",
     content: "howAreTheyDifferentContent",
   },
   {
     url: "/assets/images/which_one_is_right_for_you.png",
+    articleQuery: "traditional-debit-card-vs-crypto-debit-card",
     title: "whichOneIsRightForYouTitle",
     content: "whichOneIsRightForYouContent",
   },
   {
     url: "/assets/images/coti_crypto.png",
+    articleQuery: "what-is-coti-crypto",
     title: "cotiCryptoTitle",
     content: "cotiCryptoContent",
   },
   {
     url: "/assets/images/what_is_PoW_in_blockchain.png",
+    articleQuery: "what-is-proof-of-work-in-blockchain",
     title: "whatIsPoWInBlockchainTitle",
     content: "whatIsPoWInBlockchainContent",
   },
