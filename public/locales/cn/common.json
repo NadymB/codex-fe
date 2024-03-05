@@ -81,9 +81,27 @@
     "title": "公告通知"
   },
   "withdrawAccount": {
-    "title": "提现账户",
-    "noWithdrawalAccount": "未设置提现账户",
-    "withdrawAccountBtn": "添加提现账户"
+    "title": "添加提现账户",
+    "type": "类型",
+    "fiatCurrency": "法定货币",
+    "cryptocurrency": "加密货币",
+    "country": "加密货币",
+    "clickToSelectCountry": "点击选择加密货币",
+    "bank": "银行机构",
+    "placeholderBank": "填写账号所属银行名字",
+    "bankAccount": "银行账号",
+    "realName": "真实姓名",
+    "placeholderRealName": "账户持有人真实姓名",
+    "contactAddress": "联系地址",
+    "placeholderContactAddress": "详细联系地址",
+    "contactPhone": "联系电话",
+    "idNumber": "身份证",
+    "remark": "备注(可选)",
+    "placeholderRemark": "添加备注",
+    "confirm": "确认",
+    "pleaseSelectCryptocurrencies": "请选择国家或地区",
+    "searchCountryOrRegion": "搜索国家或地区",
+    "required": "必填"
   },
   "authentication": {
     "title": "身份认证",

@@ -152,6 +152,7 @@
     "userNameIsInvalid": "ユーザー名は入力する必要があります",
     "passwordIsInvalid": "6 - 20個々の文字",
     "phoneNumberIsInvalid": "携帯電話番号が正しくありません",
+    "phoneNumberIsNotTrue": "携帯電話番号が間違っています",
     "emailIsInvalid": "電子メール形式が正しくありません"
   },
   "deposit": {

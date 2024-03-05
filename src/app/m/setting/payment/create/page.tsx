@@ -85,9 +85,7 @@ const CreatePaymentPage = () => {
           <div className="cursor-pointer" onClick={() => router.back()}>
             <BackIcon />
           </div>
-          <span className="text-[#fff]">
-            {i18next.t("withdrawAccount.withdrawAccountBtn")}
-          </span>
+          <span className="text-[#fff]">{i18next.t("withdrawAccount.withdrawAccountBtn")}</span>
         </div>
         <div className="flex flex-col p-4">
           <div className="p-4 my-2 flex items-center justify-center">
@@ -105,9 +103,7 @@ const CreatePaymentPage = () => {
             <div className="bg-[#1D1C22]">
               {/* KIỂU */}
               <FormControlCustom fullWidth>
-                <InputLabel id="select-method">
-                  {i18next.t("withdrawAccount.type")}
-                </InputLabel>
+                <InputLabel id="select-method">{i18next.t("withdrawAccount.type")}</InputLabel>
                 <Select
                   labelId="select-method"
                   id="demo-simple-select"
@@ -123,12 +119,8 @@ const CreatePaymentPage = () => {
                     },
                   }}
                 >
-                  <MenuItem value={10}>
-                    {i18next.t("withdrawAccount.fiatCurrency")}
-                  </MenuItem>
-                  <MenuItem value={20}>
-                    {i18next.t("withdrawAccount.cryptocurrency")}
-                  </MenuItem>
+                  <MenuItem value={10}>{i18next.t("withdrawAccount.fiatCurrency")}</MenuItem>
+                  <MenuItem value={20}>{i18next.t("withdrawAccount.cryptocurrency")}</MenuItem>
                 </Select>
               </FormControlCustom>
             </div>
@@ -226,9 +218,7 @@ const CreatePaymentPage = () => {
                 value={formik.values.address}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder={i18next.t(
-                  "withdrawAccount.placeholderContactAddress"
-                )}
+                placeholder={i18next.t("withdrawAccount.placeholderContactAddress")}
               />
               {formik.touched.address && formik.errors.address ? (
                 <div className="text-[#FF4444]  text-[14px] px-4 py-1">
