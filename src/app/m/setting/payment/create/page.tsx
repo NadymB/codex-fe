@@ -74,7 +74,9 @@ const CreatePaymentPage = () => {
       phoneNumber: "",
     },
     validationSchema: validationSchema,
-    onSubmit: async (values) => {},
+    onSubmit: async (values) => {
+      console.log(values);
+    },
   });
   return (
     <>
@@ -107,7 +109,7 @@ const CreatePaymentPage = () => {
                   id="demo-simple-select"
                   value={formik.values.type}
                   label="Kiểu"
-                  onChange={formik.handleChange}
+                  onChange={(e) => formik.setFieldValue("type", e.target.value)}
                   MenuProps={{
                     PaperProps: {
                       style: {
