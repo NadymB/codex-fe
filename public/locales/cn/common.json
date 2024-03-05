@@ -170,6 +170,7 @@
     "userNameIsInvalid": "用户名必填",
     "passwordIsInvalid": "6-20个字符",
     "phoneNumberIsInvalid": "手机号不正确",
+    "phoneNumberIsNotTrue": "手机号码不正确",
     "emailIsInvalid": "邮箱格式不正确"
   },
   "deposit": {

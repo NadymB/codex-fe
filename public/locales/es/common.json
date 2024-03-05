@@ -81,9 +81,27 @@
     "title": "aviso de anuncio"
   },
   "withdrawAccount": {
-    "title": "Cuenta retiro",
-    "noWithdrawalAccount": "Cuenta de retiro no configurada",
-    "withdrawAccountBtn": "Agregar cuenta de retiro"
+    "title": "Agregar cuenta de retiro",
+    "type": "tipo",
+    "fiatCurrency": "moneda de curso legal",
+    "cryptocurrency": "criptomoneda",
+    "country": "nación",
+    "clickToSelectCountry": "Haga clic para seleccionar el país",
+    "bank": "institución bancaria",
+    "placeholderBank": "Rellene la institución bancaria de la cuenta",
+    "bankAccount": "Cuenta bancaria",
+    "realName": "nombre real",
+    "placeholderRealName": "Nombre real del titular de la cuenta",
+    "contactAddress": "dirección de contacto",
+    "placeholderContactAddress": "Dirección de contacto detallada",
+    "contactPhone": "número de contacto",
+    "idNumber": "tarjeta de identificación",
+    "remark": "Observación(opcional)",
+    "placeholderRemark": "Agregar notas",
+    "confirm": "confirmar",
+    "pleaseSelectCryptocurrencies": "Seleccione un país o región",
+    "searchCountryOrRegion": "Buscar país o región",
+    "required": "requerido"
   },
   "authentication": {
     "title": "Autenticación",
@@ -152,6 +170,7 @@
     "userNameIsInvalid": "Se requiere nombre de usuario",
     "passwordIsInvalid": "6-20 caracteres",
     "phoneNumberIsInvalid": "Por favor completa tu número de teléfono",
+    "phoneNumberIsNotTrue": "El número de teléfono móvil es incorrecto",
     "emailIsInvalid": "El número de móvil es incorrecto"
   },
   "deposit": {

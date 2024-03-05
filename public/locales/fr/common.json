@@ -81,9 +81,27 @@
     "title": "Avis d'annonce"
   },
   "withdrawAccount": {
-    "title": "Compte de retrait",
-    "noWithdrawalAccount": "Compte de retrait non configuré",
-    "withdrawAccountBtn": "Ajouter un compte de retrait"
+    "title": "Ajouter un compte de retrait",
+    "type": "taper",
+    "fiatCurrency": "cours légal",
+    "cryptocurrency": "crypto-monnaie",
+    "country": "nation",
+    "clickToSelectCountry": "Cliquez pour sélectionner le pays",
+    "bank": "institution bancaire",
+    "placeholderBank": "Renseigner l'institution bancaire du compte",
+    "bankAccount": "Compte bancaire",
+    "realName": "nom réel",
+    "placeholderRealName": "Nom réel du titulaire du compte",
+    "contactAddress": "Adresse de contact",
+    "placeholderContactAddress": "Coordonnées détaillées",
+    "contactPhone": "numéro de contact",
+    "idNumber": "Carte d'identitér",
+    "remark": "Remarque(facultatif)",
+    "placeholderRemark": "Ajouter des remarques",
+    "confirm": "confirmer",
+    "pleaseSelectCryptocurrencies": "Veuillez sélectionner un pays ou une région",
+    "searchCountryOrRegion": "Rechercher un pays ou une région",
+    "required": "requis"
   },
   "authentication": {
     "title": "Authentification",

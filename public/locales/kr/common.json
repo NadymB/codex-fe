@@ -81,9 +81,27 @@
     "title": "공지"
   },
   "withdrawAccount": {
-    "title": "출금 계정",
-    "noWithdrawalAccount": "출금 계정이 설정되지 않았습니다",
-    "withdrawAccountBtn": "출금 계정 추가"
+    "title": "인출 계정 추가",
+    "type": "유형",
+    "fiatCurrency": "법화",
+    "cryptocurrency": "암호화폐",
+    "country": "국가",
+    "clickToSelectCountry": "국가를 선택하려면 클릭하세요.",
+    "bank": "은행 기관",
+    "placeholderBank": "계좌의 은행 기관을 기입하십시오.",
+    "bankAccount": "은행 계좌",
+    "realName": "실명",
+    "placeholderRealName": "계좌 소유자의 실명",
+    "contactAddress": "연락처",
+    "placeholderContactAddress": "자세한 연락처",
+    "contactPhone": "연락처",
+    "idNumber": "신분증",
+    "remark": "주목(선택 과목)",
+    "placeholderRemark": "메모 추가",
+    "confirm": "확인하다",
+    "pleaseSelectCryptocurrencies": "국가 또는 지역을 선택하세요.",
+    "searchCountryOrRegion": "국가 또는 지역 검색",
+    "required": "필수의"
   },
   "authentication": {
     "title": "인증",

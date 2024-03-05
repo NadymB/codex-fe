@@ -81,9 +81,27 @@
     "title": "お知らせ"
   },
   "withdrawAccount": {
-    "title": "出金口座",
-    "noWithdrawalAccount": "出金口座が設定されていません",
-    "withdrawAccountBtn": "出金口座を追加"
+    "title": "離脱アカウントを追加します",
+    "type": "タイプ",
+    "fiatCurrency": "法定通貨",
+    "cryptocurrency": "暗号通貨",
+    "country": "国家",
+    "clickToSelectCountry": "クリックして国を選択します",
+    "bank": "国家",
+    "placeholderBank": "銀行の銀行機関に記入します",
+    "bankAccount": "囗座番号",
+    "realName": "実際の名前",
+    "placeholderRealName": "アカウント所有者の本名",
+    "contactAddress": "連絡先住所",
+    "placeholderContactAddress": "詳細な連絡先アドレス",
+    "contactPhone": "連絡先番号",
+    "idNumber": "ID",
+    "remark": "発言（オプション）（オプション）",
+    "placeholderRemark": "メモを追加します",
+    "confirm": "確認",
+    "pleaseSelectCryptocurrencies": "国または地域を選択してください",
+    "searchCountryOrRegion": "国または地域を検索します",
+    "required": "持つ必要があります"
   },
   "authentication": {
     "title": "認証",
