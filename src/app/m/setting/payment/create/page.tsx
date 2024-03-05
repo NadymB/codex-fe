@@ -36,7 +36,7 @@ const CreatePaymentPage = () => {
     type: Yup.string().required(
       i18next.t("authenticationPage.userNameIsInvalid")
     ),
-    nation: Yup.string().required(
+    country: Yup.string().required(
       i18next.t("authenticationPage.userNameIsInvalid")
     ),
     bank: Yup.string().required(
@@ -64,7 +64,7 @@ const CreatePaymentPage = () => {
   const formik = useFormik({
     initialValues: {
       type: "",
-      nation: "",
+      country: "",
       bank: "",
       accountBank: "",
       realName: "",
@@ -130,6 +130,8 @@ const CreatePaymentPage = () => {
                 label={i18next.t("withdrawAccount.country")}
                 placeholder={i18next.t("withdrawAccount.clickToSelectCountry")}
                 className="w-full"
+                name="country"
+                value={formik.values.country}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -297,6 +299,7 @@ const CreatePaymentPage = () => {
             onBack={() => setIsOpen(false)}
             onChange={(value) => {
               setCurrentCountry(value);
+              formik.setFieldValue("country",value.label)
               setIsOpen(false);
             }}
           />
