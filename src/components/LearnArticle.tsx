@@ -2,16 +2,18 @@
 import { getStaticURL } from "@/utils/constants";
 import i18next from "i18next";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ILearnArticle {
   bannerUrl: string;
   title: string;
   content: string;
+  query: string;
 }
 
-export const LearnArticle = ({ bannerUrl, title, content }: ILearnArticle) => {
+export const LearnArticle = ({ bannerUrl, title, content, query }: ILearnArticle) => {
   return (
-    <div className="bg-[#1c1c1e] rounded">
+    <Link href={`/m/learn/docs/en/${query}/`} className="bg-[#1c1c1e] rounded">
       <Image
         src={`${getStaticURL()}${bannerUrl}`}
         alt={title}
@@ -25,6 +27,6 @@ export const LearnArticle = ({ bannerUrl, title, content }: ILearnArticle) => {
           {content}
         </span>
       </div>
-    </div>
+    </Link>
   );
 };
