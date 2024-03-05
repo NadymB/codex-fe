@@ -81,7 +81,9 @@
     "title": "aviso de anuncio"
   },
   "withdrawAccount": {
-    "title": "Agregar cuenta de retiro",
+    "title": "Cuenta retiro",
+    "noWithdrawalAccount": "Cuenta de retiro no configurada",
+    "withdrawAccountBtn": "recargar",
     "type": "tipo",
     "fiatCurrency": "moneda de curso legal",
     "cryptocurrency": "criptomoneda",
