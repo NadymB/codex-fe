@@ -81,9 +81,27 @@
     "title": "Annuncio"
   },
   "withdrawAccount": {
-    "title": "Account di prelievo",
-    "noWithdrawalAccount": "Nessun account di prelievo impostato",
-    "withdrawAccountBtn": "Aggiungi account di prelievo"
+    "title": "Aggiungi un conto di prelievo",
+    "type": "tipo",
+    "fiatCurrency": "corso legale",
+    "cryptocurrency": "criptovaluta",
+    "country": "nazione",
+    "clickToSelectCountry": "Fare clic per selezionare il paese",
+    "bank": "istituto bancario",
+    "placeholderBank": "Compila l'istituto bancario del conto",
+    "bankAccount": "Conto bancario",
+    "realName": "nome effettivo",
+    "placeholderRealName": "Il vero nome del titolare del conto",
+    "contactAddress": "indirizzo di contatto",
+    "placeholderContactAddress": "Indirizzo di contatto dettagliato",
+    "contactPhone": "numero di contatto",
+    "idNumber": "carta d'identità",
+    "remark": "Nota(opzionale)",
+    "placeholderRemark": "Aggiungi note",
+    "confirm": "Confermare",
+    "pleaseSelectCryptocurrencies": "Seleziona un paese o una regione",
+    "searchCountryOrRegion": "Cerca paese o regione",
+    "required": "necessario"
   },
   "authentication": {
     "title": "Autenticazione",
@@ -152,6 +170,7 @@
     "userNameIsInvalid": "è richiesto il nome utente",
     "passwordIsInvalid": "6-20 caratteri",
     "phoneNumberIsInvalid": "Il numero di cellulare non è corretto",
+    "phoneNumberIsNotTrue": "Il numero di cellulare non è corretto",
     "emailIsInvalid": "Il formato dell'e-mail non è corretto"
   },
   "deposit": {

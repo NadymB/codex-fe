@@ -81,9 +81,27 @@
     "title": "Announce"
   },
   "withdrawAccount": {
-    "title": "Withdraw Account",
-    "noWithdrawalAccount": "No withdrawal account set",
-    "withdrawAccountBtn": "Add withdrawal account"
+    "title": "Add withdrawal account",
+    "type": "Type",
+    "fiatCurrency": "Fiat Currency",
+    "cryptocurrency": "Cryptocurrency",
+    "country": "Country",
+    "clickToSelectCountry": "Click to select a country",
+    "bank": "Bank Institution",
+    "placeholderBank": "Enter the bank institution of the account",
+    "bankAccount": "Bank Account",
+    "realName": "Real Name",
+    "placeholderRealName": "Real name of the account holder",
+    "contactAddress": "Contact Address",
+    "placeholderContactAddress": "Detailed contact address",
+    "contactPhone": "Contact Phone",
+    "idNumber": "ID Number",
+    "remark": "Remark(Optional)",
+    "placeholderRemark": "Add remark",
+    "confirm": "Confirm",
+    "pleaseSelectCryptocurrencies": "Please select the country or region",
+    "searchCountryOrRegion": "Search country or region",
+    "required": "Required"
   },
   "authentication": {
     "title": "Authentication",
