@@ -67,17 +67,8 @@ const LoginWithPhoneNumber = () => {
             +{currentCountry && currentCountry.phone}
           </Button>
           <div className="bg-[#1D1C22] w-full flex flex-col">
-<<<<<<< HEAD
             <InputCustom
               error={formik.touched.phoneNumber && formik.errors.phoneNumber ? true : false}
-=======
-            <CssTextField
-              error={
-                formik.touched.phoneNumber && formik.errors.phoneNumber
-                  ? true
-                  : false
-              }
->>>>>>> develop
               className=" bg-transparent w-full text-[16px]"
               label={i18next.t("authenticationPage.phoneNumber")}
               name="phoneNumber"
