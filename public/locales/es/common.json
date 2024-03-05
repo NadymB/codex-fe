@@ -174,7 +174,9 @@
     "emailIsInvalid": "El número de móvil es incorrecto"
   },
   "deposit": {
-    "title": "recargar",
+    "title": "Cuenta retiro",
+    "noWithdrawalAccount": "Cuenta de retiro no configurada",
+    "withdrawAccountBtn": "recargar",
     "chooseYourDepositMethod": "Elige tu método de recarga",
     "artificialDeposit": "recarga manual",
     "contactArtificial": "Póngase en contacto con el servicio de atención al cliente manual para obtener la guía de recarga"

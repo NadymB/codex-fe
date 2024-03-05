@@ -81,7 +81,9 @@
     "title": "お知らせ"
   },
   "withdrawAccount": {
-    "title": "離脱アカウントを追加します",
+    "title": "撤退口座",
+    "noWithdrawalAccount": "離脱口座はありません",
+    "withdrawAccountBtn": "離脱アカウントを追加します",
     "type": "タイプ",
     "fiatCurrency": "法定通貨",
     "cryptocurrency": "暗号通貨",

@@ -81,7 +81,9 @@
     "title": "Annuncio"
   },
   "withdrawAccount": {
-    "title": "Aggiungi un conto di prelievo",
+    "title": "Conto di prelievo",
+    "noWithdrawalAccount": "Conto di prelievo non impostato",
+    "withdrawAccountBtn": "Aggiungi un conto di prelievo",
     "type": "tipo",
     "fiatCurrency": "corso legale",
     "cryptocurrency": "criptovaluta",
