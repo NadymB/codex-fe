@@ -82,6 +82,8 @@
   },
   "withdrawAccount": {
     "title": "Tài khoản rút tiền",
+    "noWithdrawalAccount": "Không có tài khoản rút tiền",
+    "withdrawAccountBtn": "Thêm tài khoản rút tiền",
     "type": "Kiểu",
     "fiatCurrency": "Đấu thầu hợp pháp",
     "cryptocurrency": "Tiền điện tử",

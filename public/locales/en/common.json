@@ -81,7 +81,9 @@
     "title": "Announce"
   },
   "withdrawAccount": {
-    "title": "Add withdrawal account",
+    "title": "Withdrawal Account",
+    "noWithdrawalAccount": "No withdrawal account set",
+    "withdrawAccountBtn": "Add withdrawal account",
     "type": "Type",
     "fiatCurrency": "Fiat Currency",
     "cryptocurrency": "Cryptocurrency",

@@ -81,7 +81,9 @@
     "title": "Ankündigung"
   },
   "withdrawAccount": {
-    "title": "Auszahlungskonto hinzufügen",
+    "title": "Auszahlungskonto",
+    "noWithdrawalAccount": "Auszahlungskonto nicht eingerichtet",
+    "withdrawAccountBtn": "Auszahlungskonto hinzufügen",
     "type": "Typ",
     "fiatCurrency": "gesetzliches Zahlungsmittel",
     "cryptocurrency": "Kryptowährung",

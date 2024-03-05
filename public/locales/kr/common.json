@@ -81,7 +81,9 @@
     "title": "공지"
   },
   "withdrawAccount": {
-    "title": "인출 계정 추가",
+    "title": "출금계좌",
+    "noWithdrawalAccount": "인출 계정이 설정되지 않음",
+    "withdrawAccountBtn": "인출 계정 추가",
     "type": "유형",
     "fiatCurrency": "법화",
     "cryptocurrency": "암호화폐",

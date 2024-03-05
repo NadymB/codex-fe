@@ -81,7 +81,9 @@
     "title": "公告通知"
   },
   "withdrawAccount": {
-    "title": "添加提现账户",
+    "title": "提现账户",
+    "noWithdrawalAccount": "未设置提现账户",
+    "withdrawAccountBtn": "添加提现账户",
     "type": "类型",
     "fiatCurrency": "法定货币",
     "cryptocurrency": "加密货币",

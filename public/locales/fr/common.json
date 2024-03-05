@@ -81,7 +81,9 @@
     "title": "Avis d'annonce"
   },
   "withdrawAccount": {
-    "title": "Ajouter un compte de retrait",
+    "title": "Compte de retrait",
+    "noWithdrawalAccount": "Compte de retrait non configuré",
+    "withdrawAccountBtn": "Ajouter un compte de retrait",
     "type": "taper",
     "fiatCurrency": "cours légal",
     "cryptocurrency": "crypto-monnaie",
