@@ -607,6 +607,7 @@ export const LEARN_ARTICLE_DATA = [
 export const HELP_CENTER_DATA = [
   {
     url: "/assets/images/how_are_they_different.png",
+    articleQuery: "how-to-make-a-deposit",
     title: "howToMakeADepositTitle",
     content: "howToMakeADepositContent",
   },

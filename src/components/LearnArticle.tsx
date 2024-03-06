@@ -8,12 +8,12 @@ interface ILearnArticle {
   bannerUrl: string;
   title: string;
   content: string;
-  query: string;
+  articleUrl: string;
 }
 
-export const LearnArticle = ({ bannerUrl, title, content, query }: ILearnArticle) => {
+export const LearnArticle = ({ bannerUrl, title, content, articleUrl }: ILearnArticle) => {
   return (
-    <Link href={`/m/learn/docs/en/${query}/`} className="bg-[#1c1c1e] rounded">
+    <Link href={articleUrl} className="bg-[#1c1c1e] rounded">
       <Image
         src={`${getStaticURL()}${bannerUrl}`}
         alt={title}
