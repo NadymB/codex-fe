@@ -43,9 +43,11 @@ function valueLabelFormat(value: number) {
 interface Props {
   token: string;
   currency: string;
+  onClickShortBtn: () => void;
+  onClickLongBtn: () => void;
 }
 
-const Trading: FC<Props> = ({ token, currency }) => {
+const Trading: FC<Props> = ({ token, currency, onClickShortBtn, onClickLongBtn }) => {
   const [percentIsSelected, setPercentIsSelected] = useState(10);
   return (
     <div>
@@ -209,6 +211,7 @@ const Trading: FC<Props> = ({ token, currency }) => {
             sx={{ padding: 0, marginTop: "8px", textTransform: "none" }}
             className="w-full overflow-hidden"
             variant="contained"
+            onClick={onClickLongBtn}
           >
             <div className="w-full bg-[#55af72] py-[6px] px-4 ">
               {i18next.t("tradePage.long")}
@@ -218,6 +221,7 @@ const Trading: FC<Props> = ({ token, currency }) => {
             sx={{ padding: 0, marginTop: "8px", textTransform: "none" }}
             className="w-full overflow-hidden"
             variant="contained"
+            onClick={onClickShortBtn}
           >
             <div className="w-full bg-[#dd5350] py-[6px] px-4 ">
               {i18next.t("tradePage.short")}
