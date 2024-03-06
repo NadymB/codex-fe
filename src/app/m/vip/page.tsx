@@ -25,7 +25,7 @@ const VipPage = () => {
                     <div className="text-xl text-white text-center">{i18next.t("vip.currentLevelContent")}</div>
                 </div>
                 <Link
-                    href={"/coming-soon"}
+                    href={"/m/service"}
                     className="py-[6px] px-4 bg-[#3d5afe] hover:bg-[#2a3db0] rounded text-center text-white text-sm font-medium"
                 >
                     {i18next.t("vip.contactBtn")}
