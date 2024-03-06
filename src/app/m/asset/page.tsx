@@ -95,7 +95,7 @@ const AssetPage = () => {
               <AccountItem
                 key={index}
                 label={i18next.t(`assetPage.${item.label}`)}
-                amount={item.amount}
+                amount={isShow ? item.amount : "*****"}
               />
             ))}
           </div>

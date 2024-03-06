@@ -17,6 +17,7 @@ const HelpCenterPage = () => {
                     bannerUrl={item.url}
                     title={i18next.t(`helpCenter.${item.title}`)}
                     content={i18next.t(`helpCenter.${item.content}`)}
+                    articleUrl={`/m/help-center/docs/en/${item.articleQuery}/`}
                 />
             ))}
         </div>
