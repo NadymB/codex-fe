@@ -9,6 +9,7 @@ import deJson from './public/locales/de/common.json';
 import itJson from './public/locales/it/common.json';
 import jpJson from './public/locales/jp/common.json';
 import krJson from './public/locales/kr/common.json';
+import inJson from './public/locales/in/common.json';
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -40,6 +41,9 @@ const resources = {
   },
   kr: {
     translation: krJson
+  },
+  in: {
+    translation: inJson
   },
 };
 

@@ -1,0 +1,251 @@
+{
+  "language": "भाषा",
+  "onBoarding": {
+    "sliderTitleFirst": "आपका स्वागत है",
+    "sliderContentFirst": "एक उच्च विश्वसनीय सम्पूर्ण व्यापार स्थान, जिसमें उच्च गुणवत्ता के व्यापारिक उत्पादों का चयन है।",
+    "sliderTitleSecond": "अल्ट्रा-लो शुल्क दर",
+    "sliderContentSecond": "सभी लेन-देन का शुल्क शुल्क दर का आनंद उठाता है, यहां तक ​​कि 0 शुल्क।",
+    "sliderTitleThird": "एक की ट्रेडिंग",
+    "sliderContentThird": "तेज डिजिटल वित्तीय उत्पाद व्यापार अनुभव को बनाने के लिए नवाचारी उपकरण।",
+    "sliderTitleFourth": "पूर्ण उत्पाद",
+    "sliderContentFourth": "हमेशा आपके लिए उपयुक्त एक धनात्मक व्यापारिक उत्पाद होता है।",
+    "skipBtn": "छोड़ें",
+    "startNowBtn": "अब शुरू करें"
+  },
+  "menuBar": {
+    "home": "होम",
+    "market": "बाजार",
+    "transaction": "व्यापार",
+    "asset": "एसेट"
+  },
+  "homePage": {
+    "deposit": "जमा",
+    "service": "सेवा",
+    "popularTransactionPair": "लोकप्रिय लेन-देन जोड़ी",
+    "trade": "व्यापार",
+    "study": "अध्ययन",
+    "helpCenter": "सहायता केंद्र",
+    "vip": "वीआईपी",
+    "leaderBoard": "लीडरबोर्ड",
+    "inviteFriends": "मित्रों को आमंत्रित करें",
+    "savings": "बचत",
+    "tradingRobot": "व्यापारिक रोबोट",
+    "mining": "खनन"
+  },
+  "marketPage": {
+    "commodity": "सामग्री",
+    "cryptoCurrency": "क्रिप्टो मुद्रा",
+    "foreignExchange": "विदेशी मुद्रा",
+    "transaction": "लेन-देन",
+    "tradingVolume": "व्यापार आवश्यकता",
+    "price": "मूल्य",
+    "24HRisingDecline": "24 घंटे की बढ़ती गिरावट"
+  },
+  "assetPage": {
+    "myAssets": "मेरी संपत्ति",
+    "totalAssets": "कुल संपत्ति",
+    "TodayProfitability": "आज की लाभकारिता",
+    "deposit": "जमा",
+    "withdraw": "निकासी",
+    "order": "आदेश",
+    "bill": "बिल",
+    "myAccount": "मेरा खाता",
+    "funds": "फंड्स",
+    "financialManagement": "वित्तीय प्रबंधन",
+    "tradingRobot": "व्यापारिक रोबोट",
+    "healing": "चिकित्सा"
+  },
+  "profilePage": {
+    "title": "व्यक्तिगत केंद्र",
+    "username": "उपयोगकर्ता नाम",
+    "email": "ईमेल",
+    "phoneNumber": "फ़ोन नंबर",
+    "loginPassword": "लॉगिन पासवर्ड",
+    "withdrawAccount": "निकासी खाता",
+    "authentication": "प्रमाणीकरण",
+    "securityCode": "सुरक्षा कोड",
+    "language": "भाषा",
+    "colorsOfUpsAndDowns": "ऊपरी और निचले रंग",
+    "displayCurrency": "प्रदर्शन मुद्रा",
+    "aboutUs": "हमारे बारे में",
+    "quit": "निकास",
+    "welcome": "आपका स्वागत है",
+    "messageLogin": "कृपया अपने खाते में लॉगिन करें या एक खाता साइनअप करें",
+    "login": "लॉग इन करें",
+    "signup": "साइनअप",
+    "notCertified": "प्रमाणित नहीं",
+    "greenRiseAndRed": "हरा बढ़ाव और लाल",
+    "notSet": "सेट नहीं किया गया"
+  },
+  "announcementPage": {
+    "title": "घोषणा"
+  },
+  "withdrawAccount": {
+    "title": "निकासी खाता",
+    "noWithdrawalAccount": "कोई निकासी खाता सेट नहीं है",
+    "withdrawAccountBtn": "निकासी खाता जोड़ें",
+    "type": "प्रकार",
+    "fiatCurrency": "फिएट मुद्रा",
+    "cryptocurrency": "क्रिप्टोकरेंसी",
+    "country": "देश",
+    "clickToSelectCountry": "देश का चयन करने के लिए क्लिक करें",
+    "bank": "बैंक संस्थान",
+    "placeholderBank": "खाते के बैंक संस्थान दर्ज करें",
+    "bankAccount": "बैंक खाता",
+    "realName": "असली नाम",
+    "placeholderRealName": "खाता धारक का असली नाम",
+    "contactAddress": "संपर्क पता",
+    "placeholderContactAddress": "विस्तृत संपर्क पता",
+    "contactPhone": "संपर्क फ़ोन",
+    "idNumber": "आईडी नंबर",
+    "remark": "टिप्पणी (वैकल्पिक)",
+    "placeholderRemark": "टिप्पणी जोड़ें",
+    "confirm": "पुष्टि करें",
+    "pleaseSelectCryptocurrencies": "कृपया देश या क्षेत्र का चयन करें",
+    "searchCountryOrRegion": "देश या क्षेत्र खोजें",
+    "required": "आवश्यक"
+  },
+  "authentication": {
+    "title": "प्रमाणीकरण",
+    "lv1": "स्तर 1",
+    "rightsAndInterests": "अधिकार और हित",
+    "fiatCurrencyDeposit": "फिएट मुद्रा जमा",
+    "withdrawalAmount": "निकासी राशि",
+    "unlimited": "असीमित",
+    "other": "अन्य",
+    "moreRewards": "अधिक पुरस्कार",
+    "id": "आईडी",
+    "selfie": "सेल्फी",
+    "certifyBtnLv1": "तुरंत प्रमाणीकृत करें",
+    "lv2": "स्तर 2",
+    "moreTradingProducts": "अधिक व्यापारिक उत्पाद",
+    "proofOfAddress": "पता साबित करना",
+    "certifyBtnLv2": "पहले आपको स्तर 1 प्रमाणीकरण पूरा करना होगा"
+  },
+  "learn": {
+    "title": "सीखें",
+    "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: इनमें अंतर क्या है?",
+    "howAreTheyDifferentContent": "स्थिरकॉइन्स वह क्रिप्टोकरेंसी हैं जिनके मूल्य को एक स्थिर संपत्ति से जोड़ा गया है, ज्यादातर फिएट मुद्राओं से। टेदर (USDT), यूएसडी सी (USDC) और बिनेंस यूएसडी (BUSD) सबसे लोकप्रिय स्थिरकॉइन्स हैं, जिनका संयुक्त बाजार कैप $120 अरब है। हालांकि, BUSD के बारे में हाल ही की चर्चा के साथ, बेशक अधिकतर निवेशक यह जानने के उत्सुक होंगे कि क्या अब भी BUSD में निवेश करने लायक है - या क्या आपको बस अमेरिकी डालर (USDT), USDC या अन्य स्थिरकॉइन्स में अपने निवेशों को एकत्रित करना चाहिए।",
+    "whichOneIsRightForYouTitle": "पारंपरिक डेबिट कार्ड vs. क्रिप्टो डेबिट कार्ड: आपके लिए कौन सही है?",
+    "whichOneIsRightForYouContent": "आधुनिक समाज का ध्यान लगाना अब नकद लेन-देन पर है। कार्ड स्कैन करक",
+    "cotiCryptoTitle": "Coti Crypto: दुनिया भर में तुरंत भुगतान",
+    "cotiCryptoContent": "जैसा कि हम जानते हैं, पारंपरिक वित्त के साथ कई चिंताजनक समस्याएं हैं जैसे व्यापारी शुल्क और सीमांत बाधाएं। ब्लॉकचेन प्रौद्योगिकी द्वारा संचालित डिजिटल मुद्रा लेन-देन एक संभावित समाधान प्रदान करती है। हालांकि, यह भी संपूर्ण नहीं है क्योंकि इसकी कम लेन-देन गति, भुगतान पुष्टिकरण में देरी और कई स्केलेबिलिटी समस्याएं होती हैं।",
+    "whatIsPoWInBlockchainTitle": "स्पष्टीकरण: ब्लॉकचेन में प्रूफ ऑफ़ वर्क (PoW) क्या है?",
+    "whatIsPoWInBlockchainContent": "ब्लॉकचेन को आमतौर पर बिटकॉइन के नकामोटो सहमति के माध्यम से देखा जाता है। लेकिन प्रूफ ऑफ़ वर्क क्या है, इसके बारे में और अधिक जानने के लिए, सतत PoW कार्यान्वयन को ध्यान से देखना आवश्यक है।"
+  },
+  "helpCenter": {
+    "title": "सहायता केंद्र",
+    "howToMakeADepositTitle": "जमा कैसे करें?",
+    "howToMakeADepositContent": "फंड जमा कैसे करें, इस पर एक गाइड ढूंढ़ रहे हैं? हम आपको सुनते हैं! यहां एक विस्तृत प्रक्रिया है ताकि आप आसानी से क्रिप्टोकरेंसी को अपने वॉलेट से हस्तांतरित करके या अपने खाते में फिएट मुद्रा जमा करके जमा कर सकें।"
+  },
+  "vip": {
+    "title": "सदस्य विशेषाधिकार योजना",
+    "upgradeMyMemberLevelTitle": "मेरे सदस्य स्तर को अपग्रेड करें",
+    "upgradeMyMemberLevelContent": "हम विभिन्न उपयोगकर्ताओं के अनुसार विभिन्न सदस्यता स्तर तैयार करते हैं। आप टास्क पूरा करके अपने सदस्यता स्तर को अपग्रेड कर सकते हैं और अधिक विशेषाधिकारों का आनंद ले सकते हैं। विवरण के लिए, परामर्श के लिए नीचे दिए गए बटन पर क्लिक करें।",
+    "currentLevelTitle": "वर्तमान स्तर:",
+    "currentLevelContent": "आप अभी तक सदस्य नहीं हैं",
+    "contactBtn": "संपर्क ग्राहक सेवा परामर्श"
+  },
+  "color": {
+    "title": "ऊपर और नीचे के रंग",
+    "greenRise": "हरा ऊपर और लाल",
+    "redRise": "लाल ऊपर और हरा नीचे"
+  },
+  "about": {
+    "title": "हमारे बारे में",
+    "eUREX": "EUREX",
+    "version": "संस्करण 1.39.2",
+    "checkForUpdates": "अपडेट की जाँच करें",
+    "upgradedLatestVersion": "नवीनतम संस्करण में अपग्रेड किया गया है"
+  },
+  "authenticationPage": {
+    "loginTitle": "कृपया लॉगिन करें!",
+    "signupTitle": "तत्काल रजिस्टर करें!",
+    "login": "लॉगिन",
+    "register": "रजिस्टर",
+    "email": "ई-मेल",
+    "username": "उपयोगकर्ता नाम",
+    "phoneNumber": "फ़ोन नंबर",
+    "setPassword": "पासवर्ड सेट करें",
+    "loginPassword": "लॉगिन पासवर्ड",
+    "invitationCode": "निमंत्रण कोड",
+    "userNameIsInvalid": "कृपया अपना उपयोगकर्ता नाम दर्ज करें",
+    "passwordIsInvalid": "कृपया पासवर्ड भरें",
+    "phoneNumberIsInvalid": "कृपया अपना फ़ोन नंबर भरें",
+    "phoneNumberIsNotTrue": "मोबाइल नंबर गलत है",
+    "emailIsInvalid": "कृपया अपना ईमेल दर्ज करें"
+  },
+  "deposit": {
+    "title": "जमा",
+    "chooseYourDepositMethod": "अपना जमा तरीका चुनें",
+    "artificialDeposit": "कृत्रिम जमा",
+    "contactArtificial": "जमा मार्गदर्शिका प्राप्त करने के लिए कृत्रिम ग्राहक सेवा से संपर्क करें"
+  },
+  "withdraw": {
+    "title": "निकास",
+    "account": "खाता",
+    "amount": "राशि",
+    "currentBalance": "वर्तमान शेष:",
+    "allBalance": "सभी शेष",
+    "managementOfWithdrawal": "निकास का प्रबंधन",
+    "fees": "शुल्क",
+    "amountReceived": "प्राप्त राशि",
+    "confirm": "पुष्टि कर",
+    "msgAccountError": "कृपया प्राप्ति खाता भरें",
+    "msgAmountError": "न्यूनतम राशि 1 है"
+  },
+  "order": {
+    "title": "आदेश",
+    "noData": "कोई डेटा नहीं"
+  },
+  "bill": {
+    "title": "बिल",
+    "noData": "कोई डेटा नहीं"
+  },
+  "password": {
+    "title": "लॉगिन पासवर्ड",
+    "oldPassword": "पुराना पासवर्ड",
+    "newPassword": "नया पासवर्ड",
+    "oldPasswordInvalidError": "कृपया पुराना पासवर्ड दर्ज करें",
+    "newPasswordInvalidError": "6-20 व्यक्तिगत वर्ण",
+    "confirmBtn": "पुष्टि"
+  },
+  "securityCode": {
+    "title": "एक सुरक्षा पासवर्ड सेट करें",
+    "newPassword": "नया पासवर्ड",
+    "newPasswordInvalidError": "6-20 व्यक्तिगत वर्ण",
+    "confirmBtn": "पुष्टि"
+  },
+  "tradePage": {
+    "position": "स्थिति",
+    "order": "आदेश",
+    "long": "लंबा",
+    "short": "लघु",
+    "trade": {
+      "title": "व्यापार",
+      "profit": "लाभ",
+      "minute": "मिनट",
+      "balance": "संतुलन",
+      "price": "मूल्य",
+      "amount": "मात्रा",
+      "quantity:": "मात्रा"
+    },
+    "chart": {
+      "title": "चार्ट",
+      "24HourHigh": "24 घंटे की उच्चतम",
+      "24HourLow": "24 घंटे की निम्नतम",
+      "24HourTurnover": "24 घंटे का टर्नओवर"
+    }
+  },
+  "displayCurrency": {
+    "title": "प्रदर्शन मुद्रा",
+    "commonlyUsed": "सामान्य रूप से उपयोग किया जाता है",
+    "more": "अधिक"
+  },
+  "servicePage": {
+    "title": "हमसे संपर्क करें",
+    "onlineService": "ऑनलाइन सेवा",
+    "onlineServiceContent": "यदि आपको कोई आवश्यकता हो तो हमसे संपर्क करने का स्वागत है",
+    "placeholderMessage": "भेजने के लिए संदेश..."
+  }
+}
