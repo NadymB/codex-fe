@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 
 import "../../../i18n";
 import { MenuBar } from "./MenuBar";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 
 export const DefaultLayout = ({
   children,
@@ -26,6 +27,7 @@ export const DefaultLayout = ({
     }
   };
   const menuBarRef = useRef<any>(null);
+  const { webSocket, register } = useContext(WebSocketCtx);
   const [heightMenuBar, setHeightMenuBar] = useState(0);
 
   useEffect(() => {
@@ -33,7 +35,12 @@ export const DefaultLayout = ({
       const height = menuBarRef.current.offsetHeight;
       setHeightMenuBar(height);
     }
+    register("abc");
   }, []);
+  console.log({ webSocket });
+  webSocket?.on("send_message", (payload) => {
+    console.log(payload);
+  });
   return (
     <main
       className={`ease-soft-in-out relative h-screen transition-all duration-200 ${containerStyle}`}
