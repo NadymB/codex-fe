@@ -33,7 +33,9 @@ export const DefaultLayout = ({
       const height = menuBarRef.current.offsetHeight;
       setHeightMenuBar(height);
     }
-    register("abc");
+    register(
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNmMGEzZWQ0LWM3ZGItNGYyNS1hMDlhLWJkYTEyODA3YWUwMCIsImlhdCI6MTcxMDIzMjIzNywiZXhwIjoxNzEwMzE4NjM3fQ.fcSL373gxf665foYJRWlmgw3c820nOcE6V2PnZSXqw8"
+    );
   }, []);
   console.log({ webSocket });
   webSocket?.on("send_message", (payload) => {
