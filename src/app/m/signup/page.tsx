@@ -1,8 +1,5 @@
 "use client";
 import { BackIcon } from "@/assets/icons/BackIcon";
-import LoginWithEmail from "@/components/Login/LoginWithEmail";
-import LoginWithPhoneNumber from "@/components/Login/LoginWithPhoneNumber";
-import LoginWithUserName from "@/components/Login/LoginWithUserName";
 import Tabs from "@/components/Tabs";
 import SignupWithEmail from "@/components/signup/SignupWithEmail";
 import SignupWithPhoneNumber from "@/components/signup/SignupWithPhoneNumber";

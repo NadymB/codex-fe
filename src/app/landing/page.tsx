@@ -15,7 +15,6 @@ const LandingPage = () => {
   return (
     <DefaultLayout
       isShowMenubar={false}
-      pageTitle="Dashboard"
       containerStyle="bg-[#13111a] dark:bg-[#13111a]"
     >
       <HeaderLandingSection />

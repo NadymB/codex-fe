@@ -93,10 +93,7 @@ const MarketPage = () => {
     },
   ];
   return (
-    <DefaultLayout
-      pageTitle="Dashboard"
-      containerStyle="bg-[#000000] dark:bg-[#000000]"
-    >
+    <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000]">
       <Tab options={marketTabOption} />
       {data.length ? (
         <div className="w-full p-3">

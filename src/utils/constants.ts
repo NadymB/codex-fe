@@ -1143,3 +1143,8 @@ export const COUNTRIES: Country[] = [
   { code: "ZM", label: "Zambia", phone: "+260" },
   { code: "ZW", label: "Zimbabwe", phone: "+263" },
 ];
+export enum LOGIN_MODE {
+  MAIL = "email",
+  PHONE_NUMBER = "phone_number",
+  USERNAME = "username",
+}

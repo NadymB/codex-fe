@@ -7,12 +7,12 @@ import { getStaticURL } from "@/utils/constants";
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { DepositIcon } from "@/assets/icons/DepositIcon";
 import { TelesaleIcon } from "@/assets/icons/TelesaleIcon";
-import FeatureSection from "@/components/home/FeatureSection";
 import { LoudspeakerIcon } from "@/assets/icons/LoudspeakerIcon";
 import { MenuIcon } from "@/assets/icons/MenuIcon";
 import Link from "next/link";
 import i18next from "i18next";
 import { priceFeedService } from "@/services/PriceFeedService";
+import FeatureSection from "@/components/Home/FeatureSection";
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -35,10 +35,7 @@ export default function Home() {
   }, []);
 
   return (
-    <DefaultLayout
-      pageTitle="Dashboard"
-      containerStyle="bg-[#000000] dark:bg-[#000000]"
-    >
+    <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000]">
       <Header />
       <div>
         <div className="w-full">

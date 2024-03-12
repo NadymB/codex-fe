@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
+import { authService } from "@/services/AuthServices";
 
 const SignupWithEmail = () => {
   const router = useRouter();
@@ -15,46 +16,60 @@ const SignupWithEmail = () => {
       .matches(/@[^.]*\./, i18next.t("authenticationPage.emailIsInvalid"))
       .required(i18next.t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
-    userName: Yup.string().required(
+    username: Yup.string().required(
       i18next.t("authenticationPage.userNameIsInvalid"),
     ),
-    password: Yup.string().required(
-      i18next.t("authenticationPage.passwordIsInvalid"),
-    ),
+    password: Yup.string()
+      .min(8, "Password must be at least 8 characters long")
+      .matches(/[a-z]/, "Password must contain at least one lowercase letter")
+      .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
+      .matches(/[0-9]/, "Password must contain at least one number")
+      .matches(
+        /[^a-zA-Z0-9.]/,
+        "Password must contain at least one special character"
+      )
+      .required(i18next.t("authenticationPage.passwordIsInvalid")),
   });
   const formik = useFormik({
     initialValues: {
       email: "",
-      userName: "",
+      username: "",
       password: "",
       inviteCode: "",
     },
     validationSchema: validationSchema,
-    onSubmit: async (values) => {},
+    onSubmit: async (values) => {
+      try {
+        const response = await authService.signupEmail(values)
+        
+      } catch (error) {
+        
+      }
+    },
   });
 
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="flex flex-col gap-2"
+      className="flex flex-col gap-2 mt-6"
       autoComplete="off"
     >
       <div className="bg-[#1D1C22]">
         <InputCustom
           error={
-            formik.touched.userName && formik.errors.userName ? true : false
+            formik.touched.username && formik.errors.username ? true : false
           }
           className=" bg-transparent w-full text-[16px]"
           label={i18next.t("authenticationPage.username")}
-          name="userName"
+          name="username"
           autoComplete="new-email"
-          value={formik.values.userName}
+          value={formik.values.username}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
-        {formik.touched.userName && formik.errors.userName ? (
+        {formik.touched.username && formik.errors.username ? (
           <div className="text-[#FF4444] text-[14px] px-4 py-1">
-            {formik.errors.userName}
+            {formik.errors.username}
           </div>
         ) : null}
       </div>
@@ -109,7 +124,7 @@ const SignupWithEmail = () => {
       </div>
       <Button
         type="submit"
-        style={{ background: "#3D5AFE" }}
+        style={{ background: "#3D5AFE", color:'#fff'  }}
         className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
       >
         {i18next.t("authenticationPage.register")}

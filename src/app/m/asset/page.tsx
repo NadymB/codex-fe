@@ -5,11 +5,7 @@ import { ShowIcon } from "@/assets/icons/ShowIcon";
 import { AccountItem } from "@/components/AccountItem";
 import { AssetItem } from "@/components/AssetItem";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
-import {
-  ACCOUNT_LIST,
-  ASSET_LIST,
-  getStaticURL
-} from "@/utils/constants";
+import { ACCOUNT_LIST, ASSET_LIST, getStaticURL } from "@/utils/constants";
 import i18next from "i18next";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,16 +21,17 @@ const AssetPage = () => {
   const ref = useRef(null);
 
   return (
-    <DefaultLayout
-      pageTitle="Dashboard"
-      containerStyle="bg-[#000000] dark:bg-[#000000]"
-    >
+    <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000]">
       <div className="flex flex-col gap-4 text-white p-4">
         <div>
-          <h2 className="text-xl text-white">{i18next.t("assetPage.myAssets")}</h2>
+          <h2 className="text-xl text-white">
+            {i18next.t("assetPage.myAssets")}
+          </h2>
           <div className="flex flex-col gap-2">
             <div className="p-4 bg-[#1c1c1e] rounded">
-              <span className="text-sm text-[#888]">{i18next.t("assetPage.totalAssets")}</span>
+              <span className="text-sm text-[#888]">
+                {i18next.t("assetPage.totalAssets")}
+              </span>
               <div className="flex items-center gap-3 mt-2 mb-1">
                 <span className="text-white text-[32px]">
                   {isShow ? "0.00" : "*****"}
@@ -45,7 +42,10 @@ const AssetPage = () => {
                 </button>
               </div>
               <div className="relative inline-block text-right">
-                <Link href={"/m/setting/currency"} className="text-[#888] text-base">
+                <Link
+                  href={"/m/setting/currency"}
+                  className="text-[#888] text-base"
+                >
                   ≈ 0.00 USD
                   <svg
                     className="-mr-1 h-5 w-5"
@@ -62,7 +62,7 @@ const AssetPage = () => {
                 </Link>
               </div>
               <div className="text-base text-white pt-2">
-              {i18next.t("assetPage.TodayProfitability")}: &nbsp;
+                {i18next.t("assetPage.TodayProfitability")}: &nbsp;
                 <span className="text-[#55af72]">0.00 (0%)</span>&nbsp; USDT
               </div>
               <Image
@@ -89,7 +89,9 @@ const AssetPage = () => {
           </div>
         </div>
         <div>
-          <h3 className="text-base text-white">{i18next.t("assetPage.myAccount")}</h3>
+          <h3 className="text-base text-white">
+            {i18next.t("assetPage.myAccount")}
+          </h3>
           <div>
             {ACCOUNT_LIST.map((item, index) => (
               <AccountItem
