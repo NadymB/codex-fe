@@ -7,8 +7,11 @@ import { useRouter } from "next/navigation";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { LOGIN_MODE } from "@/utils/constants";
 
 const LoginWithUserName = () => {
+  const { login } = useAuth();
   const [messageLoginFail, setMassageLoginFail] = useState("");
 
   const router = useRouter();
@@ -24,12 +27,15 @@ const LoginWithUserName = () => {
     initialValues: {
       username: "",
       password: "",
+      mode: LOGIN_MODE.USERNAME,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await authService.loginWithUsername(values);
-        setMassageLoginFail("")
+        const user = await login(values);
+        if (user) {
+          router.push("/m");
+        }
       } catch (error) {
         setMassageLoginFail("Incorrect email or password");
       }
@@ -39,7 +45,7 @@ const LoginWithUserName = () => {
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="flex flex-col gap-2"
+      className="flex flex-col gap-2 mt-6"
       autoComplete="off"
     >
       <div className="bg-[#1D1C22]">

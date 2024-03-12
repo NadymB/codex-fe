@@ -1,6 +1,6 @@
 "use client";
 import { geolocationService } from "@/services/GeolocationService";
-import { COUNTRIES } from "@/utils/constants";
+import { COUNTRIES, LOGIN_MODE } from "@/utils/constants";
 import { Button, TextField, styled } from "@mui/material";
 import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
@@ -10,6 +10,7 @@ import SelectCountries from "../SelectCountries";
 import i18next from "i18next";
 import { InputCustom } from "../InputCustom";
 import { authService } from "@/services/AuthServices";
+import { useAuth } from "@/hooks/useAuth";
 
 interface country {
   code: string;
@@ -18,6 +19,7 @@ interface country {
   suggested?: undefined | boolean;
 }
 const LoginWithPhoneNumber = () => {
+  const { setCurrentUser, login } = useAuth();
   const [messageLoginFail, setMassageLoginFail] = useState("");
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
@@ -34,15 +36,18 @@ const LoginWithPhoneNumber = () => {
     initialValues: {
       phoneNumber: "",
       password: "",
+      mode: LOGIN_MODE.PHONE_NUMBER,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await authService.loginWithPhoneNumber({
+        const user = await login({
           ...values,
           phoneNumber: currentCountry.phone + values.phoneNumber,
         });
-        setMassageLoginFail("")
+        if (user) {
+          router.push("/m");
+        }
       } catch (error) {
         setMassageLoginFail("Incorrect email or password");
       }
@@ -64,7 +69,7 @@ const LoginWithPhoneNumber = () => {
     <>
       <form
         onSubmit={formik.handleSubmit}
-        className="flex flex-col gap-2"
+        className="flex flex-col gap-2 mt-6"
         autoComplete="off"
       >
         <div className="flex items-stretch items-center gap-2">

@@ -26,14 +26,14 @@ export default function RootLayout({
     <>
       <html lang="en">
         <body suppressHydrationWarning={true}>
-          <AuthProvider>
-            <WebSocketProvider>
+          <WebSocketProvider>
+            <AuthProvider>
               <ThemeProvider>
                 <ToastContainer theme="dark" />
                 <main>{children}</main>
               </ThemeProvider>
-            </WebSocketProvider>
-          </AuthProvider>
+            </AuthProvider>
+          </WebSocketProvider>
         </body>
       </html>
     </>

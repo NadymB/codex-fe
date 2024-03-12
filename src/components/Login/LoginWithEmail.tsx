@@ -2,15 +2,21 @@
 import { BackIcon } from "@/assets/icons/BackIcon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Button, TextField, styled } from "@mui/material";
 import i18next from "i18next";
 import { InputCustom } from "../InputCustom";
 import { authService } from "@/services/AuthServices";
+import { useAuth } from "@/hooks/useAuth";
+import { LOGIN_MODE } from "@/utils/constants";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 
 const LoginWithEmail = () => {
+  const { webSocket, register } = useContext(WebSocketCtx);
+
+  const { login } = useAuth();
   const [messageLoginFail, setMassageLoginFail] = useState("");
   const router = useRouter();
   const validationSchema = Yup.object({
@@ -27,12 +33,16 @@ const LoginWithEmail = () => {
     initialValues: {
       email: "",
       password: "",
+      mode: LOGIN_MODE.MAIL,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await authService.loginWithEmail(values);
-        setMassageLoginFail("");
+        const data = await login(values);
+        if(data){
+          register(data.access_token)
+          router.push('/m')
+        }
       } catch (error) {
         setMassageLoginFail("Incorrect email or password");
       }
@@ -42,7 +52,7 @@ const LoginWithEmail = () => {
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="flex flex-col gap-2"
+      className="flex flex-col gap-2 mt-6"
       autoComplete="off"
     >
       <div className="bg-[#1D1C22]">

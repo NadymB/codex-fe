@@ -2,13 +2,10 @@
 
 import { useContext, useEffect, useRef, useState } from "react";
 
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 import "../../../i18n";
 import { MenuBar } from "./MenuBar";
-import { WebSocketCtx } from "@/providers/WebSocketProvider";
 
-// import { useAuth } from "../../hooks/useAuth";
-import restConnector from "@/connectors/axiosRestConnector";
-import { authService } from "@/services/AuthServices";
 import { useRouter } from "next/navigation";
 
 export const DefaultLayout = ({
@@ -33,40 +30,7 @@ export const DefaultLayout = ({
       const height = menuBarRef.current.offsetHeight;
       setHeightMenuBar(height);
     }
-    register(
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNmMGEzZWQ0LWM3ZGItNGYyNS1hMDlhLWJkYTEyODA3YWUwMCIsImlhdCI6MTcxMDIzMjIzNywiZXhwIjoxNzEwMzE4NjM3fQ.fcSL373gxf665foYJRWlmgw3c820nOcE6V2PnZSXqw8"
-    );
   }, []);
-  console.log({ webSocket });
-  webSocket?.on("send_message", (payload) => {
-    console.log(payload);
-  });
-
-  useEffect(() => {
-    (async () => {
-      // const admin = await getCurrentAdmin();
-      const admin = window?.sessionStorage.getItem("admin");
-      if (!admin || admin !== "true") {
-        router.replace("/m/login");
-      }
-    })();
-  }, []);
-  restConnector.interceptors.response.use(
-    (response) => {
-      if (!response.data.success && response.data.httpCode === 403) {
-        authService.logout();
-        router.replace("/m/login");
-      }
-      return response;
-    },
-    (error) => {
-      if (error.response.status === 401) {
-        authService.logout();
-        router.replace("/m/login");
-      }
-      return error;
-    }
-  );
   
   return (
     <main

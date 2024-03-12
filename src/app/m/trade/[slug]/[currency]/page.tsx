@@ -3,6 +3,7 @@
 
 import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 import Tabs from "@/components/Tabs";
+import { AuthenticationLayout } from "@/components/layouts/AuthenticationLayout";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { ConfirmPaymentModal } from "@/components/trade/ConfirmPaymentModal";
 import { OrderSection } from "@/components/trade/OrderSection";
@@ -18,7 +19,8 @@ const TradePage = ({
 }: {
   params: { slug: string; currency: string };
 }) => {
-  const [isOpenConfirmPaymentModal, setIsOpenConfirmPaymenModal] = useState(false);
+  const [isOpenConfirmPaymentModal, setIsOpenConfirmPaymenModal] =
+    useState(false);
   const [isLong, setIsLong] = useState<boolean>();
 
   const handleLong = () => {
@@ -94,7 +96,12 @@ const TradePage = ({
       name: `${i18next.t("tradePage.trade.title")}`,
       content: (
         <>
-          <Trading token={params.slug} currency={params.currency} onClickLongBtn={handleLong} onClickShortBtn={handleShort}/>
+          <Trading
+            token={params.slug}
+            currency={params.currency}
+            onClickLongBtn={handleLong}
+            onClickShortBtn={handleShort}
+          />
           <OrderSection />
         </>
       ),
@@ -102,14 +109,21 @@ const TradePage = ({
   ];
 
   return (
-    <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000] relative">
-      <Tabs
-        tabs={tabs}
-        classNameTab="sticky top-0 left-0 bg-[#000000] z-[100] "
-        classNameItem="flex-1 "
-      />
-      {isOpenConfirmPaymentModal && <ConfirmPaymentModal isLong={isLong} onClickCloseBtn={() => setIsOpenConfirmPaymenModal(false)}/>}
-    </DefaultLayout>
+    <AuthenticationLayout>
+      <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000] relative">
+        <Tabs
+          tabs={tabs}
+          classNameTab="sticky top-0 left-0 bg-[#000000] z-[100] "
+          classNameItem="flex-1 "
+        />
+        {isOpenConfirmPaymentModal && (
+          <ConfirmPaymentModal
+            isLong={isLong}
+            onClickCloseBtn={() => setIsOpenConfirmPaymenModal(false)}
+          />
+        )}
+      </DefaultLayout>
+    </AuthenticationLayout>
   );
 };
 export default TradePage;

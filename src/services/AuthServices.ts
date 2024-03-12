@@ -31,7 +31,7 @@ export class AuthService {
 
     if (data.success) {
       this.setAccessToken(data.data.access_token);
-      return data.data.user;
+      return data.data;
     }
     onToast(data.data.message, "error");
     return null;
@@ -49,19 +49,25 @@ export class AuthService {
 
     if (data.success) {
       this.setAccessToken(data.data.access_token);
-      return data.data.user;
+      return data.data;
     }
     onToast(data.data.message, "error");
     return null;
   }
-  public async loginWithEmail(values: {
-    email: string;
+  
+  public async login(values: {
+    email?:string;
+    phoneNumer?:string;
+    username?: string;
     password: string;
+    mode:LOGIN_MODE
   }): Promise<any> {
     const { data } = await restConnector.post("/auth/login", {
-      email: values.email,
+      email:values.email,
+      phoneNumber:values.phoneNumer,
+      username: values.username,
       password: values.password,
-      mode: LOGIN_MODE.MAIL,
+      mode: values.mode,
     });
 
     if (data.success) {
@@ -71,46 +77,12 @@ export class AuthService {
     onToast(data.data.message, "error");
     return null;
   }
-  public async loginWithPhoneNumber(values: {
-    phoneNumber: string;
-    password: string;
-  }): Promise<any> {
-    const { data } = await restConnector.post("/auth/login", {
-      phoneNumber: values.phoneNumber,
-      password: values.password,
-      mode: LOGIN_MODE.PHONE_NUMBER,
-    });
-
-    if (data.success) {
-      this.setAccessToken(data.data.access_token);
-      return data.data.user;
-    }
-    onToast(data.data.message, "error");
-    return null;
-  }
-  public async loginWithUsername(values: {
-    username: string;
-    password: string;
-  }): Promise<any> {
-    const { data } = await restConnector.post("/auth/login", {
-      username: values.username,
-      password: values.password,
-      mode: LOGIN_MODE.USERNAME,
-    });
-
-    if (data.success) {
-      this.setAccessToken(data.data.access_token);
-      return data.data.user;
-    }
-    onToast(data.data.message, "error");
-    return null;
-  }
   public async fetchCurrentUser() {
-    if (!this.jwt) {
-      return null;
-    }
+    // if (!this.jwt) {
+    //   return null;
+    // }
     try {
-      const { data } = await restConnector.get("/auth/profile");
+      const { data } = await restConnector.get("/auth/whoami");
       if (data.success) {
         return data.data;
       }

@@ -7,8 +7,11 @@ import i18next from "i18next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import "../../../../i18n";
+import { useAuth } from "@/hooks/useAuth";
 
 const SignUpPage = () => {
+  const { getCurrentUser } = useAuth();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState(1);
   const [tabPosition, setTabPosition] = useState({ left: 0, width: 0 });
@@ -32,15 +35,26 @@ const SignUpPage = () => {
     },
     {
       name: `${i18next.t("authenticationPage.phoneNumber")}`,
-      content: <><SignupWithPhoneNumber/></>,
-    }
+      content: (
+        <>
+          <SignupWithPhoneNumber />
+        </>
+      ),
+    },
   ];
   const [value, setValue] = useState("1");
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
-
+  useEffect(() => {
+    (async () => {
+      const user = await getCurrentUser();
+      if (user) {
+        router.push("/m/home");
+      }
+    })();
+  }, []);
   return (
     <div className="min-h-screen overflow-auto bg-[#000000]">
       <div className="sticky top-0 left-0 w-full px-6 py-6  flex items-center justify-between gap-2 bg-[#000000]">
@@ -48,11 +62,15 @@ const SignUpPage = () => {
           <BackIcon />
         </div>
         <Link href={"/m/login"}>
-          <span className="text-[#3D5AFE]">{i18next.t("authenticationPage.login")}</span>
+          <span className="text-[#3D5AFE]">
+            {i18next.t("authenticationPage.login")}
+          </span>
         </Link>
       </div>
       <div className="p-4">
-        <h4 className="text-[32px] text-[#fff]">{i18next.t("authenticationPage.signupTitle")}</h4>
+        <h4 className="text-[32px] text-[#fff]">
+          {i18next.t("authenticationPage.signupTitle")}
+        </h4>
         <Tabs tabs={tabs} />
       </div>
     </div>
