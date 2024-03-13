@@ -109,7 +109,7 @@ const TradePage = ({
   ];
 
   return (
-    <AuthenticationLayout>
+    // <AuthenticationLayout>
       <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000] relative">
         <Tabs
           tabs={tabs}
@@ -123,7 +123,7 @@ const TradePage = ({
           />
         )}
       </DefaultLayout>
-    </AuthenticationLayout>
+    // </AuthenticationLayout>
   );
 };
 export default TradePage;
