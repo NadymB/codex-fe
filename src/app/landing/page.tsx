@@ -1,13 +1,14 @@
-import { ClientSection } from "@/components/landing/ClientSection";
-import { ContentSection } from "@/components/landing/ContentSection";
-import { CtaSection } from "@/components/landing/CtaSection";
-import { FeatureSection } from "@/components/landing/FeatureSection";
-import { FooterSection } from "@/components/landing/FooterSection";
-import { HeaderLandingSection } from "@/components/landing/HeaderLandingSection";
-import { HeroSection } from "@/components/landing/HeroSection";
-import { QASection } from "@/components/landing/QASection";
-import { TestimonialSection } from "@/components/landing/TestimonialSection";
-import { VideoSection } from "@/components/landing/VideoSection";
+
+import FeatureSection from "@/components/Home/FeatureSection";
+import { ClientSection } from "@/components/Landing/ClientSection";
+import { ContentSection } from "@/components/Landing/ContentSection";
+import { CtaSection } from "@/components/Landing/CtaSection";
+import { FooterSection } from "@/components/Landing/FooterSection";
+import { HeaderLandingSection } from "@/components/Landing/HeaderLandingSection";
+import { HeroSection } from "@/components/Landing/HeroSection";
+import { QASection } from "@/components/Landing/QASection";
+import { TestimonialSection } from "@/components/Landing/TestimonialSection";
+import { VideoSection } from "@/components/Landing/VideoSection";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import React from "react";
 
