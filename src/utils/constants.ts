@@ -1,8 +1,7 @@
-import React from "react";
 import { TabOptions } from "@/components/layouts/Tab";
 import i18next from "i18next";
 
-export const getStaticURL = () => "http://localhost:3000";
+export const getStaticURL = () => process.env.NEXT_PUBLIC_STATIC_URL;
 export const OptionsLanguage = [
   {
     label: "English",
