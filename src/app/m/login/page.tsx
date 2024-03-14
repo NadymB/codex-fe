@@ -67,7 +67,7 @@ const LoginPage = () => {
     (async () => {
       const user = await fetchCurrentUser();
       if (user) {
-        router.push("/m/home");
+        // router.push("/m/home");
       }
     })();
   }, []);

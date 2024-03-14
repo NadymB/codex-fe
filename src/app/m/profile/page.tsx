@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 
 const MarketPage = () => {
   const [isAuthentication, setIsAuthentication] = useState(false);
-  const { getCurrentUser } = useAuth();
+  const { getCurrentUser, setCurrentUser } = useAuth();
   const router = useRouter();
   useEffect(() => {
     (async () => {
@@ -26,6 +26,7 @@ const MarketPage = () => {
   const handleLogout = async () => {
     try {
       const result = await authService.logout();
+      setCurrentUser(null)
       router.push("/m/login");
     } catch (error) {}
   };

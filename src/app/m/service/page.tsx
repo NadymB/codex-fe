@@ -12,7 +12,7 @@ import { Account } from "@/models/User";
 import { WebSocketCtx } from "@/providers/WebSocketProvider";
 import { chatService } from "@/services/ChatService";
 import { WS_TOPIC } from "@/utils/constants";
-import { TextField, styled } from "@mui/material";
+import { CircularProgress, TextField, styled } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import { IncomingMessage } from "http";
 
@@ -55,7 +55,7 @@ const CssTextField = styled(TextField)({
   },
 });
 const ServicePage = () => {
-  const [isShouldScrollBottom, setIsShouldScrollBottom] = useState(false);
+  const [isShouldScrollBottom, setIsShouldScrollBottom] = useState(true);
   const { currentUser } = useAuth();
   const { onAliUpload } = useAliUpload();
   const { webSocket } = useContext(WebSocketCtx);
@@ -200,9 +200,9 @@ const ServicePage = () => {
   };
 
   useEffect(() => {
-    // if (isShouldScrollBottom) {
+    if (isShouldScrollBottom) {
     scrollToBottom();
-    // }
+    }
   }, [listMessage]);
 
   useEffect(() => {
@@ -236,7 +236,8 @@ const ServicePage = () => {
       const handleScroll = () => {
         console.log(messageContainer.scrollTop);
         if (messageContainer.scrollTop === 0) {
-          // fetchMessagesOnScroll(chatRoomId, { limit, offset });
+          fetchMessagesOnScroll(chatRoomId, { limit, offset:offset+limit });
+          messageListRef.current.scrollTo({ top: '1px' });
         }
       };
       messageContainer.addEventListener("scroll", handleScroll);
@@ -245,7 +246,7 @@ const ServicePage = () => {
         messageContainer.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [chatRoomId, totalMessage]);
+  }, [chatRoomId, totalMessage , offset]);
   return (
     // <AuthenticationLayout>
     <div className="h-screen overflow-hidden bg-[#1C1C1E]">
@@ -282,7 +283,8 @@ const ServicePage = () => {
             {i18next.t("servicePage.onlineServiceContent")}
           </div>
           {loadingMore && (
-            <div className="flex items-center justify-center">Loading...</div>
+            
+            <div className="flex items-center justify-center"><CircularProgress size={18} /></div>
           )}
           <div className="flex flex-col mt-5">
             {[...listMessage].reverse().map((data, index) => {
