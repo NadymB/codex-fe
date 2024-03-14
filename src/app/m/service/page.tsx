@@ -248,7 +248,7 @@ const ServicePage = () => {
     }
   }, [chatRoomId, totalMessage , offset]);
   return (
-    // <AuthenticationLayout>
+    <AuthenticationLayout>
     <div className="h-screen overflow-hidden bg-[#1C1C1E]">
       <div
         ref={headerRef}
@@ -350,7 +350,7 @@ const ServicePage = () => {
         </IconButton>
       </div>
     </div>
-    // </AuthenticationLayout>
+    </AuthenticationLayout>
   );
 };
 export default ServicePage;
