@@ -173,6 +173,11 @@
     "passwordIsInvalid": "Please fill in the password",
     "phoneNumberIsInvalid": "Please fill in your phone number",
     "phoneNumberIsNotTrue": "Mobile phone number is incorrect",
+    "passwordMinLength": "Password must be at least 8 characters long",
+    "passwordLowercase": "Password must contain at least one lowercase letter",
+    "passwordUppercase": "Password must contain at least one uppercase letter",
+    "passwordNumber": "Password must contain at least one number",
+    "passwordSpecialChar": "Password must contain at least one special character",
     "emailIsInvalid": "Please enter your email"
   },
   "deposit": {
@@ -207,13 +212,13 @@
     "oldPassword": "Old Password",
     "newPassword": "New Password",
     "oldPasswordInvalidError": "Please enter the old password",
-    "newPasswordInvalidError": "6-20 individual characters",
+    "newPasswordInvalidError": "8-20 individual characters",
     "confirmBtn": "Confirm"
   },
   "securityCode": {
     "title": "Set a security password",
     "newPassword": "New Password",
-    "newPasswordInvalidError": "6-20 individual characters",
+    "newPasswordInvalidError": "8-20 individual characters",
     "confirmBtn": "Confirm"
   },
   "tradePage": {

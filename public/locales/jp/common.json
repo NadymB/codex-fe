@@ -173,6 +173,11 @@
     "passwordIsInvalid": "6 - 20個々の文字",
     "phoneNumberIsInvalid": "携帯電話番号が正しくありません",
     "phoneNumberIsNotTrue": "携帯電話番号が間違っています",
+    "passwordMinLength": "パスワードは少なくとも8文字以上である必要があります",
+    "passwordLowercase": "パスワードには少なくとも1つの小文字を含める必要があります",
+    "passwordUppercase": "パスワードには少なくとも1つの大文字を含める必要があります",
+    "passwordNumber": "パスワードには少なくとも1つの数字を含める必要があります",
+    "passwordSpecialChar": "パスワードには少なくとも1つの特殊文字を含める必要があります",
     "emailIsInvalid": "電子メール形式が正しくありません"
   },
   "deposit": {

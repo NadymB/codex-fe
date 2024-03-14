@@ -9,10 +9,15 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import "../../../../i18n";
 import { useAuth } from "@/hooks/useAuth";
+import { Logo } from "@/components/Logo";
+import { OptionsLanguage, getStaticURL } from "@/utils/constants";
 
 const SignUpPage = () => {
   const { getCurrentUser } = useAuth();
   const router = useRouter();
+  const [currentLang, setCurrentLang] = useState(
+    OptionsLanguage.find((lang) => lang.value === i18next.language)
+  );
   const [activeTab, setActiveTab] = useState(1);
   const [tabPosition, setTabPosition] = useState({ left: 0, width: 0 });
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -72,6 +77,20 @@ const SignUpPage = () => {
           {i18next.t("authenticationPage.signupTitle")}
         </h4>
         <Tabs tabs={tabs} />
+        <div className="flex  flex-col items-center justify-center mt-2">
+          <Logo />
+          <Link
+            href={"/m/setting/locale"}
+            className="flex items-center gap-2 cursor-pointer p-1 mt-3 rounded hover:bg-[#19181d]"
+          >
+            <img
+              className="w-[20px]"
+              src={`${getStaticURL()}${currentLang?.flag}`}
+              alt=""
+            />
+            <span className="text-[14px] text-white">{currentLang?.label}</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

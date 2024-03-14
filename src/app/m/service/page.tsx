@@ -6,13 +6,27 @@ import { Logo } from "@/components/Logo";
 import { InComingMessage } from "@/components/chat/InComingMessage";
 import { OutComingMessage } from "@/components/chat/OutComingMessage";
 import { AuthenticationLayout } from "@/components/layouts/AuthenticationLayout";
+import { useAuth } from "@/hooks/useAuth";
+import { Messages } from "@/models/Chat";
+import { Account } from "@/models/User";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { chatService } from "@/services/ChatService";
+import { WS_TOPIC } from "@/utils/constants";
 import { TextField, styled } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import { IncomingMessage } from "http";
 
 import i18next from "i18next";
 import { useRouter } from "next/navigation";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, {
+  Fragment,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { UploadImage } from "./uploadImage";
+import { useAliUpload } from "@/services/CloundService";
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
     color: "#3D5AFE",
@@ -41,28 +55,27 @@ const CssTextField = styled(TextField)({
   },
 });
 const ServicePage = () => {
+  const { currentUser } = useAuth();
+  const { onAliUpload } = useAliUpload();
+  const { webSocket } = useContext(WebSocketCtx);
+  const [chatRoomId, setChatRoomId] = useState();
   const router = useRouter();
   const headerRef = useRef<any>(null);
   const inputRef = useRef<any>(null);
   const messageListRef = useRef<any>(null);
   const imageRef = useRef<any>(null);
   const [inputMessage, setInputMessage] = useState("");
-  const [sendingMessageId, setSendingMessageId] = useState<
-    undefined | number
-  >();
+  const [loadingMore, setLoadingMore] = useState(false);
   const [heightHeader, setHeightHeader] = useState(0);
   const [heighInput, setHeighInput] = useState(0);
-  const [listMessage, setListMessage] = useState([
-    {
-      type: "in",
-      content: {
-        text: "Xin chào tôi có thể giúp gì được cho bạn?",
-      },
-      time: new Date().getTime(),
-      messageId: Math.random(),
-    },
-  ]);
-
+  const [listMessage, setListMessage] = useState<
+    { message: Messages; sender: Account }[]
+  >([]);
+  const [totalMessage, setTotalMessages] = useState(0);
+  const [{ offset, limit }, setPaginations] = useState({
+    offset: 0,
+    limit: 20,
+  });
   useEffect(() => {
     if (headerRef.current) {
       const height = headerRef.current.offsetHeight;
@@ -73,72 +86,166 @@ const ServicePage = () => {
       setHeighInput(height);
     }
   }, []);
-  const handleSendMessage = ({
-    text = "",
+  const handleSendMessage = async ({
+    content = "",
     image = "",
   }: {
-    text?: string;
+    content?: string;
     image?: string;
   }) => {
-    if (text.trim() !== "" || image !== "") {
-      const messageId = Math.random();
+    if (content.trim() !== "" || (image !== "" && chatRoomId)) {
       const newMessage = {
-        type: "out",
-        content: {
-          text: text,
-          image: image,
-        },
-        time: new Date().getTime(),
-        status: "sending",
-        messageId,
+        content,
+        image: [image],
       };
-      setListMessage((prev) => [...prev, newMessage]);
+
+      const data = await chatService.sendMessage(chatRoomId, newMessage);
       setInputMessage("");
-      setSendingMessageId(messageId);
     }
   };
   useEffect(() => {
     scrollToBottom();
-    const updateMessageStatusById = (idToUpdate: number, newStatus: string) => {
-      const ListMessageUpdate = listMessage.map((message) => {
-        if (message.messageId === idToUpdate) {
-          return { ...message, status: newStatus };
-        }
-        return message;
-      });
-      setListMessage(ListMessageUpdate);
-    };
-    const timeOutSendMessage = setTimeout(() => {
-      if (sendingMessageId) {
-        updateMessageStatusById(Number(sendingMessageId), "sent");
-        setSendingMessageId(undefined);
-      }
-    }, 1500);
   }, [listMessage]);
 
   const scrollToBottom = () => {
     const lastMessage = messageListRef.current.lastElementChild;
     if (lastMessage) {
-      lastMessage.scrollIntoView({ behavior: "smooth", block: "end" });
+      lastMessage.scrollIntoView({ block: "end" });
     }
   };
-  const handleFileChange = (event: any) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = (e: any) => {
-        let image = e.target.result;
-        handleSendMessage({ image: image });
-      };
+  const handleFileChange = async (event: any) => {
+    const imgUpload = UploadImage(event);
+    console.log("this is upload i:", imgUpload);
+    if (imgUpload.length !== 0) {
+      const uploadedImages = await onAliUpload(
+        imgUpload,
+        "messageImage",
+        `message-image`
+      );
+      let images = [];
+      if (uploadedImages) {
+        images = uploadedImages.map((image: any) => image.url);
+      } else {
+        throw new Error("");
+      }
     }
+    if (imgUpload.length === 0) {
+      return;
+    }
+    // const file = event.target.files[0];
+    // if (file) {
+    //   const reader = new FileReader();
+    //   reader.readAsDataURL(file);
+    //   reader.onload = (e: any) => {
+    //     let image = e.target.result;
+    //     handleSendMessage({ image: image });
+    //   };
+    // }
   };
   const handleKeyDown = (event: any) => {
     if (event.key === "Enter") {
       event.preventDefault();
-      handleSendMessage({ text: inputMessage });
+      handleSendMessage({ content: inputMessage });
     }
   };
+  const handleGetChatRoomId = async () => {
+    const chatRoom = await chatService.getChat();
+    setChatRoomId(chatRoom.data._id);
+  };
+  const getListMessage = async (chatRoomId: string) => {
+    try {
+      const messages = await chatService.getListMessage(chatRoomId);
+      setListMessage(messages.data.rows);
+      console.log(messages.data.total);
+      setTotalMessages(messages.data.total);
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const fetchMessagesOnScroll = async (
+    chatRoomId: string,
+    pagination: { limit: number; offset: number }
+  ) => {
+    console.log("asasd", chatRoomId,pagination);
+    setLoadingMore(true);
+    console.log('total', totalMessage);
+
+    if (!loadingMore || offset >= totalMessage) {
+      setLoadingMore(false);
+      return;
+    }
+    const position: number =
+      listMessage[listMessage.length - 1].message.position;
+
+    try {
+      const response = await chatService.getListMessage(
+        chatRoomId,
+        pagination,
+        position
+      );
+      console.log('resonse',response);
+      if (response.success) {
+        setListMessage((preMessages) => [
+          ...preMessages,
+          ...response.data.rows,
+        ]);
+        readMessages(chatRoomId);
+        setLoadingMore(false);
+        setPaginations({
+          limit,
+          offset: offset + limit,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      setLoadingMore(false);
+    }
+  };
+  const readMessages = async (chatRoomId: string) => {
+    await chatService.readMessages(chatRoomId);
+  };
+  useEffect(() => {
+    handleGetChatRoomId();
+  }, []);
+  useEffect(() => {
+    if (chatRoomId) {
+      getListMessage(chatRoomId);
+      readMessages(chatRoomId);
+    }
+  }, [chatRoomId]);
+  useEffect(() => {
+    if (webSocket) {
+      webSocket.on(WS_TOPIC.SEND_MESSAGE, (data) => {
+        if (data.chatId === chatRoomId) {
+          setListMessage((prev) => [data.message, ...prev]);
+          // readMessages();
+        }
+      });
+    }
+    return () => {
+      webSocket?.off(WS_TOPIC.SEND_MESSAGE);
+    };
+  }, [webSocket, chatRoomId]);
+
+  useEffect(() => {
+    const messageContainer = messageListRef.current;
+    if (chatRoomId && messageContainer) {
+      const handleScroll = () => {
+        if (messageContainer.scrollTop === 0) {
+          console.log("oncasdkasdas");
+          fetchMessagesOnScroll(chatRoomId, { limit, offset });
+          // Thực hiện các hành động mong muốn ở đây khi cuộn lên trên
+        }
+      };
+
+      messageContainer.addEventListener("scroll", handleScroll);
+
+      return () => {
+        messageContainer.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [chatRoomId]);
   return (
     // <AuthenticationLayout>
       <div className="h-screen overflow-hidden bg-[#1C1C1E]">
@@ -174,20 +281,23 @@ const ServicePage = () => {
             <div className="text-[#9CA3AF] text-center">
               {i18next.t("servicePage.onlineServiceContent")}
             </div>
-            <div className="flex flex-col">
-              {listMessage.map((message, index) => {
-                if (message.type === "in") {
+            <div className="flex flex-col mt-5">
+              {[...listMessage].reverse().map((data, index) => {
+                if (data?.sender?.id === currentUser?.id) {
                   return (
                     <Fragment key={index}>
                       {" "}
-                      <InComingMessage message={message} />
+                      <OutComingMessage
+                        message={data.message}
+                        sender={data.sender}
+                      />
                     </Fragment>
                   );
-                } else if (message.type === "out") {
+                } else {
                   return (
                     <Fragment key={index}>
                       {" "}
-                      <OutComingMessage message={message} />
+                      <InComingMessage message={data.message} />
                     </Fragment>
                   );
                 }
@@ -229,7 +339,7 @@ const ServicePage = () => {
           </IconButton>
           <IconButton
             size="large"
-            onClick={() => handleSendMessage({ text: inputMessage })}
+            onClick={() => handleSendMessage({ content: inputMessage })}
           >
             <SendIcon />
           </IconButton>

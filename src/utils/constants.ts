@@ -1147,3 +1147,9 @@ export enum LOGIN_MODE {
   PHONE_NUMBER = "phone_number",
   USERNAME = "username",
 }
+export const WS_TOPIC = {
+  SEND_MESSAGE: "send_message",
+  READ_MESSAGE: "read_message",
+  NOTIFICATION: "notification",
+};
+export const MAX_SIZE_IMAGE = 5 * 1024 * 1000;

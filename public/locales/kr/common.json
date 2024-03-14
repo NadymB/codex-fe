@@ -170,9 +170,14 @@
     "loginPassword": "로그인 비밀번호",
     "invitationCode": "초대 코드",
     "userNameIsInvalid": "사용자 이름이 필요합니다",
-    "passwordIsInvalid": "6-20자",
+    "passwordIsInvalid": "8-20자",
     "phoneNumberIsInvalid": "휴대폰 번호가 잘못되었습니다.",
     "phoneNumberIsNotTrue": "휴대폰 번호가 잘못되었습니다",
+    "passwordMinLength": "비밀번호는 최소 8 자 이상이어야합니다",
+    "passwordLowercase": "비밀번호에는 최소한 하나의 소문자가 포함되어야합니다",
+    "passwordUppercase": "비밀번호에는 최소한 하나의 대문자가 포함되어야합니다",
+    "passwordNumber": "비밀번호에는 최소한 하나의 숫자가 포함되어야합니다",
+    "passwordSpecialChar": "비밀번호에는 최소한 하나의 특수 문자가 포함되어야합니다",
     "emailIsInvalid": "이메일 형식이 잘못되었습니다."
   },
   "deposit": {
@@ -207,7 +212,7 @@
     "oldPassword": "기존 비밀번호",
     "newPassword": "새 비밀번호",
     "oldPasswordInvalidError": "이전 비밀번호를 입력하세요.",
-    "newPasswordInvalidError": "6-20자",
+    "newPasswordInvalidError": "8-20자",
     "confirmBtn": "확인하다"
   },
   "securityCode": {

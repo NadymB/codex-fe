@@ -23,21 +23,21 @@ export const AuthenticationLayout = ({
       }
     })();
   }, []);
-  restConnector.interceptors.response.use(
-    (response) => {
-      if (!response.data.success && response.data.httpCode === 403) {
-        authService.logout();
-        router.push("/m/login");
-      }
-      return response;
-    },
-    (error) => {
-      if (error.response.status === 401) {
-        authService.logout();
-        router.push("/m/login");
-      }
-      return error;
-    }
-  );
+  // restConnector.interceptors.response.use(
+  //   (response) => {
+  //     if (!response.data.success && response.data.httpCode === 403) {
+  //       authService.logout();
+  //       router.push("/m/login");
+  //     }
+  //     return response;
+  //   },
+  //   (error) => {
+  //     if (error.response.status === 401) {
+  //       authService.logout();
+  //       router.push("/m/login");
+  //     }
+  //     return error;
+  //   }
+  // );
   return children;
 };

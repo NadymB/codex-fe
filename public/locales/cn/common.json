@@ -73,9 +73,9 @@
     "messageLogin": "请登录您的账户或注册一个账户",
     "login": "登录",
     "signup": "注册",
-    "notCertified":"尚未认证",
-		"greenRiseAndRed":"红涨绿跌",
-		"notSet":"未设置"
+    "notCertified": "尚未认证",
+    "greenRiseAndRed": "红涨绿跌",
+    "notSet": "未设置"
   },
   "announcementPage": {
     "title": "公告通知"
@@ -170,9 +170,14 @@
     "loginPassword": "登录密码",
     "invitationCode": "邀请码",
     "userNameIsInvalid": "用户名必填",
-    "passwordIsInvalid": "6-20个字符",
+    "passwordIsInvalid": "8-20个字符",
     "phoneNumberIsInvalid": "手机号不正确",
     "phoneNumberIsNotTrue": "手机号码不正确",
+    "passwordMinLength": "密码至少需要8个字符",
+    "passwordLowercase": "密码必须至少包含一个小写字母",
+    "passwordUppercase": "密码必须至少包含一个大写字母",
+    "passwordNumber": "密码必须至少包含一个数字",
+    "passwordSpecialChar": "密码必须至少包含一个特殊字符",
     "emailIsInvalid": "邮箱格式不正确"
   },
   "deposit": {
@@ -207,7 +212,7 @@
     "oldPassword": "旧密码",
     "newPassword": "新密码",
     "oldPasswordInvalidError": "请输入旧密码",
-    "newPasswordInvalidError": "6-20个字符",
+    "newPasswordInvalidError": "8-20个字符",
     "confirmBtn": "确认"
   },
   "securityCode": {

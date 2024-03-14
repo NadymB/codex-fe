@@ -6,18 +6,37 @@ import { PublicProfile } from "@/components/profile/PublicProfile";
 import { UnauthenticatedProfile } from "@/components/profile/UnauthenticatedProfile";
 import i18next from "i18next";
 import "../../../../i18n";
+import { useEffect, useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { authService } from "@/services/AuthServices";
+import { useRouter } from "next/navigation";
 
 const MarketPage = () => {
-  const userInfo = true;
-
+  const [isAuthentication, setIsAuthentication] = useState(false);
+  const { getCurrentUser } = useAuth();
+  const router = useRouter();
+  useEffect(() => {
+    (async () => {
+      const user = await getCurrentUser();
+      if (user) {
+        setIsAuthentication(true);
+      }
+    })();
+  }, []);
+  const handleLogout = async () => {
+    try {
+      const result = await authService.logout();
+      router.push("/m/login");
+    } catch (error) {}
+  };
   return (
     <div className="bg-black min-h-screen">
       <GoBack title={i18next.t("profilePage.title")} />
-      {userInfo ? <AuthenticatedProfile /> : <UnauthenticatedProfile />}
+      {isAuthentication ? <AuthenticatedProfile /> : <UnauthenticatedProfile />}
       <PublicProfile />
-      {userInfo && (
+      {isAuthentication && (
         <div className="p-5 bg-black">
-          <button className="py-2 w-full text-white bg-red-600 rounded-md text-[13px] font-semibold">
+          <button onClick={handleLogout} className="py-2 w-full text-white bg-red-600 rounded-md text-[13px] font-semibold">
             {i18next.t("profilePage.quit")}
           </button>
         </div>

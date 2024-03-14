@@ -170,7 +170,7 @@
     "loginPassword": "contraseña de inicio de sesión",
     "invitationCode": "Código de invitación",
     "userNameIsInvalid": "Se requiere nombre de usuario",
-    "passwordIsInvalid": "6-20 caracteres",
+    "passwordIsInvalid": "8-20 caracteres",
     "phoneNumberIsInvalid": "Por favor completa tu número de teléfono",
     "phoneNumberIsNotTrue": "El número de teléfono móvil es incorrecto",
     "emailIsInvalid": "El número de móvil es incorrecto"
@@ -209,7 +209,7 @@
     "oldPassword": "Contraseña anterior",
     "newPassword": "Nueva contraseña",
     "oldPasswordInvalidError": "Por favor ingrese la contraseña anterior",
-    "newPasswordInvalidError": "6-20 caracteres",
+    "newPasswordInvalidError": "8-20 caracteres",
     "confirmBtn": "confirmar"
   },
   "securityCode": {

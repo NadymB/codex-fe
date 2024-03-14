@@ -138,16 +138,16 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     if (typeof window !== "undefined") {
       const access_token = localStorage.getItem("jwt");
       if (access_token) {
-        
-        console.log("CONNECTING WEBSOCKET");
         register(access_token);
       }
     }
   }, []);
-  console.log({ webSocket });
-webSocket?.on("send_message", (payload) => {
-console.log(payload);
-});
+  useEffect(() => {
+    (async () => {
+      const user = await fetchCurrentUser();
+      setCurrentUser(user);
+    })();
+  }, []);
 
   return (
     <AuthCtx.Provider

@@ -15,12 +15,12 @@ import { priceFeedService } from "@/services/PriceFeedService";
 import FeatureSection from "@/components/Home/FeatureSection";
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const [dataCommon, setDataCommon] = useState([]);
   const handleCrawlDataFeed = async () => {
     try {
       const response = await priceFeedService.getCommonPriceFeed();
       if (response.success) {
-        console.log("this data common", data);
+        setDataCommon(response.data.commodityPrices)
       }
     } catch (error) {
       console.log(error);
@@ -29,9 +29,9 @@ export default function Home() {
 
   useEffect(() => {
     handleCrawlDataFeed();
-    const inteval = setInterval(handleCrawlDataFeed, 10000);
+    // const inteval = setInterval(handleCrawlDataFeed, 10000);
 
-    return () => clearInterval(inteval);
+    // return () => clearInterval(inteval);
   }, []);
 
   return (
@@ -76,12 +76,15 @@ export default function Home() {
             {i18next.t("homePage.popularTransactionPair")}
           </h5>
           <div className="flex gap-1 pb-3 overflow-auto ">
-            <Link
+            {/* {dataCommon.length>0 && dataCommon.map((item:any)=>{
+              return (
+              <Link
+              key={Math.random()}
               href={"/coming-soon"}
               className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
+              >
               <div>
-                <span className="text-[#fff]">BTC</span>
+                <span className="text-[#fff]">{item.metadata.name.replace("usdt", "").toUpperCase()}</span>
                 <span className="mx-0.5 text-[#fff]">/</span>
                 <span className="text-[#888888]">USDT</span>
               </div>
@@ -96,6 +99,10 @@ export default function Home() {
                 <NextIcon />
               </div>
             </Link>
+
+              )
+            })} */}
+            
             {/*  */}
             <Link
               href={"/coming-soon"}

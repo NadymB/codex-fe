@@ -173,6 +173,11 @@
     "passwordIsInvalid": "Vui lòng điền mật khẩu",
     "phoneNumberIsInvalid": "Vui lòng điền vào số điện thoại của bạn",
     "phoneNumberIsNotTrue": "Số điện thoại di động không chính xác",
+    "passwordMinLength": "Mật khẩu phải có ít nhất 8 ký tự",
+    "passwordLowercase": "Mật khẩu phải chứa ít nhất một chữ thường",
+    "passwordUppercase": "Mật khẩu phải chứa ít nhất một chữ hoa",
+    "passwordNumber": "Mật khẩu phải chứa ít nhất một số",
+    "passwordSpecialChar": "Mật khẩu phải chứa ít nhất một ký tự đặc biệt",
     "emailIsInvalid": "Vui lòng nhập email"
   },
   "deposit": {
@@ -207,13 +212,13 @@
     "oldPassword": "Mật khẩu cũ",
     "newPassword": "Mật khẩu mới",
     "oldPasswordInvalidError": "Vui lòng nhập mật khẩu cũ",
-    "newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
+    "newPasswordInvalidError": "8-20 các ký tự riêng lẻ",
     "confirmBtn": "Xác nhận"
   },
   "securityCode": {
     "title": "Đặt mật khẩu bảo mật",
     "newPassword": "Mật khẩu mới",
-    "newPasswordInvalidError": "6-20 các ký tự riêng lẻ",
+    "newPasswordInvalidError": "8-20 các ký tự riêng lẻ",
     "confirmBtn": "Xác nhận"
   },
   "tradePage": {

@@ -3,6 +3,7 @@
 import { AvatarIcon } from "@/assets/icons/AvatarIcon";
 import { RingIcon } from "@/assets/icons/RingIcon";
 import { UserIcon } from "@/assets/icons/UserIcon";
+import { useAuth } from "@/hooks/useAuth";
 import { OptionsLanguage, getStaticURL } from "@/utils/constants";
 import i18next from "i18next";
 import Link from "next/link";
@@ -11,8 +12,9 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { currentUser } = useAuth();
   const [currentLang, setCurrentLang] = useState(
-    OptionsLanguage.find((lang) => lang.value === i18next.language),
+    OptionsLanguage.find((lang) => lang.value === i18next.language)
   );
   return (
     <>
@@ -26,7 +28,9 @@ const Header = () => {
               alt=""
             /> */}
           </Link>
-          <span className="text-[16px] font-bold text-white">newuser</span>
+          <span className="text-[16px] font-bold text-white">
+            {currentUser?.username}
+          </span>
         </div>
         <div className="flex items-center gap-3">
           <div className="cursor-pointer">

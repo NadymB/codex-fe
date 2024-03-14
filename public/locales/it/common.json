@@ -170,9 +170,14 @@
     "loginPassword": "password per il login",
     "invitationCode": "Codice invito",
     "userNameIsInvalid": "è richiesto il nome utente",
-    "passwordIsInvalid": "6-20 caratteri",
+    "passwordIsInvalid": "8-20 caratteri",
     "phoneNumberIsInvalid": "Il numero di cellulare non è corretto",
     "phoneNumberIsNotTrue": "Il numero di cellulare non è corretto",
+    "passwordMinLength": "La contraseña debe tener al menos 8 caracteres",
+    "passwordLowercase": "La contraseña debe contener al menos una letra minúscula",
+    "passwordUppercase": "La contraseña debe contener al menos una letra mayúscula",
+    "passwordNumber": "La contraseña debe contener al menos un número",
+    "passwordSpecialChar": "La contraseña debe contener al menos un carácter especial",
     "emailIsInvalid": "Il formato dell'e-mail non è corretto"
   },
   "deposit": {
@@ -207,7 +212,7 @@
     "oldPassword": "vecchia password",
     "newPassword": "nuova password",
     "oldPasswordInvalidError": "Inserisci la vecchia password",
-    "newPasswordInvalidError": "6-20 caratteri",
+    "newPasswordInvalidError": "8-20 caratteri",
     "confirmBtn": "Confermare"
   },
   "securityCode": {

@@ -16,7 +16,7 @@ import "../../../../i18n";
 import { useAuth } from "@/hooks/useAuth";
 
 const LoginPage = () => {
-  const { getCurrentUser } = useAuth();
+  const { fetchCurrentUser } = useAuth();
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState(
     OptionsLanguage.find((lang) => lang.value === i18next.language)
@@ -65,7 +65,7 @@ const LoginPage = () => {
   };
   useEffect(() => {
     (async () => {
-      const user = await getCurrentUser();
+      const user = await fetchCurrentUser();
       if (user) {
         router.push("/m/home");
       }

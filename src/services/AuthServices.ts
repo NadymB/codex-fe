@@ -31,10 +31,8 @@ export class AuthService {
 
     if (data.success) {
       this.setAccessToken(data.data.access_token);
-      return data.data;
     }
-    onToast(data.data.message, "error");
-    return null;
+    return data;
   }
   public async signupWithPhoneNumber(values: {
     phoneNumber: string;
@@ -49,22 +47,20 @@ export class AuthService {
 
     if (data.success) {
       this.setAccessToken(data.data.access_token);
-      return data.data;
     }
-    onToast(data.data.message, "error");
-    return null;
+    return data;
   }
   
   public async login(values: {
     email?:string;
-    phoneNumer?:string;
+    phoneNumber?:string;
     username?: string;
     password: string;
     mode:LOGIN_MODE
   }): Promise<any> {
     const { data } = await restConnector.post("/auth/login", {
       email:values.email,
-      phoneNumber:values.phoneNumer,
+      phoneNumber:values.phoneNumber,
       username: values.username,
       password: values.password,
       mode: values.mode,

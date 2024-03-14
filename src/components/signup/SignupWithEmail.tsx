@@ -3,13 +3,15 @@ import { Button, TextField, styled } from "@mui/material";
 import { useFormik } from "formik";
 import i18next from "i18next";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
 import { authService } from "@/services/AuthServices";
 
 const SignupWithEmail = () => {
   const router = useRouter();
+  const [messageFail, setMassageFail] = useState<string>("");
+
   const validationSchema = Yup.object({
     email: Yup.string()
       .email(i18next.t("authenticationPage.emailIsInvalid"))
@@ -17,16 +19,16 @@ const SignupWithEmail = () => {
       .required(i18next.t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
     username: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      i18next.t("authenticationPage.userNameIsInvalid")
     ),
     password: Yup.string()
-      .min(8, "Password must be at least 8 characters long")
-      .matches(/[a-z]/, "Password must contain at least one lowercase letter")
-      .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
-      .matches(/[0-9]/, "Password must contain at least one number")
+      .min(8, i18next.t("authenticationPage.passwordMinLength"))
+      .matches(/[a-z]/, i18next.t("authenticationPage.passwordLowercase"))
+      .matches(/[A-Z]/, i18next.t("authenticationPage.passwordUppercase"))
+      .matches(/[0-9]/, i18next.t("authenticationPage.passwordNumber"))
       .matches(
         /[^a-zA-Z0-9.]/,
-        "Password must contain at least one special character"
+        i18next.t("authenticationPage.passwordSpecialChar")
       )
       .required(i18next.t("authenticationPage.passwordIsInvalid")),
   });
@@ -40,11 +42,14 @@ const SignupWithEmail = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await authService.signupEmail(values)
-        
-      } catch (error) {
-        
-      }
+        const response = await authService.signupEmail(values);
+        console.log(response);
+        if (response.success) {
+          router.push("/m/login");
+        } else {
+          setMassageFail(response.message);
+        }
+      } catch (error) {}
     },
   });
 
@@ -122,9 +127,14 @@ const SignupWithEmail = () => {
           placeholder="(Optional)"
         />
       </div>
+      {messageFail !== "" && (
+        <div className="text-[red] text-[14px] mt-4 p-2 px-3 rounded bg-red-300">
+          {messageFail}
+        </div>
+      )}
       <Button
         type="submit"
-        style={{ background: "#3D5AFE", color:'#fff'  }}
+        style={{ background: "#3D5AFE", color: "#fff" }}
         className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
       >
         {i18next.t("authenticationPage.register")}

@@ -20,22 +20,23 @@ interface country {
 const SignupWithPhoneNumber = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [messageFail, setMassageFail] = useState<string>("");
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
     phoneNumber: Yup.string().required(
-      i18next.t("authenticationPage.phoneNumberIsInvalid"),
+      i18next.t("authenticationPage.phoneNumberIsInvalid")
     ),
     username: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      i18next.t("authenticationPage.userNameIsInvalid")
     ),
     password: Yup.string()
-      .min(8, "Password must be at least 8 characters long")
-      .matches(/[a-z]/, "Password must contain at least one lowercase letter")
-      .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
-      .matches(/[0-9]/, "Password must contain at least one number")
+      .min(8, i18next.t("authenticationPage.passwordMinLength"))
+      .matches(/[a-z]/, i18next.t("authenticationPage.passwordLowercase"))
+      .matches(/[A-Z]/, i18next.t("authenticationPage.passwordUppercase"))
+      .matches(/[0-9]/, i18next.t("authenticationPage.passwordNumber"))
       .matches(
         /[^a-zA-Z0-9.]/,
-        "Password must contain at least one special character"
+        i18next.t("authenticationPage.passwordSpecialChar")
       )
       .required(i18next.t("authenticationPage.passwordIsInvalid")),
   });
@@ -49,11 +50,17 @@ const SignupWithPhoneNumber = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await authService.signupWithPhoneNumber({...values, phoneNumber:currentCountry.phone+values.phoneNumber})
-        console.log('response sign phone number',response);
-        // if(response.)
+        const response = await authService.signupWithPhoneNumber({
+          ...values,
+          phoneNumber: currentCountry.phone + values.phoneNumber,
+        });
+        if (response.success) {
+          router.push("/m/login");
+        } else {
+          setMassageFail(response.message);
+        }
       } catch (error) {
-        
+        console.log("error", error);
       }
     },
   });
@@ -61,8 +68,7 @@ const SignupWithPhoneNumber = () => {
     const locationData = await geolocationService.getLocation();
     if (locationData) {
       const country = COUNTRIES.find(
-        (item) =>
-          item.code.toLowerCase() === locationData.country.toLowerCase(),
+        (item) => item.code.toLowerCase() === locationData.country.toLowerCase()
       );
       setCurrentCountry(country);
     }
@@ -159,9 +165,14 @@ const SignupWithPhoneNumber = () => {
             placeholder="(Optional)"
           />
         </div>
+        {messageFail !== "" && (
+          <div className="text-[red] text-[14px] mt-4 p-2 px-3 rounded bg-red-300">
+            {messageFail}
+          </div>
+        )}
         <Button
           type="submit"
-          style={{ background: "#3D5AFE", color:'#fff'  }}
+          style={{ background: "#3D5AFE", color: "#fff" }}
           className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
         >
           {i18next.t("authenticationPage.register")}
