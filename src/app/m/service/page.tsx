@@ -95,7 +95,8 @@ const ServicePage = () => {
     content?: string;
     images?: string[];
   }) => {
-    if (content.trim() !== "" || (images.length <= 0 && chatRoomId)) {
+
+    if (content.trim() !== "" || (images.length > 0 && chatRoomId)) {
       const newMessage = {
         content,
         images,
@@ -126,7 +127,6 @@ const ServicePage = () => {
 
       if (uploadedImages) {
         images = uploadedImages.map((image: any) => image.url);
-
         handleSendMessage({ images: images });
       } else {
         throw new Error("");
