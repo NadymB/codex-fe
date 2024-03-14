@@ -27,7 +27,7 @@ export const OutComingMessage = ({ message ,sender}: IProp) => {
           <div className="flex items-center justify-end">
             <span className="text-[#4B5563] text-[12px]">
               {message?.createdAt &&
-                DateTime.fromISO(message?.createdAt).toFormat("HH:MM")} 
+                DateTime.fromISO(message?.createdAt).toFormat("HH:mm")} 
             </span>
             <div className="ml-2">
               {/* {message?.status === "sending" ? (
