@@ -86,14 +86,12 @@ export const useAliUpload = () => {
         region: `${process.env.NEXT_PUBLIC_STATIC_ALI_OSS_REGION}`,
       });
 
-      console.log('clienr ::', client);
-      
-
       if (Array.isArray(fileImg)) {
         const files = fileImg;
         const promises = files.map(async (file) => {
           const fileName = convertName(nameImg, file.name);
           const data = await client.put(fileName, file);
+          await client.putACL(fileName, 'private');
           return { ...data, field };
         });
         const result = await Promise.all(promises);

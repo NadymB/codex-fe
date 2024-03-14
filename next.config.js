@@ -3,7 +3,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost", "codex-client-eight.vercel.app"],
+    domains: ["localhost", "codex-client-eight.vercel.app", "static.tradingcme.com"],
   },
 };
 
