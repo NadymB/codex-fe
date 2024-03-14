@@ -55,6 +55,7 @@ const CssTextField = styled(TextField)({
   },
 });
 const ServicePage = () => {
+  const [isShouldScrollBottom, setIsShouldScrollBottom] = useState(false);
   const { currentUser } = useAuth();
   const { onAliUpload } = useAliUpload();
   const { webSocket } = useContext(WebSocketCtx);
@@ -86,6 +87,7 @@ const ServicePage = () => {
       setHeighInput(height);
     }
   }, []);
+
   const handleSendMessage = async ({
     content = "",
     images = [],
@@ -93,21 +95,18 @@ const ServicePage = () => {
     content?: string;
     images?: string[];
   }) => {
-    
-    if (content.trim() !== "" || (images.length > 0 && chatRoomId)) {
+    if (content.trim() !== "" || (images.length <= 0 && chatRoomId)) {
       const newMessage = {
         content,
         images,
       };
 
       const data = await chatService.sendMessage(chatRoomId, newMessage);
-      
+
       setInputMessage("");
+      setIsShouldScrollBottom(true);
     }
   };
-  useEffect(() => {
-    scrollToBottom();
-  }, [listMessage]);
 
   const scrollToBottom = () => {
     const lastMessage = messageListRef.current.lastElementChild;
@@ -117,7 +116,6 @@ const ServicePage = () => {
   };
   const handleFileChange = async (event: any) => {
     const imgUpload = UploadImage(event);
-    console.log("this is upload i:", imgUpload);
     if (imgUpload.length !== 0) {
       const uploadedImages = await onAliUpload(
         imgUpload,
@@ -128,7 +126,7 @@ const ServicePage = () => {
 
       if (uploadedImages) {
         images = uploadedImages.map((image: any) => image.url);
-        
+
         handleSendMessage({ images: images });
       } else {
         throw new Error("");
@@ -137,15 +135,6 @@ const ServicePage = () => {
     if (imgUpload.length === 0) {
       return;
     }
-    // const file = event.target.files[0];
-    // if (file) {
-    //   const reader = new FileReader();
-    //   reader.readAsDataURL(file);
-    //   reader.onload = (e: any) => {
-    //     let image = e.target.result;
-    //     handleSendMessage({ image: image });
-    //   };
-    // }
   };
   const handleKeyDown = (event: any) => {
     if (event.key === "Enter") {
@@ -153,6 +142,7 @@ const ServicePage = () => {
       handleSendMessage({ content: inputMessage });
     }
   };
+  //  HANDLE GET CHAT ROOM
   const handleGetChatRoomId = async () => {
     const chatRoom = await chatService.getChat();
     setChatRoomId(chatRoom.data._id);
@@ -167,13 +157,13 @@ const ServicePage = () => {
       console.log(error);
     }
   };
+  // HANDLE FETCH MESSAGES ON SCROLL
   const fetchMessagesOnScroll = async (
     chatRoomId: string,
     pagination: { limit: number; offset: number }
   ) => {
     setLoadingMore(true);
-
-    if (!loadingMore || offset >= totalMessage) {
+    if (loadingMore || offset >= totalMessage) {
       setLoadingMore(false);
       return;
     }
@@ -197,24 +187,35 @@ const ServicePage = () => {
           limit,
           offset: offset + limit,
         });
+        setIsShouldScrollBottom(false);
       }
     } catch (error) {
       console.log(error);
       setLoadingMore(false);
     }
   };
+  // HANDLE READ MESSAGE
   const readMessages = async (chatRoomId: string) => {
     await chatService.readMessages(chatRoomId);
   };
+
+  useEffect(() => {
+    // if (isShouldScrollBottom) {
+    scrollToBottom();
+    // }
+  }, [listMessage]);
+
   useEffect(() => {
     handleGetChatRoomId();
   }, []);
+
   useEffect(() => {
     if (chatRoomId) {
       getListMessage(chatRoomId);
       readMessages(chatRoomId);
     }
   }, [chatRoomId]);
+
   useEffect(() => {
     if (webSocket) {
       webSocket.on(WS_TOPIC.SEND_MESSAGE, (data) => {
@@ -233,19 +234,18 @@ const ServicePage = () => {
     const messageContainer = messageListRef.current;
     if (chatRoomId && messageContainer) {
       const handleScroll = () => {
+        console.log(messageContainer.scrollTop);
         if (messageContainer.scrollTop === 0) {
-          console.log("oncasdkasdas");
           fetchMessagesOnScroll(chatRoomId, { limit, offset });
         }
       };
-
       messageContainer.addEventListener("scroll", handleScroll);
 
       return () => {
         messageContainer.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [chatRoomId]);
+  }, [chatRoomId, totalMessage]);
   return (
     // <AuthenticationLayout>
     <div className="h-screen overflow-hidden bg-[#1C1C1E]">
@@ -281,6 +281,9 @@ const ServicePage = () => {
           <div className="text-[#9CA3AF] text-center">
             {i18next.t("servicePage.onlineServiceContent")}
           </div>
+          {loadingMore && (
+            <div className="flex items-center justify-center">Loading...</div>
+          )}
           <div className="flex flex-col mt-5">
             {[...listMessage].reverse().map((data, index) => {
               if (data?.sender?.id === currentUser?.id) {

@@ -13,7 +13,8 @@ class ChatService {
   ) {
     const { data } = await restConnector.get(`/chats/${chatRoomId}/messages`, {
       params: {
-        pagination,
+        limit:pagination?.limit,
+        offset:pagination?.offset,
         position,
       },
     });
