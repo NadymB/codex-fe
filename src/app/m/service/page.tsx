@@ -236,7 +236,7 @@ const ServicePage = () => {
       const handleScroll = () => {
         console.log(messageContainer.scrollTop);
         if (messageContainer.scrollTop === 0) {
-          fetchMessagesOnScroll(chatRoomId, { limit, offset });
+          // fetchMessagesOnScroll(chatRoomId, { limit, offset });
         }
       };
       messageContainer.addEventListener("scroll", handleScroll);
