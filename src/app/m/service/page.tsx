@@ -93,13 +93,15 @@ const ServicePage = () => {
     content?: string;
     images?: string[];
   }) => {
-    if (content.trim() !== "" || (images.length <= 0  && chatRoomId)) {
+    
+    if (content.trim() !== "" || (images.length > 0 && chatRoomId)) {
       const newMessage = {
         content,
         images,
       };
 
       const data = await chatService.sendMessage(chatRoomId, newMessage);
+      
       setInputMessage("");
     }
   };
@@ -123,8 +125,10 @@ const ServicePage = () => {
         `message-image`
       );
       let images = [];
+
       if (uploadedImages) {
         images = uploadedImages.map((image: any) => image.url);
+        
         handleSendMessage({ images: images });
       } else {
         throw new Error("");
@@ -159,7 +163,6 @@ const ServicePage = () => {
       setListMessage(messages.data.rows);
       console.log(messages.data.total);
       setTotalMessages(messages.data.total);
-
     } catch (error) {
       console.log(error);
     }
@@ -168,9 +171,7 @@ const ServicePage = () => {
     chatRoomId: string,
     pagination: { limit: number; offset: number }
   ) => {
-    console.log("asasd", chatRoomId,pagination);
     setLoadingMore(true);
-    console.log('total', totalMessage);
 
     if (!loadingMore || offset >= totalMessage) {
       setLoadingMore(false);
@@ -185,7 +186,6 @@ const ServicePage = () => {
         pagination,
         position
       );
-      console.log('resonse',response);
       if (response.success) {
         setListMessage((preMessages) => [
           ...preMessages,
@@ -236,7 +236,6 @@ const ServicePage = () => {
         if (messageContainer.scrollTop === 0) {
           console.log("oncasdkasdas");
           fetchMessagesOnScroll(chatRoomId, { limit, offset });
-          // Thực hiện các hành động mong muốn ở đây khi cuộn lên trên
         }
       };
 
@@ -249,103 +248,103 @@ const ServicePage = () => {
   }, [chatRoomId]);
   return (
     // <AuthenticationLayout>
-      <div className="h-screen overflow-hidden bg-[#1C1C1E]">
-        <div
-          ref={headerRef}
-          className="fixed top-0 left-0 w-full px-4 py-4  bg-[#100F14] flex items-center gap-2"
-        >
-          <div className="cursor-pointer" onClick={() => router.back()}>
-            <BackIcon />
-          </div>
-          <span className="text-[#fff]">{i18next.t("servicePage.title")}</span>
+    <div className="h-screen overflow-hidden bg-[#1C1C1E]">
+      <div
+        ref={headerRef}
+        className="fixed top-0 left-0 w-full px-4 py-4  bg-[#100F14] flex items-center gap-2"
+      >
+        <div className="cursor-pointer" onClick={() => router.back()}>
+          <BackIcon />
         </div>
-        <div
-          ref={messageListRef}
-          className=" relative overflow-auto flex flex-col px-4 py-4"
-          style={{
-            height: `calc(100% - ${heightHeader + heighInput + 10}px)`,
-            marginTop: `${heightHeader}px`,
-            marginBottom: `${heighInput}px`,
-            scrollBehavior: "smooth",
-          }}
-        >
-          <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-[#22C55E]"></div>
-          <div>
-            <div className="flex flex-col justify-center items-center pt-4 mb-4">
-              <div className="rounded-lg overflow-hidden mb-4">
-                <Logo />
-              </div>
-            </div>
-            <div className="text-[#fff] text-[18px] font-bold text-center my-2">
-              {i18next.t("servicePage.onlineService")}
-            </div>
-            <div className="text-[#9CA3AF] text-center">
-              {i18next.t("servicePage.onlineServiceContent")}
-            </div>
-            <div className="flex flex-col mt-5">
-              {[...listMessage].reverse().map((data, index) => {
-                if (data?.sender?.id === currentUser?.id) {
-                  return (
-                    <Fragment key={index}>
-                      {" "}
-                      <OutComingMessage
-                        message={data.message}
-                        sender={data.sender}
-                      />
-                    </Fragment>
-                  );
-                } else {
-                  return (
-                    <Fragment key={index}>
-                      {" "}
-                      <InComingMessage message={data.message} />
-                    </Fragment>
-                  );
-                }
-              })}
+        <span className="text-[#fff]">{i18next.t("servicePage.title")}</span>
+      </div>
+      <div
+        ref={messageListRef}
+        className=" relative overflow-auto flex flex-col px-4 py-4"
+        style={{
+          height: `calc(100% - ${heightHeader + heighInput + 10}px)`,
+          marginTop: `${heightHeader}px`,
+          marginBottom: `${heighInput}px`,
+          scrollBehavior: "smooth",
+        }}
+      >
+        <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-[#22C55E]"></div>
+        <div>
+          <div className="flex flex-col justify-center items-center pt-4 mb-4">
+            <div className="rounded-lg overflow-hidden mb-4">
+              <Logo />
             </div>
           </div>
-        </div>
-        <div
-          ref={inputRef}
-          className="fixed bottom-0 left-0 w-full px-2 py-2  bg-[#000000] flex items-center h-auto"
-        >
-          <div className="relative  flex flex-col justify-center rounded-md w-full bg-[#1D1C22]  ">
-            <CssTextField
-              placeholder={i18next.t("servicePage.placeholderMessage")}
-              id="outlined-multiline-flexible"
-              multiline
-              maxRows={4}
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              onKeyDown={handleKeyDown}
-            />
+          <div className="text-[#fff] text-[18px] font-bold text-center my-2">
+            {i18next.t("servicePage.onlineService")}
           </div>
-          <input
-            ref={imageRef}
-            type="file"
-            accept="image/*"
-            name="image"
-            id="imgUpload"
-            onChange={handleFileChange}
-            hidden
-          />
-          <IconButton
-            size="large"
-            onClick={() => {
-              return imageRef.current && imageRef.current.click();
-            }}
-          >
-            <ImageIcon />
-          </IconButton>
-          <IconButton
-            size="large"
-            onClick={() => handleSendMessage({ content: inputMessage })}
-          >
-            <SendIcon />
-          </IconButton>
+          <div className="text-[#9CA3AF] text-center">
+            {i18next.t("servicePage.onlineServiceContent")}
+          </div>
+          <div className="flex flex-col mt-5">
+            {[...listMessage].reverse().map((data, index) => {
+              if (data?.sender?.id === currentUser?.id) {
+                return (
+                  <Fragment key={index}>
+                    {" "}
+                    <OutComingMessage
+                      message={data.message}
+                      sender={data.sender}
+                    />
+                  </Fragment>
+                );
+              } else {
+                return (
+                  <Fragment key={index}>
+                    {" "}
+                    <InComingMessage message={data.message} />
+                  </Fragment>
+                );
+              }
+            })}
+          </div>
         </div>
       </div>
+      <div
+        ref={inputRef}
+        className="fixed bottom-0 left-0 w-full px-2 py-2  bg-[#000000] flex items-center h-auto"
+      >
+        <div className="relative  flex flex-col justify-center rounded-md w-full bg-[#1D1C22]  ">
+          <CssTextField
+            placeholder={i18next.t("servicePage.placeholderMessage")}
+            id="outlined-multiline-flexible"
+            multiline
+            maxRows={4}
+            value={inputMessage}
+            onChange={(e) => setInputMessage(e.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+        </div>
+        <input
+          ref={imageRef}
+          type="file"
+          accept="image/*"
+          name="image"
+          id="imgUpload"
+          onChange={handleFileChange}
+          hidden
+        />
+        <IconButton
+          size="large"
+          onClick={() => {
+            return imageRef.current && imageRef.current.click();
+          }}
+        >
+          <ImageIcon />
+        </IconButton>
+        <IconButton
+          size="large"
+          onClick={() => handleSendMessage({ content: inputMessage })}
+        >
+          <SendIcon />
+        </IconButton>
+      </div>
+    </div>
     // </AuthenticationLayout>
   );
 };

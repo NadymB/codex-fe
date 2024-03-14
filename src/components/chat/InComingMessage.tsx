@@ -35,9 +35,9 @@ export const InComingMessage = ({ message }: IProp) => {
         {message && (
         <div className="my-1 py-1 px-2 flex flex-col bg-[#fff] rounded-lg  max-w-full">
           <div className="max-w-md">{message?.content?.text}</div>
-          {message?.content?.image && (
+          {!!message?.content?.images.length && (
             <div className="">
-              <img className="max-w-sm" src={message?.content?.image[0]} alt="" />
+              <img className="max-w-sm" src={message?.content?.images[0].original} alt="" />
             </div>
           )}
           <div className="flex items-center justify-end">

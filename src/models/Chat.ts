@@ -1,7 +1,7 @@
 export type Messages = {
   chatId: string;
   content: {
-    image: string[];
+    images: Image[];
     text: string;
   };
   createdAt: string;
@@ -11,3 +11,7 @@ export type Messages = {
   updatedAt: string;
   _id: string;
 };
+
+type Image = {
+  original: string;
+}
