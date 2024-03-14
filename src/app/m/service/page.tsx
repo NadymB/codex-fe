@@ -88,15 +88,15 @@ const ServicePage = () => {
   }, []);
   const handleSendMessage = async ({
     content = "",
-    image = "",
+    images = [],
   }: {
     content?: string;
-    image?: string;
+    images?: string[];
   }) => {
-    if (content.trim() !== "" || (image !== "" && chatRoomId)) {
+    if (content.trim() !== "" || (images.length <= 0  && chatRoomId)) {
       const newMessage = {
         content,
-        image: [image],
+        images,
       };
 
       const data = await chatService.sendMessage(chatRoomId, newMessage);
@@ -125,6 +125,7 @@ const ServicePage = () => {
       let images = [];
       if (uploadedImages) {
         images = uploadedImages.map((image: any) => image.url);
+        handleSendMessage({ images: images });
       } else {
         throw new Error("");
       }
