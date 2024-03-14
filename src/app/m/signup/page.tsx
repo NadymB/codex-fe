@@ -56,7 +56,7 @@ const SignUpPage = () => {
     (async () => {
       const user = await getCurrentUser();
       if (user) {
-        router.push("/m/home");
+        // router.push("/m/home");
       }
     })();
   }, []);
