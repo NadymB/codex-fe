@@ -323,7 +323,7 @@ const ServicePage = () => {
               maxRows={4}
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
-              onKeyDown={handleKeyDown}
+              onKeyPress={handleKeyDown}
             />
           </div>
           <input
