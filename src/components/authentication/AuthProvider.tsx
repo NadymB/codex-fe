@@ -69,7 +69,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     // try {
     //   setLoading(true);
 
-    const admin = await authService.login(values);
+    const user = await authService.login(values);
     authService.loadAccessToken();
     const userFetch = await authService.fetchCurrentUser();
 
@@ -78,7 +78,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     }
 
     setLoading(false);
-    return admin;
+    return user;
     // return response;
     // } catch (error: AxiosError | any) {
     //   if (axios.isAxiosError(error)) {
@@ -121,10 +121,11 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   const logout = async () => {
     authService.logout();
     setCurrentUser(null);
-    await router.push("/m/login");
+    router.push("/m/login");
   };
 
   const fetchCurrentUser = async (): Promise<Account | null> => {
+    authService.loadAccessToken();
     const currentUser = await authService.fetchCurrentUser();
     setCurrentUser(currentUser);
 

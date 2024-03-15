@@ -16,12 +16,7 @@ export const AuthenticationLayout = ({
   const router = useRouter();
 
   useEffect(() => {
-    (async () => {
-      const user = await getCurrentUser();
-      if (!user) {
-        router.push("/m/login");
-      }
-    })();
+    getCurrentUser();
   }, []);
   // restConnector.interceptors.response.use(
   //   (response) => {

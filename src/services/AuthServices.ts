@@ -50,17 +50,17 @@ export class AuthService {
     }
     return data;
   }
-  
+
   public async login(values: {
-    email?:string;
-    phoneNumber?:string;
+    email?: string;
+    phoneNumber?: string;
     username?: string;
     password: string;
-    mode:LOGIN_MODE
+    mode: LOGIN_MODE;
   }): Promise<any> {
     const { data } = await restConnector.post("/auth/login", {
-      email:values.email,
-      phoneNumber:values.phoneNumber,
+      email: values.email,
+      phoneNumber: values.phoneNumber,
       username: values.username,
       password: values.password,
       mode: values.mode,
@@ -74,9 +74,9 @@ export class AuthService {
     return null;
   }
   public async fetchCurrentUser() {
-    // if (!this.jwt) {
-    //   return null;
-    // }
+    if (!this.jwt) {
+      return null;
+    }
     try {
       const { data } = await restConnector.get("/auth/whoami");
       if (data.success) {
@@ -123,18 +123,20 @@ export class AuthService {
     return data;
   }
 
-  setAccessToken(token: any) {
-    if (typeof window !== "undefined") {
+  public setAccessToken(token: any) {
+    if (token && typeof window !== "undefined") {
+      this.jwt = token;
       localStorage.setItem(ACCESS_TOKEN, token);
     }
   }
 
-  loadAccessToken() {
+  public loadAccessToken() {
     // On browser, load access token from local storage.
     if (typeof window !== "undefined") {
       const accessToken = localStorage.getItem(ACCESS_TOKEN);
 
       if (accessToken) {
+        this.jwt = accessToken;
         restConnector.defaults.headers[AUTHORIZATION_HEADER] =
           `Bearer ${accessToken}`;
       }

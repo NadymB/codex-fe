@@ -8,27 +8,29 @@ import { UsernameIcon } from "@/assets/icons/UsernameIcon";
 import { VisaIcon } from "@/assets/icons/VisaIcon";
 import { ProfileItem } from "./ProfileItem";
 import i18next from "i18next";
+import { useAuth } from "@/hooks/useAuth";
 
 export const AuthenticatedProfile = () => {
+  const { currentUser } = useAuth();
   return (
     <div>
       <div className="bg-[#1C1C1E] mt-2 rounded-sm">
         <ProfileItem
           icon={<UsernameIcon />}
           filedName={i18next.t("profilePage.username")}
-          value={"tyha"}
+          value={currentUser?.username}
           link=""
         />
         <ProfileItem
           icon={<MailIcon />}
           filedName={i18next.t("profilePage.email")}
-          value={"tyha@greensoftware.asia"}
+          value={currentUser?.email}
           link=""
         />
         <ProfileItem
           icon={<PhoneIcon />}
           filedName={i18next.t("profilePage.phoneNumber")}
-          value={i18next.t("profilePage.notSet")}
+          value={currentUser?.phoneNumber ?? i18next.t("profilePage.notSet")}
           link=""
         />
         <ProfileItem
