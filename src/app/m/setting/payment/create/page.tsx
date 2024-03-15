@@ -18,7 +18,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import "../../../../../../i18n";
 import { InputCustom } from "@/components/InputCustom";
 import { ArrowRightIcon } from "@/assets/icons/ArrowRightIcon";
 import SelectCountries from "@/components/SelectCountries";
