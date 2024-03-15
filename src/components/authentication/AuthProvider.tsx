@@ -67,7 +67,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     mode: LOGIN_MODE;
   }): Promise<any> => {
     // try {
-    //   setLoading(true);
+    setLoading(true);
 
     const user = await authService.login(values);
     authService.loadAccessToken();
@@ -125,13 +125,12 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   };
 
   const fetchCurrentUser = async (): Promise<Account | null> => {
+    setLoading(true);
     authService.loadAccessToken();
     const currentUser = await authService.fetchCurrentUser();
     setCurrentUser(currentUser);
 
-    if (loading) {
-      setLoading(false);
-    }
+    setLoading(false);
 
     return currentUser;
   };
