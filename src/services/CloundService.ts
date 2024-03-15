@@ -44,7 +44,7 @@ export const useGetTempUploadCredentials = () => {
             "Content-Type": "application/json",
             "x-session-token": sessionToken.data,
           },
-        }
+        },
       );
       return data.data;
     } catch (error) {
@@ -58,7 +58,7 @@ export const useGetTempUploadCredentials = () => {
       isDev &&
         console.log(
           "🚀 ~ file: api.ts:48 ~ getTempUploadCredentials ~ error:",
-          error
+          error,
         );
     }
   };

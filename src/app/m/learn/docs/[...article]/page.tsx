@@ -9,13 +9,15 @@ import i18next from "i18next";
 import "../../../../../../i18n";
 
 export default function ArticleDetailPage() {
-    const params = useParams();
-    const articleTitle = LEARN_ARTICLE_DATA.filter((item) => item.articleQuery === params.article[1]);
-  
+  const params = useParams();
+  const articleTitle = LEARN_ARTICLE_DATA.filter(
+    (item) => item.articleQuery === params.article[1],
+  );
+
   return (
     <div>
-        <GoBack title={i18next.t(`learn.${articleTitle[0].title}`)}/>
-        <ArticleDetail />
+      <GoBack title={i18next.t(`learn.${articleTitle[0].title}`)} />
+      <ArticleDetail />
     </div>
   );
 }

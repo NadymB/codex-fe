@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 const Header = () => {
   const { currentUser } = useAuth();
   const [currentLang, setCurrentLang] = useState(
-    OptionsLanguage.find((lang) => lang.value === i18next.language)
+    OptionsLanguage.find((lang) => lang.value === i18next.language),
   );
   return (
     <>

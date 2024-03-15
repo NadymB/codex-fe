@@ -26,10 +26,10 @@ const LoginWithPhoneNumber = () => {
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
     phoneNumber: Yup.string().required(
-      i18next.t("authenticationPage.phoneNumberIsInvalid")
+      i18next.t("authenticationPage.phoneNumberIsInvalid"),
     ),
     password: Yup.string().required(
-      i18next.t("authenticationPage.passwordIsInvalid")
+      i18next.t("authenticationPage.passwordIsInvalid"),
     ),
   });
   const formik = useFormik({
@@ -57,7 +57,8 @@ const LoginWithPhoneNumber = () => {
     const locationData = await geolocationService.getLocation();
     if (locationData) {
       const country = COUNTRIES.find(
-        (item) => item.code.toLowerCase() === locationData.country.toLowerCase()
+        (item) =>
+          item.code.toLowerCase() === locationData.country.toLowerCase(),
       );
       setCurrentCountry(country);
     }

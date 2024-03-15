@@ -7,19 +7,20 @@ import "../../../../i18n";
 import Image from "next/image";
 
 const BillPage = () => {
-
   return (
     <div className="min-h-screen bg-[#000000]">
-      <GoBack title={i18next.t("bill.title")}/>
+      <GoBack title={i18next.t("bill.title")} />
       <div className="flex flex-col items-center p-4">
-        <Image 
-            src={`${getStaticURL()}/assets/images/empty.svg`}
-            alt={i18next.t("bill.noData")}
-            width={100}
-            height={100} 
-            className="w-80 h-80"
+        <Image
+          src={`${getStaticURL()}/assets/images/empty.svg`}
+          alt={i18next.t("bill.noData")}
+          width={100}
+          height={100}
+          className="w-80 h-80"
         />
-        <span className="text-base text-[#737373]">{i18next.t("bill.noData")}</span>
+        <span className="text-base text-[#737373]">
+          {i18next.t("bill.noData")}
+        </span>
       </div>
     </div>
   );

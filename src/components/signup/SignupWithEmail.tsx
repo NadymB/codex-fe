@@ -19,7 +19,7 @@ const SignupWithEmail = () => {
       .required(i18next.t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
     username: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     password: Yup.string()
       .min(8, i18next.t("authenticationPage.passwordMinLength"))
@@ -28,7 +28,7 @@ const SignupWithEmail = () => {
       .matches(/[0-9]/, i18next.t("authenticationPage.passwordNumber"))
       .matches(
         /[^a-zA-Z0-9.]/,
-        i18next.t("authenticationPage.passwordSpecialChar")
+        i18next.t("authenticationPage.passwordSpecialChar"),
       )
       .required(i18next.t("authenticationPage.passwordIsInvalid")),
   });

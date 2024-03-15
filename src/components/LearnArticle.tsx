@@ -11,7 +11,12 @@ interface ILearnArticle {
   articleUrl: string;
 }
 
-export const LearnArticle = ({ bannerUrl, title, content, articleUrl }: ILearnArticle) => {
+export const LearnArticle = ({
+  bannerUrl,
+  title,
+  content,
+  articleUrl,
+}: ILearnArticle) => {
   return (
     <Link href={articleUrl} className="bg-[#1c1c1e] rounded">
       <Image

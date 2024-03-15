@@ -9,11 +9,13 @@ import { useState } from "react";
 
 const LocaleSettingPage = () => {
   const [currentLang, setLangCurrentLang] = useState(i18next.language);
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className="min-h-screen overflow-auto bg-[#000000]">
       <div className="sticky top-0 left-0 w-full px-4 py-4  bg-[#100F14] flex items-center gap-2">
-        <div className="cursor-pointer" onClick={()=>router.back()}><BackIcon /></div>
+        <div className="cursor-pointer" onClick={() => router.back()}>
+          <BackIcon />
+        </div>
         <span className="text-[#fff]">{i18next.t("language")}</span>
       </div>
       <div className="flex flex-col">
@@ -23,9 +25,9 @@ const LocaleSettingPage = () => {
               key={idx}
               className="py-5 px-4 flex items-center justify-between cursor-pointer"
               onClick={() => {
-                changeLanguage(lang.value) 
+                changeLanguage(lang.value);
                 setLangCurrentLang(lang.value);
-                localStorage.setItem("locale",lang.value)
+                localStorage.setItem("locale", lang.value);
               }}
             >
               <div className="flex items-center gap-4">

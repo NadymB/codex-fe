@@ -33,7 +33,11 @@ const KycPage = () => {
               <span>Phải là ID hợp lệ do chính phủ ban hành.</span>
             </li>
           </div>
-          <img className="w-full" src={`${getStaticURL()}/assets/images/id.png`} alt="" />
+          <img
+            className="w-full"
+            src={`${getStaticURL()}/assets/images/id.png`}
+            alt=""
+          />
         </div>
         {/*  */}
         <div>
@@ -41,29 +45,37 @@ const KycPage = () => {
           <div className="pl-[40px] my-4">
             <li className="text-[#888888]">
               <span>
-              Hãy chắc chắn rằng ánh sáng là tốt khi chụp, và chỉ bạn xuất hiện trong hình.
+                Hãy chắc chắn rằng ánh sáng là tốt khi chụp, và chỉ bạn xuất
+                hiện trong hình.
               </span>
             </li>
             <li className="text-[#888888]">
-              <span>Vui lòng điều chỉnh vị trí của khuôn mặt càng nhiều càng tốt trong khu vực thu thập càng nhiều càng tốt.</span>
+              <span>
+                Vui lòng điều chỉnh vị trí của khuôn mặt càng nhiều càng tốt
+                trong khu vực thu thập càng nhiều càng tốt.
+              </span>
             </li>
           </div>
-          <img className="w-full" src={`${getStaticURL()}/assets/images/selfie.webp`} alt="" />
+          <img
+            className="w-full"
+            src={`${getStaticURL()}/assets/images/selfie.webp`}
+            alt=""
+          />
         </div>
-       <div className="w-full mt-6">
-       <Button
-          sx={{ padding: 0, textTransform: "none" }}
-          className="p-0 w-full overflow-hidden normal-case"
-          variant="contained"
-        >
-          <Link
-            href={"/m/setting/payment/create"}
-            className=" flex justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded"
+        <div className="w-full mt-6">
+          <Button
+            sx={{ padding: 0, textTransform: "none" }}
+            className="p-0 w-full overflow-hidden normal-case"
+            variant="contained"
           >
-            Bước tiếp theo
-          </Link>
-        </Button>
-       </div>
+            <Link
+              href={"/m/setting/payment/create"}
+              className=" flex justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded"
+            >
+              Bước tiếp theo
+            </Link>
+          </Button>
+        </div>
       </div>
     </div>
   );

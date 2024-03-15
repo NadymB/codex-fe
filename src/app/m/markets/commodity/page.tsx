@@ -21,7 +21,7 @@ const MarketPage = () => {
   const handleCrawlDataFeed = async () => {
     try {
       const response = await priceFeedService.getPriceFeed(
-        PRICE_TYPE.COMMODITY
+        PRICE_TYPE.COMMODITY,
       );
       if (response.success) {
         const mappedData = response.data.map((item: any, index: number) => {
@@ -75,7 +75,7 @@ const MarketPage = () => {
   const onSelect = (token: string) => {
     Cookies.set(
       "crypto",
-      JSON.stringify({ token, values: "USDT", type: PRICE_TYPE.COMMODITY })
+      JSON.stringify({ token, values: "USDT", type: PRICE_TYPE.COMMODITY }),
     );
     router.push(`/m/trade/${token}/USDT`);
   };
@@ -95,10 +95,7 @@ const MarketPage = () => {
     },
   ];
   return (
-    <DefaultLayout
-      
-      containerStyle="bg-[#000000] dark:bg-[#000000]"
-    >
+    <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000]">
       <Tab options={marketTabOption} />
       {data.length ? (
         <div className="w-full p-3">

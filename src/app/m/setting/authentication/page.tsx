@@ -7,13 +7,12 @@ import "../../../../../i18n";
 import i18next from "i18next";
 
 const Authentication = () => {
-
   return (
     <div className="min-h-screen overflow-auto bg-[#000000] text-white">
-      <GoBack title={i18next.t("authentication.title")}/>
+      <GoBack title={i18next.t("authentication.title")} />
       <div className="flex flex-col gap-6 p-4">
         {AUTHENTICATION_DATA.map((item, index) => (
-          <AuthenticationCard 
+          <AuthenticationCard
             key={index}
             textLevel={i18next.t(`authentication.${item.level}`)}
             rightInterstData={item.rightInterests}

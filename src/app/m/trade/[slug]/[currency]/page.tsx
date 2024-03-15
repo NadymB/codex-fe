@@ -110,19 +110,19 @@ const TradePage = ({
 
   return (
     // <AuthenticationLayout>
-      <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000] relative">
-        <Tabs
-          tabs={tabs}
-          classNameTab="sticky top-0 left-0 bg-[#000000] z-[100] "
-          classNameItem="flex-1 "
+    <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000] relative">
+      <Tabs
+        tabs={tabs}
+        classNameTab="sticky top-0 left-0 bg-[#000000] z-[100] "
+        classNameItem="flex-1 "
+      />
+      {isOpenConfirmPaymentModal && (
+        <ConfirmPaymentModal
+          isLong={isLong}
+          onClickCloseBtn={() => setIsOpenConfirmPaymenModal(false)}
         />
-        {isOpenConfirmPaymentModal && (
-          <ConfirmPaymentModal
-            isLong={isLong}
-            onClickCloseBtn={() => setIsOpenConfirmPaymenModal(false)}
-          />
-        )}
-      </DefaultLayout>
+      )}
+    </DefaultLayout>
     // </AuthenticationLayout>
   );
 };

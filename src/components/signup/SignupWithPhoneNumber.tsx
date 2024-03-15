@@ -24,10 +24,10 @@ const SignupWithPhoneNumber = () => {
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
     phoneNumber: Yup.string().required(
-      i18next.t("authenticationPage.phoneNumberIsInvalid")
+      i18next.t("authenticationPage.phoneNumberIsInvalid"),
     ),
     username: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     password: Yup.string()
       .min(8, i18next.t("authenticationPage.passwordMinLength"))
@@ -36,7 +36,7 @@ const SignupWithPhoneNumber = () => {
       .matches(/[0-9]/, i18next.t("authenticationPage.passwordNumber"))
       .matches(
         /[^a-zA-Z0-9.]/,
-        i18next.t("authenticationPage.passwordSpecialChar")
+        i18next.t("authenticationPage.passwordSpecialChar"),
       )
       .required(i18next.t("authenticationPage.passwordIsInvalid")),
   });
@@ -68,7 +68,8 @@ const SignupWithPhoneNumber = () => {
     const locationData = await geolocationService.getLocation();
     if (locationData) {
       const country = COUNTRIES.find(
-        (item) => item.code.toLowerCase() === locationData.country.toLowerCase()
+        (item) =>
+          item.code.toLowerCase() === locationData.country.toLowerCase(),
       );
       setCurrentCountry(country);
     }

@@ -95,7 +95,6 @@ const ServicePage = () => {
     content?: string;
     images?: string[];
   }) => {
-
     if (content.trim() !== "" || (images.length > 0 && chatRoomId)) {
       const newMessage = {
         content,
@@ -121,7 +120,7 @@ const ServicePage = () => {
       const uploadedImages = await onAliUpload(
         imgUpload,
         "messageImage",
-        `message-image`
+        `message-image`,
       );
       let images = [];
 
@@ -160,7 +159,7 @@ const ServicePage = () => {
   // HANDLE FETCH MESSAGES ON SCROLL
   const fetchMessagesOnScroll = async (
     chatRoomId: string,
-    pagination: { limit: number; offset: number }
+    pagination: { limit: number; offset: number },
   ) => {
     setLoadingMore(true);
     if (loadingMore || offset >= totalMessage) {
@@ -174,7 +173,7 @@ const ServicePage = () => {
       const response = await chatService.getListMessage(
         chatRoomId,
         pagination,
-        position
+        position,
       );
       if (response.success) {
         setListMessage((preMessages) => [
@@ -201,7 +200,7 @@ const ServicePage = () => {
 
   useEffect(() => {
     if (isShouldScrollBottom) {
-    scrollToBottom();
+      scrollToBottom();
     }
   }, [listMessage]);
 
@@ -236,8 +235,8 @@ const ServicePage = () => {
       const handleScroll = () => {
         console.log(messageContainer.scrollTop);
         if (messageContainer.scrollTop === 0) {
-          fetchMessagesOnScroll(chatRoomId, { limit, offset:offset+limit });
-          messageListRef.current.scrollTo({ top: '1px' });
+          fetchMessagesOnScroll(chatRoomId, { limit, offset: offset + limit });
+          messageListRef.current.scrollTo({ top: "1px" });
         }
       };
       messageContainer.addEventListener("scroll", handleScroll);
@@ -246,110 +245,111 @@ const ServicePage = () => {
         messageContainer.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [chatRoomId, totalMessage , offset]);
+  }, [chatRoomId, totalMessage, offset]);
   return (
     <AuthenticationLayout>
-    <div className="h-screen overflow-hidden bg-[#1C1C1E]">
-      <div
-        ref={headerRef}
-        className="fixed top-0 left-0 w-full px-4 py-4  bg-[#100F14] flex items-center gap-2"
-      >
-        <div className="cursor-pointer" onClick={() => router.back()}>
-          <BackIcon />
+      <div className="h-screen overflow-hidden bg-[#1C1C1E]">
+        <div
+          ref={headerRef}
+          className="fixed top-0 left-0 w-full px-4 py-4  bg-[#100F14] flex items-center gap-2"
+        >
+          <div className="cursor-pointer" onClick={() => router.back()}>
+            <BackIcon />
+          </div>
+          <span className="text-[#fff]">{i18next.t("servicePage.title")}</span>
         </div>
-        <span className="text-[#fff]">{i18next.t("servicePage.title")}</span>
-      </div>
-      <div
-        ref={messageListRef}
-        className=" relative overflow-auto flex flex-col px-4 py-4"
-        style={{
-          height: `calc(100% - ${heightHeader + heighInput + 10}px)`,
-          marginTop: `${heightHeader}px`,
-          marginBottom: `${heighInput}px`,
-          scrollBehavior: "smooth",
-        }}
-      >
-        <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-[#22C55E]"></div>
-        <div>
-          <div className="flex flex-col justify-center items-center pt-4 mb-4">
-            <div className="rounded-lg overflow-hidden mb-4">
-              <Logo />
-            </div>
-          </div>
-          <div className="text-[#fff] text-[18px] font-bold text-center my-2">
-            {i18next.t("servicePage.onlineService")}
-          </div>
-          <div className="text-[#9CA3AF] text-center">
-            {i18next.t("servicePage.onlineServiceContent")}
-          </div>
-          {loadingMore && (
-            
-            <div className="flex items-center justify-center"><CircularProgress size={18} /></div>
-          )}
-          <div className="flex flex-col mt-5">
-            {[...listMessage].reverse().map((data, index) => {
-              if (data?.sender?.id === currentUser?.id) {
-                return (
-                  <Fragment key={index}>
-                    {" "}
-                    <OutComingMessage
-                      message={data.message}
-                      sender={data.sender}
-                    />
-                  </Fragment>
-                );
-              } else {
-                return (
-                  <Fragment key={index}>
-                    {" "}
-                    <InComingMessage message={data.message} />
-                  </Fragment>
-                );
-              }
-            })}
-          </div>
-        </div>
-      </div>
-      <div
-        ref={inputRef}
-        className="fixed bottom-0 left-0 w-full px-2 py-2  bg-[#000000] flex items-center h-auto"
-      >
-        <div className="relative  flex flex-col justify-center rounded-md w-full bg-[#1D1C22]  ">
-          <CssTextField
-            placeholder={i18next.t("servicePage.placeholderMessage")}
-            id="outlined-multiline-flexible"
-            multiline
-            maxRows={4}
-            value={inputMessage}
-            onChange={(e) => setInputMessage(e.target.value)}
-            onKeyDown={handleKeyDown}
-          />
-        </div>
-        <input
-          ref={imageRef}
-          type="file"
-          accept="image/*"
-          name="image"
-          id="imgUpload"
-          onChange={handleFileChange}
-          hidden
-        />
-        <IconButton
-          size="large"
-          onClick={() => {
-            return imageRef.current && imageRef.current.click();
+        <div
+          ref={messageListRef}
+          className=" relative overflow-auto flex flex-col px-4 py-4"
+          style={{
+            height: `calc(100% - ${heightHeader + heighInput + 10}px)`,
+            marginTop: `${heightHeader}px`,
+            marginBottom: `${heighInput}px`,
+            scrollBehavior: "smooth",
           }}
         >
-          <ImageIcon />
-        </IconButton>
-        <IconButton
-          size="large"
-          onClick={() => handleSendMessage({ content: inputMessage })}
+          <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-[#22C55E]"></div>
+          <div>
+            <div className="flex flex-col justify-center items-center pt-4 mb-4">
+              <div className="rounded-lg overflow-hidden mb-4">
+                <Logo />
+              </div>
+            </div>
+            <div className="text-[#fff] text-[18px] font-bold text-center my-2">
+              {i18next.t("servicePage.onlineService")}
+            </div>
+            <div className="text-[#9CA3AF] text-center">
+              {i18next.t("servicePage.onlineServiceContent")}
+            </div>
+            {loadingMore && (
+              <div className="flex items-center justify-center">
+                <CircularProgress size={18} />
+              </div>
+            )}
+            <div className="flex flex-col mt-5">
+              {[...listMessage].reverse().map((data, index) => {
+                if (data?.sender?.id === currentUser?.id) {
+                  return (
+                    <Fragment key={index}>
+                      {" "}
+                      <OutComingMessage
+                        message={data.message}
+                        sender={data.sender}
+                      />
+                    </Fragment>
+                  );
+                } else {
+                  return (
+                    <Fragment key={index}>
+                      {" "}
+                      <InComingMessage message={data.message} />
+                    </Fragment>
+                  );
+                }
+              })}
+            </div>
+          </div>
+        </div>
+        <div
+          ref={inputRef}
+          className="fixed bottom-0 left-0 w-full px-2 py-2  bg-[#000000] flex items-center h-auto"
         >
-          <SendIcon />
-        </IconButton>
+          <div className="relative  flex flex-col justify-center rounded-md w-full bg-[#1D1C22]  ">
+            <CssTextField
+              placeholder={i18next.t("servicePage.placeholderMessage")}
+              id="outlined-multiline-flexible"
+              multiline
+              maxRows={4}
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              onKeyDown={handleKeyDown}
+            />
+          </div>
+          <input
+            ref={imageRef}
+            type="file"
+            accept="image/*"
+            name="image"
+            id="imgUpload"
+            onChange={handleFileChange}
+            hidden
+          />
+          <IconButton
+            size="large"
+            onClick={() => {
+              return imageRef.current && imageRef.current.click();
+            }}
+          >
+            <ImageIcon />
+          </IconButton>
+          <IconButton
+            size="large"
+            onClick={() => handleSendMessage({ content: inputMessage })}
+          >
+            <SendIcon />
+          </IconButton>
+        </div>
       </div>
-    </div>
     </AuthenticationLayout>
   );
 };

@@ -7,12 +7,12 @@ import React from "react";
 
 const CssSlider = styled(Slider)({
   "& .MuiSlider-mark": {
-    width: '12px', 
-    height: '12px', 
-    border:'3px solid #888888',
-    borderRadius:'40px',
-    background:'#000000',
-    transform: "translate(-50%, -50%)"
+    width: "12px",
+    height: "12px",
+    border: "3px solid #888888",
+    borderRadius: "40px",
+    background: "#000000",
+    transform: "translate(-50%, -50%)",
   },
 });
 const AnnouncementPage = () => {

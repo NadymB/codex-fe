@@ -21,7 +21,7 @@ const MarketPage = () => {
   const handleCrawlDataFeed = async () => {
     try {
       const response = await priceFeedService.getPriceFeed(
-        PRICE_TYPE.FOREIGN_EXCHANGE
+        PRICE_TYPE.FOREIGN_EXCHANGE,
       );
       if (response.success) {
         const mappedData = response.data.map((item: any, index: number) => {
@@ -79,7 +79,7 @@ const MarketPage = () => {
         token,
         values: "USDT",
         type: PRICE_TYPE.FOREIGN_EXCHANGE,
-      })
+      }),
     );
     router.push(`/m/trade/${token}/USDT`);
   };

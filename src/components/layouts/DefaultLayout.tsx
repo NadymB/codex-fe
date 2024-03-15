@@ -19,8 +19,7 @@ export const DefaultLayout = ({
   isShowMenubar?: boolean;
   childrenMenuBar?: React.ReactNode;
 }) => {
-  
-  const router = useRouter()
+  const router = useRouter();
   const menuBarRef = useRef<any>(null);
   const { webSocket, register } = useContext(WebSocketCtx);
   const [heightMenuBar, setHeightMenuBar] = useState(0);
@@ -31,12 +30,12 @@ export const DefaultLayout = ({
       setHeightMenuBar(height);
     }
   }, []);
-  
+
   return (
     <main
       className={`ease-soft-in-out relative h-screen transition-all duration-200 ${containerStyle}`}
     >
-      <div className="w-full h-full" >
+      <div className="w-full h-full">
         <div
           className="relative w-full mx-auto overflow-auto "
           style={{ height: `calc(100% - ${heightMenuBar}px)` }}

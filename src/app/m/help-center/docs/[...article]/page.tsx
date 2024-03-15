@@ -9,13 +9,15 @@ import "../../../../../../i18n";
 import { HelpCenterDetail } from "@/components/help/HelpCenterDetail";
 
 export default function HelpCenterDetailPage() {
-    const params = useParams();
-    const helpTitle = HELP_CENTER_DATA.filter((item) => item.articleQuery === params.article[1]);
-  
+  const params = useParams();
+  const helpTitle = HELP_CENTER_DATA.filter(
+    (item) => item.articleQuery === params.article[1],
+  );
+
   return (
     <div>
-        <GoBack title={i18next.t(`helpCenter.${helpTitle[0]?.title}`)}/>
-        <HelpCenterDetail />
+      <GoBack title={i18next.t(`helpCenter.${helpTitle[0]?.title}`)} />
+      <HelpCenterDetail />
     </div>
   );
 }

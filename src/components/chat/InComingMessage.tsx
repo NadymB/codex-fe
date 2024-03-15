@@ -33,28 +33,32 @@ export const InComingMessage = ({ message }: IProp) => {
           )}
         </div>
         {message && (
-        <div className="my-1 py-1 px-2 flex flex-col bg-[#fff] rounded-lg  max-w-full">
-          <div className="max-w-md">{message?.content?.text}</div>
-          {!!message?.content?.images.length && (
-            <div className="">
-              <img className="max-w-sm" src={message?.content?.images[0].original} alt="" />
-            </div>
-          )}
-          <div className="flex items-center justify-end">
-            <span className="text-[#4B5563] text-[12px]">
-              {message?.createdAt &&
-                DateTime.fromISO(message?.createdAt).toFormat("HH:mm")}
-            </span>
-            <div className="ml-2">
-              {/* {message?.status === "sending" ? (
+          <div className="my-1 py-1 px-2 flex flex-col bg-[#fff] rounded-lg  max-w-full">
+            <div className="max-w-md">{message?.content?.text}</div>
+            {!!message?.content?.images.length && (
+              <div className="">
+                <img
+                  className="max-w-sm"
+                  src={message?.content?.images[0].original}
+                  alt=""
+                />
+              </div>
+            )}
+            <div className="flex items-center justify-end">
+              <span className="text-[#4B5563] text-[12px]">
+                {message?.createdAt &&
+                  DateTime.fromISO(message?.createdAt).toFormat("HH:mm")}
+              </span>
+              <div className="ml-2">
+                {/* {message?.status === "sending" ? (
                 <SendingIcon />
               ) : (
               )} */}
                 <ReceivedIcon />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
       </div>
     </div>
   );

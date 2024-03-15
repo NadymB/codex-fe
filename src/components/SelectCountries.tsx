@@ -24,7 +24,6 @@ const SelectCountries = (props: IProps) => {
   const [listCountry, setListCountry] = useState<Country[]>([]);
   const [heightHeader, setHeightHeader] = useState(0);
 
-  
   useEffect(() => {
     if (searchValue !== "") {
       const newListCounty = COUNTRIES.filter((item) =>
@@ -43,12 +42,17 @@ const SelectCountries = (props: IProps) => {
   }, []);
   return (
     <div className="min-screen bg-[#1C1C1E]">
-      <div ref={headerRef} className="sticky top-0 left-0 w-full px-4 py-4 bg-[#100f14]">
+      <div
+        ref={headerRef}
+        className="sticky top-0 left-0 w-full px-4 py-4 bg-[#100f14]"
+      >
         <div className=" flex items-center gap-2 mb-4">
           <div className="cursor-pointer" onClick={onBack}>
             <BackIcon />
           </div>
-          <span className="text-[#fff]">{i18next.t("withdrawAccount.pleaseSelectCryptocurrencies")}</span>
+          <span className="text-[#fff]">
+            {i18next.t("withdrawAccount.pleaseSelectCryptocurrencies")}
+          </span>
         </div>
         <div className="relative w-fit px-2 flex items-center gap-2 bg-[#4C4B4F] rounded mt-4">
           <SearchIcon />
@@ -62,7 +66,10 @@ const SelectCountries = (props: IProps) => {
           />
         </div>
       </div>
-      <div className="flex flex-col overflow-auto" style={{height: `calc(100% - ${heightHeader}px)`,}}>
+      <div
+        className="flex flex-col overflow-auto"
+        style={{ height: `calc(100% - ${heightHeader}px)` }}
+      >
         {listCountry.map((country, idx) => {
           return (
             <div

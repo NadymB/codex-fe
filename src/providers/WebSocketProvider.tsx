@@ -32,7 +32,7 @@ export const WebSocketProvider: React.FC<WebSocketProviderProps> = ({
           authorization: `Bearer ${accessToken}`,
         },
         query: { role: "user" },
-      })
+      }),
     );
   };
 

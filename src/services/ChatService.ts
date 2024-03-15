@@ -9,12 +9,12 @@ class ChatService {
   async getListMessage(
     chatRoomId: string,
     pagination?: { limit: number; offset: number },
-    position?: number
+    position?: number,
   ) {
     const { data } = await restConnector.get(`/chats/${chatRoomId}/messages`, {
       params: {
-        limit:pagination?.limit,
-        offset:pagination?.offset,
+        limit: pagination?.limit,
+        offset: pagination?.offset,
         position,
       },
     });
@@ -23,7 +23,7 @@ class ChatService {
 
   async readMessages(chatRoomId: string) {
     const { data } = await restConnector.post(
-      `/chats/${chatRoomId}/messages/read`
+      `/chats/${chatRoomId}/messages/read`,
     );
     return data;
   }
@@ -31,7 +31,7 @@ class ChatService {
   async sendMessage(chatRoomId?: string, payload?: any) {
     const { data } = await restConnector.post(
       `/chats/${chatRoomId}/messages`,
-      payload
+      payload,
     );
     return data;
   }

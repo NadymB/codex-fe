@@ -14,4 +14,4 @@ export type Messages = {
 
 type Image = {
   original: string;
-}
+};

@@ -20,7 +20,7 @@ export default function Home() {
     try {
       const response = await priceFeedService.getCommonPriceFeed();
       if (response.success) {
-        setDataCommon(response.data.commodityPrices)
+        setDataCommon(response.data.commodityPrices);
       }
     } catch (error) {
       console.log(error);
@@ -102,7 +102,7 @@ export default function Home() {
 
               )
             })} */}
-            
+
             {/*  */}
             <Link
               href={"/coming-soon"}

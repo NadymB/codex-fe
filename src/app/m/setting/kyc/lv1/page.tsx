@@ -25,7 +25,7 @@ const KycPage = () => {
       <div className="flex flex-col  px-4 my-4">
         <div>
           <FormControl className=" flex flex-wrap my-1">
-            <span className="text-[#888888]" >Chọn loại chứng chỉ</span>
+            <span className="text-[#888888]">Chọn loại chứng chỉ</span>
             <RadioGroup
               sx={{ display: "flex", flexDirection: "row" }}
               aria-labelledby="demo-radio-buttons-group-label"
@@ -38,7 +38,9 @@ const KycPage = () => {
                   <Radio
                     sx={{
                       "& .MuiSvgIcon-root": { fill: "#888888" },
-                      "&:checked + .MuiSvgIcon-root": { fill: "#3D5AFE !important" },
+                      "&:checked + .MuiSvgIcon-root": {
+                        fill: "#3D5AFE !important",
+                      },
                     }}
                   />
                 }
@@ -81,7 +83,7 @@ const KycPage = () => {
             alt=""
           />
           <div className="flex items-center w-fit gap-2 text-[#fff]">
-            <VisaIcon/>
+            <VisaIcon />
             <span className="text-[#3D5AFE]">Bấm để chọn ID</span>
           </div>
         </div>
@@ -92,7 +94,7 @@ const KycPage = () => {
             alt=""
           />
           <div className="flex items-center w-fit gap-2 text-[#fff]">
-            <PhoneIcon/>
+            <PhoneIcon />
             <span className="text-[#3D5AFE]">Bấm để chọn selfie</span>
           </div>
         </div>

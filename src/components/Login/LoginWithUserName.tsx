@@ -17,10 +17,10 @@ const LoginWithUserName = () => {
   const router = useRouter();
   const validationSchema = Yup.object({
     username: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     password: Yup.string().required(
-      i18next.t("authenticationPage.passwordIsInvalid")
+      i18next.t("authenticationPage.passwordIsInvalid"),
     ),
   });
   const formik = useFormik({

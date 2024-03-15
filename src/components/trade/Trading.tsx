@@ -47,7 +47,12 @@ interface Props {
   onClickLongBtn: () => void;
 }
 
-const Trading: FC<Props> = ({ token, currency, onClickShortBtn, onClickLongBtn }) => {
+const Trading: FC<Props> = ({
+  token,
+  currency,
+  onClickShortBtn,
+  onClickLongBtn,
+}) => {
   const [percentIsSelected, setPercentIsSelected] = useState(10);
   return (
     <div>

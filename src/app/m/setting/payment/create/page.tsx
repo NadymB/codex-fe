@@ -31,34 +31,34 @@ const CreatePaymentPage = () => {
   const router = useRouter();
   const validationSchema = Yup.object({
     userName: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     type: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     country: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     bank: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     accountBank: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     realName: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     comment: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     address: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     cardId: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
     phoneNumber: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid")
+      i18next.t("authenticationPage.userNameIsInvalid"),
     ),
   });
   const formik = useFormik({
@@ -85,7 +85,9 @@ const CreatePaymentPage = () => {
           <div className="cursor-pointer" onClick={() => router.back()}>
             <BackIcon />
           </div>
-          <span className="text-[#fff]">{i18next.t("withdrawAccount.withdrawAccountBtn")}</span>
+          <span className="text-[#fff]">
+            {i18next.t("withdrawAccount.withdrawAccountBtn")}
+          </span>
         </div>
         <div className="flex flex-col p-4">
           <div className="p-4 my-2 flex items-center justify-center">
@@ -103,7 +105,9 @@ const CreatePaymentPage = () => {
             <div className="bg-[#1D1C22]">
               {/* KIỂU */}
               <FormControlCustom fullWidth>
-                <InputLabel id="select-method">{i18next.t("withdrawAccount.type")}</InputLabel>
+                <InputLabel id="select-method">
+                  {i18next.t("withdrawAccount.type")}
+                </InputLabel>
                 <Select
                   labelId="select-method"
                   id="demo-simple-select"
@@ -119,8 +123,12 @@ const CreatePaymentPage = () => {
                     },
                   }}
                 >
-                  <MenuItem value={10}>{i18next.t("withdrawAccount.fiatCurrency")}</MenuItem>
-                  <MenuItem value={20}>{i18next.t("withdrawAccount.cryptocurrency")}</MenuItem>
+                  <MenuItem value={10}>
+                    {i18next.t("withdrawAccount.fiatCurrency")}
+                  </MenuItem>
+                  <MenuItem value={20}>
+                    {i18next.t("withdrawAccount.cryptocurrency")}
+                  </MenuItem>
                 </Select>
               </FormControlCustom>
             </div>
@@ -220,7 +228,9 @@ const CreatePaymentPage = () => {
                 value={formik.values.address}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder={i18next.t("withdrawAccount.placeholderContactAddress")}
+                placeholder={i18next.t(
+                  "withdrawAccount.placeholderContactAddress",
+                )}
               />
               {formik.touched.address && formik.errors.address ? (
                 <div className="text-[#FF4444]  text-[14px] px-4 py-1">
@@ -299,7 +309,7 @@ const CreatePaymentPage = () => {
             onBack={() => setIsOpen(false)}
             onChange={(value) => {
               setCurrentCountry(value);
-              formik.setFieldValue("country",value.label)
+              formik.setFieldValue("country", value.label);
               setIsOpen(false);
             }}
           />

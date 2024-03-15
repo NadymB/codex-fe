@@ -26,7 +26,7 @@ const LoginWithEmail = () => {
       .required(i18next.t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
     password: Yup.string().required(
-      i18next.t("authenticationPage.passwordIsInvalid")
+      i18next.t("authenticationPage.passwordIsInvalid"),
     ),
   });
   const formik = useFormik({
@@ -39,9 +39,9 @@ const LoginWithEmail = () => {
     onSubmit: async (values) => {
       try {
         const data = await login(values);
-        if(data){
-          register(data.access_token)
-          router.push('/m')
+        if (data) {
+          register(data.access_token);
+          router.push("/m");
         }
       } catch (error) {
         setMassageLoginFail("Incorrect email or password");

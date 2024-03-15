@@ -8,18 +8,20 @@ import "../../../../../i18n";
 import { RedRiseIcon } from "@/assets/icons/RedRiseIcon";
 
 const ColorPage = () => {
-    const [isGreenRise, setIsGreenRise] = useState(true);
+  const [isGreenRise, setIsGreenRise] = useState(true);
 
   return (
     <div className="min-h-screen overflow-auto bg-[#000000] text-white">
-      <GoBack title={i18next.t("color.title")}/>
+      <GoBack title={i18next.t("color.title")} />
       <div className="py-1">
         <div
           onClick={() => setIsGreenRise(true)}
           className="flex items-center gap-6 px-4 py-2 cursor-pointer"
         >
           <GreenRiseIcon />
-          <span className="flex-1 text-base">{i18next.t("color.greenRise")}</span>
+          <span className="flex-1 text-base">
+            {i18next.t("color.greenRise")}
+          </span>
           {isGreenRise && <CheckIcon />}
         </div>
         <div

@@ -19,7 +19,7 @@ const LoginPage = () => {
   const { fetchCurrentUser } = useAuth();
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState(
-    OptionsLanguage.find((lang) => lang.value === i18next.language)
+    OptionsLanguage.find((lang) => lang.value === i18next.language),
   );
   const [activeTab, setActiveTab] = useState(1);
   const [tabPosition, setTabPosition] = useState({ left: 0, width: 0 });
