@@ -3,19 +3,19 @@
 import { LearnArticle } from "@/components/LearnArticle";
 import { GoBack } from "@/components/layouts/GoBack";
 import { HELP_CENTER_DATA } from "@/utils/constants";
-import i18next from "i18next";
+import { t } from "i18next";
 
 const HelpCenterPage = () => {
   return (
     <div className="bg-black min-h-screen">
-      <GoBack title={i18next.t("helpCenter.title")} />
+      <GoBack title={t("helpCenter.title")} />
       <div className="flex flex-col gap-4 p-2 bg-black">
         {HELP_CENTER_DATA.map((item, index) => (
           <LearnArticle
             key={index}
             bannerUrl={item.url}
-            title={i18next.t(`helpCenter.${item.title}`)}
-            content={i18next.t(`helpCenter.${item.content}`)}
+            title={t(`helpCenter.${item.title}`)}
+            content={t(`helpCenter.${item.content}`)}
             articleUrl={`/m/help-center/docs/en/${item.articleQuery}/`}
           />
         ))}

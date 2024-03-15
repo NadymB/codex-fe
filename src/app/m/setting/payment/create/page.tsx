@@ -1,63 +1,57 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import { ArrowRightIcon } from "@/assets/icons/ArrowRightIcon";
 import { BackIcon } from "@/assets/icons/BackIcon";
-import { CheckIcon } from "@/assets/icons/CheckIcon";
-import { OptionsLanguage, getStaticURL } from "@/utils/constants";
+import { FormControlCustom } from "@/components/FormControlCustom";
+import { InputCustom } from "@/components/InputCustom";
+import SelectCountries from "@/components/SelectCountries";
 import {
   Button,
-  FormControl,
   InputAdornment,
   InputLabel,
   MenuItem,
-  Select,
-  TextField,
-  styled,
+  Select
 } from "@mui/material";
-import i18next, { changeLanguage } from "i18next";
+import { useFormik } from "formik";
+import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { useFormik } from "formik";
 import * as Yup from "yup";
-import { InputCustom } from "@/components/InputCustom";
-import { ArrowRightIcon } from "@/assets/icons/ArrowRightIcon";
-import SelectCountries from "@/components/SelectCountries";
-import { FormControlCustom } from "@/components/FormControlCustom";
 
 const CreatePaymentPage = () => {
-  const [currentLang, setLangCurrentLang] = useState(i18next.language);
   const [isOpen, setIsOpen] = useState(false);
   const [currentCountry, setCurrentCountry] = useState<any>();
   const router = useRouter();
   const validationSchema = Yup.object({
     userName: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     type: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     country: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     bank: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     accountBank: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     realName: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     comment: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     address: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     cardId: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     phoneNumber: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
   });
   const formik = useFormik({
@@ -85,7 +79,7 @@ const CreatePaymentPage = () => {
             <BackIcon />
           </div>
           <span className="text-[#fff]">
-            {i18next.t("withdrawAccount.withdrawAccountBtn")}
+            {t("withdrawAccount.withdrawAccountBtn")}
           </span>
         </div>
         <div className="flex flex-col p-4">
@@ -105,7 +99,7 @@ const CreatePaymentPage = () => {
               {/* KIỂU */}
               <FormControlCustom fullWidth>
                 <InputLabel id="select-method">
-                  {i18next.t("withdrawAccount.type")}
+                  {t("withdrawAccount.type")}
                 </InputLabel>
                 <Select
                   labelId="select-method"
@@ -123,10 +117,10 @@ const CreatePaymentPage = () => {
                   }}
                 >
                   <MenuItem value={10}>
-                    {i18next.t("withdrawAccount.fiatCurrency")}
+                    {t("withdrawAccount.fiatCurrency")}
                   </MenuItem>
                   <MenuItem value={20}>
-                    {i18next.t("withdrawAccount.cryptocurrency")}
+                    {t("withdrawAccount.cryptocurrency")}
                   </MenuItem>
                 </Select>
               </FormControlCustom>
@@ -134,8 +128,8 @@ const CreatePaymentPage = () => {
             {/* QUỐC GIA */}
             <div className="bg-[#1D1C22]">
               <InputCustom
-                label={i18next.t("withdrawAccount.country")}
-                placeholder={i18next.t("withdrawAccount.clickToSelectCountry")}
+                label={t("withdrawAccount.country")}
+                placeholder={t("withdrawAccount.clickToSelectCountry")}
                 className="w-full"
                 name="country"
                 value={formik.values.country}
@@ -155,13 +149,13 @@ const CreatePaymentPage = () => {
               <InputCustom
                 error={formik.touched.bank && formik.errors.bank ? true : false}
                 className=" bg-transparent w-full text-[16px]"
-                label={i18next.t("withdrawAccount.bank")}
+                label={t("withdrawAccount.bank")}
                 name="bank"
                 autoComplete="new-email"
                 value={formik.values.bank}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder={i18next.t("withdrawAccount.placeholderBank")}
+                placeholder={t("withdrawAccount.placeholderBank")}
               />
               {formik.touched.bank && formik.errors.bank ? (
                 <div className="text-[#FF4444] text-[14px] px-4 py-1">
@@ -178,7 +172,7 @@ const CreatePaymentPage = () => {
                     : false
                 }
                 className=" bg-transparent w-full text-[16px]"
-                label={i18next.t("withdrawAccount.bankAccount")}
+                label={t("withdrawAccount.bankAccount")}
                 name="accountBank"
                 autoComplete="new-email"
                 value={formik.values.accountBank}
@@ -200,13 +194,13 @@ const CreatePaymentPage = () => {
                     : false
                 }
                 className=" bg-transparent w-full text-[16px]"
-                label={i18next.t("withdrawAccount.realName")}
+                label={t("withdrawAccount.realName")}
                 name="realName"
                 autoComplete="new-real-name"
                 value={formik.values.realName}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder={i18next.t("withdrawAccount.placeholderRealName")}
+                placeholder={t("withdrawAccount.placeholderRealName")}
               />
               {formik.touched.realName && formik.errors.realName ? (
                 <div className="text-[#FF4444] text-[14px] px-4 py-1">
@@ -221,13 +215,13 @@ const CreatePaymentPage = () => {
                   formik.touched.address && formik.errors.address ? true : false
                 }
                 className="text-[#fff] bg-transparent w-full text-[16px]"
-                label={i18next.t("withdrawAccount.contactAddress")}
+                label={t("withdrawAccount.contactAddress")}
                 name="address"
                 type="text"
                 value={formik.values.address}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder={i18next.t(
+                placeholder={t(
                   "withdrawAccount.placeholderContactAddress",
                 )}
               />
@@ -246,7 +240,7 @@ const CreatePaymentPage = () => {
                     : false
                 }
                 className="text-[#fff] bg-transparent w-full text-[16px]"
-                label={i18next.t("withdrawAccount.contactPhone")}
+                label={t("withdrawAccount.contactPhone")}
                 name="phoneNumber"
                 type="text"
                 value={formik.values.phoneNumber}
@@ -266,7 +260,7 @@ const CreatePaymentPage = () => {
                   formik.touched.cardId && formik.errors.cardId ? true : false
                 }
                 className="text-[#fff] bg-transparent w-full text-[16px]"
-                label={i18next.t("withdrawAccount.idNumber")}
+                label={t("withdrawAccount.idNumber")}
                 name="cardId"
                 type="text"
                 value={formik.values.cardId}
@@ -283,13 +277,13 @@ const CreatePaymentPage = () => {
             <div className="bg-[#1D1C22]">
               <InputCustom
                 className=" bg-transparent w-full text-[16px]"
-                label={i18next.t("withdrawAccount.remark")}
+                label={t("withdrawAccount.remark")}
                 name="comment"
                 autoComplete="new-email"
                 value={formik.values.comment}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                placeholder={i18next.t("withdrawAccount.placeholderRemark")}
+                placeholder={t("withdrawAccount.placeholderRemark")}
               />
             </div>
             <Button
@@ -297,7 +291,7 @@ const CreatePaymentPage = () => {
               style={{ background: "#3D5AFE" }}
               className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
             >
-              {i18next.t("withdrawAccount.confirm")}
+              {t("withdrawAccount.confirm")}
             </Button>
           </form>
         </div>

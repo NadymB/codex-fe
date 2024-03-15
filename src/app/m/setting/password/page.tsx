@@ -1,16 +1,16 @@
 "use client";
 import { GoBack } from "@/components/layouts/GoBack";
 import { useFormik } from "formik";
-import i18next from "i18next";
+import { t } from "i18next";
 import * as Yup from "yup";
 
 const PasswordPage = () => {
   const validationSchema = Yup.object({
     oldPassword: Yup.string().required(
-      i18next.t("password.oldPasswordInvalidError"),
+      t("password.oldPasswordInvalidError"),
     ),
     newPassword: Yup.string().required(
-      i18next.t("password.oldPasswordInvalidError"),
+      t("password.oldPasswordInvalidError"),
     ),
   });
   const formik = useFormik({
@@ -26,7 +26,7 @@ const PasswordPage = () => {
 
   return (
     <div className="min-h-screen overflow-auto bg-[#000000] text-white">
-      <GoBack title={i18next.t("password.title")} />
+      <GoBack title={t("password.title")} />
       <form
         onSubmit={formik.handleSubmit}
         className="flex flex-col gap-6 p-4"
@@ -36,7 +36,7 @@ const PasswordPage = () => {
           <input
             className="p-4 text-[#fff] bg-transparent outline-none border border-transparent rounded hover:border-[#fff] w-full text-sm placeholder:text-[#848485]"
             type="password"
-            placeholder={i18next.t("password.oldPassword")}
+            placeholder={t("password.oldPassword")}
             name="oldPassword"
           />
           {formik.touched.oldPassword && formik.errors.oldPassword ? (
@@ -49,7 +49,7 @@ const PasswordPage = () => {
           <input
             className="p-4 text-[#fff] bg-transparent outline-none border border-transparent rounded hover:border-[#fff] w-full text-sm placeholder:text-[#848485]"
             type="password"
-            placeholder={i18next.t("password.newPassword")}
+            placeholder={t("password.newPassword")}
             name="newPassword"
           />
           {formik.touched.newPassword && formik.errors.newPassword ? (
@@ -63,7 +63,7 @@ const PasswordPage = () => {
           style={{ background: "#3D5AFE" }}
           className="p-4 mt-6 flex items-center justify-center text-[18px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
         >
-          {i18next.t("password.confirmBtn")}
+          {t("password.confirmBtn")}
         </button>
       </form>
     </div>

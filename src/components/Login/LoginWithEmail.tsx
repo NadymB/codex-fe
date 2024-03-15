@@ -6,7 +6,7 @@ import React, { useContext, useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { Button, TextField, styled } from "@mui/material";
-import i18next from "i18next";
+import { t } from "i18next";
 import { InputCustom } from "../InputCustom";
 import { authService } from "@/services/AuthServices";
 import { useAuth } from "@/hooks/useAuth";
@@ -21,12 +21,12 @@ const LoginWithEmail = () => {
   const router = useRouter();
   const validationSchema = Yup.object({
     email: Yup.string()
-      .email(i18next.t("authenticationPage.emailIsInvalid"))
-      .matches(/@[^.]*\./, i18next.t("authenticationPage.emailIsInvalid"))
-      .required(i18next.t("authenticationPage.emailIsInvalid"))
+      .email(t("authenticationPage.emailIsInvalid"))
+      .matches(/@[^.]*\./, t("authenticationPage.emailIsInvalid"))
+      .required(t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
     password: Yup.string().required(
-      i18next.t("authenticationPage.passwordIsInvalid"),
+      t("authenticationPage.passwordIsInvalid"),
     ),
   });
   const formik = useFormik({
@@ -59,7 +59,7 @@ const LoginWithEmail = () => {
         <InputCustom
           error={formik.touched.email && formik.errors.email ? true : false}
           className=" bg-transparent w-full text-[16px]"
-          label={i18next.t("authenticationPage.email")}
+          label={t("authenticationPage.email")}
           name="email"
           autoComplete="new-email"
           value={formik.values.email}
@@ -78,7 +78,7 @@ const LoginWithEmail = () => {
             formik.touched.password && formik.errors.password ? true : false
           }
           className="text-[#fff] bg-transparent w-full text-[16px]"
-          label={i18next.t("authenticationPage.loginPassword")}
+          label={t("authenticationPage.loginPassword")}
           name="password"
           type="password"
           autoComplete="new-password"
@@ -102,7 +102,7 @@ const LoginWithEmail = () => {
         style={{ background: "#3D5AFE", color: "#fff" }}
         className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
       >
-        {i18next.t("authenticationPage.login")}
+        {t("authenticationPage.login")}
       </Button>
     </form>
   );

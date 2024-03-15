@@ -5,7 +5,7 @@ import { AuthenticatedProfile } from "@/components/profile/AuthenticatedProfile"
 import { PublicProfile } from "@/components/profile/PublicProfile";
 import { UnauthenticatedProfile } from "@/components/profile/UnauthenticatedProfile";
 import { useAuth } from "@/hooks/useAuth";
-import i18next from "i18next";
+import { t } from "i18next";
 import { useEffect } from "react";
 
 const MarketPage = () => {
@@ -16,7 +16,7 @@ const MarketPage = () => {
 
   return (
     <div className="bg-black min-h-screen">
-      <GoBack title={i18next.t("profilePage.title")} />
+      <GoBack title={t("profilePage.title")} />
       {currentUser ? <AuthenticatedProfile /> : <UnauthenticatedProfile />}
       <PublicProfile />
       {currentUser && (
@@ -25,7 +25,7 @@ const MarketPage = () => {
             onClick={logout}
             className="py-2 w-full text-white bg-red-600 rounded-md text-[13px] font-semibold"
           >
-            {i18next.t("profilePage.quit")}
+            {t("profilePage.quit")}
           </button>
         </div>
       )}

@@ -6,7 +6,7 @@ import { RobotIcon } from "@/assets/icons/RobotIcon";
 import { SaveIcon } from "@/assets/icons/SaveIcon";
 import { ShareIcon } from "@/assets/icons/ShareIcon";
 import { SupportIcon } from "@/assets/icons/SupportIcon";
-import i18next from "i18next";
+import { t } from "i18next";
 import Link from "next/link";
 import React from "react";
 
@@ -20,7 +20,7 @@ const FeatureSection = () => {
         >
           <InstructIcon />
           <span className="text-[#fff] font-medium text-center">
-            {i18next.t("homePage.study")}
+            {t("homePage.study")}
           </span>
         </Link>
       </div>
@@ -32,7 +32,7 @@ const FeatureSection = () => {
         >
           <SupportIcon />
           <span className="text-[#fff] font-medium text-center">
-            {i18next.t("homePage.helpCenter")}
+            {t("homePage.helpCenter")}
           </span>
         </Link>
       </div>
@@ -44,7 +44,7 @@ const FeatureSection = () => {
         >
           <HightClassIcon />
           <span className="text-[#fff] font-medium text-center">
-            {i18next.t("homePage.vip")}
+            {t("homePage.vip")}
           </span>
         </Link>
       </div>
@@ -56,7 +56,7 @@ const FeatureSection = () => {
         >
           <RankIcon />
           <span className="text-[#fff] font-medium text-center">
-            {i18next.t("homePage.leaderBoard")}
+            {t("homePage.leaderBoard")}
           </span>
         </Link>
       </div>
@@ -68,7 +68,7 @@ const FeatureSection = () => {
         >
           <ShareIcon />
           <span className="text-[#fff] font-medium text-center">
-            {i18next.t("homePage.inviteFriends")}
+            {t("homePage.inviteFriends")}
           </span>
         </Link>
       </div>
@@ -80,7 +80,7 @@ const FeatureSection = () => {
         >
           <SaveIcon />
           <span className="text-[#fff] font-medium text-center">
-            {i18next.t("homePage.savings")}
+            {t("homePage.savings")}
           </span>
         </Link>
       </div>
@@ -92,7 +92,7 @@ const FeatureSection = () => {
         >
           <RobotIcon />
           <span className="text-[#fff] font-medium text-center">
-            {i18next.t("homePage.tradingRobot")}
+            {t("homePage.tradingRobot")}
           </span>
         </Link>
       </div>
@@ -104,7 +104,7 @@ const FeatureSection = () => {
         >
           <ExploitIcon />
           <span className="text-[#fff] font-medium text-center">
-            {i18next.t("homePage.mining")}
+            {t("homePage.mining")}
           </span>
         </Link>
       </div>

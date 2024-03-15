@@ -3,7 +3,7 @@
 import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 import { getStaticURL } from "@/utils/constants";
 import { Button, InputAdornment, Slider, styled } from "@mui/material";
-import i18next from "i18next";
+import { t } from "i18next";
 import { FC, useState } from "react";
 import { InputCustom } from "../InputCustom";
 import { TradingChartBar } from "./TradingChartBar";
@@ -87,13 +87,13 @@ const Trading: FC<Props> = ({
             >
               <span className="text-[12px] text-[#fff]">
                 {" "}
-                {i18next.t("tradePage.trade.profit")}
+                {t("tradePage.trade.profit")}
               </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 10%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {i18next.t("tradePage.trade.minute")}
+                1 {t("tradePage.trade.minute")}
               </div>
             </div>
 
@@ -102,13 +102,13 @@ const Trading: FC<Props> = ({
               onClick={() => setPercentIsSelected(20)}
             >
               <span className="text-[12px] text-[#fff]">
-                {i18next.t("tradePage.trade.profit")}
+                {t("tradePage.trade.profit")}
               </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 20%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {i18next.t("tradePage.trade.minute")}
+                1 {t("tradePage.trade.minute")}
               </div>
             </div>
 
@@ -117,13 +117,13 @@ const Trading: FC<Props> = ({
               onClick={() => setPercentIsSelected(30)}
             >
               <span className="text-[12px] text-[#fff]">
-                {i18next.t("tradePage.trade.profit")}
+                {t("tradePage.trade.profit")}
               </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 30%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {i18next.t("tradePage.trade.minute")}
+                1 {t("tradePage.trade.minute")}
               </div>
             </div>
 
@@ -132,13 +132,13 @@ const Trading: FC<Props> = ({
               onClick={() => setPercentIsSelected(50)}
             >
               <span className="text-[12px] text-[#fff]">
-                {i18next.t("tradePage.trade.profit")}
+                {t("tradePage.trade.profit")}
               </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 50%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {i18next.t("tradePage.trade.minute")}
+                1 {t("tradePage.trade.minute")}
               </div>
             </div>
 
@@ -147,13 +147,13 @@ const Trading: FC<Props> = ({
               onClick={() => setPercentIsSelected(80)}
             >
               <span className="text-[12px] text-[#fff]">
-                {i18next.t("tradePage.trade.profit")}
+                {t("tradePage.trade.profit")}
               </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 80%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {i18next.t("tradePage.trade.minute")}
+                1 {t("tradePage.trade.minute")}
               </div>
             </div>
 
@@ -162,19 +162,19 @@ const Trading: FC<Props> = ({
               onClick={() => setPercentIsSelected(100)}
             >
               <span className="text-[12px] text-[#fff]">
-                {i18next.t("tradePage.trade.profit")}
+                {t("tradePage.trade.profit")}
               </span>
               <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                 100%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {i18next.t("tradePage.trade.minute")}
+                1 {t("tradePage.trade.minute")}
               </div>
             </div>
           </div>
           <div className="flex items-center justify-between mt-2">
             <span className="text-[12px] text-[#888888]">
-              {i18next.t("tradePage.trade.balance")}
+              {t("tradePage.trade.balance")}
             </span>
             <span className="text-[12px] text-[#fff]">0.00 USDT</span>
           </div>
@@ -219,7 +219,7 @@ const Trading: FC<Props> = ({
             onClick={onClickLongBtn}
           >
             <div className="w-full bg-[#55af72] py-[6px] px-4 ">
-              {i18next.t("tradePage.long")}
+              {t("tradePage.long")}
             </div>
           </Button>
           <Button
@@ -229,7 +229,7 @@ const Trading: FC<Props> = ({
             onClick={onClickShortBtn}
           >
             <div className="w-full bg-[#dd5350] py-[6px] px-4 ">
-              {i18next.t("tradePage.short")}
+              {t("tradePage.short")}
             </div>
           </Button>
         </div>

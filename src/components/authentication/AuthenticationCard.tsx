@@ -1,4 +1,4 @@
-import i18next from "i18next";
+import { t } from "i18next";
 import { IRightInterests, RightInterestItem } from "./RightInterestsItem";
 import Link from "next/link";
 import Icon from "../Icon";
@@ -32,13 +32,13 @@ export const AuthenticationCard = ({
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <span className="text-sm text-white">
-            {i18next.t("authentication.rightsAndInterests")}
+            {t("authentication.rightsAndInterests")}
           </span>
           {rightInterstData.map((item, index) => (
             <RightInterestItem
               key={index}
-              title={i18next.t(`authentication.${item.title}`)}
-              content={i18next.t(`authentication.${item.content}`)}
+              title={t(`authentication.${item.title}`)}
+              content={t(`authentication.${item.content}`)}
             />
           ))}
         </div>
@@ -54,7 +54,7 @@ export const AuthenticationCard = ({
                 height={method.height}
                 viewBox={method.viewBox}
               />
-              <span>{i18next.t(`authentication.${method.title}`)}</span>
+              <span>{t(`authentication.${method.title}`)}</span>
             </div>
           ))}
         </div>

@@ -1,7 +1,7 @@
 "use client";
 import { BackIcon } from "@/assets/icons/BackIcon";
 import { Slider, styled } from "@mui/material";
-import i18next from "i18next";
+import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -24,7 +24,7 @@ const AnnouncementPage = () => {
           <BackIcon />
         </div>
         <span className="text-[#fff]">
-          {i18next.t("announcementPage.title")}
+          {t("announcementPage.title")}
         </span>
       </div>
     </div>

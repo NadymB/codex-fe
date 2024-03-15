@@ -1,5 +1,5 @@
 import { CloseIcon } from "@/assets/icons/CloseIcon";
-import i18next from "i18next";
+import { t } from "i18next";
 
 export const ConfirmPaymentModal = ({
   isLong,
@@ -41,8 +41,8 @@ export const ConfirmPaymentModal = ({
           className={`${isLong ? "bg-[#55af72]" : "bg-[#dd5350]"} text-[15px] text-white mt-8 py-2 rounded`}
         >
           {isLong
-            ? `${i18next.t("tradePage.long")}`
-            : `${i18next.t("tradePage.short")}`}
+            ? `${t("tradePage.long")}`
+            : `${t("tradePage.short")}`}
         </button>
       </div>
     </div>

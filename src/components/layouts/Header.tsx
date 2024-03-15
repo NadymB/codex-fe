@@ -2,14 +2,11 @@
 "use client";
 import { AvatarIcon } from "@/assets/icons/AvatarIcon";
 import { RingIcon } from "@/assets/icons/RingIcon";
-import { UserIcon } from "@/assets/icons/UserIcon";
 import { useAuth } from "@/hooks/useAuth";
 import { OptionsLanguage, getStaticURL } from "@/utils/constants";
 import i18next from "i18next";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 
 const Header = () => {
   const { currentUser } = useAuth();

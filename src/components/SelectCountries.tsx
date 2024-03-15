@@ -1,16 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { BackIcon } from "@/assets/icons/BackIcon";
-import { CheckIcon } from "@/assets/icons/CheckIcon";
 import { SearchIcon } from "@/assets/icons/SearchIcon";
 import {
   COUNTRIES,
-  Country,
-  OptionsLanguage,
-  getStaticURL,
+  Country
 } from "@/utils/constants";
-import i18next, { changeLanguage } from "i18next";
-import { useRouter } from "next/navigation";
+import { t } from "i18next";
 import { useEffect, useRef, useState } from "react";
 
 interface IProps {
@@ -51,7 +47,7 @@ const SelectCountries = (props: IProps) => {
             <BackIcon />
           </div>
           <span className="text-[#fff]">
-            {i18next.t("withdrawAccount.pleaseSelectCryptocurrencies")}
+            {t("withdrawAccount.pleaseSelectCryptocurrencies")}
           </span>
         </div>
         <div className="relative w-fit px-2 flex items-center gap-2 bg-[#4C4B4F] rounded mt-4">
@@ -61,7 +57,7 @@ const SelectCountries = (props: IProps) => {
             type="text"
             name=""
             id=""
-            placeholder={i18next.t("withdrawAccount.searchCountryOrRegion")}
+            placeholder={t("withdrawAccount.searchCountryOrRegion")}
             onChange={(e) => setSearchValue(e.target.value)}
           />
         </div>

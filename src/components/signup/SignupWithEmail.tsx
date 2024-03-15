@@ -1,7 +1,7 @@
 "use client";
 import { Button, TextField, styled } from "@mui/material";
 import { useFormik } from "formik";
-import i18next from "i18next";
+import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import * as Yup from "yup";
@@ -14,23 +14,23 @@ const SignupWithEmail = () => {
 
   const validationSchema = Yup.object({
     email: Yup.string()
-      .email(i18next.t("authenticationPage.emailIsInvalid"))
-      .matches(/@[^.]*\./, i18next.t("authenticationPage.emailIsInvalid"))
-      .required(i18next.t("authenticationPage.emailIsInvalid"))
+      .email(t("authenticationPage.emailIsInvalid"))
+      .matches(/@[^.]*\./, t("authenticationPage.emailIsInvalid"))
+      .required(t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
     username: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     password: Yup.string()
-      .min(8, i18next.t("authenticationPage.passwordMinLength"))
-      .matches(/[a-z]/, i18next.t("authenticationPage.passwordLowercase"))
-      .matches(/[A-Z]/, i18next.t("authenticationPage.passwordUppercase"))
-      .matches(/[0-9]/, i18next.t("authenticationPage.passwordNumber"))
+      .min(8, t("authenticationPage.passwordMinLength"))
+      .matches(/[a-z]/, t("authenticationPage.passwordLowercase"))
+      .matches(/[A-Z]/, t("authenticationPage.passwordUppercase"))
+      .matches(/[0-9]/, t("authenticationPage.passwordNumber"))
       .matches(
         /[^a-zA-Z0-9.]/,
-        i18next.t("authenticationPage.passwordSpecialChar"),
+        t("authenticationPage.passwordSpecialChar"),
       )
-      .required(i18next.t("authenticationPage.passwordIsInvalid")),
+      .required(t("authenticationPage.passwordIsInvalid")),
   });
   const formik = useFormik({
     initialValues: {
@@ -65,7 +65,7 @@ const SignupWithEmail = () => {
             formik.touched.username && formik.errors.username ? true : false
           }
           className=" bg-transparent w-full text-[16px]"
-          label={i18next.t("authenticationPage.username")}
+          label={t("authenticationPage.username")}
           name="username"
           autoComplete="new-email"
           value={formik.values.username}
@@ -82,7 +82,7 @@ const SignupWithEmail = () => {
         <InputCustom
           error={formik.touched.email && formik.errors.email ? true : false}
           className=" bg-transparent w-full text-[16px]"
-          label={i18next.t("authenticationPage.email")}
+          label={t("authenticationPage.email")}
           name="email"
           autoComplete="new-email"
           value={formik.values.email}
@@ -101,7 +101,7 @@ const SignupWithEmail = () => {
             formik.touched.password && formik.errors.password ? true : false
           }
           className="text-[#fff] bg-transparent w-full text-[16px]"
-          label={i18next.t("authenticationPage.loginPassword")}
+          label={t("authenticationPage.loginPassword")}
           name="password"
           type="password"
           autoComplete="new-password"
@@ -118,7 +118,7 @@ const SignupWithEmail = () => {
       <div className="bg-[#1D1C22]">
         <InputCustom
           className=" bg-transparent w-full text-[16px]"
-          label={i18next.t("authenticationPage.invitationCode")}
+          label={t("authenticationPage.invitationCode")}
           name="inviteCode"
           autoComplete="new-email"
           value={formik.values.inviteCode}
@@ -137,7 +137,7 @@ const SignupWithEmail = () => {
         style={{ background: "#3D5AFE", color: "#fff" }}
         className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
       >
-        {i18next.t("authenticationPage.register")}
+        {t("authenticationPage.register")}
       </Button>
     </form>
   );

@@ -3,7 +3,7 @@
 import { BackIcon } from "@/assets/icons/BackIcon";
 import { CheckIcon } from "@/assets/icons/CheckIcon";
 import { OptionsLanguage, getStaticURL } from "@/utils/constants";
-import i18next, { changeLanguage } from "i18next";
+import i18next, { changeLanguage, t } from "i18next";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -16,7 +16,7 @@ const LocaleSettingPage = () => {
         <div className="cursor-pointer" onClick={() => router.back()}>
           <BackIcon />
         </div>
-        <span className="text-[#fff]">{i18next.t("language")}</span>
+        <span className="text-[#fff]">{t("language")}</span>
       </div>
       <div className="flex flex-col">
         {OptionsLanguage.map((lang, idx) => {

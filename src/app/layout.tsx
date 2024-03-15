@@ -1,14 +1,14 @@
 "use client";
 import { ToastContainer } from "react-toastify";
 
+import { AuthProvider } from "@/components/authentication/AuthProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { WebSocketProvider } from "@/providers/WebSocketProvider";
 import i18next from "i18next";
 import { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import "../styles/index.css";
-import { WebSocketProvider } from "@/providers/WebSocketProvider";
-import { AuthProvider } from "@/components/authentication/AuthProvider";
 import "../../i18n";
+import "../styles/index.css";
 export default function RootLayout({
   children,
 }: {

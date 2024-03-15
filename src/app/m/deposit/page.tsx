@@ -1,17 +1,17 @@
 "use client";
 
 import { GoBack } from "@/components/layouts/GoBack";
-import i18next from "i18next";
+import { t } from "i18next";
 import { ArtificialIcon } from "@/assets/icons/ArtificialIcon";
 import Link from "next/link";
 
 const DepositPage = () => {
   return (
     <div className="bg-black min-h-screen">
-      <GoBack title={i18next.t("deposit.title")} />
+      <GoBack title={t("deposit.title")} />
       <div className="flex flex-col gap-4 p-4">
         <h2 className="text-[32px] text-white text-center">
-          {i18next.t("deposit.chooseYourDepositMethod")}
+          {t("deposit.chooseYourDepositMethod")}
         </h2>
         <Link
           href="/m/service"
@@ -20,9 +20,9 @@ const DepositPage = () => {
           <ArtificialIcon />
           <div className="flex flex-col text-sm text-white">
             <span className="text-base font-semibold">
-              {i18next.t("deposit.artificialDeposit")}
+              {t("deposit.artificialDeposit")}
             </span>
-            <span>{i18next.t("deposit.contactArtificial")}</span>
+            <span>{t("deposit.contactArtificial")}</span>
           </div>
         </Link>
       </div>

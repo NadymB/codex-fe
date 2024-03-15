@@ -5,7 +5,7 @@ import { ArticleDetail } from "@/components/ArticleDetail";
 import { GoBack } from "@/components/layouts/GoBack";
 import { LEARN_ARTICLE_DATA } from "@/utils/constants";
 import { useParams } from "next/navigation";
-import i18next from "i18next";
+import { t } from "i18next";
 
 export default function ArticleDetailPage() {
   const params = useParams();
@@ -15,7 +15,7 @@ export default function ArticleDetailPage() {
 
   return (
     <div>
-      <GoBack title={i18next.t(`learn.${articleTitle[0].title}`)} />
+      <GoBack title={t(`learn.${articleTitle[0].title}`)} />
       <ArticleDetail />
     </div>
   );

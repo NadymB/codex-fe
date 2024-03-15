@@ -1,5 +1,5 @@
 "use client";
-import i18next from "i18next";
+import { t } from "i18next";
 import React, { useEffect, useState } from "react";
 
 export const TradingChartBar = () => {
@@ -31,10 +31,10 @@ export const TradingChartBar = () => {
     <div>
       <div className="flex justify-between items-center">
         <span className="text-[12px] text-[#fff] opacity-30">
-          {i18next.t("tradePage.trade.price")}
+          {t("tradePage.trade.price")}
         </span>
         <span className="text-[12px] text-[#fff] opacity-30">
-          {i18next.t("tradePage.trade.amount")}
+          {t("tradePage.trade.amount")}
         </span>
       </div>
       {columnWidthLong.map((width, index) => (

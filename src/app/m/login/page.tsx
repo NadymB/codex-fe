@@ -8,7 +8,7 @@ import { Logo } from "@/components/Logo";
 import Tabs from "@/components/Tabs";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { OptionsLanguage, getStaticURL } from "@/utils/constants";
-import i18next from "i18next";
+import i18next, { t } from "i18next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -33,7 +33,7 @@ const LoginPage = () => {
   }, [activeTab]);
   const tabs = [
     {
-      name: `${i18next.t("authenticationPage.email")}`,
+      name: `${t("authenticationPage.email")}`,
       content: (
         <>
           <LoginWithEmail />
@@ -41,7 +41,7 @@ const LoginPage = () => {
       ),
     },
     {
-      name: `${i18next.t("authenticationPage.phoneNumber")}`,
+      name: `${t("authenticationPage.phoneNumber")}`,
       content: (
         <>
           <LoginWithPhoneNumber />
@@ -49,7 +49,7 @@ const LoginPage = () => {
       ),
     },
     {
-      name: `${i18next.t("authenticationPage.username")}`,
+      name: `${t("authenticationPage.username")}`,
       content: (
         <>
           <LoginWithUserName />
@@ -78,13 +78,13 @@ const LoginPage = () => {
         </div>
         <Link href={"/m/signup"}>
           <span className="text-[#3D5AFE]">
-            {i18next.t("authenticationPage.register")}
+            {t("authenticationPage.register")}
           </span>
         </Link>
       </div>
       <div className="p-4">
         <h4 className="text-[32px] text-[#fff]">
-          {i18next.t("authenticationPage.loginTitle")}
+          {t("authenticationPage.loginTitle")}
         </h4>
         <Tabs tabs={tabs} />
         <div className="flex  flex-col items-center justify-center mt-2">

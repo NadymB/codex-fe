@@ -16,7 +16,7 @@ import { CircularProgress, TextField, styled } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import { IncomingMessage } from "http";
 
-import i18next from "i18next";
+import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import React, {
   Fragment,
@@ -256,7 +256,7 @@ const ServicePage = () => {
           <div className="cursor-pointer" onClick={() => router.back()}>
             <BackIcon />
           </div>
-          <span className="text-[#fff]">{i18next.t("servicePage.title")}</span>
+          <span className="text-[#fff]">{t("servicePage.title")}</span>
         </div>
         <div
           ref={messageListRef}
@@ -276,10 +276,10 @@ const ServicePage = () => {
               </div>
             </div>
             <div className="text-[#fff] text-[18px] font-bold text-center my-2">
-              {i18next.t("servicePage.onlineService")}
+              {t("servicePage.onlineService")}
             </div>
             <div className="text-[#9CA3AF] text-center">
-              {i18next.t("servicePage.onlineServiceContent")}
+              {t("servicePage.onlineServiceContent")}
             </div>
             {loadingMore && (
               <div className="flex items-center justify-center">
@@ -316,7 +316,7 @@ const ServicePage = () => {
         >
           <div className="relative  flex flex-col justify-center rounded-md w-full bg-[#1D1C22]  ">
             <CssTextField
-              placeholder={i18next.t("servicePage.placeholderMessage")}
+              placeholder={t("servicePage.placeholderMessage")}
               id="outlined-multiline-flexible"
               multiline
               maxRows={4}

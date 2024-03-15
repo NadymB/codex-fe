@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 
-import i18next from "i18next";
+import { t } from "i18next";
 import { MAX_SIZE_IMAGE } from "@/utils/constants";
 export const UploadImage = (event: any) => {
   const maxPhotos = 5;
@@ -10,7 +10,7 @@ export const UploadImage = (event: any) => {
   const filesAccepted = files.filter((file: any) => {
     const fileExtension = file.name.split(".").pop().toLowerCase();
     if (!allowedExtensions.includes(fileExtension)) {
-      toast(`${i18next.t("invalidFileFormat")}`, {
+      toast(`${t("invalidFileFormat")}`, {
         position: "bottom-center",
         autoClose: 2000,
         closeOnClick: true,
@@ -23,7 +23,7 @@ export const UploadImage = (event: any) => {
     if (file.size <= MAX_SIZE_IMAGE) {
       return file;
     } else {
-      toast(`${i18next.t("minimumCapacityError")}`, {
+      toast(`${t("minimumCapacityError")}`, {
         position: "bottom-center",
         autoClose: 2000,
         closeOnClick: true,

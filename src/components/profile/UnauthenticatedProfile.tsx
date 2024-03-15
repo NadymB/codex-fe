@@ -1,5 +1,5 @@
 import { AvatarIcon } from "@/assets/icons/AvatarIcon";
-import i18next from "i18next";
+import { t } from "i18next";
 import { useRouter } from "next/navigation";
 
 export const UnauthenticatedProfile = () => {
@@ -11,10 +11,10 @@ export const UnauthenticatedProfile = () => {
           <AvatarIcon />
           <div className="text-white">
             <div className="text-[32px]">
-              {i18next.t("profilePage.welcome")}
+              {t("profilePage.welcome")}
             </div>
             <div className="text-gray-500">
-              {i18next.t("profilePage.messageLogin")}
+              {t("profilePage.messageLogin")}
             </div>
           </div>
         </div>
@@ -23,13 +23,13 @@ export const UnauthenticatedProfile = () => {
             onClick={() => router.push("/m/login")}
             className="border border-[#3D5AFE] text-[#3D5AFE] w-1/2 rounded-md py-1.5 text-sm"
           >
-            {i18next.t("profilePage.login")}
+            {t("profilePage.login")}
           </button>
           <button
             onClick={() => router.push("/m/signup")}
             className="text-white bg-[#3D5AFE] w-1/2 rounded-md py-1.5 text-sm"
           >
-            {i18next.t("profilePage.signup")}
+            {t("profilePage.signup")}
           </button>
         </div>
       </div>

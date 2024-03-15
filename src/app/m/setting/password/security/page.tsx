@@ -1,13 +1,13 @@
 "use client";
 import { GoBack } from "@/components/layouts/GoBack";
-import i18next from "i18next";
+import { t } from "i18next";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
 const PasswordPage = () => {
   const validationSchema = Yup.object({
     newPassword: Yup.string().required(
-      i18next.t("password.oldPasswordInvalidError"),
+      t("password.oldPasswordInvalidError"),
     ),
   });
   const formik = useFormik({
@@ -22,7 +22,7 @@ const PasswordPage = () => {
 
   return (
     <div className="min-h-screen overflow-auto bg-[#000000] text-white">
-      <GoBack title={i18next.t("securityCode.title")} />
+      <GoBack title={t("securityCode.title")} />
       <form
         onSubmit={formik.handleSubmit}
         className="flex flex-col gap-6 p-4"
@@ -32,7 +32,7 @@ const PasswordPage = () => {
           <input
             className="p-4 text-[#fff] bg-transparent outline-none border border-transparent rounded hover:border-[#fff] w-full text-sm placeholder:text-[#848485]"
             type="password"
-            placeholder={i18next.t("password.newPassword")}
+            placeholder={t("password.newPassword")}
             name="newPassword"
           />
           {formik.touched.newPassword && formik.errors.newPassword ? (
@@ -46,7 +46,7 @@ const PasswordPage = () => {
           style={{ background: "#3D5AFE" }}
           className="p-4 mt-6 flex items-center justify-center text-[18px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
         >
-          {i18next.t("password.confirmBtn")}
+          {t("password.confirmBtn")}
         </button>
       </form>
     </div>

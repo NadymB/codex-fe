@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import * as Yup from "yup";
 import SelectCountries from "../SelectCountries";
-import i18next from "i18next";
+import { t } from "i18next";
 import { InputCustom } from "../InputCustom";
 import { authService } from "@/services/AuthServices";
 import { useAuth } from "@/hooks/useAuth";
@@ -26,10 +26,10 @@ const LoginWithPhoneNumber = () => {
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
     phoneNumber: Yup.string().required(
-      i18next.t("authenticationPage.phoneNumberIsInvalid"),
+      t("authenticationPage.phoneNumberIsInvalid"),
     ),
     password: Yup.string().required(
-      i18next.t("authenticationPage.passwordIsInvalid"),
+      t("authenticationPage.passwordIsInvalid"),
     ),
   });
   const formik = useFormik({
@@ -90,7 +90,7 @@ const LoginWithPhoneNumber = () => {
                   : false
               }
               className=" bg-transparent w-full text-[16px]"
-              label={i18next.t("authenticationPage.phoneNumber")}
+              label={t("authenticationPage.phoneNumber")}
               name="phoneNumber"
               autoComplete="new-phoneNumber"
               value={formik.values.phoneNumber}
@@ -110,7 +110,7 @@ const LoginWithPhoneNumber = () => {
               formik.touched.password && formik.errors.password ? true : false
             }
             className="text-[#fff] bg-transparent w-full text-[16px]"
-            label={i18next.t("authenticationPage.loginPassword")}
+            label={t("authenticationPage.loginPassword")}
             name="password"
             type="password"
             autoComplete="new-password"
@@ -134,7 +134,7 @@ const LoginWithPhoneNumber = () => {
           style={{ background: "#3D5AFE", color: "#fff" }}
           className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
         >
-          {i18next.t("authenticationPage.login")}
+          {t("authenticationPage.login")}
         </Button>
       </form>
       {isOpen && (

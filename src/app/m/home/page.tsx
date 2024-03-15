@@ -10,7 +10,7 @@ import { TelesaleIcon } from "@/assets/icons/TelesaleIcon";
 import { LoudspeakerIcon } from "@/assets/icons/LoudspeakerIcon";
 import { MenuIcon } from "@/assets/icons/MenuIcon";
 import Link from "next/link";
-import i18next from "i18next";
+import { t } from "i18next";
 import { priceFeedService } from "@/services/PriceFeedService";
 import FeatureSection from "@/components/Home/FeatureSection";
 
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <DepositIcon />
               <span className="text-[#fff]">
-                {i18next.t("homePage.deposit")}
+                {t("homePage.deposit")}
               </span>
             </div>
             <NextIcon />
@@ -65,7 +65,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <TelesaleIcon />
               <span className="text-[#fff]">
-                {i18next.t("homePage.service")}
+                {t("homePage.service")}
               </span>
             </div>
             <NextIcon />
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-2 p-4">
           <h5 className="text-[24px] text-white">
-            {i18next.t("homePage.popularTransactionPair")}
+            {t("homePage.popularTransactionPair")}
           </h5>
           <div className="flex gap-1 pb-3 overflow-auto ">
             {/* {dataCommon.length>0 && dataCommon.map((item:any)=>{
@@ -94,7 +94,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>
@@ -119,7 +119,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>
@@ -140,7 +140,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>
@@ -161,7 +161,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>
@@ -182,7 +182,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>
@@ -203,7 +203,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>
@@ -223,7 +223,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>
@@ -243,7 +243,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>
@@ -263,7 +263,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>
@@ -283,7 +283,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-[#fff] text-nowrap">
-                  {i18next.t("homePage.trade")}
+                  {t("homePage.trade")}
                 </span>
                 <NextIcon />
               </div>

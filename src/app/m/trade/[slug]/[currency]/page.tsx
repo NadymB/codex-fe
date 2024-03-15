@@ -11,7 +11,7 @@ import Trading from "@/components/trade/Trading";
 import { TradingCandleChart } from "@/components/trade/TradingCandleChart";
 import { getStaticURL } from "@/utils/constants";
 import { Button } from "@mui/material";
-import i18next from "i18next";
+import { t } from "i18next";
 import { useState } from "react";
 
 const TradePage = ({
@@ -35,7 +35,7 @@ const TradePage = ({
 
   const tabs = [
     {
-      name: `${i18next.t("tradePage.chart.title")}`,
+      name: `${t("tradePage.chart.title")}`,
       content: (
         <>
           <div className=" flex flex-col ">
@@ -75,7 +75,7 @@ const TradePage = ({
               onClick={handleLong}
             >
               <div className="w-full bg-[#55af72] py-[6px] px-4 ">
-                {i18next.t("tradePage.long")}
+                {t("tradePage.long")}
               </div>
             </Button>
             <Button
@@ -85,7 +85,7 @@ const TradePage = ({
               onClick={handleShort}
             >
               <div className="w-full bg-[#dd5350] py-[6px] px-4 ">
-                {i18next.t("tradePage.short")}
+                {t("tradePage.short")}
               </div>
             </Button>
           </div>
@@ -93,7 +93,7 @@ const TradePage = ({
       ),
     },
     {
-      name: `${i18next.t("tradePage.trade.title")}`,
+      name: `${t("tradePage.trade.title")}`,
       content: (
         <>
           <Trading

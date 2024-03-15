@@ -7,7 +7,7 @@ import { SecurityIcon } from "@/assets/icons/SecurityIcon";
 import { UsernameIcon } from "@/assets/icons/UsernameIcon";
 import { VisaIcon } from "@/assets/icons/VisaIcon";
 import { ProfileItem } from "./ProfileItem";
-import i18next from "i18next";
+import { t } from "i18next";
 import { useAuth } from "@/hooks/useAuth";
 
 export const AuthenticatedProfile = () => {
@@ -17,31 +17,31 @@ export const AuthenticatedProfile = () => {
       <div className="bg-[#1C1C1E] mt-2 rounded-sm">
         <ProfileItem
           icon={<UsernameIcon />}
-          filedName={i18next.t("profilePage.username")}
+          filedName={t("profilePage.username")}
           value={currentUser?.username}
           link=""
         />
         <ProfileItem
           icon={<MailIcon />}
-          filedName={i18next.t("profilePage.email")}
+          filedName={t("profilePage.email")}
           value={currentUser?.email}
           link=""
         />
         <ProfileItem
           icon={<PhoneIcon />}
-          filedName={i18next.t("profilePage.phoneNumber")}
-          value={currentUser?.phoneNumber ?? i18next.t("profilePage.notSet")}
+          filedName={t("profilePage.phoneNumber")}
+          value={currentUser?.phoneNumber ?? t("profilePage.notSet")}
           link=""
         />
         <ProfileItem
           icon={<LockIcon />}
-          filedName={i18next.t("profilePage.loginPassword")}
+          filedName={t("profilePage.loginPassword")}
           rightIcon={<ArrowRightIcon />}
           link="/m/setting/password"
         />
         <ProfileItem
           icon={<SecurityIcon />}
-          filedName={i18next.t("profilePage.securityCode")}
+          filedName={t("profilePage.securityCode")}
           rightIcon={<ArrowRightIcon />}
           link="/m/setting/password/security"
         />
@@ -49,14 +49,14 @@ export const AuthenticatedProfile = () => {
       <div className="bg-[#1C1C1E] mt-2 rounded-sm">
         <ProfileItem
           icon={<BankIcon />}
-          filedName={i18next.t("profilePage.withdrawAccount")}
+          filedName={t("profilePage.withdrawAccount")}
           rightIcon={<ArrowRightIcon />}
           link="/m/setting/payment"
         />
         <ProfileItem
           icon={<VisaIcon />}
-          filedName={i18next.t("profilePage.authentication")}
-          value={i18next.t("profilePage.notCertified")}
+          filedName={t("profilePage.authentication")}
+          value={t("profilePage.notCertified")}
           rightIcon={<ArrowRightIcon />}
           link="/m/setting/authentication"
         />

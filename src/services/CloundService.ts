@@ -1,4 +1,4 @@
-import i18next from "i18next";
+import { t } from "i18next";
 import Swal from "sweetalert2";
 import { convertName } from "../utils/convertName";
 import restConnector from "@/connectors/axiosRestConnector";
@@ -13,7 +13,7 @@ export const useGetSessionToken = () => {
       const { data } = await restConnector.get(`/uploads/session-token`);
       return data;
     } catch (error) {
-      toast(`${i18next.t("somethingWentWrong")}`, {
+      toast(`${t("somethingWentWrong")}`, {
         position: "top-right",
         autoClose: 2000,
         closeOnClick: true,
@@ -48,7 +48,7 @@ export const useGetTempUploadCredentials = () => {
       );
       return data.data;
     } catch (error) {
-      toast(`${i18next.t("somethingWentWrong")}`, {
+      toast(`${t("somethingWentWrong")}`, {
         position: "top-right",
         autoClose: 2000,
         closeOnClick: true,
@@ -97,7 +97,7 @@ export const useAliUpload = () => {
         return result;
       }
     } catch (error) {
-      toast(`${i18next.t("somethingWentWrong")}`, {
+      toast(`${t("somethingWentWrong")}`, {
         position: "top-right",
         autoClose: 2000,
         closeOnClick: true,

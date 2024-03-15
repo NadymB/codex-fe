@@ -3,7 +3,7 @@ import { MarketIcon } from "@/assets/icons/MarketIcon";
 import { TransactionIcon } from "@/assets/icons/TransactionIcon";
 import { WalletIcon } from "@/assets/icons/WalletIcon";
 import { PATH } from "@/utils/constants";
-import i18next from "i18next";
+import { t } from "i18next";
 import Cookies from "js-cookie";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -29,7 +29,7 @@ export const MenuBar = () => {
           <span
             className={`text-[14px] font-semibold ${pathname === PATH.HOME ? "text-[#3D5AFE]" : "text-[#888888]"} `}
           >
-            {i18next.t("menuBar.home")}
+            {t("menuBar.home")}
           </span>
         </Link>
         <Link
@@ -42,7 +42,7 @@ export const MenuBar = () => {
           <span
             className={`text-[14px] font-semibold ${pathname.includes("/markets") ? "text-[#3D5AFE]" : "text-[#888888]"} `}
           >
-            {i18next.t("menuBar.market")}
+            {t("menuBar.market")}
           </span>
         </Link>
         <Link
@@ -55,7 +55,7 @@ export const MenuBar = () => {
           <span
             className={`text-[14px] font-semibold ${pathname.includes(PATH.TRADE) ? "text-[#3D5AFE]" : "text-[#888888]"} `}
           >
-            {i18next.t("menuBar.transaction")}
+            {t("menuBar.transaction")}
           </span>
         </Link>
         <Link
@@ -68,7 +68,7 @@ export const MenuBar = () => {
           <span
             className={`text-[14px] font-semibold ${pathname === PATH.ASSET ? "text-[#3D5AFE]" : "text-[#888888]"} `}
           >
-            {i18next.t("menuBar.asset")}
+            {t("menuBar.asset")}
           </span>
         </Link>
       </div>

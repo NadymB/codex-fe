@@ -9,7 +9,7 @@ import { Table } from "@/components/table/Table";
 import { TrandingCell } from "@/components/table/TradingCell";
 import { priceFeedService } from "@/services/PriceFeedService";
 import { PRICE_TYPE } from "@/utils/constants";
-import i18next from "i18next";
+import { t } from "i18next";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -86,15 +86,15 @@ const MarketPage = () => {
 
   const marketTabOption = [
     {
-      label: `${i18next.t("marketPage.commodity")}`,
+      label: `${t("marketPage.commodity")}`,
       link: "/m/markets/commodity",
     },
     {
-      label: i18next.t("marketPage.cryptoCurrency"),
+      label: t("marketPage.cryptoCurrency"),
       link: "/m/markets/crypto",
     },
     {
-      label: i18next.t("marketPage.foreignExchange"),
+      label: t("marketPage.foreignExchange"),
       link: "/m/markets/forex",
     },
   ];
@@ -105,9 +105,9 @@ const MarketPage = () => {
         <div className="w-full p-3">
           <Table
             columns={[
-              `${i18next.t("marketPage.transaction")} / ${i18next.t("marketPage.tradingVolume")}`,
-              `${i18next.t("marketPage.price")}`,
-              `${i18next.t("marketPage.24HRisingDecline")}`,
+              `${t("marketPage.transaction")} / ${t("marketPage.tradingVolume")}`,
+              `${t("marketPage.price")}`,
+              `${t("marketPage.24HRisingDecline")}`,
             ]}
             data={data}
           />

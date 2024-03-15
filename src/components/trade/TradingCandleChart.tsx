@@ -3,7 +3,7 @@
 import { tradeService } from "@/services/TradeService";
 import { numberToLocaleString } from "@/utils/formatNumber";
 import { ChartData } from "@/utils/type";
-import i18next from "i18next";
+import { t } from "i18next";
 import Cookies from "js-cookie";
 import {
   KLineData,
@@ -177,19 +177,19 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
           <div className="flex flex-col">
             <div className="flex items-center justify-between">
               <div className="text-[#fff] text-[14px] opacity-30">
-                {i18next.t("tradePage.chart.24HourHigh")}
+                {t("tradePage.chart.24HourHigh")}
               </div>
               <div className="text-[#fff] text-[14px] ml-6">24.127</div>
             </div>
             <div className="flex items-center justify-between">
               <div className="text-[#fff] text-[14px] opacity-30">
-                {i18next.t("tradePage.chart.24HourLow")}
+                {t("tradePage.chart.24HourLow")}
               </div>
               <div className="text-[#fff] text-[14px] ml-6">24.127</div>
             </div>
             <div className="flex items-center justify-between">
               <div className="text-[#fff] text-[14px] opacity-30">
-                {i18next.t("tradePage.chart.24HourTurnover")}
+                {t("tradePage.chart.24HourTurnover")}
               </div>
               <div className="text-[#fff] text-[14px] ml-6">2.27B</div>
             </div>

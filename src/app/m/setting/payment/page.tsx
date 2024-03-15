@@ -3,7 +3,7 @@
 
 import { GoBack } from "@/components/layouts/GoBack";
 import { getStaticURL } from "@/utils/constants";
-import i18next from "i18next";
+import { t } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@mui/material";
@@ -11,7 +11,7 @@ import { Button } from "@mui/material";
 const PaymentPage = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-auto bg-[#000000]">
-      <GoBack title={i18next.t("withdrawAccount.title")} />
+      <GoBack title={t("withdrawAccount.title")} />
       <div className="flex flex-col items-center px-4 my-4">
         <Image
           src={`${getStaticURL()}/assets/images/empty.svg`}
@@ -21,7 +21,7 @@ const PaymentPage = () => {
           className="h-80 w-80"
         />
         <span className="text-base text-[#888]">
-          {i18next.t("withdrawAccount.noWithdrawalAccount")}
+          {t("withdrawAccount.noWithdrawalAccount")}
         </span>
       </div>
       <div className="fixed px-2 py-2 pt-3  w-full bottom-0 left-0">
@@ -34,7 +34,7 @@ const PaymentPage = () => {
             href={"/m/setting/payment/create"}
             className=" flex justify-center w-full px-4 py-[6px]  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded"
           >
-            {i18next.t("withdrawAccount.withdrawAccountBtn")}
+            {t("withdrawAccount.withdrawAccountBtn")}
           </Link>
         </Button>
       </div>

@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { getStaticURL } from "@/utils/constants";
-import i18next from "i18next";
+import { t } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
 

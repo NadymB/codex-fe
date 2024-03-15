@@ -4,7 +4,7 @@ import { geolocationService } from "@/services/GeolocationService";
 import { COUNTRIES } from "@/utils/constants";
 import { Button } from "@mui/material";
 import { useFormik } from "formik";
-import i18next from "i18next";
+import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import * as Yup from "yup";
@@ -24,21 +24,21 @@ const SignupWithPhoneNumber = () => {
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
     phoneNumber: Yup.string().required(
-      i18next.t("authenticationPage.phoneNumberIsInvalid"),
+      t("authenticationPage.phoneNumberIsInvalid"),
     ),
     username: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     password: Yup.string()
-      .min(8, i18next.t("authenticationPage.passwordMinLength"))
-      .matches(/[a-z]/, i18next.t("authenticationPage.passwordLowercase"))
-      .matches(/[A-Z]/, i18next.t("authenticationPage.passwordUppercase"))
-      .matches(/[0-9]/, i18next.t("authenticationPage.passwordNumber"))
+      .min(8, t("authenticationPage.passwordMinLength"))
+      .matches(/[a-z]/, t("authenticationPage.passwordLowercase"))
+      .matches(/[A-Z]/, t("authenticationPage.passwordUppercase"))
+      .matches(/[0-9]/, t("authenticationPage.passwordNumber"))
       .matches(
         /[^a-zA-Z0-9.]/,
-        i18next.t("authenticationPage.passwordSpecialChar"),
+        t("authenticationPage.passwordSpecialChar"),
       )
-      .required(i18next.t("authenticationPage.passwordIsInvalid")),
+      .required(t("authenticationPage.passwordIsInvalid")),
   });
   const formik = useFormik({
     initialValues: {
@@ -90,7 +90,7 @@ const SignupWithPhoneNumber = () => {
               formik.touched.username && formik.errors.username ? true : false
             }
             className=" bg-transparent w-full text-[16px]"
-            label={i18next.t("authenticationPage.username")}
+            label={t("authenticationPage.username")}
             name="username"
             autoComplete="new-email"
             value={formik.values.username}
@@ -120,7 +120,7 @@ const SignupWithPhoneNumber = () => {
                   : false
               }
               className=" bg-transparent w-full text-[16px]"
-              label={i18next.t("authenticationPage.phoneNumber")}
+              label={t("authenticationPage.phoneNumber")}
               name="phoneNumber"
               autoComplete="new-phoneNumber"
               value={formik.values.phoneNumber}
@@ -140,7 +140,7 @@ const SignupWithPhoneNumber = () => {
               formik.touched.password && formik.errors.password ? true : false
             }
             className="text-[#fff] bg-transparent w-full text-[16px]"
-            label={i18next.t("authenticationPage.loginPassword")}
+            label={t("authenticationPage.loginPassword")}
             name="password"
             type="password"
             autoComplete="new-password"
@@ -176,7 +176,7 @@ const SignupWithPhoneNumber = () => {
           style={{ background: "#3D5AFE", color: "#fff" }}
           className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
         >
-          {i18next.t("authenticationPage.register")}
+          {t("authenticationPage.register")}
         </Button>
       </form>
       {isOpen && (

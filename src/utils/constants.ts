@@ -1,5 +1,5 @@
 import { TabOptions } from "@/components/layouts/Tab";
-import i18next from "i18next";
+import { t } from "i18next";
 
 export const getStaticURL = () => process.env.NEXT_PUBLIC_STATIC_URL;
 export const OptionsLanguage = [
@@ -155,15 +155,15 @@ export enum PATH {
 
 export const marketTabOption: TabOptions = [
   {
-    label: `${i18next.t("marketPage.commodity")}`,
+    label: `${t("marketPage.commodity")}`,
     link: "/markets/commodity",
   },
   {
-    label: i18next.t("marketPage.cryptoCurrency"),
+    label: t("marketPage.cryptoCurrency"),
     link: "/markets/crypto",
   },
   {
-    label: i18next.t("marketPage.foreignExchange"),
+    label: t("marketPage.foreignExchange"),
     link: "/markets/forex",
   },
 ];

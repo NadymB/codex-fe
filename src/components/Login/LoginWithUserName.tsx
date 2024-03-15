@@ -2,7 +2,7 @@
 import { authService } from "@/services/AuthServices";
 import { Button } from "@mui/material";
 import { useFormik } from "formik";
-import i18next from "i18next";
+import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
@@ -17,10 +17,10 @@ const LoginWithUserName = () => {
   const router = useRouter();
   const validationSchema = Yup.object({
     username: Yup.string().required(
-      i18next.t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid"),
     ),
     password: Yup.string().required(
-      i18next.t("authenticationPage.passwordIsInvalid"),
+      t("authenticationPage.passwordIsInvalid"),
     ),
   });
   const formik = useFormik({
@@ -54,7 +54,7 @@ const LoginWithUserName = () => {
             formik.touched.username && formik.errors.username ? true : false
           }
           className=" bg-transparent w-full text-[16px]"
-          label={i18next.t("authenticationPage.username")}
+          label={t("authenticationPage.username")}
           name="username"
           autoComplete="new-username"
           value={formik.values.username}
@@ -73,7 +73,7 @@ const LoginWithUserName = () => {
             formik.touched.password && formik.errors.password ? true : false
           }
           className="text-[#fff] bg-transparent w-full text-[16px]"
-          label={i18next.t("authenticationPage.loginPassword")}
+          label={t("authenticationPage.loginPassword")}
           name="password"
           type="password"
           autoComplete="new-password"
@@ -97,7 +97,7 @@ const LoginWithUserName = () => {
         style={{ background: "#3D5AFE", color: "#fff" }}
         className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
       >
-        {i18next.t("authenticationPage.login")}
+        {t("authenticationPage.login")}
       </Button>
     </form>
   );
