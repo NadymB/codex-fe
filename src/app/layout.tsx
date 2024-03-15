@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../styles/index.css";
 import { WebSocketProvider } from "@/providers/WebSocketProvider";
 import { AuthProvider } from "@/components/authentication/AuthProvider";
+import "../../i18n";
 export default function RootLayout({
   children,
 }: {

@@ -5,7 +5,6 @@ import { GoBack } from "@/components/layouts/GoBack";
 import { HELP_CENTER_DATA } from "@/utils/constants";
 import { useParams } from "next/navigation";
 import i18next from "i18next";
-import "../../../../../../i18n";
 import { HelpCenterDetail } from "@/components/help/HelpCenterDetail";
 
 export default function HelpCenterDetailPage() {

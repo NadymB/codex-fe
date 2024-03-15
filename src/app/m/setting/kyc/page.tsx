@@ -3,11 +3,8 @@
 
 import { GoBack } from "@/components/layouts/GoBack";
 import { getStaticURL } from "@/utils/constants";
-import i18next from "i18next";
-import Image from "next/image";
-import Link from "next/link";
-import "../../../../../i18n";
 import { Button } from "@mui/material";
+import Link from "next/link";
 
 const KycPage = () => {
   return (

@@ -1,10 +1,6 @@
 "use client";
 import { useEffect } from "react";
 
-import "../../../i18n";
-
-import restConnector from "@/connectors/axiosRestConnector";
-import { authService } from "@/services/AuthServices";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../hooks/useAuth";
 export const AuthenticationLayout = ({

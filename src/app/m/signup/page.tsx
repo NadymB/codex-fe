@@ -7,7 +7,6 @@ import i18next from "i18next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import "../../../../i18n";
 import { useAuth } from "@/hooks/useAuth";
 import { Logo } from "@/components/Logo";
 import { OptionsLanguage, getStaticURL } from "@/utils/constants";

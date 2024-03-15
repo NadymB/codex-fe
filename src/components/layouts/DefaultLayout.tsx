@@ -3,7 +3,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 
 import { WebSocketCtx } from "@/providers/WebSocketProvider";
-import "../../../i18n";
 import { MenuBar } from "./MenuBar";
 
 import { useRouter } from "next/navigation";

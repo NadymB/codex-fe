@@ -12,7 +12,6 @@ import { SWIPER_SLIDER_DATA } from "@/utils/constants";
 import { SwiperItem } from "@/components/SwiperItem";
 import Link from "next/link";
 import i18next from "i18next";
-import "../../../i18n";
 
 export default function Home() {
   return (

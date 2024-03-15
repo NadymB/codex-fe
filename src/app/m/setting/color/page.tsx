@@ -4,7 +4,6 @@ import { GreenRiseIcon } from "@/assets/icons/GreenRiseIcon";
 import { GoBack } from "@/components/layouts/GoBack";
 import i18next from "i18next";
 import { useState } from "react";
-import "../../../../../i18n";
 import { RedRiseIcon } from "@/assets/icons/RedRiseIcon";
 
 const ColorPage = () => {

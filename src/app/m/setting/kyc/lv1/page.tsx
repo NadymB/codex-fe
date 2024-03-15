@@ -1,22 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { PhoneIcon } from "@/assets/icons/PhoneIcon";
+import { VisaIcon } from "@/assets/icons/VisaIcon";
 import { GoBack } from "@/components/layouts/GoBack";
 import { getStaticURL } from "@/utils/constants";
-import i18next from "i18next";
-import Image from "next/image";
-import Link from "next/link";
-import "../../../../../../i18n";
 import {
   Button,
   FormControl,
   FormControlLabel,
-  FormLabel,
   Radio,
-  RadioGroup,
+  RadioGroup
 } from "@mui/material";
-import { PhoneIcon } from "@/assets/icons/PhoneIcon";
-import { VisaIcon } from "@/assets/icons/VisaIcon";
+import Link from "next/link";
 
 const KycPage = () => {
   return (

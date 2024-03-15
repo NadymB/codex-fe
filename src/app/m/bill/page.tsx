@@ -3,7 +3,6 @@
 import { GoBack } from "@/components/layouts/GoBack";
 import { getStaticURL } from "@/utils/constants";
 import i18next from "i18next";
-import "../../../../i18n";
 import Image from "next/image";
 
 const BillPage = () => {

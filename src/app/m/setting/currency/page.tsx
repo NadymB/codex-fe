@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { OptionProps } from "../../asset/page";
 import i18next from "i18next";
-import "../../../../../i18n";
 
 const CurrencySetting = () => {
   const [currency, setCurrency] = useState<OptionProps>(DEFAULT_CURRENCY);

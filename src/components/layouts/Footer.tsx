@@ -1,7 +1,6 @@
 "use client";
 import { useTheme } from "@/hooks/useTheme";
 import { useTranslation } from "react-i18next";
-import "../../../i18n";
 import { Logo } from "../Logo";
 
 export const Footer = () => {

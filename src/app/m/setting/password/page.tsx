@@ -1,9 +1,7 @@
 "use client";
 import { GoBack } from "@/components/layouts/GoBack";
-import i18next from "i18next";
-import { useState } from "react";
-import "../../../../../i18n";
 import { useFormik } from "formik";
+import i18next from "i18next";
 import * as Yup from "yup";
 
 const PasswordPage = () => {

@@ -6,7 +6,6 @@ import { GoBack } from "@/components/layouts/GoBack";
 import { LEARN_ARTICLE_DATA } from "@/utils/constants";
 import { useParams } from "next/navigation";
 import i18next from "i18next";
-import "../../../../../../i18n";
 
 export default function ArticleDetailPage() {
   const params = useParams();

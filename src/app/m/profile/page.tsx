@@ -6,7 +6,6 @@ import { PublicProfile } from "@/components/profile/PublicProfile";
 import { UnauthenticatedProfile } from "@/components/profile/UnauthenticatedProfile";
 import { useAuth } from "@/hooks/useAuth";
 import i18next from "i18next";
-import "../../../../i18n";
 import { useEffect } from "react";
 
 const MarketPage = () => {

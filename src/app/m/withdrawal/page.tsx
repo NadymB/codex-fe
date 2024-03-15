@@ -2,7 +2,6 @@
 
 import { GoBack } from "@/components/layouts/GoBack";
 import i18next from "i18next";
-import "../../../../i18n";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { getStaticURL } from "@/utils/constants";

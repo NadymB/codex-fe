@@ -1,7 +1,6 @@
 "use client";
 import { GoBack } from "@/components/layouts/GoBack";
 import i18next from "i18next";
-import "../../../../../i18n";
 import Image from "next/image";
 import { getStaticURL } from "@/utils/constants";
 import { CheckUpdateIcon } from "@/assets/icons/ChecUpdateIcon";

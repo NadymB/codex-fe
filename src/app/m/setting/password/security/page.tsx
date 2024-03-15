@@ -1,7 +1,6 @@
 "use client";
 import { GoBack } from "@/components/layouts/GoBack";
 import i18next from "i18next";
-import "../../../../../../i18n";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 

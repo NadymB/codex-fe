@@ -40,11 +40,11 @@ export const useAuthProtection = (options: {
       const admin = await getCurrentUser();
       if (options?.preventAuthenticatedUser) {
         if (admin) {
-          await router.replace(options.redirect);
+          router.replace(options.redirect);
         }
       } else if (options?.preventUnAuthenticatedUser) {
         if (!admin) {
-          await router.back();
+          router.back();
         }
       }
       setLoading(false);
