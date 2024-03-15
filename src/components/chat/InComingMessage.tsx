@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
+import ImageGallery from "@/app/m/service/previewImage";
 import { IsTypingIcon } from "@/assets/icons/IsTypingIcon";
 import { ReceivedIcon } from "@/assets/icons/ReceivedIcon";
 import { Messages } from "@/models/Chat";
-import { Account } from "@/models/User";
 import { getStaticURL } from "@/utils/constants";
 import { DateTime } from "luxon";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface IProp {
   message: Messages;
@@ -37,12 +37,8 @@ export const InComingMessage = ({ message }: IProp) => {
             <div className="max-w-md">{message?.content?.text}</div>
             {!!message?.content?.images.length && (
               <div className="">
-                <img
-                  className="max-w-sm"
-                  src={message?.content?.images[0].original}
-                  alt=""
-                />
-              </div>
+              <ImageGallery image={message?.content?.images[0].original}/>
+            </div>
             )}
             <div className="flex items-center justify-end">
               <span className="text-[#4B5563] text-[12px]">

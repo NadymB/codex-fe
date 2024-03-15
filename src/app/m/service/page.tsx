@@ -136,7 +136,8 @@ const ServicePage = () => {
     }
   };
   const handleKeyDown = (event: any) => {
-    if (event.key === "Enter") {
+    let enterKey = 13; 
+    if (event.which == enterKey){
       event.preventDefault();
       handleSendMessage({ content: inputMessage });
     }
