@@ -269,9 +269,9 @@
     "placeholderMessage": "Messaggio da inviare..."
   },
   "kycPage": {
-		"title": "Autenticazione",
-		"warning": "Il documento di prova può autenticare solo un account, verifica che sia in tuo possesso prima di inviarlo.",
-		"uploadRequirementsTitle": "Requisiti per il caricamento dell'ID",
+    "title": "Autenticazione",
+    "warning": "Il documento di prova può autenticare solo un account, verifica che sia in tuo possesso prima di inviarlo.",
+    "uploadRequirementsTitle": "Requisiti per il caricamento dell'ID",
     "uploadRequirementsContent": "Le copie o le scansioni non saranno accettate, si prega di fornire foto originali.",
     "uploadRequirementsSubContent": "Deve essere un documento d'identità valido rilasciato dal governo",
     "correct": "esempio corretto",
@@ -291,5 +291,7 @@
     "clickToSelectSelfie": "Fai clic per scegliere un selfie",
     "submit": "invia",
     "uploadSuccess": "Upload success, wait for review"
-	}
+  },
+  "invalidFileFormat": "Formato file non valido. Si prega di scegliere un file immagine valido (png, jpg, webp)",
+  "minimumCapacityError": "La dimensione della tua immagine deve essere inferiore a 5MB"
 }

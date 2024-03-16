@@ -291,5 +291,7 @@
     "clickToSelectSelfie": "Bấm để chọn selfie",
     "submit": "Nộp",
     "uploadSuccess": "Upload success, wait for review"
-  }
+  },
+  "invalidFileFormat": "Định dạng tệp không hợp lệ. Vui lòng chọn tệp hình ảnh hợp lệ (png, jpg, webp)",
+  "minimumCapacityError": "Kích thước ảnh của bạn phải nhỏ hơn 5MB"
 }
