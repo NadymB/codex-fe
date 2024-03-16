@@ -182,6 +182,8 @@
   },
   "deposit": {
     "title": "Deposit",
+    "noWithdrawalAccount": "No withdrawal account set",
+    "withdrawAccountBtn": "Add withdrawal account",
     "chooseYourDepositMethod": "Choose your deposit method",
     "artificialDeposit": "Artificial deposit",
     "contactArtificial": "Contact artificial customer service to get deposit guidelines"
@@ -232,8 +234,21 @@
       "minute": "Minute",
       "balance": "Balance",
       "price": "Price",
-      "amount": "Quantity",
-      "quantity:": "Quantity"
+      "quantity:": "Quantity",
+      "noData": "No Data",
+      "tradeConfirmation": "Trade Confirmation",
+      "tradingPair": "Trading Pair",
+      "settlementPeriod": "Settlement Period",
+      "profitRatio": "Profit Ratio",
+      "amount": "Amount",
+      "expectedProfit": "Expected Profit",
+      "long": "Long",
+      "short": "Short",
+      "orderPrice": "Order Price",
+      "noMoreData": "No More Data",
+      "bullishAMinute": "Bullish a minute",
+      "bearishAMinute": "Bearish a minute",
+      "allOrders": "All Orders"
     },
     "chart": {
       "title": "Charts",
@@ -252,5 +267,29 @@
 		"onlineService": "Online service",
 		"onlineServiceContent": "Welcome to contact us if you need any need",
     "placeholderMessage": "The message to be sent..."
+	},
+  "kycPage": {
+		"title": "Authentication",
+		"warning": "The document can only certify one account. Please verify before you submit it.",
+		"uploadRequirementsTitle": "Identity certificate upload requirements",
+    "uploadRequirementsContent": "Copy or scanned parts are not received, please provide the original photo.",
+    "uploadRequirementsSubContent": "Must be a valid ID issued by the government",
+    "correct": "Correct example",
+    "incomplete": "Incomplete",
+    "vague": "Vague",
+    "flash": "Flash",
+    "guidance": "Guidance",
+    "guidanceContent": "Make sure the light is good when shooting, and only you appear in the picture.",
+    "guidanceSubContent": "Please adjust the position of the face as much as possible in the collection area as much as possible.",
+    "nextStep": "Next Step",
+    "chooseCertificateType": "Choose a certificate type",
+    "idCard": "ID Card",
+    "passport": "Passport",
+    "drivingLicense": "Driving license",
+    "residencePermit": "Residence permit",
+    "clickToSelectID": "Click to select ID",
+    "clickToSelectSelfie": "Click to select a selfie",
+    "submit": "Submit",
+    "uploadSuccess": "Upload success, wait for review"
 	}
 }

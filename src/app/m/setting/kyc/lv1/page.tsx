@@ -12,16 +12,17 @@ import {
   Radio,
   RadioGroup
 } from "@mui/material";
+import { t } from "i18next";
 import Link from "next/link";
 
 const KycPage = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-auto bg-[#000000]">
-      <GoBack title={"Xác thực"} />
+      <GoBack title={t("kycPage.title")} />
       <div className="flex flex-col  px-4 my-4">
         <div>
           <FormControl className=" flex flex-wrap my-1">
-            <span className="text-[#888888]">Chọn loại chứng chỉ</span>
+            <span className="text-[#888888]">{t("kycPage.warning")}</span>
             <RadioGroup
               sx={{ display: "flex", flexDirection: "row" }}
               aria-labelledby="demo-radio-buttons-group-label"
@@ -80,7 +81,7 @@ const KycPage = () => {
           />
           <div className="flex items-center w-fit gap-2 text-[#fff]">
             <VisaIcon />
-            <span className="text-[#3D5AFE]">Bấm để chọn ID</span>
+            <span className="text-[#3D5AFE]">{t("kycPage.clickToSelectID")}</span>
           </div>
         </div>
         <div className=" flex flex-col items-center justify-center gap-[10px] py-8 mb-4 border border-[#3D5AFE] border-dashed">
@@ -91,7 +92,7 @@ const KycPage = () => {
           />
           <div className="flex items-center w-fit gap-2 text-[#fff]">
             <PhoneIcon />
-            <span className="text-[#3D5AFE]">Bấm để chọn selfie</span>
+            <span className="text-[#3D5AFE]">{t("kycPage.clickToSelectSelfie")}</span>
           </div>
         </div>
         <div className="w-full mt-6">
@@ -104,7 +105,7 @@ const KycPage = () => {
               href={"/m/setting/payment/create"}
               className=" flex justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded"
             >
-              Nộp
+              {t("kycPage.submit")}
             </Link>
           </Button>
         </div>
