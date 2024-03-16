@@ -1153,3 +1153,11 @@ export const WS_TOPIC = {
   NOTIFICATION: "notification",
 };
 export const MAX_SIZE_IMAGE = 5 * 1024 * 1000;
+
+
+export enum CERTIFICATE_TYPE {
+  ID_CARD = 'id_card',
+  PASSPORT = 'passport',
+  DRIVING_LICENSE = 'driving_license',
+  RESIDENCE_PERMIT = 'residence_permit'
+}
