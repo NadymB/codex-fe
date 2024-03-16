@@ -182,6 +182,8 @@
   },
   "deposit": {
     "title": "ricaricare",
+    "noWithdrawalAccount": "Conto di prelievo non impostato",
+    "withdrawAccountBtn": "Aggiungi un conto di prelievo",
     "chooseYourDepositMethod": "Scegli il tuo metodo di ricarica",
     "artificialDeposit": "Ricarica manuale",
     "contactArtificial": "Contatta il servizio clienti manuale per ottenere la guida alla ricarica"
@@ -232,8 +234,21 @@
       "minute": "minuto",
       "balance": "bilancia",
       "price": "prezzo",
-      "amount": "quantità",
-      "quantity:": "quantità"
+      "quantity:": "quantità",
+      "noData": "Nessun dato",
+      "tradeConfirmation": "Conferma della transazione dell'ordine",
+      "tradingPair": "coppia di scambio",
+      "settlementPeriod": "ciclo di fatturazione",
+      "profitRatio": "tasso di rendimento",
+      "amount": "l'importo",
+      "expectedProfit": "ritorno previsto",
+      "long": "Vedi altro",
+      "short": "ribassista",
+      "orderPrice": "Prezzo di liquidazione",
+      "noMoreData": "Vedi altro un minuto",
+      "bullishAMinute": "Vedi altro un minuto",
+      "bearishAMinute": "ribassista un minuto",
+      "allOrders": "tutti gli ordini"
     },
     "chart": {
       "title": "tendenza",
@@ -252,5 +267,29 @@
     "onlineService": "Servizio Online",
     "onlineServiceContent": "Se hai bisogno di qualcosa, ti preghiamo di contattarci",
     "placeholderMessage": "Messaggio da inviare..."
-  }
+  },
+  "kycPage": {
+		"title": "Autenticazione",
+		"warning": "Il documento di prova può autenticare solo un account, verifica che sia in tuo possesso prima di inviarlo.",
+		"uploadRequirementsTitle": "Requisiti per il caricamento dell'ID",
+    "uploadRequirementsContent": "Le copie o le scansioni non saranno accettate, si prega di fornire foto originali.",
+    "uploadRequirementsSubContent": "Deve essere un documento d'identità valido rilasciato dal governo",
+    "correct": "esempio corretto",
+    "incomplete": "incompleto",
+    "vague": "Vago",
+    "flash": "veloce",
+    "guidance": "guida",
+    "guidanceContent": "Assicurati che l'illuminazione sia buona e che solo tu sia nell'inquadratura durante le riprese.",
+    "guidanceSubContent": "Si prega di regolare la posizione del viso in modo appropriato per adattarsi il più possibile all'area raccolta.",
+    "nextStep": "Passo successivo",
+    "chooseCertificateType": "Scegli un tipo di documento",
+    "idCard": "carta d'identità",
+    "passport": "passaporto",
+    "drivingLicense": "patente di guida",
+    "residencePermit": "Permesso di residenza",
+    "clickToSelectID": "Fare clic per selezionare l'ID",
+    "clickToSelectSelfie": "Fai clic per scegliere un selfie",
+    "submit": "invia",
+    "uploadSuccess": "Upload success, wait for review"
+	}
 }

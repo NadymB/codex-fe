@@ -182,6 +182,8 @@
   },
   "deposit": {
     "title": "recharger",
+    "noWithdrawalAccount": "Compte de retrait non configuré",
+    "withdrawAccountBtn": "Ajouter un compte de retrait",   
     "chooseYourDepositMethod": "Choisissez votre mode de recharge",
     "artificialDeposit": "Recharge manuelle",
     "contactArtificial": "Contactez le service client manuel pour obtenir le guide de recharge"
@@ -232,8 +234,21 @@
       "minute": "minute",
       "balance": "équilibre",
       "price": "prix",
-      "amount": "quantité",
-      "quantity:": "quantité"
+      "quantity:": "quantité",
+      "noData": "Pas de données",
+      "tradeConfirmation": "Confirmation de transaction de commande",
+      "tradingPair": "paire commerciale",
+      "settlementPeriod": "cycle de facturation",
+      "profitRatio": "taux de retour",
+      "amount": "la quantité",
+      "expectedProfit": "retour attendu",
+      "long": "voir plus",
+      "short": "baissier",
+      "orderPrice": "Prix de règlement",
+      "noMoreData": "plus de données",
+      "bullishAMinute": "voir plus une minute",
+      "bearishAMinute": "baissier une minute",
+      "allOrders": "Tous les ordres"
     },
     "chart": {
       "title": "s'orienter",
@@ -252,5 +267,29 @@
     "onlineService": "un service en ligne",
     "onlineServiceContent": "Si vous avez besoin de quoi que ce soit, veuillez nous contacter",
     "placeholderMessage": "Message à envoyer..."
-  }
+  },
+  "kycPage": {
+		"title": "Authentification",
+		"warning": "Le document de preuve ne peut authentifier qu'un seul compte, veuillez vérifier que vous le détenez avant de le soumettre.",
+		"uploadRequirementsTitle": "Exigences de téléchargement d'ID",
+    "uploadRequirementsContent": "Les copies ou les copies numérisées ne seront pas acceptées, veuillez fournir des photos originales.",
+    "uploadRequirementsSubContent": "Doit être une pièce d'identité valide émise par le gouvernement",
+    "correct": "bon exemple",
+    "incomplete": "incomplet",
+    "vague": "Vague",
+    "flash": "destello",
+    "guidance": "guide",
+    "guidanceContent": "Assurez-vous que l'éclairage est bon et que vous seul êtes dans le cadre lors de la prise de vue.",
+    "guidanceSubContent": "Veuillez ajuster la position du visage de manière appropriée pour s'adapter autant que possible à la zone collectée.",
+    "nextStep": "L'étape suivante",
+    "chooseCertificateType": "Choisissez un type de document",
+    "idCard": "Carte d'identité",
+    "passport": "passeport",
+    "drivingLicense": "permis de conduire",
+    "residencePermit": "Permis de résidence",
+    "clickToSelectID": "Cliquez pour sélectionner l'identifiant",
+    "clickToSelectSelfie": "Cliquez pour choisir un selfie",
+    "submit": "soumettre",
+    "uploadSuccess": "Upload success, wait for review"
+	}
 }

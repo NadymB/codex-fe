@@ -173,10 +173,17 @@
     "passwordIsInvalid": "कृपया पासवर्ड भरें",
     "phoneNumberIsInvalid": "कृपया अपना फ़ोन नंबर भरें",
     "phoneNumberIsNotTrue": "मोबाइल नंबर गलत है",
+    "passwordMinLength": "पासवर्ड कम से कम 8 वर्णों का होना चाहिए",
+    "passwordLowercase": "पासवर्ड में कम से कम एक छोटा अक्षर होना चाहिए",
+    "passwordUppercase": "पासवर्ड में कम से कम एक बड़ा अक्षर होना चाहिए",
+    "passwordNumber": "पासवर्ड में कम से कम एक संख्या होनी चाहिए",
+    "passwordSpecialChar": "पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए",
     "emailIsInvalid": "कृपया अपना ईमेल दर्ज करें"
   },
   "deposit": {
     "title": "जमा",
+    "noWithdrawalAccount": "कोई निकासी खाता सेट नहीं है",
+    "withdrawAccountBtn": "निकासी खाता जोड़ें",
     "chooseYourDepositMethod": "अपना जमा तरीका चुनें",
     "artificialDeposit": "कृत्रिम जमा",
     "contactArtificial": "जमा मार्गदर्शिका प्राप्त करने के लिए कृत्रिम ग्राहक सेवा से संपर्क करें"
@@ -227,8 +234,21 @@
       "minute": "मिनट",
       "balance": "संतुलन",
       "price": "मूल्य",
-      "amount": "मात्रा",
-      "quantity:": "मात्रा"
+      "quantity:": "मात्रा",
+      "noData": "Pas de données",
+      "tradeConfirmation": "Confirmation de transaction de commande",
+      "tradingPair": "paire commerciale",
+      "settlementPeriod": "cycle de facturation",
+      "profitRatio": "taux de retour",
+      "amount": "la quantité",
+      "expectedProfit": "retour attendu",
+      "long": "voir plus",
+      "short": "baissier",
+      "orderPrice": "Prix de règlement",
+      "noMoreData": "plus de données",
+      "bullishAMinute": "voir plus une minute",
+      "bearishAMinute": "baissier une minute",
+      "allOrders": "Tous les ordres"
     },
     "chart": {
       "title": "चार्ट",
@@ -247,5 +267,29 @@
     "onlineService": "ऑनलाइन सेवा",
     "onlineServiceContent": "यदि आपको कोई आवश्यकता हो तो हमसे संपर्क करने का स्वागत है",
     "placeholderMessage": "भेजने के लिए संदेश..."
+  },
+  "kycPage": {
+    "title": "प्रमाणीकरण",
+    "warning": "दस्तावेज केवल एक खाता प्रमाणित कर सकते हैं। कृपया इसे सबमिट करने से पहले सत्यापित करें।",
+    "uploadRequirementsTitle": "पहचान प्रमाणपत्र अपलोड की आवश्यकताएं",
+    "uploadRequirementsContent": "कृपया मूल फोटो प्रदान करें, प्रतिलिपि या स्कैन किए गए भाग स्वीकार नहीं किए जाते हैं।",
+    "uploadRequirementsSubContent": "सरकार द्वारा जारी किया गया एक वैध आईडी होनी चाहिए",
+    "correct": "सही उदाहरण",
+    "incomplete": "अधूरा",
+    "vague": "अस्पष्ट",
+    "flash": "फ्लैश",
+    "guidance": "मार्गदर्शन",
+    "guidanceContent": "फोटो खींचते समय सुनिश्चित करें कि प्रकाश अच्छा है, और फोटो में केवल आप ही प्रकट हों।",
+    "guidanceSubContent": "कृपया संग्रह क्षेत्र में अपने चेहरे की स्थिति को जितना संभव हो सके समायोजित करें।",
+    "nextStep": "अगला कदम",
+    "chooseCertificateType": "प्रमाणपत्र प्रकार चुनें",
+    "idCard": "आईडी कार्ड",
+    "passport": "पासपोर्ट",
+    "drivingLicense": "ड्राइविंग लाइसेंस",
+    "residencePermit": "निवास परमिट",
+    "clickToSelectID": "आईडी का चयन करने के लिए क्लिक करें",
+    "clickToSelectSelfie": "सेल्फी का चयन करने के लिए क्लिक करें",
+    "submit": "सबमिट करें",
+    "uploadSuccess": "अपलोड सफल, समीक्षा का इंतजार करें"
   }
 }

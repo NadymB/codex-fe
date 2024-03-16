@@ -22,6 +22,10 @@ const TradePage = ({
   const [isOpenConfirmPaymentModal, setIsOpenConfirmPaymenModal] =
     useState(false);
   const [isLong, setIsLong] = useState<boolean>();
+  const [isSelectTab, setIsSelectTab] = useState(0);
+  const changeTab = (tabNumber: number) => {
+    setIsSelectTab(tabNumber);
+  };
 
   const handleLong = () => {
     setIsLong(true);
@@ -72,7 +76,7 @@ const TradePage = ({
               sx={{ padding: 0, textTransform: "none" }}
               className="p-0 w-full overflow-hidden normal-case"
               variant="contained"
-              onClick={handleLong}
+              onClick={() => setIsSelectTab(1)}
             >
               <div className="w-full bg-[#55af72] py-[6px] px-4 ">
                 {t("tradePage.long")}
@@ -82,7 +86,7 @@ const TradePage = ({
               sx={{ padding: 0, textTransform: "none" }}
               className="p-0 w-full overflow-hidden normal-case"
               variant="contained"
-              onClick={handleShort}
+              onClick={() => setIsSelectTab(1)}
             >
               <div className="w-full bg-[#dd5350] py-[6px] px-4 ">
                 {t("tradePage.short")}
@@ -115,6 +119,8 @@ const TradePage = ({
         tabs={tabs}
         classNameTab="sticky top-0 left-0 bg-[#000000] z-[100] "
         classNameItem="flex-1 "
+        onChange={(value) => changeTab(value)}
+        activeTab={isSelectTab}
       />
       {isOpenConfirmPaymentModal && (
         <ConfirmPaymentModal

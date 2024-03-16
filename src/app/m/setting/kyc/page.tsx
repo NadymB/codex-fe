@@ -4,30 +4,30 @@
 import { GoBack } from "@/components/layouts/GoBack";
 import { getStaticURL } from "@/utils/constants";
 import { Button } from "@mui/material";
+import i18next from "i18next";
+import "../../../../../i18n";
 import Link from "next/link";
 
 const KycPage = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-auto bg-[#000000]">
-      <GoBack title={"Xác thực"} />
+      <GoBack title={i18next.t("kycPage.title")} />
       <div className="flex flex-col  px-4 my-4">
         <div className="py-[6px] px-4 flex items-center bg-[#fff4e5] rounded mb-4">
           <div className="py-2 text-[#663c00] ">
-            Tài liệu chỉ có thể chứng nhận một tài khoản. Vui lòng xác minh
-            trước khi bạn gửi nó.
+            {i18next.t("kycPage.warning")}
           </div>
         </div>
         <div>
-          <div className="text-[#fff]">Yêu cầu tải lên chứng chỉ nhận dạng</div>
+          <div className="text-[#fff]">{i18next.t("kycPage.uploadRequirementsTitle")}</div>
           <div className="pl-[40px] my-4">
             <li className="text-[#888888]">
               <span>
-                Không nhận được các bộ phận sao chép hoặc quét, vui lòng cung
-                cấp ảnh gốc.
+                {i18next.t("kycPage.uploadRequirementsContent")}
               </span>
             </li>
             <li className="text-[#888888]">
-              <span>Phải là ID hợp lệ do chính phủ ban hành.</span>
+              <span>{i18next.t("kycPage.uploadRequirementsSubContent")}</span>
             </li>
           </div>
           <img
@@ -38,18 +38,16 @@ const KycPage = () => {
         </div>
         {/*  */}
         <div>
-          <div className="text-[#fff]">Hướng dẫn</div>
+          <div className="text-[#fff]">{i18next.t("kycPage.guidance")}</div>
           <div className="pl-[40px] my-4">
             <li className="text-[#888888]">
               <span>
-                Hãy chắc chắn rằng ánh sáng là tốt khi chụp, và chỉ bạn xuất
-                hiện trong hình.
+                {i18next.t("kycPage.guidanceContent")}
               </span>
             </li>
             <li className="text-[#888888]">
               <span>
-                Vui lòng điều chỉnh vị trí của khuôn mặt càng nhiều càng tốt
-                trong khu vực thu thập càng nhiều càng tốt.
+                {i18next.t("kycPage.guidanceSubContent")}
               </span>
             </li>
           </div>
@@ -69,7 +67,7 @@ const KycPage = () => {
               href={"/m/setting/payment/create"}
               className=" flex justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded"
             >
-              Bước tiếp theo
+              {i18next.t("kycPage.nextStep")}
             </Link>
           </Button>
         </div>

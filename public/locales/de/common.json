@@ -182,6 +182,8 @@
   },
   "deposit": {
     "title": "aufladen",
+    "noWithdrawalAccount": "Auszahlungskonto nicht eingerichtet",
+    "withdrawAccountBtn": "Auszahlungskonto hinzufügen",
     "chooseYourDepositMethod": "Wählen Sie Ihre Auflademethode",
     "artificialDeposit": "Manuelles Aufladen",
     "contactArtificial": "Wenden Sie sich an den manuellen Kundendienst, um die Aufladeanleitung zu erhalten"
@@ -232,8 +234,21 @@
       "minute": "Minute",
       "balance": "Gleichgewicht",
       "price": "Preis",
-      "amount": "Menge",
-      "quantity:": "Menge"
+      "quantity:": "Menge",
+      "noData": "Keine Daten",
+      "tradeConfirmation": "keine Daten mehr",
+      "tradingPair": "Handelspaar",
+      "settlementPeriod": "Rechnungskreislauf",
+      "profitRatio": "Rendite",
+      "amount": "die Summe",
+      "expectedProfit": "erwartete Rückkehr",
+      "long": "Mehr sehen",
+      "short": "bärisch",
+      "orderPrice": "Abrechnungspreis",
+      "noMoreData": "keine Daten mehr",
+      "bullishAMinute": "Mehr sehen eine Minute",
+      "bearishAMinute": "Abrechnungspreis",
+      "allOrders": "alle Bestellungen"
     },
     "chart": {
       "title": "Trend",
@@ -252,5 +267,29 @@
     "onlineService": "Onlineservice",
     "onlineServiceContent": "Wenn Sie etwas brauchen, kontaktieren Sie uns bitte",
     "placeholderMessage": "Nachricht zu senden..."
-  }
+  },
+  "kycPage": {
+		"title": "Authentifizierung",
+		"warning": "Das Nachweisdokument kann nur ein Konto authentifizieren, bitte vergewissern Sie sich, dass Sie es besitzen, bevor Sie es einreichen.",
+		"uploadRequirementsTitle": "ID-Upload-Anforderungen",
+    "uploadRequirementsContent": "Kopien oder gescannte Kopien werden nicht akzeptiert, bitte stellen Sie Originalfotos zur Verfügung.",
+    "uploadRequirementsSubContent": "Muss ein gültiger amtlicher Ausweis sein",
+    "correct": "richtiges Beispiel",
+    "incomplete": "unvollständig",
+    "vague": "Vage",
+    "flash": "blinken",
+    "guidance": "Führung",
+    "guidanceContent": "Stellen Sie sicher, dass die Beleuchtung gut ist und nur Sie sich beim Fotografieren im Bild befinden.",
+    "guidanceSubContent": "Bitte passen Sie die Position des Gesichts so an, dass es so weit wie möglich in den erfassten Bereich passt.",
+    "nextStep": "Nächster Schritt",
+    "chooseCertificateType": "Wählen Sie einen Dokumenttyp aus",
+    "idCard": "Ausweis",
+    "passport": "Reisepass",
+    "drivingLicense": "Führerschein",
+    "residencePermit": "Aufenthaltsgenehmigung",
+    "clickToSelectID": "Klicken Sie, um die ID auszuwählen",
+    "clickToSelectSelfie": "Klicken Sie, um ein Selfie auszuwählen",
+    "submit": "einreichen",
+    "uploadSuccess": "Upload success, wait for review"
+	}
 }

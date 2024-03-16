@@ -182,6 +182,8 @@
   },
   "deposit": {
     "title": "充電",
+    "noWithdrawalAccount": "離脱口座はありません",
+    "withdrawAccountBtn": "離脱アカウントを追加します",
     "chooseYourDepositMethod": "リチャージメソッドを選択してください",
     "artificialDeposit": "人工充電",
     "contactArtificial": "人工顧客サービスに連絡して、充電ガイドラインを取得してください"
@@ -232,8 +234,21 @@
       "minute": "分",
       "balance": "残高",
       "price": "価格",
-      "amount": "数量",
-      "quantity:": "数量"
+      "quantity:": "数量",
+      "noData": "データなし",
+      "tradeConfirmation": "取引確認",
+      "tradingPair": "通貨ペア",
+      "settlementPeriod": "決済期間",
+      "profitRatio": "利益率",
+      "amount": "金額",
+      "expectedProfit": "期待利益",
+      "long": "買い上げる",
+      "short": "売り下げる",
+      "orderPrice": "決済価格",
+      "noMoreData": "これ以上データなし",
+      "bullishAMinute": "上げる 1分",
+      "bearishAMinute": "下げる 1分",
+      "allOrders": "すべての注文"
     },
     "chart": {
       "title": "チャート",
@@ -252,5 +267,29 @@
     "onlineService": "オンラインサービス",
     "onlineServiceContent": "必要な場合はお問い合わせください",
     "placeholderMessage": "送信されるメッセージ..."
-  }
+  },
+  "kycPage": {
+		"title": "認証",
+		"warning": "ドキュメントは1つのアカウントのみを証明できます。送信する前に確認してください。",
+		"uploadRequirementsTitle": "ID証明書のアップロード要件",
+    "uploadRequirementsContent": "コピーまたはスキャンされた部品が受信されません。元の写真をご用意してください。",
+    "uploadRequirementsSubContent": "政府が発行した有効なIDでなければなりません",
+    "correct": "正しい例",
+    "incomplete": "不完全な",
+    "vague": "漠然",
+    "flash": "閃光",
+    "guidance": "ガイダンス",
+    "guidanceContent": "撮影するときは光が良好であることを確認してください、そしてあなただけが写真に現れてください。",
+    "guidanceSubContent": "コレクションエリアの可能な限り顔の位置をできるだけ調整してください。",
+    "nextStep": "次のステップ",
+    "chooseCertificateType": "証明書タイプを選択します",
+    "idCard": "IDカード",
+    "passport": "パスポート",
+    "drivingLicense": "ドライビングライセンス",
+    "residencePermit": "居住許可",
+    "clickToSelectID": "クリックしてIDを選択します",
+    "clickToSelectSelfie": "クリックしてセルフィーを選択します",
+    "submit": "送信",
+    "uploadSuccess": "Upload success, wait for review"
+	}
 }

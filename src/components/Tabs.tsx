@@ -7,9 +7,10 @@ interface IProp {
   }[];
   classNameItem?: string;
   classNameTab?: string;
+  onChange: (value: number) => void;
+  activeTab: number;
 }
-const Tabs = ({ tabs, classNameItem, classNameTab }: IProp) => {
-  const [activeTab, setActiveTab] = useState(0);
+const Tabs = ({ tabs, classNameItem, classNameTab, onChange, activeTab  }: IProp) => {
   const [tabPosition, setTabPosition] = useState({ left: 0, width: 0 });
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
@@ -21,10 +22,6 @@ const Tabs = ({ tabs, classNameItem, classNameTab }: IProp) => {
     }
   }, [activeTab]);
 
-  const changeTab = (tabNumber: number) => {
-    setActiveTab(tabNumber);
-  };
-
   return (
     <div>
       <div className={`${classNameTab} overflow-x-hidden`}>
@@ -35,7 +32,7 @@ const Tabs = ({ tabs, classNameItem, classNameTab }: IProp) => {
               key={index}
               ref={(element) => (tabRefs.current[index] = element)}
               className={`${classNameItem} tab-button ${activeTab === index ? "text-[#3D5AFE]" : "text-[#999]"} font-medium px-4 py-3 rounded-[0px] normal-case`}
-              onClick={() => changeTab(index)}
+              onClick={() => onChange(index)}
             >
               {tab.name}
             </Button>
