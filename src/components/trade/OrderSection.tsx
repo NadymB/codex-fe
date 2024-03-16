@@ -16,7 +16,7 @@ const tabOrder = [
             <OrderItem key={index} isLong={item.long} price={item.paymentPrice} amount={item.amount} profit={item.profit}/>
           ))}
         </div>
-        <span className="w-full text-[#9ca3af] text-xs pb-3 text-center">Không có thêm dữ liệu</span>
+        <span className="w-full text-[#9ca3af] text-xs pb-3 text-center">{t("tradePage.trade.noMoreData")}</span>
       </div>
     ) : (
       <div className="flex flex-col items-center justify-center p-4">

@@ -4,30 +4,29 @@
 import { GoBack } from "@/components/layouts/GoBack";
 import { getStaticURL } from "@/utils/constants";
 import { Button } from "@mui/material";
-import i18next from "i18next";
-import "../../../../../i18n";
+import { t } from "i18next";
 import Link from "next/link";
 
 const KycPage = () => {
   return (
     <div className="flex flex-col min-h-screen overflow-auto bg-[#000000]">
-      <GoBack title={i18next.t("kycPage.title")} />
+      <GoBack title={t("kycPage.title")} />
       <div className="flex flex-col  px-4 my-4">
         <div className="py-[6px] px-4 flex items-center bg-[#fff4e5] rounded mb-4">
           <div className="py-2 text-[#663c00] ">
-            {i18next.t("kycPage.warning")}
+            {t("kycPage.warning")}
           </div>
         </div>
         <div>
-          <div className="text-[#fff]">{i18next.t("kycPage.uploadRequirementsTitle")}</div>
+          <div className="text-[#fff]">{t("kycPage.uploadRequirementsTitle")}</div>
           <div className="pl-[40px] my-4">
             <li className="text-[#888888]">
               <span>
-                {i18next.t("kycPage.uploadRequirementsContent")}
+                {t("kycPage.uploadRequirementsContent")}
               </span>
             </li>
             <li className="text-[#888888]">
-              <span>{i18next.t("kycPage.uploadRequirementsSubContent")}</span>
+              <span>{t("kycPage.uploadRequirementsSubContent")}</span>
             </li>
           </div>
           <img
@@ -38,16 +37,16 @@ const KycPage = () => {
         </div>
         {/*  */}
         <div>
-          <div className="text-[#fff]">{i18next.t("kycPage.guidance")}</div>
+          <div className="text-[#fff]">{t("kycPage.guidance")}</div>
           <div className="pl-[40px] my-4">
             <li className="text-[#888888]">
               <span>
-                {i18next.t("kycPage.guidanceContent")}
+                {t("kycPage.guidanceContent")}
               </span>
             </li>
             <li className="text-[#888888]">
               <span>
-                {i18next.t("kycPage.guidanceSubContent")}
+                {t("kycPage.guidanceSubContent")}
               </span>
             </li>
           </div>
@@ -67,7 +66,7 @@ const KycPage = () => {
               href={"/m/setting/payment/create"}
               className=" flex justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded"
             >
-              {i18next.t("kycPage.nextStep")}
+              {t("kycPage.nextStep")}
             </Link>
           </Button>
         </div>
