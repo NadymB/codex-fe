@@ -183,7 +183,7 @@
   "deposit": {
     "title": "recharger",
     "noWithdrawalAccount": "Compte de retrait non configuré",
-    "withdrawAccountBtn": "Ajouter un compte de retrait",   
+    "withdrawAccountBtn": "Ajouter un compte de retrait",
     "chooseYourDepositMethod": "Choisissez votre mode de recharge",
     "artificialDeposit": "Recharge manuelle",
     "contactArtificial": "Contactez le service client manuel pour obtenir le guide de recharge"
@@ -269,9 +269,9 @@
     "placeholderMessage": "Message à envoyer..."
   },
   "kycPage": {
-		"title": "Authentification",
-		"warning": "Le document de preuve ne peut authentifier qu'un seul compte, veuillez vérifier que vous le détenez avant de le soumettre.",
-		"uploadRequirementsTitle": "Exigences de téléchargement d'ID",
+    "title": "Authentification",
+    "warning": "Le document de preuve ne peut authentifier qu'un seul compte, veuillez vérifier que vous le détenez avant de le soumettre.",
+    "uploadRequirementsTitle": "Exigences de téléchargement d'ID",
     "uploadRequirementsContent": "Les copies ou les copies numérisées ne seront pas acceptées, veuillez fournir des photos originales.",
     "uploadRequirementsSubContent": "Doit être une pièce d'identité valide émise par le gouvernement",
     "correct": "bon exemple",
@@ -291,5 +291,7 @@
     "clickToSelectSelfie": "Cliquez pour choisir un selfie",
     "submit": "soumettre",
     "uploadSuccess": "Upload success, wait for review"
-	}
+  },
+  "invalidFileFormat": "Format de fichier invalide. Veuillez choisir un fichier image valide (png, jpg, webp)",
+  "minimumCapacityError": "La taille de votre image doit être inférieure à 5Mo"
 }

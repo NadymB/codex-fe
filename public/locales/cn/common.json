@@ -183,7 +183,7 @@
   "deposit": {
     "title": "学习",
     "noWithdrawalAccount": "No withdrawal account set",
-    "withdrawAccountBtn": "Add withdrawal account",    
+    "withdrawAccountBtn": "Add withdrawal account",
     "chooseYourDepositMethod": "选择您的充值方式",
     "artificialDeposit": "人工充值",
     "contactArtificial": "联系人工客服，获得充值指引"
@@ -269,9 +269,9 @@
     "placeholderMessage": "要发送的消息..."
   },
   "kycPage": {
-		"title": "身份认证",
-		"warning": "证明文件只可以认证一个账户，在提交之前请核实是您本人所持有。",
-		"uploadRequirementsTitle": "身份证明上传要求",
+    "title": "身份认证",
+    "warning": "证明文件只可以认证一个账户，在提交之前请核实是您本人所持有。",
+    "uploadRequirementsTitle": "身份证明上传要求",
     "uploadRequirementsContent": "复印件或者扫描件不被接收，请提供原件照片",
     "uploadRequirementsSubContent": "必须是政府签发的有效身份证件",
     "correct": "正确示例",
@@ -291,5 +291,7 @@
     "clickToSelectSelfie": "点击选择自拍照",
     "submit": "提交",
     "uploadSuccess": "Upload success, wait for review"
-	}
+  },
+  "invalidFileFormat": "无效的文件格式。请选择有效的图像文件（png、jpg、webp）",
+  "minimumCapacityError": "您的图像大小必须小于 5MB"
 }
