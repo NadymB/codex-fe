@@ -93,9 +93,9 @@ const KycPage = () => {
           uploadedImagesIdBack,
           uploadedImagesSelfie,
         ] = await Promise.all([
-          onAliUpload(cardIdFrontImages,"","certificate_front_image"),
-          onAliUpload(cardIdBackImages, "messageImage", `message-image`),
-          onAliUpload(selfieImages, "messageImage", `message-image`),
+          onAliUpload(cardIdFrontImages,"",`certificate_front_id_${currentUser?.id}`),
+          onAliUpload(cardIdBackImages, "", `certificate_back_id_${currentUser?.id}`),
+          onAliUpload(selfieImages, "", `certificate_selfie_id_${currentUser?.id}`),
         ]);
 
         let imagesCardIdFront = [];
