@@ -173,6 +173,11 @@
     "passwordIsInvalid": "8-20 caracteres",
     "phoneNumberIsInvalid": "Por favor completa tu número de teléfono",
     "phoneNumberIsNotTrue": "El número de teléfono móvil es incorrecto",
+    "passwordMinLength": "La contraseña debe tener al menos 8 caracteres",
+    "passwordLowercase": "La contraseña debe contener al menos una letra minúscula",
+    "passwordUppercase": "La contraseña debe contener al menos una letra mayúscula",
+    "passwordNumber": "La contraseña debe contener al menos un número",
+    "passwordSpecialChar": "La contraseña debe contener al menos un carácter especial",
     "emailIsInvalid": "El número de móvil es incorrecto"
   },
   "deposit": {
@@ -229,8 +234,21 @@
       "minute": "minuto",
       "balance": "balance",
       "price": "precio",
-      "amount": "cantidad",
-      "quantity:": "cantidad"
+      "quantity:": "cantidad",
+      "noData": "Sin datos",
+      "tradeConfirmation": "Confirmación de transacción de pedido",
+      "tradingPair": "par comercial",
+      "settlementPeriod": "ciclo de facturación",
+      "profitRatio": "tasa de retorno",
+      "amount": "La cantidad",
+      "expectedProfit": "rendimiento esperado",
+      "long": "ver más",
+      "short": "osuno",
+      "orderPrice": "Precio acordado",
+      "noMoreData": "keine Daten mehr",
+      "bullishAMinute": "osuno un minuto",
+      "bearishAMinute": "ver más un minuto",
+      "allOrders": "alle Bestellungen"
     },
     "chart": {
       "title": "tendencia",
@@ -249,5 +267,32 @@
     "onlineService": "Servicio en línea",
     "onlineServiceContent": "Si necesita algo, por favor contáctenos.",
     "placeholderMessage": "Mensaje a enviar..."
-  }
+  },
+  "kycPage": {
+    "title": "Autenticación",
+    "warning": "El documento de prueba solo puede autenticar una cuenta, verifique que lo tenga antes de enviarlo.",
+    "uploadRequirementsTitle": "Requisitos de carga de ID",
+    "uploadRequirementsContent": "No se aceptarán copias o copias escaneadas, proporcione fotos originales.",
+    "uploadRequirementsSubContent": "Debe ser una identificación válida emitida por el gobierno",
+    "correct": "ejemplo correcto",
+    "incomplete": "incompleto",
+    "vague": "Impreciso",
+    "flash": "destello",
+    "guidance": "guía",
+    "guidanceContent": "Asegúrate de que la iluminación sea buena y que solo tú estés en el encuadre cuando tomes la fotografía.",
+    "guidanceSubContent": "Ajuste la posición de la cara adecuadamente para que encaje en el área recogida tanto como sea posible.",
+    "nextStep": "Próximo paso",
+    "chooseCertificateType": "Elija un tipo de documento",
+    "idCard": "tarjeta de identificación",
+    "passport": "pasaporte",
+    "drivingLicense": "licencia de conducir",
+    "residencePermit": "Permiso de residencia",
+    "clickToSelectIDFront": "Haga clic para seleccionar la identificación (Anverso)",
+    "clickToSelectIDBack": "Haga clic para seleccionar la identificación (Reverso)",
+    "clickToSelectSelfie": "Haz clic para elegir una selfie",
+    "submit": "entregar",
+    "uploadSuccess": "Upload success, wait for review"
+  },
+  "invalidFileFormat": "Formato de archivo inválido. Por favor, elija un archivo de imagen válido (png, jpg, webp)",
+  "minimumCapacityError": "El tamaño de su imagen debe ser inferior a 5MB"
 }

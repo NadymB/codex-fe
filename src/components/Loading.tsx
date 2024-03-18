@@ -5,11 +5,11 @@ export const Loading = () => {
   return (
     <div className="flex items-center justify-center bg-black w-full h-full">
       <Image
-        src={`${getStaticURL()}/assets/images/about.png`}
+        src={`${getStaticURL()}/assets/images/logo_without_BG.svg`}
         alt="Logo"
         height={100}
         width={100}
-        className="w-24 h-24"
+        className="w-[200px] h-[200px]"
       />
     </div>
   );

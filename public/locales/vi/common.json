@@ -182,6 +182,8 @@
   },
   "deposit": {
     "title": "Nạp Tiền",
+    "noWithdrawalAccount": "Không có tài khoản rút tiền",
+    "withdrawAccountBtn": "Thêm tài khoản rút tiền",
     "chooseYourDepositMethod": "Chọn phương pháp nạp tiền của bạn",
     "artificialDeposit": "Tái chế nhân tạo",
     "contactArtificial": "Liên hệ với Dịch vụ khách hàng nhân tạo để nhận hướng dẫn nạp tiền"
@@ -232,8 +234,21 @@
       "minute": "Phút",
       "balance": "Số dư",
       "price": "Gía",
-      "amount": "Số lượng",
-      "quantity:": "Số lượng"
+      "quantity:": "Số lượng",
+      "noData": "Không có dữ liệu",
+      "tradeConfirmation": "Xác nhận giao dịch",
+      "tradingPair": "Cặp giao dịch",
+      "settlementPeriod": "Chu kỳ thanh toán",
+      "profitRatio": "Tỷ lệ lợi nhuận",
+      "amount": "Số tiền",
+      "expectedProfit": "Lợi nhuận dự kiến",
+      "long": "Mua lên",
+      "short": "Mua xuống",
+      "orderPrice": "Giá thanh toán",
+      "noMoreData": "Không có thêm dữ liệu",
+      "bullishAMinute": "Giao dịch mua một phút",
+      "bearishAMinute": "Giao dịch bán một phút",
+      "allOrders": "Tất cả đơn hàng"
     },
     "chart": {
       "title": "Biểu đồ",
@@ -252,5 +267,32 @@
     "onlineService": "Dịch vụ trực tuyến",
     "onlineServiceContent": "Chào mừng bạn đến với dịch vụ khách hàng trực tuyến!",
     "placeholderMessage": "Tin nhắn sẽ được gửi..."
-  }
+  },
+  "kycPage": {
+    "title": "Xác thực",
+    "warning": "Tài liệu chỉ có thể chứng nhận một tài khoản. Vui lòng xác minh trước khi bạn gửi nó.",
+    "uploadRequirementsTitle": "Yêu cầu tải lên chứng chỉ nhận dạng",
+    "uploadRequirementsContent": "Không nhận được các bộ phận sao chép hoặc quét, vui lòng cung cấp ảnh gốc.",
+    "uploadRequirementsSubContent": "Phải là ID hợp lệ do chính phủ ban hành",
+    "correct": "Ví dụ đúng",
+    "incomplete": "Chưa hoàn thiện",
+    "vague": "Mơ hồ",
+    "flash": "Tốc biến",
+    "guidance": "Hướng dẫn",
+    "guidanceContent": "Hãy chắc chắn rằng ánh sáng là tốt khi chụp, và chỉ bạn xuất hiện trong hình.",
+    "guidanceSubContent": "Vui lòng điều chỉnh vị trí của khuôn mặt càng nhiều càng tốt trong khu vực thu thập càng nhiều càng tốt.",
+    "nextStep": "Bước tiếp theo",
+    "chooseCertificateType": "Chọn loại chứng chỉ",
+    "idCard": "Thẻ ID",
+    "passport": "Hộ chiếu",
+    "drivingLicense": "Giấy phép Driving",
+    "residencePermit": "Giấy phép cư trú",
+    "clickToSelectIDFront": "Bấm để chọn ID (Mặt trước)",
+    "clickToSelectIDBack": "Bấm để chọn ID (Mặt sau)",
+    "clickToSelectSelfie": "Bấm để chọn selfie",
+    "submit": "Nộp",
+    "uploadSuccess": "Upload success, wait for review"
+  },
+  "invalidFileFormat": "Định dạng tệp không hợp lệ. Vui lòng chọn tệp hình ảnh hợp lệ (png, jpg, webp)",
+  "minimumCapacityError": "Kích thước ảnh của bạn phải nhỏ hơn 5MB"
 }

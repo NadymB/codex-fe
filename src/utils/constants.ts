@@ -1161,3 +1161,17 @@ export enum CERTIFICATE_TYPE {
   DRIVING_LICENSE = 'driving_license',
   RESIDENCE_PERMIT = 'residence_permit'
 }
+export const ORDERS_DATA = [
+  {
+    long: false, 
+    paymentPrice: "10.544(-0.104)",
+    amount: "25,125.00",
+    profit: "1,256.25",
+  },
+  {
+    long: true, 
+    paymentPrice: "9.996(+0.002)",
+    amount: "50,000.00",
+    profit: "2,500.00",
+  }
+]

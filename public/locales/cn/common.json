@@ -182,6 +182,8 @@
   },
   "deposit": {
     "title": "学习",
+    "noWithdrawalAccount": "No withdrawal account set",
+    "withdrawAccountBtn": "Add withdrawal account",
     "chooseYourDepositMethod": "选择您的充值方式",
     "artificialDeposit": "人工充值",
     "contactArtificial": "联系人工客服，获得充值指引"
@@ -232,8 +234,21 @@
       "minute": "分钟",
       "balance": "余额",
       "price": "价格",
-      "amount": "数量",
-      "quantity:": "数量"
+      "quantity:": "数量",
+      "noData": "暂无数据",
+      "tradeConfirmation": "下单交易确认",
+      "tradingPair": "交易对",
+      "settlementPeriod": "结算周期",
+      "profitRatio": "收益率",
+      "amount": "金额",
+      "expectedProfit": "期望收益",
+      "long": "看多",
+      "short": "看空",
+      "orderPrice": "结算价格",
+      "noMoreData": "没有更多数据",
+      "bullishAMinute": "看多 1 分钟",
+      "bearishAMinute": "看空 1 分钟",
+      "allOrders": "全部订单"
     },
     "chart": {
       "title": "走势图",
@@ -252,5 +267,32 @@
     "onlineService": "在线客服",
     "onlineServiceContent": "有任何需要欢迎联系我们",
     "placeholderMessage": "要发送的消息..."
-  }
+  },
+  "kycPage": {
+    "title": "身份认证",
+    "warning": "证明文件只可以认证一个账户，在提交之前请核实是您本人所持有。",
+    "uploadRequirementsTitle": "身份证明上传要求",
+    "uploadRequirementsContent": "复印件或者扫描件不被接收，请提供原件照片",
+    "uploadRequirementsSubContent": "必须是政府签发的有效身份证件",
+    "correct": "正确示例",
+    "incomplete": "不完整",
+    "vague": "模糊",
+    "flash": "闪光",
+    "guidance": "指引",
+    "guidanceContent": "拍摄时确保光线良好，只有您本人出现在画面中。",
+    "guidanceSubContent": "请适当调整脸部的位置尽量贴合在采集的区域。",
+    "nextStep": "下一步",
+    "chooseCertificateType": "选择一种证件类型",
+    "idCard": "身份证",
+    "passport": "护照",
+    "drivingLicense": "驾照",
+    "residencePermit": "居留许可",
+    "clickToSelectIDFront": "点击选择身份证件 (正面)",
+    "clickToSelectIDBack": "点击选择身份证件 (背面)",
+    "clickToSelectSelfie": "点击选择自拍照",
+    "submit": "提交",
+    "uploadSuccess": "Upload success, wait for review"
+  },
+  "invalidFileFormat": "无效的文件格式。请选择有效的图像文件（png、jpg、webp）",
+  "minimumCapacityError": "您的图像大小必须小于 5MB"
 }

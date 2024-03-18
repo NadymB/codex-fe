@@ -288,7 +288,7 @@ const CreatePaymentPage = () => {
             </div>
             <Button
               type="submit"
-              style={{ background: "#3D5AFE" }}
+              style={{ background: "#3D5AFE" , color:'#fff'}}
               className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
             >
               {t("withdrawAccount.confirm")}

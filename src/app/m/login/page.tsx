@@ -23,6 +23,10 @@ const LoginPage = () => {
   const [activeTab, setActiveTab] = useState(1);
   const [tabPosition, setTabPosition] = useState({ left: 0, width: 0 });
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [isSelectTab, setIsSelectTab] = useState(0);
+  const changeTab = (tabNumber: number) => {
+    setIsSelectTab(tabNumber);
+  };
 
   useEffect(() => {
     const tab = tabRefs.current[activeTab - 1];
@@ -86,7 +90,7 @@ const LoginPage = () => {
         <h4 className="text-[32px] text-[#fff]">
           {t("authenticationPage.loginTitle")}
         </h4>
-        <Tabs tabs={tabs} />
+        <Tabs tabs={tabs} onChange={(value) => changeTab(value)} activeTab={isSelectTab} />
         <div className="flex  flex-col items-center justify-center mt-2">
           <Logo />
           <Link

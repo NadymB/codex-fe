@@ -8,7 +8,7 @@ import { UploadImage } from "@/components/uploadImage";
 import { useAuth } from "@/hooks/useAuth";
 import { useAliUpload } from "@/services/CloundService";
 import { CERTIFICATE_TYPE, getStaticURL } from "@/utils/constants";
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import {
   Button,
   FormControl,
@@ -23,9 +23,11 @@ export const TYPE_IMAGE = {
   CARDID_BACK: "cardIdBack",
   SELFIE: "selfie",
 };
+import { t } from "i18next";
+import Link from "next/link";
 
 const KycPage = () => {
-  const {currentUser} =  useAuth()
+  const { currentUser } = useAuth();
   const imageCardIdFrontRef = useRef<any>(null);
   const imageCardIdBackRef = useRef<any>(null);
   const imageSelfiedRef = useRef<any>(null);
@@ -38,7 +40,7 @@ const KycPage = () => {
   const [certificateType, setCertificateType] = useState<string>(
     CERTIFICATE_TYPE.ID_CARD
   );
-  
+
   const { onAliUpload } = useAliUpload();
   const handlePreviewImage = (event: any, type: string) => {
     const file = event.target.files[0];
@@ -85,7 +87,7 @@ const KycPage = () => {
     try {
       if (
         cardIdFrontImages.length > 0 &&
-        cardIdBackImages.length>0 &&
+        cardIdBackImages.length > 0 &&
         selfieImages.length > 0
       ) {
         const [
@@ -93,9 +95,21 @@ const KycPage = () => {
           uploadedImagesIdBack,
           uploadedImagesSelfie,
         ] = await Promise.all([
-          onAliUpload(cardIdFrontImages,"",`certificate_front_id_${currentUser?.id}`),
-          onAliUpload(cardIdBackImages, "", `certificate_back_id_${currentUser?.id}`),
-          onAliUpload(selfieImages, "", `certificate_selfie_id_${currentUser?.id}`),
+          onAliUpload(
+            cardIdFrontImages,
+            "",
+            `certificate_front_id_${currentUser?.id}`
+          ),
+          onAliUpload(
+            cardIdBackImages,
+            "",
+            `certificate_back_id_${currentUser?.id}`
+          ),
+          onAliUpload(
+            selfieImages,
+            "",
+            `certificate_selfie_id_${currentUser?.id}`
+          ),
         ]);
 
         let imagesCardIdFront = [];
@@ -130,11 +144,11 @@ const KycPage = () => {
   };
   return (
     <div className="flex flex-col min-h-screen overflow-auto bg-[#000000]">
-      <GoBack title={"Xác thực"} />
+      <GoBack title={t("kycPage.title")} />
       <div className="flex flex-col  px-4 my-4">
         <div>
           <FormControl className=" flex flex-wrap my-1">
-            <span className="text-[#888888]">Chọn loại chứng chỉ</span>
+            <span className="text-[#888888]">{t("kycPage.warning")}</span>
             <RadioGroup
               sx={{ display: "flex", flexDirection: "row" }}
               aria-labelledby="demo-radio-buttons-group-label"
@@ -223,7 +237,11 @@ const KycPage = () => {
               hidden
             />
             <VisaIcon />
-            <span className={`${cardIdFrontImages.length>0?"text-[#3D5AFE]":"text-[red]"} `}>Bấm để chọn Photo ID (front)</span>
+            <span
+              className={`${cardIdFrontImages.length > 0 ? "text-[#3D5AFE]" : "text-[red]"} `}
+            >
+              {t("kycPage.clickToSelectIDFront")}
+            </span>
           </div>
         </div>
         <div
@@ -250,7 +268,11 @@ const KycPage = () => {
               hidden
             />
             <VisaIcon />
-            <span className={`${cardIdBackImages.length>0?"text-[#3D5AFE]":"text-[red]"} `}>Bấm để chọn Photo ID (back)</span>
+            <span
+              className={`${cardIdBackImages.length > 0 ? "text-[#3D5AFE]" : "text-[red]"} `}
+            >
+              {t("kycPage.clickToSelectIDBack")}
+            </span>
           </div>
         </div>
         <div
@@ -275,7 +297,11 @@ const KycPage = () => {
               hidden
             />
             <PhoneIcon />
-            <span className={`${selfieImages.length>0?"text-[#3D5AFE]":"text-[red]"} `}>Bấm để chọn selfie</span>
+            <span
+              className={`${selfieImages.length > 0 ? "text-[#3D5AFE]" : "text-[red]"} `}
+            >
+              {t("kycPage.clickToSelectSelfie")}
+            </span>
           </div>
         </div>
         <div className="w-full mt-6">
@@ -286,7 +312,7 @@ const KycPage = () => {
             onClick={hanleVerify}
           >
             <div className=" flex justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded">
-              Nộp
+              {t("kycPage.submit")}
             </div>
           </Button>
         </div>

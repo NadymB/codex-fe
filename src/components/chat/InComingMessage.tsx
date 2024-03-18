@@ -21,7 +21,7 @@ export const InComingMessage = ({ message }: IProp) => {
           <div className="mr-2 mt-1 bg-[#4c4c6c] p-1 rounded">
             <img
               className="w-[50px] h-[50px]"
-              src={`${getStaticURL()}/assets/images/logo.png`}
+              src={`${getStaticURL()}/assets/images/logo_without_BG.svg`}
               alt=""
             />
           </div>
