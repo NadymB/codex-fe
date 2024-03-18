@@ -6,9 +6,9 @@ import { VisaIcon } from "@/assets/icons/VisaIcon";
 import { GoBack } from "@/components/layouts/GoBack";
 import { UploadImage } from "@/components/uploadImage";
 import { useAuth } from "@/hooks/useAuth";
-import { authService } from "@/services/AuthServices";
 import { useAliUpload } from "@/services/CloundService";
 import { CERTIFICATE_TYPE, getStaticURL } from "@/utils/constants";
+import * as Yup from 'yup';
 import {
   Button,
   FormControl,
@@ -16,7 +16,6 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import Link from "next/link";
 import { useRef, useState } from "react";
 
 export const TYPE_IMAGE = {
@@ -27,7 +26,6 @@ export const TYPE_IMAGE = {
 
 const KycPage = () => {
   const {currentUser} =  useAuth()
-  const imageCardIdRef = useRef<any>(null);
   const imageCardIdFrontRef = useRef<any>(null);
   const imageCardIdBackRef = useRef<any>(null);
   const imageSelfiedRef = useRef<any>(null);
@@ -40,6 +38,7 @@ const KycPage = () => {
   const [certificateType, setCertificateType] = useState<string>(
     CERTIFICATE_TYPE.ID_CARD
   );
+  
   const { onAliUpload } = useAliUpload();
   const handlePreviewImage = (event: any, type: string) => {
     const file = event.target.files[0];
@@ -86,7 +85,7 @@ const KycPage = () => {
     try {
       if (
         cardIdFrontImages.length > 0 &&
-        cardIdBackImages &&
+        cardIdBackImages.length>0 &&
         selfieImages.length > 0
       ) {
         const [
@@ -94,7 +93,7 @@ const KycPage = () => {
           uploadedImagesIdBack,
           uploadedImagesSelfie,
         ] = await Promise.all([
-          onAliUpload(cardIdFrontImages, "currentUser", `message-image`),
+          onAliUpload(cardIdFrontImages,"","certificate_front_image"),
           onAliUpload(cardIdBackImages, "messageImage", `message-image`),
           onAliUpload(selfieImages, "messageImage", `message-image`),
         ]);
@@ -115,15 +114,14 @@ const KycPage = () => {
             (image: any) => image.url
           );
           imagesSelfie = uploadedImagesSelfie.map((image: any) => image.url);
-
-          const data = await authService.verifyLv1({
-            certificateType: CERTIFICATE_TYPE.ID_CARD,
-            certificateFront: imagesCardIdFront[0],
-            certificateBack: imagesCardIdBack[0],
-            selfieImage: imagesSelfie[0],
-            level: 1,
-          });
-          console.log("data:", data);
+          // const data = await authService.verifyLv1({
+          //   certificateType: CERTIFICATE_TYPE.ID_CARD,
+          //   certificateFront: imagesCardIdFront[0],
+          //   certificateBack: imagesCardIdBack[0],
+          //   selfieImage: imagesSelfie[0],
+          //   level: 1,
+          // });
+          // console.log("data:", data);
         } else {
           throw new Error("");
         }
@@ -225,7 +223,7 @@ const KycPage = () => {
               hidden
             />
             <VisaIcon />
-            <span className="text-[#3D5AFE]">Bấm để chọn Photo ID (front)</span>
+            <span className={`${cardIdFrontImages.length>0?"text-[#3D5AFE]":"text-[red]"} `}>Bấm để chọn Photo ID (front)</span>
           </div>
         </div>
         <div
@@ -252,7 +250,7 @@ const KycPage = () => {
               hidden
             />
             <VisaIcon />
-            <span className="text-[#3D5AFE]">Bấm để chọn Photo ID (back)</span>
+            <span className={`${cardIdBackImages.length>0?"text-[#3D5AFE]":"text-[red]"} `}>Bấm để chọn Photo ID (back)</span>
           </div>
         </div>
         <div
@@ -277,7 +275,7 @@ const KycPage = () => {
               hidden
             />
             <PhoneIcon />
-            <span className="text-[#3D5AFE]">Bấm để chọn selfie</span>
+            <span className={`${selfieImages.length>0?"text-[#3D5AFE]":"text-[red]"} `}>Bấm để chọn selfie</span>
           </div>
         </div>
         <div className="w-full mt-6">
