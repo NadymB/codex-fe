@@ -1,7 +1,7 @@
-import FeatureSection from "@/components/Home/FeatureSection";
 import { ClientSection } from "@/components/Landing/ClientSection";
 import { ContentSection } from "@/components/Landing/ContentSection";
 import { CtaSection } from "@/components/Landing/CtaSection";
+import { FeatureSection } from "@/components/Landing/FeatureSection";
 import { FooterSection } from "@/components/Landing/FooterSection";
 import { HeaderLandingSection } from "@/components/Landing/HeaderLandingSection";
 import { HeroSection } from "@/components/Landing/HeroSection";
