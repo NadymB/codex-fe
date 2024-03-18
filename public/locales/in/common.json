@@ -294,5 +294,6 @@
     "uploadSuccess": "अपलोड सफल, समीक्षा का इंतजार करें"
   },
   "invalidFileFormat": "अमान्य फ़ाइल प्रारूप। कृपया एक वैध छवि फ़ाइल का चयन करें (png, jpg, webp)",
-  "minimumCapacityError": "आपकी छवि का आकार 5MB से कम होना चाहिए"
+  "minimumCapacityError": "आपकी छवि का आकार 10MB से कम होना चाहिए",
+  "somethingWentWrong": "कुछ गलत हो गया। कृपया बाद में पुन: प्रयास करें।"
 }

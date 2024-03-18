@@ -294,5 +294,6 @@
     "uploadSuccess": "Upload success, wait for review"
   },
   "invalidFileFormat": "无效的文件格式。请选择有效的图像文件（png、jpg、webp）",
-  "minimumCapacityError": "您的图像大小必须小于 5MB"
+  "minimumCapacityError": "您的图像大小必须小于 10MB",
+  "somethingWentWrong": "出现了问题，请稍后再试"
 }

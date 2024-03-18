@@ -294,5 +294,6 @@
     "uploadSuccess": "Upload success, wait for review"
 	},
   "invalidFileFormat": "Invalid file format. Please choose  valid image file (png, jpg, webp) ",
-  "minimumCapacityError": "Your image size must be less than 5MB"
+  "minimumCapacityError": "Your image size must be less than 10MB",
+  "somethingWentWrong": "Something went wrong. Please try again later"
 }

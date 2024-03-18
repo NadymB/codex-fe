@@ -294,5 +294,6 @@
     "uploadSuccess": "Upload success, wait for review"
   },
   "invalidFileFormat": "無効なファイル形式です。有効な画像ファイル（png、jpg、webp）を選択してください",
-  "minimumCapacityError": "画像のサイズは5MB未満である必要があります"
+  "minimumCapacityError": "画像のサイズは5MB未満である必要があります",
+  "somethingWentWrong": "何か問題が発生しました。後でやり直してください。"
 }
