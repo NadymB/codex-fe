@@ -58,7 +58,7 @@ export const AuthenticatedProfile = () => {
           filedName={t("profilePage.authentication")}
           value={t("profilePage.notCertified")}
           rightIcon={<ArrowRightIcon />}
-          link="/m/setting/authentication"
+          link="/m/setting/kyc"
         />
       </div>
     </div>

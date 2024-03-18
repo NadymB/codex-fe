@@ -11,6 +11,7 @@ import { CERTIFICATE_TYPE, getStaticURL } from "@/utils/constants";
 import * as Yup from "yup";
 import {
   Button,
+  CircularProgress,
   FormControl,
   FormControlLabel,
   Radio,
@@ -25,8 +26,11 @@ export const TYPE_IMAGE = {
 };
 import { t } from "i18next";
 import Link from "next/link";
+import { authService } from "@/services/AuthServices";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
-const KycPage = () => {
+const KycPageLv1 = () => {
   const { currentUser } = useAuth();
   const imageCardIdFrontRef = useRef<any>(null);
   const imageCardIdBackRef = useRef<any>(null);
@@ -40,6 +44,8 @@ const KycPage = () => {
   const [certificateType, setCertificateType] = useState<string>(
     CERTIFICATE_TYPE.ID_CARD
   );
+  const router = useRouter()
+  const [isLoading, setIsLoading] = useState(false);
 
   const { onAliUpload } = useAliUpload();
   const handlePreviewImage = (event: any, type: string) => {
@@ -84,6 +90,7 @@ const KycPage = () => {
     }
   };
   const hanleVerify = async () => {
+    setIsLoading(true);
     try {
       if (
         cardIdFrontImages.length > 0 &&
@@ -128,19 +135,32 @@ const KycPage = () => {
             (image: any) => image.url
           );
           imagesSelfie = uploadedImagesSelfie.map((image: any) => image.url);
-          // const data = await authService.verifyLv1({
-          //   certificateType: CERTIFICATE_TYPE.ID_CARD,
-          //   certificateFront: imagesCardIdFront[0],
-          //   certificateBack: imagesCardIdBack[0],
-          //   selfieImage: imagesSelfie[0],
-          //   level: 1,
-          // });
-          // console.log("data:", data);
+          const data = await authService.verifyLv1({
+            certificateType: CERTIFICATE_TYPE.ID_CARD,
+            certificateFront: imagesCardIdFront[0],
+            certificateBack: imagesCardIdBack[0],
+            selfieImage: imagesSelfie[0],
+            level: 1,
+          });
+          if(data.success==true){
+            toast(`${t("updateSuccess")}`, {
+              position: "bottom-left",
+              autoClose: 2000,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              type:'success'
+            });
+            router.push("/m/kyc")
+          }
         } else {
           throw new Error("");
         }
       }
-    } catch (error) {}
+    } catch (error) {
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <div className="flex flex-col min-h-screen overflow-auto bg-[#000000]">
@@ -311,7 +331,8 @@ const KycPage = () => {
             variant="contained"
             onClick={hanleVerify}
           >
-            <div className=" flex justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded">
+            <div className=" flex items-center gap-2 justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded">
+              {isLoading && <CircularProgress color={"inherit"} size={18} />}
               {t("kycPage.submit")}
             </div>
           </Button>
@@ -321,4 +342,4 @@ const KycPage = () => {
   );
 };
 
-export default KycPage;
+export default KycPageLv1;

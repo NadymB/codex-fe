@@ -144,14 +144,14 @@ export class AuthService {
     }
   }
   public async verifyLv1(values: {
-    certificateType: CERTIFICATE_TYPE,
-    certificateFront: string,
-    certificateBack: string,
-    selfieImage: string,
+    certificateType?: CERTIFICATE_TYPE,
+    certificateFront?: string,
+    certificateBack?: string,
+    selfieImage?: string,
     address?: string,
     level: number
   }): Promise<any> {
-    const { data } = await restConnector.post("/users/verify-infomation", {
+    const { data } = await restConnector.post("/users/verify-information", {
       certificateType: values.certificateType,
       certificateFront: values.certificateFront,
       certificateBack: values.certificateBack,
@@ -159,6 +159,14 @@ export class AuthService {
       address: values.address,
       level: values.level
     });
+
+    if (data.success) {
+      this.setAccessToken(data.data.access_token);
+    }
+    return data;
+  }
+  public async getKyc(): Promise<any> {
+    const { data } = await restConnector.post("/users/kyc");
 
     if (data.success) {
       this.setAccessToken(data.data.access_token);
