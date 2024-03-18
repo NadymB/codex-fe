@@ -25,8 +25,8 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { UploadImage } from "./uploadImage";
 import { useAliUpload } from "@/services/CloundService";
+import { UploadImage } from "@/components/uploadImage";
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
     color: "#3D5AFE",

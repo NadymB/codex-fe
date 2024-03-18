@@ -5,6 +5,7 @@ import { PhoneIcon } from "@/assets/icons/PhoneIcon";
 import { VisaIcon } from "@/assets/icons/VisaIcon";
 import { GoBack } from "@/components/layouts/GoBack";
 import { UploadImage } from "@/components/uploadImage";
+import { useAuth } from "@/hooks/useAuth";
 import { authService } from "@/services/AuthServices";
 import { useAliUpload } from "@/services/CloundService";
 import { CERTIFICATE_TYPE, getStaticURL } from "@/utils/constants";
@@ -25,6 +26,7 @@ export const TYPE_IMAGE = {
 };
 
 const KycPage = () => {
+  const {currentUser} =  useAuth()
   const imageCardIdRef = useRef<any>(null);
   const imageCardIdFrontRef = useRef<any>(null);
   const imageCardIdBackRef = useRef<any>(null);
@@ -35,6 +37,9 @@ const KycPage = () => {
   const [cardIdFrontPreview, setCardIdFrontPreview] = useState<string>();
   const [cardIdBackPreview, setCardIdBackPreview] = useState<string>();
   const [selfiePreview, setSelfiePreview] = useState<string>();
+  const [certificateType, setCertificateType] = useState<string>(
+    CERTIFICATE_TYPE.ID_CARD
+  );
   const { onAliUpload } = useAliUpload();
   const handlePreviewImage = (event: any, type: string) => {
     const file = event.target.files[0];
@@ -78,53 +83,52 @@ const KycPage = () => {
     }
   };
   const hanleVerify = async () => {
-    if (cardIdFrontImages.length > 0 && cardIdBackImages && selfieImages.length > 0) {
-      //  let a =[{name:"", url:""}]
-      //  let b = a.map((item)=>{
+    try {
+      if (
+        cardIdFrontImages.length > 0 &&
+        cardIdBackImages &&
+        selfieImages.length > 0
+      ) {
+        const [
+          uploadedImagesIdFront,
+          uploadedImagesIdBack,
+          uploadedImagesSelfie,
+        ] = await Promise.all([
+          onAliUpload(cardIdFrontImages, "currentUser", `message-image`),
+          onAliUpload(cardIdBackImages, "messageImage", `message-image`),
+          onAliUpload(selfieImages, "messageImage", `message-image`),
+        ]);
 
-      //  })
-      const uploadedImagesIdFront = await onAliUpload(
-        cardIdFrontImages,
-        "messageImage",
-        `message-image`
-      );
+        let imagesCardIdFront = [];
+        let imagesCardIdBack = [];
+        let imagesSelfie = [];
 
-      const uploadedImagesIdBack = await onAliUpload(
-        cardIdFrontImages,
-        "messageImage",
-        `message-image`
-      );
+        if (
+          uploadedImagesIdFront &&
+          uploadedImagesSelfie &&
+          uploadedImagesIdBack
+        ) {
+          imagesCardIdFront = uploadedImagesIdFront.map(
+            (image: any) => image.url
+          );
+          imagesCardIdBack = uploadedImagesIdBack.map(
+            (image: any) => image.url
+          );
+          imagesSelfie = uploadedImagesSelfie.map((image: any) => image.url);
 
-      const uploadedImagesSelfie = await onAliUpload(
-        cardIdFrontImages,
-        "messageImage",
-        `message-image`
-      );
-
-      let imagesCardIdFront = [];
-      let imagesCardIdBack = [];
-      let imagesSelfie = [];
-
-      if (uploadedImagesIdFront && uploadedImagesSelfie && uploadedImagesIdBack) {
-        imagesCardIdFront = uploadedImagesIdFront.map((image: any) => image.url);
-        imagesCardIdBack = uploadedImagesIdBack.map((image: any) => image.url);
-        imagesSelfie = uploadedImagesSelfie.map((image: any) => image.url);
-
-        const data = await authService.verifyLv1({
-          certificateType: CERTIFICATE_TYPE.ID_CARD,
-          certificateFront: "string",
-          certificateBack: "string",
-          selfieImage: "string",
-          address: "string",
-          level: 0,
-        }); 
-        console.log("data:",data);
-
-      } else {
-        throw new Error("");
+          const data = await authService.verifyLv1({
+            certificateType: CERTIFICATE_TYPE.ID_CARD,
+            certificateFront: imagesCardIdFront[0],
+            certificateBack: imagesCardIdBack[0],
+            selfieImage: imagesSelfie[0],
+            level: 1,
+          });
+          console.log("data:", data);
+        } else {
+          throw new Error("");
+        }
       }
-    }
-    
+    } catch (error) {}
   };
   return (
     <div className="flex flex-col min-h-screen overflow-auto bg-[#000000]">
@@ -136,11 +140,12 @@ const KycPage = () => {
             <RadioGroup
               sx={{ display: "flex", flexDirection: "row" }}
               aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
+              value={certificateType}
+              onChange={(e) => setCertificateType(e.target.value)}
               name="radio-buttons-group"
             >
               <FormControlLabel
-                value="female"
+                value={CERTIFICATE_TYPE.ID_CARD}
                 control={
                   <Radio
                     sx={{
@@ -151,11 +156,11 @@ const KycPage = () => {
                     }}
                   />
                 }
-                label="Female"
+                label="ID card"
                 sx={{ color: "white" }}
               />
               <FormControlLabel
-                value="male"
+                value={CERTIFICATE_TYPE.PASSPORT}
                 control={
                   <Radio
                     sx={{
@@ -164,11 +169,11 @@ const KycPage = () => {
                     }}
                   />
                 }
-                label="Male"
+                label="Passport"
                 sx={{ color: "white" }}
               />
               <FormControlLabel
-                value="other"
+                value={CERTIFICATE_TYPE.DRIVING_LICENSE}
                 control={
                   <Radio
                     sx={{
@@ -177,7 +182,20 @@ const KycPage = () => {
                     }}
                   />
                 }
-                label="Other"
+                label="Drving license"
+                sx={{ color: "white" }}
+              />
+              <FormControlLabel
+                value={CERTIFICATE_TYPE.RESIDENCE_PERMIT}
+                control={
+                  <Radio
+                    sx={{
+                      "& .MuiSvgIcon-root": { fill: "#888888" },
+                      "&:checked + .MuiSvgIcon-root": { fill: "#3D5AFE" },
+                    }}
+                  />
+                }
+                label="Residence permit"
                 sx={{ color: "white" }}
               />
             </RadioGroup>

@@ -148,16 +148,16 @@ export class AuthService {
     certificateFront: string,
     certificateBack: string,
     selfieImage: string,
-    address: string,
-    level: 0
+    address?: string,
+    level: number
   }): Promise<any> {
     const { data } = await restConnector.post("/users/verify-infomation", {
       certificateType: values.certificateType,
-      certificateFront: "string",
-      certificateBack: "string",
-      selfieImage: "string",
-      address: "string",
-      level: 1
+      certificateFront: values.certificateFront,
+      certificateBack: values.certificateBack,
+      selfieImage: values.selfieImage,
+      address: values.address,
+      level: values.level
     });
 
     if (data.success) {

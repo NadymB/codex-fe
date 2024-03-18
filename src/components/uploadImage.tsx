@@ -3,8 +3,8 @@ import { toast } from "react-toastify";
 import { t } from "i18next";
 import { MAX_SIZE_IMAGE } from "@/utils/constants";
 export const UploadImage = (event: any) => {
-  const maxPhotos = 5;
-  const allowedExtensions = ["png", "jpg", "jpeg"];
+  const maxPhotos = 10;
+  const allowedExtensions = ["png", "jpg", "jpeg", "gif", "webp","svg"];
 
   const files = Array.from(event.target.files);
   const filesAccepted = files.filter((file: any) => {
