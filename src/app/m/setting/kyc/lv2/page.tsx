@@ -7,11 +7,11 @@ import { UploadImage } from "@/components/uploadImage";
 import { useAuth } from "@/hooks/useAuth";
 import { authService } from "@/services/AuthServices";
 import { useAliUpload } from "@/services/CloundService";
-import { CERTIFICATE_TYPE, getStaticURL } from "@/utils/constants";
-import { Button } from "@mui/material";
+import { getStaticURL } from "@/utils/constants";
+import { Button, CircularProgress } from "@mui/material";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 
 export const TYPE_IMAGE = {
@@ -22,10 +22,28 @@ export const TYPE_IMAGE = {
 
 const KycPageLv2 = () => {
   const { currentUser } = useAuth();
+  const [dataKycLv2, setDataKycLv2] = useState<any>();
   const imageAddressProofRef = useRef<any>(null);
   const [addressProofImages, setAddressProofImages] = useState<any[]>([]);
   const [addressProofPreview, setAddressProofPreview] = useState<string>();
+  const [isLoading, setIsLoading] = useState(false);
+
   const router = useRouter();
+
+  const handleGetKyc = async () => {
+    try {
+      const response = await authService.getKyc();
+      if (response.success) {
+        const kycLv2 = response.data.find((item: any) => item.level == 2);
+        if (kycLv2) {
+          setDataKycLv2(kycLv2);
+        }
+      }
+    } catch (error) {}
+  };
+  useEffect(() => {
+    handleGetKyc();
+  }, []);
   const { onAliUpload } = useAliUpload();
   const handlePreviewImage = (event: any, type: string) => {
     const file = event.target.files[0];
@@ -47,26 +65,28 @@ const KycPageLv2 = () => {
     }
   };
   const hanleVerify = async () => {
+    setIsLoading(true);
+
     try {
-      if (addressProofImages.length > 0) {
-        const uploadedImagesIdFront = await onAliUpload(
-          addressProofImages,
-          "",
-          `certificate_address_proof_id_${currentUser?.id}`
-        );
+      const uploadedImagesIdFront = await onAliUpload(
+        addressProofImages,
+        "",
+        `certificate_address_proof_id_${currentUser?.id}`
+      );
 
-        let imagesAddressProof = [];
+      let imagesAddressProof = "";
 
-        if (uploadedImagesIdFront) {
-          imagesAddressProof = uploadedImagesIdFront.map(
-            (image: any) => image.url
-          );
-          const data = await authService.verifyLv1({
-            address: imagesAddressProof[0],
-            level: 2,
-          });
+      if (uploadedImagesIdFront) {
+        imagesAddressProof =
+          uploadedImagesIdFront.map((image: any) => image.url)[0] ||
+          dataKycLv2.metadata.address;
+        const data = await authService.verifyLv1({
+          address: imagesAddressProof[0],
+          level: 2,
+        });
+        if (imagesAddressProof !== "") {
           if (data.success == true) {
-            toast(`${t("updateSuccess")}`, {
+            toast(`${t("kycPage.uploadSuccess")}`, {
               position: "bottom-center",
               autoClose: 2000,
               closeOnClick: true,
@@ -74,18 +94,30 @@ const KycPageLv2 = () => {
               draggable: true,
               type: "success",
             });
-            router.push("/m/kyc");
+            router.push("/m/setting/kyc");
           }
         } else {
-          throw new Error("");
+          toast(`${t("somethingWentWrong")}`, {
+            position: "top-right",
+            autoClose: 2000,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
         }
       }
-    } catch (error) {}
+    } catch (error) {
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <div className="flex flex-col min-h-screen overflow-auto bg-[#000000]">
       <GoBack title={t("kycPage.title")} />
       <div className="flex flex-col  px-4 my-4">
+        <div className="py-[6px] px-4 flex items-center bg-[#fff4e5] rounded mb-4">
+          <div className="py-2 text-[#663c00] ">{t("kycPage.warning")}</div>
+        </div>
         <div
           className=" flex flex-col items-center justify-center gap-[10px] py-8 mb-4 border border-[#3D5AFE] border-dashed"
           onClick={() => {
@@ -98,7 +130,9 @@ const KycPageLv2 = () => {
           <img
             className="max-w-[80%]"
             src={
-              addressProofPreview || `${getStaticURL()}/assets/images/id.png`
+              addressProofPreview ||
+              dataKycLv2?.metadata.address ||
+              `${getStaticURL()}/assets/images/id.png`
             }
             alt=""
           />
@@ -114,7 +148,7 @@ const KycPageLv2 = () => {
             />
             <VisaIcon />
             <span
-              className={`${addressProofImages.length > 0 ? "text-[#3D5AFE]" : "text-[red]"} `}
+              className={`${addressProofPreview !== "" || dataKycLv2?.metadata.address !== "" ? "text-[#3D5AFE]" : "text-[red]"} `}
             >
               {t("kycPage.clickToSelectIDFront")}
             </span>
@@ -123,12 +157,16 @@ const KycPageLv2 = () => {
 
         <div className="w-full mt-6">
           <Button
+            disabled={dataKycLv2?.isCanEdit === false}
             sx={{ padding: 0, textTransform: "none" }}
             className="p-0 w-full overflow-hidden normal-case"
             variant="contained"
             onClick={hanleVerify}
           >
-            <div className=" flex justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded">
+            <div
+              className={` flex items-center gap-2 justify-center w-full px-6 py-2 ${dataKycLv2?.isCanEdit === false ? "bg-[#343338] text-[#676769]" : "bg-[#3d5afe] text-white"}    text-sm text-center text-medium rounded`}
+            >
+              {isLoading && <CircularProgress color={"inherit"} size={18} />}
               {t("kycPage.submit")}
             </div>
           </Button>

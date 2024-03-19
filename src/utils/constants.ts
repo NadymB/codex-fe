@@ -1154,24 +1154,28 @@ export const WS_TOPIC = {
 };
 export const MAX_SIZE_IMAGE = 5 * 1024 * 1000;
 
-
 export enum CERTIFICATE_TYPE {
-  ID_CARD = 'id_card',
-  PASSPORT = 'passport',
-  DRIVING_LICENSE = 'driving_license',
-  RESIDENCE_PERMIT = 'residence_permit'
+  ID_CARD = "id_card",
+  PASSPORT = "passport",
+  DRIVING_LICENSE = "driving_license",
+  RESIDENCE_PERMIT = "residence_permit",
+}
+export enum CERTIFICATE_STATUS {
+  PENDING = "pending",
+  APPROVED = "approved",
+  REJECTED = "rejected",
 }
 export const ORDERS_DATA = [
   {
-    long: false, 
+    long: false,
     paymentPrice: "10.544(-0.104)",
     amount: "25,125.00",
     profit: "1,256.25",
   },
   {
-    long: true, 
+    long: true,
     paymentPrice: "9.996(+0.002)",
     amount: "50,000.00",
     profit: "2,500.00",
-  }
-]
+  },
+];

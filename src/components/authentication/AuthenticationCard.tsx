@@ -42,13 +42,10 @@ export const AuthenticationCard = ({
             <span className="text-sm text-white">
               {t("authentication.rightsAndInterests")}
             </span>
-            {rightInterstData.map((item, index) => (
-              <RightInterestItem
-                key={index}
-                title={t(`authentication.${item.title}`)}
-                content={t(`authentication.${item.content}`)}
-              />
-            ))}
+            <div className="flex justify-between">
+      <span className="text-sm text-[#888]"></span>
+      <span className="text-sm text-white"></span>
+    </div>
           </div>
           <div className="flex gap-4">
             {methods.map((method, index) => (

@@ -166,7 +166,7 @@ export class AuthService {
     return data;
   }
   public async getKyc(): Promise<any> {
-    const { data } = await restConnector.post("/users/kyc");
+    const { data } = await restConnector.get("/users/kyc");
 
     if (data.success) {
       this.setAccessToken(data.data.access_token);

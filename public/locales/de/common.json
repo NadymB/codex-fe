@@ -291,7 +291,10 @@
     "clickToSelectIDBacl": "Klicken Sie, um die ID auszuwählen (Rückseite)",
     "clickToSelectSelfie": "Klicken Sie, um ein Selfie auszuwählen",
     "submit": "einreichen",
-    "uploadSuccess": "Upload success, wait for review"
+    "uploadSuccess": "Upload erfolgreich, warten auf Überprüfung",
+    "examinationPassed":"Examination passed",
+    "rejected":"Prüfung nicht bestanden",
+    "pending":"Moderated"
   },
   "invalidFileFormat": "Ungültiges Dateiformat. Bitte wählen Sie eine gültige Bilddatei (png, jpg, webp)",
   "minimumCapacityError": "Die Größe Ihres Bildes muss kleiner als 10MB sein",

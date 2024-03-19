@@ -6,9 +6,9 @@ import { VisaIcon } from "@/assets/icons/VisaIcon";
 import { GoBack } from "@/components/layouts/GoBack";
 import { UploadImage } from "@/components/uploadImage";
 import { useAuth } from "@/hooks/useAuth";
+import { authService } from "@/services/AuthServices";
 import { useAliUpload } from "@/services/CloundService";
 import { CERTIFICATE_TYPE, getStaticURL } from "@/utils/constants";
-import * as Yup from "yup";
 import {
   Button,
   CircularProgress,
@@ -17,21 +17,20 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import { useRef, useState } from "react";
+import { t } from "i18next";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { toast } from "react-toastify";
 
 export const TYPE_IMAGE = {
   CARDID_FRONT: "cardIdFront",
   CARDID_BACK: "cardIdBack",
   SELFIE: "selfie",
 };
-import { t } from "i18next";
-import Link from "next/link";
-import { authService } from "@/services/AuthServices";
-import { toast } from "react-toastify";
-import { useRouter } from "next/navigation";
 
 const KycPageLv1 = () => {
   const { currentUser } = useAuth();
+  const [dataKycLv1, setDataKycLv1] = useState<any>();
   const imageCardIdFrontRef = useRef<any>(null);
   const imageCardIdBackRef = useRef<any>(null);
   const imageSelfiedRef = useRef<any>(null);
@@ -44,8 +43,24 @@ const KycPageLv1 = () => {
   const [certificateType, setCertificateType] = useState<string>(
     CERTIFICATE_TYPE.ID_CARD
   );
-  const router = useRouter()
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleGetKyc = async () => {
+    try {
+      const response = await authService.getKyc();
+      if (response.success) {
+        const kycLv1 = response.data.find((item: any) => item.level == 1);
+        if (kycLv1) {
+          setDataKycLv1(kycLv1);
+          setCertificateType(kycLv1.metadata.certificateType);
+        }
+      }
+    } catch (error) {}
+  };
+  useEffect(() => {
+    handleGetKyc();
+  }, []);
 
   const { onAliUpload } = useAliUpload();
   const handlePreviewImage = (event: any, type: string) => {
@@ -92,69 +107,78 @@ const KycPageLv1 = () => {
   const hanleVerify = async () => {
     setIsLoading(true);
     try {
-      if (
-        cardIdFrontImages.length > 0 &&
-        cardIdBackImages.length > 0 &&
-        selfieImages.length > 0
-      ) {
-        const [
-          uploadedImagesIdFront,
-          uploadedImagesIdBack,
-          uploadedImagesSelfie,
-        ] = await Promise.all([
-          onAliUpload(
-            cardIdFrontImages,
-            "",
-            `certificate_front_id_${currentUser?.id}`
-          ),
-          onAliUpload(
-            cardIdBackImages,
-            "",
-            `certificate_back_id_${currentUser?.id}`
-          ),
-          onAliUpload(
-            selfieImages,
-            "",
-            `certificate_selfie_id_${currentUser?.id}`
-          ),
-        ]);
+      const [
+        uploadedImagesIdFront,
+        uploadedImagesIdBack,
+        uploadedImagesSelfie,
+      ] = await Promise.all([
+        onAliUpload(
+          cardIdFrontImages,
+          "",
+          `certificate_front_id_${currentUser?.id}`
+        ),
+        onAliUpload(
+          cardIdBackImages,
+          "",
+          `certificate_back_id_${currentUser?.id}`
+        ),
+        onAliUpload(
+          selfieImages,
+          "",
+          `certificate_selfie_id_${currentUser?.id}`
+        ),
+      ]);
 
-        let imagesCardIdFront = [];
-        let imagesCardIdBack = [];
-        let imagesSelfie = [];
+      let certificateFront = "";
+      let certificateBack = "";
+      let selfieImage = "";
+
+      if (
+        uploadedImagesIdFront &&
+        uploadedImagesSelfie &&
+        uploadedImagesIdBack
+      ) {
+        certificateFront =
+          uploadedImagesIdFront.map((image: any) => image.url)[0] ||
+          dataKycLv1?.metadata?.certificateBack;
+        certificateBack =
+          uploadedImagesIdBack.map((image: any) => image.url)[0] ||
+          dataKycLv1?.metadata?.certificateFront;
+        selfieImage =
+          uploadedImagesSelfie.map((image: any) => image.url)[0] ||
+          dataKycLv1?.metadata?.selfieImage;
 
         if (
-          uploadedImagesIdFront &&
-          uploadedImagesSelfie &&
-          uploadedImagesIdBack
+          certificateFront !== "" &&
+          certificateBack !== "" &&
+          selfieImage !== ""
         ) {
-          imagesCardIdFront = uploadedImagesIdFront.map(
-            (image: any) => image.url
-          );
-          imagesCardIdBack = uploadedImagesIdBack.map(
-            (image: any) => image.url
-          );
-          imagesSelfie = uploadedImagesSelfie.map((image: any) => image.url);
           const data = await authService.verifyLv1({
             certificateType: CERTIFICATE_TYPE.ID_CARD,
-            certificateFront: imagesCardIdFront[0],
-            certificateBack: imagesCardIdBack[0],
-            selfieImage: imagesSelfie[0],
+            certificateFront,
+            certificateBack,
+            selfieImage,
             level: 1,
           });
-          if(data.success==true){
-            toast(`${t("updateSuccess")}`, {
+          if (data.success == true) {
+            toast(`${t("kycPage.uploadSuccess")}`, {
               position: "bottom-left",
               autoClose: 2000,
               closeOnClick: true,
               pauseOnHover: true,
               draggable: true,
-              type:'success'
+              type: "success",
             });
-            router.push("/m/kyc")
+            router.push("/m/setting/kyc");
           }
         } else {
-          throw new Error("");
+          toast(`${t("somethingWentWrong")}`, {
+            position: "top-right",
+            autoClose: 2000,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
         }
       }
     } catch (error) {
@@ -168,7 +192,9 @@ const KycPageLv1 = () => {
       <div className="flex flex-col  px-4 my-4">
         <div>
           <FormControl className=" flex flex-wrap my-1">
-            <span className="text-[#888888]">{t("kycPage.warning")}</span>
+          <div className="py-[6px] px-4 flex items-center bg-[#fff4e5] rounded mb-4">
+          <div className="py-2 text-[#663c00] ">{t("kycPage.warning")}</div>
+        </div>
             <RadioGroup
               sx={{ display: "flex", flexDirection: "row" }}
               aria-labelledby="demo-radio-buttons-group-label"
@@ -243,7 +269,11 @@ const KycPageLv1 = () => {
         >
           <img
             className="max-w-[80%]"
-            src={cardIdFrontPreview || `${getStaticURL()}/assets/images/id.png`}
+            src={
+              cardIdFrontPreview ||
+              dataKycLv1?.metadata?.certificateFront ||
+              `${getStaticURL()}/assets/images/id.png`
+            }
             alt=""
           />
           <div className="flex items-center w-fit gap-2 text-[#fff]">
@@ -258,7 +288,7 @@ const KycPageLv1 = () => {
             />
             <VisaIcon />
             <span
-              className={`${cardIdFrontImages.length > 0 ? "text-[#3D5AFE]" : "text-[red]"} `}
+              className={`${cardIdFrontPreview !== "" || dataKycLv1?.metadata.certificateFront !== "" ? "text-[#3D5AFE]" : "text-[red]"} `}
             >
               {t("kycPage.clickToSelectIDFront")}
             </span>
@@ -274,7 +304,11 @@ const KycPageLv1 = () => {
         >
           <img
             className="max-w-[80%]"
-            src={cardIdBackPreview || `${getStaticURL()}/assets/images/id.png`}
+            src={
+              cardIdBackPreview ||
+              dataKycLv1?.metadata?.certificateBack ||
+              `${getStaticURL()}/assets/images/id.png`
+            }
             alt=""
           />
           <div className="flex items-center w-fit gap-2 text-[#fff]">
@@ -289,7 +323,7 @@ const KycPageLv1 = () => {
             />
             <VisaIcon />
             <span
-              className={`${cardIdBackImages.length > 0 ? "text-[#3D5AFE]" : "text-[red]"} `}
+              className={`${cardIdBackPreview !== "" || dataKycLv1?.metadata?.certificateBack !== "" ? "text-[#3D5AFE]" : "text-[red]"} `}
             >
               {t("kycPage.clickToSelectIDBack")}
             </span>
@@ -303,7 +337,11 @@ const KycPageLv1 = () => {
         >
           <img
             className="max-w-[80%]"
-            src={selfiePreview || `${getStaticURL()}/assets/images/selfie.webp`}
+            src={
+              selfiePreview ||
+              dataKycLv1?.metadata?.selfieImage ||
+              `${getStaticURL()}/assets/images/selfie.webp`
+            }
             alt=""
           />
           <div className="flex items-center w-fit gap-2 text-[#fff]">
@@ -318,7 +356,7 @@ const KycPageLv1 = () => {
             />
             <PhoneIcon />
             <span
-              className={`${selfieImages.length > 0 ? "text-[#3D5AFE]" : "text-[red]"} `}
+              className={`${selfiePreview !== "" || dataKycLv1?.metadata?.selfieImage !== "" ? "text-[#3D5AFE]" : "text-[red]"} `}
             >
               {t("kycPage.clickToSelectSelfie")}
             </span>
@@ -326,12 +364,13 @@ const KycPageLv1 = () => {
         </div>
         <div className="w-full mt-6">
           <Button
+          disabled={dataKycLv1?.isCanEdit===false}
             sx={{ padding: 0, textTransform: "none" }}
             className="p-0 w-full overflow-hidden normal-case"
             variant="contained"
             onClick={hanleVerify}
           >
-            <div className=" flex items-center gap-2 justify-center w-full px-6 py-2  bg-[#3d5afe]  text-white text-sm text-center text-medium rounded">
+            <div className={` flex items-center gap-2 justify-center w-full px-6 py-2 ${dataKycLv1?.isCanEdit===false?"bg-[#343338] text-[#676769]":"bg-[#3d5afe] text-white" }    text-sm text-center text-medium rounded`}>
               {isLoading && <CircularProgress color={"inherit"} size={18} />}
               {t("kycPage.submit")}
             </div>

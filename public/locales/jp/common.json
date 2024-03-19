@@ -291,7 +291,10 @@
     "clickToSelectIDBack": "クリックしてIDを選択します (裏面)",
     "clickToSelectSelfie": "クリックしてセルフィーを選択します",
     "submit": "送信",
-    "uploadSuccess": "Upload success, wait for review"
+    "uploadSuccess": "アップロード成功、審査待ち",
+    "examinationPassed":"試験が合格しました",
+    "rejected":"監査が可決されていません",
+    "pending":"モデレート"
   },
   "invalidFileFormat": "無効なファイル形式です。有効な画像ファイル（png、jpg、webp）を選択してください",
   "minimumCapacityError": "画像のサイズは5MB未満である必要があります",

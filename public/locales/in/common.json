@@ -291,7 +291,10 @@
     "clickToSelectIDBack": "आईडी का चयन करने के लिए क्लिक करें (पृष्ठपक्ष)",
     "clickToSelectSelfie": "सेल्फी का चयन करने के लिए क्लिक करें",
     "submit": "सबमिट करें",
-    "uploadSuccess": "अपलोड सफल, समीक्षा का इंतजार करें"
+    "uploadSuccess": "अपलोड सफल, समीक्षा का इंतजार करें",
+    "examinationPassed": "परीक्षा पास",
+    "rejected": "अनुमोदन नहीं हुआ",
+    "pending": "मॉडरेट किया जा रहा है"
   },
   "invalidFileFormat": "अमान्य फ़ाइल प्रारूप। कृपया एक वैध छवि फ़ाइल का चयन करें (png, jpg, webp)",
   "minimumCapacityError": "आपकी छवि का आकार 10MB से कम होना चाहिए",

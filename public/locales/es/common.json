@@ -291,7 +291,11 @@
     "clickToSelectIDBack": "Haga clic para seleccionar la identificación (Reverso)",
     "clickToSelectSelfie": "Haz clic para elegir una selfie",
     "submit": "entregar",
-    "uploadSuccess": "Upload success, wait for review"
+    "uploadSuccess": "Subida exitosa, espere la revisión",
+    "examinationPassed":"examen aprobado",
+    "rejected":"Auditoría no aprobada",
+    "pending":"moderado"
+
   },
   "invalidFileFormat": "Formato de archivo inválido. Por favor, elija un archivo de imagen válido (png, jpg, webp)",
   "minimumCapacityError": "El tamaño de su imagen debe ser inferior a 10MB",
