@@ -81,7 +81,7 @@ const KycPageLv2 = () => {
           uploadedImagesIdFront.map((image: any) => image.url)[0] ||
           dataKycLv2.metadata.address;
         const data = await authService.verifyLv1({
-          address: imagesAddressProof[0],
+          address: imagesAddressProof,
           level: 2,
         });
         if (imagesAddressProof !== "") {
