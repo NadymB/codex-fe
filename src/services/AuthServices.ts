@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import { onToast } from "@/hooks/useToast";
 import restConnector from "@/connectors/axiosRestConnector";
 import { Account } from "@/models/User";
-import { LOGIN_MODE } from "@/utils/constants";
+import { CERTIFICATE_TYPE, LOGIN_MODE } from "@/utils/constants";
 
 const AUTHORIZATION_HEADER = "Authorization";
 export const ACCESS_TOKEN = "jwt";
@@ -143,6 +143,38 @@ export class AuthService {
       return accessToken;
     }
   }
+  public async verifyLv1(values: {
+    certificateType?: CERTIFICATE_TYPE,
+    certificateFront?: string,
+    certificateBack?: string,
+    selfieImage?: string,
+    address?: string,
+    level: number
+  }): Promise<any> {
+    const { data } = await restConnector.post("/users/verify-information", {
+      certificateType: values.certificateType,
+      certificateFront: values.certificateFront,
+      certificateBack: values.certificateBack,
+      selfieImage: values.selfieImage,
+      address: values.address,
+      level: values.level
+    });
+
+    if (data.success) {
+      this.setAccessToken(data.data.access_token);
+    }
+    return data;
+  }
+  public async getKyc(): Promise<any> {
+    const { data } = await restConnector.get("/users/kyc");
+
+    if (data.success) {
+      this.setAccessToken(data.data.access_token);
+    }
+    return data;
+  }
+  
+
 }
 
 export const authService = new AuthService({ restConnector });

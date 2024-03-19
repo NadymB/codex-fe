@@ -287,11 +287,17 @@
     "passport": "护照",
     "drivingLicense": "驾照",
     "residencePermit": "居留许可",
-    "clickToSelectID": "点击选择身份证件",
+    "clickToSelectIDFront": "点击选择身份证件 (正面)",
+    "clickToSelectIDBack": "点击选择身份证件 (背面)",
     "clickToSelectSelfie": "点击选择自拍照",
     "submit": "提交",
-    "uploadSuccess": "Upload success, wait for review"
+    "uploadSuccess": "上传成功，请等待审核",
+    "examinationPassed":"审核通过",
+    "rejected":"Audit not passed",
+    "pending":"等待审核"
+
   },
   "invalidFileFormat": "无效的文件格式。请选择有效的图像文件（png、jpg、webp）",
-  "minimumCapacityError": "您的图像大小必须小于 5MB"
+  "minimumCapacityError": "您的图像大小必须小于 10MB",
+  "somethingWentWrong": "出现了问题，请稍后再试"
 }

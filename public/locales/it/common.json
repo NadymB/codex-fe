@@ -287,11 +287,16 @@
     "passport": "passaporto",
     "drivingLicense": "patente di guida",
     "residencePermit": "Permesso di residenza",
-    "clickToSelectID": "Fare clic per selezionare l'ID",
+    "clickToSelectIDFront": "Fare clic per selezionare l'ID (Faccia anteriore)",
+    "clickToSelectIDBack": "Fare clic per selezionare l'ID (Faccia posteriore)",
     "clickToSelectSelfie": "Fai clic per scegliere un selfie",
     "submit": "invia",
-    "uploadSuccess": "Upload success, wait for review"
+    "uploadSuccess": "Caricamento riuscito, in attesa di revisione",
+    "examinationPassed":"esame superato",
+    "rejected":"Audit non superato",
+    "pending":"Moderato"
   },
   "invalidFileFormat": "Formato file non valido. Si prega di scegliere un file immagine valido (png, jpg, webp)",
-  "minimumCapacityError": "La dimensione della tua immagine deve essere inferiore a 5MB"
+  "minimumCapacityError": "La dimensione della tua immagine deve essere inferiore a 5MB",
+  "somethingWentWrong": "Qualcosa è andato storto. Si prega di riprovare più tardi."
 }

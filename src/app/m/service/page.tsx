@@ -25,8 +25,8 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { UploadImage } from "./uploadImage";
 import { useAliUpload } from "@/services/CloundService";
+import { UploadImage } from "@/components/uploadImage";
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
     color: "#3D5AFE",
@@ -234,7 +234,6 @@ const ServicePage = () => {
     const messageContainer = messageListRef.current;
     if (chatRoomId && messageContainer) {
       const handleScroll = () => {
-        console.log(messageContainer.scrollTop);
         if (messageContainer.scrollTop === 0) {
           fetchMessagesOnScroll(chatRoomId, { limit, offset: offset + limit });
           messageListRef.current.scrollTo({ top: "1px" });
