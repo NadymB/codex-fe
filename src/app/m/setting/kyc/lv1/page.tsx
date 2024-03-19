@@ -22,7 +22,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 
-export const TYPE_IMAGE = {
+const TYPE_IMAGE = {
   CARDID_FRONT: "cardIdFront",
   CARDID_BACK: "cardIdBack",
   SELFIE: "selfie",
