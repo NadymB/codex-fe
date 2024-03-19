@@ -63,7 +63,7 @@ export const KycCardLv2 = ({
               <span>{t(`authentication.selfie`)}</span>
             </div>
           </div>
-          {kyc?.isCanEdit === true && (
+          {kyc?.isCanEdit === false ?"" : (
             <button
               disabled={disabled}
               onClick={() => setOpenIntroduce(true)}

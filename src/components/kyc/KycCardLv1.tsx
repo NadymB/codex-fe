@@ -58,7 +58,7 @@ export const KycCardLv1 = ({ kyc }: { kyc: any }) => {
               <span>{t(`authentication.selfie`)}</span>
             </div>
           </div>
-          {kyc?.isCanEdit === true && (
+          {kyc?.isCanEdit === false?"":(
             <button
               onClick={() => setOpenIntroduce(true)}
               className={`py-[6px] mt-2 px-4 bg-[#3d5afe] disabled:hover:bg-[#3d5afe] disabled:opacity-50 hover:bg-[#2a3db0] rounded text-center text-white text-sm font-medium`}
