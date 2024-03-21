@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Header from "@/components/layouts/Header";
-import { getStaticURL } from "@/utils/constants";
+import { WS_TOPIC, getStaticURL } from "@/utils/constants";
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { DepositIcon } from "@/assets/icons/DepositIcon";
 import { TelesaleIcon } from "@/assets/icons/TelesaleIcon";
@@ -13,26 +13,32 @@ import Link from "next/link";
 import { t } from "i18next";
 import { priceFeedService } from "@/services/PriceFeedService";
 import FeatureSection from "@/components/Home/FeatureSection";
+import { chatService } from "@/services/ChatService";
+import { PopularTransactionPair } from "@/components/Home/PopularTransactionPair";
+import { ChatCtx } from "@/providers/ChatProvider";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 
 export default function Home() {
-  const [dataCommon, setDataCommon] = useState([]);
-  const handleCrawlDataFeed = async () => {
-    try {
-      const response = await priceFeedService.getCommonPriceFeed();
-      if (response.success) {
-        setDataCommon(response.data.commodityPrices);
-      }
-    } catch (error) {
-      console.log(error);
-    }
+  const { countNewMessage, setCountNewMessage } = useContext(ChatCtx);
+  const { webSocket } = useContext(WebSocketCtx);
+
+  const handleGetUnreadMessage = async () => {
+    const response = await chatService.getUnreadMessage();
+    setCountNewMessage(response);
   };
-
   useEffect(() => {
-    handleCrawlDataFeed();
-    // const inteval = setInterval(handleCrawlDataFeed, 10000);
-
-    // return () => clearInterval(inteval);
+    handleGetUnreadMessage();
   }, []);
+  useEffect(() => {
+    if (webSocket) {
+      webSocket.on(WS_TOPIC.SEND_MESSAGE, (data) => {
+        setCountNewMessage((prev) => prev + 1);
+      });
+    }
+    return () => {
+      webSocket?.off(WS_TOPIC.SEND_MESSAGE);
+    };
+  }, [webSocket]);
 
   return (
     <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000]">
@@ -52,9 +58,7 @@ export default function Home() {
           >
             <div className="flex items-center gap-3">
               <DepositIcon />
-              <span className="text-[#fff]">
-                {t("homePage.deposit")}
-              </span>
+              <span className="text-[#fff]">{t("homePage.deposit")}</span>
             </div>
             <NextIcon />
           </Link>
@@ -63,233 +67,20 @@ export default function Home() {
             className=" flex-1 flex items-center justify-between px-4 py-2 rounded bg-[#3D5AFE] hover:bg-[#2a3eb1] duration-200 ease-in-out"
           >
             <div className="flex items-center gap-3">
-              <TelesaleIcon />
-              <span className="text-[#fff]">
-                {t("homePage.service")}
-              </span>
+              <div className="relative">
+                <TelesaleIcon />
+                {countNewMessage > 0 && (
+                  <div className="absolute top-0 right-0 w-5 h-5 bg-[red] text-[#fff] rounded-full flex items-center justify-center ">
+                    {countNewMessage}
+                  </div>
+                )}
+              </div>
+              <span className="text-[#fff]">{t("homePage.service")}</span>
             </div>
             <NextIcon />
           </Link>
         </div>
-        <div className="flex flex-col gap-2 p-4">
-          <h5 className="text-[24px] text-white">
-            {t("homePage.popularTransactionPair")}
-          </h5>
-          <div className="flex gap-1 pb-3 overflow-auto ">
-            {/* {dataCommon.length>0 && dataCommon.map((item:any)=>{
-              return (
-              <Link
-              key={Math.random()}
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-              >
-              <div>
-                <span className="text-[#fff]">{item.metadata.name.replace("usdt", "").toUpperCase()}</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#dd5350]">51665.17</span>
-                <span className="text-[#dd5350] text-[12px]">-0.76%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-
-              )
-            })} */}
-
-            {/*  */}
-            <Link
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
-              <div>
-                <span className="text-[#fff]">ETH</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#55af72]">2921.39</span>
-                <span className="text-[#55af72] text-[12px]">+1.53%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-            {/*  */}
-            <Link
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
-              <div>
-                <span className="text-[#fff]">ALUMINIUM</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#55af72]">2145.39</span>
-                <span className="text-[#55af72] text-[12px]">+0.19%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-            {/*  */}
-            <Link
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
-              <div>
-                <span className="text-[#fff]">GOLD</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#55af72]">2021.39</span>
-                <span className="text-[#55af72] text-[12px]">+1.53%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-            {/*  */}
-            <Link
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
-              <div>
-                <span className="text-[#fff]">PLATINUM</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#dd5350]">51665.17</span>
-                <span className="text-[#dd5350] text-[12px]">-0.76%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-            {/*  */}
-            <Link
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
-              <div>
-                <span className="text-[#fff]">BNB</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#55af72]">2021.39</span>
-                <span className="text-[#55af72] text-[12px]">+1.53%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-            <Link
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
-              <div>
-                <span className="text-[#fff]">COFFEE</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#dd5350]">51665.17</span>
-                <span className="text-[#dd5350] text-[12px]">-0.76%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-            <Link
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
-              <div>
-                <span className="text-[#fff]">SOL</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#dd5350]">51665.17</span>
-                <span className="text-[#dd5350] text-[12px]">-0.76%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-            <Link
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
-              <div>
-                <span className="text-[#fff]">OIL</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#dd5350]">51665.17</span>
-                <span className="text-[#dd5350] text-[12px]">-0.76%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-            <Link
-              href={"/coming-soon"}
-              className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
-            >
-              <div>
-                <span className="text-[#fff]">LTC</span>
-                <span className="mx-0.5 text-[#fff]">/</span>
-                <span className="text-[#888888]">USDT</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[#dd5350]">51665.17</span>
-                <span className="text-[#dd5350] text-[12px]">-0.76%</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <span className="text-[#fff] text-nowrap">
-                  {t("homePage.trade")}
-                </span>
-                <NextIcon />
-              </div>
-            </Link>
-          </div>
-        </div>
+        <PopularTransactionPair />
         <div className="flex justify-between items-center px-4 ">
           <LoudspeakerIcon />
           <Link href={"/m/announcement"}>
