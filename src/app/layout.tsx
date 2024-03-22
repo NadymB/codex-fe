@@ -9,6 +9,7 @@ import { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import "../../i18n";
 import "../styles/index.css";
+import { ChatProvider } from "@/providers/ChatProvider";
 export default function RootLayout({
   children,
 }: {
@@ -29,10 +30,12 @@ export default function RootLayout({
         <body suppressHydrationWarning={true}>
           <WebSocketProvider>
             <AuthProvider>
-              <ThemeProvider>
-                <ToastContainer theme="dark" />
-                <main>{children}</main>
-              </ThemeProvider>
+              <ChatProvider>
+                <ThemeProvider>
+                  <ToastContainer theme="dark" />
+                  <main>{children}</main>
+                </ThemeProvider>
+              </ChatProvider>
             </AuthProvider>
           </WebSocketProvider>
         </body>

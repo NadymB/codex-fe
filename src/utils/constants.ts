@@ -1151,7 +1151,13 @@ export const WS_TOPIC = {
   SEND_MESSAGE: "send_message",
   READ_MESSAGE: "read_message",
   NOTIFICATION: "notification",
+  REPLY_MESSAGE: "reply_message",
+  DELETE_MESSAGE: "delete_message",
+  USER_ONLINE: "user_online",
+  USER_OFFLINE: "user_offline",
+  USER_VERIFIED: "user_verified",
 };
+
 export const MAX_SIZE_IMAGE = 5 * 1024 * 1000;
 
 export enum CERTIFICATE_TYPE {

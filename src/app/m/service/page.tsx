@@ -27,6 +27,7 @@ import React, {
 } from "react";
 import { useAliUpload } from "@/services/CloundService";
 import { UploadImage } from "@/components/uploadImage";
+import { ChatCtx } from "@/providers/ChatProvider";
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
     color: "#3D5AFE",
@@ -55,10 +56,11 @@ const CssTextField = styled(TextField)({
   },
 });
 const ServicePage = () => {
+  const { webSocket } = useContext(WebSocketCtx);
+  const {setCountNewMessage} = useContext(ChatCtx)
   const [isShouldScrollBottom, setIsShouldScrollBottom] = useState(true);
   const { currentUser } = useAuth();
   const { onAliUpload } = useAliUpload();
-  const { webSocket } = useContext(WebSocketCtx);
   const [chatRoomId, setChatRoomId] = useState();
   const router = useRouter();
   const headerRef = useRef<any>(null);
@@ -196,6 +198,7 @@ const ServicePage = () => {
   };
   // HANDLE READ MESSAGE
   const readMessages = async (chatRoomId: string) => {
+    setCountNewMessage(0)
     await chatService.readMessages(chatRoomId);
   };
 
@@ -221,7 +224,7 @@ const ServicePage = () => {
       webSocket.on(WS_TOPIC.SEND_MESSAGE, (data) => {
         if (data.chatId === chatRoomId) {
           setListMessage((prev) => [data.message, ...prev]);
-          // readMessages();
+          readMessages(data.chatId);
         }
       });
     }
@@ -265,7 +268,7 @@ const ServicePage = () => {
             height: `calc(100% - ${heightHeader + heighInput + 10}px)`,
             marginTop: `${heightHeader}px`,
             marginBottom: `${heighInput}px`,
-            scrollBehavior: "smooth",
+            // scrollBehavior: "smooth",
           }}
         >
           <div className="absolute top-2 left-2 w-2 h-2 rounded-full bg-[#22C55E]"></div>
