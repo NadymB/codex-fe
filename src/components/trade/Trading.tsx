@@ -2,6 +2,7 @@
 "use client";
 import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 import {
+  BET_PERCENTAGE,
   CRYPTOCURRENCY_CODE,
   PRICE_TYPE,
   getStaticURL,
@@ -13,6 +14,7 @@ import { InputCustom } from "../InputCustom";
 import { TradingChartBar } from "./TradingChartBar";
 import { useAuth } from "@/hooks/useAuth";
 import { convertNumberToFormattedString } from "@/utils/converter";
+import { BetType } from "@/utils/type";
 
 const CssSlider = styled(Slider)({
   "& .MuiSlider-mark": {
@@ -49,33 +51,27 @@ function valueLabelFormat(value: number) {
 interface Props {
   token: string;
   currency: string;
-  onClickShortBtn: (
-    amount: number,
-    pairType: PRICE_TYPE,
-    pairName: CRYPTOCURRENCY_CODE,
-    profitPercentage: number
-  ) => void;
-  onClickLongBtn: (
-    amount: number,
-    pairType: PRICE_TYPE,
-    pairName: CRYPTOCURRENCY_CODE,
-    profitPercentage: number
-  ) => void;
+
+  onBet: ({
+    amount,
+    pairType,
+    pairName,
+    betPercentage,
+    timeoutInMinutes,
+    position,
+  }: BetType) => void;
 }
 
-const Trading: FC<Props> = ({
-  token,
-  currency,
-  onClickShortBtn,
-  onClickLongBtn,
-}) => {
-  const [percentIsSelected, setPercentIsSelected] = useState(10);
-  const { fetchUserBalance, currentBalance, tradeCurrenty } = useAuth();
+const Trading: FC<Props> = ({ token, currency, onBet }) => {
+  const [percentIsSelected, setPercentIsSelected] = useState(BET_PERCENTAGE[0]);
+  const { fetchUserBalance, currentBalance, currentUser } = useAuth();
   const [amount, setAmount] = useState<number | null>(0);
 
   useEffect(() => {
-    fetchUserBalance();
-  },[]);
+    if (currentUser) {
+      fetchUserBalance();
+    }
+  }, [currentUser]);
 
   return (
     <div>
@@ -104,96 +100,24 @@ const Trading: FC<Props> = ({
       <div className="grid grid-cols-12 p-4">
         <div className="col-span-7">
           <div className="flex gap-2 pb-3 overflow-auto">
-            <div
-              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 10 && "border-[#3D5AFE]"} `}
-              onClick={() => setPercentIsSelected(10)}
-            >
-              <span className="text-[12px] text-[#fff]">
-                {" "}
-                {t("tradePage.trade.profit")}
-              </span>
-              <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
-                10%
-              </h6>
-              <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {t("tradePage.trade.minute")}
+            {BET_PERCENTAGE.map((item, index) => (
+              <div
+                key={index}
+                className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected.betPercentage === item.betPercentage && "border-[#3D5AFE]"} `}
+                onClick={() => setPercentIsSelected(item)}
+              >
+                <span className="text-[12px] text-[#fff]">
+                  {" "}
+                  {t("tradePage.trade.profit")}
+                </span>
+                <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
+                  {item.betPercentage}%
+                </h6>
+                <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
+                  {item.timeoutInMinutes} {t("tradePage.trade.minute")}
+                </div>
               </div>
-            </div>
-
-            <div
-              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 20 && "border-[#3D5AFE]"} `}
-              onClick={() => setPercentIsSelected(20)}
-            >
-              <span className="text-[12px] text-[#fff]">
-                {t("tradePage.trade.profit")}
-              </span>
-              <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
-                20%
-              </h6>
-              <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                2 {t("tradePage.trade.minute")}
-              </div>
-            </div>
-
-            <div
-              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 30 && "border-[#3D5AFE]"} `}
-              onClick={() => setPercentIsSelected(30)}
-            >
-              <span className="text-[12px] text-[#fff]">
-                {t("tradePage.trade.profit")}
-              </span>
-              <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
-                30%
-              </h6>
-              <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                3 {t("tradePage.trade.minute")}
-              </div>
-            </div>
-
-            <div
-              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 50 && "border-[#3D5AFE]"} `}
-              onClick={() => setPercentIsSelected(50)}
-            >
-              <span className="text-[12px] text-[#fff]">
-                {t("tradePage.trade.profit")}
-              </span>
-              <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
-                50%
-              </h6>
-              <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                4 {t("tradePage.trade.minute")}
-              </div>
-            </div>
-
-            <div
-              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 80 && "border-[#3D5AFE]"} `}
-              onClick={() => setPercentIsSelected(80)}
-            >
-              <span className="text-[12px] text-[#fff]">
-                {t("tradePage.trade.profit")}
-              </span>
-              <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
-                80%
-              </h6>
-              <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                5 {t("tradePage.trade.minute")}
-              </div>
-            </div>
-
-            <div
-              className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected === 100 && "border-[#3D5AFE]"} `}
-              onClick={() => setPercentIsSelected(100)}
-            >
-              <span className="text-[12px] text-[#fff]">
-                {t("tradePage.trade.profit")}
-              </span>
-              <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
-                100%
-              </h6>
-              <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                6 {t("tradePage.trade.minute")}
-              </div>
-            </div>
+            ))}
           </div>
           <div className="flex items-center justify-between mt-2">
             <span className="text-[12px] text-[#888888]">
@@ -210,6 +134,11 @@ const Trading: FC<Props> = ({
               step={5}
               marks={marks}
               min={0}
+              onChange={(e) => {
+                const data = e.target as any;
+                const amount = (Number(data.value) / 100) * currentBalance;
+                setAmount(Number(amount.toFixed(2)));
+              }}
               max={100}
               valueLabelFormat={valueLabelFormat}
             />
@@ -221,7 +150,6 @@ const Trading: FC<Props> = ({
               <InputCustom
                 size="small"
                 className="w-full"
-                type="number"
                 placeholder="0.00"
                 value={amount}
                 onChange={(e) => {
@@ -252,12 +180,14 @@ const Trading: FC<Props> = ({
             variant="contained"
             onClick={() => {
               if (!amount) return;
-              onClickLongBtn(
+              onBet({
                 amount,
-                PRICE_TYPE.CRYPTO,
-                CRYPTOCURRENCY_CODE.BNBUSDT,
-                0.1
-              );
+                betPercentage: percentIsSelected.betPercentage,
+                pairName: CRYPTOCURRENCY_CODE.BNBUSDT,
+                pairType: PRICE_TYPE.CRYPTO,
+                position: "long",
+                timeoutInMinutes: percentIsSelected.timeoutInMinutes,
+              });
             }}
           >
             <div className="w-full bg-[#55af72] py-[6px] px-4 ">
@@ -270,12 +200,14 @@ const Trading: FC<Props> = ({
             variant="contained"
             onClick={() => {
               if (!amount) return;
-              onClickShortBtn(
+              onBet({
                 amount,
-                PRICE_TYPE.CRYPTO,
-                CRYPTOCURRENCY_CODE.BNBUSDT,
-                0.1
-              );
+                betPercentage: percentIsSelected.betPercentage,
+                pairName: CRYPTOCURRENCY_CODE.BNBUSDT,
+                pairType: PRICE_TYPE.CRYPTO,
+                position: "short",
+                timeoutInMinutes: percentIsSelected.timeoutInMinutes,
+              });
             }}
           >
             <div className="w-full bg-[#dd5350] py-[6px] px-4 ">

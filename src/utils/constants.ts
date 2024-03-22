@@ -1191,3 +1191,12 @@ export enum TRADE_CURRENCY {
   VND = 'vnd',
   USD = 'usd',
 }
+
+export const BET_PERCENTAGE = [
+  { betPercentage: 10, timeoutInMinutes: 1 },
+  { betPercentage: 20, timeoutInMinutes: 2 },
+  { betPercentage: 30, timeoutInMinutes: 3 },
+  { betPercentage: 50, timeoutInMinutes: 4 },
+  { betPercentage: 80, timeoutInMinutes: 5 },
+  { betPercentage: 100, timeoutInMinutes: 6 },
+];

@@ -299,5 +299,6 @@
 	},
   "invalidFileFormat": "Invalid file format. Please choose  valid image file (png, jpg, webp) ",
   "minimumCapacityError": "Your image size must be less than 10MB",
-  "somethingWentWrong": "Something went wrong. Please try again later"
+  "somethingWentWrong": "Something went wrong. Please try again later",
+  "orderConfirmed": "Order Comfirmed"
 }

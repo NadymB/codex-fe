@@ -1,6 +1,7 @@
 import { AxiosInstance } from "axios";
 import restConnector from "../connectors/axiosRestConnector";
 import { PRICE_TYPE } from "@/utils/constants";
+import { BetType } from "@/utils/type";
 
 export class TradeService {
   private restConnector: AxiosInstance;
@@ -21,23 +22,9 @@ export class TradeService {
     return data;
   };
 
-  public placeOrders = async (
-    amount: number,
-    pairType: PRICE_TYPE,
-    pairName: string,
-    profitPercentage: number,
-    betPercentage: number,
-    timeoutInMinutes: number,
-    position: "long" | "short"
-  ) => {
+  public placeOrders = async (value: BetType) => {
     const { data } = await this.restConnector.post(`/trades/orders/place`, {
-      amount,
-      betPercentage,
-      timeoutInMinutes,
-      profitPercentage,
-      pairType,
-      pairName,
-      position,
+      ...value,
     });
     return data;
   };

@@ -9,11 +9,14 @@ import { ConfirmPaymentModal } from "@/components/trade/ConfirmPaymentModal";
 import { OrderSection } from "@/components/trade/OrderSection";
 import Trading from "@/components/trade/Trading";
 import { TradingCandleChart } from "@/components/trade/TradingCandleChart";
+import { onToast } from "@/hooks/useToast";
+import { tradeService } from "@/services/TradeService";
 import {
   CRYPTOCURRENCY_CODE,
   PRICE_TYPE,
   getStaticURL,
 } from "@/utils/constants";
+import { BetType } from "@/utils/type";
 import { Button } from "@mui/material";
 import { t } from "i18next";
 import { useState } from "react";
@@ -27,28 +30,31 @@ const TradePage = ({
     useState(false);
   const [isLong, setIsLong] = useState<boolean>();
   const [isSelectTab, setIsSelectTab] = useState(0);
+  const [formData, setFormData] = useState<BetType>({
+    amount: 0,
+    pairType: PRICE_TYPE.CRYPTO,
+    pairName: CRYPTOCURRENCY_CODE.BNBUSDT,
+    betPercentage: 0,
+    timeoutInMinutes: 0,
+    position: "long",
+  });
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
   };
 
-  const handleLong = (
-    amount: number,
-    pairType: PRICE_TYPE,
-    pairName: CRYPTOCURRENCY_CODE,
-    profitPercentage: number
-  ) => {
-    setIsLong(true);
-    setIsOpenConfirmPaymenModal(true);
-  };
-
-  const handleShort = (
-    amount: number,
-    pairType: PRICE_TYPE,
-    pairName: CRYPTOCURRENCY_CODE,
-    profitPercentage: number
-  ) => {
-    setIsLong(false);
-    setIsOpenConfirmPaymenModal(true);
+  const handleConfirmPayment = async (value: BetType) => {
+    try {
+      const response = await tradeService.placeOrders({
+        ...value,
+        pairName: value.pairName.toLocaleLowerCase(),
+      });
+      if (response.success) {
+        onToast(t("orderConfirmed"), "success");
+        console.log("bet success");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const tabs = [
@@ -117,8 +123,10 @@ const TradePage = ({
           <Trading
             token={params.slug}
             currency={params.currency}
-            onClickLongBtn={handleLong}
-            onClickShortBtn={handleShort}
+            onBet={(value: BetType) => {
+              setFormData(value);
+              setIsOpenConfirmPaymenModal(true);
+            }}
           />
           <OrderSection />
         </>
@@ -131,15 +139,22 @@ const TradePage = ({
     <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000] relative">
       <Tabs
         tabs={tabs}
-        classNameTab="sticky top-0 left-0 bg-[#000000] z-[100] "
+        classNameTab="sticky top-0 left-0 bg-[#000000] z-[30] "
         classNameItem="flex-1 "
         onChange={(value) => changeTab(value)}
         activeTab={isSelectTab}
       />
       {isOpenConfirmPaymentModal && (
         <ConfirmPaymentModal
-          isLong={isLong}
+          isLong={formData.position === "long"}
+          data={formData}
+          slug={params.slug}
+          currency={params.currency}
           onClickCloseBtn={() => setIsOpenConfirmPaymenModal(false)}
+          onClickConfirmBtn={() => {
+            setIsOpenConfirmPaymenModal(false);
+            handleConfirmPayment(formData);
+          }}
         />
       )}
     </DefaultLayout>

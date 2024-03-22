@@ -300,5 +300,6 @@
   },
   "invalidFileFormat": "Định dạng tệp không hợp lệ. Vui lòng chọn tệp hình ảnh hợp lệ (png, jpg, webp)",
   "minimumCapacityError": "Kích thước ảnh của bạn phải nhỏ hơn 5MB",
-  "somethingWentWrong": "Đã xảy ra lỗi. Vui lòng thử lại sau."
+  "somethingWentWrong": "Đã xảy ra lỗi. Vui lòng thử lại sau.",
+  "orderConfirmed": "Đơn hàng đã đặt"
 }
