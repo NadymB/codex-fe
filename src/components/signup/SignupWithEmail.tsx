@@ -101,7 +101,7 @@ const SignupWithEmail = () => {
             formik.touched.password && formik.errors.password ? true : false
           }
           className="text-[#fff] bg-transparent w-full text-[16px]"
-          label={t("authenticationPage.loginPassword")}
+          label={t("authenticationPage.setPassword")}
           name="password"
           type="password"
           autoComplete="new-password"
@@ -124,7 +124,7 @@ const SignupWithEmail = () => {
           value={formik.values.inviteCode}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-          placeholder="(Optional)"
+          placeholder={`(${t("authenticationPage.optional")})`}
         />
       </div>
       {messageFail !== "" && (

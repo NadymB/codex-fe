@@ -10,9 +10,11 @@ import { t } from "i18next";
 
 const CurrencySetting = () => {
   const [currency, setCurrency] = useState<OptionProps>(DEFAULT_CURRENCY);
+  const prevCurrency = localStorage.getItem("currency");
 
   const handleChangeCurrency = (option: OptionProps) => {
     setCurrency({ label: option.label, value: option.value });
+    localStorage.setItem("currency", option.value);
   };
   const router = useRouter();
   return (
@@ -23,6 +25,7 @@ const CurrencySetting = () => {
         <div className="sticky top-0 w-full bg-[#100f14] flex gap-1 items-center h-14 px-6">
           <button
             onClick={() => {
+              localStorage.setItem("currency", currency.value);
               router.back();
             }}
           >
@@ -46,10 +49,10 @@ const CurrencySetting = () => {
             <div
               key={i}
               onClick={() => handleChangeCurrency(option)}
-              className={`flex gap-1 items-center justify-center px-4 py-2 text-sm ${currency.value === option.value ? "text-[#3d5afe] border border-[#3d5afe80] hover:border-[#3d5afe] bg-black" : "text-white bg-[#202125] hover:bg-[#121212]"} cursor-pointer rounded`}
+              className={`flex gap-1 items-center justify-center px-4 py-2 text-sm ${prevCurrency === option.value || currency.value === option.value ? "text-[#3d5afe] border border-[#3d5afe80] hover:border-[#3d5afe] bg-black" : "text-white bg-[#202125] hover:bg-[#121212]"} cursor-pointer rounded`}
             >
               {option.value.toUpperCase()}
-              {currency.value === option.value && <CheckIcon />}
+              {(prevCurrency === option.value || currency.value === option.value) && <CheckIcon />}
             </div>
           ))}
         </div>

@@ -70,7 +70,7 @@ export const OrderSection = () => {
         href={"/m/order"}
         className="text-[#3D5AFE] absolute top-0 right-4 "
       >
-        {t("order.allOrders")}
+        {t("tradePage.trade.allOrders")}
       </Link>
     </div>
   );

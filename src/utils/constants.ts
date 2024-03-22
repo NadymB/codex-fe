@@ -46,7 +46,7 @@ export const OptionsLanguage = [
     flag: "/assets/images/flags/jp.svg",
   },
   {
-    label: "Việt Nam",
+    label: "Tiếng Việt",
     International: "Vietnamese",
     value: "vi",
     flag: "/assets/images/flags/vn.svg",
@@ -226,7 +226,7 @@ export const ASSET_LIST = [
   },
   {
     label: "bill",
-    link: "/m/bill",
+    link: "/m/billing",
     path: [
       {
         d: "M2.6,2v19.5h12V20H4.1V3.5h7.5V8h4.5v1.5h1.5V6.9l-0.2-0.2l-4.5-4.5L12.7,2H2.6z M13.1,4.5l1.9,1.9h-1.9V4.5z M5.6,9.5V11h9  V9.5H5.6z M5.6,13.2v1.5h5.2v-1.5H5.6z M12.4,13.2v1.5h2.2v-1.5H12.4z M5.6,16.2v1.5h5.2v-1.5H5.6z M12.4,16.2v1.5h2.2v-1.5H12.4z",
