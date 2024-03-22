@@ -1,12 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
-import { getStaticURL } from "@/utils/constants";
+import {
+  CRYPTOCURRENCY_CODE,
+  PRICE_TYPE,
+  getStaticURL,
+} from "@/utils/constants";
 import { Button, InputAdornment, Slider, styled } from "@mui/material";
 import { t } from "i18next";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { InputCustom } from "../InputCustom";
 import { TradingChartBar } from "./TradingChartBar";
+import { useAuth } from "@/hooks/useAuth";
+import { convertNumberToFormattedString } from "@/utils/converter";
 
 const CssSlider = styled(Slider)({
   "& .MuiSlider-mark": {
@@ -43,8 +49,18 @@ function valueLabelFormat(value: number) {
 interface Props {
   token: string;
   currency: string;
-  onClickShortBtn: () => void;
-  onClickLongBtn: () => void;
+  onClickShortBtn: (
+    amount: number,
+    pairType: PRICE_TYPE,
+    pairName: CRYPTOCURRENCY_CODE,
+    profitPercentage: number
+  ) => void;
+  onClickLongBtn: (
+    amount: number,
+    pairType: PRICE_TYPE,
+    pairName: CRYPTOCURRENCY_CODE,
+    profitPercentage: number
+  ) => void;
 }
 
 const Trading: FC<Props> = ({
@@ -54,6 +70,13 @@ const Trading: FC<Props> = ({
   onClickLongBtn,
 }) => {
   const [percentIsSelected, setPercentIsSelected] = useState(10);
+  const { fetchUserBalance, currentBalance, tradeCurrenty } = useAuth();
+  const [amount, setAmount] = useState<number | null>(0);
+
+  useEffect(() => {
+    fetchUserBalance();
+  },[]);
+
   return (
     <div>
       <div className="py-3 px-4">
@@ -108,7 +131,7 @@ const Trading: FC<Props> = ({
                 20%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {t("tradePage.trade.minute")}
+                2 {t("tradePage.trade.minute")}
               </div>
             </div>
 
@@ -123,7 +146,7 @@ const Trading: FC<Props> = ({
                 30%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {t("tradePage.trade.minute")}
+                3 {t("tradePage.trade.minute")}
               </div>
             </div>
 
@@ -138,7 +161,7 @@ const Trading: FC<Props> = ({
                 50%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {t("tradePage.trade.minute")}
+                4 {t("tradePage.trade.minute")}
               </div>
             </div>
 
@@ -153,7 +176,7 @@ const Trading: FC<Props> = ({
                 80%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {t("tradePage.trade.minute")}
+                5 {t("tradePage.trade.minute")}
               </div>
             </div>
 
@@ -168,7 +191,7 @@ const Trading: FC<Props> = ({
                 100%
               </h6>
               <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
-                1 {t("tradePage.trade.minute")}
+                6 {t("tradePage.trade.minute")}
               </div>
             </div>
           </div>
@@ -176,7 +199,9 @@ const Trading: FC<Props> = ({
             <span className="text-[12px] text-[#888888]">
               {t("tradePage.trade.balance")}
             </span>
-            <span className="text-[12px] text-[#fff]">0.00 USDT</span>
+            <span className="text-[12px] text-[#fff]">
+              {convertNumberToFormattedString(String(currentBalance))} USDT
+            </span>
           </div>
           <div className="px-3 mt-2 ">
             <CssSlider
@@ -196,7 +221,16 @@ const Trading: FC<Props> = ({
               <InputCustom
                 size="small"
                 className="w-full"
+                type="number"
                 placeholder="0.00"
+                value={amount}
+                onChange={(e) => {
+                  if (Number(e.target.value) > 0) {
+                    setAmount(Number(e.target.value));
+                  } else {
+                    setAmount(null);
+                  }
+                }}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment
@@ -216,7 +250,15 @@ const Trading: FC<Props> = ({
             sx={{ padding: 0, marginTop: "8px", textTransform: "none" }}
             className="w-full overflow-hidden"
             variant="contained"
-            onClick={onClickLongBtn}
+            onClick={() => {
+              if (!amount) return;
+              onClickLongBtn(
+                amount,
+                PRICE_TYPE.CRYPTO,
+                CRYPTOCURRENCY_CODE.BNBUSDT,
+                0.1
+              );
+            }}
           >
             <div className="w-full bg-[#55af72] py-[6px] px-4 ">
               {t("tradePage.long")}
@@ -226,7 +268,15 @@ const Trading: FC<Props> = ({
             sx={{ padding: 0, marginTop: "8px", textTransform: "none" }}
             className="w-full overflow-hidden"
             variant="contained"
-            onClick={onClickShortBtn}
+            onClick={() => {
+              if (!amount) return;
+              onClickShortBtn(
+                amount,
+                PRICE_TYPE.CRYPTO,
+                CRYPTOCURRENCY_CODE.BNBUSDT,
+                0.1
+              );
+            }}
           >
             <div className="w-full bg-[#dd5350] py-[6px] px-4 ">
               {t("tradePage.short")}

@@ -1,4 +1,4 @@
-import { OutlinedInput, TextField, styled } from "@mui/material";
+import { TextField, styled } from "@mui/material";
 
 export const InputCustom = styled(TextField)({
   "& label.Mui-focused": {

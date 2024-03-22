@@ -9,7 +9,11 @@ import { ConfirmPaymentModal } from "@/components/trade/ConfirmPaymentModal";
 import { OrderSection } from "@/components/trade/OrderSection";
 import Trading from "@/components/trade/Trading";
 import { TradingCandleChart } from "@/components/trade/TradingCandleChart";
-import { getStaticURL } from "@/utils/constants";
+import {
+  CRYPTOCURRENCY_CODE,
+  PRICE_TYPE,
+  getStaticURL,
+} from "@/utils/constants";
 import { Button } from "@mui/material";
 import { t } from "i18next";
 import { useState } from "react";
@@ -27,12 +31,22 @@ const TradePage = ({
     setIsSelectTab(tabNumber);
   };
 
-  const handleLong = () => {
+  const handleLong = (
+    amount: number,
+    pairType: PRICE_TYPE,
+    pairName: CRYPTOCURRENCY_CODE,
+    profitPercentage: number
+  ) => {
     setIsLong(true);
     setIsOpenConfirmPaymenModal(true);
   };
 
-  const handleShort = () => {
+  const handleShort = (
+    amount: number,
+    pairType: PRICE_TYPE,
+    pairName: CRYPTOCURRENCY_CODE,
+    profitPercentage: number
+  ) => {
     setIsLong(false);
     setIsOpenConfirmPaymenModal(true);
   };

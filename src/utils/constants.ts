@@ -1185,3 +1185,9 @@ export const ORDERS_DATA = [
     profit: "2,500.00",
   },
 ];
+
+
+export enum TRADE_CURRENCY {
+  VND = 'vnd',
+  USD = 'usd',
+}
