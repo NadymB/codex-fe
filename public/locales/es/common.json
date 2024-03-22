@@ -169,6 +169,7 @@
     "setPassword": "configurar la clave",
     "loginPassword": "contraseña de inicio de sesión",
     "invitationCode": "Código de invitación",
+    "optional": "opcional",
     "userNameIsInvalid": "Se requiere nombre de usuario",
     "passwordIsInvalid": "8-20 caracteres",
     "phoneNumberIsInvalid": "Por favor completa tu número de teléfono",

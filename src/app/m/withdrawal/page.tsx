@@ -79,13 +79,13 @@ const WithdrawPage = () => {
         <div className="flex flex-col gap-2 w-full pb-10 pt-20">
           <div className="w-full flex justify-between text-base text-white">
             <span className="text-[#888]">
-              {t("withdraw.managementOfWithdrawal")}
+              {t("withdraw.fees")}
             </span>
-            <span>{t("withdraw.managementOfWithdrawal")}</span>
+            <span>0.00 USDT</span>
           </div>
           <div className="w-full flex justify-between text-sm text-white">
-            <span className="text-[#888]">{t("withdraw.fees")}</span>
-            <span>{t("withdraw.amountReceived")}</span>
+            <span className="text-[#888]">{t("withdraw.amountReceived")}</span>
+            <span>0.00 USDT</span>
           </div>
           <button
             type="submit"

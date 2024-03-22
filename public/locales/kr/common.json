@@ -169,6 +169,7 @@
     "setPassword": "암호를 설정하세요",
     "loginPassword": "로그인 비밀번호",
     "invitationCode": "초대 코드",
+    "optional": "선택 과목",
     "userNameIsInvalid": "사용자 이름이 필요합니다",
     "passwordIsInvalid": "8-20자",
     "phoneNumberIsInvalid": "휴대폰 번호가 잘못되었습니다.",

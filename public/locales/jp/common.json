@@ -169,6 +169,7 @@
     "setPassword": "パスワードを設定してください",
     "loginPassword": "ログインパスワード",
     "invitationCode": "招待コード",
+    "optional": "オプション",
     "userNameIsInvalid": "ユーザー名は入力する必要があります",
     "passwordIsInvalid": "6 - 20個々の文字",
     "phoneNumberIsInvalid": "携帯電話番号が正しくありません",
