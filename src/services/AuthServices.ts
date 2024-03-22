@@ -151,7 +151,7 @@ export class AuthService {
     address?: string,
     level: number
   }): Promise<any> {
-    const { data } = await restConnector.post("/users/verify-information", {
+    const { data } = await restConnector.post("/users/kyc", {
       certificateType: values.certificateType,
       certificateFront: values.certificateFront,
       certificateBack: values.certificateBack,
