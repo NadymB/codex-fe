@@ -4,19 +4,26 @@ import { BackIcon } from "@/assets/icons/BackIcon";
 import { CheckIcon } from "@/assets/icons/CheckIcon";
 import { DEFAULT_CURRENCY, OPTIONS_CURRENCY } from "@/utils/constants";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { OptionProps } from "../../asset/page";
 import { t } from "i18next";
 
 const CurrencySetting = () => {
   const [currency, setCurrency] = useState<OptionProps>(DEFAULT_CURRENCY);
-  const prevCurrency = localStorage.getItem("currency");
+  const [prevCurrency, setPrevCurrency] = useState<string | null>();
 
   const handleChangeCurrency = (option: OptionProps) => {
     setCurrency({ label: option.label, value: option.value });
-    localStorage.setItem("currency", option.value);
+    setPrevCurrency(option.value);
   };
   const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const currencyStorage = window.localStorage.getItem("currency")
+      setPrevCurrency(currencyStorage);
+    }
+  }, [])
   return (
     <div className="">
       <div
