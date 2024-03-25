@@ -1200,3 +1200,7 @@ export const BET_PERCENTAGE = [
   { betPercentage: 80, timeoutInMinutes: 5 },
   { betPercentage: 100, timeoutInMinutes: 6 },
 ];
+
+export const getRnd = (min: number, max: number) => {
+  return (Math.random() * (max - min) + min).toFixed(2);
+}
