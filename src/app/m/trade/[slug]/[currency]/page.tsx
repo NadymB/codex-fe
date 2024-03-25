@@ -40,6 +40,7 @@ const TradePage = ({
     position: "long",
   });
   const [isRefresh, setIsRefresh] = useState(false);
+  const [tokenPrice, setTokenPrice] = useState<string>("0");
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
   };
@@ -120,6 +121,7 @@ const TradePage = ({
             </div>
             <div className="px-4">
               <TradingCandleChart
+                setValueToken={setTokenPrice}
                 token={params.slug}
                 currency={params.currency}
               />
@@ -160,6 +162,7 @@ const TradePage = ({
       content: (
         <>
           <Trading
+            priceToken={tokenPrice}
             isRefresh={isRefresh}
             token={params.slug}
             currency={params.currency}
@@ -179,30 +182,30 @@ const TradePage = ({
   ];
 
   return (
-    <AuthenticationLayout>
-      <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000] relative">
-        <Tabs
-          tabs={tabs}
-          classNameTab="sticky top-0 left-0 bg-[#000000] z-[30] "
-          classNameItem="flex-1 "
-          onChange={(value) => changeTab(value)}
-          activeTab={isSelectTab}
+    // <AuthenticationLayout>
+    <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000] relative">
+      <Tabs
+        tabs={tabs}
+        classNameTab="sticky top-0 left-0 bg-[#000000] z-[30] "
+        classNameItem="flex-1 "
+        onChange={(value) => changeTab(value)}
+        activeTab={isSelectTab}
+      />
+      {isOpenConfirmPaymentModal && (
+        <ConfirmPaymentModal
+          isLong={formData.position === "long"}
+          data={formData}
+          slug={params.slug}
+          currency={params.currency}
+          onClickCloseBtn={() => setIsOpenConfirmPaymenModal(false)}
+          onClickConfirmBtn={() => {
+            setIsOpenConfirmPaymenModal(false);
+            handleConfirmPayment(formData);
+          }}
         />
-        {isOpenConfirmPaymentModal && (
-          <ConfirmPaymentModal
-            isLong={formData.position === "long"}
-            data={formData}
-            slug={params.slug}
-            currency={params.currency}
-            onClickCloseBtn={() => setIsOpenConfirmPaymenModal(false)}
-            onClickConfirmBtn={() => {
-              setIsOpenConfirmPaymenModal(false);
-              handleConfirmPayment(formData);
-            }}
-          />
-        )}
-      </DefaultLayout>
-    </AuthenticationLayout>
+      )}
+    </DefaultLayout>
+    // </AuthenticationLayout>
   );
 };
 export default TradePage;

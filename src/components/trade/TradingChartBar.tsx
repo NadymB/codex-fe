@@ -2,7 +2,7 @@
 import { t } from "i18next";
 import React, { useEffect, useState } from "react";
 
-export const TradingChartBar = () => {
+export const TradingChartBar = ({priceToken}:{priceToken:string}) => {
   const [columnWidthLong, setColumnWidthLong] = useState([
     30, 50, 40, 60, 45, 20, 40,
   ]);

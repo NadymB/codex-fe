@@ -13,7 +13,7 @@ import {
   dispose,
   init,
 } from "klinecharts";
-import { FC, useEffect, useState } from "react";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 
 const tradingSessionTimes = [
   { lable: "15m", value: 15 },
@@ -28,9 +28,14 @@ const tradingSessionTimes = [
 interface Props {
   token: string;
   currency: string;
+  setValueToken: Dispatch<SetStateAction<string>>;
 }
 
-export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
+export const TradingCandleChart: FC<Props> = ({
+  token,
+  currency,
+  setValueToken,
+}) => {
   const [currentTradingSessionTime, setCurrentTradingSessionTime] = useState(0);
   const [tokenPrice, setTokenPrice] = useState<string>("0");
   const [lastCandleDirection, setLastCandleDirection] = useState<string>("up");
@@ -78,6 +83,12 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
         );
 
       setTokenPrice(
+        numberToLocaleString(
+          formattedData[formattedData.length - 1].close,
+          "USC"
+        )
+      );
+      setValueToken(
         numberToLocaleString(
           formattedData[formattedData.length - 1].close,
           "USC"

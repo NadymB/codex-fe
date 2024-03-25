@@ -40,7 +40,7 @@ const SelectCountries = (props: IProps) => {
     <div className="min-screen bg-[#1C1C1E]">
       <div
         ref={headerRef}
-        className="sticky top-0 left-0 w-full px-4 py-4 bg-[#100f14]"
+        className="sticky z-50 top-0 left-0 w-full px-4 py-4 bg-[#100f14]"
       >
         <div className=" flex items-center gap-2 mb-4">
           <div className="cursor-pointer" onClick={onBack}>
