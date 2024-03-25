@@ -58,7 +58,7 @@ export const OrderSection = ({
     {
       name: `${t("tradePage.position")}`,
       content:
-        orderPending.length > 0 ? (
+        orderPending?.length > 0 ? (
           <div className="flex flex-col gap-2">
             <div className="flex flex-col">
               {orderPending.map((item: any, index: number) => (
@@ -96,7 +96,7 @@ export const OrderSection = ({
     {
       name: `${t("tradePage.order")}`,
       content:
-        orderHistory.length > 0 ? (
+        orderHistory?.length > 0 ? (
           <div className="flex flex-col gap-2">
             <div className="flex flex-col">
               {orderHistory.map((item: any, index: number) => (
