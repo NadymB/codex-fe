@@ -554,6 +554,27 @@ export enum CRYPTOCURRENCY_CODE {
   BTCUSDT = "BTCUSDT",
 }
 
+export enum CHART_CODE {
+  CNY = "CNY_USD",
+  GBP = "GBP_USD",
+  JPY = "JPY_USD",
+  DOGE = "DOGEUSDT",
+  XRP = "XRPUSDT",
+  ETH = "ETHUSDT",
+  MATIC = "MATICUSDT",
+  BNB = "BNBUSDT",
+  BTC = "BTCUSDT",
+  GOLD = "Gold Futures",
+  ALUMINIUM = "Aluminium Futures",
+  SILVER = "Silver Futures",
+  SUGAR = "Sugar Futures",
+  COFFEE = "Coffee",
+  COPPER = "Copper",
+  CRUDE = "Crude Oil",
+  ROUGH = "Rough Rice Futures",
+  PLATINUM = "Platinum",
+}
+
 export const SWIPER_SLIDER_DATA = [
   {
     url: `${getStaticURL()}/assets/images/welcome.svg`,
@@ -1186,10 +1207,9 @@ export const ORDERS_DATA = [
   },
 ];
 
-
 export enum TRADE_CURRENCY {
-  VND = 'vnd',
-  USD = 'usd',
+  VND = "vnd",
+  USD = "usd",
 }
 
 export const BET_PERCENTAGE = [
@@ -1203,4 +1223,4 @@ export const BET_PERCENTAGE = [
 
 export const getRnd = (min: number, max: number) => {
   return (Math.random() * (max - min) + min).toFixed(2);
-}
+};
