@@ -247,9 +247,11 @@
       "short": "baissier",
       "orderPrice": "Prix de règlement",
       "noMoreData": "plus de données",
-      "bullishAMinute": "voir plus une minute",
-      "bearishAMinute": "baissier une minute",
-      "allOrders": "Tous les ordres"
+      "bullishAMinute": "voir plus {{number}} minute",
+      "bearishAMinute": "baissier {{number}} minute",
+      "allOrders": "Tous les ordres",
+      "win": "Victoire",
+      "lose": "Défaite"
     },
     "chart": {
       "title": "s'orienter",
@@ -293,9 +295,9 @@
     "clickToSelectSelfie": "Cliquez pour choisir un selfie",
     "submit": "soumettre",
     "uploadSuccess": "Téléchargement réussi, en attente de révision",
-    "examinationPassed":"examen réussi",
-    "rejected":"Auditoría no aprobada",
-    "pending":"Modéré"
+    "examinationPassed": "examen réussi",
+    "rejected": "Auditoría no aprobada",
+    "pending": "Modéré"
   },
   "invalidFileFormat": "Format de fichier invalide. Veuillez choisir un fichier image valide (png, jpg, webp)",
   "minimumCapacityError": "La taille de votre image doit être inférieure à 10Mo",

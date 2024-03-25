@@ -73,7 +73,7 @@ export const ConfirmPaymentModal = ({
               +
               {convertNumberToFormattedString(
                 Number(
-                  data.amount + (data.amount * data.betPercentage) / 100
+                  (data.amount * data.betPercentage) / 100
                 ).toFixed(2)
               )}{" "}
               USDT

@@ -247,9 +247,11 @@
       "short": "약세",
       "orderPrice": "정산가격",
       "noMoreData": "더 이상 데이터가 없습니다",
-      "bullishAMinute": "더보기 1분",
-      "bearishAMinute": "약세 1분",
-      "allOrders": "모든 주문"
+      "bullishAMinute": "더보기 {{number}} 분",
+      "bearishAMinute": "약세 {{number}} 분",
+      "allOrders": "모든 주문",
+      "win": "승리",
+      "lose": "패배"
     },
     "chart": {
       "title": "경향",

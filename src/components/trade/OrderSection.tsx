@@ -1,81 +1,136 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Tabs from "../Tabs";
 import Link from "next/link";
 import Image from "next/image";
 import { t } from "i18next";
-import { ORDERS_DATA, getStaticURL } from "@/utils/constants";
+import { ORDERS_DATA, WS_TOPIC, getStaticURL } from "@/utils/constants";
 import { OrderItem } from "./OrderItem";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 const orders = true;
-const tabOrder = [
-  {
-    name: `${t("tradePage.position")}`,
-    content: orders ? (
-      <div className="flex flex-col gap-2">
-        <div className="flex flex-col">
-          {ORDERS_DATA.map((item, index) => (
-            <OrderItem
-              key={index}
-              isLong={item.long}
-              price={item.paymentPrice}
-              amount={item.amount}
-              profit={item.profit}
-            />
-          ))}
-        </div>
-        <span className="w-full text-[#9ca3af] text-xs pb-3 text-center">
-          {t("tradePage.trade.noMoreData")}
-        </span>
-      </div>
-    ) : (
-      <div className="flex flex-col items-center justify-center p-4">
-        <Image
-          src={`${getStaticURL()}/assets/images/empty.svg`}
-          alt={t("order.noData")}
-          width={100}
-          height={100}
-          className="w-80 h-80"
-        />
-        <span className="text-base text-[#737373]">{t("order.noData")}</span>
-      </div>
-    ),
-  },
-  {
-    name: `${t("tradePage.order")}`,
-    content: (
-      <div className="flex flex-col items-center justify-center  p-4 ">
-        <Image
-          src={`${getStaticURL()}/assets/images/empty.svg`}
-          alt={t("order.noData")}
-          width={100}
-          height={100}
-          className="w-80 h-80"
-        />
-        <span className="text-base text-[#737373]">{t("order.noData")}</span>
-      </div>
-    ),
-  },
-];
+
 export const OrderSection = ({
+  isRefresh,
+
   getOrderHistory,
+  getOrderPending,
 }: {
   getOrderHistory: () => Promise<any>;
+  getOrderPending: () => Promise<any>;
+  isRefresh: boolean;
 }) => {
+  const { webSocket } = useContext(WebSocketCtx);
+
   const [isSelectTab, setIsSelectTab] = useState(0);
-  const [orderHistory, setOrderHistory] = useState([]);
+  const [orderHistory, setOrderHistory] = useState<any>([]);
+  const [orderPending, setOrderPending] = useState<any>([]);
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
   };
 
   useEffect(() => {
     fetchOrderHistory();
-  }, []);
+    fetchOrderPending();
+  }, [isRefresh]);
 
   const fetchOrderHistory = async () => {
-    //TODO
     const data = await getOrderHistory();
-    setOrderHistory(data);
+    setOrderHistory(data.rows);
+    console.log(data.rows);
   };
+  const fetchOrderPending = async () => {
+    const data = await getOrderPending();
+    setOrderPending(data);
+  };
+  useEffect(() => {
+    if (webSocket) {
+      webSocket.on(WS_TOPIC.BET_RESULT, (data) => {
+        fetchOrderPending();
+        fetchOrderHistory();
+        console.log("cin chaof day laf trad bet");
+      });
+    }
+    return () => {
+      webSocket?.off(WS_TOPIC.BET_RESULT);
+    };
+  }, [webSocket]);
 
+  const tabOrder = [
+    {
+      name: `${t("tradePage.position")}`,
+      content:
+        orderPending.length > 0 ? (
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col">
+              {orderPending.map((item: any, index: number) => (
+                <OrderItem
+                  key={index}
+                  isLong={item.position === "long"}
+                  price={item.orderValue}
+                  amount={item.amount}
+                  profit={(item.amount * item.betPercentage) / 100}
+                  timeoutInMinutes={item.timeoutInMinutes}
+                  endAt={item.endAt}
+                  token={item.pairName.replace("usdt", "").toUpperCase()}
+                />
+              ))}
+            </div>
+            <span className="w-full text-[#9ca3af] text-xs pb-3 text-center">
+              {t("tradePage.trade.noMoreData")}
+            </span>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center p-4">
+            <Image
+              src={`${getStaticURL()}/assets/images/empty.svg`}
+              alt={t("order.noData")}
+              width={100}
+              height={100}
+              className="w-80 h-80"
+            />
+            <span className="text-base text-[#737373]">
+              {t("order.noData")}
+            </span>
+          </div>
+        ),
+    },
+    {
+      name: `${t("tradePage.order")}`,
+      content:
+        orderHistory.length > 0 ? (
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col">
+              {orderHistory.map((item: any, index: number) => (
+                <OrderItem
+                  key={index}
+                  isLong={item.position === "long"}
+                  price={item.orderValue}
+                  amount={item.amount}
+                  profit={(item.amount * item.betPercentage) / 100}
+                  timeoutInMinutes={item.timeoutInMinutes}
+                  token={item.pairName.replace("usdt", "").toUpperCase()}
+                />
+              ))}
+            </div>
+            <span className="w-full text-[#9ca3af] text-xs pb-3 text-center">
+              {t("tradePage.trade.noMoreData")}
+            </span>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center p-4">
+            <Image
+              src={`${getStaticURL()}/assets/images/empty.svg`}
+              alt={t("order.noData")}
+              width={100}
+              height={100}
+              className="w-80 h-80"
+            />
+            <span className="text-base text-[#737373]">
+              {t("order.noData")}
+            </span>
+          </div>
+        ),
+    },
+  ];
   return (
     <div className="relative">
       <Tabs

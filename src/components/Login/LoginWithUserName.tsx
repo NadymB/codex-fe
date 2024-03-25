@@ -6,11 +6,14 @@ import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { LOGIN_MODE } from "@/utils/constants";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 
 const LoginWithUserName = () => {
+  const { webSocket, register } = useContext(WebSocketCtx);
+
   const { login } = useAuth();
   const [messageLoginFail, setMassageLoginFail] = useState("");
 
@@ -34,6 +37,7 @@ const LoginWithUserName = () => {
       try {
         const user = await login(values);
         if (user) {
+          register(user.access_token);
           router.push("/m");
         }
       } catch (error) {
