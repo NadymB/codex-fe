@@ -169,6 +169,7 @@
     "setPassword": "设置密码",
     "loginPassword": "登录密码",
     "invitationCode": "邀请码",
+    "optional": "可选",
     "userNameIsInvalid": "用户名必填",
     "passwordIsInvalid": "8-20个字符",
     "phoneNumberIsInvalid": "手机号不正确",

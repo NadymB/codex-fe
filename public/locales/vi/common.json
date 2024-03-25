@@ -73,9 +73,9 @@
     "messageLogin": "Vui lòng đăng nhập vào tài khoản của bạn hoặc đăng ký một tài khoản",
     "login": "Đăng nhập",
     "signup": "Đăng ký",
-    "notCertified": "Not certified",
-    "greenRiseAndRed": "Green rise and red",
-    "notSet": "Not set"
+    "notCertified": "Chưa xác thực",
+    "greenRiseAndRed": "Xanh lên đỏ xuống",
+    "notSet": "Chưa đặt"
   },
   "announcementPage": {
     "title": "Thông báo"
@@ -106,7 +106,7 @@
     "required": "Bắt buộc"
   },
   "authentication": {
-    "title": "Authentication",
+    "title": "Xác thực",
     "lv1": "Lv.1",
     "rightsAndInterests": "Quyền và lợi ích",
     "fiatCurrencyDeposit": "Tái chế tiền tệ fiat",
@@ -123,7 +123,7 @@
     "certifyBtnLv2": "Bạn cần hoàn thành chứng nhận LV.1 trước"
   },
   "learn": {
-    "title": "Learn",
+    "title": "Hướng dẫn",
     "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
     "howAreTheyDifferentContent": "Stablecoins are cryptocurrencies whose values are pegged to a stable asset, mostly fiat currencies. Tether (USDT), USD Coin (USDC) and Binance USD (BUSD) are the three most popular stablecoins, with a combined market cap of $120 billion. However, with the recent buzz around BUSD, there’s no doubt that most investors would be curious to know if BUSD is still worth investing in — or if you should simply pile your investments into USDT, USDC or other stablecoins instead.",
     "whichOneIsRightForYouTitle": "Traditional Debit Card vs. Crypto Debit Card: Which One Is Right For You?",
@@ -168,7 +168,8 @@
     "phoneNumber": "Số điện thoại",
     "setPassword": "Đặt mật khẩu",
     "loginPassword": "Mật khẩu đăng nhập",
-    "invitationCode": "Invitation Code",
+    "invitationCode": "Mã mời",
+    "optional": "Không bắt buộc",
     "userNameIsInvalid": "Xin hãy điền tên đăng nhập",
     "passwordIsInvalid": "Vui lòng điền mật khẩu",
     "phoneNumberIsInvalid": "Vui lòng điền vào số điện thoại của bạn",
@@ -190,8 +191,8 @@
   },
   "withdraw": {
     "title": "Rút",
-    "account": "Account",
-    "amount": "Amount",
+    "account": "Tài khoản",
+    "amount": "Số lượng",
     "currentBalance": "Số dư hiện tại:",
     "allBalance": "Tất cả sự cân bằng",
     "managementOfWithdrawal": "Quản lý rút tiền",
@@ -206,7 +207,7 @@
     "noData": "Không có dữ liệu"
   },
   "bill": {
-    "title": "Bill",
+    "title": "Hóa đơn",
     "noData": "Không có dữ liệu"
   },
   "password": {
@@ -299,5 +300,6 @@
   },
   "invalidFileFormat": "Định dạng tệp không hợp lệ. Vui lòng chọn tệp hình ảnh hợp lệ (png, jpg, webp)",
   "minimumCapacityError": "Kích thước ảnh của bạn phải nhỏ hơn 5MB",
-  "somethingWentWrong": "Đã xảy ra lỗi. Vui lòng thử lại sau."
+  "somethingWentWrong": "Đã xảy ra lỗi. Vui lòng thử lại sau.",
+  "orderConfirmed": "Đơn hàng đã đặt"
 }

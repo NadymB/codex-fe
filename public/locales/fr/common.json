@@ -169,6 +169,7 @@
     "setPassword": "définir le mot de passe",
     "loginPassword": "mot de passe",
     "invitationCode": "Code d'invitation",
+    "optional": "facultatif",
     "userNameIsInvalid": "Nom d'utilisateur est nécessaire",
     "passwordIsInvalid": "8-20 caractères",
     "phoneNumberIsInvalid": "Le numéro de portable est incorrect",

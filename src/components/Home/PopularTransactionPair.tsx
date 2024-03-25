@@ -1,5 +1,6 @@
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { priceFeedService } from "@/services/PriceFeedService";
+import { getRnd } from "@/utils/constants";
 import { t } from "i18next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -67,8 +68,8 @@ export const PopularTransactionPair = () => {
             <span className="text-[#888888]">USDT</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#55af72]">2921.39</span>
-            <span className="text-[#55af72] text-[12px]">+1.53%</span>
+            <span className="text-[#55af72]">{getRnd(0, 100000)}</span>
+            <span className="text-[#55af72] text-[12px]">+{getRnd(0, 10)}%</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#fff] text-nowrap">
@@ -88,8 +89,8 @@ export const PopularTransactionPair = () => {
             <span className="text-[#888888]">USDT</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#55af72]">2145.39</span>
-            <span className="text-[#55af72] text-[12px]">+0.19%</span>
+            <span className="text-[#55af72]">{getRnd(0, 100000)}</span>
+            <span className="text-[#55af72] text-[12px]">+{getRnd(0, 10)}%</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#fff] text-nowrap">
@@ -109,8 +110,8 @@ export const PopularTransactionPair = () => {
             <span className="text-[#888888]">USDT</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#55af72]">2021.39</span>
-            <span className="text-[#55af72] text-[12px]">+1.53%</span>
+            <span className="text-[#55af72]">{getRnd(0, 100000)}</span>
+            <span className="text-[#55af72] text-[12px]">+{getRnd(0, 10)}%</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#fff] text-nowrap">
@@ -130,8 +131,8 @@ export const PopularTransactionPair = () => {
             <span className="text-[#888888]">USDT</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#dd5350]">51665.17</span>
-            <span className="text-[#dd5350] text-[12px]">-0.76%</span>
+            <span className="text-[#dd5350]">{getRnd(0, 100000)}</span>
+            <span className="text-[#dd5350] text-[12px]">-{getRnd(0, 10)}%</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#fff] text-nowrap">
@@ -151,8 +152,8 @@ export const PopularTransactionPair = () => {
             <span className="text-[#888888]">USDT</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#55af72]">2021.39</span>
-            <span className="text-[#55af72] text-[12px]">+1.53%</span>
+            <span className="text-[#55af72]">{getRnd(0, 100000)}</span>
+            <span className="text-[#55af72] text-[12px]">+{getRnd(0, 10)}%</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#fff] text-nowrap">
@@ -171,8 +172,8 @@ export const PopularTransactionPair = () => {
             <span className="text-[#888888]">USDT</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#dd5350]">51665.17</span>
-            <span className="text-[#dd5350] text-[12px]">-0.76%</span>
+            <span className="text-[#dd5350]">{getRnd(0, 100000)}</span>
+            <span className="text-[#dd5350] text-[12px]">-{getRnd(0, 10)}%</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#fff] text-nowrap">
@@ -191,8 +192,8 @@ export const PopularTransactionPair = () => {
             <span className="text-[#888888]">USDT</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#dd5350]">51665.17</span>
-            <span className="text-[#dd5350] text-[12px]">-0.76%</span>
+            <span className="text-[#dd5350]">{getRnd(0, 100000)}</span>
+            <span className="text-[#dd5350] text-[12px]">-{getRnd(0, 10)}%</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#fff] text-nowrap">
@@ -211,8 +212,8 @@ export const PopularTransactionPair = () => {
             <span className="text-[#888888]">USDT</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#dd5350]">51665.17</span>
-            <span className="text-[#dd5350] text-[12px]">-0.76%</span>
+            <span className="text-[#dd5350]">{getRnd(0, 100000)}</span>
+            <span className="text-[#dd5350] text-[12px]">-{getRnd(0, 10)}%</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#fff] text-nowrap">
@@ -231,8 +232,8 @@ export const PopularTransactionPair = () => {
             <span className="text-[#888888]">USDT</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-[#dd5350]">51665.17</span>
-            <span className="text-[#dd5350] text-[12px]">-0.76%</span>
+            <span className="text-[#dd5350]">{getRnd(0, 100000)}</span>
+            <span className="text-[#dd5350] text-[12px]">-{getRnd(0, 10)}%</span>
           </div>
           <div className="flex items-center gap-1">
             <span className="text-[#fff] text-nowrap">

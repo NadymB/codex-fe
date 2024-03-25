@@ -3,13 +3,20 @@
 
 import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 import Tabs from "@/components/Tabs";
-import { AuthenticationLayout } from "@/components/layouts/AuthenticationLayout";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { ConfirmPaymentModal } from "@/components/trade/ConfirmPaymentModal";
 import { OrderSection } from "@/components/trade/OrderSection";
 import Trading from "@/components/trade/Trading";
 import { TradingCandleChart } from "@/components/trade/TradingCandleChart";
-import { getStaticURL } from "@/utils/constants";
+import { useAuth } from "@/hooks/useAuth";
+import { onToast } from "@/hooks/useToast";
+import { tradeService } from "@/services/TradeService";
+import {
+  CRYPTOCURRENCY_CODE,
+  PRICE_TYPE,
+  getStaticURL,
+} from "@/utils/constants";
+import { BetType } from "@/utils/type";
 import { Button } from "@mui/material";
 import { t } from "i18next";
 import { useState } from "react";
@@ -21,20 +28,51 @@ const TradePage = ({
 }) => {
   const [isOpenConfirmPaymentModal, setIsOpenConfirmPaymenModal] =
     useState(false);
-  const [isLong, setIsLong] = useState<boolean>();
   const [isSelectTab, setIsSelectTab] = useState(0);
+  const { currentUser } = useAuth();
+  const [formData, setFormData] = useState<BetType>({
+    amount: 0,
+    pairType: PRICE_TYPE.CRYPTO,
+    pairName: CRYPTOCURRENCY_CODE.BNBUSDT,
+    betPercentage: 0,
+    timeoutInMinutes: 0,
+    position: "long",
+  });
+
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
   };
 
-  const handleLong = () => {
-    setIsLong(true);
-    setIsOpenConfirmPaymenModal(true);
+  const handleConfirmPayment = async (value: BetType) => {
+    try {
+      const response = await tradeService.placeOrders({
+        ...value,
+        pairName: value.pairName.toLocaleLowerCase(),
+      });
+      if (response.success) {
+        onToast(t("orderConfirmed"), "success");
+        console.log("bet success");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleShort = () => {
-    setIsLong(false);
-    setIsOpenConfirmPaymenModal(true);
+  const getOrderHistory = async () => {
+    try {
+      const response = await tradeService.getOrders({
+        limit: 10,
+        offset: 0,
+      });
+      if (response.success) {
+        console.log(response);
+        return response.data;
+      }
+      return [];
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
   };
 
   const tabs = [
@@ -70,7 +108,7 @@ const TradePage = ({
               />
             </div>
           </div>
-          <OrderSection />
+          <OrderSection getOrderHistory={getOrderHistory} />
           <div className="sticky bottom-0 left-0 flex items-center gap-3 px-4 py-2 z-50 bg-[#000000]">
             <Button
               sx={{ padding: 0, textTransform: "none" }}
@@ -103,10 +141,12 @@ const TradePage = ({
           <Trading
             token={params.slug}
             currency={params.currency}
-            onClickLongBtn={handleLong}
-            onClickShortBtn={handleShort}
+            onBet={(value: BetType) => {
+              setFormData(value);
+              setIsOpenConfirmPaymenModal(true);
+            }}
           />
-          <OrderSection />
+          <OrderSection getOrderHistory={getOrderHistory} />
         </>
       ),
     },
@@ -117,15 +157,22 @@ const TradePage = ({
     <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000] relative">
       <Tabs
         tabs={tabs}
-        classNameTab="sticky top-0 left-0 bg-[#000000] z-[100] "
+        classNameTab="sticky top-0 left-0 bg-[#000000] z-[30] "
         classNameItem="flex-1 "
         onChange={(value) => changeTab(value)}
         activeTab={isSelectTab}
       />
       {isOpenConfirmPaymentModal && (
         <ConfirmPaymentModal
-          isLong={isLong}
+          isLong={formData.position === "long"}
+          data={formData}
+          slug={params.slug}
+          currency={params.currency}
           onClickCloseBtn={() => setIsOpenConfirmPaymenModal(false)}
+          onClickConfirmBtn={() => {
+            setIsOpenConfirmPaymenModal(false);
+            handleConfirmPayment(formData);
+          }}
         />
       )}
     </DefaultLayout>

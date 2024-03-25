@@ -1,5 +1,7 @@
+import { CRYPTOCURRENCY_CODE, PRICE_TYPE } from "./constants";
+
 export type ChangeEventHandler = (
-  event: React.ChangeEvent<HTMLInputElement>,
+  event: React.ChangeEvent<HTMLInputElement>
 ) => void;
 
 export interface TokenCardProp {
@@ -22,4 +24,13 @@ export type ChartData = {
   highestValue: any;
   lowestValue: any;
   closingValue: any;
+};
+
+export type BetType = {
+  amount: number;
+  pairType: PRICE_TYPE.CRYPTO;
+  pairName: string;
+  betPercentage: number;
+  timeoutInMinutes: number;
+  position: "long" | "short";
 };

@@ -13,12 +13,17 @@ import axios, { AxiosError } from "axios";
 import { onToast } from "@/hooks/useToast";
 import { authService } from "@/services/AuthServices";
 import { Account, DataLogin } from "@/models/User";
-import { LOGIN_MODE } from "@/utils/constants";
+import { LOGIN_MODE, TRADE_CURRENCY } from "@/utils/constants";
 import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { userService } from "@/services/UserService";
 
 interface AuthCtxProps {
   currentUser: Account | null;
   setCurrentUser: Dispatch<SetStateAction<Account | null>>;
+  currentBalance: number;
+  setCurrentBalance: Dispatch<SetStateAction<number>>;
+  tradeCurrenty: TRADE_CURRENCY;
+  setTradeCurrenty: Dispatch<SetStateAction<TRADE_CURRENCY>>;
   loading: boolean;
   setLoading: Dispatch<SetStateAction<boolean>>;
   login: (values: {
@@ -31,10 +36,15 @@ interface AuthCtxProps {
   logout: () => void;
   fetchCurrentUser: () => Promise<Account | null>;
   getCurrentUser: () => Promise<Account | null>;
+  fetchUserBalance: () => Promise<any>;
 }
 
 const defaultCtxVal: AuthCtxProps = {
   currentUser: null,
+  tradeCurrenty: TRADE_CURRENCY.USD,
+  setTradeCurrenty: (value: SetStateAction<TRADE_CURRENCY>): void => {},
+  currentBalance: 0,
+  setCurrentBalance: (value: SetStateAction<number>): void => {},
   loading: false,
   login: (values: {
     email?: string;
@@ -48,6 +58,8 @@ const defaultCtxVal: AuthCtxProps = {
   getCurrentUser: () => new Promise((resolve, reject) => reject(null)),
   setLoading: (value: SetStateAction<boolean>): void => {},
   setCurrentUser: (value: SetStateAction<Account | null>): void => {},
+  fetchUserBalance: () =>
+    new Promise((resolve, reject) => reject(null)),
 };
 
 export const AuthCtx = createContext<AuthCtxProps>(defaultCtxVal);
@@ -57,6 +69,10 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
 
   const router = useRouter();
   const [currentUser, setCurrentUser] = useState<Account | null>(null);
+  const [currentBalance, setCurrentBalance] = useState<number>(0);
+  const [tradeCurrenty, setTradeCurrenty] = useState<TRADE_CURRENCY>(
+    TRADE_CURRENCY.USD
+  );
   const [loading, setLoading] = useState<boolean>(false);
 
   const login = async (values: {
@@ -124,6 +140,20 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     router.push("/m/login");
   };
 
+  const fetchUserBalance = async () => {
+    if (!currentUser?.id) return;
+    const balance = await userService.getUserBalance(
+      currentUser?.id,
+      tradeCurrenty
+    );
+
+    if (balance.success && !!balance.data) {
+      setCurrentBalance(balance.data);
+    }
+
+    return balance;
+  };
+
   const fetchCurrentUser = async (): Promise<Account | null> => {
     setLoading(true);
     authService.loadAccessToken();
@@ -154,6 +184,10 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
       value={{
         currentUser,
         setCurrentUser,
+        currentBalance,
+        setCurrentBalance,
+        tradeCurrenty,
+        setTradeCurrenty,
         loading,
         setLoading,
         login,
@@ -166,6 +200,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
           setLoading(false);
           return currentUser;
         },
+        fetchUserBalance,
       }}
     >
       {children}

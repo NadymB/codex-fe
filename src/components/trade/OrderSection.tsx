@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import Tabs from "../Tabs";
 import Link from "next/link";
 import Image from "next/image";
@@ -13,10 +13,18 @@ const tabOrder = [
       <div className="flex flex-col gap-2">
         <div className="flex flex-col">
           {ORDERS_DATA.map((item, index) => (
-            <OrderItem key={index} isLong={item.long} price={item.paymentPrice} amount={item.amount} profit={item.profit}/>
+            <OrderItem
+              key={index}
+              isLong={item.long}
+              price={item.paymentPrice}
+              amount={item.amount}
+              profit={item.profit}
+            />
           ))}
         </div>
-        <span className="w-full text-[#9ca3af] text-xs pb-3 text-center">{t("tradePage.trade.noMoreData")}</span>
+        <span className="w-full text-[#9ca3af] text-xs pb-3 text-center">
+          {t("tradePage.trade.noMoreData")}
+        </span>
       </div>
     ) : (
       <div className="flex flex-col items-center justify-center p-4">
@@ -27,9 +35,7 @@ const tabOrder = [
           height={100}
           className="w-80 h-80"
         />
-        <span className="text-base text-[#737373]">
-          {t("order.noData")}
-        </span>
+        <span className="text-base text-[#737373]">{t("order.noData")}</span>
       </div>
     ),
   },
@@ -44,17 +50,30 @@ const tabOrder = [
           height={100}
           className="w-80 h-80"
         />
-        <span className="text-base text-[#737373]">
-          {t("order.noData")}
-        </span>
+        <span className="text-base text-[#737373]">{t("order.noData")}</span>
       </div>
     ),
   },
 ];
-export const OrderSection = () => {
+export const OrderSection = ({
+  getOrderHistory,
+}: {
+  getOrderHistory: () => Promise<any>;
+}) => {
   const [isSelectTab, setIsSelectTab] = useState(0);
+  const [orderHistory, setOrderHistory] = useState([]);
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
+  };
+
+  useEffect(() => {
+    fetchOrderHistory();
+  }, []);
+
+  const fetchOrderHistory = async () => {
+    //TODO
+    const data = await getOrderHistory();
+    setOrderHistory(data);
   };
 
   return (
@@ -70,7 +89,7 @@ export const OrderSection = () => {
         href={"/m/order"}
         className="text-[#3D5AFE] absolute top-0 right-4 "
       >
-        {t("order.allOrders")}
+        {t("tradePage.trade.allOrders")}
       </Link>
     </div>
   );

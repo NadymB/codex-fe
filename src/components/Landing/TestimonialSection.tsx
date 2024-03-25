@@ -7,63 +7,64 @@ import { FeatureWalletIcon } from "@/assets/icons/FeatureWalletIcon";
 import { SafeIcon } from "@/assets/icons/SafeIcon";
 import { StartIcon } from "@/assets/icons/StartIcon";
 import { getStaticURL } from "@/utils/constants";
+import Image from "next/image";
 import React from "react";
 
 export const TestimonialSection = () => {
   const features = [
     {
-      avatar: "",
+      avatar: getStaticURL() + "/assets/images/author1.webp",
       position: "Founder @ Company",
       username: "Karen Lynn",
       comment:
         "“I found EUREX very professional and trustworthy during my assets trading duration of 147 days. They are very honest and trusted.”",
       icon: <SafeIcon />,
-      start: 4,
+      start: 5,
     },
     {
-      avatar: "",
+      avatar: getStaticURL() + "/assets/images/author2.webp",
       position: "Subash Rajendran",
       username: "Software engineer",
       comment:
         "“100% Trusted. Very legit in digital world. So far I&aposm satisfied with EUREX. I just wish this will continue at this way.”",
       icon: <FeatureWalletIcon />,
-      start: 4,
+      start: 5,
     },
     {
-      avatar: "",
+      avatar: getStaticURL() + "/assets/images/author3.webp",
       position: "Businessman",
       username: "Milan Milenkovic",
       comment:
         "“The best place to start your trading path, thank you for support. Its a safe passive income strategy and will be multiply over time 😍.”",
       icon: <FeatureRAIcon />,
-      start: 4,
+      start: 5,
     },
     {
-      avatar: "",
+      avatar: getStaticURL() + "/assets/images/author4.webp",
       position: "UI/UX Designer",
       username: "Francois Malan",
       comment:
         "“Best digital scam investigator. It took less than 24h and gave all the details about the scammer and guided me. My heartfull thanks 💗 ”",
       icon: <FeatureIAIcon />,
-      start: 4,
+      start: 5,
     },
     {
-      avatar: "",
+      avatar: getStaticURL() + "/assets/images/author5.webp",
       position: "Manager @ Company",
       username: "UI/UX Designer",
       comment:
         "“Trustable ☺️ Best way to earn passive income. Everything was well explained and it was easy to follow their clear. Very legit in digital world.”",
       icon: <FeatureRTIIcon />,
-      start: 4,
+      start: 5,
     },
     {
-      avatar: "",
+      avatar: getStaticURL() + "/assets/images/author6.webp",
       position: "WP Developer",
       username: "Abdul Wadud",
       comment:
         "“More than just satisfied.Trustable site and the owner is very friendly & calm. And it’s great! The 0,5-1% daily on average is the target.”",
       icon: <FeatureMCSIcon />,
-      start: 4,
+      start: 5,
     },
   ];
 
@@ -99,7 +100,7 @@ export const TestimonialSection = () => {
               </div>
               <span className="text-[#fff]">{comment.comment}</span>
               <div className="flex gap-5 mt-6">
-                <AvatarIcon />
+                <Image src={comment.avatar} alt="avatar" className="rounded-full" height={60} width={60} />
                 <div className="flex flex-col">
                   <span className="text-[#fff] text-[20px] font-semibold">
                     - {comment.username}

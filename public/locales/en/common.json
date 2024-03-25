@@ -34,7 +34,7 @@
   },
   "marketPage": {
     "commodity": "Commodity",
-    "cryptoCurrency": "Crypto Currency",
+    "cryptoCurrency": "Cryptocurrency",
     "foreignExchange": "Foreign Exchange",
     "transaction": "Transaction",
     "tradingVolume": "Trading volume",
@@ -123,7 +123,7 @@
     "certifyBtnLv2": "You need to complete the LV.1 certification first"
   },
   "learn": {
-    "title": "Learn",
+    "title": "Study",
     "howAreTheyDifferentTitle": "USDT vs. USDC vs. BUSD: How Are They Different?",
     "howAreTheyDifferentContent": "Stablecoins are cryptocurrencies whose values are pegged to a stable asset, mostly fiat currencies. Tether (USDT), USD Coin (USDC) and Binance USD (BUSD) are the three most popular stablecoins, with a combined market cap of $120 billion. However, with the recent buzz around BUSD, there’s no doubt that most investors would be curious to know if BUSD is still worth investing in — or if you should simply pile your investments into USDT, USDC or other stablecoins instead.",
     "whichOneIsRightForYouTitle": "Traditional Debit Card vs. Crypto Debit Card: Which One Is Right For You?",
@@ -169,6 +169,7 @@
     "setPassword": "Set password",
     "loginPassword": "Login password",
     "invitationCode": "Invitation Code",
+    "optional": "Optional",
     "userNameIsInvalid": "Please enter your username",
     "passwordIsInvalid": "Please fill in the password",
     "phoneNumberIsInvalid": "Please fill in your phone number",
@@ -298,5 +299,6 @@
 	},
   "invalidFileFormat": "Invalid file format. Please choose  valid image file (png, jpg, webp) ",
   "minimumCapacityError": "Your image size must be less than 10MB",
-  "somethingWentWrong": "Something went wrong. Please try again later"
+  "somethingWentWrong": "Something went wrong. Please try again later",
+  "orderConfirmed": "Order Comfirmed"
 }
