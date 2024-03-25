@@ -40,6 +40,7 @@ const TradePage = ({
     position: "long",
   });
   const [isRefresh, setIsRefresh] = useState(false);
+  const [tokenPrice, setTokenPrice] = useState<number>(0);
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
   };
@@ -120,6 +121,7 @@ const TradePage = ({
             </div>
             <div className="px-4">
               <TradingCandleChart
+                setValueToken={setTokenPrice}
                 token={params.slug}
                 currency={params.currency}
               />
@@ -160,6 +162,7 @@ const TradePage = ({
       content: (
         <>
           <Trading
+            priceToken={tokenPrice}
             isRefresh={isRefresh}
             token={params.slug}
             currency={params.currency}

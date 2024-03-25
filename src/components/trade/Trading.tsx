@@ -52,6 +52,7 @@ interface Props {
   isRefresh: boolean;
   token: string;
   currency: string;
+  priceToken:number;
 
   onBet: ({
     amount,
@@ -63,7 +64,7 @@ interface Props {
   }: BetType) => void;
 }
 
-const Trading: FC<Props> = ({ token, currency, isRefresh, onBet }) => {
+const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) => {
   const [percentIsSelected, setPercentIsSelected] = useState(BET_PERCENTAGE[0]);
   const { fetchUserBalance, currentBalance, currentUser } = useAuth();
   const [amount, setAmount] = useState<number | null>(0);
@@ -168,7 +169,7 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, onBet }) => {
                   if (Number(e.target.value) > 0) {
                     setAmount(Number(e.target.value));
                   } else {
-                    setAmount(null);
+                    setAmount(0);
                   }
                 }}
                 InputProps={{
@@ -184,7 +185,7 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, onBet }) => {
                 aria-describedby="outlined-weight-helper-text"
               />
             </div>
-            <span className="text-[#fff] mt-2">≈0.00 AED</span>
+            <span className="text-[#fff] mt-2">≈0.00 USDT</span>
           </div>
           <Button
             sx={{ padding: 0, marginTop: "8px", textTransform: "none" }}
@@ -228,7 +229,7 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, onBet }) => {
           </Button>
         </div>
         <div className="col-span-5 ml-4">
-          <TradingChartBar />
+          <TradingChartBar priceToken={priceToken>0?priceToken:Math.random()*10} />
         </div>
       </div>
     </div>

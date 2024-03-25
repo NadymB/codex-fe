@@ -2,7 +2,7 @@
 import { t } from "i18next";
 import React, { useEffect, useState } from "react";
 
-export const TradingChartBar = () => {
+export const TradingChartBar = ({priceToken}:{priceToken:number}) => {
   const [columnWidthLong, setColumnWidthLong] = useState([
     30, 50, 40, 60, 45, 20, 40,
   ]);
@@ -26,7 +26,7 @@ export const TradingChartBar = () => {
       generateRandomHeights();
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
+  }, [priceToken]);
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -40,7 +40,7 @@ export const TradingChartBar = () => {
       {columnWidthLong.map((width, index) => (
         <div key={index} className="flex relative justify-between">
           <span className="text-[#55af72] text-[12px]">
-            {(Math.random() * 0.3 + 2134)
+            {(Math.random() * 0.3 + priceToken)
               .toFixed(2)
               .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
           </span>
@@ -57,18 +57,18 @@ export const TradingChartBar = () => {
       ))}
       <div className="flex flex-col my-1">
         <span className="text-[#55af72] font-bold text-[16px]">
-          {(Math.random() * 0.3 + 2134)
+          {(Math.random() * 0.3 + priceToken)
               .toFixed(2)
               .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
         </span>
-        <span className="text-[#fff] text-[12px]">≈ {(Math.random() * 0.3 + 2134)
+        <span className="text-[#fff] text-[12px]">≈ {(Math.random() * 0.3 + priceToken)
               .toFixed(2)
               .replace(/\d(?=(\d{3})+\.)/g, "$&,")} USDT</span>
       </div>
       {columnWidthShort.map((width, index) => (
         <div key={index} className="flex relative justify-between">
           <span className="text-[#dd5350] text-[12px]">
-            {(Math.random() * 0.3 + 2134)
+            {(Math.random() * 0.3 + priceToken)
               .toFixed(2)
               .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
           </span>
