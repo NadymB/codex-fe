@@ -8,7 +8,7 @@ import { PriceCell } from "@/components/table/PriceCell";
 import { Table } from "@/components/table/Table";
 import { TrandingCell } from "@/components/table/TradingCell";
 import { priceFeedService } from "@/services/PriceFeedService";
-import { PRICE_TYPE } from "@/utils/constants";
+import { PRICE_TYPE, getRnd } from "@/utils/constants";
 import { t } from "i18next";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -35,7 +35,7 @@ const MarketPage = () => {
             >
               <TrandingCell
                 token={item.metadata.name.split("_")[0].toUpperCase()}
-                totalValue="99.14M"
+                totalValue={getRnd(0, 100000)}
               />
             </div>,
             <div
@@ -54,7 +54,7 @@ const MarketPage = () => {
                 onSelect(item.metadata.name.split("_")[0].toUpperCase())
               }
             >
-              <Button text="+3.06%" className="bg-[#54AF71] text-white" />
+              <Button text={`+${getRnd(0, 10)}%`} className="bg-[#54AF71] text-white" />
             </div>,
           ];
         });

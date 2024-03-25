@@ -1,6 +1,7 @@
 "use client";
 
 import { tradeService } from "@/services/TradeService";
+import { CHART_CODE } from "@/utils/constants";
 import { numberToLocaleString } from "@/utils/formatNumber";
 import { ChartData } from "@/utils/type";
 import { t } from "i18next";
@@ -40,16 +41,21 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
       updateData(cleared: KLineData): unknown;
       applyNewData: (arg0: KLineData[]) => void;
     },
-    { loadMore }: { loadMore: boolean },
+    { loadMore }: { loadMore: boolean }
   ) => {
     const crypto = Cookies.get("crypto");
     const cookiesData = crypto
       ? JSON.parse(crypto)
       : { token: "BNB", values: "USDT", type: "crypto" };
+
+    const tokenKey = CHART_CODE[token as keyof typeof CHART_CODE]
+      .replace(" ", "_")
+      .toLowerCase();
+
     const response = await tradeService.getChartData(
       cookiesData.type,
-      (token + currency).toLowerCase(),
-      tradingSessionTimes[currentTradingSessionTime].value,
+      tokenKey,
+      tradingSessionTimes[currentTradingSessionTime].value
     );
 
     if (response.success) {
@@ -68,20 +74,20 @@ export const TradingCandleChart: FC<Props> = ({ token, currency }) => {
         })
         .sort(
           (a: { timestamp: number }, b: { timestamp: number }) =>
-            a.timestamp - b.timestamp,
+            a.timestamp - b.timestamp
         );
 
       setTokenPrice(
         numberToLocaleString(
           formattedData[formattedData.length - 1].close,
-          "USC",
-        ),
+          "USC"
+        )
       );
 
       if (loadMore) {
         const cleared = formattedData.filter(
           (data) =>
-            data.timestamp >= formattedData[formattedData.length - 1].timestamp,
+            data.timestamp >= formattedData[formattedData.length - 1].timestamp
         );
         chart.updateData(cleared[0]);
       } else {
