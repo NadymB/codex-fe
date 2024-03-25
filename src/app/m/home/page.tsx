@@ -23,8 +23,12 @@ export default function Home() {
   const { webSocket } = useContext(WebSocketCtx);
 
   const handleGetUnreadMessage = async () => {
-    const response = await chatService.getUnreadMessage();
-    setCountNewMessage(response);
+    try {
+      const response = await chatService.getUnreadMessage();
+      setCountNewMessage(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     handleGetUnreadMessage();

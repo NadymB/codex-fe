@@ -21,7 +21,7 @@ const MarketPage = () => {
   const handleCrawlDataFeed = async () => {
     try {
       const response = await priceFeedService.getPriceFeed(
-        PRICE_TYPE.COMMODITY,
+        PRICE_TYPE.COMMODITY
       );
       if (response.success) {
         const mappedData = response.data.map((item: any, index: number) => {
@@ -54,7 +54,9 @@ const MarketPage = () => {
                 onSelect(item.metadata.name.split("_")[0].toUpperCase())
               }
             >
-              <Button text={`+${getRnd(0, 10)}%`} className="bg-[#54AF71] text-white" />
+              <Button className="bg-[#54AF71] text-white">
+                <p className="mb-0" suppressHydrationWarning>{`+${getRnd(0, 10)}%`}</p>
+              </Button>
             </div>,
           ];
         });
@@ -75,7 +77,7 @@ const MarketPage = () => {
   const onSelect = (token: string) => {
     Cookies.set(
       "crypto",
-      JSON.stringify({ token, values: "USDT", type: PRICE_TYPE.COMMODITY }),
+      JSON.stringify({ token, values: "USDT", type: PRICE_TYPE.COMMODITY })
     );
     router.push(`/m/trade/${token}/USDT`);
   };

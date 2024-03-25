@@ -8,7 +8,7 @@ import { PriceCell } from "@/components/table/PriceCell";
 import { Table } from "@/components/table/Table";
 import { TrandingCell } from "@/components/table/TradingCell";
 import { priceFeedService } from "@/services/PriceFeedService";
-import { PRICE_TYPE } from "@/utils/constants";
+import { PRICE_TYPE, getRnd } from "@/utils/constants";
 import { t } from "i18next";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -21,7 +21,7 @@ const MarketPage = () => {
   const handleCrawlDataFeed = async () => {
     try {
       const response = await priceFeedService.getPriceFeed(
-        PRICE_TYPE.FOREIGN_EXCHANGE,
+        PRICE_TYPE.FOREIGN_EXCHANGE
       );
       if (response.success) {
         const mappedData = response.data.map((item: any, index: number) => {
@@ -54,7 +54,9 @@ const MarketPage = () => {
                 onSelect(item.metadata.name.split("_")[0].toUpperCase())
               }
             >
-              <Button text="+3.06%" className="bg-[#54AF71] text-white" />
+              <Button className="bg-[#54AF71] text-white">
+                <p className="mb-0" suppressHydrationWarning>{`+${getRnd(0, 10)}%`}</p>
+              </Button>
             </div>,
           ];
         });
@@ -79,7 +81,7 @@ const MarketPage = () => {
         token,
         values: "USDT",
         type: PRICE_TYPE.FOREIGN_EXCHANGE,
-      }),
+      })
     );
     router.push(`/m/trade/${token}/USDT`);
   };
