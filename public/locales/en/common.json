@@ -247,9 +247,11 @@
       "short": "Short",
       "orderPrice": "Order Price",
       "noMoreData": "No More Data",
-      "bullishAMinute": "Bullish a minute",
-      "bearishAMinute": "Bearish a minute",
-      "allOrders": "All Orders"
+      "bullishAMinute": "Bullish {{number}} minute",
+      "bearishAMinute": "Bearish {{number}} minute",
+      "allOrders": "All Orders",
+      "win": "Win",
+      "lose": "Lose"
     },
     "chart": {
       "title": "Charts",

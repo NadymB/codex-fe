@@ -38,6 +38,15 @@ export class TradeService {
     });
     return data;
   };
+  public getOrdersPending = async (pagination: { limit: number; offset: number }) => {
+    const { data } = await this.restConnector.get(`/trades/orders/pending`, {
+      params: {
+        limit: pagination?.limit,
+        offset: pagination?.offset,
+      },
+    });
+    return data;
+  };
 }
 
 export const tradeService = new TradeService({ restConnector });

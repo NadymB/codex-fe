@@ -247,9 +247,11 @@
       "short": "ribassista",
       "orderPrice": "Prezzo di liquidazione",
       "noMoreData": "Vedi altro un minuto",
-      "bullishAMinute": "Vedi altro un minuto",
-      "bearishAMinute": "ribassista un minuto",
-      "allOrders": "tutti gli ordini"
+      "bullishAMinute": "Vedi altro {{number}} minuto",
+      "bearishAMinute": "ribassista {{number}} minuto",
+      "allOrders": "tutti gli ordini",
+      "win": "Vittoria",
+      "lose": "Sconfitta"
     },
     "chart": {
       "title": "tendenza",

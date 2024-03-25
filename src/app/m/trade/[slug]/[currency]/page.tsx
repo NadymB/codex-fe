@@ -29,7 +29,7 @@ const TradePage = ({
   const [isOpenConfirmPaymentModal, setIsOpenConfirmPaymenModal] =
     useState(false);
   const [isSelectTab, setIsSelectTab] = useState(0);
-  const { currentUser } = useAuth();
+  const { currentUser, fetchUserBalance } = useAuth();
   const [formData, setFormData] = useState<BetType>({
     amount: 0,
     pairType: PRICE_TYPE.CRYPTO,
@@ -38,7 +38,7 @@ const TradePage = ({
     timeoutInMinutes: 0,
     position: "long",
   });
-
+  const [isRefresh, setIsRefresh] = useState(false);
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
   };
@@ -51,7 +51,8 @@ const TradePage = ({
       });
       if (response.success) {
         onToast(t("orderConfirmed"), "success");
-        console.log("bet success");
+        fetchUserBalance();
+        setIsRefresh(!isRefresh)
       }
     } catch (error) {
       console.log(error);
@@ -66,6 +67,21 @@ const TradePage = ({
       });
       if (response.success) {
         console.log(response);
+        return response.data;
+      }
+      return [];
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  };
+  const getOrderPending = async () => {
+    try {
+      const response = await tradeService.getOrdersPending({
+        limit: 10,
+        offset: 0,
+      });
+      if (response.success) {
         return response.data;
       }
       return [];
@@ -108,7 +124,11 @@ const TradePage = ({
               />
             </div>
           </div>
-          <OrderSection getOrderHistory={getOrderHistory} />
+          <OrderSection
+            isRefresh={isRefresh}
+            getOrderPending={getOrderPending}
+            getOrderHistory={getOrderHistory}
+          />
           <div className="sticky bottom-0 left-0 flex items-center gap-3 px-4 py-2 z-50 bg-[#000000]">
             <Button
               sx={{ padding: 0, textTransform: "none" }}
@@ -139,6 +159,7 @@ const TradePage = ({
       content: (
         <>
           <Trading
+            isRefresh={isRefresh}
             token={params.slug}
             currency={params.currency}
             onBet={(value: BetType) => {
@@ -146,7 +167,11 @@ const TradePage = ({
               setIsOpenConfirmPaymenModal(true);
             }}
           />
-          <OrderSection getOrderHistory={getOrderHistory} />
+          <OrderSection
+            isRefresh={isRefresh}
+            getOrderPending={getOrderPending}
+            getOrderHistory={getOrderHistory}
+          />
         </>
       ),
     },

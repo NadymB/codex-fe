@@ -247,9 +247,11 @@
       "short": "売り下げる",
       "orderPrice": "決済価格",
       "noMoreData": "これ以上データなし",
-      "bullishAMinute": "上げる 1分",
-      "bearishAMinute": "下げる 1分",
-      "allOrders": "すべての注文"
+      "bullishAMinute": "上げる {{number}} 分",
+      "bearishAMinute": "下げる {{number}} 分",
+      "allOrders": "すべての注文",
+      "win": "勝利",
+    "lose": "敗北"
     },
     "chart": {
       "title": "チャート",

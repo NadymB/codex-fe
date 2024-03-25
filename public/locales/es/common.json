@@ -247,9 +247,11 @@
       "short": "osuno",
       "orderPrice": "Precio acordado",
       "noMoreData": "keine Daten mehr",
-      "bullishAMinute": "osuno un minuto",
-      "bearishAMinute": "ver más un minuto",
-      "allOrders": "alle Bestellungen"
+      "bullishAMinute": "osuno {{number}} minuto",
+      "bearishAMinute": "ver más {{number}} minuto",
+      "allOrders": "alle Bestellungen",
+      "win": "Victoria",
+      "lose": "Derrota"
     },
     "chart": {
       "title": "tendencia",
