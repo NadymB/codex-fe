@@ -49,6 +49,7 @@ function valueLabelFormat(value: number) {
 }
 
 interface Props {
+  isRefresh: boolean;
   token: string;
   currency: string;
 
@@ -62,16 +63,23 @@ interface Props {
   }: BetType) => void;
 }
 
-const Trading: FC<Props> = ({ token, currency, onBet }) => {
+const Trading: FC<Props> = ({ token, currency, isRefresh, onBet }) => {
   const [percentIsSelected, setPercentIsSelected] = useState(BET_PERCENTAGE[0]);
   const { fetchUserBalance, currentBalance, currentUser } = useAuth();
   const [amount, setAmount] = useState<number | null>(0);
+  const [markPercent, setMarkPercent] = useState(0)
 
   useEffect(() => {
     if (currentUser) {
       fetchUserBalance();
     }
   }, [currentUser]);
+
+  useEffect(() => {
+    setAmount(0);
+    setMarkPercent(0)
+    setPercentIsSelected(BET_PERCENTAGE[0]);
+  }, [isRefresh]);
 
   return (
     <div>
@@ -124,13 +132,16 @@ const Trading: FC<Props> = ({ token, currency, onBet }) => {
               {t("tradePage.trade.balance")}
             </span>
             <span className="text-[12px] text-[#fff]">
-              {convertNumberToFormattedString(String(currentBalance))} USDT
+              {currentBalance > 0
+                ? convertNumberToFormattedString(String(currentBalance))
+                : 0}{" "}
+              USDT
             </span>
           </div>
           <div className="px-3 mt-2 ">
             <CssSlider
-              defaultValue={0}
-              valueLabelDisplay="auto"
+              // defaultValue={0}
+              value={markPercent}
               step={5}
               marks={marks}
               min={0}
@@ -138,6 +149,7 @@ const Trading: FC<Props> = ({ token, currency, onBet }) => {
                 const data = e.target as any;
                 const amount = (Number(data.value) / 100) * currentBalance;
                 setAmount(Number(amount.toFixed(2)));
+                setMarkPercent(data.value)
               }}
               max={100}
               valueLabelFormat={valueLabelFormat}
@@ -183,7 +195,7 @@ const Trading: FC<Props> = ({ token, currency, onBet }) => {
               onBet({
                 amount,
                 betPercentage: percentIsSelected.betPercentage,
-                pairName: CRYPTOCURRENCY_CODE.BNBUSDT,
+                pairName: `${token + currency}`,
                 pairType: PRICE_TYPE.CRYPTO,
                 position: "long",
                 timeoutInMinutes: percentIsSelected.timeoutInMinutes,

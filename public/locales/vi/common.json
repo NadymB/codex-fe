@@ -247,9 +247,11 @@
       "short": "Mua xuống",
       "orderPrice": "Giá thanh toán",
       "noMoreData": "Không có thêm dữ liệu",
-      "bullishAMinute": "Giao dịch mua một phút",
-      "bearishAMinute": "Giao dịch bán một phút",
-      "allOrders": "Tất cả đơn hàng"
+      "bullishAMinute": "Giao dịch mua {{number}} phút",
+      "bearishAMinute": "Giao dịch bán {{number}} phút",
+      "allOrders": "Tất cả đơn hàng",
+      "win": "Thắng",
+      "lose": "Thua"
     },
     "chart": {
       "title": "Biểu đồ",

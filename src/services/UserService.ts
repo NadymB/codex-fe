@@ -14,7 +14,17 @@ export class UserService {
     token: TRADE_CURRENCY,
   ) => {
     const { data } = await this.restConnector.get(
-      `/users/${userId}/balances?currency=${token}`,
+      `/users/balances?currency=${token}`,
+    );
+
+    return data;
+  };
+  public getOrderHistory = async (
+    userId: string,
+    token: TRADE_CURRENCY,
+  ) => {
+    const { data } = await this.restConnector.get(
+      `/users/balances?currency=${token}`,
     );
 
     return data;

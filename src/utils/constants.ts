@@ -1156,6 +1156,10 @@ export const WS_TOPIC = {
   USER_ONLINE: "user_online",
   USER_OFFLINE: "user_offline",
   USER_VERIFIED: "user_verified",
+  TRADE_PROGRESS : 'trade_progress',
+  BET_RESULT : 'bet_result',
+
+
 };
 
 export const MAX_SIZE_IMAGE = 5 * 1024 * 1000;

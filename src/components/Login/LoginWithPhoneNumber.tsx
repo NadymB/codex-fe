@@ -4,13 +4,14 @@ import { COUNTRIES, LOGIN_MODE } from "@/utils/constants";
 import { Button, TextField, styled } from "@mui/material";
 import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import * as Yup from "yup";
 import SelectCountries from "../SelectCountries";
 import { t } from "i18next";
 import { InputCustom } from "../InputCustom";
 import { authService } from "@/services/AuthServices";
 import { useAuth } from "@/hooks/useAuth";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 
 interface country {
   code: string;
@@ -19,6 +20,7 @@ interface country {
   suggested?: undefined | boolean;
 }
 const LoginWithPhoneNumber = () => {
+  const { webSocket, register } = useContext(WebSocketCtx);
   const { setCurrentUser, login } = useAuth();
   const [messageLoginFail, setMassageLoginFail] = useState("");
   const router = useRouter();
@@ -46,6 +48,7 @@ const LoginWithPhoneNumber = () => {
           phoneNumber: currentCountry.phone + values.phoneNumber,
         });
         if (user) {
+          register(user.access_token);
           router.push("/m");
         }
       } catch (error) {
