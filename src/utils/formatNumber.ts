@@ -14,3 +14,16 @@ export const numberToLocaleString = (
     .format(Number(value))
     .replace(/[A-Z]/g, "");
 };
+
+export const formatNumberToCurrency = (number: number,toFixed=2) => {
+  if (Number.isInteger(number)) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  } else {
+    let decimal = number.toFixed(toFixed);
+    if (decimal.endsWith(".00")) {
+      return number.toLocaleString();
+    } else {
+      return decimal.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  }
+};

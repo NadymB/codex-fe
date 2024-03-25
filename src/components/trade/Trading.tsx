@@ -52,7 +52,7 @@ interface Props {
   isRefresh: boolean;
   token: string;
   currency: string;
-  priceToken:string;
+  priceToken:number;
 
   onBet: ({
     amount,
@@ -229,7 +229,7 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) =
           </Button>
         </div>
         <div className="col-span-5 ml-4">
-          <TradingChartBar priceToken={priceToken} />
+          <TradingChartBar priceToken={priceToken>0?priceToken:Math.random()*10} />
         </div>
       </div>
     </div>

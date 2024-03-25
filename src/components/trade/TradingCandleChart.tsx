@@ -28,7 +28,7 @@ const tradingSessionTimes = [
 interface Props {
   token: string;
   currency: string;
-  setValueToken: Dispatch<SetStateAction<string>>;
+  setValueToken: Dispatch<SetStateAction<number>>;
 }
 
 export const TradingCandleChart: FC<Props> = ({
@@ -88,12 +88,7 @@ export const TradingCandleChart: FC<Props> = ({
           "USC"
         )
       );
-      setValueToken(
-        numberToLocaleString(
-          formattedData[formattedData.length - 1].close,
-          "USC"
-        )
-      );
+      setValueToken(formattedData[formattedData.length - 1].close)
 
       if (loadMore) {
         const cleared = formattedData.filter(

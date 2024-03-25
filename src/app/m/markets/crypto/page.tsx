@@ -8,7 +8,7 @@ import { PriceCell } from "@/components/table/PriceCell";
 import { Table } from "@/components/table/Table";
 import { TrandingCell } from "@/components/table/TradingCell";
 import { priceFeedService } from "@/services/PriceFeedService";
-import { PRICE_TYPE } from "@/utils/constants";
+import { PRICE_TYPE, getRnd } from "@/utils/constants";
 import { t } from "i18next";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -52,7 +52,9 @@ const MarketPage = () => {
                 onSelect(item.metadata.name.replace("usdt", "").toUpperCase())
               }
             >
-              <Button text="+3.06%" className="bg-[#54AF71] text-white" />
+               <Button className="bg-[#54AF71] text-white">
+                <p className="mb-0" suppressHydrationWarning>{`+${getRnd(0, 10)}%`}</p>
+              </Button>
             </div>,
           ];
         });
