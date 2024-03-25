@@ -3,12 +3,12 @@
 
 import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 import Tabs from "@/components/Tabs";
-import { AuthenticationLayout } from "@/components/layouts/AuthenticationLayout";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { ConfirmPaymentModal } from "@/components/trade/ConfirmPaymentModal";
 import { OrderSection } from "@/components/trade/OrderSection";
 import Trading from "@/components/trade/Trading";
 import { TradingCandleChart } from "@/components/trade/TradingCandleChart";
+import { useAuth } from "@/hooks/useAuth";
 import { onToast } from "@/hooks/useToast";
 import { tradeService } from "@/services/TradeService";
 import {
@@ -28,8 +28,8 @@ const TradePage = ({
 }) => {
   const [isOpenConfirmPaymentModal, setIsOpenConfirmPaymenModal] =
     useState(false);
-  const [isLong, setIsLong] = useState<boolean>();
   const [isSelectTab, setIsSelectTab] = useState(0);
+  const { currentUser } = useAuth();
   const [formData, setFormData] = useState<BetType>({
     amount: 0,
     pairType: PRICE_TYPE.CRYPTO,
@@ -38,6 +38,7 @@ const TradePage = ({
     timeoutInMinutes: 0,
     position: "long",
   });
+
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
   };
@@ -54,6 +55,23 @@ const TradePage = ({
       }
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const getOrderHistory = async () => {
+    try {
+      const response = await tradeService.getOrders({
+        limit: 10,
+        offset: 0,
+      });
+      if (response.success) {
+        console.log(response);
+        return response.data;
+      }
+      return [];
+    } catch (error) {
+      console.log(error);
+      return [];
     }
   };
 
@@ -90,7 +108,7 @@ const TradePage = ({
               />
             </div>
           </div>
-          <OrderSection />
+          <OrderSection getOrderHistory={getOrderHistory} />
           <div className="sticky bottom-0 left-0 flex items-center gap-3 px-4 py-2 z-50 bg-[#000000]">
             <Button
               sx={{ padding: 0, textTransform: "none" }}
@@ -128,7 +146,7 @@ const TradePage = ({
               setIsOpenConfirmPaymenModal(true);
             }}
           />
-          <OrderSection />
+          <OrderSection getOrderHistory={getOrderHistory} />
         </>
       ),
     },
