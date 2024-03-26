@@ -34,6 +34,12 @@ export const OptionsLanguage = [
     flag: "/assets/images/flags/it.svg",
   },
   {
+    label: "India",
+    International: "India",
+    value: "in",
+    flag: "/assets/images/flags/in.svg",
+  },
+  {
     label: "简体中文",
     International: "Simplified Chinese",
     value: "cn",
