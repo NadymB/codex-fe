@@ -242,6 +242,7 @@
       "settlementPeriod": "Settlement Period",
       "profitRatio": "Profit Ratio",
       "amount": "Amount",
+      "status": "Status",
       "expectedProfit": "Expected Profit",
       "long": "Long",
       "short": "Short",

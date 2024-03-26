@@ -242,6 +242,7 @@
       "settlementPeriod": "ciclo di fatturazione",
       "profitRatio": "tasso di rendimento",
       "amount": "l'importo",
+      "status": "stato",
       "expectedProfit": "ritorno previsto",
       "long": "Vedi altro",
       "short": "ribassista",

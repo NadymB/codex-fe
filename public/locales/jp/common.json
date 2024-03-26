@@ -242,6 +242,7 @@
       "settlementPeriod": "決済期間",
       "profitRatio": "利益率",
       "amount": "金額",
+      "status": "州",
       "expectedProfit": "期待利益",
       "long": "買い上げる",
       "short": "売り下げる",

@@ -242,6 +242,7 @@
       "settlementPeriod": "결제주기",
       "profitRatio": "수익률",
       "amount": "금액",
+      "status": "상태",
       "expectedProfit": "예상 수익",
       "long": "더보기",
       "short": "약세",

@@ -242,6 +242,7 @@
       "settlementPeriod": "ciclo de facturación",
       "profitRatio": "tasa de retorno",
       "amount": "La cantidad",
+      "status": "estado",
       "expectedProfit": "rendimiento esperado",
       "long": "ver más",
       "short": "osuno",
