@@ -15,7 +15,7 @@ const Header = () => {
   );
   return (
     <>
-      <div className="sticky top-0 left-0 w-full px-4 py-4 flex justify-between  bg-[#100F14] ">
+      <div className="sticky top-0 left-0 w-full z-50 px-4 py-4 flex justify-between  bg-[#100F14] ">
         <div className=" flex items-center gap-4 ">
           <Link href="/m/profile">
             <AvatarIcon />
