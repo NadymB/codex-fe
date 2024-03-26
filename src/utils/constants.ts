@@ -575,6 +575,28 @@ export enum CHART_CODE {
   PLATINUM = "Platinum",
 }
 
+export const PAIR_TYPE = {
+  gbp_usd: "foreign_exchange",
+  jpy_usd: "foreign_exchange",
+  cny_usd: "foreign_exchange",
+  etcusdt: "crypto",
+  dogeusdt: "crypto",
+  ethusdt: "crypto",
+  xrpusdt: "crypto",
+  bnbusdt: "crypto",
+  btcusdt: "crypto",
+  maticusdt: "crypto",
+  sugar_futures: "commodity",
+  gold_futures: "commodity",
+  crude_oil: "commodity",
+  aluminium_futures: "commodity",
+  rough_rice_futures: "commodity",
+  coffee: "commodity",
+  silver_futures: "commodity",
+  copper: "commodity",
+  platinum: "commodity",
+};
+
 export const SWIPER_SLIDER_DATA = [
   {
     url: `${getStaticURL()}/assets/images/welcome.svg`,

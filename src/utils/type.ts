@@ -28,7 +28,7 @@ export type ChartData = {
 
 export type BetType = {
   amount: number;
-  pairType: PRICE_TYPE.CRYPTO;
+  pairType: string;
   pairName: string;
   betPercentage: number;
   timeoutInMinutes: number;
