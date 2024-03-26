@@ -36,7 +36,6 @@ export const OrderSection = ({
   const fetchOrderHistory = async () => {
     const data = await getOrderHistory();
     setOrderHistory(data.rows);
-    console.log("datadata", data.rows);
   };
   const fetchOrderPending = async () => {
     const data = await getOrderPending();
