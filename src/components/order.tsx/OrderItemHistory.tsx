@@ -32,7 +32,7 @@ interface IOrderItem {
           "rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px",
       }}
     >
-      <div className="flex justify-between border-b border-[#0000001f] mb-4">
+      <div className="flex justify-between border-b border-[#FFFFFF1A] pb-2 mb-4">
         <div className="flex flex-col gap-1 text-[#9ca3af]">
         <span className="text-[#9ca3af]">{token}/USDT</span>
           <span className="text-xs text-[#888]">{id}</span>
