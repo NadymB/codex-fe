@@ -59,7 +59,7 @@ const AssetPage = () => {
                   href={"/m/setting/currency"}
                   className="text-[#888] text-base"
                 >
-                  ≈{currentBalance} USD
+                  ≈{convertNumberToFormattedString(String(currentBalance))} USD
                   <svg
                     className="-mr-1 h-5 w-5"
                     viewBox="0 0 20 20"
