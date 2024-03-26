@@ -242,6 +242,7 @@
       "settlementPeriod": "Rechnungskreislauf",
       "profitRatio": "Rendite",
       "amount": "die Summe",
+      "status": "Zustand",
       "expectedProfit": "erwartete Rückkehr",
       "long": "Mehr sehen",
       "short": "bärisch",

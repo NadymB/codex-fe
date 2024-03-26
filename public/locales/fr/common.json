@@ -242,6 +242,7 @@
       "settlementPeriod": "cycle de facturation",
       "profitRatio": "taux de retour",
       "amount": "la quantité",
+      "status": "État",
       "expectedProfit": "retour attendu",
       "long": "voir plus",
       "short": "baissier",

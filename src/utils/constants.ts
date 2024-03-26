@@ -34,6 +34,12 @@ export const OptionsLanguage = [
     flag: "/assets/images/flags/it.svg",
   },
   {
+    label: "India",
+    International: "India",
+    value: "in",
+    flag: "/assets/images/flags/in.svg",
+  },
+  {
     label: "简体中文",
     International: "Simplified Chinese",
     value: "cn",
@@ -574,6 +580,49 @@ export enum CHART_CODE {
   ROUGH = "Rough Rice Futures",
   PLATINUM = "Platinum",
 }
+
+export enum TRADE_TYPE_CODE {
+  CNY_USD = "CNY",
+  GBP_USD = "GBP",
+  JPY_USD = "JPY",
+  DOGEUSDT = "DOGE",
+  XRPUSDT = "XRP",
+  ETHUSDT = "ETH",
+  MATICUSDT = "MATIC",
+  BNBUSDT = "BNB",
+  BTCUSDT = "BTC",
+  GOLD_FUTURES = "GOLD",
+  ALUMINIUM_FUTURES = "ALUMINIUM",
+  SILVER_FUTURES = "SILVER",
+  SUGAR_FUTURES = "SUGAR",
+  COFFEE = "COFFEE",
+  COPPER = "COPPER",
+  CRUDE_OIL = "OIL",
+  ROUGH_RICE_FUTURES = "RICE",
+  PLATINUM = "PLATINUM",
+}
+
+export const PAIR_TYPE = {
+  gbp_usd: "foreign_exchange",
+  jpy_usd: "foreign_exchange",
+  cny_usd: "foreign_exchange",
+  etcusdt: "crypto",
+  dogeusdt: "crypto",
+  ethusdt: "crypto",
+  xrpusdt: "crypto",
+  bnbusdt: "crypto",
+  btcusdt: "crypto",
+  maticusdt: "crypto",
+  sugar_futures: "commodity",
+  gold_futures: "commodity",
+  crude_oil: "commodity",
+  aluminium_futures: "commodity",
+  rough_rice_futures: "commodity",
+  coffee: "commodity",
+  silver_futures: "commodity",
+  copper: "commodity",
+  platinum: "commodity",
+};
 
 export const SWIPER_SLIDER_DATA = [
   {
@@ -1177,10 +1226,9 @@ export const WS_TOPIC = {
   USER_ONLINE: "user_online",
   USER_OFFLINE: "user_offline",
   USER_VERIFIED: "user_verified",
-  TRADE_PROGRESS : 'trade_progress',
-  BET_RESULT : 'bet_result',
-
-
+  TRADE_PROGRESS: "trade_progress",
+  BET_RESULT: "bet_result",
+  TRADING: "trading",
 };
 
 export const MAX_SIZE_IMAGE = 5 * 1024 * 1000;

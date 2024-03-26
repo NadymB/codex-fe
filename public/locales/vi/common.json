@@ -203,7 +203,7 @@
     "msgAmountError": "Số tiền tối thiểu là 1"
   },
   "order": {
-    "title": "Order",
+    "title": "Đặt hàng",
     "noData": "Không có dữ liệu"
   },
   "bill": {
@@ -242,6 +242,7 @@
       "settlementPeriod": "Chu kỳ thanh toán",
       "profitRatio": "Tỷ lệ lợi nhuận",
       "amount": "Số tiền",
+      "status": "Trạng thái",
       "expectedProfit": "Lợi nhuận dự kiến",
       "long": "Mua lên",
       "short": "Mua xuống",

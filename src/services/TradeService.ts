@@ -29,20 +29,22 @@ export class TradeService {
     return data;
   };
 
-  public getOrders = async (pagination: { limit: number; offset: number }) => {
+  public getOrders = async (pagination: { limit: number; offset: number }, tokenKey?: string) => {
     const { data } = await this.restConnector.get(`/trades/orders/completed`, {
       params: {
         limit: pagination?.limit,
         offset: pagination?.offset,
+        pairName: tokenKey,
       },
     });
     return data;
   };
-  public getOrdersPending = async (pagination: { limit: number; offset: number }) => {
+  public getOrdersPending = async (pagination: { limit: number; offset: number }, tokenKey: string) => {
     const { data } = await this.restConnector.get(`/trades/orders/pending`, {
       params: {
         limit: pagination?.limit,
         offset: pagination?.offset,
+        pairName: tokenKey,
       },
     });
     return data;
