@@ -50,9 +50,15 @@ export const OrderSection = ({
         fetchUserBalance();
 
       });
+      webSocket.on(WS_TOPIC.TRADING, (data) => {
+        fetchOrderPending();
+        fetchOrderHistory();
+        fetchUserBalance();
+      });
     }
     return () => {
       webSocket?.off(WS_TOPIC.BET_RESULT);
+      webSocket?.off(WS_TOPIC.TRADING);
     };
   }, [webSocket]);
 
