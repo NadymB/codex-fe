@@ -186,7 +186,7 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) =
                 aria-describedby="outlined-weight-helper-text"
               />
             </div>
-            <span className="text-[#fff] mt-2">≈0.00 USDT</span>
+            <span className="text-[#fff] mt-2">≈{amount} USD</span>
           </div>
           <Button
             sx={{ padding: 0, marginTop: "8px", textTransform: "none" }}
