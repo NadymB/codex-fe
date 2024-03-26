@@ -251,7 +251,10 @@
       "bearishAMinute": "ver más {{number}} minuto",
       "allOrders": "alle Bestellungen",
       "win": "Victoria",
-      "lose": "Derrota"
+      "lose": "Derrota",
+      "balanceAtStart": "Saldo al inicio",
+      "balanceAtEnd": "Saldo al final",
+      "pending": "Pendiente"
     },
     "chart": {
       "title": "tendencia",
@@ -295,12 +298,12 @@
     "clickToSelectSelfie": "Haz clic para elegir una selfie",
     "submit": "entregar",
     "uploadSuccess": "Subida exitosa, espere la revisión",
-    "examinationPassed":"examen aprobado",
-    "rejected":"Auditoría no aprobada",
-    "pending":"moderado"
-
+    "examinationPassed": "examen aprobado",
+    "rejected": "Auditoría no aprobada",
+    "pending": "moderado"
   },
   "invalidFileFormat": "Formato de archivo inválido. Por favor, elija un archivo de imagen válido (png, jpg, webp)",
   "minimumCapacityError": "El tamaño de su imagen debe ser inferior a 10MB",
-  "somethingWentWrong": "Algo salió mal. Por favor, inténtelo de nuevo más tarde."
+  "somethingWentWrong": "Algo salió mal. Por favor, inténtelo de nuevo más tarde.",
+  "orderConfirmed": "Pedido confirmado"
 }

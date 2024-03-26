@@ -30,7 +30,7 @@ const TradePage = ({
   const [isOpenConfirmPaymentModal, setIsOpenConfirmPaymenModal] =
     useState(false);
   const [isSelectTab, setIsSelectTab] = useState(0);
-  const { currentUser, fetchUserBalance } = useAuth();
+  const { fetchUserBalance } = useAuth();
   const [formData, setFormData] = useState<BetType>({
     amount: 0,
     pairType: PRICE_TYPE.CRYPTO,
@@ -68,7 +68,6 @@ const TradePage = ({
         offset: 0,
       });
       if (response.success) {
-        console.log(response);
         return response.data;
       }
       return [];

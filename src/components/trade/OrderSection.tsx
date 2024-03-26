@@ -6,6 +6,7 @@ import { t } from "i18next";
 import { ORDERS_DATA, WS_TOPIC, getStaticURL } from "@/utils/constants";
 import { OrderItem } from "./OrderItem";
 import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { useAuth } from "@/hooks/useAuth";
 const orders = true;
 
 export const OrderSection = ({
@@ -19,7 +20,7 @@ export const OrderSection = ({
   isRefresh: boolean;
 }) => {
   const { webSocket } = useContext(WebSocketCtx);
-
+  const { fetchUserBalance } = useAuth();
   const [isSelectTab, setIsSelectTab] = useState(0);
   const [orderHistory, setOrderHistory] = useState<any>([]);
   const [orderPending, setOrderPending] = useState<any>([]);
@@ -35,7 +36,7 @@ export const OrderSection = ({
   const fetchOrderHistory = async () => {
     const data = await getOrderHistory();
     setOrderHistory(data.rows);
-    console.log(data.rows);
+    console.log("datadata", data.rows);
   };
   const fetchOrderPending = async () => {
     const data = await getOrderPending();
@@ -46,7 +47,8 @@ export const OrderSection = ({
       webSocket.on(WS_TOPIC.BET_RESULT, (data) => {
         fetchOrderPending();
         fetchOrderHistory();
-        console.log("cin chaof day laf trad bet");
+        fetchUserBalance();
+
       });
     }
     return () => {
@@ -71,6 +73,7 @@ export const OrderSection = ({
                   timeoutInMinutes={item.timeoutInMinutes}
                   endAt={item.endAt}
                   token={item.pairName.replace("usdt", "").toUpperCase()}
+                  balanceAtStart={item.balanceAtTradeSessionStart}
                 />
               ))}
             </div>
@@ -105,9 +108,12 @@ export const OrderSection = ({
                   isLong={item.position === "long"}
                   price={item.orderValue}
                   amount={item.amount}
-                  profit={(item.amount * item.betPercentage) / 100}
+                  profit={(item.isWin?(item.amount * item.betPercentage) / 100:0)}
                   timeoutInMinutes={item.timeoutInMinutes}
                   token={item.pairName.replace("usdt", "").toUpperCase()}
+                  balanceAtStart={item.balanceAtTradeSessionStart}
+                  balanceAtEnd={item.balanceAtTradeSessionEnd}
+
                 />
               ))}
             </div>

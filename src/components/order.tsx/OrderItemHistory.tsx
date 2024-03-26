@@ -11,6 +11,7 @@ interface IOrderItem {
     endAt?: string;
     token:string
     id:string
+    isWin:boolean
   }
   export const OrderItemHistory = ({
     isLong,
@@ -20,7 +21,8 @@ interface IOrderItem {
     timeoutInMinutes,
     endAt,
     token,
-    id
+    id,
+    isWin
   }: IOrderItem) => {
   return (
     <div
@@ -43,7 +45,7 @@ interface IOrderItem {
             ? `${t("tradePage.trade.bullishAMinute", { number: timeoutInMinutes })}`
             : `${t("tradePage.trade.bearishAMinute", { number: timeoutInMinutes })}`}
           </div>
-          <span className="text-xs text-[#888]">{ DateTime.fromISO(endAt as string).toFormat("yyyy:MM:dd:HH:mm")}</span>
+          <span className="text-xs text-[#888]">{ DateTime.fromISO(endAt as string).toFormat("yyyy-MM-dd HH:mm")}</span>
         </div>
       </div>
       <div className="flex flex-col gap-2 mt-4">
@@ -74,7 +76,7 @@ interface IOrderItem {
           <span
             className={`text-base ${Number(profit)>0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
           >
-            {Number(profit)>0?t("tradePage.trade.win"):t("tradePage.trade.lose")}
+            {isWin?t("tradePage.trade.win"):t("tradePage.trade.lose")}
           </span>
         </div>
       </div>
