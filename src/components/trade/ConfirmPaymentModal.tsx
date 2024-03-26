@@ -2,6 +2,7 @@ import { CloseIcon } from "@/assets/icons/CloseIcon";
 import { convertNumberToFormattedString } from "@/utils/converter";
 import { BetType } from "@/utils/type";
 import { t } from "i18next";
+import { useEffect, useMemo, useRef } from "react";
 
 export const ConfirmPaymentModal = ({
   isLong,
@@ -18,13 +19,23 @@ export const ConfirmPaymentModal = ({
   currency: string;
   slug: string;
 }) => {
+  const confirmRef = useRef(null);
+
+  useEffect(() => {
+    const menubar = document.getElementById("menu-bar");
+    const ref = confirmRef.current as any;
+    if(menubar && ref) {
+      ref.style.bottom = `${menubar.offsetHeight}px`;
+    }
+  },[])
+
   return (
     <>
       <div
-        className="w-screen h-screen z-40 sticky bottom-0 left-0 bg-zinc-400 bg-opacity-25 backdrop-blur-sm"
+        className="w-screen h-screen z-40 fixed bottom-0 left-0 bg-zinc-400 bg-opacity-25 backdrop-blur-sm"
         onClick={onClickCloseBtn}
       />
-      <div className="bg-[#1c1c1e] z-50 sticky bottom-0 left-0 right-0">
+      <div ref={confirmRef} className={`bg-[#1c1c1e] z-50 fixed bottom-0 left-0 right-0`}>
         <div className="flex justify-between py-2 px-4 border-b border-[#ffffff1a]">
           <span className="text-base text-white">
             {t("tradePage.trade.tradeConfirmation")}
@@ -72,9 +83,7 @@ export const ConfirmPaymentModal = ({
             <span className="text-sm text-[#f7a600]">
               +
               {convertNumberToFormattedString(
-                Number(
-                  (data.amount * data.betPercentage) / 100
-                ).toFixed(2)
+                Number((data.amount * data.betPercentage) / 100).toFixed(2)
               )}{" "}
               USDT
             </span>
