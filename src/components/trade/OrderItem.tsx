@@ -1,4 +1,5 @@
 import { convertNumberToFormattedString } from "@/utils/converter";
+import { formatNumberToCurrency } from "@/utils/formatNumber";
 import { CircularProgress } from "@mui/material";
 import { t } from "i18next";
 import { useEffect, useState } from "react";
@@ -91,7 +92,7 @@ export const OrderItem = ({
             {t("tradePage.trade.balanceAtStart")} :
           </span>
           <span className="text-xs text-white">
-            {convertNumberToFormattedString(String(balanceAtStart))} USDT
+            {formatNumberToCurrency(Number(balanceAtStart))} USDT
           </span>
         </div>
         <div className="flex-1 flex items-center gap-1">
@@ -100,7 +101,7 @@ export const OrderItem = ({
           </span>
           <span className="text-xs text-white">
             {balanceAtEnd
-              ? ` ${convertNumberToFormattedString(String(balanceAtEnd))} USDT`
+              ? ` ${formatNumberToCurrency(Number(balanceAtEnd))} USDT`
               : t("tradePage.trade.pending")}
           </span>
         </div>
