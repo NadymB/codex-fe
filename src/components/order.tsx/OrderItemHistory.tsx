@@ -78,7 +78,7 @@ export const OrderItemHistory = ({
           </span>
         </div>
         <div className="flex justify-between text-base text-white">
-          <span className="text-sm text-[#A3A3A3]">Status</span>
+          <span className="text-sm text-[#A3A3A3]">{t("tradePage.trade.status")}</span>
           <span
             className={`text-base ${Number(profit) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
           >
