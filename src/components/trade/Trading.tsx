@@ -165,6 +165,7 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) =
                 className="w-full"
                 placeholder="0.00"
                 value={amount}
+                type="number"
                 onChange={(e) => {
                   if (Number(e.target.value) > 0) {
                     setAmount(Number(e.target.value));
