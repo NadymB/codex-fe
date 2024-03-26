@@ -48,9 +48,12 @@ const TradePage = ({
 
   const handleConfirmPayment = async (value: BetType) => {
     try {
+      const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
+      .replace(" ", "_")
+      .toLowerCase();
       const response = await tradeService.placeOrders({
         ...value,
-        pairName: value.pairName.toLocaleLowerCase(),
+        pairName: tokenKey,
       });
       if (response.success) {
         onToast(t("orderConfirmed"), "success");
