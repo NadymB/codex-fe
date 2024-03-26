@@ -22,11 +22,11 @@ const OrderPage = () => {
   });
   const [orderHistory, setOrderHistory] = useState([]);
   const [total, setTotal] = useState(0);
-  const getOrderHistory = async () => {
+  const getOrderHistory = async (limit = 20, offset = 0) => {
     try {
       const response = await tradeService.getOrders({
-        limit: limit,
-        offset: offset,
+        limit,
+        offset,
       });
       if (response.success) {
         setOrderHistory(response.data.rows);
@@ -38,7 +38,10 @@ const OrderPage = () => {
       return [];
     }
   };
-  const handlePageClick = async () => {};
+  const handlePageClick = async (selectedItem: { selected: number }) => {
+    const newOffset = selectedItem.selected * limit;
+    await getOrderHistory(limit, newOffset);
+  };
   useEffect(() => {
     getOrderHistory();
   }, []);
@@ -67,23 +70,23 @@ const OrderPage = () => {
               </Fragment>
             );
           })}
-          {Math.ceil(total / limit)>0&&
-          <div className="Pagination relative">
-            <ReactPaginate
-              containerClassName={"pagination"}
-              pageClassName={"page-item"}
-              pageLinkClassName={"page-link"}
-              activeClassName={"page-active"}
-              breakLabel="..."
-              nextLabel={<NextIcon />}
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={3}
-              pageCount={Math.ceil(total / limit)}
-              previousLabel={<BackIcon/>}
-              // renderOnZeroPageCount={true}
-            />
-          </div>
-          }
+          {Math.ceil(total / limit) > 0 && (
+            <div className="Pagination relative">
+              <ReactPaginate
+                containerClassName={"pagination"}
+                pageClassName={"page-item"}
+                pageLinkClassName={"page-link"}
+                activeClassName={"page-active"}
+                breakLabel="..."
+                nextLabel={<NextIcon />}
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={3}
+                pageCount={Math.ceil(total / limit)}
+                previousLabel={<BackIcon />}
+                // renderOnZeroPageCount={true}
+              />
+            </div>
+          )}
         </div>
       ) : (
         <div className="flex flex-col items-center p-4">
