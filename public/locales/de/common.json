@@ -249,7 +249,12 @@
       "noMoreData": "keine Daten mehr",
       "bullishAMinute": "Mehr sehen eine Minute",
       "bearishAMinute": "Abrechnungspreis",
-      "allOrders": "alle Bestellungen"
+      "allOrders": "alle Bestellungen",
+      "win": "Win",
+      "lose": "Lose",
+      "balanceAtStart": "Kontostand am Anfang",
+      "balanceAtEnd": "Kontostand am Ende",
+      "pending": "Ausstehend"
     },
     "chart": {
       "title": "Trend",
@@ -293,11 +298,12 @@
     "clickToSelectSelfie": "Klicken Sie, um ein Selfie auszuwählen",
     "submit": "einreichen",
     "uploadSuccess": "Upload erfolgreich, warten auf Überprüfung",
-    "examinationPassed":"Examination passed",
-    "rejected":"Prüfung nicht bestanden",
-    "pending":"Moderated"
+    "examinationPassed": "Examination passed",
+    "rejected": "Prüfung nicht bestanden",
+    "pending": "Moderated"
   },
   "invalidFileFormat": "Ungültiges Dateiformat. Bitte wählen Sie eine gültige Bilddatei (png, jpg, webp)",
   "minimumCapacityError": "Die Größe Ihres Bildes muss kleiner als 10MB sein",
-  "somethingWentWrong": "Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut."
+  "somethingWentWrong": "Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut.",
+  "orderConfirmed": "Bestellung bestätigt"
 }

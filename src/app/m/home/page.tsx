@@ -17,15 +17,20 @@ import { chatService } from "@/services/ChatService";
 import { PopularTransactionPair } from "@/components/Home/PopularTransactionPair";
 import { ChatCtx } from "@/providers/ChatProvider";
 import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function Home() {
   const { countNewMessage, setCountNewMessage } = useContext(ChatCtx);
+  const { currentUser } = useAuth();
+
   const { webSocket } = useContext(WebSocketCtx);
 
   const handleGetUnreadMessage = async () => {
     try {
-      const response = await chatService.getUnreadMessage();
-      setCountNewMessage(response);
+      if (currentUser) {
+        const response = await chatService.getUnreadMessage();
+        setCountNewMessage(response);
+      }
     } catch (error) {
       console.log(error);
     }

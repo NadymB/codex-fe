@@ -30,7 +30,7 @@ export class TradeService {
   };
 
   public getOrders = async (pagination: { limit: number; offset: number }) => {
-    const { data } = await this.restConnector.get(`/trades/orders`, {
+    const { data } = await this.restConnector.get(`/trades/orders/completed`, {
       params: {
         limit: pagination?.limit,
         offset: pagination?.offset,

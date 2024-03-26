@@ -73,9 +73,9 @@
     "messageLogin": "Please log in to your account or signup a account",
     "login": "Log in",
     "signup": "Signup",
-    "notCertified":"Not certified",
-		"greenRiseAndRed":"Green rise and red",
-		"notSet":"Not set"
+    "notCertified": "Not certified",
+    "greenRiseAndRed": "Green rise and red",
+    "notSet": "Not set"
   },
   "announcementPage": {
     "title": "Announce"
@@ -251,7 +251,10 @@
       "bearishAMinute": "Bearish {{number}} minute",
       "allOrders": "All Orders",
       "win": "Win",
-      "lose": "Lose"
+      "lose": "Lose",
+      "balanceAtStart": "Balance at start",
+      "balanceAtEnd": "Balance at end",
+      "pending": "Pending"
     },
     "chart": {
       "title": "Charts",
@@ -261,20 +264,20 @@
     }
   },
   "displayCurrency": {
-		"title": "Display Currency",
-		"commonlyUsed": "Commonly used",
-		"more": "More"
-	},
+    "title": "Display Currency",
+    "commonlyUsed": "Commonly used",
+    "more": "More"
+  },
   "servicePage": {
-		"title": "Contact us",
-		"onlineService": "Online service",
-		"onlineServiceContent": "Welcome to contact us if you need any need",
+    "title": "Contact us",
+    "onlineService": "Online service",
+    "onlineServiceContent": "Welcome to contact us if you need any need",
     "placeholderMessage": "The message to be sent..."
-	},
+  },
   "kycPage": {
-		"title": "Authentication",
-		"warning": "The document can only certify one account. Please verify before you submit it.",
-		"uploadRequirementsTitle": "Identity certificate upload requirements",
+    "title": "Authentication",
+    "warning": "The document can only certify one account. Please verify before you submit it.",
+    "uploadRequirementsTitle": "Identity certificate upload requirements",
     "uploadRequirementsContent": "Copy or scanned parts are not received, please provide the original photo.",
     "uploadRequirementsSubContent": "Must be a valid ID issued by the government",
     "correct": "Correct example",
@@ -291,14 +294,14 @@
     "drivingLicense": "Driving license",
     "residencePermit": "Residence permit",
     "clickToSelectIDFront": "Click to select ID (Front)",
-    "clickToSelectIDBack": "Click to select ID (Back)" ,
+    "clickToSelectIDBack": "Click to select ID (Back)",
     "clickToSelectSelfie": "Click to select a selfie",
     "submit": "Submit",
     "uploadSuccess": "Upload success, wait for review",
-    "examinationPassed":"Examination passed",
-    "rejected":"Audit not passed",
-    "pending":"Moderated"
-	},
+    "examinationPassed": "Examination passed",
+    "rejected": "Audit not passed",
+    "pending": "Moderated"
+  },
   "invalidFileFormat": "Invalid file format. Please choose  valid image file (png, jpg, webp) ",
   "minimumCapacityError": "Your image size must be less than 10MB",
   "somethingWentWrong": "Something went wrong. Please try again later",

@@ -251,7 +251,10 @@
       "bearishAMinute": "ribassista {{number}} minuto",
       "allOrders": "tutti gli ordini",
       "win": "Vittoria",
-      "lose": "Sconfitta"
+      "lose": "Sconfitta",
+      "balanceAtStart": "Saldo all'inizio",
+      "balanceAtEnd": "Saldo alla fine",
+      "pending": "In sospeso"
     },
     "chart": {
       "title": "tendenza",
@@ -295,11 +298,12 @@
     "clickToSelectSelfie": "Fai clic per scegliere un selfie",
     "submit": "invia",
     "uploadSuccess": "Caricamento riuscito, in attesa di revisione",
-    "examinationPassed":"esame superato",
-    "rejected":"Audit non superato",
-    "pending":"Moderato"
+    "examinationPassed": "esame superato",
+    "rejected": "Audit non superato",
+    "pending": "Moderato"
   },
   "invalidFileFormat": "Formato file non valido. Si prega di scegliere un file immagine valido (png, jpg, webp)",
   "minimumCapacityError": "La dimensione della tua immagine deve essere inferiore a 5MB",
-  "somethingWentWrong": "Qualcosa è andato storto. Si prega di riprovare più tardi."
+  "somethingWentWrong": "Qualcosa è andato storto. Si prega di riprovare più tardi.",
+  "orderConfirmed": "Ordine confermato"
 }

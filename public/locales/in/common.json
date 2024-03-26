@@ -250,7 +250,10 @@
       "bearishAMinute": "baissier {{number}} minute",
       "allOrders": "Tous les ordres",
       "win": "विजय",
-      "lose": "हार"
+      "lose": "हार",
+      "balanceAtStart": "आरंभ में संतुलन",
+      "balanceAtEnd": "अंत में संतुलन",
+      "pending": "बकाया"
     },
     "chart": {
       "title": "चार्ट",
@@ -300,5 +303,6 @@
   },
   "invalidFileFormat": "अमान्य फ़ाइल प्रारूप। कृपया एक वैध छवि फ़ाइल का चयन करें (png, jpg, webp)",
   "minimumCapacityError": "आपकी छवि का आकार 10MB से कम होना चाहिए",
-  "somethingWentWrong": "कुछ गलत हो गया। कृपया बाद में पुन: प्रयास करें।"
+  "somethingWentWrong": "कुछ गलत हो गया। कृपया बाद में पुन: प्रयास करें।",
+  "orderConfirmed": "आदेश की पुष्टि की गई"
 }

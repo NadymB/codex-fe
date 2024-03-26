@@ -251,7 +251,10 @@
       "bearishAMinute": "Giao dịch bán {{number}} phút",
       "allOrders": "Tất cả đơn hàng",
       "win": "Thắng",
-      "lose": "Thua"
+      "lose": "Thua",
+      "balanceAtStart": "Số dư lúc đầu",
+      "balanceAtEnd": "Số dư lúc kết thúc",
+      "pending": "Đang chờ"
     },
     "chart": {
       "title": "Biểu đồ",
@@ -295,10 +298,9 @@
     "clickToSelectSelfie": "Bấm để chọn selfie",
     "submit": "Nộp",
     "uploadSuccess": "Tải lên thành công, đợi để được xem xét",
-    "examinationPassed":"Kỳ thi đã qua",
-    "rejected":"Kiểm toán không được thông qua",
-    "pending":"Kiểm duyệt"
-    
+    "examinationPassed": "Kỳ thi đã qua",
+    "rejected": "Kiểm toán không được thông qua",
+    "pending": "Kiểm duyệt"
   },
   "invalidFileFormat": "Định dạng tệp không hợp lệ. Vui lòng chọn tệp hình ảnh hợp lệ (png, jpg, webp)",
   "minimumCapacityError": "Kích thước ảnh của bạn phải nhỏ hơn 5MB",

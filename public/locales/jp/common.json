@@ -251,7 +251,10 @@
       "bearishAMinute": "下げる {{number}} 分",
       "allOrders": "すべての注文",
       "win": "勝利",
-    "lose": "敗北"
+      "lose": "敗北",
+      "balanceAtStart": "開始時の残高",
+      "balanceAtEnd": "終了時の残高",
+      "pending": "保留中"
     },
     "chart": {
       "title": "チャート",
@@ -295,11 +298,12 @@
     "clickToSelectSelfie": "クリックしてセルフィーを選択します",
     "submit": "送信",
     "uploadSuccess": "アップロード成功、審査待ち",
-    "examinationPassed":"試験が合格しました",
-    "rejected":"監査が可決されていません",
-    "pending":"モデレート"
+    "examinationPassed": "試験が合格しました",
+    "rejected": "監査が可決されていません",
+    "pending": "モデレート"
   },
   "invalidFileFormat": "無効なファイル形式です。有効な画像ファイル（png、jpg、webp）を選択してください",
   "minimumCapacityError": "画像のサイズは5MB未満である必要があります",
-  "somethingWentWrong": "何か問題が発生しました。後でやり直してください。"
+  "somethingWentWrong": "何か問題が発生しました。後でやり直してください。",
+  "orderConfirmed": "注文が確認されました"
 }
