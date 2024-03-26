@@ -15,6 +15,7 @@ import { tradeService } from "@/services/TradeService";
 import {
   CHART_CODE,
   CRYPTOCURRENCY_CODE,
+  PAIR_TYPE,
   PRICE_TYPE,
   getStaticURL,
 } from "@/utils/constants";
@@ -54,6 +55,7 @@ const TradePage = ({
       const response = await tradeService.placeOrders({
         ...value,
         pairName: tokenKey,
+        pairType: PAIR_TYPE[tokenKey as keyof typeof PAIR_TYPE],
       });
       if (response.success) {
         onToast(t("orderConfirmed"), "success");
