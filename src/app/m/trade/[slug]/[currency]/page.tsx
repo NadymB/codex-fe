@@ -13,6 +13,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { onToast } from "@/hooks/useToast";
 import { tradeService } from "@/services/TradeService";
 import {
+  CHART_CODE,
   CRYPTOCURRENCY_CODE,
   PRICE_TYPE,
   getStaticURL,
@@ -63,10 +64,17 @@ const TradePage = ({
 
   const getOrderHistory = async () => {
     try {
-      const response = await tradeService.getOrders({
-        limit: 10,
-        offset: 0,
-      });
+      const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
+        .replace(" ", "_")
+        .toLowerCase();
+
+      const response = await tradeService.getOrders(
+        {
+          limit: 10,
+          offset: 0,
+        },
+        tokenKey
+      );
       if (response.success) {
         return response.data;
       }
@@ -78,10 +86,17 @@ const TradePage = ({
   };
   const getOrderPending = async () => {
     try {
-      const response = await tradeService.getOrdersPending({
-        limit: 10,
-        offset: 0,
-      });
+      const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
+        .replace(" ", "_")
+        .toLowerCase();
+
+      const response = await tradeService.getOrdersPending(
+        {
+          limit: 10,
+          offset: 0,
+        },
+        tokenKey
+      );
       if (response.success) {
         return response.data;
       }
