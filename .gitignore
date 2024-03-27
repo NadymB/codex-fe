@@ -39,3 +39,6 @@ next-env.d.ts
 
 makefile
 node_modules
+
+version.txt
+*.zip
