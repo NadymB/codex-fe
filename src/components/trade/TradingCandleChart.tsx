@@ -2,7 +2,11 @@
 
 import { tradeService } from "@/services/TradeService";
 import { CHART_CODE } from "@/utils/constants";
-import { formatNumberToCurrency, nFormatter, numberToLocaleString } from "@/utils/formatNumber";
+import {
+  formatNumberToCurrency,
+  nFormatter,
+  numberToLocaleString,
+} from "@/utils/formatNumber";
 import { ChartData } from "@/utils/type";
 import { t } from "i18next";
 import Cookies from "js-cookie";
@@ -32,9 +36,9 @@ interface Props {
 }
 
 interface IPast24Hour {
-  highestValue: string;
-  lowestValue: string;
-  totalValue: string;
+  highestValue: string | number;
+  lowestValue: string | number;
+  totalValue: string | number;
 }
 
 export const TradingCandleChart: FC<Props> = ({
@@ -95,18 +99,40 @@ export const TradingCandleChart: FC<Props> = ({
           "USC"
         )
       );
-      setValueToken(formattedData[formattedData.length - 1].close)
+      setValueToken(formattedData[formattedData.length - 1].close);
 
       const currentTime = new Date().getTime();
       const pastTime = new Date(currentTime - 24 * 60 * 60 * 1000);
 
-      const dataPast24Hours = response.data.filter((item: any) => new Date(item.intervalStart) >= pastTime);
-    
-      const highestValue = formatNumberToCurrency(dataPast24Hours.reduce((max: number, currentValue: any) => Math.max(max, currentValue.highestValue), -Infinity));
-      const lowestValue = formatNumberToCurrency(dataPast24Hours.reduce((min: number, currentValue: any) => Math.min(min, currentValue.lowestValue), Infinity));
-      const totalValue = nFormatter(dataPast24Hours.reduce((sum: number, currentValue: any) => sum + currentValue.totalValue, 0));
-      
-      setLast24HourData({highestValue, lowestValue, totalValue});
+      const dataPast24Hours = response.data.filter(
+        (item: any) => new Date(item.intervalStart) >= pastTime
+      );
+
+      if (dataPast24Hours.length) {
+        const highestValue = formatNumberToCurrency(
+          dataPast24Hours.reduce(
+            (max: number, currentValue: any) =>
+              Math.max(max, currentValue.highestValue),
+            -Infinity
+          )
+        );
+        const lowestValue = formatNumberToCurrency(
+          dataPast24Hours.reduce(
+            (min: number, currentValue: any) =>
+              Math.min(min, currentValue.lowestValue),
+            Infinity
+          )
+        );
+        const totalValue = nFormatter(
+          dataPast24Hours.reduce(
+            (sum: number, currentValue: any) => sum + currentValue.totalValue,
+            0
+          )
+        );
+        setLast24HourData({ highestValue, lowestValue, totalValue });
+      } else {
+        setLast24HourData({ highestValue: 0, lowestValue: 0, totalValue: 0 });
+      }
 
       if (loadMore) {
         const cleared = formattedData.filter(
@@ -209,19 +235,25 @@ export const TradingCandleChart: FC<Props> = ({
               <div className="text-[#fff] text-[14px] opacity-30">
                 {t("tradePage.chart.24HourHigh")}
               </div>
-              <div className="text-[#fff] text-[14px] ml-6">{last24HourData?.highestValue}</div>
+              <div className="text-[#fff] text-[14px] ml-6">
+                {last24HourData?.highestValue}
+              </div>
             </div>
             <div className="flex items-center justify-between">
               <div className="text-[#fff] text-[14px] opacity-30">
                 {t("tradePage.chart.24HourLow")}
               </div>
-              <div className="text-[#fff] text-[14px] ml-6">{last24HourData?.lowestValue}</div>
+              <div className="text-[#fff] text-[14px] ml-6">
+                {last24HourData?.lowestValue}
+              </div>
             </div>
             <div className="flex items-center justify-between">
               <div className="text-[#fff] text-[14px] opacity-30">
                 {t("tradePage.chart.24HourTurnover")}
               </div>
-              <div className="text-[#fff] text-[14px] ml-6">{last24HourData?.totalValue}</div>
+              <div className="text-[#fff] text-[14px] ml-6">
+                {last24HourData?.totalValue}
+              </div>
             </div>
           </div>
         </div>
