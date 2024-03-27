@@ -307,5 +307,6 @@
   "minimumCapacityError": "您的图像大小必须小于 10MB",
   "somethingWentWrong": "出现了问题，请稍后再试",
   "orderConfirmed": "订单已确认",
-  "amountMustBeGreaterThan0": "金额必须大于0"
+  "amountMustBeGreaterThan0": "金额必须大于0",
+  "amountMustBeLessThanOrEqualToBalance": "金额必须小于或等于余额"
 }

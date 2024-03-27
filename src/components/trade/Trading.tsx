@@ -186,6 +186,7 @@ const Trading: FC<Props> = ({
                 }}
                 placeholder="0.00"
                 min={0}
+                max={currentBalance}
                 step={0.001}
               />
               <div className="text-gray-400 font-thin absolute right-2 top-1/2 -translate-y-1/2">
@@ -201,6 +202,10 @@ const Trading: FC<Props> = ({
             onClick={() => {
               if (amount <= 0) {
                 onToast(t("amountMustBeGreaterThan0"), "error");
+                return;
+              }
+              if(amount > currentBalance){
+                onToast(t("amountMustBeLessThanOrEqualToBalance"), "error");
                 return;
               }
               onBet({
@@ -224,6 +229,10 @@ const Trading: FC<Props> = ({
             onClick={() => {
               if (amount <= 0) {
                 onToast(t("amountMustBeGreaterThan0"), "error");
+                return;
+              }
+              if(amount > currentBalance){
+                onToast(t("amountMustBeLessThanOrEqualToBalance"), "error");
                 return;
               }
               onBet({

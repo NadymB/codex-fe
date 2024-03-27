@@ -307,5 +307,6 @@
   "minimumCapacityError": "Die Größe Ihres Bildes muss kleiner als 10MB sein",
   "somethingWentWrong": "Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut.",
   "orderConfirmed": "Bestellung bestätigt",
-  "amountMustBeGreaterThan0": "Der Betrag muss größer als 0 sein"
+  "amountMustBeGreaterThan0": "Der Betrag muss größer als 0 sein",
+  "amountMustBeLessThanOrEqualToBalance": "Betrag muss kleiner oder gleich dem Guthaben sein"
 }

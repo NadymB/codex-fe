@@ -307,5 +307,6 @@
   "minimumCapacityError": "El tamaño de su imagen debe ser inferior a 10MB",
   "somethingWentWrong": "Algo salió mal. Por favor, inténtelo de nuevo más tarde.",
   "orderConfirmed": "Pedido confirmado",
-  "amountMustBeGreaterThan0": "El monto debe ser mayor que 0"
+  "amountMustBeGreaterThan0": "El monto debe ser mayor que 0",
+  "amountMustBeLessThanOrEqualToBalance": "El monto debe ser menor o igual al saldo"
 }
