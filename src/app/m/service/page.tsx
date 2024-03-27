@@ -111,7 +111,7 @@ const ServicePage = () => {
   };
 
   const scrollToBottom = () => {
-    const lastMessage = messageListRef.current.lastElementChild;
+    const lastMessage = messageListRef.current?.lastElementChild;
     if (lastMessage) {
       lastMessage.scrollIntoView({ block: "end" });
     }
@@ -146,6 +146,7 @@ const ServicePage = () => {
   };
   //  HANDLE GET CHAT ROOM
   const handleGetChatRoomId = async () => {
+    if (!currentUser) return;
     const chatRoom = await chatService.getChat();
     setChatRoomId(chatRoom.data._id);
   };

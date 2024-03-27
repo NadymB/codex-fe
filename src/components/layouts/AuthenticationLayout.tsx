@@ -1,21 +1,25 @@
 "use client";
 import { useEffect } from "react";
 
-import { useRouter } from "next/navigation";
-import { useAuth } from "../../hooks/useAuth";
 import restConnector from "@/connectors/axiosRestConnector";
 import { authService } from "@/services/AuthServices";
+import { useRouter } from "next/navigation";
+import { useAuth } from "../../hooks/useAuth";
+import { Loading } from "../Loading";
 export const AuthenticationLayout = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const { getCurrentUser } = useAuth();
+  const { fetchCurrentUser, currentUser, loading, setLoading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    getCurrentUser();
-  }, []);
+    fetchCurrentUser();
+    if (!currentUser) {
+      router.replace("/m/login");
+    }
+  }, [currentUser]);
   restConnector.interceptors.response.use(
     (response) => {
       if (!response.data.success && response.data.httpCode === 403) {
@@ -32,5 +36,15 @@ export const AuthenticationLayout = ({
       return error;
     }
   );
-  return children;
+  return (
+    <>
+      {currentUser ? (
+        children
+      ) : (
+        <div className="h-screen">
+          <Loading />
+        </div>
+      )}
+    </>
+  );
 };
