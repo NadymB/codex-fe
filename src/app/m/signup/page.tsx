@@ -12,10 +12,10 @@ import { Logo } from "@/components/Logo";
 import { OptionsLanguage, getStaticURL } from "@/utils/constants";
 
 const SignUpPage = () => {
-  const { getCurrentUser } = useAuth();
+  const { fetchCurrentUser } = useAuth();
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState(
-    OptionsLanguage.find((lang) => lang.value === i18next.language),
+    OptionsLanguage.find((lang) => lang.value === i18next.language)
   );
   const [activeTab, setActiveTab] = useState(1);
   const [tabPosition, setTabPosition] = useState({ left: 0, width: 0 });
@@ -57,9 +57,14 @@ const SignUpPage = () => {
   };
   useEffect(() => {
     (async () => {
-      const user = await getCurrentUser();
-      if (user) {
-        // router.push("/m/home");
+      if (typeof window !== "undefined") {
+        const access_token = localStorage.getItem("jwt");
+        if (access_token) {
+          const user = await fetchCurrentUser();
+          if (user) {
+            router.push("/m/home");
+          }
+        }
       }
     })();
   }, []);
@@ -79,7 +84,11 @@ const SignUpPage = () => {
         <h4 className="text-[32px] text-[#fff]">
           {t("authenticationPage.signupTitle")}
         </h4>
-        <Tabs tabs={tabs} onChange={(value) => changeTab(value)} activeTab={isSelectTab}/>
+        <Tabs
+          tabs={tabs}
+          onChange={(value) => changeTab(value)}
+          activeTab={isSelectTab}
+        />
         <div className="flex  flex-col items-center justify-center mt-2">
           <Logo />
           <Link
