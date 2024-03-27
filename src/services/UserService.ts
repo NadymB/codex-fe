@@ -16,9 +16,17 @@ export class UserService {
 
     return data;
   };
-  public getOrderHistory = async (userId: string, token: TRADE_CURRENCY) => {
+  public getBalanceHistory = async (token: TRADE_CURRENCY,
+    pagination: { limit: number; offset: number }
+  ) => {
     const { data } = await this.restConnector.get(
-      `/users/balances?currency=${token}`
+      `/users/balances/history?currency=${token}`,
+      {
+        params: {
+          limit: pagination?.limit,
+          offset: pagination?.offset,
+        },
+      }
     );
 
     return data;

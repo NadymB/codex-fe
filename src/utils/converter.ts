@@ -27,6 +27,10 @@ export const convertNumberToFormattedString = (number: string): string => {
   return str.join(".");
 };
 
+export function removeTrailingZeros(number:any) {
+  const numberString = Number(number).toString();
+  return numberString.replace(/(\.[0-9]*[1-9])0+$/, "$1");
+}
 // check if number1 is greater than number2 then return true
 export const isGreaterOrEqual = (number1: string, number2: string): boolean => {
   return new BigNumber(number1).isGreaterThanOrEqualTo(number2);

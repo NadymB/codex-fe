@@ -255,7 +255,12 @@
       "lose": "Lose",
       "balanceAtStart": "Balance at start",
       "balanceAtEnd": "Balance at end",
-      "pending": "Pending"
+      "pending": "Pending",
+      "success": "Success",
+      "fail": "Fail",
+      "expenditure": "Expenditure",
+      "income": "Income",
+      "handlingFee": "Handling fee"
     },
     "chart": {
       "title": "Charts",
