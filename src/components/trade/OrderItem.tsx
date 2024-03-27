@@ -31,8 +31,8 @@ export const OrderItem = ({
 }: IOrderItem) => {
   const calculateRemainingSeconds = () => {
     if (endAt) {
-      const now = DateTime.utc().toMillis(); // Current UTC timestamp
-      const end = DateTime.fromISO(endAt, { zone: "utc" }).toMillis(); // End timestamp in UTC
+      const now = DateTime.utc().toMillis(); 
+      const end = DateTime.fromISO(endAt, { zone: "utc" }).toMillis();
       return Math.floor((end - now) / 1000);
     }
     return 0;
