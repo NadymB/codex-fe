@@ -86,6 +86,8 @@ const Trading: FC<Props> = ({
 
   useEffect(() => {
     setAmount(0);
+    const ref = inputRef.current as any;
+    ref.value = 0;
     setMarkPercent(0);
     setPercentIsSelected(BET_PERCENTAGE[0]);
   }, [isRefresh]);
@@ -204,7 +206,7 @@ const Trading: FC<Props> = ({
                 onToast(t("amountMustBeGreaterThan0"), "error");
                 return;
               }
-              if(amount > currentBalance){
+              if (amount > currentBalance) {
                 onToast(t("amountMustBeLessThanOrEqualToBalance"), "error");
                 return;
               }
@@ -231,7 +233,7 @@ const Trading: FC<Props> = ({
                 onToast(t("amountMustBeGreaterThan0"), "error");
                 return;
               }
-              if(amount > currentBalance){
+              if (amount > currentBalance) {
                 onToast(t("amountMustBeLessThanOrEqualToBalance"), "error");
                 return;
               }
