@@ -306,5 +306,6 @@
   "invalidFileFormat": "Format de fichier invalide. Veuillez choisir un fichier image valide (png, jpg, webp)",
   "minimumCapacityError": "La taille de votre image doit être inférieure à 10Mo",
   "somethingWentWrong": "Quelque chose s'est mal passé. Veuillez réessayer plus tard.",
-  "orderConfirmed": "Commande confirmée"
+  "orderConfirmed": "Commande confirmée",
+  "amountMustBeGreaterThan0": "Le montant doit être supérieur à 0"
 }
