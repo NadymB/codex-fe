@@ -260,7 +260,12 @@
       "lose": "패배",
       "balanceAtStart": "시작 시 잔액",
       "balanceAtEnd": "종료 시 잔액",
-      "pending": "대기 중"
+      "pending": "대기 중",
+      "success": "성공",
+      "fail": "실패",
+      "expenditure": "지출",
+      "income": "수입",
+      "handlingFee": "수수료"
     },
     "chart": {
       "title": "경향",

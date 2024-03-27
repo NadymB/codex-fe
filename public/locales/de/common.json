@@ -260,7 +260,12 @@
       "lose": "Lose",
       "balanceAtStart": "Kontostand am Anfang",
       "balanceAtEnd": "Kontostand am Ende",
-      "pending": "Ausstehend"
+      "pending": "Ausstehend",
+      "success": "Erfolg",
+      "fail": "Fehler",
+      "expenditure": "Ausgaben",
+      "income": "Einkommen",
+      "handlingFee": "Bearbeitungsgebühr"
     },
     "chart": {
       "title": "Trend",

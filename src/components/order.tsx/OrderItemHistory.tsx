@@ -1,5 +1,8 @@
+import {
+  convertNumberToFormattedString,
+  removeTrailingZeros,
+} from "@/utils/converter";
 import { TRADE_TYPE_CODE } from "@/utils/constants";
-import { convertNumberToFormattedString } from "@/utils/converter";
 import { t } from "i18next";
 import { DateTime } from "luxon";
 
@@ -33,7 +36,7 @@ export const OrderItemHistory = ({
           "rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px",
       }}
     >
-      <div className="flex justify-between border-b border-[#0000001f] mb-4">
+      <div className="flex justify-between border-b border-[#FFFFFF1A] pb-2 mb-4">
         <div className="flex flex-col gap-1 text-[#9ca3af]">
           <span className="text-[#9ca3af]">
             {TRADE_TYPE_CODE[token as keyof typeof TRADE_TYPE_CODE] ?? token}
@@ -66,7 +69,10 @@ export const OrderItemHistory = ({
             {t("tradePage.trade.amount")}
           </span>
           <span className="text-xs text-white">
-            {convertNumberToFormattedString(String(amount))} USDT
+            {convertNumberToFormattedString(
+              removeTrailingZeros(Number(amount).toFixed(8))
+            )}{" "}
+            USDT
           </span>
         </div>
         <div className="flex justify-between text-base text-white">
@@ -74,7 +80,11 @@ export const OrderItemHistory = ({
             {t("tradePage.trade.profit")}
           </span>
           <span className="text-xs text-[#f7a600]">
-            +{convertNumberToFormattedString(String(profit))} USDT
+            +
+            {convertNumberToFormattedString(
+              removeTrailingZeros(Number(profit).toFixed(8))
+            )}{" "}
+            USDT
           </span>
         </div>
         <div className="flex justify-between text-base text-white">

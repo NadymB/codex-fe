@@ -232,8 +232,8 @@
   "tradePage": {
     "position": "स्थिति",
     "order": "आदेश",
-    "long": "लंबा",
-    "short": "लघु",
+    "long": "मोल लेना",
+    "short": "बेचना",
     "trade": {
       "title": "व्यापार",
       "profit": "लाभ",
@@ -249,8 +249,8 @@
       "amount": "राशि",
       "status": "स्थिति",
       "expectedProfit": "अपेक्षित लाभ",
-      "long": "अधिक देखें",
-      "short": "गिरावटी",
+      "long": "मोल लेना",
+      "short": "बेचना",
       "orderPrice": "निर्धारण की कीमत",
       "noMoreData": "और डेटा नहीं",
       "bullishAMinute": "{{number}} मिनट तक और देखें",
@@ -260,7 +260,12 @@
       "lose": "हार",
       "balanceAtStart": "आरंभ में संतुलन",
       "balanceAtEnd": "अंत में संतुलन",
-      "pending": "बकाया"
+      "pending": "बकाया",
+      "success": "सफलता",
+      "fail": "असफलता",
+      "expenditure": "व्यय",
+      "income": "आय",
+      "handlingFee": "हैंडलिंग शुल्क"
     },
     "chart": {
       "title": "चार्ट",

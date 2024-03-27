@@ -10,10 +10,6 @@ import { useEffect } from "react";
 
 const MarketPage = () => {
   const { currentUser, logout, fetchCurrentUser } = useAuth();
-  useEffect(() => {
-    fetchCurrentUser();
-  }, []);
-
   return (
     <div className="bg-black min-h-screen">
       <GoBack title={t("profilePage.title")} />

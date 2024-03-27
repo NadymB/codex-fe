@@ -134,7 +134,6 @@ export class AuthService {
     // On browser, load access token from local storage.
     if (typeof window !== "undefined") {
       const accessToken = localStorage.getItem(ACCESS_TOKEN);
-
       if (accessToken) {
         this.jwt = accessToken;
         restConnector.defaults.headers[AUTHORIZATION_HEADER] =

@@ -1,8 +1,8 @@
 "use client";
 
+import { ArtificialIcon } from "@/assets/icons/ArtificialIcon";
 import { GoBack } from "@/components/layouts/GoBack";
 import { t } from "i18next";
-import { ArtificialIcon } from "@/assets/icons/ArtificialIcon";
 import Link from "next/link";
 
 const DepositPage = () => {

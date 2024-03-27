@@ -1,17 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { DefaultLayout } from "@/components/layouts/DefaultLayout";
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import { SwiperItem } from "@/components/SwiperItem";
+import { SWIPER_SLIDER_DATA } from "@/utils/constants";
+import { t } from "i18next";
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import { SWIPER_SLIDER_DATA } from "@/utils/constants";
-import { SwiperItem } from "@/components/SwiperItem";
-import Link from "next/link";
-import { t } from "i18next";
 
 export default function Home() {
   return (
