@@ -255,7 +255,12 @@
       "lose": "Derrota",
       "balanceAtStart": "Saldo al inicio",
       "balanceAtEnd": "Saldo al final",
-      "pending": "Pendiente"
+      "pending": "Pendiente",
+      "success": "Éxito",
+      "fail": "Fallo",
+      "expenditure": "Gasto",
+      "income": "Ingresos",
+      "handlingFee": "Tarifa de manejo"
     },
     "chart": {
       "title": "tendencia",

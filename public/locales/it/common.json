@@ -255,7 +255,12 @@
       "lose": "Sconfitta",
       "balanceAtStart": "Saldo all'inizio",
       "balanceAtEnd": "Saldo alla fine",
-      "pending": "In sospeso"
+      "pending": "In sospeso",
+      "success": "Successo",
+      "fail": "Fallimento",
+      "expenditure": "Spesa",
+      "income": "Entrata",
+      "handlingFee": "Commissione di gestione"
     },
     "chart": {
       "title": "tendenza",
