@@ -58,8 +58,7 @@ const defaultCtxVal: AuthCtxProps = {
   getCurrentUser: () => new Promise((resolve, reject) => reject(null)),
   setLoading: (value: SetStateAction<boolean>): void => {},
   setCurrentUser: (value: SetStateAction<Account | null>): void => {},
-  fetchUserBalance: () =>
-    new Promise((resolve, reject) => reject(null)),
+  fetchUserBalance: () => new Promise((resolve, reject) => reject(null)),
 };
 
 export const AuthCtx = createContext<AuthCtxProps>(defaultCtxVal);
@@ -141,11 +140,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
   };
 
   const fetchUserBalance = async () => {
-    if (!currentUser?.id) return;
-    const balance = await userService.getUserBalance(
-      currentUser?.id,
-      tradeCurrenty
-    );
+    const balance = await userService.getUserBalance(tradeCurrenty);
 
     if (balance.success && !!balance.data) {
       setCurrentBalance(balance.data);

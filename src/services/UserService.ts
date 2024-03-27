@@ -9,22 +9,16 @@ export class UserService {
     this.restConnector = options.restConnector;
   }
 
-  public getUserBalance = async (
-    userId: string,
-    token: TRADE_CURRENCY,
-  ) => {
+  public getUserBalance = async (token: TRADE_CURRENCY) => {
     const { data } = await this.restConnector.get(
-      `/users/balances?currency=${token}`,
+      `/users/balances?currency=${token}`
     );
 
     return data;
   };
-  public getOrderHistory = async (
-    userId: string,
-    token: TRADE_CURRENCY,
-  ) => {
+  public getOrderHistory = async (userId: string, token: TRADE_CURRENCY) => {
     const { data } = await this.restConnector.get(
-      `/users/balances?currency=${token}`,
+      `/users/balances?currency=${token}`
     );
 
     return data;
