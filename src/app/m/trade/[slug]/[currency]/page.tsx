@@ -22,7 +22,7 @@ import {
 import { BetType } from "@/utils/type";
 import { Button } from "@mui/material";
 import { t } from "i18next";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TradePage = ({
   params,
@@ -47,11 +47,14 @@ const TradePage = ({
     setIsSelectTab(tabNumber);
   };
 
+  const tradeBtnRef = useRef(null);
+  const orderRef = useRef(null);
+
   const handleConfirmPayment = async (value: BetType) => {
     try {
       const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
-      .replace(" ", "_")
-      .toLowerCase();
+        .replace(" ", "_")
+        .toLowerCase();
       const response = await tradeService.placeOrders({
         ...value,
         pairName: tokenKey,
@@ -116,42 +119,42 @@ const TradePage = ({
     {
       name: `${t("tradePage.chart.title")}`,
       content: (
-        <>
-          <div className=" flex flex-col ">
-            <div className="flex flex-row space-x-1 px-4 py-3 items-center justify-between">
-              <div className="flex items-center gap-3">
-                <img
-                  className="w-8 h-8"
-                  src={`${getStaticURL()}/assets/images/tokens/${params.slug}.svg`}
-                  alt=""
-                />
-                <div className="text-[16px]">
-                  <span className="text-white">
-                    {params.slug} / {params.currency}
-                  </span>
-                  <span className="text-green-600 bg-[#55AF7233] px-2 py-1 rounded ml-1 text-[14px]">
-                    +0.44%
-                  </span>
-                </div>
-              </div>
-              <div>
-                <FavoriteIcon />
+        <div className=" flex flex-col ">
+          <div className="flex flex-row space-x-1 px-4 py-3 items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img
+                className="w-8 h-8"
+                src={`${getStaticURL()}/assets/images/tokens/${params.slug}.svg`}
+                alt=""
+              />
+              <div className="text-[16px]">
+                <span className="text-white">
+                  {params.slug} / {params.currency}
+                </span>
+                <span className="text-green-600 bg-[#55AF7233] px-2 py-1 rounded ml-1 text-[14px]">
+                  +0.44%
+                </span>
               </div>
             </div>
-            <div className="px-4">
-              <TradingCandleChart
-                setValueToken={setTokenPrice}
-                token={params.slug}
-                currency={params.currency}
-              />
+            <div>
+              <FavoriteIcon />
             </div>
           </div>
-          <OrderSection
-            isRefresh={isRefresh}
-            getOrderPending={getOrderPending}
-            getOrderHistory={getOrderHistory}
-          />
-          <div className="sticky bottom-0 left-0 flex items-center gap-3 px-4 py-2 z-50 bg-[#000000]">
+          <div className="px-4">
+            <TradingCandleChart
+              setValueToken={setTokenPrice}
+              token={params.slug}
+              currency={params.currency}
+            />
+          </div>
+          <div ref={orderRef}>
+            <OrderSection
+              isRefresh={isRefresh}
+              getOrderPending={getOrderPending}
+              getOrderHistory={getOrderHistory}
+            />
+          </div>
+          <div id="tradeBtn" ref={tradeBtnRef} className="fixed bottom-0 left-0 right-0 flex items-center gap-3 px-4 py-2 z-50 bg-[#000000]">
             <Button
               sx={{ padding: 0, textTransform: "none" }}
               className="p-0 w-full overflow-hidden normal-case"
@@ -173,7 +176,7 @@ const TradePage = ({
               </div>
             </Button>
           </div>
-        </>
+        </div>
       ),
     },
     {
@@ -199,6 +202,20 @@ const TradePage = ({
       ),
     },
   ];
+
+  useEffect(() => {
+    const menubar = document.getElementById("menu-bar");
+    const ref = tradeBtnRef.current as any;
+    if(menubar && ref) {
+      ref.style.bottom = `${menubar.offsetHeight}px`;
+    }
+
+    const orderSection = document.getElementById("tradeBtn");
+    const orderRefCurrent = orderRef.current as any;
+    if(menubar && orderSection && orderRefCurrent) {
+      orderRefCurrent.style.marginBottom = `${orderSection.offsetHeight}px`;
+    }
+  },[])
 
   return (
     <AuthenticationLayout>
