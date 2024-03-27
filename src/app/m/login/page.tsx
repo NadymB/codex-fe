@@ -68,9 +68,15 @@ const LoginPage = () => {
   };
   useEffect(() => {
     (async () => {
-      const user = await fetchCurrentUser();
-      if (user) {
-        // router.push("/m/home");
+      if (typeof window !== "undefined") {
+        const access_token = localStorage.getItem("jwt")
+        if(access_token){
+          const user = await fetchCurrentUser();
+          if (user) {
+            router.push("/m/home");
+          }
+
+        }
       }
     })();
   }, []);

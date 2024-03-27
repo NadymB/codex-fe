@@ -4,6 +4,7 @@ import { formatNumberToCurrency } from "@/utils/formatNumber";
 import { CircularProgress } from "@mui/material";
 import { t } from "i18next";
 import { useEffect, useState } from "react";
+const { DateTime } = require("luxon");
 interface IOrderItem {
   isLong: boolean;
   price: string;
@@ -28,8 +29,8 @@ export const OrderItem = ({
 }: IOrderItem) => {
   const calculateRemainingSeconds = () => {
     if (endAt) {
-      const now: any = new Date();
-      const end: any = new Date(endAt);
+      const now = DateTime.utc().toMillis(); // Current UTC timestamp
+      const end = DateTime.fromISO(endAt, { zone: "utc" }).toMillis(); // End timestamp in UTC
       return Math.floor((end - now) / 1000);
     }
     return 0;
