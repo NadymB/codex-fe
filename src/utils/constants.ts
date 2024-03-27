@@ -1227,3 +1227,20 @@ export const BET_PERCENTAGE = [
 export const getRnd = (min: number, max: number) => {
   return (Math.random() * (max - min) + min).toFixed(2);
 };
+
+export enum BALANCE_ACTION {
+  CREDIT = 'credit',
+  DEBIT = 'debit',
+  LOCK = 'lock',
+  ROLLBACK = 'rollback',
+}
+export enum TRADE_TYPE {
+  PLACE_ORDER = 'place_order',
+  SETTLE_ORDER = 'settle_order',
+}
+
+export enum USER_BALANCE_TYPE {
+  TOPUP = 'topup',
+  DEDUCT = 'deduct',
+  WITHDRAW = 'withdraw',
+}

@@ -254,7 +254,12 @@
       "lose": "Thua",
       "balanceAtStart": "Số dư lúc đầu",
       "balanceAtEnd": "Số dư lúc kết thúc",
-      "pending": "Đang chờ"
+      "pending": "Đang chờ",
+      "success": "Thành công",
+      "fail": "Thất bại",
+      "expenditure": "Chi phí",
+      "income": "Thu nhập",
+      "handlingFee": "Phí xử lý"
     },
     "chart": {
       "title": "Biểu đồ",

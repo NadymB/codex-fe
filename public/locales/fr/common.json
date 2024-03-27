@@ -254,7 +254,12 @@
       "lose": "Défaite",
       "balanceAtStart": "Solde au début",
       "balanceAtEnd": "Solde à la fin",
-      "pending": "En attente"
+      "pending": "En attente",
+      "success": "Succès",
+      "fail": "Échec",
+      "expenditure": "Dépense",
+      "income": "Revenu",
+      "handlingFee": "Frais de gestion"
     },
     "chart": {
       "title": "s'orienter",

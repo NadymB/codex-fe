@@ -1,4 +1,7 @@
-import { convertNumberToFormattedString } from "@/utils/converter";
+import {
+  convertNumberToFormattedString,
+  removeTrailingZeros,
+} from "@/utils/converter";
 import { formatNumberToCurrency } from "@/utils/formatNumber";
 import { CircularProgress } from "@mui/material";
 import { t } from "i18next";
@@ -92,7 +95,10 @@ export const OrderItem = ({
             {t("tradePage.trade.balanceAtStart")} :
           </span>
           <span className="text-xs text-white">
-            {formatNumberToCurrency(Number(balanceAtStart))} USDT
+            {convertNumberToFormattedString(
+              removeTrailingZeros(Number(balanceAtStart).toFixed(8))
+            )}{" "}
+            USDT
           </span>
         </div>
         <div className="flex-1 flex items-center gap-1">
@@ -101,7 +107,9 @@ export const OrderItem = ({
           </span>
           <span className="text-xs text-white">
             {balanceAtEnd
-              ? ` ${formatNumberToCurrency(Number(balanceAtEnd))} USDT`
+              ? ` ${convertNumberToFormattedString(
+                  removeTrailingZeros(Number(balanceAtEnd).toFixed(8))
+                )} USDT`
               : t("tradePage.trade.pending")}
           </span>
         </div>
@@ -122,17 +130,24 @@ export const OrderItem = ({
             {t("tradePage.trade.amount")}
           </span>
           <span className="text-xs text-white">
-            {convertNumberToFormattedString(String(amount))} USDT
+            {convertNumberToFormattedString(
+              removeTrailingZeros(Number(amount).toFixed(8))
+            )}{" "}
+            USDT
           </span>
         </div>
-        <div className="flex-1 flex flex-col gap-1">
+        <div className="flex-1 flex flex-col items-end gap-1">
           <span className="text-sm text-[#888]">
             {remainingSeconds > 0
               ? t("tradePage.trade.expectedProfit")
               : t("tradePage.trade.profit")}
           </span>
           <span className="text-xs text-[#f7a600]">
-            +{convertNumberToFormattedString(String(profit))} USDT
+            +
+            {convertNumberToFormattedString(
+              removeTrailingZeros(Number(profit).toFixed(8))
+            )}{" "}
+            USDT
           </span>
         </div>
       </div>

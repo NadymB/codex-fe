@@ -253,7 +253,12 @@
       "lose": "हार",
       "balanceAtStart": "आरंभ में संतुलन",
       "balanceAtEnd": "अंत में संतुलन",
-      "pending": "बकाया"
+      "pending": "बकाया",
+      "success": "सफलता",
+      "fail": "असफलता",
+      "expenditure": "व्यय",
+      "income": "आय",
+      "handlingFee": "हैंडलिंग शुल्क"
     },
     "chart": {
       "title": "चार्ट",

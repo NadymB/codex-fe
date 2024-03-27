@@ -254,7 +254,12 @@
       "lose": "敗北",
       "balanceAtStart": "開始時の残高",
       "balanceAtEnd": "終了時の残高",
-      "pending": "保留中"
+      "pending": "保留中",
+      "success": "成功",
+      "fail": "失敗",
+      "expenditure": "支出",
+      "income": "収入",
+      "handlingFee": "手数料"
     },
     "chart": {
       "title": "チャート",

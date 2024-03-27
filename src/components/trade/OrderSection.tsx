@@ -63,7 +63,7 @@ export const OrderSection = ({
 
   const tabOrder = [
     {
-      name: `${t("tradePage.position")}`,
+      name: `${t("tradePage.position")} ${orderPending?.length > 0? `(${orderPending?.length})`:""} `,
       content:
         orderPending?.length > 0 ? (
           <div className="flex flex-col gap-2">

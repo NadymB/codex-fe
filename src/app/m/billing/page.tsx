@@ -5,18 +5,16 @@ import { BackIcon } from "@/assets/icons/BackIcon";
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { BillHistory } from "@/components/Billing/BillHistory";
 import { GoBack } from "@/components/layouts/GoBack";
-import { OrderItemHistory } from "@/components/order.tsx/OrderItemHistory";
 import { useAuth } from "@/hooks/useAuth";
-import { tradeService } from "@/services/TradeService";
 import { userService } from "@/services/UserService";
-import { TRADE_CURRENCY, getStaticURL } from "@/utils/constants";
+import { getStaticURL } from "@/utils/constants";
 import { t } from "i18next";
 import Image from "next/image";
 import { Fragment, useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
 const OrderPage = () => {
-  const { currentUser } = useAuth();
+  const { tradeCurrenty } = useAuth();
 
   const [{ offset, limit }, setPaginations] = useState<{
     offset: number;
@@ -25,19 +23,17 @@ const OrderPage = () => {
     offset: 0,
     limit: 20,
   });
-  const [orderHistory, setOrderHistory] = useState([]);
+  const [bill, setBill] = useState([]);
   const [total, setTotal] = useState(0);
-  const getOrderHistory = async (limit = 20, offset = 0) => {
+  const getBill = async (limit = 20, offset = 0) => {
     try {
-      console.log(currentUser);
-      const response = await userService.getBalanceHistory(TRADE_CURRENCY.USD,{
+      const response = await userService.getBalanceHistory(tradeCurrenty, {
         limit,
         offset,
       });
       if (response.success) {
-        console.log(response);
-        setOrderHistory(response.data.items);
-        setTotal(response.data.total);
+        setBill(response.data.items);
+        setTotal(response.data.totalCount);
       }
 
       return [];
@@ -48,24 +44,26 @@ const OrderPage = () => {
   };
   const handlePageClick = async (selectedItem: { selected: number }) => {
     const newOffset = selectedItem.selected * limit;
-    await getOrderHistory(limit, newOffset);
+    await getBill(limit, newOffset);
   };
   useEffect(() => {
-    getOrderHistory();
+    getBill();
   }, []);
   return (
     <div className="min-h-screen bg-[#000000]">
       <GoBack title={t("bill.title")} />
-      {orderHistory.length > 0 ? (
+      {bill.length > 0 ? (
         <div className="flex flex-col gap-4 bg-[#000000]">
-          {orderHistory.map((item: any, index: number) => {
+          {bill.map((item: any, index: number) => {
             return (
               <Fragment key={index}>
                 <BillHistory
                   key={index}
                   id={item.id}
                   amount={item.amount}
-                 
+                  createdAt={item.createdAt}
+                  isSuccess={true}
+                  action={item.type}
                 />
               </Fragment>
             );
@@ -89,24 +87,16 @@ const OrderPage = () => {
           )}
         </div>
       ) : (
-        <BillHistory
-                  key={1}
-                  id={"s"}
-                  amount={"1000"}
-                  isSuccess={true}
-                  createdAt=""
-                 
-                />
-        // <div className="flex flex-col items-center p-4">
-        //   <Image
-        //     src={`${getStaticURL()}/assets/images/empty.svg`}
-        //     alt={t("order.noData")}
-        //     width={100}
-        //     height={100}
-        //     className="w-80 h-80"
-        //   />
-        //   <span className="text-base text-[#737373]">{t("order.noData")}</span>
-        // </div>
+        <div className="flex flex-col items-center p-4">
+          <Image
+            src={`${getStaticURL()}/assets/images/empty.svg`}
+            alt={t("order.noData")}
+            width={100}
+            height={100}
+            className="w-80 h-80"
+          />
+          <span className="text-base text-[#737373]">{t("order.noData")}</span>
+        </div>
       )}
     </div>
   );
