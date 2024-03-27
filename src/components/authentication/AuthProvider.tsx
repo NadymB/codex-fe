@@ -144,6 +144,8 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
 
     if (balance.success && !!balance.data) {
       setCurrentBalance(balance.data?.data ?? balance.data);
+    } else {
+      setCurrentBalance(0);
     }
 
     return balance;

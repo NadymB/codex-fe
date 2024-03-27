@@ -9,7 +9,7 @@ import {
 } from "@/utils/constants";
 import { Button, InputAdornment, Slider, styled } from "@mui/material";
 import { t } from "i18next";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { InputCustom } from "../InputCustom";
 import { TradingChartBar } from "./TradingChartBar";
 import { useAuth } from "@/hooks/useAuth";
@@ -76,6 +76,7 @@ const Trading: FC<Props> = ({
   const { fetchUserBalance, currentBalance, currentUser } = useAuth();
   const [amount, setAmount] = useState<number>(0);
   const [markPercent, setMarkPercent] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (currentUser) {
@@ -158,6 +159,8 @@ const Trading: FC<Props> = ({
                 const amount = (Number(data.value) / 100) * currentBalance;
                 setAmount(Number(amount.toFixed(2)));
                 setMarkPercent(data.value);
+                const ref = inputRef.current as any;
+                ref.value = amount.toFixed(2);
               }}
               max={100}
               valueLabelFormat={valueLabelFormat}
@@ -168,11 +171,15 @@ const Trading: FC<Props> = ({
             <div className="bg-[#1D1C22] relative">
               <input
                 type="number"
+                ref={inputRef}
                 className="w-full text-white text-lg rounded-sm p-2 bg-transparent border-none outline-none focus:outline-1 focus:outline-blue-600 "
                 defaultValue={0}
                 onChange={(e) => {
                   if (Number(e.target.value) > 0) {
                     setAmount(Number(e.target.value));
+                    setMarkPercent(
+                      (Number(e.target.value) / currentBalance) * 100
+                    );
                   } else {
                     setAmount(0);
                   }
