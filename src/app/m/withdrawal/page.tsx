@@ -1,12 +1,12 @@
 "use client";
 
 import { GoBack } from "@/components/layouts/GoBack";
-import { t } from "i18next";
-import * as Yup from "yup";
-import { useFormik } from "formik";
 import { getStaticURL } from "@/utils/constants";
+import { useFormik } from "formik";
+import { t } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
+import * as Yup from "yup";
 
 const WithdrawPage = () => {
   const validationSchema = Yup.object({
@@ -66,9 +66,7 @@ const WithdrawPage = () => {
           <div className="text-white">
             {t("withdraw.currentBalance")} &nbsp; 0.00 USDT
           </div>
-          <span className="text-[#3d5afe]">
-            {t("withdraw.allBalance")}
-          </span>
+          <span className="text-[#3d5afe]">{t("withdraw.allBalance")}</span>
         </div>
         <Link
           href={"/m/setting/payment"}
@@ -78,9 +76,7 @@ const WithdrawPage = () => {
         </Link>
         <div className="flex flex-col gap-2 w-full pb-10 pt-20">
           <div className="w-full flex justify-between text-base text-white">
-            <span className="text-[#888]">
-              {t("withdraw.fees")}
-            </span>
+            <span className="text-[#888]">{t("withdraw.fees")}</span>
             <span>0.00 USDT</span>
           </div>
           <div className="w-full flex justify-between text-sm text-white">

@@ -6,7 +6,6 @@ import { AccountItem } from "@/components/AccountItem";
 import { AssetItem } from "@/components/AssetItem";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { useAuth } from "@/hooks/useAuth";
-import { userService } from "@/services/UserService";
 import { ACCOUNT_LIST, ASSET_LIST, getStaticURL } from "@/utils/constants";
 import { convertNumberToFormattedString } from "@/utils/converter";
 import { t } from "i18next";

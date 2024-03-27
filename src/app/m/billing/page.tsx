@@ -50,55 +50,57 @@ const OrderPage = () => {
     getBill();
   }, []);
   return (
-    <div className="min-h-screen bg-[#000000]">
-      <GoBack title={t("bill.title")} />
-      {bill.length > 0 ? (
-        <div className="flex flex-col gap-4 bg-[#000000]">
-          {bill.map((item: any, index: number) => {
-            return (
-              <Fragment key={index}>
-                <BillHistory
-                  key={index}
-                  id={item.id}
-                  amount={item.amount}
-                  createdAt={item.createdAt}
-                  isSuccess={true}
-                  action={item.type}
+      <div className="min-h-screen bg-[#000000]">
+        <GoBack title={t("bill.title")} />
+        {bill.length > 0 ? (
+          <div className="flex flex-col gap-4 bg-[#000000]">
+            {bill.map((item: any, index: number) => {
+              return (
+                <Fragment key={index}>
+                  <BillHistory
+                    key={index}
+                    id={item.id}
+                    amount={item.amount}
+                    createdAt={item.createdAt}
+                    isSuccess={true}
+                    action={item.type}
+                  />
+                </Fragment>
+              );
+            })}
+            {Math.ceil(total / limit) > 0 && (
+              <div className="Pagination relative">
+                <ReactPaginate
+                  containerClassName={"pagination"}
+                  pageClassName={"page-item"}
+                  pageLinkClassName={"page-link"}
+                  activeClassName={"page-active"}
+                  breakLabel="..."
+                  nextLabel={<NextIcon />}
+                  onPageChange={handlePageClick}
+                  pageRangeDisplayed={3}
+                  pageCount={Math.ceil(total / limit)}
+                  previousLabel={<BackIcon />}
+                  // renderOnZeroPageCount={true}
                 />
-              </Fragment>
-            );
-          })}
-          {Math.ceil(total / limit) > 0 && (
-            <div className="Pagination relative">
-              <ReactPaginate
-                containerClassName={"pagination"}
-                pageClassName={"page-item"}
-                pageLinkClassName={"page-link"}
-                activeClassName={"page-active"}
-                breakLabel="..."
-                nextLabel={<NextIcon />}
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={3}
-                pageCount={Math.ceil(total / limit)}
-                previousLabel={<BackIcon />}
-                // renderOnZeroPageCount={true}
-              />
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="flex flex-col items-center p-4">
-          <Image
-            src={`${getStaticURL()}/assets/images/empty.svg`}
-            alt={t("order.noData")}
-            width={100}
-            height={100}
-            className="w-80 h-80"
-          />
-          <span className="text-base text-[#737373]">{t("order.noData")}</span>
-        </div>
-      )}
-    </div>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center p-4">
+            <Image
+              src={`${getStaticURL()}/assets/images/empty.svg`}
+              alt={t("order.noData")}
+              width={100}
+              height={100}
+              className="w-80 h-80"
+            />
+            <span className="text-base text-[#737373]">
+              {t("order.noData")}
+            </span>
+          </div>
+        )}
+      </div>
   );
 };
 

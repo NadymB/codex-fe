@@ -5,6 +5,7 @@ import { BackIcon } from "@/assets/icons/BackIcon";
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { GoBack } from "@/components/layouts/GoBack";
 import { OrderItemHistory } from "@/components/order.tsx/OrderItemHistory";
+import { useAuth } from "@/hooks/useAuth";
 import { tradeService } from "@/services/TradeService";
 import { getStaticURL } from "@/utils/constants";
 import { t } from "i18next";
@@ -21,9 +22,11 @@ const OrderPage = () => {
     limit: 20,
   });
   const [orderHistory, setOrderHistory] = useState([]);
+  const { currentUser } = useAuth();
   const [total, setTotal] = useState(0);
   const getOrderHistory = async (limit = 20, offset = 0) => {
     try {
+      if (!currentUser) return [];
       const response = await tradeService.getOrders({
         limit,
         offset,
