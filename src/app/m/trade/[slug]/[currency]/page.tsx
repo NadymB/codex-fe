@@ -32,7 +32,7 @@ const TradePage = ({
   const [isOpenConfirmPaymentModal, setIsOpenConfirmPaymenModal] =
     useState(false);
   const [isSelectTab, setIsSelectTab] = useState(0);
-  const { fetchUserBalance } = useAuth();
+  const { fetchUserBalance, currentUser } = useAuth();
   const [formData, setFormData] = useState<BetType>({
     amount: 0,
     pairType: PRICE_TYPE.CRYPTO,
@@ -72,6 +72,7 @@ const TradePage = ({
 
   const getOrderHistory = async () => {
     try {
+      if (!currentUser) return [];
       const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
         .replace(" ", "_")
         .toLowerCase();
@@ -94,6 +95,7 @@ const TradePage = ({
   };
   const getOrderPending = async () => {
     try {
+      if (!currentUser) return [];
       const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
         .replace(" ", "_")
         .toLowerCase();
@@ -154,7 +156,11 @@ const TradePage = ({
               getOrderHistory={getOrderHistory}
             />
           </div>
-          <div id="tradeBtn" ref={tradeBtnRef} className="fixed bottom-0 left-0 right-0 flex items-center gap-3 px-4 py-2 z-50 bg-[#000000]">
+          <div
+            id="tradeBtn"
+            ref={tradeBtnRef}
+            className="fixed bottom-0 left-0 right-0 flex items-center gap-3 px-4 py-2 z-50 bg-[#000000]"
+          >
             <Button
               sx={{ padding: 0, textTransform: "none" }}
               className="p-0 w-full overflow-hidden normal-case"
@@ -206,16 +212,16 @@ const TradePage = ({
   useEffect(() => {
     const menubar = document.getElementById("menu-bar");
     const ref = tradeBtnRef.current as any;
-    if(menubar && ref) {
+    if (menubar && ref) {
       ref.style.bottom = `${menubar.offsetHeight}px`;
     }
 
     const orderSection = document.getElementById("tradeBtn");
     const orderRefCurrent = orderRef.current as any;
-    if(menubar && orderSection && orderRefCurrent) {
+    if (menubar && orderSection && orderRefCurrent) {
       orderRefCurrent.style.marginBottom = `${orderSection.offsetHeight}px`;
     }
-  },[])
+  }, []);
 
   return (
     <AuthenticationLayout>
