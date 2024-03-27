@@ -79,6 +79,7 @@ const ServicePage = () => {
     offset: 0,
     limit: 20,
   });
+  const [scrollBottom,setScrollBottom] = useState(0)
   useEffect(() => {
     if (headerRef.current) {
       const height = headerRef.current.offsetHeight;
@@ -104,7 +105,7 @@ const ServicePage = () => {
       };
 
       const data = await chatService.sendMessage(chatRoomId, newMessage);
-
+      scrollToBottom()
       setInputMessage("");
       setIsShouldScrollBottom(true);
     }
@@ -203,7 +204,7 @@ const ServicePage = () => {
   };
 
   useEffect(() => {
-    if (isShouldScrollBottom) {
+    if (scrollBottom<100) {
       scrollToBottom();
     }
   }, [listMessage]);
@@ -237,7 +238,10 @@ const ServicePage = () => {
     const messageContainer = messageListRef.current;
     if (chatRoomId && messageContainer) {
       const handleScroll = () => {
-        if (messageContainer.scrollTop === 0) {
+        const { scrollTop, scrollHeight, clientHeight } = messageContainer;
+        const scrollBottom = scrollHeight - (scrollTop + clientHeight);
+        setScrollBottom(scrollBottom)
+        if (scrollTop === 0) {
           fetchMessagesOnScroll(chatRoomId, { limit, offset: offset + limit });
           messageListRef.current.scrollTo({ top: "1px" });
         }
