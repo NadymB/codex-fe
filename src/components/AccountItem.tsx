@@ -2,7 +2,7 @@ import React from "react";
 
 interface AccountItemProps {
   label: string;
-  amount: string;
+  amount: string | number;
 }
 
 export const AccountItem = ({ label, amount }: AccountItemProps) => {

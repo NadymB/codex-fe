@@ -203,7 +203,7 @@
     "msgAmountError": "Số tiền tối thiểu là 1"
   },
   "order": {
-    "title": "Order",
+    "title": "Đặt hàng",
     "noData": "Không có dữ liệu"
   },
   "bill": {
@@ -242,6 +242,7 @@
       "settlementPeriod": "Chu kỳ thanh toán",
       "profitRatio": "Tỷ lệ lợi nhuận",
       "amount": "Số tiền",
+      "status": "Trạng thái",
       "expectedProfit": "Lợi nhuận dự kiến",
       "long": "Mua lên",
       "short": "Mua xuống",
@@ -310,5 +311,7 @@
   "invalidFileFormat": "Định dạng tệp không hợp lệ. Vui lòng chọn tệp hình ảnh hợp lệ (png, jpg, webp)",
   "minimumCapacityError": "Kích thước ảnh của bạn phải nhỏ hơn 5MB",
   "somethingWentWrong": "Đã xảy ra lỗi. Vui lòng thử lại sau.",
-  "orderConfirmed": "Đơn hàng đã đặt"
+  "orderConfirmed": "Đơn hàng đã đặt",
+  "amountMustBeGreaterThan0": "Số tiền phải lớn hơn 0",
+  "amountMustBeLessThanOrEqualToBalance": "Số tiền phải nhỏ hơn hoặc bằng số dư"
 }

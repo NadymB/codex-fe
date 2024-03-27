@@ -242,6 +242,7 @@
       "settlementPeriod": "ciclo di fatturazione",
       "profitRatio": "tasso di rendimento",
       "amount": "l'importo",
+      "status": "stato",
       "expectedProfit": "ritorno previsto",
       "long": "Vedi altro",
       "short": "ribassista",
@@ -310,5 +311,7 @@
   "invalidFileFormat": "Formato file non valido. Si prega di scegliere un file immagine valido (png, jpg, webp)",
   "minimumCapacityError": "La dimensione della tua immagine deve essere inferiore a 5MB",
   "somethingWentWrong": "Qualcosa è andato storto. Si prega di riprovare più tardi.",
-  "orderConfirmed": "Ordine confermato"
+  "orderConfirmed": "Ordine confermato",
+  "amountMustBeGreaterThan0": "L'importo deve essere maggiore di 0",
+  "amountMustBeLessThanOrEqualToBalance": "L'importo deve essere inferiore o uguale al saldo"
 }

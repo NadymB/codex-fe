@@ -9,12 +9,13 @@ import {
 } from "@/utils/constants";
 import { Button, InputAdornment, Slider, styled } from "@mui/material";
 import { t } from "i18next";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { InputCustom } from "../InputCustom";
 import { TradingChartBar } from "./TradingChartBar";
 import { useAuth } from "@/hooks/useAuth";
 import { convertNumberToFormattedString } from "@/utils/converter";
 import { BetType } from "@/utils/type";
+import { onToast } from "@/hooks/useToast";
 
 const CssSlider = styled(Slider)({
   "& .MuiSlider-mark": {
@@ -52,7 +53,7 @@ interface Props {
   isRefresh: boolean;
   token: string;
   currency: string;
-  priceToken:number;
+  priceToken: number;
 
   onBet: ({
     amount,
@@ -64,11 +65,18 @@ interface Props {
   }: BetType) => void;
 }
 
-const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) => {
+const Trading: FC<Props> = ({
+  token,
+  currency,
+  isRefresh,
+  priceToken,
+  onBet,
+}) => {
   const [percentIsSelected, setPercentIsSelected] = useState(BET_PERCENTAGE[0]);
   const { fetchUserBalance, currentBalance, currentUser } = useAuth();
-  const [amount, setAmount] = useState<number | null>(0);
-  const [markPercent, setMarkPercent] = useState(0)
+  const [amount, setAmount] = useState<number>(0);
+  const [markPercent, setMarkPercent] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (currentUser) {
@@ -78,7 +86,7 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) =
 
   useEffect(() => {
     setAmount(0);
-    setMarkPercent(0)
+    setMarkPercent(0);
     setPercentIsSelected(BET_PERCENTAGE[0]);
   }, [isRefresh]);
 
@@ -150,7 +158,9 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) =
                 const data = e.target as any;
                 const amount = (Number(data.value) / 100) * currentBalance;
                 setAmount(Number(amount.toFixed(2)));
-                setMarkPercent(data.value)
+                setMarkPercent(data.value);
+                const ref = inputRef.current as any;
+                ref.value = amount.toFixed(2);
               }}
               max={100}
               valueLabelFormat={valueLabelFormat}
@@ -158,41 +168,46 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) =
           </div>
 
           <div className=" mt-2 flex flex-col">
-            <div className="bg-[#1D1C22]">
-              {" "}
-              <InputCustom
-                size="small"
-                className="w-full"
-                placeholder="0.00"
-                value={amount}
+            <div className="bg-[#1D1C22] relative">
+              <input
+                type="number"
+                ref={inputRef}
+                className="w-full text-white text-lg rounded-sm p-2 bg-transparent border-none outline-none focus:outline-1 focus:outline-blue-600 "
+                defaultValue={0}
                 onChange={(e) => {
                   if (Number(e.target.value) > 0) {
                     setAmount(Number(e.target.value));
+                    setMarkPercent(
+                      (Number(e.target.value) / currentBalance) * 100
+                    );
                   } else {
                     setAmount(0);
                   }
                 }}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment
-                      position="end"
-                      component={() => (
-                        <div className="text-gray-500 font-thin">USDT</div>
-                      )}
-                    />
-                  ),
-                }}
-                aria-describedby="outlined-weight-helper-text"
+                placeholder="0.00"
+                min={0}
+                max={currentBalance}
+                step={0.001}
               />
+              <div className="text-gray-400 font-thin absolute right-2 top-1/2 -translate-y-1/2">
+                USDT
+              </div>
             </div>
-            <span className="text-[#fff] mt-2">≈0.00 USDT</span>
+            <span className="text-[#fff] mt-2">≈{amount} USD</span>
           </div>
           <Button
             sx={{ padding: 0, marginTop: "8px", textTransform: "none" }}
             className="w-full overflow-hidden"
             variant="contained"
             onClick={() => {
-              if (!amount) return;
+              if (amount <= 0) {
+                onToast(t("amountMustBeGreaterThan0"), "error");
+                return;
+              }
+              if(amount > currentBalance){
+                onToast(t("amountMustBeLessThanOrEqualToBalance"), "error");
+                return;
+              }
               onBet({
                 amount,
                 betPercentage: percentIsSelected.betPercentage,
@@ -212,7 +227,14 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) =
             className="w-full overflow-hidden"
             variant="contained"
             onClick={() => {
-              if (!amount) return;
+              if (amount <= 0) {
+                onToast(t("amountMustBeGreaterThan0"), "error");
+                return;
+              }
+              if(amount > currentBalance){
+                onToast(t("amountMustBeLessThanOrEqualToBalance"), "error");
+                return;
+              }
               onBet({
                 amount,
                 betPercentage: percentIsSelected.betPercentage,
@@ -229,7 +251,9 @@ const Trading: FC<Props> = ({ token, currency, isRefresh, priceToken, onBet }) =
           </Button>
         </div>
         <div className="col-span-5 ml-4">
-          <TradingChartBar priceToken={priceToken>0?priceToken:Math.random()*10} />
+          <TradingChartBar
+            priceToken={priceToken > 0 ? priceToken : Math.random() * 10}
+          />
         </div>
       </div>
     </div>

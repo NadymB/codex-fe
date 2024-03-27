@@ -242,6 +242,7 @@
       "settlementPeriod": "结算周期",
       "profitRatio": "收益率",
       "amount": "金额",
+      "status": "状态",
       "expectedProfit": "期望收益",
       "long": "看多",
       "short": "看空",
@@ -250,7 +251,6 @@
       "bullishAMinute": "看多 {{number}} 分钟",
       "bearishAMinute": "看空 {{number}} 分钟",
       "allOrders": "全部订单",
-      "status": "",
       "win": "胜利",
       "lose": "失败",
       "balanceAtStart": "起始余额",
@@ -311,5 +311,7 @@
   "invalidFileFormat": "无效的文件格式。请选择有效的图像文件（png、jpg、webp）",
   "minimumCapacityError": "您的图像大小必须小于 10MB",
   "somethingWentWrong": "出现了问题，请稍后再试",
-  "orderConfirmed": "订单已确认"
+  "orderConfirmed": "订单已确认",
+  "amountMustBeGreaterThan0": "金额必须大于0",
+  "amountMustBeLessThanOrEqualToBalance": "金额必须小于或等于余额"
 }

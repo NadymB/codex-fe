@@ -242,6 +242,7 @@
       "settlementPeriod": "결제주기",
       "profitRatio": "수익률",
       "amount": "금액",
+      "status": "상태",
       "expectedProfit": "예상 수익",
       "long": "더보기",
       "short": "약세",
@@ -310,5 +311,7 @@
   "invalidFileFormat": "잘못된 파일 형식입니다. 유효한 이미지 파일(png, jpg, webp)을 선택하세요",
   "minimumCapacityError": "이미지 크기는 5MB 미만이어야 합니다",
   "somethingWentWrong": "문제가 발생했습니다. 나중에 다시 시도해주세요.",
-  "orderConfirmed": "주문 확인됨"
+  "orderConfirmed": "주문 확인됨",
+  "amountMustBeGreaterThan0": "금액은 0보다 커야 합니다",
+  "amountMustBeLessThanOrEqualToBalance": "금액은 잔액 이하이어야 합니다"
 }

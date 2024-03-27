@@ -242,6 +242,7 @@
       "settlementPeriod": "Settlement Period",
       "profitRatio": "Profit Ratio",
       "amount": "Amount",
+      "status": "Status",
       "expectedProfit": "Expected Profit",
       "long": "Long",
       "short": "Short",
@@ -310,5 +311,7 @@
   "invalidFileFormat": "Invalid file format. Please choose  valid image file (png, jpg, webp) ",
   "minimumCapacityError": "Your image size must be less than 10MB",
   "somethingWentWrong": "Something went wrong. Please try again later",
-  "orderConfirmed": "Order Comfirmed"
+  "orderConfirmed": "Order Comfirmed",
+  "amountMustBeGreaterThan0": "Amount must be greater than 0",
+  "amountMustBeLessThanOrEqualToBalance": "Amount must be less than or equal to balance"
 }

@@ -2,6 +2,7 @@ import {
   convertNumberToFormattedString,
   removeTrailingZeros,
 } from "@/utils/converter";
+import { TRADE_TYPE_CODE } from "@/utils/constants";
 import { t } from "i18next";
 import { DateTime } from "luxon";
 
@@ -37,7 +38,10 @@ export const OrderItemHistory = ({
     >
       <div className="flex justify-between border-b border-[#FFFFFF1A] pb-2 mb-4">
         <div className="flex flex-col gap-1 text-[#9ca3af]">
-          <span className="text-[#9ca3af]">{token}/USDT</span>
+          <span className="text-[#9ca3af]">
+            {TRADE_TYPE_CODE[token as keyof typeof TRADE_TYPE_CODE] ?? token}
+            /USDT
+          </span>
           <span className="text-xs text-[#888]">{id}</span>
         </div>
         <div className="flex flex-col items-end gap-1">
@@ -84,7 +88,7 @@ export const OrderItemHistory = ({
           </span>
         </div>
         <div className="flex justify-between text-base text-white">
-          <span className="text-sm text-[#A3A3A3]">Status</span>
+          <span className="text-sm text-[#A3A3A3]">{t("tradePage.trade.status")}</span>
           <span
             className={`text-base ${Number(profit) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
           >

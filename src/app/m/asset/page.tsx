@@ -5,11 +5,14 @@ import { ShowIcon } from "@/assets/icons/ShowIcon";
 import { AccountItem } from "@/components/AccountItem";
 import { AssetItem } from "@/components/AssetItem";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
+import { useAuth } from "@/hooks/useAuth";
+import { userService } from "@/services/UserService";
 import { ACCOUNT_LIST, ASSET_LIST, getStaticURL } from "@/utils/constants";
+import { convertNumberToFormattedString } from "@/utils/converter";
 import { t } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export type OptionProps = {
   label: string;
@@ -20,13 +23,19 @@ const AssetPage = () => {
   const [isShow, setIsShow] = useState(true);
   const ref = useRef(null);
 
+  const { fetchUserBalance, currentBalance, currentUser } = useAuth();
+
+  useEffect(() => {
+    if (currentUser) {
+      fetchUserBalance();
+    }
+  }, [currentUser]);
+
   return (
     <DefaultLayout containerStyle="bg-[#000000] dark:bg-[#000000]">
       <div className="flex flex-col gap-4 text-white p-4">
         <div>
-          <h2 className="text-xl text-white">
-            {t("assetPage.myAssets")}
-          </h2>
+          <h2 className="text-xl text-white">{t("assetPage.myAssets")}</h2>
           <div className="flex flex-col gap-2">
             <div className="p-4 bg-[#1c1c1e] rounded">
               <span className="text-sm text-[#888]">
@@ -34,7 +43,11 @@ const AssetPage = () => {
               </span>
               <div className="flex items-center gap-3 mt-2 mb-1">
                 <span className="text-white text-[32px]">
-                  {isShow ? "0.00" : "*****"}
+                  {isShow
+                    ? currentBalance > 0
+                      ? convertNumberToFormattedString(String(currentBalance))
+                      : 0
+                    : "*****"}
                 </span>
                 <span className="self-end text-white text-base">USDT</span>
                 <button onClick={() => setIsShow(!isShow)}>
@@ -46,7 +59,7 @@ const AssetPage = () => {
                   href={"/m/setting/currency"}
                   className="text-[#888] text-base"
                 >
-                  ≈ 0.00 USD
+                  ≈{convertNumberToFormattedString(String(currentBalance))} USD
                   <svg
                     className="-mr-1 h-5 w-5"
                     viewBox="0 0 20 20"
@@ -89,10 +102,18 @@ const AssetPage = () => {
           </div>
         </div>
         <div>
-          <h3 className="text-base text-white">
-            {t("assetPage.myAccount")}
-          </h3>
+          <h3 className="text-base text-white">{t("assetPage.myAccount")}</h3>
           <div>
+            <AccountItem
+              label={t(`assetPage.funds`)}
+              amount={
+                isShow
+                  ? currentBalance > 0
+                    ? convertNumberToFormattedString(String(currentBalance))
+                    : 0
+                  : "*****"
+              }
+            />
             {ACCOUNT_LIST.map((item, index) => (
               <AccountItem
                 key={index}

@@ -11,7 +11,6 @@ const orders = true;
 
 export const OrderSection = ({
   isRefresh,
-
   getOrderHistory,
   getOrderPending,
 }: {

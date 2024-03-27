@@ -1,8 +1,8 @@
+import { TRADE_TYPE_CODE } from "@/utils/constants";
 import {
   convertNumberToFormattedString,
   removeTrailingZeros,
 } from "@/utils/converter";
-import { formatNumberToCurrency } from "@/utils/formatNumber";
 import { CircularProgress } from "@mui/material";
 import { t } from "i18next";
 import { useEffect, useState } from "react";
@@ -64,7 +64,7 @@ export const OrderItem = ({
       <div className="flex justify-between">
         <div className="flex  gap-1 items-center">
           <div className="text-white text-base">
-            {token}
+            {TRADE_TYPE_CODE[token as keyof typeof TRADE_TYPE_CODE] ?? token}
             <span className="text-[#9ca3af]">/USDT</span>
           </div>
           <div
