@@ -87,7 +87,10 @@
     "type": "प्रकार",
     "fiatCurrency": "फिएट मुद्रा",
     "cryptocurrency": "क्रिप्टोकरेंसी",
+    "cryptocurrencyPlaceholde": "कृपया क्रिप्टोकरेंसी का चयन करें",
     "country": "देश",
+    "pleaseSelectCryptocurrencies": "कृपया क्रिप्टोकरेंसी का चयन करें",
+    "searchCryptocurrencies": "क्रिप्टोकरेंसी खोजें",
     "clickToSelectCountry": "देश का चयन करने के लिए क्लिक करें",
     "bank": "बैंक संस्थान",
     "placeholderBank": "खाते के बैंक संस्थान दर्ज करें",
@@ -101,9 +104,11 @@
     "remark": "टिप्पणी (वैकल्पिक)",
     "placeholderRemark": "टिप्पणी जोड़ें",
     "confirm": "पुष्टि करें",
-    "pleaseSelectCryptocurrencies": "कृपया देश या क्षेत्र का चयन करें",
+    "pleaseSelectCountryOrRegion": "कृपया देश या क्षेत्र का चयन करें",
     "searchCountryOrRegion": "देश या क्षेत्र खोजें",
-    "required": "आवश्यक"
+    "required": "आवश्यक",
+    "walletAddress": "वॉलेट पता",
+    "walletAddressPlaceholder": "वॉलेट पता दर्ज करें या लंबे समय तक दबाएँ ताकि पेस्ट कर सकें"
   },
   "authentication": {
     "title": "प्रमाणीकरण",

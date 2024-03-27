@@ -87,7 +87,10 @@
     "type": "类型",
     "fiatCurrency": "法定货币",
     "cryptocurrency": "加密货币",
+    "cryptocurrencyPlaceholde": "点击选择加密货币",
     "country": "加密货币",
+    "pleaseSelectCryptocurrencies": "请选择加密货币",
+    "searchCryptocurrencies": "搜索加密货币",
     "clickToSelectCountry": "点击选择加密货币",
     "bank": "银行机构",
     "placeholderBank": "填写账号所属银行名字",
@@ -101,9 +104,11 @@
     "remark": "备注(可选)",
     "placeholderRemark": "添加备注",
     "confirm": "确认",
-    "pleaseSelectCryptocurrencies": "请选择国家或地区",
+    "pleaseSelectCountryOrRegion": "请选择国家或地区",
     "searchCountryOrRegion": "搜索国家或地区",
-    "required": "必填"
+    "required": "必填",
+    "walletAddress": "钱包地址",
+    "walletAddressPlaceholder": "输入或长按粘贴钱包地址"
   },
   "authentication": {
     "title": "身份认证",
@@ -183,8 +188,8 @@
   },
   "deposit": {
     "title": "学习",
-    "noWithdrawalAccount": "No withdrawal account set",
-    "withdrawAccountBtn": "Add withdrawal account",
+    "noWithdrawalAccount": "未设置提现账户",
+    "withdrawAccountBtn": "添加提现账户",
     "chooseYourDepositMethod": "选择您的充值方式",
     "artificialDeposit": "人工充值",
     "contactArtificial": "联系人工客服，获得充值指引"

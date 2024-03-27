@@ -87,7 +87,10 @@
     "type": "タイプ",
     "fiatCurrency": "法定通貨",
     "cryptocurrency": "暗号通貨",
+    "cryptocurrencyPlaceholde": "クリックして暗号通貨を選択します",
     "country": "国家",
+    "pleaseSelectCryptocurrencies": "暗号通貨を選択してください",
+    "searchCryptocurrencies": "暗号通貨を検索します",
     "clickToSelectCountry": "クリックして国を選択します",
     "bank": "国家",
     "placeholderBank": "銀行の銀行機関に記入します",
@@ -101,9 +104,11 @@
     "remark": "発言（オプション）（オプション）",
     "placeholderRemark": "メモを追加します",
     "confirm": "確認",
-    "pleaseSelectCryptocurrencies": "国または地域を選択してください",
+    "pleaseSelectCountryOrRegion": "国または地域を選択してください",
     "searchCountryOrRegion": "国または地域を検索します",
-    "required": "持つ必要があります"
+    "required": "持つ必要があります",
+    "walletAddress": "ウォレットアドレス",
+    "walletAddressPlaceholder": "ロングプレスを入力または押すと、ウォレットアドレスを貼り付けます"
   },
   "authentication": {
     "title": "認証",

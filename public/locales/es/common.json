@@ -87,7 +87,10 @@
     "type": "tipo",
     "fiatCurrency": "moneda de curso legal",
     "cryptocurrency": "criptomoneda",
+    "cryptocurrencyPlaceholde": "Klicken Sie, um eine Kryptowährung auszuwählen",
     "country": "nación",
+    "pleaseSelectCryptocurrencies": "Bitte wählen Sie eine Kryptowährung aus",
+    "searchCryptocurrencies": "Suche nach Kryptowährungen",
     "clickToSelectCountry": "Haga clic para seleccionar el país",
     "bank": "institución bancaria",
     "placeholderBank": "Rellene la institución bancaria de la cuenta",
@@ -101,9 +104,11 @@
     "remark": "Observación(opcional)",
     "placeholderRemark": "Agregar notas",
     "confirm": "confirmar",
-    "pleaseSelectCryptocurrencies": "Seleccione un país o región",
+    "pleaseSelectCountryOrRegion": "Seleccione un país o región",
     "searchCountryOrRegion": "Buscar país o región",
-    "required": "requerido"
+    "required": "requerido",
+    "walletAddress": "Wallet-Adresse",
+    "walletAddressPlaceholder": "Geben Sie die Wallet-Adresse ein oder halten Sie sie gedrückt, um sie einzufügen"
   },
   "authentication": {
     "title": "Autenticación",

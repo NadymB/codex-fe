@@ -87,7 +87,10 @@
     "type": "Kiểu",
     "fiatCurrency": "Đấu thầu hợp pháp",
     "cryptocurrency": "Tiền điện tử",
+    "cryptocurrencyPlaceholde": "Bấm để chọn tiền điện tử",
     "country": "Quốc gia",
+    "pleaseSelectCryptocurrencies": "Vui lòng chọn tiền điện tử",
+    "searchCryptocurrencies": "Tìm kiếm tiền điện tử",
     "clickToSelectCountry": "Bấm để chọn quốc gia",
     "bank": "Ngân hàng",
     "placeholderBank": "Điền vào tổ chức ngân hàng của ngân hàng",
@@ -101,9 +104,11 @@
     "remark": "Nhận xét (tùy chọn)(không bắt buộc)",
     "placeholderRemark": "Thêm ghi chú",
     "confirm": "Xác nhận",
-    "pleaseSelectCryptocurrencies": "Vui lòng chọn quốc gia hoặc khu vực",
+    "pleaseSelectCountryOrRegion": "Vui lòng chọn quốc gia hoặc khu vực",
     "searchCountryOrRegion": "Tìm kiếm quốc gia hoặc khu vực",
-    "required": "Bắt buộc"
+    "required": "Bắt buộc",
+    "walletAddress": "Địa chỉ ví",
+    "walletAddressPlaceholder": "Nhập hoặc nhấn Long Press và dán địa chỉ ví"
   },
   "authentication": {
     "title": "Xác thực",

@@ -5,72 +5,125 @@ import { BackIcon } from "@/assets/icons/BackIcon";
 import { FormControlCustom } from "@/components/FormControlCustom";
 import { InputCustom } from "@/components/InputCustom";
 import SelectCountries from "@/components/SelectCountries";
+import SelectCryptoCurrency from "@/components/SelectCryptocurrency";
+import { TPaymentInfo, WITHDRAW_TYPE } from "@/models/Payment";
+import { paymentService } from "@/services/PaymentService";
+
 import {
   Button,
   InputAdornment,
   InputLabel,
   MenuItem,
-  Select
+  Select,
 } from "@mui/material";
 import { useFormik } from "formik";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as Yup from "yup";
 
 const CreatePaymentPage = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenCryptoCurrency, setIsOpenCryptoCurrency] = useState(false);
   const [currentCountry, setCurrentCountry] = useState<any>();
+  const [currentCurrency, setCurrentCurrency] = useState<any>();
+  const [type, setType] = useState<WITHDRAW_TYPE>(WITHDRAW_TYPE.FIAT_CURRENCY);
   const router = useRouter();
-  const validationSchema = Yup.object({
-    userName: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
+
+  const handleChangeType = (e: any) => {
+    setType(e.target.value);
+  };
+
+  const createWithdrawalAccount = async (values: TPaymentInfo) => {
+    try {
+      const response = await paymentService.createPaymentInfo(values);
+      if (response.data && response.success) {
+        router.push("/m/setting/payment")
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fiatCurrencyValidationSchema = Yup.object({
+    country: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
+    bankName: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
+    bankNumber: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
+    bankAccount: Yup.string().required(
+      t("authenticationPage.userNameIsInvalid")
     ),
-    type: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
-    country: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
-    bank: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
-    accountBank: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
-    realName: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
-    comment: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
-    address: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
-    cardId: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
+    address: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
+    nationalIdCard: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
     phoneNumber: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
+      t("authenticationPage.userNameIsInvalid")
     ),
   });
-  const formik = useFormik({
+
+  const fiatCurrencyformik = useFormik({
     initialValues: {
-      type: "",
       country: "",
-      bank: "",
-      accountBank: "",
-      realName: "",
+      bankName: "",
+      bankAccount: "",
+      bankNumber: "",
       comment: "",
       address: "",
-      cardId: "",
+      nationalIdCard: "",
       phoneNumber: "",
     },
-    validationSchema: validationSchema,
+    validationSchema: fiatCurrencyValidationSchema,
     onSubmit: async (values) => {
       console.log(values);
+      const {
+        country,
+        bankName,
+        bankAccount,
+        bankNumber,
+        address,
+        nationalIdCard,
+        phoneNumber,
+      } = values;
+
+      const phoneNumberValid = `${currentCountry}${phoneNumber}`;
+
+      createWithdrawalAccount({
+        type,
+        country,
+        bankName,
+        bankAccount,
+        bankNumber,
+        address,
+        phoneNumber: phoneNumberValid,
+        nationalIdCard,
+      });
     },
   });
+
+  const cryptoCurrencyValidationSchema = Yup.object({
+    cryptoCurrency: Yup.string().required(
+      t("authenticationPage.cryptoCurrencyIsInvalid")
+    ),
+    walletAddress: Yup.string().required(
+      t("authenticationPage.walletAddressIsInvalid")
+    ),
+  });
+
+  const cryptoCurrencyformik = useFormik({
+    initialValues: {
+      cryptoCurrency: "",
+      walletAddress: "",
+      comment: "",
+    },
+    validationSchema: cryptoCurrencyValidationSchema,
+    onSubmit: async (values) => {
+      const { comment, cryptoCurrency, walletAddress } = values;
+      createWithdrawalAccount({
+        type,
+        cryptoCurrency: currentCurrency,
+        walletAddress,
+      });
+    },
+  });
+
   return (
     <>
       <div className="min-h-screen overflow-auto bg-[#000000]">
@@ -82,7 +135,7 @@ const CreatePaymentPage = () => {
             {t("withdrawAccount.withdrawAccountBtn")}
           </span>
         </div>
-        <div className="flex flex-col p-4">
+        <div className="flex flex-col gap-4 p-4">
           <div className="p-4 my-2 flex items-center justify-center">
             <img
               className="w-[200px] h-[200px]"
@@ -90,210 +143,302 @@ const CreatePaymentPage = () => {
               alt=""
             />
           </div>
-          <form
-            onSubmit={formik.handleSubmit}
-            className="flex flex-col gap-4"
-            autoComplete="off"
-          >
-            <div className="bg-[#1D1C22]">
-              {/* KIỂU */}
-              <FormControlCustom fullWidth>
-                <InputLabel id="select-method">
-                  {t("withdrawAccount.type")}
-                </InputLabel>
-                <Select
-                  labelId="select-method"
-                  id="demo-simple-select"
-                  value={formik.values.type}
-                  label="Kiểu"
-                  onChange={(e) => formik.setFieldValue("type", e.target.value)}
-                  MenuProps={{
-                    PaperProps: {
-                      style: {
-                        backgroundColor: "#1B1B1D",
-                        color: "#fff",
-                      },
+          <div className="bg-[#1D1C22]">
+            {/* KIỂU */}
+            <FormControlCustom fullWidth>
+              <InputLabel id="select-method">
+                {t("withdrawAccount.type")}
+              </InputLabel>
+              <Select
+                labelId="select-method"
+                id="demo-simple-select"
+                value={type}
+                label="Kiểu"
+                onChange={(e) => handleChangeType(e)}
+                MenuProps={{
+                  PaperProps: {
+                    style: {
+                      backgroundColor: "#1B1B1D",
+                      color: "#fff",
                     },
-                  }}
-                >
-                  <MenuItem value={10}>
-                    {t("withdrawAccount.fiatCurrency")}
-                  </MenuItem>
-                  <MenuItem value={20}>
-                    {t("withdrawAccount.cryptocurrency")}
-                  </MenuItem>
-                </Select>
-              </FormControlCustom>
-            </div>
-            {/* QUỐC GIA */}
-            <div className="bg-[#1D1C22]">
-              <InputCustom
-                label={t("withdrawAccount.country")}
-                placeholder={t("withdrawAccount.clickToSelectCountry")}
-                className="w-full"
-                name="country"
-                value={formik.values.country}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <ArrowRightIcon />
-                    </InputAdornment>
-                  ),
+                  },
                 }}
-                aria-describedby="outlined-weight-helper-text"
-                onClick={() => setIsOpen(true)}
-              />
-            </div>
-            {/* NGÂN HÀNG */}
-            <div className="bg-[#1D1C22]">
-              <InputCustom
-                error={formik.touched.bank && formik.errors.bank ? true : false}
-                className=" bg-transparent w-full text-[16px]"
-                label={t("withdrawAccount.bank")}
-                name="bank"
-                autoComplete="new-email"
-                value={formik.values.bank}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder={t("withdrawAccount.placeholderBank")}
-              />
-              {formik.touched.bank && formik.errors.bank ? (
-                <div className="text-[#FF4444] text-[14px] px-4 py-1">
-                  {formik.errors.bank}
+              >
+                <MenuItem value={WITHDRAW_TYPE.FIAT_CURRENCY}>
+                  {t("withdrawAccount.fiatCurrency")}
+                </MenuItem>
+                <MenuItem value={WITHDRAW_TYPE.CRYPTO_CURRENCY}>
+                  {t("withdrawAccount.cryptocurrency")}
+                </MenuItem>
+              </Select>
+            </FormControlCustom>
+          </div>
+          {/* QUỐC GIA */}
+          {type === WITHDRAW_TYPE.FIAT_CURRENCY ? (
+            <>
+              <form
+                onSubmit={fiatCurrencyformik.handleSubmit}
+                className="flex flex-col gap-4"
+                autoComplete="off"
+              >
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    label={t("withdrawAccount.country")}
+                    placeholder={t("withdrawAccount.clickToSelectCountry")}
+                    className="w-full"
+                    name="country"
+                    value={fiatCurrencyformik.values.country}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <ArrowRightIcon />
+                        </InputAdornment>
+                      ),
+                    }}
+                    aria-describedby="outlined-weight-helper-text"
+                    onClick={() => setIsOpen(true)}
+                  />
                 </div>
-              ) : null}
-            </div>
-            {/* TÀI KHOẢN NGÂN HÀNG */}
-            <div className="bg-[#1D1C22]">
-              <InputCustom
-                error={
-                  formik.touched.accountBank && formik.errors.accountBank
-                    ? true
-                    : false
-                }
-                className=" bg-transparent w-full text-[16px]"
-                label={t("withdrawAccount.bankAccount")}
-                name="accountBank"
-                autoComplete="new-email"
-                value={formik.values.accountBank}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
-              {formik.touched.accountBank && formik.errors.accountBank ? (
-                <div className="text-[#FF4444] text-[14px] px-4 py-1">
-                  {formik.errors.accountBank}
+                {/* NGÂN HÀNG */}
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    error={
+                      fiatCurrencyformik.touched.bankName &&
+                      fiatCurrencyformik.errors.bankName
+                        ? true
+                        : false
+                    }
+                    className=" bg-transparent w-full text-[16px]"
+                    label={t("withdrawAccount.bank")}
+                    name="bankName"
+                    autoComplete="new-email"
+                    value={fiatCurrencyformik.values.bankName}
+                    onChange={fiatCurrencyformik.handleChange}
+                    onBlur={fiatCurrencyformik.handleBlur}
+                    placeholder={t("withdrawAccount.placeholderBank")}
+                  />
+                  {fiatCurrencyformik.touched.bankName &&
+                  fiatCurrencyformik.errors.bankName ? (
+                    <div className="text-[#FF4444] text-[14px] px-4 py-1">
+                      {fiatCurrencyformik.errors.bankName}
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-            </div>
-            {/* TÊN THỰC TẾ */}
-            <div className="bg-[#1D1C22]">
-              <InputCustom
-                error={
-                  formik.touched.realName && formik.errors.realName
-                    ? true
-                    : false
-                }
-                className=" bg-transparent w-full text-[16px]"
-                label={t("withdrawAccount.realName")}
-                name="realName"
-                autoComplete="new-real-name"
-                value={formik.values.realName}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder={t("withdrawAccount.placeholderRealName")}
-              />
-              {formik.touched.realName && formik.errors.realName ? (
-                <div className="text-[#FF4444] text-[14px] px-4 py-1">
-                  {formik.errors.realName}
+                {/* TÀI KHOẢN NGÂN HÀNG */}
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    error={
+                      fiatCurrencyformik.touched.bankNumber &&
+                      fiatCurrencyformik.errors.bankNumber
+                        ? true
+                        : false
+                    }
+                    className=" bg-transparent w-full text-[16px]"
+                    label={t("withdrawAccount.bankAccount")}
+                    name="bankNumber"
+                    autoComplete="new-email"
+                    value={fiatCurrencyformik.values.bankNumber}
+                    onChange={fiatCurrencyformik.handleChange}
+                    onBlur={fiatCurrencyformik.handleBlur}
+                  />
+                  {fiatCurrencyformik.touched.bankNumber &&
+                  fiatCurrencyformik.errors.bankNumber ? (
+                    <div className="text-[#FF4444] text-[14px] px-4 py-1">
+                      {fiatCurrencyformik.errors.bankNumber}
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-            </div>
-            {/* ĐỊA CHỈ LIÊN HỆ */}
-            <div className="bg-[#1D1C22]">
-              <InputCustom
-                error={
-                  formik.touched.address && formik.errors.address ? true : false
-                }
-                className="text-[#fff] bg-transparent w-full text-[16px]"
-                label={t("withdrawAccount.contactAddress")}
-                name="address"
-                type="text"
-                value={formik.values.address}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder={t(
-                  "withdrawAccount.placeholderContactAddress",
-                )}
-              />
-              {formik.touched.address && formik.errors.address ? (
-                <div className="text-[#FF4444]  text-[14px] px-4 py-1">
-                  {formik.errors.address}
+                {/* TÊN THỰC TẾ */}
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    error={
+                      fiatCurrencyformik.touched.bankAccount &&
+                      fiatCurrencyformik.errors.bankAccount
+                        ? true
+                        : false
+                    }
+                    className=" bg-transparent w-full text-[16px]"
+                    label={t("withdrawAccount.realName")}
+                    name="bankAccount"
+                    autoComplete="new-real-name"
+                    value={fiatCurrencyformik.values.bankAccount}
+                    onChange={fiatCurrencyformik.handleChange}
+                    onBlur={fiatCurrencyformik.handleBlur}
+                    placeholder={t("withdrawAccount.placeholderRealName")}
+                  />
+                  {fiatCurrencyformik.touched.bankAccount &&
+                  fiatCurrencyformik.errors.bankAccount ? (
+                    <div className="text-[#FF4444] text-[14px] px-4 py-1">
+                      {fiatCurrencyformik.errors.bankAccount}
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-            </div>
-            {/* SỐ LIÊN LẠC */}
-            <div className="bg-[#1D1C22]">
-              <InputCustom
-                error={
-                  formik.touched.phoneNumber && formik.errors.phoneNumber
-                    ? true
-                    : false
-                }
-                className="text-[#fff] bg-transparent w-full text-[16px]"
-                label={t("withdrawAccount.contactPhone")}
-                name="phoneNumber"
-                type="text"
-                value={formik.values.phoneNumber}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
-              {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                <div className="text-[#FF4444]  text-[14px] px-4 py-1">
-                  {formik.errors.phoneNumber}
+                {/* ĐỊA CHỈ LIÊN HỆ */}
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    error={
+                      fiatCurrencyformik.touched.address &&
+                      fiatCurrencyformik.errors.address
+                        ? true
+                        : false
+                    }
+                    className="text-[#fff] bg-transparent w-full text-[16px]"
+                    label={t("withdrawAccount.contactAddress")}
+                    name="address"
+                    type="text"
+                    value={fiatCurrencyformik.values.address}
+                    onChange={fiatCurrencyformik.handleChange}
+                    onBlur={fiatCurrencyformik.handleBlur}
+                    placeholder={t("withdrawAccount.placeholderContactAddress")}
+                  />
+                  {fiatCurrencyformik.touched.address &&
+                  fiatCurrencyformik.errors.address ? (
+                    <div className="text-[#FF4444]  text-[14px] px-4 py-1">
+                      {fiatCurrencyformik.errors.address}
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-            </div>
-            {/* THẺ ID */}
-            <div className="bg-[#1D1C22]">
-              <InputCustom
-                error={
-                  formik.touched.cardId && formik.errors.cardId ? true : false
-                }
-                className="text-[#fff] bg-transparent w-full text-[16px]"
-                label={t("withdrawAccount.idNumber")}
-                name="cardId"
-                type="text"
-                value={formik.values.cardId}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-              />
-              {formik.touched.cardId && formik.errors.cardId ? (
-                <div className="text-[#FF4444]  text-[14px] px-4 py-1">
-                  {formik.errors.cardId}
+                {/* SỐ LIÊN LẠC */}
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    error={
+                      fiatCurrencyformik.touched.phoneNumber &&
+                      fiatCurrencyformik.errors.phoneNumber
+                        ? true
+                        : false
+                    }
+                    className="text-[#fff] bg-transparent w-full text-[16px]"
+                    label={t("withdrawAccount.contactPhone")}
+                    name="phoneNumber"
+                    type="text"
+                    value={fiatCurrencyformik.values.phoneNumber}
+                    onChange={fiatCurrencyformik.handleChange}
+                    onBlur={fiatCurrencyformik.handleBlur}
+                  />
+                  {fiatCurrencyformik.touched.phoneNumber &&
+                  fiatCurrencyformik.errors.phoneNumber ? (
+                    <div className="text-[#FF4444]  text-[14px] px-4 py-1">
+                      {fiatCurrencyformik.errors.phoneNumber}
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
-            </div>
-            {/* COMMNENT */}
-            <div className="bg-[#1D1C22]">
-              <InputCustom
-                className=" bg-transparent w-full text-[16px]"
-                label={t("withdrawAccount.remark")}
-                name="comment"
-                autoComplete="new-email"
-                value={formik.values.comment}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                placeholder={t("withdrawAccount.placeholderRemark")}
-              />
-            </div>
-            <Button
-              type="submit"
-              style={{ background: "#3D5AFE" , color:'#fff'}}
-              className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
-            >
-              {t("withdrawAccount.confirm")}
-            </Button>
-          </form>
+                {/* THẺ ID */}
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    error={
+                      fiatCurrencyformik.touched.nationalIdCard &&
+                      fiatCurrencyformik.errors.nationalIdCard
+                        ? true
+                        : false
+                    }
+                    className="text-[#fff] bg-transparent w-full text-[16px]"
+                    label={t("withdrawAccount.idNumber")}
+                    name="nationalIdCard"
+                    type="text"
+                    value={fiatCurrencyformik.values.nationalIdCard}
+                    onChange={fiatCurrencyformik.handleChange}
+                    onBlur={fiatCurrencyformik.handleBlur}
+                  />
+                  {fiatCurrencyformik.touched.nationalIdCard &&
+                  fiatCurrencyformik.errors.nationalIdCard ? (
+                    <div className="text-[#FF4444]  text-[14px] px-4 py-1">
+                      {fiatCurrencyformik.errors.nationalIdCard}
+                    </div>
+                  ) : null}
+                </div>
+                {/* COMMNENT */}
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    className=" bg-transparent w-full text-[16px]"
+                    label={t("withdrawAccount.remark")}
+                    name="comment"
+                    autoComplete="new-email"
+                    value={fiatCurrencyformik.values.comment}
+                    onChange={fiatCurrencyformik.handleChange}
+                    onBlur={fiatCurrencyformik.handleBlur}
+                    placeholder={t("withdrawAccount.placeholderRemark")}
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  style={{ background: "#3D5AFE", color: "#fff" }}
+                  className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
+                >
+                  {t("withdrawAccount.confirm")}
+                </Button>
+              </form>
+            </>
+          ) : (
+            <>
+              {/* CRYPTOCURRENCY */}
+              <form className="flex flex-col gap-4" onSubmit={cryptoCurrencyformik.handleSubmit} autoComplete="off">
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    label={t("withdrawAccount.cryptocurrency")}
+                    placeholder={t("withdrawAccount.cryptocurrencyPlaceholder")}
+                    className="w-full"
+                    name="cryptoCurrency"
+                    value={cryptoCurrencyformik.values.cryptoCurrency}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <ArrowRightIcon color="#fff" />
+                        </InputAdornment>
+                      ),
+                    }}
+                    onChange={cryptoCurrencyformik.handleChange}
+                    aria-describedby="outlined-weight-helper-text"
+                    onClick={() => setIsOpenCryptoCurrency(true)}
+                  />
+                </div>
+                {/* WALLET ADDRESS */}
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    error={
+                      cryptoCurrencyformik.touched.walletAddress &&
+                      cryptoCurrencyformik.errors.walletAddress
+                        ? true
+                        : false
+                    }
+                    className=" bg-transparent w-full text-[16px]"
+                    label={t("withdrawAccount.walletAddress")}
+                    name="walletAddress"
+                    autoComplete="new-email"
+                    value={cryptoCurrencyformik.values.walletAddress}
+                    onChange={cryptoCurrencyformik.handleChange}
+                    onBlur={cryptoCurrencyformik.handleBlur}
+                    placeholder={t("withdrawAccount.walletAddressPlaceholder")}
+                  />
+                  {cryptoCurrencyformik.touched.walletAddress &&
+                  cryptoCurrencyformik.errors.walletAddress ? (
+                    <div className="text-[#FF4444] text-[14px] px-4 py-1">
+                      {cryptoCurrencyformik.errors.walletAddress}
+                    </div>
+                  ) : null}
+                </div>
+                {/* COMMNENT */}
+                <div className="bg-[#1D1C22]">
+                  <InputCustom
+                    className=" bg-transparent w-full text-[16px]"
+                    label={t("withdrawAccount.remark")}
+                    name="comment"
+                    autoComplete="new-email"
+                    value={cryptoCurrencyformik.values.comment}
+                    onChange={cryptoCurrencyformik.handleChange}
+                    onBlur={cryptoCurrencyformik.handleBlur}
+                    placeholder={t("withdrawAccount.placeholderRemark")}
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  style={{ background: "#3D5AFE", color: "#fff" }}
+                  className="mt-6 flex items-center justify-center text-[16px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
+                >
+                  {t("withdrawAccount.confirm")}
+                </Button>
+              </form>
+            </>
+          )}
         </div>
       </div>
       {isOpen && (
@@ -301,9 +446,25 @@ const CreatePaymentPage = () => {
           <SelectCountries
             onBack={() => setIsOpen(false)}
             onChange={(value) => {
-              setCurrentCountry(value);
-              formik.setFieldValue("country", value.label);
+              setCurrentCountry(value.phone);
+              fiatCurrencyformik.setFieldValue("country", value.label);
               setIsOpen(false);
+            }}
+          />
+        </div>
+      )}
+
+      {isOpenCryptoCurrency && (
+        <div className="fixed z-20 top-0 left-0 w-full h-full overflow-auto">
+          <SelectCryptoCurrency
+            onBack={() => setIsOpenCryptoCurrency(false)}
+            onChange={(value) => {
+              setCurrentCurrency(value.value);
+              cryptoCurrencyformik.setFieldValue(
+                "cryptoCurrency",
+                `${value.acronym} (${value.name})`
+              );
+              setIsOpenCryptoCurrency(false);
             }}
           />
         </div>
