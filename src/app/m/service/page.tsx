@@ -58,7 +58,6 @@ const CssTextField = styled(TextField)({
 const ServicePage = () => {
   const { webSocket } = useContext(WebSocketCtx);
   const {setCountNewMessage} = useContext(ChatCtx)
-  const [isShouldScrollBottom, setIsShouldScrollBottom] = useState(true);
   const { currentUser } = useAuth();
   const { onAliUpload } = useAliUpload();
   const [chatRoomId, setChatRoomId] = useState();
@@ -105,16 +104,15 @@ const ServicePage = () => {
       };
 
       const data = await chatService.sendMessage(chatRoomId, newMessage);
-      scrollToBottom()
+      scrollToBottom("smooth")
       setInputMessage("");
-      setIsShouldScrollBottom(true);
     }
   };
 
-  const scrollToBottom = () => {
+  const scrollToBottom = (behavior="auto") => {
     const lastMessage = messageListRef.current.lastElementChild;
     if (lastMessage) {
-      lastMessage.scrollIntoView({ block: "end" });
+      lastMessage.scrollIntoView({behavior, block: "end" });
     }
   };
   const handleFileChange = async (event: any) => {
@@ -154,7 +152,6 @@ const ServicePage = () => {
     try {
       const messages = await chatService.getListMessage(chatRoomId);
       setListMessage(messages.data.rows);
-      console.log(messages.data.total);
       setTotalMessages(messages.data.total);
     } catch (error) {
       console.log(error);
@@ -190,7 +187,6 @@ const ServicePage = () => {
           limit,
           offset: offset + limit,
         });
-        setIsShouldScrollBottom(false);
       }
     } catch (error) {
       console.log(error);
