@@ -19,7 +19,7 @@ export const AuthenticationLayout = ({
     if (!user) {
       router.replace("/m/login");
     }
-  }, []);
+  }, [currentUser]);
   restConnector.interceptors.response.use(
     (response) => {
       if (!response.data.success && response.data.httpCode === 403) {
