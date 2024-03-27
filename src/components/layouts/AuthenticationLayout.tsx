@@ -11,15 +11,15 @@ export const AuthenticationLayout = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const { fetchCurrentUser, currentUser, loading, setLoading } = useAuth();
+  const { currentUser, getCurrentUser } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    fetchCurrentUser();
-    if (!currentUser) {
+    const user = getCurrentUser();
+    if (!user) {
       router.replace("/m/login");
     }
-  }, [currentUser]);
+  }, []);
   restConnector.interceptors.response.use(
     (response) => {
       if (!response.data.success && response.data.httpCode === 403) {

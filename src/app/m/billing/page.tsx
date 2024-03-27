@@ -4,7 +4,6 @@
 import { BackIcon } from "@/assets/icons/BackIcon";
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { BillHistory } from "@/components/Billing/BillHistory";
-import { AuthenticationLayout } from "@/components/layouts/AuthenticationLayout";
 import { GoBack } from "@/components/layouts/GoBack";
 import { useAuth } from "@/hooks/useAuth";
 import { userService } from "@/services/UserService";
@@ -51,7 +50,6 @@ const OrderPage = () => {
     getBill();
   }, []);
   return (
-    <AuthenticationLayout>
       <div className="min-h-screen bg-[#000000]">
         <GoBack title={t("bill.title")} />
         {bill.length > 0 ? (
@@ -103,7 +101,6 @@ const OrderPage = () => {
           </div>
         )}
       </div>
-    </AuthenticationLayout>
   );
 };
 
