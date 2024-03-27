@@ -4,7 +4,7 @@ import { BIG_TEN } from "./bigNumber";
 
 export const convertBalanceDecimalToNumber = (
   balance: string,
-  decimals: number,
+  decimals: number
 ): string => {
   return new BigNumber(balance).div(BIG_TEN.pow(decimals)).toString();
 };
@@ -12,7 +12,7 @@ export const convertBalanceDecimalToNumber = (
 // a function convert from number to decimal number
 export const convertNumberToBalanceDecimal = (
   number: string,
-  decimals: number,
+  decimals: number
 ): string => {
   BigNumber.config({ EXPONENTIAL_AT: 100 });
   const data = new BigNumber(number).times(BIG_TEN.pow(decimals)).toString();
@@ -21,6 +21,7 @@ export const convertNumberToBalanceDecimal = (
 
 // a function convert from 1000.1232 to 1,000.1232 (string) with regex but ingore after character .
 export const convertNumberToFormattedString = (number: string): string => {
+  if (!number) return "0";
   var str = number.toString().split(".");
   str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return str.join(".");
@@ -40,7 +41,7 @@ export const cloneDeep = (obj: any) => {
 export const fixedNumber = (number: string, fixed: number) => {
   const numberResult = new BigNumber(number).toFixed(
     fixed,
-    BigNumber.ROUND_FLOOR,
+    BigNumber.ROUND_FLOOR
   );
   // remove trailing zeros
   return numberResult.replace(/\.?0+$/, "");

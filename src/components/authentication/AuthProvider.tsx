@@ -143,7 +143,7 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
     const balance = await userService.getUserBalance(tradeCurrenty);
 
     if (balance.success && !!balance.data) {
-      setCurrentBalance(balance.data);
+      setCurrentBalance(balance.data?.data ?? balance.data);
     }
 
     return balance;
