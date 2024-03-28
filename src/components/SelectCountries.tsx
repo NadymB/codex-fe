@@ -37,7 +37,7 @@ const SelectCountries = (props: IProps) => {
     }
   }, []);
   return (
-    <div className="min-screen bg-[#1C1C1E]">
+    <div className="min-h-screen bg-[#1C1C1E]">
       <div
         ref={headerRef}
         className="sticky z-50 top-0 left-0 w-full px-4 py-4 bg-[#100f14]"
