@@ -25,7 +25,7 @@ const WithdrawPage = () => {
   });
   return (
     <div className="bg-black min-h-screen">
-      <GoBack title={t("deposit.title")} />
+      <GoBack title={t("withdraw.title")} />
       <form
         onSubmit={formik.handleSubmit}
         className="flex flex-col items-center gap-4 p-4 bg-black"
