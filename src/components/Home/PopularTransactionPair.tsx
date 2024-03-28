@@ -1,6 +1,10 @@
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { priceFeedService } from "@/services/PriceFeedService";
 import { getRnd } from "@/utils/constants";
+import {
+  convertNumberToFormattedString,
+  removeTrailingZeros,
+} from "@/utils/converter";
 import { t } from "i18next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -55,7 +59,9 @@ export const PopularTransactionPair = () => {
                   <span
                     className={`${Number(percentRandom) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
                   >
-                    {priceRandom}
+                    {convertNumberToFormattedString(
+                      removeTrailingZeros(Number(item.value).toFixed(8))
+                    )}
                   </span>
                   <span
                     className={`${Number(percentRandom) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
@@ -93,7 +99,9 @@ export const PopularTransactionPair = () => {
                   <span
                     className={`${Number(percentRandom) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
                   >
-                    {priceRandom}
+                    {convertNumberToFormattedString(
+                      removeTrailingZeros(Number(item.value).toFixed(8))
+                    )}
                   </span>
                   <span
                     className={`${Number(percentRandom) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
@@ -131,7 +139,9 @@ export const PopularTransactionPair = () => {
                   <span
                     className={`${Number(percentRandom) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
                   >
-                    {priceRandom}
+                    {convertNumberToFormattedString(
+                      removeTrailingZeros(Number(item.value).toFixed(8))
+                    )}
                   </span>
                   <span
                     className={`${Number(percentRandom) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}

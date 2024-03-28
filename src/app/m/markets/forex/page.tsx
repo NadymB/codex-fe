@@ -35,7 +35,7 @@ const MarketPage = () => {
             >
               <TrandingCell
                 token={item.metadata.name.split("_")[0].toUpperCase()}
-                totalValue="99.14M"
+                totalValue={getRnd(0, 100000) }
               />
             </div>,
             <div
