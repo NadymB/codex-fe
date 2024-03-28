@@ -185,7 +185,9 @@
     "passwordUppercase": "パスワードには少なくとも1つの大文字を含める必要があります",
     "passwordNumber": "パスワードには少なくとも1つの数字を含める必要があります",
     "passwordSpecialChar": "パスワードには少なくとも1つの特殊文字を含める必要があります",
-    "emailIsInvalid": "電子メール形式が正しくありません"
+    "emailIsInvalid": "電子メール形式が正しくありません",
+    "usernameTooLong": "ユーザー名が長すぎます",
+    "allowLettersAndNumbers": "ユーザー名には文字と数字のみを使用してください"
   },
   "deposit": {
     "title": "充電",

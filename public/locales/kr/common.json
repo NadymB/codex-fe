@@ -185,7 +185,9 @@
     "passwordUppercase": "비밀번호에는 최소한 하나의 대문자가 포함되어야합니다",
     "passwordNumber": "비밀번호에는 최소한 하나의 숫자가 포함되어야합니다",
     "passwordSpecialChar": "비밀번호에는 최소한 하나의 특수 문자가 포함되어야합니다",
-    "emailIsInvalid": "이메일 형식이 잘못되었습니다."
+    "emailIsInvalid": "이메일 형식이 잘못되었습니다.",
+    "usernameTooLong": "사용자 이름이 너무 깁니다",
+    "allowLettersAndNumbers": "사용자 이름에는 문자와 숫자만 사용하십시오"
   },
   "deposit": {
     "title": "재충전",

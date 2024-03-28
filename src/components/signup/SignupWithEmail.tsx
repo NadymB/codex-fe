@@ -18,9 +18,10 @@ const SignupWithEmail = () => {
       .matches(/@[^.]*\./, t("authenticationPage.emailIsInvalid"))
       .required(t("authenticationPage.emailIsInvalid"))
       .max(255, "Email too long"),
-    username: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
+    username: Yup.string()
+      .required(t("authenticationPage.userNameIsInvalid"))
+      .max(255, t("authenticationPage.usernameTooLong"))
+      .matches(/^[a-zA-Z0-9]*$/, t("authenticationPage.allowLettersAndNumbers")),
     password: Yup.string()
       .min(8, t("authenticationPage.passwordMinLength"))
       .matches(/[a-z]/, t("authenticationPage.passwordLowercase"))
