@@ -176,6 +176,7 @@
     "invitationCode": "Einladungscode",
     "optional": "Optional",
     "userNameIsInvalid": "Benutzername wird benötigt",
+    "required": "erforderlich",
     "passwordIsInvalid": "8-20 Zeichen",
     "phoneNumberIsInvalid": "Handynummer ist falsch",
     "phoneNumberIsNotTrue": "Mobiltelefonnummer ist falsch",

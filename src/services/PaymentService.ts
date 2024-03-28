@@ -11,7 +11,7 @@ export class PaymentService {
 
   public getPaymentInfo = async () => {
     const { data } = await this.restConnector.get(
-      `/users/payment`
+      `/users/withdrawal-account`
     );
 
     return data;
@@ -19,7 +19,7 @@ export class PaymentService {
 
   public createPaymentInfo = async (values: TPaymentInfo) => {
     const { data } = await this.restConnector.post(
-      `/users/payment`, values
+      `/users/withdrawal-account`, values
     );
 
     return data;

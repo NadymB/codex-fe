@@ -176,6 +176,7 @@
     "invitationCode": "निमंत्रण कोड",
     "optional": "वैकल्पिक",
     "userNameIsInvalid": "कृपया अपना उपयोगकर्ता नाम दर्ज करें",
+    "required": "आवश्यक",
     "passwordIsInvalid": "कृपया पासवर्ड भरें",
     "phoneNumberIsInvalid": "कृपया अपना फ़ोन नंबर भरें",
     "phoneNumberIsNotTrue": "मोबाइल नंबर गलत है",
