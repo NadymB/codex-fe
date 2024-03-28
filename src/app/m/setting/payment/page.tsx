@@ -17,6 +17,7 @@ const listWithdrawAccount = true;
 const PaymentPage = () => {
   const [withdrawAccountInfo, setWithdrawAccountInfo] = useState<any>();
   const [cryptoCurrencyCurrent, setCryptoCurrencyCurrent] = useState<Currency>();
+  const bankNameSecure = `${withdrawAccountInfo?.bankNumber?.slice(0,1)}*******${withdrawAccountInfo?.bankNumber?.slice(withdrawAccountInfo?.bankNumber?.length - 1, withdrawAccountInfo?.bankNumber?.length)}`
 
   const getWithdrawalAccount = async () => {
     try {
@@ -59,7 +60,7 @@ const PaymentPage = () => {
             </div>
             <div className="flex flex-col gap-[2px] p-4 text-sm text-white">
               {withdrawAccountInfo.bankNumber && (
-                <span>{withdrawAccountInfo.bankNumber}</span>
+                <span>{bankNameSecure}</span>
               )}
               {withdrawAccountInfo.country && (
                 <span className="text-[#888]">{withdrawAccountInfo.country}</span>
