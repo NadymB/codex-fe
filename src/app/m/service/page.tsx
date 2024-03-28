@@ -284,45 +284,53 @@ const ServicePage = () => {
             </div>
           )}
           <div className="flex flex-col mt-5">
-          {[...listMessage].reverse() .map((data, index) => {
-    // Lấy ngày của tin nhắn hiện tại
-    let currentDate = DateTime.fromISO(data.message.createdAt).toISODate();
+            {[...listMessage].reverse().map((data, index) => {
+              let currentDate = DateTime.fromISO(
+                data.message.createdAt
+              ).toISODate();
 
-    // Nếu đây là tin nhắn đầu tiên hoặc ngày của tin nhắn hiện tại khác ngày của tin nhắn trước đó
-    if (index === 0 || currentDate !== DateTime.fromISO([...listMessage].reverse()[index - 1].message.createdAt).toISODate()) {
-        return (
-            <Fragment key={index}>
-                <div className="text-[#fff] flex items-center justify-center">
-                    <div className="py-1 px-2 rounded-full bg-[#00000033] text-[12px] mt-4">
-                        {DateTime.fromISO(currentDate).toLocaleString(DateTime.DATE_FULL, { locale: t("servicePage.dateFormat") })}
+              if (
+                index === 0 ||
+                currentDate !==
+                  DateTime.fromISO(
+                    [...listMessage].reverse()[index - 1].message.createdAt
+                  ).toISODate()
+              ) {
+                return (
+                  <Fragment key={index}>
+                    <div className="text-[#fff] flex items-center justify-center">
+                      <div className="py-1 px-2 rounded-full bg-[#00000033] text-[12px] mt-4">
+                        {DateTime.fromISO(currentDate).toLocaleString(
+                          DateTime.DATE_FULL,
+                          { locale: t("servicePage.dateFormat") }
+                        )}
+                      </div>
                     </div>
-                </div>
-                {data?.sender?.id === currentUser?.id ? (
-                    <OutComingMessage
+                    {data?.sender?.id === currentUser?.id ? (
+                      <OutComingMessage
                         message={data.message}
                         sender={data.sender}
-                    />
-                ) : (
-                    <InComingMessage message={data.message} />
-                )}
-            </Fragment>
-        );
-    } else {
-        // Nếu ngày của tin nhắn hiện tại giống ngày của tin nhắn trước đó, không cần hiển thị ngày
-        return (
-            <Fragment key={index}>
-                {data?.sender?.id === currentUser?.id ? (
-                    <OutComingMessage
+                      />
+                    ) : (
+                      <InComingMessage message={data.message} />
+                    )}
+                  </Fragment>
+                );
+              } else {
+                return (
+                  <Fragment key={index}>
+                    {data?.sender?.id === currentUser?.id ? (
+                      <OutComingMessage
                         message={data.message}
                         sender={data.sender}
-                    />
-                ) : (
-                    <InComingMessage message={data.message} />
-                )}
-            </Fragment>
-        );
-    }
-})}
+                      />
+                    ) : (
+                      <InComingMessage message={data.message} />
+                    )}
+                  </Fragment>
+                );
+              }
+            })}
           </div>
         </div>
       </div>
