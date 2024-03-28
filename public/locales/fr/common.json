@@ -87,7 +87,10 @@
     "type": "taper",
     "fiatCurrency": "cours légal",
     "cryptocurrency": "crypto-monnaie",
+    "cryptocurrencyPlaceholde": "Cliquez pour sélectionner une crypto-monnaie",
     "country": "nation",
+    "pleaseSelectCryptocurrencies": "Veuillez sélectionner une crypto-monnaie",
+    "searchCryptocurrencies": "rechercher des crypto-monnaies",
     "clickToSelectCountry": "Cliquez pour sélectionner le pays",
     "bank": "institution bancaire",
     "placeholderBank": "Renseigner l'institution bancaire du compte",
@@ -101,9 +104,11 @@
     "remark": "Remarque(facultatif)",
     "placeholderRemark": "Ajouter des remarques",
     "confirm": "confirmer",
-    "pleaseSelectCryptocurrencies": "Veuillez sélectionner un pays ou une région",
+    "pleaseSelectCountryOrRegion": "Veuillez sélectionner un pays ou une région",
     "searchCountryOrRegion": "Rechercher un pays ou une région",
-    "required": "requis"
+    "required": "requis",
+    "walletAddress": "adresse de portefeuille",
+    "walletAddressPlaceholder": "Entrez ou appuyez longuement pour coller l'adresse du portefeuille"
   },
   "authentication": {
     "title": "Authentification",

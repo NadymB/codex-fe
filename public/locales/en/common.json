@@ -87,7 +87,10 @@
     "type": "Type",
     "fiatCurrency": "Fiat Currency",
     "cryptocurrency": "Cryptocurrency",
+    "cryptocurrencyPlaceholde": "Click to select a cryptocurrency",
     "country": "Country",
+    "pleaseSelectCryptocurrencies": "Please select cryptocurrencies",
+    "searchCryptocurrencies": "Search cryptocurrencies",
     "clickToSelectCountry": "Click to select a country",
     "bank": "Bank Institution",
     "placeholderBank": "Enter the bank institution of the account",
@@ -101,9 +104,11 @@
     "remark": "Remark(Optional)",
     "placeholderRemark": "Add remark",
     "confirm": "Confirm",
-    "pleaseSelectCryptocurrencies": "Please select the country or region",
+    "pleaseSelectCountryOrRegion": "Please select the country or region",
     "searchCountryOrRegion": "Search country or region",
-    "required": "Required"
+    "required": "Required",
+    "walletAddress": "Wallet Address",
+    "walletAddressPlaceholder": "Enter or long press to paste wallet address"
   },
   "authentication": {
     "title": "Authentication",

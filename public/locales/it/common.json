@@ -87,7 +87,10 @@
     "type": "tipo",
     "fiatCurrency": "corso legale",
     "cryptocurrency": "criptovaluta",
+    "cryptocurrencyPlaceholde": "Fai clic per selezionare una criptovaluta",
     "country": "nazione",
+    "pleaseSelectCryptocurrencies": "Seleziona una criptovaluta",
+    "searchCryptocurrencies": "cercare criptovalute",
     "clickToSelectCountry": "Fare clic per selezionare il paese",
     "bank": "istituto bancario",
     "placeholderBank": "Compila l'istituto bancario del conto",
@@ -101,9 +104,11 @@
     "remark": "Nota(opzionale)",
     "placeholderRemark": "Aggiungi note",
     "confirm": "Confermare",
-    "pleaseSelectCryptocurrencies": "Seleziona un paese o una regione",
+    "pleaseSelectCountryOrRegion": "Seleziona un paese o una regione",
     "searchCountryOrRegion": "Cerca paese o regione",
-    "required": "necessario"
+    "required": "necessario",
+    "walletAddress": "indirizzo del portafoglio",
+    "walletAddressPlaceholder": "Inserisci o premi a lungo per incollare l'indirizzo del portafoglio"
   },
   "authentication": {
     "title": "Autenticazione",
