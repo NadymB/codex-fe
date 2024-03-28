@@ -109,6 +109,7 @@ const ServicePage = () => {
       lastMessage.scrollIntoView({ behavior, block: "end" });
     }
   };
+  
   const handleFileChange = async (event: any) => {
     const imgUpload = UploadImage(event);
     if (imgUpload.length !== 0) {
