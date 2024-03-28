@@ -20,6 +20,7 @@ import { useAliUpload } from "@/services/CloundService";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import { Fragment, useContext, useEffect, useRef, useState } from "react";
+const { DateTime } = require("luxon");
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
     color: "#3D5AFE",
@@ -71,7 +72,7 @@ const ServicePage = () => {
     offset: 0,
     limit: 20,
   });
-  const [scrollBottom,setScrollBottom] = useState(0)
+  const [scrollBottom, setScrollBottom] = useState(0);
   useEffect(() => {
     if (headerRef.current) {
       const height = headerRef.current.offsetHeight;
@@ -97,15 +98,15 @@ const ServicePage = () => {
       };
 
       const data = await chatService.sendMessage(chatRoomId, newMessage);
-      scrollToBottom("smooth")
+      scrollToBottom("smooth");
       setInputMessage("");
     }
   };
 
-  const scrollToBottom = (behavior="auto") => {
+  const scrollToBottom = (behavior = "auto") => {
     const lastMessage = messageListRef.current.lastElementChild;
     if (lastMessage) {
-      lastMessage.scrollIntoView({behavior, block: "end" });
+      lastMessage.scrollIntoView({ behavior, block: "end" });
     }
   };
   const handleFileChange = async (event: any) => {
@@ -194,7 +195,7 @@ const ServicePage = () => {
   };
 
   useEffect(() => {
-    if (scrollBottom<100) {
+    if (scrollBottom < 100) {
       scrollToBottom();
     }
   }, [listMessage]);
@@ -230,7 +231,7 @@ const ServicePage = () => {
       const handleScroll = () => {
         const { scrollTop, scrollHeight, clientHeight } = messageContainer;
         const scrollBottom = scrollHeight - (scrollTop + clientHeight);
-        setScrollBottom(scrollBottom)
+        setScrollBottom(scrollBottom);
         if (scrollTop === 0) {
           fetchMessagesOnScroll(chatRoomId, { limit, offset: offset + limit });
           messageListRef.current.scrollTo({ top: "1px" });
@@ -284,24 +285,35 @@ const ServicePage = () => {
           )}
           <div className="flex flex-col mt-5">
             {[...listMessage].reverse().map((data, index) => {
-              if (data?.sender?.id === currentUser?.id) {
-                return (
-                  <Fragment key={index}>
-                    {" "}
+              let dateNow = DateTime.fromISO(
+                data?.message.createdAt
+              ).toISODate();
+              let datePrev = DateTime.fromISO(
+                [...listMessage].reverse()[index + 1]?.message.createdAt
+              ).toISODate();
+              return (
+                <Fragment key={index}>
+                  {" "}
+                  <div className="text-[#fff] flex items-center justify-center">
+                    {dateNow !== datePrev && (
+                      <div className="py-1 px-2 rounded-full bg-[#00000033] text-[12px] mt-4">
+                        {DateTime.fromISO(dateNow).toLocaleString(
+                          DateTime.DATE_FULL,
+                          { locale: t("servicePage.dateFormat") }
+                        )}
+                      </div>
+                    )}
+                  </div>
+                  {data?.sender?.id === currentUser?.id ? (
                     <OutComingMessage
                       message={data.message}
                       sender={data.sender}
                     />
-                  </Fragment>
-                );
-              } else {
-                return (
-                  <Fragment key={index}>
-                    {" "}
+                  ) : (
                     <InComingMessage message={data.message} />
-                  </Fragment>
-                );
-              }
+                  )}
+                </Fragment>
+              );
             })}
           </div>
         </div>

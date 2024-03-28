@@ -284,7 +284,8 @@
     "title": "Contáctenos",
     "onlineService": "Servicio en línea",
     "onlineServiceContent": "Si necesita algo, por favor contáctenos.",
-    "placeholderMessage": "Mensaje a enviar..."
+    "placeholderMessage": "Mensaje a enviar...",
+    "dateFormat": "es-ES"
   },
   "kycPage": {
     "title": "Autenticación",

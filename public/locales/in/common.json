@@ -284,7 +284,8 @@
     "title": "हमसे संपर्क करें",
     "onlineService": "ऑनलाइन सेवा",
     "onlineServiceContent": "यदि आपको कोई आवश्यकता हो तो हमसे संपर्क करने का स्वागत है",
-    "placeholderMessage": "भेजने के लिए संदेश..."
+    "placeholderMessage": "भेजने के लिए संदेश...",
+    "dateFormat": "hi-IN"
   },
   "kycPage": {
     "title": "प्रमाणीकरण",
