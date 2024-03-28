@@ -13,7 +13,6 @@ export const PopularTransactionPair = () => {
     try {
       const response = await priceFeedService.getCommonPriceFeed();
       if (response.success) {
-        console.log(response.data);
         setDataCommon(response.data.commodityPrices);
         setDataCrypto(response.data.cryptoPrices);
         setDataForex(response.data.forexPrices);
