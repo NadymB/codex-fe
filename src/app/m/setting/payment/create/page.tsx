@@ -46,16 +46,16 @@ const CreatePaymentPage = () => {
   };
 
   const fiatCurrencyValidationSchema = Yup.object({
-    country: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
-    bankName: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
-    bankNumber: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
+    country: Yup.string().required(t("authenticationPage.required")),
+    bankName: Yup.string().required(t("authenticationPage.required")),
+    bankNumber: Yup.string().required(t("authenticationPage.required")),
     bankAccount: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid")
+      t("authenticationPage.required")
     ),
-    address: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
-    nationalIdCard: Yup.string().required(t("authenticationPage.userNameIsInvalid")),
+    address: Yup.string().required(t("authenticationPage.required")),
+    nationalIdCard: Yup.string().required(t("authenticationPage.required")),
     phoneNumber: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid")
+      t("authenticationPage.required")
     ),
   });
 
@@ -100,10 +100,10 @@ const CreatePaymentPage = () => {
 
   const cryptoCurrencyValidationSchema = Yup.object({
     cryptoCurrency: Yup.string().required(
-      t("authenticationPage.cryptoCurrencyIsInvalid")
+      t("authenticationPage.required")
     ),
     walletAddress: Yup.string().required(
-      t("authenticationPage.walletAddressIsInvalid")
+      t("authenticationPage.required")
     ),
   });
 

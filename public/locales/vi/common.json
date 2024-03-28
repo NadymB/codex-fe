@@ -176,6 +176,7 @@
     "invitationCode": "Mã mời",
     "optional": "Không bắt buộc",
     "userNameIsInvalid": "Xin hãy điền tên đăng nhập",
+    "required": "Phải có",
     "passwordIsInvalid": "Vui lòng điền mật khẩu",
     "phoneNumberIsInvalid": "Vui lòng điền vào số điện thoại của bạn",
     "phoneNumberIsNotTrue": "Số điện thoại di động không chính xác",

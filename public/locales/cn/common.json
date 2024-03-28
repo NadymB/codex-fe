@@ -176,6 +176,7 @@
     "invitationCode": "邀请码",
     "optional": "可选",
     "userNameIsInvalid": "用户名必填",
+    "required": "必填",
     "passwordIsInvalid": "8-20个字符",
     "phoneNumberIsInvalid": "手机号不正确",
     "phoneNumberIsNotTrue": "手机号码不正确",
