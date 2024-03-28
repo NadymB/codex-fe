@@ -185,7 +185,9 @@
     "passwordUppercase": "Passwort muss mindestens einen Großbuchstaben enthalten",
     "passwordNumber": "Passwort muss mindestens eine Zahl enthalten",
     "passwordSpecialChar": "Passwort muss mindestens ein Sonderzeichen enthalten",
-    "emailIsInvalid": "E-Mail-Format ist falsch"
+    "emailIsInvalid": "E-Mail-Format ist falsch",
+    "usernameTooLong": "Benutzername zu lang",
+    "allowLettersAndNumbers": "Bitte verwenden Sie nur Buchstaben und Zahlen für den Benutzernamen"
   },
   "deposit": {
     "title": "aufladen",

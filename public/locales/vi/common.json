@@ -185,7 +185,9 @@
     "passwordUppercase": "Mật khẩu phải chứa ít nhất một chữ hoa",
     "passwordNumber": "Mật khẩu phải chứa ít nhất một số",
     "passwordSpecialChar": "Mật khẩu phải chứa ít nhất một ký tự đặc biệt",
-    "emailIsInvalid": "Vui lòng nhập email"
+    "emailIsInvalid": "Vui lòng nhập email",
+    "usernameTooLong": "Tên người dùng quá dài",
+    "allowLettersAndNumbers": "Vui lòng chỉ sử dụng chữ cái và số cho tên người dùng"
   },
   "deposit": {
     "title": "Nạp Tiền",

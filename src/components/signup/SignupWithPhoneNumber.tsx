@@ -24,20 +24,21 @@ const SignupWithPhoneNumber = () => {
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
     phoneNumber: Yup.string().required(
-      t("authenticationPage.phoneNumberIsInvalid"),
+      t("authenticationPage.phoneNumberIsInvalid")
     ),
-    username: Yup.string().required(
-      t("authenticationPage.userNameIsInvalid"),
-    ),
+    username: Yup.string()
+      .required(t("authenticationPage.userNameIsInvalid"))
+      .max(255, t("authenticationPage.usernameTooLong"))
+      .matches(
+        /^[a-zA-Z0-9]*$/,
+        t("authenticationPage.allowLettersAndNumbers")
+      ),
     password: Yup.string()
       .min(8, t("authenticationPage.passwordMinLength"))
       .matches(/[a-z]/, t("authenticationPage.passwordLowercase"))
       .matches(/[A-Z]/, t("authenticationPage.passwordUppercase"))
       .matches(/[0-9]/, t("authenticationPage.passwordNumber"))
-      .matches(
-        /[^a-zA-Z0-9.]/,
-        t("authenticationPage.passwordSpecialChar"),
-      )
+      .matches(/[^a-zA-Z0-9.]/, t("authenticationPage.passwordSpecialChar"))
       .required(t("authenticationPage.passwordIsInvalid")),
   });
   const formik = useFormik({
@@ -68,8 +69,7 @@ const SignupWithPhoneNumber = () => {
     const locationData = await geolocationService.getLocation();
     if (locationData) {
       const country = COUNTRIES.find(
-        (item) =>
-          item.code.toLowerCase() === locationData.country.toLowerCase(),
+        (item) => item.code.toLowerCase() === locationData.country.toLowerCase()
       );
       setCurrentCountry(country);
     }
