@@ -284,7 +284,8 @@
     "title": "Contact us",
     "onlineService": "Online service",
     "onlineServiceContent": "Welcome to contact us if you need any need",
-    "placeholderMessage": "The message to be sent..."
+    "placeholderMessage": "The message to be sent...",
+    "dateFormat": "en-US"
   },
   "kycPage": {
     "title": "Authentication",

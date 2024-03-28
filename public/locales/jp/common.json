@@ -284,7 +284,8 @@
     "title": "お問い合わせ",
     "onlineService": "オンラインサービス",
     "onlineServiceContent": "必要な場合はお問い合わせください",
-    "placeholderMessage": "送信されるメッセージ..."
+    "placeholderMessage": "送信されるメッセージ...",
+    "dateFormat": "ja-JP"
   },
   "kycPage": {
     "title": "認証",
