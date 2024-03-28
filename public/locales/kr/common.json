@@ -283,7 +283,8 @@
     "title": "문의하기",
     "onlineService": "온라인 서비스",
     "onlineServiceContent": "필요하신 사항이 있으시면 연락주세요",
-    "placeholderMessage": "보낼 메시지..."
+    "placeholderMessage": "보낼 메시지...",
+    "dateFormat": "ko-KR"
   },
   "kycPage": {
     "title": "입증",

@@ -283,7 +283,8 @@
     "title": "联系我们",
     "onlineService": "在线客服",
     "onlineServiceContent": "有任何需要欢迎联系我们",
-    "placeholderMessage": "要发送的消息..."
+    "placeholderMessage": "要发送的消息...",
+    "dateFormat": "zh-CN"
   },
   "kycPage": {
     "title": "身份认证",

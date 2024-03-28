@@ -297,8 +297,9 @@ const ServicePage = () => {
                   <div className="text-[#fff] flex items-center justify-center">
                     {dateNow !== datePrev && (
                       <div className="py-1 px-2 rounded-full bg-[#00000033] text-[12px] mt-4">
-                        {DateTime.fromISO(String(dateNow)).toFormat(
-                          "MMMM dd, yyyy"
+                        {DateTime.fromISO(dateNow).toLocaleString(
+                          DateTime.DATE_FULL,
+                          { locale: t("servicePage.dateFormat") }
                         )}
                       </div>
                     )}

@@ -283,7 +283,8 @@
     "title": "Liên hệ chúng tôi",
     "onlineService": "Dịch vụ trực tuyến",
     "onlineServiceContent": "Chào mừng bạn đến với dịch vụ khách hàng trực tuyến!",
-    "placeholderMessage": "Tin nhắn sẽ được gửi..."
+    "placeholderMessage": "Tin nhắn sẽ được gửi...",
+    "dateFormat": "vi-VN"
   },
   "kycPage": {
     "title": "Xác thực",
