@@ -185,7 +185,9 @@
     "passwordUppercase": "密码必须至少包含一个大写字母",
     "passwordNumber": "密码必须至少包含一个数字",
     "passwordSpecialChar": "密码必须至少包含一个特殊字符",
-    "emailIsInvalid": "邮箱格式不正确"
+    "emailIsInvalid": "邮箱格式不正确",
+    "usernameTooLong": "用户名太长",
+    "allowLettersAndNumbers": "请只使用字母和数字作为用户名"
   },
   "deposit": {
     "title": "学习",

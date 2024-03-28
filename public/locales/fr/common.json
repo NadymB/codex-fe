@@ -185,7 +185,9 @@
     "passwordUppercase": "Le mot de passe doit contenir au moins une lettre majuscule",
     "passwordNumber": "Le mot de passe doit contenir au moins un chiffre",
     "passwordSpecialChar": "Le mot de passe doit contenir au moins un caractère spécial",
-    "emailIsInvalid": "Le format de l'e-mail est incorrect"
+    "emailIsInvalid": "Le format de l'e-mail est incorrect",
+    "usernameTooLong": "Nom d'utilisateur trop long",
+    "allowLettersAndNumbers": "Veuillez utiliser uniquement des lettres et des chiffres pour le nom d'utilisateur"
   },
   "deposit": {
     "title": "recharger",

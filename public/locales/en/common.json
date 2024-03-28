@@ -185,7 +185,9 @@
     "passwordUppercase": "Password must contain at least one uppercase letter",
     "passwordNumber": "Password must contain at least one number",
     "passwordSpecialChar": "Password must contain at least one special character",
-    "emailIsInvalid": "Please enter your email"
+    "emailIsInvalid": "Please enter your email",
+    "usernameTooLong": "Username is too long",
+    "allowLettersAndNumbers": "Please use only letters and numbers for the username"
   },
   "deposit": {
     "title": "Deposit",

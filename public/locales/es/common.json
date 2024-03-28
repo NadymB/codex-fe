@@ -185,7 +185,9 @@
     "passwordUppercase": "La contraseña debe contener al menos una letra mayúscula",
     "passwordNumber": "La contraseña debe contener al menos un número",
     "passwordSpecialChar": "La contraseña debe contener al menos un carácter especial",
-    "emailIsInvalid": "El número de móvil es incorrecto"
+    "emailIsInvalid": "El número de móvil es incorrecto",
+    "usernameTooLong": "Nombre de usuario demasiado largo",
+    "allowLettersAndNumbers": "Por favor, use solo letras y números para el nombre de usuario"
   },
   "deposit": {
     "title": "Cuenta retiro",
