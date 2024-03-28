@@ -176,6 +176,7 @@
     "invitationCode": "초대 코드",
     "optional": "선택 과목",
     "userNameIsInvalid": "사용자 이름이 필요합니다",
+    "required": "필수의",
     "passwordIsInvalid": "8-20자",
     "phoneNumberIsInvalid": "휴대폰 번호가 잘못되었습니다.",
     "phoneNumberIsNotTrue": "휴대폰 번호가 잘못되었습니다",
