@@ -41,7 +41,7 @@ export const PopularTransactionPair = () => {
             return (
               <Link
                 key={Math.random()}
-                href={"/coming-soon"}
+                href={`/m/trade/${item.metadata.name.replace("_usd", "").toUpperCase()}/USDT`}
                 className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
               >
                 <div>
@@ -79,7 +79,7 @@ export const PopularTransactionPair = () => {
             return (
               <Link
                 key={Math.random()}
-                href={"/coming-soon"}
+                href={`/m/trade/${item.metadata.name.replace("_futures", "").toUpperCase()}/USDT`}
                 className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
               >
                 <div>
@@ -117,7 +117,7 @@ export const PopularTransactionPair = () => {
             return (
               <Link
                 key={Math.random()}
-                href={"/coming-soon"}
+                href={`/m/trade/${item.metadata.name.replace("_usd", "").toUpperCase()}/USDT`}
                 className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
               >
                 <div>

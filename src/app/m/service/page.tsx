@@ -109,6 +109,7 @@ const ServicePage = () => {
       lastMessage.scrollIntoView({ behavior, block: "end" });
     }
   };
+  
   const handleFileChange = async (event: any) => {
     const imgUpload = UploadImage(event);
     if (imgUpload.length !== 0) {
@@ -285,35 +286,51 @@ const ServicePage = () => {
           )}
           <div className="flex flex-col mt-5">
             {[...listMessage].reverse().map((data, index) => {
-              let dateNow = DateTime.fromISO(
-                data?.message.createdAt
+              let currentDate = DateTime.fromISO(
+                data.message.createdAt
               ).toISODate();
-              let datePrev = DateTime.fromISO(
-                [...listMessage].reverse()[index + 1]?.message.createdAt
-              ).toISODate();
-              return (
-                <Fragment key={index}>
-                  {" "}
-                  <div className="text-[#fff] flex items-center justify-center">
-                    {dateNow !== datePrev && (
+
+              if (
+                index === 0 ||
+                currentDate !==
+                  DateTime.fromISO(
+                    [...listMessage].reverse()[index - 1].message.createdAt
+                  ).toISODate()
+              ) {
+                return (
+                  <Fragment key={index}>
+                    <div className="text-[#fff] flex items-center justify-center">
                       <div className="py-1 px-2 rounded-full bg-[#00000033] text-[12px] mt-4">
-                        {DateTime.fromISO(dateNow).toLocaleString(
+                        {DateTime.fromISO(currentDate).toLocaleString(
                           DateTime.DATE_FULL,
                           { locale: t("servicePage.dateFormat") }
                         )}
                       </div>
+                    </div>
+                    {data?.sender?.id === currentUser?.id ? (
+                      <OutComingMessage
+                        message={data.message}
+                        sender={data.sender}
+                      />
+                    ) : (
+                      <InComingMessage message={data.message} />
                     )}
-                  </div>
-                  {data?.sender?.id === currentUser?.id ? (
-                    <OutComingMessage
-                      message={data.message}
-                      sender={data.sender}
-                    />
-                  ) : (
-                    <InComingMessage message={data.message} />
-                  )}
-                </Fragment>
-              );
+                  </Fragment>
+                );
+              } else {
+                return (
+                  <Fragment key={index}>
+                    {data?.sender?.id === currentUser?.id ? (
+                      <OutComingMessage
+                        message={data.message}
+                        sender={data.sender}
+                      />
+                    ) : (
+                      <InComingMessage message={data.message} />
+                    )}
+                  </Fragment>
+                );
+              }
             })}
           </div>
         </div>
