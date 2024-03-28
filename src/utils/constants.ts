@@ -1277,6 +1277,41 @@ export const getRnd = (min: number, max: number) => {
   return (Math.random() * (max - min) + min).toFixed(2);
 };
 
+export enum CRYPTO_CURRENCY {
+  ETH = 'eth',
+  BTC = 'btc',
+  USDT_ERC20 = 'usdt_erc20',
+  USDT_TRC20 = 'usdt_trc20',
+}
+
+export interface Currency {
+  name: string;
+  acronym: string;
+  value: CRYPTO_CURRENCY;
+}
+
+export const CURRENCIES : Currency[] = [
+  {
+    name: "Ethereum",
+    acronym: "ETH",
+    value: CRYPTO_CURRENCY.ETH,
+  },
+  {
+    name: "Bitcoin",
+    acronym: "BTC",
+    value: CRYPTO_CURRENCY.BTC,
+  },
+  {
+    name: "ERC20",
+    acronym: "Tether USDT",
+    value: CRYPTO_CURRENCY.USDT_ERC20,
+  },
+  {
+    name: "TRC20",
+    acronym: "Tether USDT",
+    value: CRYPTO_CURRENCY.USDT_TRC20,
+  }
+]
 export enum BALANCE_ACTION {
   CREDIT = 'credit',
   DEBIT = 'debit',
