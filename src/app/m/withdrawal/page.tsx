@@ -1,14 +1,47 @@
 "use client";
 
+import { FormControlCustom } from "@/components/FormControlCustom";
 import { GoBack } from "@/components/layouts/GoBack";
+import { useAuth } from "@/hooks/useAuth";
+import { paymentService } from "@/services/PaymentService";
 import { getStaticURL } from "@/utils/constants";
+import { InputLabel, MenuItem, Select } from "@mui/material";
 import { useFormik } from "formik";
 import { t } from "i18next";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import * as Yup from "yup";
 
 const WithdrawPage = () => {
+  const [userWithdrawalAccountInfo, setUserWithdrawalAccountInfo] =
+    useState<any>();
+  const account = userWithdrawalAccountInfo?.bankNumber ? `${userWithdrawalAccountInfo?.bankNumber?.slice(0, 1)}*******${userWithdrawalAccountInfo?.bankNumber?.slice(userWithdrawalAccountInfo?.bankNumber?.length - 1, userWithdrawalAccountInfo?.bankNumber?.length)} (${userWithdrawalAccountInfo?.bankName})` : "";
+  const { fetchUserBalance, currentBalance, currentUser } = useAuth();
+
+  useEffect(() => {
+    if (currentUser) {
+      fetchUserBalance();
+    }
+  }, [currentUser]);
+
+  const handleChangeType = (e: any) => {};
+
+  const getUserWithdrawalAccountInfo = async () => {
+    try {
+      const response = await paymentService.getPaymentInfo();
+      if (response.data && response.success) {
+        setUserWithdrawalAccountInfo(response.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getUserWithdrawalAccountInfo();
+  }, []);
+
   const validationSchema = Yup.object({
     account: Yup.string().required(t("withdraw.msgAccountError")),
     amount: Yup.string().required(t("withdraw.msgAmountError")),
@@ -16,7 +49,7 @@ const WithdrawPage = () => {
   const formik = useFormik({
     initialValues: {
       account: "",
-      amount: "",
+      amount: 0.0,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
@@ -39,22 +72,51 @@ const WithdrawPage = () => {
           className="h-40 w-40 mt-4"
         />
         <div className="w-full">
-          <input
-            type="text"
-            placeholder={t("withdraw.account")}
-            className="w-full bg-[#1d1c22] rounded p-4 text-base text-white placeholder:text-[#888]"
-          />
-          {formik.touched.account && formik.errors.account ? (
-            <div className="text-[#d32f2f]text-xs px-4 py-1">
-              {formik.errors.account}
-            </div>
-          ) : null}
+          <FormControlCustom fullWidth>
+            <InputLabel id="select-method">
+              {t("withdraw.account")}
+            </InputLabel>
+            <Select
+              labelId="select-method"
+              id="demo-simple-select"
+              value={account}
+              label="Kiểu"
+              onChange={(e) => handleChangeType(e)}
+              MenuProps={{
+                PaperProps: {
+                  style: {
+                    backgroundColor: "#1B1B1D",
+                    color: "#fff",
+                  },
+                },
+              }}
+            >
+              {userWithdrawalAccountInfo && (
+              <MenuItem value={account}>
+                {account}
+              </MenuItem>
+              )}
+            </Select>
+          </FormControlCustom>
         </div>
         <div className="w-full">
           <input
+            id="amount"
+            name="amount"
             type="number"
-            placeholder={t("withdraw.amount")}
             className="w-full bg-[#1d1c22] rounded p-4 text-base text-white placeholder:text-[#888]"
+            value={formik.values.amount}
+            onChange={(e) => {
+              if (Number(e.target.value) > 0) {
+                formik.setFieldValue("amount", e.target.value);
+              } else {
+                formik.setFieldValue("amount", 0);
+              }
+            }}
+            placeholder={t("withdraw.amount")}
+            min={0}
+            max={currentBalance}
+            step={0.001}
           />
           {formik.touched.amount && formik.errors.amount ? (
             <div className="text-[#d32f2f] text-xs px-4 py-1">
@@ -64,9 +126,14 @@ const WithdrawPage = () => {
         </div>
         <div className="w-full flex justify-between text-sm">
           <div className="text-white">
-            {t("withdraw.currentBalance")} &nbsp; 0.00 USDT
+            {t("withdraw.currentBalance")} &nbsp; {currentBalance} USDT
           </div>
-          <span className="text-[#3d5afe]">{t("withdraw.allBalance")}</span>
+          <div
+            className="text-[#3d5afe] cursor-pointer"
+            onClick={() => formik.setFieldValue("amount", currentBalance)}
+          >
+            {t("withdraw.allBalance")}
+          </div>
         </div>
         <Link
           href={"/m/setting/payment"}
