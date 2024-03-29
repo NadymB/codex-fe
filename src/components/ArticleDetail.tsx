@@ -9,7 +9,7 @@ export const ArticleDetail = () => {
     <div className="p-4 flex flex-col gap-4 bg-black">
       <img
         className="w-[98px]"
-        src={`${getStaticURL()}/assets/images/about.png`}
+        src={`${getStaticURL()}/assets/images/about.svg`}
         alt="Logo"
       />
       <div className="text-white">
