@@ -187,7 +187,9 @@
     "passwordSpecialChar": "パスワードには少なくとも1つの特殊文字を含める必要があります",
     "emailIsInvalid": "電子メール形式が正しくありません",
     "usernameTooLong": "ユーザー名が長すぎます",
-    "allowLettersAndNumbers": "ユーザー名には文字と数字のみを使用してください"
+    "allowLettersAndNumbers": "ユーザー名には文字と数字のみを使用してください",
+    "phoneNumberMustBeAValidPhoneNumber": "電話番号は有効な電話番号でなければなりません",
+    "withdrawalAccountCreatedSuccessfully": "出金口座が正常に作成されました。"
   },
   "deposit": {
     "title": "充電",
@@ -322,5 +324,5 @@
   "somethingWentWrong": "何か問題が発生しました。後でやり直してください。",
   "orderConfirmed": "注文が確認されました",
   "amountMustBeGreaterThan0": "金額は0より大きくなければなりません",
-  "amountMustBeLessThanOrEqualToBalance": "金額は残高以下でなければなりません"
+  "phoneNumberMustBeAValidPhoneNumber": "金額は残高以下でなければなりません"
 }

@@ -187,7 +187,9 @@
     "passwordSpecialChar": "Mật khẩu phải chứa ít nhất một ký tự đặc biệt",
     "emailIsInvalid": "Vui lòng nhập email",
     "usernameTooLong": "Tên người dùng quá dài",
-    "allowLettersAndNumbers": "Vui lòng chỉ sử dụng chữ cái và số cho tên người dùng"
+    "allowLettersAndNumbers": "Vui lòng chỉ sử dụng chữ cái và số cho tên người dùng",
+    "phoneNumberMustBeAValidPhoneNumber": "Số điện thoại phải là số điện thoại hợp lệ",
+    "withdrawalAccountCreatedSuccessfully": "Tạo tài khoản rút tiền thành công."
   },
   "deposit": {
     "title": "Nạp Tiền",
@@ -322,5 +324,5 @@
   "somethingWentWrong": "Đã xảy ra lỗi. Vui lòng thử lại sau.",
   "orderConfirmed": "Đơn hàng đã đặt",
   "amountMustBeGreaterThan0": "Số tiền phải lớn hơn 0",
-  "amountMustBeLessThanOrEqualToBalance": "Số tiền phải nhỏ hơn hoặc bằng số dư"
+  "phoneNumberMustBeAValidPhoneNumber": "Số tiền phải nhỏ hơn hoặc bằng số dư"
 }

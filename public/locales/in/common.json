@@ -187,7 +187,9 @@
     "passwordSpecialChar": "पासवर्ड में कम से कम एक विशेष वर्ण होना चाहिए",
     "emailIsInvalid": "कृपया अपना ईमेल दर्ज करें",
     "usernameTooLong": "उपयोगकर्ता नाम बहुत लंबा है",
-    "allowLettersAndNumbers": "कृपया उपयोगकर्ता नाम के लिए केवल अक्षर और संख्याएँ प्रयोग करें"
+    "allowLettersAndNumbers": "कृपया उपयोगकर्ता नाम के लिए केवल अक्षर और संख्याएँ प्रयोग करें",
+    "phoneNumberMustBeAValidPhoneNumber": "फोन नंबर को एक वैध फोन नंबर होना चाहिए",
+    "withdrawalAccountCreatedSuccessfully": "निकासी खाता सफलतापूर्वक बनाया गया।"
   },
   "deposit": {
     "title": "जमा",
@@ -322,5 +324,5 @@
   "somethingWentWrong": "कुछ गलत हो गया। कृपया बाद में पुन: प्रयास करें।",
   "orderConfirmed": "आदेश की पुष्टि की गई",
   "amountMustBeGreaterThan0": "राशि 0 से अधिक होनी चाहिए",
-  "amountMustBeLessThanOrEqualToBalance": "राशि शेष से कम या बराबर होनी चाहिए"
+  "phoneNumberMustBeAValidPhoneNumber": "राशि शेष से कम या बराबर होनी चाहिए"
 }

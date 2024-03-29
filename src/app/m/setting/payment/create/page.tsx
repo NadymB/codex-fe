@@ -6,8 +6,10 @@ import { FormControlCustom } from "@/components/FormControlCustom";
 import { InputCustom } from "@/components/InputCustom";
 import SelectCountries from "@/components/SelectCountries";
 import SelectCryptoCurrency from "@/components/SelectCryptocurrency";
+import { onToast } from "@/hooks/useToast";
 import { TPaymentInfo, WITHDRAW_TYPE } from "@/models/Payment";
 import { paymentService } from "@/services/PaymentService";
+import { toCamelCase } from "@/utils/convertString";
 
 import {
   Button,
@@ -38,7 +40,10 @@ const CreatePaymentPage = () => {
     try {
       const response = await paymentService.createPaymentInfo(values);
       if (response.data && response.success) {
+        onToast(t("authenticationPage.withdrawalAccountCreatedSuccessfully"), "error");
         router.push("/m/setting/payment")
+      } else {
+        onToast(t(`authenticationPage.${toCamelCase(response.response.message[0])}`), "error");
       }
     } catch (error) {
       console.log(error);

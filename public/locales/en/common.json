@@ -187,7 +187,9 @@
     "passwordSpecialChar": "Password must contain at least one special character",
     "emailIsInvalid": "Please enter your email",
     "usernameTooLong": "Username is too long",
-    "allowLettersAndNumbers": "Please use only letters and numbers for the username"
+    "allowLettersAndNumbers": "Please use only letters and numbers for the username",
+    "phoneNumberMustBeAValidPhoneNumber": "Phonenumber must be a valid phone number",
+    "withdrawalAccountCreatedSuccessfully": "Withdrawal Account created successfully."
   },
   "deposit": {
     "title": "Deposit",
@@ -322,5 +324,5 @@
   "somethingWentWrong": "Something went wrong. Please try again later",
   "orderConfirmed": "Order Comfirmed",
   "amountMustBeGreaterThan0": "Amount must be greater than 0",
-  "amountMustBeLessThanOrEqualToBalance": "Amount must be less than or equal to balance"
+  "phoneNumberMustBeAValidPhoneNumber": "Amount must be less than or equal to balance"
 }
