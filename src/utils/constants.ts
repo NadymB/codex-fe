@@ -1321,6 +1321,8 @@ export enum BALANCE_ACTION {
 export enum TRADE_TYPE {
   PLACE_ORDER = 'place_order',
   SETTLE_ORDER = 'settle_order',
+  TOPUP = 'topup',
+  DEDUCT = 'deduct',
 }
 
 export enum USER_BALANCE_TYPE {
