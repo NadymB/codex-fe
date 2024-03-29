@@ -270,7 +270,8 @@
       "fail": "Fail",
       "expenditure": "Expenditure",
       "income": "Income",
-      "handlingFee": "Handling fee"
+      "handlingFee": "Handling fee",
+      "deduction": "Deduction"
     },
     "chart": {
       "title": "Charts",

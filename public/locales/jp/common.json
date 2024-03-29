@@ -270,7 +270,8 @@
       "fail": "失敗",
       "expenditure": "支出",
       "income": "収入",
-      "handlingFee": "手数料"
+      "handlingFee": "手数料",
+      "deduction": "差し引き"
     },
     "chart": {
       "title": "チャート",
