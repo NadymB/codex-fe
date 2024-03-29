@@ -10,7 +10,7 @@ interface SwiperItemProps {
 export const SwiperItem = ({ url, title, content }: SwiperItemProps) => {
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <Image
+      <img
         src={url}
         alt={title}
         width={100}

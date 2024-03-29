@@ -14,7 +14,7 @@ const ColorPage = () => {
         <div className="">
           <div className="flex flex-col justify-center items-center pt-8 pb-4 bg-[#1c1c1e]">
             <div className="p-2 bg-[#10172a] mb-2">
-              <Image
+              <img
                 src={`${getStaticURL()}/assets/images/about.svg`}
                 width={100}
                 height={100}

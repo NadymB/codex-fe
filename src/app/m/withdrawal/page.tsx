@@ -31,7 +31,7 @@ const WithdrawPage = () => {
         className="flex flex-col items-center gap-4 p-4 bg-black"
         autoComplete="off"
       >
-        <Image
+        <img
           src={`${getStaticURL()}/assets/images/atm.svg`}
           alt="ATM"
           width={100}

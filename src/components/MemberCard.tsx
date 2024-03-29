@@ -11,7 +11,7 @@ export const MemberCard = ({ url, name }: { url: string; name: string }) => {
       className="group flex flex-col xs:gap-4 md:gap-[20px] items-center w-full bg-white xs:px-4 xs:py-4 md:py-6 border border-[#9B968E] rounded-lg hover:scale-105 transaction duration-300 ease-out"
     >
       <LazyLoad once={true} placeholder={<Loader />}>
-        <Image
+        <img
           src={url}
           height={100}
           width={100}

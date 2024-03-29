@@ -88,7 +88,7 @@ const OrderPage = () => {
           </div>
         ) : (
           <div className="flex flex-col items-center p-4">
-            <Image
+            <img
               src={`${getStaticURL()}/assets/images/empty.svg`}
               alt={t("order.noData")}
               width={100}
