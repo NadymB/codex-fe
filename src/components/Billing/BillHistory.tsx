@@ -110,7 +110,11 @@ export const BillHistory = ({
             {t("tradePage.trade.amount")}
           </span>
           <span className="text-xs text-white">
-            {action === TRADE_TYPE.PLACE_ORDER && "-"}{" "}
+            {action === TRADE_TYPE.PLACE_ORDER ||
+            action === TRADE_TYPE.DEDUCT ||
+            action === TRADE_TYPE.WITHDRAW
+              ? "-"
+              : ""}
             {convertNumberToFormattedString(String(amount))} USDT
           </span>
         </div>
