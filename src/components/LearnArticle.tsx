@@ -21,7 +21,7 @@ export const LearnArticle = ({
     <Link href={articleUrl} className="bg-[#1c1c1e] rounded">
       <Image
         src={`${getStaticURL()}${bannerUrl}`}
-        alt={title}
+        alt={"banner"}
         height={100}
         width={100}
         className="w-full"
