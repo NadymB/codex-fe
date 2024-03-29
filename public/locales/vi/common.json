@@ -270,7 +270,8 @@
       "fail": "Thất bại",
       "expenditure": "Chi phí",
       "income": "Thu nhập",
-      "handlingFee": "Phí xử lý"
+      "handlingFee": "Phí xử lý",
+      "deduction": "Khấu trừ"
     },
     "chart": {
       "title": "Biểu đồ",

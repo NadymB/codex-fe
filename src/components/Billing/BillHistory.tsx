@@ -29,6 +29,9 @@ export const BillHistory = ({
         return t("deposit.title");
 
       case TRADE_TYPE.DEDUCT:
+        return t("tradePage.trade.deduction");
+
+      case TRADE_TYPE.WITHDRAW:
         return t("withdraw.title");
 
       default:
@@ -38,24 +41,38 @@ export const BillHistory = ({
   const handleReturnTransactiionSubTitle = (type: string) => {
     switch (type) {
       case TRADE_TYPE.PLACE_ORDER:
-        return <div className="text-[#d32f2f] bg-[#d32f2f33] w-fit text-[12px] px-2 py-[2px] rounded">
-        {t("tradePage.trade.expenditure")}
-      </div>
+        return (
+          <div className="text-[#d32f2f] bg-[#d32f2f33] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.expenditure")}
+          </div>
+        );
 
       case TRADE_TYPE.SETTLE_ORDER:
-        return <div className="text-[#55AF72] bg-[#55AF7233] w-fit text-[12px] px-2 py-[2px] rounded">
-        {t("tradePage.trade.expenditure")}
-      </div>
+        return (
+          <div className="text-[#55AF72] bg-[#55AF7233] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.expenditure")}
+          </div>
+        );
 
       case TRADE_TYPE.TOPUP:
-        return <div className="text-[#55AF72] bg-[#55AF7233] w-fit text-[12px] px-2 py-[2px] rounded">
-        {t("tradePage.trade.income")}
-      </div>
+        return (
+          <div className="text-[#55AF72] bg-[#55AF7233] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.income")}
+          </div>
+        );
 
       case TRADE_TYPE.DEDUCT:
-        return <div className="text-[#d32f2f] bg-[#d32f2f33] w-fit text-[12px] px-2 py-[2px] rounded">
-        {t("tradePage.trade.expenditure")}
-      </div>
+        return (
+          <div className="text-[#d32f2f] bg-[#d32f2f33] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.expenditure")}
+          </div>
+        );
+      case TRADE_TYPE.WITHDRAW:
+        return (
+          <div className="text-[#d32f2f] bg-[#d32f2f33] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.expenditure")}
+          </div>
+        );
 
       default:
         return "";

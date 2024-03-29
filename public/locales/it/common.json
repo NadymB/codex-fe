@@ -270,7 +270,8 @@
       "fail": "Fallimento",
       "expenditure": "Spesa",
       "income": "Entrata",
-      "handlingFee": "Commissione di gestione"
+      "handlingFee": "Commissione di gestione",
+      "deposit": "Deposito"
     },
     "chart": {
       "title": "tendenza",

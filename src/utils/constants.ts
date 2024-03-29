@@ -1323,6 +1323,7 @@ export enum TRADE_TYPE {
   SETTLE_ORDER = 'settle_order',
   TOPUP = 'topup',
   DEDUCT = 'deduct',
+  WITHDRAW = 'withdraw',
 }
 
 export enum USER_BALANCE_TYPE {
