@@ -270,7 +270,8 @@
       "fail": "Fehler",
       "expenditure": "Ausgaben",
       "income": "Einkommen",
-      "handlingFee": "Bearbeitungsgebühr"
+      "handlingFee": "Bearbeitungsgebühr",
+      "deduction": "Abzug"
     },
     "chart": {
       "title": "Trend",

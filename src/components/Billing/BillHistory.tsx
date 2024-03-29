@@ -17,6 +17,67 @@ export const BillHistory = ({
   isSuccess,
   action,
 }: IOrderItem) => {
+  const handleReturnTransactiionTitle = (type: string) => {
+    switch (type) {
+      case TRADE_TYPE.PLACE_ORDER:
+        return t("tradePage.trade.title");
+
+      case TRADE_TYPE.SETTLE_ORDER:
+        return t("tradePage.trade.income");
+
+      case TRADE_TYPE.TOPUP:
+        return t("deposit.title");
+
+      case TRADE_TYPE.DEDUCT:
+        return t("tradePage.trade.deduction");
+
+      case TRADE_TYPE.WITHDRAW:
+        return t("withdraw.title");
+
+      default:
+        return "";
+    }
+  };
+  const handleReturnTransactiionSubTitle = (type: string) => {
+    switch (type) {
+      case TRADE_TYPE.PLACE_ORDER:
+        return (
+          <div className="text-[#d32f2f] bg-[#d32f2f33] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.expenditure")}
+          </div>
+        );
+
+      case TRADE_TYPE.SETTLE_ORDER:
+        return (
+          <div className="text-[#55AF72] bg-[#55AF7233] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.expenditure")}
+          </div>
+        );
+
+      case TRADE_TYPE.TOPUP:
+        return (
+          <div className="text-[#55AF72] bg-[#55AF7233] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.income")}
+          </div>
+        );
+
+      case TRADE_TYPE.DEDUCT:
+        return (
+          <div className="text-[#d32f2f] bg-[#d32f2f33] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.expenditure")}
+          </div>
+        );
+      case TRADE_TYPE.WITHDRAW:
+        return (
+          <div className="text-[#d32f2f] bg-[#d32f2f33] w-fit text-[12px] px-2 py-[2px] rounded">
+            {t("tradePage.trade.expenditure")}
+          </div>
+        );
+
+      default:
+        return "";
+    }
+  };
   return (
     <div
       className="p-4 bg-[#1c1c1e] rounded"
@@ -29,17 +90,9 @@ export const BillHistory = ({
         <div className=" w-full flex flex-col gap-1 text-[#9ca3af]">
           <div className="flex items-center gap-2">
             <span className="text-[#FFFF] text-[20px]">
-              {action === TRADE_TYPE.PLACE_ORDER
-                ? t("tradePage.trade.title")
-                : t("tradePage.trade.income")}
+              {handleReturnTransactiionTitle(action)}
             </span>
-            {action === TRADE_TYPE.PLACE_ORDER
-                ? <div className="text-[#d32f2f] bg-[#d32f2f33] w-fit text-[12px] px-2 py-[2px] rounded">
-                {t("tradePage.trade.expenditure")}
-              </div>
-                : <div className="text-[#55AF72] bg-[#55AF7233] w-fit text-[12px] px-2 py-[2px] rounded">
-                {t("tradePage.trade.income")}
-              </div>}
+            {handleReturnTransactiionSubTitle(action)}
           </div>
           <div className="flex w-full items-center justify-between">
             <span className="text-xs text-[#888]">{id}</span>
@@ -57,7 +110,12 @@ export const BillHistory = ({
             {t("tradePage.trade.amount")}
           </span>
           <span className="text-xs text-white">
-          { action === TRADE_TYPE.PLACE_ORDER&&"-"} {convertNumberToFormattedString(String(amount))} USDT
+            {action === TRADE_TYPE.PLACE_ORDER ||
+            action === TRADE_TYPE.DEDUCT ||
+            action === TRADE_TYPE.WITHDRAW
+              ? "-"
+              : ""}
+            {convertNumberToFormattedString(String(amount))} USDT
           </span>
         </div>
         <div className="flex justify-between text-base text-white">
@@ -65,12 +123,12 @@ export const BillHistory = ({
             {t("tradePage.trade.handlingFee")}
           </span>
           <span className="text-xs text-white">
-          {convertNumberToFormattedString(String(0.00))} USDT
+            {convertNumberToFormattedString(String(0.0))} USDT
           </span>
         </div>
 
         <div className="flex justify-between text-base text-white">
-          <span className="text-sm text-[#A3A3A3]">Status</span>
+          <span className="text-sm text-[#A3A3A3]">Status </span>
           <span
             className={`text-base ${isSuccess ? "text-[#55af72]" : "text-[#dd5350]"}`}
           >
