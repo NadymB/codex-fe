@@ -1,4 +1,4 @@
-import { AvatarIcon } from "@/assets/icons/AvatarIcon";
+/* eslint-disable @next/next/no-img-element */
 import { FeatureIAIcon } from "@/assets/icons/FeatureIAIcon";
 import { FeatureMCSIcon } from "@/assets/icons/FeatureMCSIcon";
 import { FeatureRAIcon } from "@/assets/icons/FeatureRAIcon";
@@ -7,8 +7,6 @@ import { FeatureWalletIcon } from "@/assets/icons/FeatureWalletIcon";
 import { SafeIcon } from "@/assets/icons/SafeIcon";
 import { StartIcon } from "@/assets/icons/StartIcon";
 import { getStaticURL } from "@/utils/constants";
-import Image from "next/image";
-import React from "react";
 
 export const TestimonialSection = () => {
   const features = [
@@ -100,7 +98,7 @@ export const TestimonialSection = () => {
               </div>
               <span className="text-[#fff]">{comment.comment}</span>
               <div className="flex gap-5 mt-6">
-                <Image src={comment.avatar} alt="avatar" className="rounded-full" height={60} width={60} />
+                <img src={comment.avatar} alt="avatar" className="rounded-full" height={60} width={60} />
                 <div className="flex flex-col">
                   <span className="text-[#fff] text-[20px] font-semibold">
                     - {comment.username}
