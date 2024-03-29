@@ -187,7 +187,9 @@
     "passwordSpecialChar": "비밀번호에는 최소한 하나의 특수 문자가 포함되어야합니다",
     "emailIsInvalid": "이메일 형식이 잘못되었습니다.",
     "usernameTooLong": "사용자 이름이 너무 깁니다",
-    "allowLettersAndNumbers": "사용자 이름에는 문자와 숫자만 사용하십시오"
+    "allowLettersAndNumbers": "사용자 이름에는 문자와 숫자만 사용하십시오",
+    "phoneNumberMustBeAValidPhoneNumber": "전화 번호는 유효한 전화 번호여야 합니다",
+    "withdrawalAccountCreatedSuccessfully": "출금 계좌가 성공적으로 생성되었습니다."
   },
   "deposit": {
     "title": "재충전",
@@ -322,5 +324,5 @@
   "somethingWentWrong": "문제가 발생했습니다. 나중에 다시 시도해주세요.",
   "orderConfirmed": "주문 확인됨",
   "amountMustBeGreaterThan0": "금액은 0보다 커야 합니다",
-  "amountMustBeLessThanOrEqualToBalance": "금액은 잔액 이하이어야 합니다"
+  "phoneNumberMustBeAValidPhoneNumber": "금액은 잔액 이하이어야 합니다"
 }
