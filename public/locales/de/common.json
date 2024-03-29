@@ -187,7 +187,9 @@
     "passwordSpecialChar": "Passwort muss mindestens ein Sonderzeichen enthalten",
     "emailIsInvalid": "E-Mail-Format ist falsch",
     "usernameTooLong": "Benutzername zu lang",
-    "allowLettersAndNumbers": "Bitte verwenden Sie nur Buchstaben und Zahlen für den Benutzernamen"
+    "allowLettersAndNumbers": "Bitte verwenden Sie nur Buchstaben und Zahlen für den Benutzernamen",
+    "phoneNumberMustBeAValidPhoneNumber": "Die Telefonnummer muss eine gültige Telefonnummer sein",
+    "withdrawalAccountCreatedSuccessfully": "Abhebungskonto erfolgreich erstellt."
   },
   "deposit": {
     "title": "aufladen",
@@ -322,5 +324,5 @@
   "somethingWentWrong": "Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut.",
   "orderConfirmed": "Bestellung bestätigt",
   "amountMustBeGreaterThan0": "Der Betrag muss größer als 0 sein",
-  "amountMustBeLessThanOrEqualToBalance": "Betrag muss kleiner oder gleich dem Guthaben sein"
+  "phoneNumberMustBeAValidPhoneNumber": "Betrag muss kleiner oder gleich dem Guthaben sein"
 }

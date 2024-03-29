@@ -187,7 +187,9 @@
     "passwordSpecialChar": "Le mot de passe doit contenir au moins un caractère spécial",
     "emailIsInvalid": "Le format de l'e-mail est incorrect",
     "usernameTooLong": "Nom d'utilisateur trop long",
-    "allowLettersAndNumbers": "Veuillez utiliser uniquement des lettres et des chiffres pour le nom d'utilisateur"
+    "allowLettersAndNumbers": "Veuillez utiliser uniquement des lettres et des chiffres pour le nom d'utilisateur",
+    "phoneNumberMustBeAValidPhoneNumber": "Le numéro de téléphone doit être un numéro de téléphone valide",
+    "withdrawalAccountCreatedSuccessfully": "Compte de retrait créé avec succès."
   },
   "deposit": {
     "title": "recharger",
@@ -322,5 +324,5 @@
   "somethingWentWrong": "Quelque chose s'est mal passé. Veuillez réessayer plus tard.",
   "orderConfirmed": "Commande confirmée",
   "amountMustBeGreaterThan0": "Le montant doit être supérieur à 0",
-  "amountMustBeLessThanOrEqualToBalance": "Le montant doit être inférieur ou égal au solde"
+  "phoneNumberMustBeAValidPhoneNumber": "Le montant doit être inférieur ou égal au solde"
 }

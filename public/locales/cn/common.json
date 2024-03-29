@@ -187,7 +187,9 @@
     "passwordSpecialChar": "密码必须至少包含一个特殊字符",
     "emailIsInvalid": "邮箱格式不正确",
     "usernameTooLong": "用户名太长",
-    "allowLettersAndNumbers": "请只使用字母和数字作为用户名"
+    "allowLettersAndNumbers": "请只使用字母和数字作为用户名",
+    "phoneNumberMustBeAValidPhoneNumber": "电话号码必须是有效的电话号码",
+    "withdrawalAccountCreatedSuccessfully": "提现账户创建成功。"
   },
   "deposit": {
     "title": "学习",
@@ -322,5 +324,5 @@
   "somethingWentWrong": "出现了问题，请稍后再试",
   "orderConfirmed": "订单已确认",
   "amountMustBeGreaterThan0": "金额必须大于0",
-  "amountMustBeLessThanOrEqualToBalance": "金额必须小于或等于余额"
+  "phoneNumberMustBeAValidPhoneNumber": "金额必须小于或等于余额"
 }

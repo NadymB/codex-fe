@@ -187,7 +187,9 @@
     "passwordSpecialChar": "La contraseña debe contener al menos un carácter especial",
     "emailIsInvalid": "Il formato dell'e-mail non è corretto",
     "usernameTooLong": "Nome utente troppo lungo",
-    "allowLettersAndNumbers": "Si prega di utilizzare solo lettere e numeri per il nome utente"
+    "allowLettersAndNumbers": "Si prega di utilizzare solo lettere e numeri per il nome utente",
+    "phoneNumberMustBeAValidPhoneNumber": "Il numero di telefono deve essere un numero di telefono valido",
+    "withdrawalAccountCreatedSuccessfully": "Account prelievo creato con successo."
   },
   "deposit": {
     "title": "ricaricare",
@@ -322,5 +324,5 @@
   "somethingWentWrong": "Qualcosa è andato storto. Si prega di riprovare più tardi.",
   "orderConfirmed": "Ordine confermato",
   "amountMustBeGreaterThan0": "L'importo deve essere maggiore di 0",
-  "amountMustBeLessThanOrEqualToBalance": "L'importo deve essere inferiore o uguale al saldo"
+  "phoneNumberMustBeAValidPhoneNumber": "L'importo deve essere inferiore o uguale al saldo"
 }
