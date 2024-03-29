@@ -1,7 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { getStaticURL } from "@/utils/constants";
-import { t } from "i18next";
-import Image from "next/image";
 import Link from "next/link";
 
 interface ILearnArticle {
@@ -19,7 +16,7 @@ export const LearnArticle = ({
 }: ILearnArticle) => {
   return (
     <Link href={articleUrl} className="bg-[#1c1c1e] rounded">
-      <Image
+      <img
         src={bannerUrl}
         alt={"banner"}
         height={100}
