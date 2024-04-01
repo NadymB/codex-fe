@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Futures & Options Trading for Risk Management - CME Group",
   description: "Futures & Options Trading for Risk Management - CME Group",
   openGraph: {
-    title: "Đại Việt sử ký",
+    title: "Futures & Options Trading for Risk Management - CME Group",
     description: "Futures & Options Trading for Risk Management - CME Group",
     url: `${getStaticURL()}`,
     // siteName: "Next.js",
