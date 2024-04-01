@@ -1,4 +1,5 @@
-import React, { createContext, useState, ReactNode, useEffect } from "react";
+"use client";
+import { FC, createContext, useState, ReactNode } from "react";
 import { io, Socket } from "socket.io-client";
 
 interface WebSocketContextType {
@@ -17,7 +18,7 @@ interface WebSocketProviderProps {
   children: ReactNode;
 }
 
-export const WebSocketProvider: React.FC<WebSocketProviderProps> = ({
+export const WebSocketProvider: FC<WebSocketProviderProps> = ({
   children,
 }: WebSocketProviderProps) => {
   const [webSocket, setWebSocket] = useState<Socket | null>(null);
