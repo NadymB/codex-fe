@@ -648,25 +648,25 @@ export const SWIPER_SLIDER_DATA = [
 ];
 export const LEARN_ARTICLE_DATA = [
   {
-    url: "/assets/images/how_are_they_different.png",
+    url: `${getStaticURL()}/assets/images/howaretheydifferent.png`,
     articleQuery: "usdt-vs-usdc-vs-busd-differences",
     title: "howAreTheyDifferentTitle",
     content: "howAreTheyDifferentContent",
   },
   {
-    url: "/assets/images/which_one_is_right_for_you.png",
+    url: `${getStaticURL()}/assets/images/whichoneisrightforyou.png`,
     articleQuery: "traditional-debit-card-vs-crypto-debit-card",
     title: "whichOneIsRightForYouTitle",
     content: "whichOneIsRightForYouContent",
   },
   {
-    url: "/assets/images/coti_crypto.png",
+    url: `${getStaticURL()}/assets/images/coticrypto.png`,
     articleQuery: "what-is-coti-crypto",
     title: "cotiCryptoTitle",
     content: "cotiCryptoContent",
   },
   {
-    url: "/assets/images/what_is_PoW_in_blockchain.png",
+    url: `${getStaticURL()}/assets/images/whatisPoWinblockchain.png`,
     articleQuery: "what-is-proof-of-work-in-blockchain",
     title: "whatIsPoWInBlockchainTitle",
     content: "whatIsPoWInBlockchainContent",
@@ -1265,12 +1265,12 @@ export enum TRADE_CURRENCY {
 }
 
 export const BET_PERCENTAGE = [
-  { betPercentage: 10, timeoutInMinutes: 1 },
-  { betPercentage: 20, timeoutInMinutes: 2 },
-  { betPercentage: 30, timeoutInMinutes: 3 },
-  { betPercentage: 50, timeoutInMinutes: 4 },
-  { betPercentage: 80, timeoutInMinutes: 5 },
-  { betPercentage: 100, timeoutInMinutes: 6 },
+  { betPercentage: 5, timeoutInMinutes: 1 },
+  { betPercentage: 10, timeoutInMinutes: 2 },
+  { betPercentage: 20, timeoutInMinutes: 4 },
+  { betPercentage: 30, timeoutInMinutes: 6 },
+  { betPercentage: 40, timeoutInMinutes: 8 },
+  { betPercentage: 100, timeoutInMinutes: 12 },
 ];
 
 export const getRnd = (min: number, max: number) => {
@@ -1330,4 +1330,39 @@ export enum USER_BALANCE_TYPE {
   TOPUP = 'topup',
   DEDUCT = 'deduct',
   WITHDRAW = 'withdraw',
-}
+};
+
+export const ERR_CODE = {
+  INTERNAL_SERVER_ERROR: 'INTERNAL_SERVER_ERROR'.toLowerCase(),
+  NOT_FOUND: 'NOT_FOUND'.toLowerCase(),
+  INVALID_LOGIN_MODE: 'INVALID_LOGIN_MODE'.toLowerCase(),
+  USER_NOT_FOUND: 'USER_NOT_FOUND'.toLowerCase(),
+  NOT_TX_OWNER: 'NOT_TX_OWNER'.toLowerCase(),
+  CONFIRMATION_TOO_LOW: 'CONFIRMATION_TOO_LOW'.toLowerCase(),
+  INVALID_CURRENCY: 'INVALID_CURRENCY'.toLowerCase(),
+  INVALID_TX_FUNCTION: 'INVALID_TX_FUNCTION'.toLowerCase(),
+  INVALID_PURCHASE_PRICE: 'INVALID_PURCHASE_PRICE'.toLowerCase(),
+  INVALID_DEPOSIT_ADDRESS: 'INVALID_DEPOSIT_ADDRESS'.toLowerCase(),
+  INVALID_SIGNATURE: 'INVALID_SIGNATURE'.toLowerCase(),
+  TX_HASH_USED: 'TX_HASH_USED'.toLowerCase(),
+  USER_LOCKED: 'USER_LOCKED'.toLowerCase(),
+  INVALID_CAPTCHA_TOKEN: 'INVALID_CAPTCHA_TOKEN'.toLowerCase(),
+  TRADE_COMPLETED: 'TRADE_COMPLETED'.toLowerCase(),
+  INVALID_EMAIL_FORMAT: 'INVALID_EMAIL_FORMAT'.toLowerCase(),
+  REQUIRE_EMAIL_OR_PHONE_NUMBER: 'REQUIRE_EMAIL_OR_PHONE_NUMBER'.toLowerCase(),
+  INVALID_REGISTER_METHOD: 'INVALID_REGISTER_METHOD'.toLowerCase(),
+  INVALID_USERNAME_FORMAT: 'INVALID_USERNAME_FORMAT'.toLowerCase(),
+  INVALID_PASSWORD_FORMAT: 'INVALID_PASSWORD_FORMAT'.toLowerCase(),
+  EMAIL_ALREADY_EXISTS: 'EMAIL_ALREADY_EXISTS'.toLowerCase(),
+  USERNAME_ALREADY_EXISTS: 'USERNAME_ALREADY_EXISTS'.toLowerCase(),
+  PHONE_NUMBER_ALREADY_EXISTS: 'PHONE_NUMBER_ALREADY_EXISTS'.toLowerCase(),
+  UNAUTHORIZED: 'UNAUTHORIZED'.toLowerCase(),
+  TRADE_SETTLED: 'TRADE_SETTLED'.toLowerCase(),
+  PROOF_OF_ADDRESS_IS_REQUIRED: 'PROOF_OF_ADDRESS_IS_REQUIRED'.toLowerCase(),
+  NOT_ENOUGH_CERTIFICATE: 'NOT_ENOUGH_CERTIFICATE'.toLowerCase(),
+  PREVIOUS_VERIFY_REQUEST_NOT_APPROVED:
+    'PREVIOUS_VERIFY_REQUEST_NOT_APPROVED'.toLowerCase(),
+  INVALID_WITHDRAW_TYPE: 'INVALID_WITHDRAW_TYPE'.toLowerCase(),
+  NOT_ENOUGH_WITHDRAWAL_ACCOUNT_INFORMATION: 'NOT_ENOUGH_WITHDRAWAL_ACCOUNT_INFORMATION'.toLowerCase(),
+  PERMISSION_DENIED: 'PERMISSION_DENIED'.toLowerCase(),
+};

@@ -12,7 +12,7 @@ const WithdrawAccountPage = () => {
     <div className="flex flex-col min-h-screen overflow-auto bg-[#000000]">
       <GoBack title={t("withdrawAccount.title")} />
       <div className="flex flex-col items-center px-4 pt-4 pb-40 my-4">
-        <Image
+        <img
           src={`${getStaticURL()}/assets/images/empty.svg`}
           alt="No Withdraw Account"
           width={100}

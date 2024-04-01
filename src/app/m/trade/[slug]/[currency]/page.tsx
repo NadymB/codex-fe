@@ -10,6 +10,7 @@ import Trading from "@/components/trade/Trading";
 import { TradingCandleChart } from "@/components/trade/TradingCandleChart";
 import { useAuth } from "@/hooks/useAuth";
 import { onToast } from "@/hooks/useToast";
+import { PERMISSION_REQUIRED } from "@/models/User";
 import { tradeService } from "@/services/TradeService";
 import {
   CHART_CODE,
@@ -51,18 +52,26 @@ const TradePage = ({
 
   const handleConfirmPayment = async (value: BetType) => {
     try {
-      const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
-        .replace(" ", "_")
-        .toLowerCase();
-      const response = await tradeService.placeOrders({
-        ...value,
-        pairName: tokenKey,
-        pairType: PAIR_TYPE[tokenKey as keyof typeof PAIR_TYPE],
-      });
-      if (response.success) {
-        onToast(t("orderConfirmed"), "success");
-        fetchUserBalance();
-        setIsRefresh(!isRefresh);
+      const checkPermissions = currentUser?.configMetadata?.permissions?.find(
+        (item: string) => item === PERMISSION_REQUIRED.TRADE
+      );
+
+      if (checkPermissions === undefined) {
+        onToast(t("permissionDenied.trade"), "error");
+      } else {
+        const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
+          .replace(" ", "_")
+          .toLowerCase();
+        const response = await tradeService.placeOrders({
+          ...value,
+          pairName: tokenKey,
+          pairType: PAIR_TYPE[tokenKey as keyof typeof PAIR_TYPE],
+        });
+        if (response.success) {
+          onToast(t("orderConfirmed"), "success");
+          fetchUserBalance();
+          setIsRefresh(!isRefresh);
+        }
       }
     } catch (error) {
       console.log(error);

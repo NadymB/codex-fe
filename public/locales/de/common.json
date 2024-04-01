@@ -325,5 +325,42 @@
   "somethingWentWrong": "Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut.",
   "orderConfirmed": "Bestellung bestätigt",
   "amountMustBeGreaterThan0": "Der Betrag muss größer als 0 sein",
-  "phoneNumberMustBeAValidPhoneNumber": "Betrag muss kleiner oder gleich dem Guthaben sein"
+  "phoneNumberMustBeAValidPhoneNumber": "Betrag muss kleiner oder gleich dem Guthaben sein",
+  "errorMessages": {
+    "notFound": "Nicht gefunden",
+    "userNotFound": "Benutzer nicht gefunden",
+    "notTxOwner": "Nicht Transaktionsinhaber",
+    "invalidTxFunction": "Ungültige Transaktionsfunktion",
+    "txHashUsed": "Transaktions-Hash verwendet",
+    "userLocked": "Benutzer gesperrt",
+    "invalidCaptchaToken": "Ungültiges Captcha-Token",
+    "unknownError": "Unbekannter Fehler",
+    "internalServerError": "Interner Serverfehler",
+    "confirmationTooLow": "Bestätigung zu niedrig",
+    "emailAlreadyExists": "E-Mail existiert bereits",
+    "invalidCurrency": "Ungültige Währung",
+    "invalidDepositAddress": "Ungültige Einzahlungsadresse",
+    "invalidEmailFormat": "Ungültiges E-Mail-Format",
+    "invalidLoginMode": "Ungültiger Anmelde-Modus",
+    "invalidPasswordFormat": "Ungültiges Passwort-Format",
+    "invalidPurchasePrice": "Ungültiger Kaufpreis",
+    "invalidRegisterMethod": "Ungültige Registrierungsmethode",
+    "invalidSignature": "Ungültige Signatur",
+    "invalidUsernameFormat": "Ungültiges Benutzernamen-Format",
+    "invalidWithdrawType": "Ungültiger Abhebungs-Typ",
+    "notEnoughCertificate": "Nicht genügend Zertifikate",
+    "notEnoughWithdrawAccountInformation": "Nicht genügend Abhebungskonto-Informationen",
+    "permissionDenied": "Zugriff verweigert",
+    "phoneNumberAlreadyExists": "Telefonnummer existiert bereits",
+    "previousVerifyRequestNotApproved": "Vorherige Überprüfungsanfrage nicht genehmigt",
+    "proofOfAddressIsRequired": "Adressnachweis erforderlich"
+  },
+  "permissionDenied": {
+    "trade": "Sie sind vom Handel ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung",
+    "chat": "Sie sind vom Chatten ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung",
+    "login": "Sie sind vom Login ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung",
+    "deposit": "Sie sind vom Einzahlen ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung",
+    "withdrawal": "Sie sind vom Abheben ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung",
+    "notification": "Sie sind vom Empfangen von Benachrichtigungen ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung"
+  }
 }

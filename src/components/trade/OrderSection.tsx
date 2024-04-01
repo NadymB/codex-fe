@@ -87,7 +87,7 @@ export const OrderSection = ({
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center p-4">
-            <Image
+            <img
               src={`${getStaticURL()}/assets/images/empty.svg`}
               alt={t("order.noData")}
               width={100}
@@ -127,7 +127,7 @@ export const OrderSection = ({
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center p-4">
-            <Image
+            <img
               src={`${getStaticURL()}/assets/images/empty.svg`}
               alt={t("order.noData")}
               width={100}

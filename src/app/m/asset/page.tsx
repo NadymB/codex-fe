@@ -95,7 +95,7 @@ const AssetPage = () => {
                 {t("assetPage.TodayProfitability")}: &nbsp;
                 <span className="text-[#55af72]">{convertNumberToFormattedString(String(dailyProfit))}(0%)</span>&nbsp; USDT
               </div>
-              <Image
+              <img
                 src={`${getStaticURL()}/assets/images/line_image.svg`}
                 alt="Line"
                 height={100}

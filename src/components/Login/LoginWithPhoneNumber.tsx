@@ -1,17 +1,18 @@
 "use client";
+import { useAuth } from "@/hooks/useAuth";
+import { onToast } from "@/hooks/useToast";
+import { PERMISSION_REQUIRED } from "@/models/User";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 import { geolocationService } from "@/services/GeolocationService";
 import { COUNTRIES, LOGIN_MODE } from "@/utils/constants";
-import { Button, TextField, styled } from "@mui/material";
+import { Button } from "@mui/material";
 import { useFormik } from "formik";
+import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import * as Yup from "yup";
-import SelectCountries from "../SelectCountries";
-import { t } from "i18next";
 import { InputCustom } from "../InputCustom";
-import { authService } from "@/services/AuthServices";
-import { useAuth } from "@/hooks/useAuth";
-import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import SelectCountries from "../SelectCountries";
 
 interface country {
   code: string;
@@ -21,18 +22,16 @@ interface country {
 }
 const LoginWithPhoneNumber = () => {
   const { webSocket, register } = useContext(WebSocketCtx);
-  const { setCurrentUser, login } = useAuth();
+  const { setCurrentUser, login, currentUser } = useAuth();
   const [messageLoginFail, setMassageLoginFail] = useState("");
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
     phoneNumber: Yup.string().required(
-      t("authenticationPage.phoneNumberIsInvalid"),
+      t("authenticationPage.phoneNumberIsInvalid")
     ),
-    password: Yup.string().required(
-      t("authenticationPage.passwordIsInvalid"),
-    ),
+    password: Yup.string().required(t("authenticationPage.passwordIsInvalid")),
   });
   const formik = useFormik({
     initialValues: {
@@ -43,16 +42,25 @@ const LoginWithPhoneNumber = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const user = await login({
-          ...values,
-          phoneNumber: currentCountry.phone + values.phoneNumber,
-        });
-        if (user) {
-          register(user.access_token);
-          router.push("/m");
+        const checkPermissions = currentUser?.configMetadata?.permissions?.find(
+          (item: string) => item === PERMISSION_REQUIRED.LOGIN
+        );
+        if (checkPermissions === undefined) {
+          onToast(t("permissionDenied.login"), "error");
+        } else {
+          const user = await login({
+            ...values,
+            phoneNumber: currentCountry.phone + values.phoneNumber,
+          });
+          if (user) {
+            register(user.access_token);
+            router.push("/m");
+          } else {
+            setMassageLoginFail("Incorrect email or password");
+          }
         }
       } catch (error) {
-        setMassageLoginFail("Incorrect email or password");
+        onToast(t(`errorMessages.permissionDenied`), "error");
       }
     },
   });
@@ -60,8 +68,7 @@ const LoginWithPhoneNumber = () => {
     const locationData = await geolocationService.getLocation();
     if (locationData) {
       const country = COUNTRIES.find(
-        (item) =>
-          item.code.toLowerCase() === locationData.country.toLowerCase(),
+        (item) => item.code.toLowerCase() === locationData.country.toLowerCase()
       );
       setCurrentCountry(country);
     }

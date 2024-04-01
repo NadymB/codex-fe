@@ -41,7 +41,7 @@ const PaymentPage = () => {
       <GoBack title={t("withdrawAccount.title")} />
       {withdrawAccountInfo ? (
         <div className="flex flex-col items-center gap-2 p-4 my-4">
-          <Image
+          <img
             src={`${getStaticURL()}/assets/images/atm.svg`}
             alt="ATM"
             width={100}
@@ -89,7 +89,7 @@ const PaymentPage = () => {
       ) : (
         <>
           <div className="flex flex-col items-center px-4 my-4">
-            <Image
+            <img
               src={`${getStaticURL()}/assets/images/empty.svg`}
               alt="No Withdraw Account"
               width={100}

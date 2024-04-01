@@ -4,8 +4,8 @@ export const ReceivedIcon = () => {
   return (
     <svg
       aria-hidden="true"
-      width={24}
-      height={24}
+      width={18}
+      height={18}
       viewBox="0 0 24 24"
       data-testid="DoneAllIcon"
       fill="#4B5563"
