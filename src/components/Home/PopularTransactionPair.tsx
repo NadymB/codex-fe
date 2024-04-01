@@ -6,13 +6,25 @@ import {
   removeTrailingZeros,
 } from "@/utils/converter";
 import { t } from "i18next";
-import Link from "next/link";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export const PopularTransactionPair = () => {
   const [dataCommon, setDataCommon] = useState([]);
   const [dataCrypto, setDataCrypto] = useState([]);
   const [dataForex, setDataForex] = useState([]);
+  const router = useRouter();
+  
+  const handleSelectCrypto = (metadata: any) => {
+    const token = metadata.name.split("_")[0].toUpperCase();
+    Cookies.set(
+      "crypto",
+      JSON.stringify({ token, values: "USDT", type: metadata.type})
+    );
+    router.push(`/m/trade/${token}/USDT`)
+  }
+
   const handleCrawlDataFeed = async () => {
     try {
       const response = await priceFeedService.getCommonPriceFeed();
@@ -43,9 +55,9 @@ export const PopularTransactionPair = () => {
             let priceRandom = getRnd(0, 100000);
             let percentRandom = getRnd(-10, 10);
             return (
-              <Link
+              <button
                 key={Math.random()}
-                href={`/m/trade/${item.metadata.name.replace("usdt", "").toUpperCase()}/USDT`}
+                onClick={()=> handleSelectCrypto(item.metadata)}
                 className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
               >
                 <div>
@@ -75,7 +87,7 @@ export const PopularTransactionPair = () => {
                   </span>
                   <NextIcon />
                 </div>
-              </Link>
+              </button>
             );
           })}
         {dataCommon.length > 0 &&
@@ -83,9 +95,9 @@ export const PopularTransactionPair = () => {
             let priceRandom = getRnd(0, 100000);
             let percentRandom = getRnd(-10, 10);
             return (
-              <Link
+              <button
                 key={Math.random()}
-                href={`/m/trade/${item.metadata.name.replace("_futures", "").toUpperCase()}/USDT`}
+                onClick={()=> handleSelectCrypto(item.metadata)}
                 className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
               >
                 <div>
@@ -115,7 +127,7 @@ export const PopularTransactionPair = () => {
                   </span>
                   <NextIcon />
                 </div>
-              </Link>
+              </button>
             );
           })}
         {dataForex?.length > 0 &&
@@ -123,9 +135,9 @@ export const PopularTransactionPair = () => {
             let priceRandom = getRnd(0, 100000);
             let percentRandom = getRnd(-10, 10);
             return (
-              <Link
+              <button
                 key={Math.random()}
-                href={`/m/trade/${item.metadata.name.replace("_usd", "").toUpperCase()}/USDT`}
+                onClick={()=> handleSelectCrypto(item.metadata)}
                 className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
               >
                 <div>
@@ -155,7 +167,7 @@ export const PopularTransactionPair = () => {
                   </span>
                   <NextIcon />
                 </div>
-              </Link>
+              </button>
             );
           })}
       </div>
