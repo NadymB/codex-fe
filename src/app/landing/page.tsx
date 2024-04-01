@@ -1,3 +1,5 @@
+"use client";
+
 import { ClientSection } from "@/components/Landing/ClientSection";
 import { ContentSection } from "@/components/Landing/ContentSection";
 import { CtaSection } from "@/components/Landing/CtaSection";
@@ -9,7 +11,6 @@ import { QASection } from "@/components/Landing/QASection";
 import { TestimonialSection } from "@/components/Landing/TestimonialSection";
 import { VideoSection } from "@/components/Landing/VideoSection";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
-import React from "react";
 
 const LandingPage = () => {
   return (
