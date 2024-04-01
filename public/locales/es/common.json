@@ -270,7 +270,8 @@
       "fail": "Fallo",
       "expenditure": "Gasto",
       "income": "Ingresos",
-      "handlingFee": "Tarifa de manejo"
+      "handlingFee": "Tarifa de manejo",
+      "deduction": "Deducción"
     },
     "chart": {
       "title": "tendencia",

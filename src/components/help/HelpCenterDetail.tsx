@@ -5,7 +5,7 @@ export const HelpCenterDetail = () => {
   return (
     <div className="flex flex-col gap-4 p-4 bg-black">
       <img
-        src={`${getStaticURL()}/assets/images/about.png`}
+        src={`${getStaticURL()}/assets/images/about.svg`}
         alt="Logo"
         className="w-[98px] h-[98px]"
       />

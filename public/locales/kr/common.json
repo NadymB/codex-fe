@@ -270,7 +270,8 @@
       "fail": "실패",
       "expenditure": "지출",
       "income": "수입",
-      "handlingFee": "수수료"
+      "handlingFee": "수수료",
+      "deduction": "공제"
     },
     "chart": {
       "title": "경향",

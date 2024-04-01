@@ -270,7 +270,8 @@
       "fail": "असफलता",
       "expenditure": "व्यय",
       "income": "आय",
-      "handlingFee": "हैंडलिंग शुल्क"
+      "handlingFee": "हैंडलिंग शुल्क",
+      "deduction": "कटौती"
     },
     "chart": {
       "title": "चार्ट",
