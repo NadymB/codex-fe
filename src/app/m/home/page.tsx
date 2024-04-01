@@ -29,7 +29,9 @@ export default function Home() {
     try {
       if (currentUser) {
         const response = await chatService.getUnreadMessage();
-        setCountNewMessage(response);
+        if (response.success) {
+          setCountNewMessage(response.data.total);
+        }
       }
     } catch (error) {
       console.log(error);
@@ -37,7 +39,7 @@ export default function Home() {
   };
   useEffect(() => {
     handleGetUnreadMessage();
-  }, []);
+  }, [currentUser]);
   useEffect(() => {
     if (webSocket) {
       webSocket.on(WS_TOPIC.SEND_MESSAGE, (data) => {

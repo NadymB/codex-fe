@@ -4,6 +4,9 @@ export type Messages = {
     images: Image[];
     text: string;
   };
+  metadata:{
+    readStatus:{userId:string,readAt:string}[]
+  }
   createdAt: string;
   position: number;
   senderId: string;
