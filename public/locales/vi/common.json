@@ -367,5 +367,9 @@
     "deposit": "Bạn đã bị chặn nộp tiền. Vui lòng liên hệ quản trị viên để được hỗ trợ",
     "withdrawal": "Bạn đã bị chặn rút tiền. Vui lòng liên hệ quản trị viên để được hỗ trợ",
     "notification": "Bạn đã bị chặn thông báo. Vui lòng liên hệ quản trị viên để được hỗ trợ"
+  },
+  "leaderBoardPage": {
+    "profit7day": "Lợi nhuận 7 ngày",
+    "income7day": "Thu nhập 7 ngày"
   }
 }
