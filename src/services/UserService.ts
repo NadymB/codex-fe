@@ -16,6 +16,7 @@ export class UserService {
 
     return data;
   };
+
   public getBalanceHistory = async (token: TRADE_CURRENCY,
     pagination: { limit: number; offset: number }
   ) => {
