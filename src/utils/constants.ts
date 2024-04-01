@@ -1265,12 +1265,12 @@ export enum TRADE_CURRENCY {
 }
 
 export const BET_PERCENTAGE = [
-  { betPercentage: 10, timeoutInMinutes: 1 },
-  { betPercentage: 20, timeoutInMinutes: 2 },
-  { betPercentage: 30, timeoutInMinutes: 3 },
-  { betPercentage: 50, timeoutInMinutes: 4 },
-  { betPercentage: 80, timeoutInMinutes: 5 },
-  { betPercentage: 100, timeoutInMinutes: 6 },
+  { betPercentage: 5, timeoutInMinutes: 1 },
+  { betPercentage: 10, timeoutInMinutes: 2 },
+  { betPercentage: 20, timeoutInMinutes: 4 },
+  { betPercentage: 30, timeoutInMinutes: 6 },
+  { betPercentage: 40, timeoutInMinutes: 8 },
+  { betPercentage: 100, timeoutInMinutes: 12 },
 ];
 
 export const getRnd = (min: number, max: number) => {
