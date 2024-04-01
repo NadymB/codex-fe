@@ -27,10 +27,8 @@ export default function Home() {
 
   const handleGetUnreadMessage = async () => {
     try {
-      if (currentUser) {
-        const response = await chatService.getUnreadMessage();
-        setCountNewMessage(response);
-      }
+      const response = await chatService.getUnreadMessage();
+      setCountNewMessage(response.data.total);
     } catch (error) {
       console.log(error);
     }

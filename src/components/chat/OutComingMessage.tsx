@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import ImageGallery from "@/app/m/service/previewImage";
 import { ReceivedIcon } from "@/assets/icons/ReceivedIcon";
+import { SentIcon } from "@/assets/icons/SentIcon";
 import { Messages } from "@/models/Chat";
 import { Account } from "@/models/User";
 import { DateTime } from "luxon";
@@ -34,7 +35,11 @@ export const OutComingMessage = ({ message, sender }: IProp) => {
                 <SendingIcon />
               ) : (
               )} */}
-              <ReceivedIcon />
+              {message?.metadata?.readStatus.length > 1 ? (
+                    <ReceivedIcon />
+              ) : (
+                    <SentIcon />
+              )}
             </div>
           </div>
         </div>
