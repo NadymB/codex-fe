@@ -324,5 +324,42 @@
   "somethingWentWrong": "कुछ गलत हो गया। कृपया बाद में पुन: प्रयास करें।",
   "orderConfirmed": "आदेश की पुष्टि की गई",
   "amountMustBeGreaterThan0": "राशि 0 से अधिक होनी चाहिए",
-  "phoneNumberMustBeAValidPhoneNumber": "राशि शेष से कम या बराबर होनी चाहिए"
+  "phoneNumberMustBeAValidPhoneNumber": "राशि शेष से कम या बराबर होनी चाहिए",
+  "errorMessages": {
+    "notFound": "ढूँढा नहीं गया",
+    "userNotFound": "उपयोगकर्ता नहीं मिला",
+    "notTxOwner": "ट्रांजैक्शन का मालिक नहीं",
+    "invalidTxFunction": "अमान्य ट्रांजैक्शन कार्य",
+    "txHashUsed": "ट्रांजैक्शन हैश का उपयोग किया गया है",
+    "userLocked": "उपयोगकर्ता लॉक किया गया है",
+    "invalidCaptchaToken": "अमान्य कैप्चा टोकन",
+    "unknownError": "अज्ञात त्रुटि",
+    "internalServerError": "आंतरिक सर्वर त्रुटि",
+    "confirmationTooLow": "पुष्टिकरण बहुत कम है",
+    "emailAlreadyExists": "ईमेल पहले से मौजूद है",
+    "invalidCurrency": "अमान्य मुद्रा",
+    "invalidDepositAddress": "अमान्य जमा पता",
+    "invalidEmailFormat": "अमान्य ईमेल प्रारूप",
+    "invalidLoginMode": "अमान्य लॉगिन मोड",
+    "invalidPasswordFormat": "अमान्य पासवर्ड प्रारूप",
+    "invalidPurchasePrice": "अमान्य खरीद मूल्य",
+    "invalidRegisterMethod": "अमान्य रजिस्टर मेथड",
+    "invalidSignature": "अमान्य हस्ताक्षर",
+    "invalidUsernameFormat": "अमान्य उपयोगकर्ता नाम प्रारूप",
+    "invalidWithdrawType": "अमान्य निकालने का प्रकार",
+    "notEnoughCertificate": "पर्याप्त प्रमाणपत्र नहीं है",
+    "notEnoughWithdrawAccountInformation": "निकालने के लिए पर्याप्त खाता जानकारी नहीं है",
+    "permissionDenied": "अनुमति निषेध",
+    "phoneNumberAlreadyExists": "फ़ोन नंबर पहले से मौजूद है",
+    "previousVerifyRequestNotApproved": "पिछला सत्यापन अनुरोध मंजूर नहीं है",
+    "proofOfAddressIsRequired": "पते का सबूत आवश्यक है"
+  },
+  "permissionDenied": {
+    "trade": "आपको ट्रेडिंग करने से निषेधित किया गया है। सहायता के लिए व्यवस्थापक से संपर्क करें",
+    "chat": "आपको चैट करने से निषेधित किया गया है। सहायता के लिए व्यवस्थापक से संपर्क करें",
+    "login": "आपको लॉगिन करने से निषेधित किया गया है। सहायता के लिए व्यवस्थापक से संपर्क करें",
+    "deposit": "आपको जमा करने से निषेधित किया गया है। सहायता के लिए व्यवस्थापक से संपर्क करें",
+    "withdrawal": "आपको निकासी से निषेधित किया गया है। सहायता के लिए व्यवस्थापक से संपर्क करें",
+    "notification": "आपको सूचनाएँ प्राप्त करने से निषेधित किया गया है। सहायता के लिए व्यवस्थापक से संपर्क करें"
+  }
 }

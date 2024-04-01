@@ -324,5 +324,42 @@
   "somethingWentWrong": "何か問題が発生しました。後でやり直してください。",
   "orderConfirmed": "注文が確認されました",
   "amountMustBeGreaterThan0": "金額は0より大きくなければなりません",
-  "phoneNumberMustBeAValidPhoneNumber": "金額は残高以下でなければなりません"
+  "phoneNumberMustBeAValidPhoneNumber": "金額は残高以下でなければなりません",
+  "errorMessages": {
+    "notFound": "見つかりません",
+    "userNotFound": "ユーザーが見つかりません",
+    "notTxOwner": "取引の所有者ではありません",
+    "invalidTxFunction": "無効な取引機能",
+    "txHashUsed": "取引ハッシュが使用されました",
+    "userLocked": "ユーザーがロックされています",
+    "invalidCaptchaToken": "無効なCAPTCHAトークン",
+    "unknownError": "未知のエラー",
+    "internalServerError": "内部サーバーエラー",
+    "confirmationTooLow": "確認が不十分です",
+    "emailAlreadyExists": "メールアドレスはすでに存在します",
+    "invalidCurrency": "無効な通貨",
+    "invalidDepositAddress": "無効な入金アドレス",
+    "invalidEmailFormat": "無効なメール形式",
+    "invalidLoginMode": "無効なログインモード",
+    "invalidPasswordFormat": "無効なパスワード形式",
+    "invalidPurchasePrice": "無効な購入価格",
+    "invalidRegisterMethod": "無効な登録方法",
+    "invalidSignature": "無効な署名",
+    "invalidUsernameFormat": "無効なユーザー名形式",
+    "invalidWithdrawType": "無効な引き出しタイプ",
+    "notEnoughCertificate": "証明書が不十分です",
+    "notEnoughWithdrawAccountInformation": "引き出し口座情報が不足しています",
+    "permissionDenied": "アクセスが拒否されました",
+    "phoneNumberAlreadyExists": "電話番号はすでに存在します",
+    "previousVerifyRequestNotApproved": "以前の検証リクエストは承認されていません",
+    "proofOfAddressIsRequired": "住所の証明が必要です"
+  },
+  "permissionDenied": {
+    "trade": "取引がブロックされています。サポートを受けるには管理者に連絡してください。",
+    "chat": "チャットがブロックされています。サポートを受けるには管理者に連絡してください。",
+    "login": "ログインがブロックされています。サポートを受けるには管理者に連絡してください。",
+    "deposit": "入金がブロックされています。サポートを受けるには管理者に連絡してください。",
+    "withdrawal": "出金がブロックされています。サポートを受けるには管理者に連絡してください。",
+    "notification": "通知がブロックされています。サポートを受けるには管理者に連絡してください。"
+  }
 }

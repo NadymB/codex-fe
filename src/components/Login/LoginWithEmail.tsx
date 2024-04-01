@@ -1,22 +1,21 @@
 "use client";
-import { BackIcon } from "@/assets/icons/BackIcon";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useContext, useState } from "react";
-import * as Yup from "yup";
-import { useFormik } from "formik";
-import { Button, TextField, styled } from "@mui/material";
-import { t } from "i18next";
-import { InputCustom } from "../InputCustom";
-import { authService } from "@/services/AuthServices";
 import { useAuth } from "@/hooks/useAuth";
-import { LOGIN_MODE } from "@/utils/constants";
+import { onToast } from "@/hooks/useToast";
+import { PERMISSION_REQUIRED } from "@/models/User";
 import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { LOGIN_MODE } from "@/utils/constants";
+import { Button } from "@mui/material";
+import { useFormik } from "formik";
+import { t } from "i18next";
+import { useRouter } from "next/navigation";
+import { useContext, useState } from "react";
+import * as Yup from "yup";
+import { InputCustom } from "../InputCustom";
 
 const LoginWithEmail = () => {
   const { webSocket, register } = useContext(WebSocketCtx);
 
-  const { login } = useAuth();
+  const { login, currentUser} = useAuth();
   const [messageLoginFail, setMassageLoginFail] = useState("");
   const router = useRouter();
   const validationSchema = Yup.object({
@@ -38,13 +37,20 @@ const LoginWithEmail = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const data = await login(values);
-        if (data) {
-          register(data.access_token);
-          router.push("/m");
+        const checkPermissions = currentUser?.configMetadata?.permissions?.find((item: string) => item === PERMISSION_REQUIRED.LOGIN);
+        if(checkPermissions === undefined) {
+          onToast(t("permissionDenied.login"), "error")
+        } else {
+          const data = await login(values);
+          if (data) {
+            register(data.access_token);
+            router.push("/m");
+          } else {
+            setMassageLoginFail("Incorrect email or password");
+          }
         }
       } catch (error) {
-        setMassageLoginFail("Incorrect email or password");
+        onToast(t(`errorMessages.permissionDenied`), "error")
       }
     },
   });

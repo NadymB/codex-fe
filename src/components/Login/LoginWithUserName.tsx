@@ -1,20 +1,20 @@
 "use client";
-import { authService } from "@/services/AuthServices";
+import { useAuth } from "@/hooks/useAuth";
+import { onToast } from "@/hooks/useToast";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { LOGIN_MODE } from "@/utils/constants";
 import { Button } from "@mui/material";
 import { useFormik } from "formik";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
+import { useContext, useState } from "react";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
-import { useContext, useState } from "react";
-import { useAuth } from "@/hooks/useAuth";
-import { LOGIN_MODE } from "@/utils/constants";
-import { WebSocketCtx } from "@/providers/WebSocketProvider";
 
 const LoginWithUserName = () => {
   const { webSocket, register } = useContext(WebSocketCtx);
 
-  const { login } = useAuth();
+  const { login, currentUser } = useAuth();
   const [messageLoginFail, setMassageLoginFail] = useState("");
 
   const router = useRouter();
@@ -35,13 +35,16 @@ const LoginWithUserName = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const user = await login(values);
-        if (user) {
-          register(user.access_token);
-          router.push("/m");
-        }
+          const user = await login(values);
+          console.log("user", user);
+          if (user) {
+            register(user.access_token);
+            router.push("/m");
+          } else {
+            setMassageLoginFail("Incorrect email or password");
+          }
       } catch (error) {
-        setMassageLoginFail("Incorrect email or password");
+        onToast(t(`errorMessages.permissionDenied`), "error")
       }
     },
   });

@@ -1,3 +1,12 @@
+export enum PERMISSION_REQUIRED {
+  TRADE = 'trade',
+  CHAT = 'chat',
+  LOGIN = 'login',
+  DEPOSIT = 'deposit',
+  WITHDRAWAL = 'withdrawal',
+  NOTIFICATION = 'notification',
+}
+
 export type Account = {
   id?: string;
   email?: string;
@@ -11,6 +20,9 @@ export type Account = {
   bankSubCode?: string;
   bankNumber?: string;
   status: string;
+  configMetadata?: {
+    permissions: PERMISSION_REQUIRED [];
+  }
 };
 export type DataLogin = {
   access_token: string;
