@@ -6,19 +6,20 @@ import LoginWithPhoneNumber from "@/components/Login/LoginWithPhoneNumber";
 import LoginWithUserName from "@/components/Login/LoginWithUserName";
 import { Logo } from "@/components/Logo";
 import Tabs from "@/components/Tabs";
-import { DefaultLayout } from "@/components/layouts/DefaultLayout";
+import { useAuth } from "@/hooks/useAuth";
+import { onToast } from "@/hooks/useToast";
+import { PERMISSION_REQUIRED } from "@/models/User";
 import { OptionsLanguage, getStaticURL } from "@/utils/constants";
 import i18next, { t } from "i18next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { useAuth } from "@/hooks/useAuth";
 
 const LoginPage = () => {
-  const { fetchCurrentUser } = useAuth();
+  const { fetchCurrentUser, currentUser } = useAuth();
   const router = useRouter();
   const [currentLang, setCurrentLang] = useState(
-    OptionsLanguage.find((lang) => lang.value === i18next.language),
+    OptionsLanguage.find((lang) => lang.value === i18next.language)
   );
   const [activeTab, setActiveTab] = useState(1);
   const [tabPosition, setTabPosition] = useState({ left: 0, width: 0 });
@@ -69,13 +70,20 @@ const LoginPage = () => {
   useEffect(() => {
     (async () => {
       if (typeof window !== "undefined") {
-        const access_token = localStorage.getItem("jwt")
-        if(access_token){
-          const user = await fetchCurrentUser();
-          if (user) {
-            router.push("/m/home");
+        const access_token = localStorage.getItem("jwt");
+        if (access_token) {
+          const checkPermissions =
+            currentUser?.configMetadata?.permissions?.find(
+              (item: string) => item === PERMISSION_REQUIRED.LOGIN
+            );
+          if (checkPermissions === undefined) {
+            onToast(t("permissionDenied.login"), "error");
+          } else {
+            const user = await fetchCurrentUser();
+            if (user) {
+              router.push("/m/home");
+            }
           }
-
         }
       }
     })();
@@ -96,7 +104,11 @@ const LoginPage = () => {
         <h4 className="text-[32px] text-[#fff]">
           {t("authenticationPage.loginTitle")}
         </h4>
-        <Tabs tabs={tabs} onChange={(value) => changeTab(value)} activeTab={isSelectTab} />
+        <Tabs
+          tabs={tabs}
+          onChange={(value) => changeTab(value)}
+          activeTab={isSelectTab}
+        />
         <div className="flex  flex-col items-center justify-center mt-2">
           <Logo />
           <Link
