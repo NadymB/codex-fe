@@ -7,7 +7,7 @@ import { InComingMessage } from "@/components/chat/InComingMessage";
 import { OutComingMessage } from "@/components/chat/OutComingMessage";
 import { useAuth } from "@/hooks/useAuth";
 import { Messages } from "@/models/Chat";
-import { Account } from "@/models/User";
+import { Account, PERMISSION_REQUIRED } from "@/models/User";
 import { WebSocketCtx } from "@/providers/WebSocketProvider";
 import { chatService } from "@/services/ChatService";
 import { WS_TOPIC } from "@/utils/constants";
@@ -15,11 +15,13 @@ import { CircularProgress, TextField, styled } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 
 import { UploadImage } from "@/components/uploadImage";
+import { onToast } from "@/hooks/useToast";
 import { ChatCtx } from "@/providers/ChatProvider";
 import { useAliUpload } from "@/services/CloundService";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import { Fragment, useContext, useEffect, useRef, useState } from "react";
+
 const { DateTime } = require("luxon");
 const CssTextField = styled(TextField)({
   "& label.Mui-focused": {
@@ -53,6 +55,7 @@ const ServicePage = () => {
   const { setCountNewMessage } = useContext(ChatCtx);
   const [isShouldScrollBottom, setIsShouldScrollBottom] = useState(true);
   const { currentUser } = useAuth();
+  console.log("currentUser", currentUser);
   const { onAliUpload } = useAliUpload();
   const [chatRoomId, setChatRoomId] = useState();
   const router = useRouter();
@@ -73,6 +76,7 @@ const ServicePage = () => {
     limit: 20,
   });
   const [scrollBottom, setScrollBottom] = useState(0);
+
   useEffect(() => {
     if (headerRef.current) {
       const height = headerRef.current.offsetHeight;
@@ -91,15 +95,20 @@ const ServicePage = () => {
     content?: string;
     images?: string[];
   }) => {
-    if (content.trim() !== "" || (images.length > 0 && chatRoomId)) {
-      const newMessage = {
-        content,
-        images,
-      };
+    const checkPermissions = currentUser?.configMetadata?.permissions?.find((item: string, index) => item === PERMISSION_REQUIRED.CHAT);
 
-      const data = await chatService.sendMessage(chatRoomId, newMessage);
-      scrollToBottom("smooth");
-      setInputMessage("");
+    if(checkPermissions === undefined) {
+      onToast(t("permissionDenied.chat"), "error")
+    } else {
+      if (content.trim() !== "" || (images.length > 0 && chatRoomId)) {
+        const newMessage = {
+          content,
+          images,
+        };
+        const data = await chatService.sendMessage(chatRoomId, newMessage);
+        scrollToBottom("smooth");
+        setInputMessage("");
+      }
     }
   };
 

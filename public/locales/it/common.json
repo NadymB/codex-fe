@@ -325,5 +325,42 @@
   "somethingWentWrong": "Qualcosa è andato storto. Si prega di riprovare più tardi.",
   "orderConfirmed": "Ordine confermato",
   "amountMustBeGreaterThan0": "L'importo deve essere maggiore di 0",
-  "phoneNumberMustBeAValidPhoneNumber": "L'importo deve essere inferiore o uguale al saldo"
+  "phoneNumberMustBeAValidPhoneNumber": "L'importo deve essere inferiore o uguale al saldo",
+  "errorMessages": {
+    "notFound": "Non trovato",
+    "userNotFound": "Utente non trovato",
+    "notTxOwner": "Non proprietario della transazione",
+    "invalidTxFunction": "Funzione di transazione non valida",
+    "txHashUsed": "Hash di transazione utilizzato",
+    "userLocked": "Utente bloccato",
+    "invalidCaptchaToken": "Token Captcha non valido",
+    "unknownError": "Errore sconosciuto",
+    "internalServerError": "Errore interno del server",
+    "confirmationTooLow": "Conferma troppo bassa",
+    "emailAlreadyExists": "Email già esistente",
+    "invalidCurrency": "Valuta non valida",
+    "invalidDepositAddress": "Indirizzo di deposito non valido",
+    "invalidEmailFormat": "Formato email non valido",
+    "invalidLoginMode": "Modalità di accesso non valida",
+    "invalidPasswordFormat": "Formato password non valido",
+    "invalidPurchasePrice": "Prezzo di acquisto non valido",
+    "invalidRegisterMethod": "Metodo di registrazione non valido",
+    "invalidSignature": "Firma non valida",
+    "invalidUsernameFormat": "Formato nome utente non valido",
+    "invalidWithdrawType": "Tipo di prelievo non valido",
+    "notEnoughCertificate": "Certificato non sufficiente",
+    "notEnoughWithdrawAccountInformation": "Informazioni account prelievo non sufficienti",
+    "permissionDenied": "Permesso negato",
+    "phoneNumberAlreadyExists": "Numero di telefono già esistente",
+    "previousVerifyRequestNotApproved": "Richiesta di verifica precedente non approvata",
+    "proofOfAddressIsRequired": "È richiesta la prova di indirizzo"
+  },
+  "permissionDenied": {
+    "trade": "Sei stato bloccato dal fare trading. Contatta l'amministratore per assistenza.",
+    "chat": "Sei stato bloccato dalla chat. Contatta l'amministratore per assistenza.",
+    "login": "Sei stato bloccato dall'accesso. Contatta l'amministratore per assistenza.",
+    "deposit": "Sei stato bloccato dal depositare. Contatta l'amministratore per assistenza.",
+    "withdrawal": "Sei stato bloccato dal prelevare. Contatta l'amministratore per assistenza.",
+    "notification": "Sei stato bloccato dalle notifiche. Contatta l'amministratore per assistenza."
+  }
 }

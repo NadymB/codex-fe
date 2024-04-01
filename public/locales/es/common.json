@@ -325,5 +325,42 @@
   "somethingWentWrong": "Algo salió mal. Por favor, inténtelo de nuevo más tarde.",
   "orderConfirmed": "Pedido confirmado",
   "amountMustBeGreaterThan0": "El monto debe ser mayor que 0",
-  "phoneNumberMustBeAValidPhoneNumber": "El monto debe ser menor o igual al saldo"
+  "phoneNumberMustBeAValidPhoneNumber": "El monto debe ser menor o igual al saldo",
+  "errorMessages": {
+    "notFound": "No encontrado",
+    "userNotFound": "Usuario no encontrado",
+    "notTxOwner": "No es el propietario de la transacción",
+    "invalidTxFunction": "Función de transacción no válida",
+    "txHashUsed": "Hash de transacción utilizado",
+    "userLocked": "Usuario bloqueado",
+    "invalidCaptchaToken": "Token de Captcha no válido",
+    "unknownError": "Error desconocido",
+    "internalServerError": "Error interno del servidor",
+    "confirmationTooLow": "Confirmación demasiado baja",
+    "emailAlreadyExists": "El correo electrónico ya existe",
+    "invalidCurrency": "Moneda no válida",
+    "invalidDepositAddress": "Dirección de depósito no válida",
+    "invalidEmailFormat": "Formato de correo electrónico no válido",
+    "invalidLoginMode": "Modo de inicio de sesión no válido",
+    "invalidPasswordFormat": "Formato de contraseña no válido",
+    "invalidPurchasePrice": "Precio de compra no válido",
+    "invalidRegisterMethod": "Método de registro no válido",
+    "invalidSignature": "Firma no válida",
+    "invalidUsernameFormat": "Formato de nombre de usuario no válido",
+    "invalidWithdrawType": "Tipo de retiro no válido",
+    "notEnoughCertificate": "Certificado insuficiente",
+    "notEnoughWithdrawAccountInformation": "Información de cuenta de retiro insuficiente",
+    "permissionDenied": "Permiso denegado",
+    "phoneNumberAlreadyExists": "El número de teléfono ya existe",
+    "previousVerifyRequestNotApproved": "Solicitud de verificación anterior no aprobada",
+    "proofOfAddressIsRequired": "Se requiere prueba de dirección"
+  },
+  "permissionDenied": {
+    "trade": "Se le ha prohibido comerciar. Por favor, póngase en contacto con el administrador para obtener ayuda",
+    "chat": "Se le ha prohibido chatear. Por favor, póngase en contacto con el administrador para obtener ayuda",
+    "login": "Se le ha prohibido iniciar sesión. Por favor, póngase en contacto con el administrador para obtener ayuda",
+    "deposit": "Se le ha prohibido depositar. Por favor, póngase en contacto con el administrador para obtener ayuda",
+    "withdrawal": "Se le ha prohibido retirar. Por favor, póngase en contacto con el administrador para obtener ayuda",
+    "notification": "Se le ha prohibido recibir notificaciones. Por favor, póngase en contacto con el administrador para obtener ayuda"
+  }
 }

@@ -325,5 +325,42 @@
   "somethingWentWrong": "Quelque chose s'est mal passé. Veuillez réessayer plus tard.",
   "orderConfirmed": "Commande confirmée",
   "amountMustBeGreaterThan0": "Le montant doit être supérieur à 0",
-  "phoneNumberMustBeAValidPhoneNumber": "Le montant doit être inférieur ou égal au solde"
+  "phoneNumberMustBeAValidPhoneNumber": "Le montant doit être inférieur ou égal au solde",
+  "errorMessages": {
+    "notFound": "Non trouvé",
+    "userNotFound": "Utilisateur non trouvé",
+    "notTxOwner": "Pas le propriétaire de la transaction",
+    "invalidTxFunction": "Fonction de transaction invalide",
+    "txHashUsed": "Hash de transaction utilisé",
+    "userLocked": "Utilisateur verrouillé",
+    "invalidCaptchaToken": "Token Captcha invalide",
+    "unknownError": "Erreur inconnue",
+    "internalServerError": "Erreur interne du serveur",
+    "confirmationTooLow": "Confirmation trop faible",
+    "emailAlreadyExists": "L'e-mail existe déjà",
+    "invalidCurrency": "Devise invalide",
+    "invalidDepositAddress": "Adresse de dépôt invalide",
+    "invalidEmailFormat": "Format d'e-mail invalide",
+    "invalidLoginMode": "Mode de connexion invalide",
+    "invalidPasswordFormat": "Format de mot de passe invalide",
+    "invalidPurchasePrice": "Prix d'achat invalide",
+    "invalidRegisterMethod": "Méthode d'enregistrement invalide",
+    "invalidSignature": "Signature invalide",
+    "invalidUsernameFormat": "Format de nom d'utilisateur invalide",
+    "invalidWithdrawType": "Type de retrait invalide",
+    "notEnoughCertificate": "Certificat insuffisant",
+    "notEnoughWithdrawAccountInformation": "Informations de compte de retrait insuffisantes",
+    "permissionDenied": "Autorisation refusée",
+    "phoneNumberAlreadyExists": "Le numéro de téléphone existe déjà",
+    "previousVerifyRequestNotApproved": "Demande de vérification précédente non approuvée",
+    "proofOfAddressIsRequired": "La preuve d'adresse est requise"
+  },
+  "permissionDenied": {
+    "trade": "Vous n'êtes pas autorisé à effectuer des transactions. Veuillez contacter l'administrateur pour obtenir de l'aide",
+    "chat": "Vous n'êtes pas autorisé à chatter. Veuillez contacter l'administrateur pour obtenir de l'aide",
+    "login": "Vous n'êtes pas autorisé à vous connecter. Veuillez contacter l'administrateur pour obtenir de l'aide",
+    "deposit": "Vous n'êtes pas autorisé à effectuer des dépôts. Veuillez contacter l'administrateur pour obtenir de l'aide",
+    "withdrawal": "Vous n'êtes pas autorisé à effectuer des retraits. Veuillez contacter l'administrateur pour obtenir de l'aide",
+    "notification": "Vous n'êtes pas autorisé à recevoir des notifications. Veuillez contacter l'administrateur pour obtenir de l'aide"
+  }
 }
