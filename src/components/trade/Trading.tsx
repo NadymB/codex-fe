@@ -125,7 +125,7 @@ const Trading: FC<Props> = ({
                 className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected.betPercentage === item.betPercentage && "border-[#3D5AFE]"} `}
                 onClick={() => setPercentIsSelected(item)}
               >
-                <span className="text-[12px] text-[#fff]">
+                <span className="text-[12px] text-[#fff] whitespace-nowrap">
                   {" "}
                   {t("tradePage.trade.profit")}
                 </span>
