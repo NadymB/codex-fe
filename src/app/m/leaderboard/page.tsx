@@ -77,7 +77,7 @@ const LeaderBoardPage = () => {
                   <span className="text-[#fff] text-[14px]">
                     {convertNumberToFormattedString(
                       removeTrailingZeros(
-                        (Math.random() * 3000 + 196000).toFixed(2)
+                        (Math.random() * 2000 + 201000).toFixed(2)
                       )
                     )}
                   </span>
@@ -116,7 +116,7 @@ const LeaderBoardPage = () => {
                   <span className="text-[#fff] text-[14px]">
                     {convertNumberToFormattedString(
                       removeTrailingZeros(
-                        (Math.random() * 3000 + 196000).toFixed(2)
+                        (Math.random() *1000 + 200000).toFixed(2)
                       )
                     )}
                   </span>
@@ -155,7 +155,7 @@ const LeaderBoardPage = () => {
                   <span className="text-[#fff] text-[14px]">
                     {convertNumberToFormattedString(
                       removeTrailingZeros(
-                        (Math.random() * 3000 + 196000).toFixed(2)
+                        (Math.random() * 500 + 199000).toFixed(2)
                       )
                     )}
                   </span>

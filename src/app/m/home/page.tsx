@@ -81,8 +81,8 @@ export default function Home() {
               <div className="relative">
                 <TelesaleIcon />
                 {countNewMessage > 0 && (
-                  <div className="absolute top-0 right-0 w-5 h-5 bg-[red] text-[#fff] rounded-full flex items-center justify-center ">
-                    {countNewMessage}
+                  <div className="absolute text-[12px] top-0 right-0 w-5 h-5 bg-[red] text-[#fff] rounded-full px-[2px] flex items-center justify-center ">
+                    {countNewMessage<=9?countNewMessage:"9+"}
                   </div>
                 )}
               </div>
