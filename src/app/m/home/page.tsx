@@ -27,15 +27,19 @@ export default function Home() {
 
   const handleGetUnreadMessage = async () => {
     try {
-      const response = await chatService.getUnreadMessage();
-      setCountNewMessage(response.data.total);
+      if (currentUser) {
+        const response = await chatService.getUnreadMessage();
+        if (response.success) {
+          setCountNewMessage(response.data.total);
+        }
+      }
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
     handleGetUnreadMessage();
-  }, []);
+  }, [currentUser]);
   useEffect(() => {
     if (webSocket) {
       webSocket.on(WS_TOPIC.SEND_MESSAGE, (data) => {
