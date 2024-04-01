@@ -6,13 +6,23 @@ import { useAuth } from "@/hooks/useAuth";
 import { OptionsLanguage, getStaticURL } from "@/utils/constants";
 import i18next from "i18next";
 import Link from "next/link";
-import { useState } from "react";
+import "../../../i18n";
+import { useEffect, useState } from "react";
+import { OptionsLanguageType } from "@/utils/type";
 
 const Header = () => {
   const { currentUser } = useAuth();
-  const [currentLang, setCurrentLang] = useState(
-    OptionsLanguage.find((lang) => lang.value === i18next.language),
-  );
+  const [currentLang, setCurrentLang] = useState<OptionsLanguageType>();
+
+  useEffect(() => {
+    if (i18next.language) {
+      const lang = OptionsLanguage.find(
+        (lang) => lang.value === i18next.language
+      );
+      setCurrentLang(lang);
+    }
+  }, [i18next.language]);
+
   return (
     <>
       <div className="sticky top-0 left-0 w-full z-50 px-4 py-4 flex justify-between  bg-[#100F14] ">
@@ -33,17 +43,21 @@ const Header = () => {
           <div className="cursor-pointer">
             <RingIcon />
           </div>
-          <Link
-            href={"/m/setting/locale"}
-            className="flex items-center gap-2 cursor-pointer p-1 rounded hover:bg-[#19181d]"
-          >
-            <img
-              className="w-[20px]"
-              src={`${getStaticURL()}${currentLang?.flag}`}
-              alt=""
-            />
-            <span className="text-[14px] text-white">{currentLang?.label}</span>
-          </Link>
+          {currentLang && (
+            <Link
+              href={"/m/setting/locale"}
+              className="flex items-center gap-2 cursor-pointer p-1 rounded hover:bg-[#19181d]"
+            >
+              <img
+                className="w-[20px]"
+                src={`${getStaticURL()}${currentLang?.flag}`}
+                alt=""
+              />
+              <span className="text-[14px] text-white">
+                {currentLang?.label}
+              </span>
+            </Link>
+          )}
         </div>
       </div>
     </>

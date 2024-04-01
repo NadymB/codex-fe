@@ -35,17 +35,9 @@ export type BetType = {
   position: "long" | "short";
 };
 
-function hideEmail(email:string) {
-  const atIndex = email.indexOf('@');
-  const dotIndex = email.lastIndexOf('.');
-  const username = email.substring(0, atIndex);
-  const domain = email.substring(atIndex, dotIndex);
-  const maskedUsername = username.substring(0, 5) + '*'.repeat(username.length - 5);
-  const maskedDomain = domain.substring(0, 3) + '*'.repeat(domain.length - 3);
-  return `${maskedUsername}${maskedDomain}`;
-}
-
-// Che dấu số điện thoại
-function hidePhoneNumber(phoneNumber:string) {
-  return phoneNumber.substring(0, 3) + '*'.repeat(phoneNumber.length - 7) + phoneNumber.substring(phoneNumber.length - 1);
+export type OptionsLanguageType =  {
+  label: string,
+  International: string,
+  value: string,
+  flag: string,
 }
