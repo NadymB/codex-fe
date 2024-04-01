@@ -362,5 +362,9 @@
     "deposit": "Sei stato bloccato dal depositare. Contatta l'amministratore per assistenza.",
     "withdrawal": "Sei stato bloccato dal prelevare. Contatta l'amministratore per assistenza.",
     "notification": "Sei stato bloccato dalle notifiche. Contatta l'amministratore per assistenza."
+  },
+  "leaderBoardPage": {
+    "profit7day": "Profit 7 giorni",
+    "income7day": "Entrate 7 giorni"
   }
 }

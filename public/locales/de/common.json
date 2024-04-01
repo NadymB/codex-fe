@@ -362,5 +362,9 @@
     "deposit": "Sie sind vom Einzahlen ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung",
     "withdrawal": "Sie sind vom Abheben ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung",
     "notification": "Sie sind vom Empfangen von Benachrichtigungen ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung"
+  },
+  "leaderBoardPage": {
+    "profit7day": "Gewinn 7 Tage",
+    "income7day": "Einkommen 7 Tage"
   }
 }
