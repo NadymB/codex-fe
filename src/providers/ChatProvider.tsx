@@ -1,4 +1,5 @@
-import React, { createContext, useState, ReactNode, useEffect } from "react";
+"use client";
+import { FC, createContext, useState, ReactNode, useEffect } from "react";
 
 interface ChatContextType {
   countNewMessage: number;
@@ -16,7 +17,7 @@ interface ChatProviderProps {
   children: ReactNode;
 }
 
-export const ChatProvider: React.FC<ChatProviderProps> = ({
+export const ChatProvider: FC<ChatProviderProps> = ({
   children,
 }: ChatProviderProps) => {
   const [countNewMessage, setCountNewMessage] = useState<number>(0);

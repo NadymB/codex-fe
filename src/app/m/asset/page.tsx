@@ -6,6 +6,7 @@ import { AccountItem } from "@/components/AccountItem";
 import { AssetItem } from "@/components/AssetItem";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { useAuth } from "@/hooks/useAuth";
+import { analyticsService } from "@/services/AnalyticsService";
 import { ACCOUNT_LIST, ASSET_LIST, getStaticURL } from "@/utils/constants";
 import { convertNumberToFormattedString } from "@/utils/converter";
 import { t } from "i18next";
@@ -20,9 +21,26 @@ export type OptionProps = {
 
 const AssetPage = () => {
   const [isShow, setIsShow] = useState(true);
+  const [dailyProfit, setDailyProfit] = useState();
   const ref = useRef(null);
 
   const { fetchUserBalance, currentBalance, currentUser } = useAuth();
+
+  const getDailyProfit = async () => {
+    try {
+      const response = await analyticsService.getDailyProfit();
+      if(response.data && response.success) {
+        setDailyProfit(response.data.dailyProfit);
+      }
+    } catch (error){
+      console.log(error);
+    }
+
+  };
+
+  useEffect(() => {
+    getDailyProfit()
+  }, [])
 
   useEffect(() => {
     if (currentUser) {
@@ -75,7 +93,7 @@ const AssetPage = () => {
               </div>
               <div className="text-base text-white pt-2">
                 {t("assetPage.TodayProfitability")}: &nbsp;
-                <span className="text-[#55af72]">0.00 (0%)</span>&nbsp; USDT
+                <span className="text-[#55af72]">{convertNumberToFormattedString(String(dailyProfit))}(0%)</span>&nbsp; USDT
               </div>
               <img
                 src={`${getStaticURL()}/assets/images/line_image.svg`}
