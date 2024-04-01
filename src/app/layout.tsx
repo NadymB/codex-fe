@@ -45,7 +45,7 @@ export default function RootLayout({
         <NextSeo
           title="Futures & Options Trading for Risk Management - CME Group"
           description="Futures & Options Trading for Risk Management - CME Group"
-          canonical={`${getStaticURL()}/assets/images/cme.svg`}
+          canonical={`${getStaticURL()}/assets/images/Cme.svg`}
           openGraph={{
             url: `${getStaticURL()}/assets/images/cme.svg`,
             title: "Futures & Options Trading for Risk Management - CME Group",
@@ -53,7 +53,7 @@ export default function RootLayout({
               "Futures & Options Trading for Risk Management - CME Group",
             images: [
               {
-                url: `${getStaticURL()}/assets/images/cme.svg`,
+                url: `${getStaticURL()}/assets/images/Cme.svg`,
                 width: 800,
                 height: 600,
                 alt: "CME Group",
