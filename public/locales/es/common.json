@@ -362,5 +362,9 @@
     "deposit": "Se le ha prohibido depositar. Por favor, póngase en contacto con el administrador para obtener ayuda",
     "withdrawal": "Se le ha prohibido retirar. Por favor, póngase en contacto con el administrador para obtener ayuda",
     "notification": "Se le ha prohibido recibir notificaciones. Por favor, póngase en contacto con el administrador para obtener ayuda"
+  },
+  "leaderBoardPage": {
+    "profit7day": "Beneficio 7 días",
+    "income7day": "Ingreso 7 días"
   }
 }

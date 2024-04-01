@@ -362,5 +362,9 @@
     "deposit": "Vous n'êtes pas autorisé à effectuer des dépôts. Veuillez contacter l'administrateur pour obtenir de l'aide",
     "withdrawal": "Vous n'êtes pas autorisé à effectuer des retraits. Veuillez contacter l'administrateur pour obtenir de l'aide",
     "notification": "Vous n'êtes pas autorisé à recevoir des notifications. Veuillez contacter l'administrateur pour obtenir de l'aide"
+  },
+  "leaderBoardPage": {
+    "profit7day": "Profit 7 jours",
+    "income7day": "Revenu 7 jours"
   }
 }

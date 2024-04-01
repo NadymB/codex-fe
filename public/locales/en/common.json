@@ -367,5 +367,9 @@
     "deposit": "You have been denied depositing. Please contact the administrator for assistance.",
     "withdrawal": "You have been denied withdrawal. Please contact the administrator for assistance.",
     "notification": "You have been denied notifications. Please contact the administrator for assistance."
+  },
+  "leaderBoardPage": {
+    "profit7day": "Profit 7 days",
+    "income7day": "Income 7 days"
   }
 }
