@@ -21,7 +21,7 @@ const LeaderBoardPage = () => {
   const [listLeaderBoard, setListLeaderBoard] = useState<any>([]);
 
   useEffect(() => {
-    let response = Array(200)
+    let response = Array(197)
       .fill("")
       .map(() => {
         let type = Math.floor(Math.random() * 2);
@@ -36,11 +36,11 @@ const LeaderBoardPage = () => {
     setListLeaderBoard(response.sort((a, b) => b.income - a.income));
   }, []);
   return (
-    <div className="bg-black h-auto">
+    <div className="bg-black min-h-screen">
       <GoBack title={t("homePage.leaderBoard")} />
-      <div className="flex flex-col items-center gap-4 p-4">
+      <div className="flex flex-col items-center gap-4 p-4 bg-black">
         <img
-          src={`${getStaticURL()}/assets/images/best.webp`}
+          src={`/assets/images/best.webp`}
           alt="Vip"
           className="w-[384px] max-w-[80%]"
         />
