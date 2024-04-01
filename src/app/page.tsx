@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Futures & Options Trading for Risk Management - CME Group",
     description: "Futures & Options Trading for Risk Management - CME Group",
-    url: `${getStaticURL()}`,
+    url: `${getStaticURL()}/assets/images/cme.svg`,
     // siteName: "Next.js",
     images: [
       {
@@ -33,9 +33,9 @@ export default function Home() {
         <NextSeo
           title="Futures & Options Trading for Risk Management - CME Group"
           description="Futures & Options Trading for Risk Management - CME Group"
-          canonical={`${getStaticURL()}`}
+          canonical={`${getStaticURL()}/assets/images/cme.svg`}
           openGraph={{
-            url: `${getStaticURL()}`,
+            url: `${getStaticURL()}/assets/images/cme.svg`,
             title: "Futures & Options Trading for Risk Management - CME Group",
             description:
               "Futures & Options Trading for Risk Management - CME Group",
