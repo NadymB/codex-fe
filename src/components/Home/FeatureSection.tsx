@@ -51,7 +51,7 @@ const FeatureSection = () => {
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
         <Link
-          href={"/coming-soon"}
+          href={"/m/leaderboard"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <RankIcon />

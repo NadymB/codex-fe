@@ -367,5 +367,9 @@
     "deposit": "您被禁止存款。请联系管理员以获取支持",
     "withdrawal": "您被禁止提款。请联系管理员以获取支持",
     "notification": "您被禁止接收通知。请联系管理员以获取支持"
+  },
+  "leaderBoardPage": {
+    "profit7day": "7天利润",
+    "income7day": "7天收入"
   }
 }
