@@ -40,7 +40,7 @@ const LeaderBoardPage = () => {
       <GoBack title={t("homePage.leaderBoard")} />
       <div className="flex flex-col items-center gap-4 p-4 bg-black">
         <img
-          src={`/assets/images/best.webp`}
+          src={`${getStaticURL()}/assets/images/best.webp`}
           alt="Vip"
           className="w-[384px] max-w-[80%]"
         />
