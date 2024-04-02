@@ -18,42 +18,17 @@ export class AuthService {
     this.loadAccessToken();
   }
 
-  public async signupEmail(values: {
-    email: string;
+  public async signup(values: {
+    email?: string;
     username: string;
     password: string;
-    managerRefCode: string;
+    managerRefCode?: string;
+    phoneNumber?: string;
   }): Promise<any> {
     const { data } = await restConnector.post("/auth/register", {
-      email: values.email,
-      username: values.username,
-      password: values.password,
-      managerRefCode: values.managerRefCode,
+      ...values,
     });
 
-    if (data.success) {
-      this.setAccessToken(data.data.access_token);
-    }
-    return data;
-  }
-  public async signupWithPhoneNumber(values: {
-    phoneNumber: string;
-    username: string;
-    password: string;
-    managerRefCode: string;
-
-  }): Promise<any> {
-    const { data } = await restConnector.post("/auth/register", {
-      phoneNumber: values.phoneNumber,
-      username: values.username,
-      password: values.password,
-      managerRefCode: values.managerRefCode,
-
-    });
-
-    if (data.success) {
-      this.setAccessToken(data.data.access_token);
-    }
     return data;
   }
 

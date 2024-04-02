@@ -3,14 +3,20 @@ import { Button, TextField, Tooltip, styled } from "@mui/material";
 import { useFormik } from "formik";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
 import { authService } from "@/services/AuthServices";
+import { LOGIN_MODE } from "@/utils/constants";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { useAuth } from "@/hooks/useAuth";
 
 const SignupWithEmail = () => {
   const router = useRouter();
   const [messageFail, setMassageFail] = useState<string>("");
+
+  const { webSocket, register } = useContext(WebSocketCtx);
+  const { setCurrentUser, login, currentUser } = useAuth();
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -38,21 +44,36 @@ const SignupWithEmail = () => {
       email: "",
       username: "",
       password: "",
-      managerRefCode: "",
+      managerRefCode: undefined,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await authService.signupEmail(values);
-        console.log(response);
+        const response = await authService.signup(values);
         if (response.success) {
-          router.push("/m/login");
+          handleLogin(values.password, values.email);
         } else {
           setMassageFail(response.message);
         }
       } catch (error) {}
     },
   });
+
+  const handleLogin = async (password: string, email: string) => {
+    try {
+      const user = await login({
+        password,
+        email,
+        mode: LOGIN_MODE.MAIL,
+      });
+      if (user) {
+        register(user.access_token);
+        router.push("/m");
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
 
   return (
     <form
