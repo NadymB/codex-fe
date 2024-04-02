@@ -38,7 +38,7 @@ const SignupWithEmail = () => {
       email: "",
       username: "",
       password: "",
-      inviteCode: "",
+      managerRefCode: "",
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
@@ -120,9 +120,9 @@ const SignupWithEmail = () => {
         <InputCustom
           className=" bg-transparent w-full text-[16px]"
           label={t("authenticationPage.invitationCode")}
-          name="inviteCode"
+          name="managerRefCode"
           autoComplete="new-email"
-          value={formik.values.inviteCode}
+          value={formik.values.managerRefCode}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           placeholder={`(${t("authenticationPage.optional")})`}

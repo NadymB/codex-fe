@@ -46,7 +46,7 @@ const SignupWithPhoneNumber = () => {
       phoneNumber: "",
       password: "",
       username: "",
-      inviteCode: "",
+      managerRefCode: "",
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
@@ -158,9 +158,9 @@ const SignupWithPhoneNumber = () => {
           <InputCustom
             className=" bg-transparent w-full text-[16px]"
             label={t("authenticationPage.invitationCode")}
-            name="inviteCode"
+            name="managerRefCode"
             autoComplete="new-email"
-            value={formik.values.inviteCode}
+            value={formik.values.managerRefCode}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             placeholder={`(${t("authenticationPage.optional")})`}
