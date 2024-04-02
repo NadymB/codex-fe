@@ -120,7 +120,7 @@ const AssetPage = () => {
         </div>
         <div>
           <h3 className="text-base text-white">{t("assetPage.myAccount")}</h3>
-          <div>
+          <div className="flex flex-col gap-2">
             <AccountItem
               label={t(`assetPage.funds`)}
               amount={

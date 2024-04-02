@@ -1,5 +1,5 @@
 "use client";
-import { Button, TextField, styled } from "@mui/material";
+import { Button, TextField, Tooltip, styled } from "@mui/material";
 import { useFormik } from "formik";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
@@ -111,7 +111,7 @@ const SignupWithEmail = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.password && formik.errors.password ? (
-          <div className="text-[#FF4444]  text-[14px] px-4 py-1">
+          <div className="text-[#FF4444] text-[14px] px-4 py-1">
             {formik.errors.password}
           </div>
         ) : null}
