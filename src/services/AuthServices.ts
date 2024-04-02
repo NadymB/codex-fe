@@ -22,11 +22,13 @@ export class AuthService {
     email: string;
     username: string;
     password: string;
+    managerRefCode: string;
   }): Promise<any> {
     const { data } = await restConnector.post("/auth/register", {
       email: values.email,
       username: values.username,
       password: values.password,
+      managerRefCode: values.managerRefCode,
     });
 
     if (data.success) {
@@ -38,11 +40,15 @@ export class AuthService {
     phoneNumber: string;
     username: string;
     password: string;
+    managerRefCode: string;
+
   }): Promise<any> {
     const { data } = await restConnector.post("/auth/register", {
       phoneNumber: values.phoneNumber,
       username: values.username,
       password: values.password,
+      managerRefCode: values.managerRefCode,
+
     });
 
     if (data.success) {
@@ -143,12 +149,12 @@ export class AuthService {
     }
   }
   public async verifyLv1(values: {
-    certificateType?: CERTIFICATE_TYPE,
-    certificateFront?: string,
-    certificateBack?: string,
-    selfieImage?: string,
-    address?: string,
-    level: number
+    certificateType?: CERTIFICATE_TYPE;
+    certificateFront?: string;
+    certificateBack?: string;
+    selfieImage?: string;
+    address?: string;
+    level: number;
   }): Promise<any> {
     const { data } = await restConnector.post("/users/kyc", {
       certificateType: values.certificateType,
@@ -156,7 +162,7 @@ export class AuthService {
       certificateBack: values.certificateBack,
       selfieImage: values.selfieImage,
       address: values.address,
-      level: values.level
+      level: values.level,
     });
 
     if (data.success) {
@@ -172,8 +178,6 @@ export class AuthService {
     }
     return data;
   }
-  
-
 }
 
 export const authService = new AuthService({ restConnector });
