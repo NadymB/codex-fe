@@ -144,11 +144,10 @@
     "howToMakeADepositContent": "¿Buscas una guía sobre cómo depositar fondos? ¡Te escuchamos! Aquí tienes un proceso detallado para que puedas hacer un depósito fácilmente transfiriendo criptomonedas desde tu billetera o depositando moneda fiduciaria en tu cuenta."
   },
   "vip": {
-    "title": "Programa de privilegios de membresía",
-    "upgradeMyMemberLevelTitle": "actualizar mi nivel de membresía",
-    "upgradeMyMemberLevelContent": "Adaptamos diferentes niveles de membresía según los diferentes usuarios. Puede actualizar su nivel de membresía completando tareas y disfrutar de más privilegios. Haga clic en el botón de abajo para más detalles.",
-    "currentLevelTitle": "nivel actual:",
-    "currentLevelContent": "Aún no eres miembro",
+    "title": "Plan de Privilegio de Membresía VIP",
+    "depositInterestTitle": "Intereses de Depósito durante 24 horas en CME Group",
+    "depositInterestContent": "Para garantizar los derechos de inversión y la seguridad de los activos. El sistema de CME Group puede aceptar depósitos de activos durante 24 horas. Para más detalles, haga clic en el botón a continuación para enviar una solicitud.",
+    "depositInterestSubContent": "El tiempo de depósito de intereses durante la noche se calculará a partir del momento de solicitar el depósito. Recibirá una tasa de interés del 1%. No es posible realizar retiros dentro de las 24 horas.",
     "contactBtn": "Consulta de servicio al cliente de contacto"
   },
   "color": {

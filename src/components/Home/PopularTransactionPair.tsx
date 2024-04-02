@@ -1,6 +1,6 @@
 import { NextIcon } from "@/assets/icons/NextIcon";
 import { priceFeedService } from "@/services/PriceFeedService";
-import { getRnd } from "@/utils/constants";
+import { PRICE_TYPE, getRnd } from "@/utils/constants";
 import {
   convertNumberToFormattedString,
   removeTrailingZeros,
@@ -17,7 +17,7 @@ export const PopularTransactionPair = () => {
   const router = useRouter();
   
   const handleSelectCrypto = (metadata: any) => {
-    const token = metadata.name.split("_")[0].toUpperCase();
+    const token = metadata.type === PRICE_TYPE.CRYPTO ? metadata.name.replace("usdt", "").toUpperCase() : metadata.name.split("_")[0].toUpperCase();
     Cookies.set(
       "crypto",
       JSON.stringify({ token, values: "USDT", type: metadata.type})
@@ -49,7 +49,7 @@ export const PopularTransactionPair = () => {
       <h5 className="text-[24px] text-white">
         {t("homePage.popularTransactionPair")}
       </h5>
-      <div className="flex gap-1 pb-3 overflow-auto ">
+      <div className="flex gap-1 pb-3 overflow-auto">
         {dataCrypto?.length > 0 &&
           dataCrypto.map((item: any) => {
             let priceRandom = getRnd(0, 100000);
@@ -58,7 +58,7 @@ export const PopularTransactionPair = () => {
               <button
                 key={Math.random()}
                 onClick={()=> handleSelectCrypto(item.metadata)}
-                className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+                className="flex flex-col gap-3 min-w-[120px] p-2 rounded-lg bg-[#1c1c1e] overflow-hidden"
               >
                 <div>
                   <span className="text-[#fff]">
@@ -98,7 +98,7 @@ export const PopularTransactionPair = () => {
               <button
                 key={Math.random()}
                 onClick={()=> handleSelectCrypto(item.metadata)}
-                className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+                className="flex flex-col gap-3 min-w-[120px] p-2 rounded-lg bg-[#1c1c1e] overflow-hidden"
               >
                 <div>
                   <span className="text-[#fff]">
@@ -138,7 +138,7 @@ export const PopularTransactionPair = () => {
               <button
                 key={Math.random()}
                 onClick={()=> handleSelectCrypto(item.metadata)}
-                className="flex flex-col gap-3 p-2 rounded-lg bg-[#1c1c1e]"
+                className="flex flex-col gap-3 min-w-[120px] p-2 rounded-lg bg-[#1c1c1e] overflow-hidden"
               >
                 <div>
                   <span className="text-[#fff]">

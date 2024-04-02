@@ -144,11 +144,10 @@
     "howToMakeADepositContent": "Vous cherchez un guide sur la façon de déposer des fonds ? Nous vous entendons ! Voici un processus opérationnel détaillé pour que vous puissiez facilement effectuer un dépôt en transférant des cryptomonnaies depuis votre portefeuille ou en déposant de la monnaie fiduciaire sur votre compte."
   },
   "vip": {
-    "title": "Programme de privilèges d'adhésion",
-    "upgradeMyMemberLevelTitle": "mettre à niveau mon niveau d'adhésion",
-    "upgradeMyMemberLevelContent": "Nous adaptons différents niveaux d'adhésion en fonction des différents utilisateurs. Vous pouvez mettre à niveau votre niveau d'adhésion en effectuant des tâches et profiter de plus de privilèges. Cliquez sur le bouton ci-dessous pour plus de détails.",
-    "currentLevelTitle": "niveau actuel:",
-    "currentLevelContent": "Vous n'êtes pas encore membre",
+    "title": "Plan de Privilège d'Adhésion VIP",
+    "depositInterestTitle": "Intérêts de dépôt sur 24 heures au groupe CME",
+    "depositInterestContent": "Pour garantir les droits d'investissement et la sécurité des actifs. Le système du groupe CME peut accepter les dépôts d'actifs sur 24 heures. Pour plus de détails, cliquez sur le bouton ci-dessous pour soumettre une demande.",
+    "depositInterestSubContent": "Le temps de dépôt d'intérêts de nuit sera calculé à partir du moment de la demande de dépôt. Vous recevrez un taux d'intérêt de 1%. Aucun retrait n'est possible dans les 24 heures.",
     "contactBtn": "Contacter le service client"
   },
   "color": {
