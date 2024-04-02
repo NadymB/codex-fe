@@ -23,6 +23,7 @@ const MarketPage = () => {
       const response = await priceFeedService.getPriceFeed(PRICE_TYPE.CRYPTO);
       if (response.success) {
         const mappedData = response.data.map((item: any, index: number) => {
+          const percentRandom = getRnd(-10, 10);
           return [
             <div
               key={index}
@@ -52,8 +53,13 @@ const MarketPage = () => {
                 onSelect(item.metadata.name.replace("usdt", "").toUpperCase())
               }
             >
-               <Button className="bg-[#54AF71] text-white">
-                <p className="mb-0" suppressHydrationWarning>{`+${getRnd(0, 10)}%`}</p>
+              <Button
+                className={`${Number(percentRandom) > 0 ? "bg-[#55af72]" : "bg-[#dd5350]"} text-white`}
+              >
+                <p className="mb-0" suppressHydrationWarning>
+                  {Number(percentRandom) > 0 && "+"}
+                  {percentRandom}%
+                </p>
               </Button>
             </div>,
           ];
@@ -75,7 +81,7 @@ const MarketPage = () => {
   const onSelect = (token: string) => {
     Cookies.set(
       "crypto",
-      JSON.stringify({ token, values: "USDT", type: PRICE_TYPE.CRYPTO }),
+      JSON.stringify({ token, values: "USDT", type: PRICE_TYPE.CRYPTO })
     );
     router.push(`/m/trade/${token}/USDT`);
   };
