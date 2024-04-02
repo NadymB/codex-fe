@@ -144,11 +144,10 @@
     "howToMakeADepositContent": "Suchen Sie eine Anleitung, wie Sie Geld einzahlen können? Wir hören Sie! Hier ist ein detaillierter Vorgang, damit Sie problemlos eine Einzahlung vornehmen können, indem Sie Kryptowährung von Ihrer Brieftasche übertragen oder Fiatwährung auf Ihr Konto einzahlen."
   },
   "vip": {
-    "title": "Programm für Mitgliedschaftsprivilegien",
-    "upgradeMyMemberLevelTitle": "Upgrade meiner Mitgliedschaftsstufe",
-    "upgradeMyMemberLevelContent": "Wir passen verschiedene Mitgliedschaftsstufen an verschiedene Benutzer an. Sie können Ihre Mitgliedschaftsstufe erhöhen, indem Sie Aufgaben erledigen und mehr Privilegien genießen. Klicken Sie für Details auf die Schaltfläche unten.",
-    "currentLevelTitle": "Aktuelles Level:",
-    "currentLevelContent": "Sie sind noch kein Mitglied",
+    "title": "VIP-Mitgliedschaftsprivilegplan",
+    "depositInterestTitle": "Zinsen über 24 Stunden bei der CME Group einzahlen",
+    "depositInterestContent": "Um Investitionsrechte und die Sicherheit von Vermögenswerten zu gewährleisten. Das CME-Gruppensystem kann Vermögenswerte über 24 Stunden entgegennehmen. Klicken Sie unten auf die Schaltfläche, um eine Anfrage zu stellen.",
+    "depositInterestSubContent": "Die Zeit für die Übernachtungszinsanlage wird ab dem Zeitpunkt der Anforderung der Anlage berechnet. Sie erhalten einen Zinssatz von 1%. Innerhalb von 24 Stunden ist keine Abhebung möglich.",
     "contactBtn": "Wenden Sie sich an die Kundendienstberatung"
   },
   "color": {

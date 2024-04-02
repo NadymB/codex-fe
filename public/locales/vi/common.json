@@ -28,7 +28,7 @@
     "vip": "Cao cấp",
     "leaderBoard": "Xếp hạng",
     "inviteFriends": "Mời bạn bè",
-    "savings": "Tiết kiệm",
+    "savings": "Gửi lãi tiết kiệm",
     "tradingRobot": "Robot giao dịch",
     "mining": "khai thác mỏ"
   },
@@ -145,10 +145,9 @@
   },
   "vip": {
     "title": "Kế hoạch đặc quyền thành viên",
-    "upgradeMyMemberLevelTitle": "Nâng cấp cấp độ thành viên của tôi",
-    "upgradeMyMemberLevelContent": "Chúng tôi điều chỉnh các cấp độ thành viên khác nhau theo người dùng khác nhau. Bạn có thể nâng cấp cấp độ thành viên của mình bằng cách hoàn thành nhiệm vụ và được hưởng nhiều đặc quyền hơn. Để biết chi tiết, nhấp vào nút bên dưới để tham khảo ý kiến.",
-    "currentLevelTitle": "Cấp độ hiện tại:",
-    "currentLevelContent": "Bạn chưa phải là thành viên",
+    "depositInterestTitle": "Gửi lãi suất qua 24h tại CME Group",
+    "depositInterestContent": "Để đảm bảo quyền lợi đầu tư và tài sản an toàn bảo mật. Hệ thống CME Group có thể nhận gửi tài sản qua 24 giờ. Để biết chi tiết, nhấn vào nút bên dưới để đưa ra yêu cầu.",
+    "depositInterestSubContent": "Thời gian gửi lãi qua đêm sẽ được tính từ lúc yêu cầu gửi lãi. Bạn sẽ nhận được 1% lãi suất. Trong 24 giờ không thể rút tiền.",
     "contactBtn": "Liên hệ với tư vấn dịch vụ khách hàng"
   },
   "color": {
