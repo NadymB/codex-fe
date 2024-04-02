@@ -791,3 +791,9 @@ input:-webkit-autofill {
 	text-align: center;
 	padding: 0 10px;
   }
+
+/* TextField fieldset mui */
+
+.css-1x1sqpq-MuiFormControl-root-MuiTextField-root .MuiOutlinedInput-root fieldset {
+	background-color: transparent;
+}

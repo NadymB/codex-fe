@@ -157,13 +157,13 @@ const SignupWithPhoneNumber = () => {
         <div className="bg-[#1D1C22]">
           <InputCustom
             className=" bg-transparent w-full text-[16px]"
-            label="Invite code"
+            label={t("authenticationPage.invitationCode")}
             name="inviteCode"
             autoComplete="new-email"
             value={formik.values.inviteCode}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            placeholder="(Optional)"
+            placeholder={`(${t("authenticationPage.optional")})`}
           />
         </div>
         {messageFail !== "" && (

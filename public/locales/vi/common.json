@@ -161,7 +161,7 @@
     "eUREX": "EUREX",
     "version": "Phiên bản 1.39.2",
     "checkForUpdates": "Kiểm tra cập nhật",
-    "upgradedLatestVersion": "Has been upgraded to the latest version"
+    "upgradedLatestVersion": "Đã được nâng cấp lên phiên bản mới nhất"
   },
   "authenticationPage": {
     "loginTitle": "Vui lòng đăng nhập!",
@@ -244,7 +244,7 @@
       "profit": "Lợi nhuận",
       "minute": "Phút",
       "balance": "Số dư",
-      "price": "Gía",
+      "price": "Giá",
       "quantity:": "Số lượng",
       "noData": "Không có dữ liệu",
       "tradeConfirmation": "Xác nhận giao dịch",
@@ -275,8 +275,8 @@
     },
     "chart": {
       "title": "Biểu đồ",
-      "24HourHigh": "Cao nhát 24 giờ",
-      "24HourLow": "Thấp nhát 24 giờ",
+      "24HourHigh": "Cao nhất 24 giờ",
+      "24HourLow": "Thấp nhất 24 giờ",
       "24HourTurnover": "Doanh thu 24 giờ"
     }
   },
