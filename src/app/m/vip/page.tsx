@@ -17,19 +17,14 @@ const VipPage = () => {
           className="w-[384px] max-w-[80%]"
         />
         <h2 className="text-2xl text-white text-center">
-          {t("vip.upgradeMyMemberLevelTitle")}
+          {t("vip.depositInterestTitle")}
         </h2>
         <span className="text-sm text-[#888] text-center">
-          {t("vip.upgradeMyMemberLevelContent")}
+          {t("vip.depositInterestContent")}
         </span>
         <div className="flex flex-col gap-6 w-full p-4 bg-[#1c1c1e] rounded">
-          <div className="flex gap-2 items-center justify-center text-base text-[#888]">
-            <div className="text-center">
-              {t("vip.currentLevelTitle")}
-            </div>
-            <div className="text-xl text-white text-center">
-              {t("vip.currentLevelContent")}
-            </div>
+          <div className="flex gap-2 items-center justify-center text-xl text-white text-center">
+            {t("vip.depositInterestSubContent")}
           </div>
           <Link
             href={"/m/service"}

@@ -7,7 +7,7 @@ import {
   PRICE_TYPE,
   getStaticURL,
 } from "@/utils/constants";
-import { Button, InputAdornment, Slider, styled } from "@mui/material";
+import { Button, InputAdornment, Slide, Slider, styled } from "@mui/material";
 import { t } from "i18next";
 import { FC, useEffect, useRef, useState } from "react";
 import { InputCustom } from "../InputCustom";
@@ -39,12 +39,13 @@ const CssSlider = styled(Slider)({
 });
 const marks = [
   { value: 0 },
-  { value: 20 },
+  { value: 20},
   { value: 40 },
-  { value: 60 },
-  { value: 80 },
-  { value: 100 },
+  { value: 60},
+  { value: 80},
+  { value: 100},
 ];
+
 function valueLabelFormat(value: number) {
   return `${value}%`;
 }
@@ -122,7 +123,7 @@ const Trading: FC<Props> = ({
             {BET_PERCENTAGE.map((item, index) => (
               <div
                 key={index}
-                className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border cursor-pointer ${percentIsSelected.betPercentage === item.betPercentage && "border-[#3D5AFE]"} `}
+                className={`flex flex-col items-center rounded-lg bg-[#1c1c1e] border-2 cursor-pointer ${percentIsSelected.betPercentage === item.betPercentage ? "border-[#3D5AFE]" : "border-transparent"}`}
                 onClick={() => setPercentIsSelected(item)}
               >
                 <span className="text-[12px] text-[#fff] whitespace-nowrap">
@@ -151,9 +152,9 @@ const Trading: FC<Props> = ({
           </div>
           <div className="px-3 mt-2 ">
             <CssSlider
-              // defaultValue={0}
+              defaultValue={0}
               value={markPercent}
-              step={5}
+              step={null}
               marks={marks}
               min={0}
               onChange={(e) => {
@@ -166,6 +167,7 @@ const Trading: FC<Props> = ({
               }}
               max={100}
               valueLabelFormat={valueLabelFormat}
+              valueLabelDisplay="auto"
             />
           </div>
 

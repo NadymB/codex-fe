@@ -251,10 +251,6 @@ export const ASSET_LIST = [
 
 export const ACCOUNT_LIST = [
   {
-    label: "funds",
-    amount: "0.00",
-  },
-  {
     label: "financialManagement",
     amount: "0.00",
   },
