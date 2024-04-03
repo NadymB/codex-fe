@@ -63,8 +63,7 @@ const FeatureSection = () => {
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
         <a
-          href={"https://www.binance.com/vi/activity/referral/offers"}
-          target="_blank"
+          href={"/m/invite-friend"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
           <ShareIcon />
