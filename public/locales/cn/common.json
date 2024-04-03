@@ -28,7 +28,7 @@
     "vip": "VIP",
     "leaderBoard": "排行榜",
     "inviteFriends": "邀请好友",
-    "savings": "储蓄",
+    "savings": "存款利息",
     "tradingRobot": "交易机器人",
     "mining": "挖矿"
   },
@@ -145,6 +145,14 @@
   },
   "vip": {
     "title": "会员特权计划",
+    "upgradeMyMemberLevelTitle": "升级我的会员等级",
+    "upgradeMyMemberLevelContent": "我们根据不同的用户量身定制不同的会员等级，您可以通过完成任务来升级您的会员等级，享受更多的特权。详情点击下方按钮咨询。",
+    "currentLevelTitle": "当前等级:",
+    "currentLevelContent": "您还不是会员",
+    "contactBtn": "联系客服咨询"
+  },
+  "savings": {
+    "title": "存款利息",
     "depositInterestTitle": "在CME集团24小时内存款利息",
     "depositInterestContent": "为了确保投资权益和资产的安全性。CME集团系统可以接受24小时资产存款。有关详细信息，请点击下方按钮以提交请求。",
     "depositInterestSubContent": "隔夜利息存款时间将从请求存款时开始计算。您将获得1%的利率。24小时内无法取款。",
@@ -381,5 +389,14 @@
   "leaderBoardPage": {
     "profit7day": "7天利润",
     "income7day": "7天收入"
-  }
+  },
+  "invitePage": {
+    "title": "介绍朋友",
+    "content": "每笔交易获得100美元的信用费。",
+    "sub-content": "只剩下几个步骤，您就可以获得奖励。",
+    "howToInvite": "如何介绍朋友",
+    "step1": "与朋友分享链接",
+    "step2": "邀请朋友注册并存入超过50美元",
+    "step3": "每人获得价值100美元的免费交易凭证"
+ }
 }

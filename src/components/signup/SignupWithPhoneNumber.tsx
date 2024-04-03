@@ -1,15 +1,17 @@
 "use client";
 import { authService } from "@/services/AuthServices";
 import { geolocationService } from "@/services/GeolocationService";
-import { COUNTRIES } from "@/utils/constants";
+import { COUNTRIES, LOGIN_MODE } from "@/utils/constants";
 import { Button } from "@mui/material";
 import { useFormik } from "formik";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
 import SelectCountries from "../SelectCountries";
+import { useAuth } from "@/hooks/useAuth";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 
 interface country {
   code: string;
@@ -20,6 +22,8 @@ interface country {
 const SignupWithPhoneNumber = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const { webSocket, register } = useContext(WebSocketCtx);
+  const { setCurrentUser, login, currentUser } = useAuth();
   const [messageFail, setMassageFail] = useState<string>("");
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
@@ -46,17 +50,20 @@ const SignupWithPhoneNumber = () => {
       phoneNumber: "",
       password: "",
       username: "",
-      inviteCode: "",
+      managerRefCode: undefined,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await authService.signupWithPhoneNumber({
+        const response = await authService.signup({
           ...values,
           phoneNumber: currentCountry.phone + values.phoneNumber,
         });
         if (response.success) {
-          router.push("/m/login");
+          handleLogin(
+            values.password,
+            currentCountry.phone + values.phoneNumber
+          );
         } else {
           setMassageFail(response.message);
         }
@@ -72,6 +79,21 @@ const SignupWithPhoneNumber = () => {
         (item) => item.code.toLowerCase() === locationData.country.toLowerCase()
       );
       setCurrentCountry(country);
+    }
+  };
+  const handleLogin = async (password: string, phoneNumber: string) => {
+    try {
+      const user = await login({
+        password,
+        phoneNumber,
+        mode: LOGIN_MODE.PHONE_NUMBER,
+      });
+      if (user) {
+        register(user.access_token);
+        router.push("/m");
+      }
+    } catch (error) {
+      console.log("error", error);
     }
   };
   useEffect(() => {
@@ -140,7 +162,7 @@ const SignupWithPhoneNumber = () => {
               formik.touched.password && formik.errors.password ? true : false
             }
             className="text-[#fff] bg-transparent w-full text-[16px]"
-            label={t("authenticationPage.loginPassword")}
+            label={t("authenticationPage.setPassword")}
             name="password"
             type="password"
             autoComplete="new-password"
@@ -158,9 +180,9 @@ const SignupWithPhoneNumber = () => {
           <InputCustom
             className=" bg-transparent w-full text-[16px]"
             label={t("authenticationPage.invitationCode")}
-            name="inviteCode"
+            name="managerRefCode"
             autoComplete="new-email"
-            value={formik.values.inviteCode}
+            value={formik.values.managerRefCode}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             placeholder={`(${t("authenticationPage.optional")})`}

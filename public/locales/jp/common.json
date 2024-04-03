@@ -28,7 +28,7 @@
     "vip": "VIP",
     "leaderBoard": "ランキング",
     "inviteFriends": "友達を招待",
-    "savings": "節約",
+    "savings": "貯金利子",
     "tradingRobot": "トレーディングロボット",
     "mining": "マイニング"
   },
@@ -144,7 +144,15 @@
     "howToMakeADepositContent": "資金を入金する方法についてのガイドをお探しですか？ 了解しました！ 以下に、ウォレットからの暗号通貨の送金や法定通貨の口座への入金により、簡単に入金できるように、詳細な操作手順を示します。"
   },
   "vip": {
-    "title": "メンバー特権プラン",
+    "title": "メンバー特権計画",
+    "upgradeMyMemberLevelTitle": "メンバーレベルをアップグレードします",
+    "upgradeMyMemberLevelContent": "さまざまなユーザーに応じてさまざまなメンバーシップレベルを調整します。タスクを完了することでメンバーシップレベルをアップグレードし、より多くの特権を享受できます。 詳細については、以下のボタンをクリックして相談してください。",
+    "currentLevelTitle": "現在のレベル:",
+    "currentLevelContent": "ではありません",
+    "contactBtn": "カスタマーサービスの相談に連絡してください"
+  },
+  "savings": {
+    "title": "貯金利子",
     "depositInterestTitle": "CMEグループでの24時間以内の利息入金",
     "depositInterestContent": "投資権利と資産の安全性を確保するために。CMEグループシステムは24時間以内に資産の預け入れを受け付けることができます。詳細については、以下のボタンをクリックしてリクエストを送信してください。",
     "depositInterestSubContent": "夜間の利息入金時間は、預け入れを要求した時点から計算されます。1%の利息率が適用されます。24時間以内に引き出しはできません。",
@@ -362,13 +370,13 @@
     "previousVerifyRequestNotApproved": "以前の検証リクエストは承認されていません",
     "proofOfAddressIsRequired": "住所の証明が必要です",
     "requiredEmailOrPhoneNumber": "メールアドレスまたは電話番号が必要です",
-"tradeCompleted": "取引完了",
-"tradeSettled": "取引決済",
-"unauthorized": "未承認",
-"usernameAlreadyExists": "ユーザー名がすでに存在します",
-"invalidPin": "セキュリティパスワードが間違っています",
-"userPinNotSet": "ユーザーはまだPINを設定していません",
-"pinAlreadySet": "PINはまだ設定されていません"
+    "tradeCompleted": "取引完了",
+    "tradeSettled": "取引決済",
+    "unauthorized": "未承認",
+    "usernameAlreadyExists": "ユーザー名がすでに存在します",
+    "invalidPin": "セキュリティパスワードが間違っています",
+    "userPinNotSet": "ユーザーはまだPINを設定していません",
+    "pinAlreadySet": "PINはまだ設定されていません"
   },
   "permissionDenied": {
     "trade": "取引がブロックされています。サポートを受けるには管理者に連絡してください。",
@@ -381,5 +389,14 @@
   "leaderBoardPage": {
     "profit7day": "7日間の利益",
     "income7day": "7日間の収入"
+  },
+  "invitePage": {
+    "title": "友人を紹介する",
+    "content": "取引ごとに100 USDTのクレジット手数料を受け取ります。",
+    "sub-content": "報酬を受け取るためには、あとわずかな手順が残っています。",
+    "howToInvite": "友人を紹介する方法",
+    "step1": "友人とリンクを共有する",
+    "step2": "友人に50米ドル以上を入金して登録するように招待する",
+    "step3": "各人には、100 USDT相当の無料取引クーポンが付与されます"
   }
 }

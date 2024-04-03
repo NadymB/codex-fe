@@ -28,7 +28,7 @@
     "vip": "VIP",
     "leaderBoard": "Leaderboard",
     "inviteFriends": "Invite friends",
-    "savings": "Savings",
+    "savings": "Savings interest",
     "tradingRobot": "Trading robot",
     "mining": "Mining"
   },
@@ -145,10 +145,18 @@
   },
   "vip": {
     "title": "VIP Membership Privilege Plan",
+    "upgradeMyMemberLevelTitle": "Upgrade my member level",
+    "upgradeMyMemberLevelContent": "We tailor different membership levels according to different users. You can upgrade your membership level by completing the task and enjoy more privileges. For details, click the button below for consultation.",
+    "currentLevelTitle": "Current level:",
+    "currentLevelContent": "You are not yet a member",
+    "contactBtn": "Contact customer service consultation"
+  },
+  "savings": {
+    "title": "Savings interest",
     "depositInterestTitle": "Deposit Interest over 24 hours at CME Group",
     "depositInterestContent": "To ensure investment rights and the security of assets. The CME Group system can accept asset deposits over 24 hours. For details, click the button below to submit a request.",
     "depositInterestSubContent": "The overnight interest deposit time will be calculated from the time of requesting the deposit. You will receive a 1% interest rate. Withdrawal is not possible within 24 hours.",
-    "contactBtn": "Contact customer service consultation"
+    "contactBtn": "Contact customer service consultation"  
   },
   "color": {
     "title": "Colors of ups and downs",
@@ -381,5 +389,14 @@
   "leaderBoardPage": {
     "profit7day": "Profit 7 days",
     "income7day": "Income 7 days"
-  }
+  },
+  "invitePage": {
+    "title": "Invite Friends",
+    "content": "Receive 100 USDT credit fee for each transaction.",
+    "sub-content": "Just a few more steps and you'll receive your reward.",
+    "howToInvite": "How to Invite Friends",
+    "step1": "Share the link with your friends",
+    "step2": "Invite friends to sign up and deposit over 50 USD",
+    "step3": "Each person receives a voucher for a free transaction of 100 USDT"
+ }
 }

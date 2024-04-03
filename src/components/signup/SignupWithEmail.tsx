@@ -1,16 +1,22 @@
 "use client";
-import { Button, TextField, styled } from "@mui/material";
+import { Button, TextField, Tooltip, styled } from "@mui/material";
 import { useFormik } from "formik";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
 import { authService } from "@/services/AuthServices";
+import { LOGIN_MODE } from "@/utils/constants";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { useAuth } from "@/hooks/useAuth";
 
 const SignupWithEmail = () => {
   const router = useRouter();
   const [messageFail, setMassageFail] = useState<string>("");
+
+  const { webSocket, register } = useContext(WebSocketCtx);
+  const { setCurrentUser, login, currentUser } = useAuth();
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -38,21 +44,36 @@ const SignupWithEmail = () => {
       email: "",
       username: "",
       password: "",
-      inviteCode: "",
+      managerRefCode: undefined,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        const response = await authService.signupEmail(values);
-        console.log(response);
+        const response = await authService.signup(values);
         if (response.success) {
-          router.push("/m/login");
+          handleLogin(values.password, values.email);
         } else {
           setMassageFail(response.message);
         }
       } catch (error) {}
     },
   });
+
+  const handleLogin = async (password: string, email: string) => {
+    try {
+      const user = await login({
+        password,
+        email,
+        mode: LOGIN_MODE.MAIL,
+      });
+      if (user) {
+        register(user.access_token);
+        router.push("/m");
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
 
   return (
     <form
@@ -111,7 +132,7 @@ const SignupWithEmail = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.password && formik.errors.password ? (
-          <div className="text-[#FF4444]  text-[14px] px-4 py-1">
+          <div className="text-[#FF4444] text-[14px] px-4 py-1">
             {formik.errors.password}
           </div>
         ) : null}
@@ -120,9 +141,9 @@ const SignupWithEmail = () => {
         <InputCustom
           className=" bg-transparent w-full text-[16px]"
           label={t("authenticationPage.invitationCode")}
-          name="inviteCode"
+          name="managerRefCode"
           autoComplete="new-email"
-          value={formik.values.inviteCode}
+          value={formik.values.managerRefCode}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           placeholder={`(${t("authenticationPage.optional")})`}
