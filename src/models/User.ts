@@ -23,7 +23,8 @@ export type Account = {
   isPinSet: boolean;
   configMetadata?: {
     permissions: PERMISSION_REQUIRED [];
-  }
+  },
+  vipLevel?: number;
 };
 export type DataLogin = {
   access_token: string;

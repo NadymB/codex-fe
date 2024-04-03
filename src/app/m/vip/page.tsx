@@ -5,8 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { GoBack } from "@/components/layouts/GoBack";
 import { getStaticURL } from "@/utils/constants";
+import { useAuth } from "@/hooks/useAuth";
 
 const VipPage = () => {
+  const { currentUser } = useAuth();
+
   return (
     <div className="bg-black min-h-screen">
       <GoBack title={t("vip.title")} />
@@ -26,7 +29,9 @@ const VipPage = () => {
           <div className="flex gap-2 items-center justify-center text-base text-[#888]">
             <div className="text-center">{t("vip.currentLevelTitle")}</div>
             <div className="text-xl text-white text-center">
-              {t("vip.currentLevelContent")}
+              {!!currentUser?.vipLevel
+                ? currentUser?.vipLevel
+                : t("vip.currentLevelContent")}
             </div>
           </div>
           <Link
