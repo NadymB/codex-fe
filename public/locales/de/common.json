@@ -212,12 +212,14 @@
     "amount": "die Summe",
     "currentBalance": "aktuelles Guthaben:",
     "allBalance": "volles Gleichgewicht",
+    "manageTheWithdrawalPassword": "Auszahlungskennwort verwalten",
     "managementOfWithdrawal": "Auszahlungsmethoden verwalten",
     "fees": "Bearbeitungsgebühr",
     "amountReceived": "Rechnungsbetrag",
     "confirm": "bestätigen",
     "msgAccountError": "Bitte füllen Sie das Empfängerkonto aus",
-    "msgAmountError": "Der Mindestbetrag beträgt 1"
+    "msgAmountError": "Der Mindestbetrag beträgt 1",
+    "securityCode": "Sicherheitscode"
   },
   "order": {
     "title": "Befehl",
@@ -237,9 +239,15 @@
   },
   "securityCode": {
     "title": "Legen Sie ein sicheres Passwort fest",
+    "oldPassword": "Altes Passwort",
     "newPassword": "Neues Kennwort",
-    "newPasswordInvalidError": "6-30 Zeichen",
-    "confirmBtn": "bestätigen"
+    "oldPasswordRequiredError": "Bitte geben Sie das alte Passwort ein",
+    "newPasswordRequiredError": "Bitte geben Sie das neue Passwort ein",
+    "invalidError": "6-10 Zeichen",
+    "pinIsNumberError": "PIN muss eine Zahl sein",
+    "confirmBtn": "bestätigen",
+    "createdPinSuccessfully": "PIN-Code erfolgreich erstellt",
+    "changedPinSuccessfully": "PIN-Code erfolgreich geändert"
   },
   "tradePage": {
     "position": "Position",
@@ -361,11 +369,15 @@
     "phoneNumberAlreadyExists": "Telefonnummer existiert bereits",
     "previousVerifyRequestNotApproved": "Vorherige Überprüfungsanfrage nicht genehmigt",
     "proofOfAddressIsRequired": "Adressnachweis erforderlich",
-    "requiredEmailOrPhoneNumber": "E-Mail-Adresse oder Telefonnummer erforderlich",
+    "requiredEmailOrPhoneNumber": "E-Mail oder Telefonnummer erforderlich",
     "tradeCompleted": "Handel abgeschlossen",
     "tradeSettled": "Handel abgewickelt",
-    "unauthorized": "Unbefugt",
-    "usernameAlreadyExists": "Benutzername bereits vorhanden"
+    "unauthorized": "Nicht autorisiert",
+    "usernameAlreadyExists": "Benutzername existiert bereits",
+    "invalidPin": "Das Sicherheitspasswort ist falsch",
+    "userPinNotSet": "Benutzer hat noch keinen PIN eingerichtet",
+    "pinAlreadySet": "PIN wurde noch nicht festgelegt",
+    "withdrawalAccountNotApproved": "Das Zahlungskonto wurde noch nicht genehmigt"
   },
   "permissionDenied": {
     "trade": "Sie sind vom Handel ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung",

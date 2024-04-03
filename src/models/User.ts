@@ -20,6 +20,7 @@ export type Account = {
   bankSubCode?: string;
   bankNumber?: string;
   status: string;
+  isPinSet: boolean;
   configMetadata?: {
     permissions: PERMISSION_REQUIRED [];
   }
