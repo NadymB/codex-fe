@@ -62,7 +62,7 @@ const FeatureSection = () => {
       </div>
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
-        <a
+        <Link
           href={"/m/invite-friend"}
           className="p-2 rounded hover:bg-[#1c1c1e] flex flex-col items-center justify-start gap-1"
         >
@@ -70,7 +70,7 @@ const FeatureSection = () => {
           <span className="text-[#fff] font-medium text-center">
             {t("homePage.inviteFriends")}
           </span>
-        </a>
+        </Link>
       </div>
       {/*  */}
       <div className="flex item-center justify-center pt-2 cursor-pointer">
