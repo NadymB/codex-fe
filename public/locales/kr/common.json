@@ -28,7 +28,7 @@
     "vip": "요인",
     "leaderBoard": "리더보드",
     "inviteFriends": "친구를 초대",
-    "savings": "저금",
+    "savings": "적금 이자",
     "tradingRobot": "거래 로봇",
     "mining": "채광"
   },
@@ -144,6 +144,14 @@
     "howToMakeADepositContent": "자금을 예금하는 방법에 대한 안내서를 찾고 계신가요? 우리가 듣고 있습니다! 여기에는 암호화폐를 지갑에서 이체하거나 당신의 계정에 법정 통화를 예금하는 것으로 쉽게 예금을 할 수 있는 상세한 운영 절차가 있습니다."
   },
   "vip": {
+    "title": "회원 특전 프로그램",
+    "upgradeMyMemberLevelTitle": "내 회원 등급 업그레이드",
+    "upgradeMyMemberLevelContent": "우리는 다양한 사용자에 따라 다양한 회원 등급을 조정합니다.작업을 완료하여 회원 등급을 업그레이드하고 더 많은 특권을 누릴 수 있습니다. 자세한 내용은 아래 버튼을 클릭하세요.",
+    "currentLevelTitle": "현재 레벨:",
+    "currentLevelContent": "아직 회원이 아닙니다.",
+    "contactBtn": "고객센터 상담문의"
+  },
+  "savings": {
     "title": "회원 특전 계획",
     "depositInterestTitle": "CME 그룹에서 24시간 이내 예금 이자",
     "depositInterestContent": "투자 권리와 자산의 안전을 보장하기 위해. CME 그룹 시스템은 24시간 이내에 자산 예금을 수락할 수 있습니다. 자세한 내용은 아래 버튼을 클릭하여 요청을 제출하십시오.",
@@ -352,7 +360,12 @@
     "permissionDenied": "권한 거부됨",
     "phoneNumberAlreadyExists": "전화 번호가 이미 존재함",
     "previousVerifyRequestNotApproved": "이전 확인 요청이 승인되지 않음",
-    "proofOfAddressIsRequired": "주소 확인이 필요함"
+    "proofOfAddressIsRequired": "주소 확인이 필요함",
+    "requiredEmailOrPhoneNumber": "이메일 또는 전화 번호가 필요합니다",
+    "tradeCompleted": "거래 완료",
+    "tradeSettled": "거래 정산",
+    "unauthorized": "승인되지 않음",
+    "usernameAlreadyExists": "사용자 이름이 이미 존재합니다"
   },
   "permissionDenied": {
     "trade": "거래가 차단되었습니다. 지원을 받으려면 관리자에게 문의하십시오.",

@@ -28,7 +28,7 @@
     "vip": "VIP",
     "leaderBoard": "ランキング",
     "inviteFriends": "友達を招待",
-    "savings": "節約",
+    "savings": "貯金利子",
     "tradingRobot": "トレーディングロボット",
     "mining": "マイニング"
   },
@@ -144,7 +144,15 @@
     "howToMakeADepositContent": "資金を入金する方法についてのガイドをお探しですか？ 了解しました！ 以下に、ウォレットからの暗号通貨の送金や法定通貨の口座への入金により、簡単に入金できるように、詳細な操作手順を示します。"
   },
   "vip": {
-    "title": "メンバー特権プラン",
+    "title": "メンバー特権計画",
+    "upgradeMyMemberLevelTitle": "メンバーレベルをアップグレードします",
+    "upgradeMyMemberLevelContent": "さまざまなユーザーに応じてさまざまなメンバーシップレベルを調整します。タスクを完了することでメンバーシップレベルをアップグレードし、より多くの特権を享受できます。 詳細については、以下のボタンをクリックして相談してください。",
+    "currentLevelTitle": "現在のレベル:",
+    "currentLevelContent": "ではありません",
+    "contactBtn": "カスタマーサービスの相談に連絡してください"
+  },
+  "savings": {
+    "title": "貯金利子",
     "depositInterestTitle": "CMEグループでの24時間以内の利息入金",
     "depositInterestContent": "投資権利と資産の安全性を確保するために。CMEグループシステムは24時間以内に資産の預け入れを受け付けることができます。詳細については、以下のボタンをクリックしてリクエストを送信してください。",
     "depositInterestSubContent": "夜間の利息入金時間は、預け入れを要求した時点から計算されます。1%の利息率が適用されます。24時間以内に引き出しはできません。",
@@ -352,7 +360,12 @@
     "permissionDenied": "アクセスが拒否されました",
     "phoneNumberAlreadyExists": "電話番号はすでに存在します",
     "previousVerifyRequestNotApproved": "以前の検証リクエストは承認されていません",
-    "proofOfAddressIsRequired": "住所の証明が必要です"
+    "proofOfAddressIsRequired": "住所の証明が必要です",
+    "requiredEmailOrPhoneNumber": "必要なメールアドレスまたは電話番号",
+    "tradeCompleted": "取引完了",
+    "tradeSettled": "取引決済",
+    "unauthorized": "不正な",
+    "usernameAlreadyExists": "ユーザー名はすでに存在します"
   },
   "permissionDenied": {
     "trade": "取引がブロックされています。サポートを受けるには管理者に連絡してください。",
