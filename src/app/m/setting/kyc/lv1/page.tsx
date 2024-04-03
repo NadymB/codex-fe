@@ -214,7 +214,7 @@ const KycPageLv1 = () => {
                     }}
                   />
                 }
-                label="ID card"
+                label={t("kycPage.idCard")}
                 sx={{ color: "white" }}
               />
               <FormControlLabel
@@ -227,7 +227,7 @@ const KycPageLv1 = () => {
                     }}
                   />
                 }
-                label="Passport"
+                label={t("kycPage.passport")}
                 sx={{ color: "white" }}
               />
               <FormControlLabel
@@ -240,7 +240,7 @@ const KycPageLv1 = () => {
                     }}
                   />
                 }
-                label="Drving license"
+                label={t("kycPage.drivingLicense")}
                 sx={{ color: "white" }}
               />
               <FormControlLabel
@@ -253,7 +253,7 @@ const KycPageLv1 = () => {
                     }}
                   />
                 }
-                label="Residence permit"
+                label={t("kycPage.residencePermit")}
                 sx={{ color: "white" }}
               />
             </RadioGroup>

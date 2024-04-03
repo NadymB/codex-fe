@@ -219,8 +219,7 @@
     "confirm": "Confirm",
     "msgAccountError": "Please fill in the receiving account",
     "msgAmountError": "The minimum amount is 1",
-    "securityCode": "Security Code",
-    "withdrawalAccountNotApproved": "The payment account has not passed the review"
+    "securityCode": "Security Code"
   },
   "order": {
     "title": "Order",
@@ -377,7 +376,8 @@
     "usernameAlreadyExists": "Username Already Exists",
     "invalidPin": "The security password is incorrect",
     "userPinNotSet": "User has not yet setup pin",
-    "pinAlreadySet": "Pin not yet set"
+    "pinAlreadySet": "Pin not yet set",
+    "withdrawalAccountNotApproved": "The payment account has not passed the review"
   },
   "permissionDenied": {
     "trade": "You have been denied trading. Please contact the administrator for assistance.",
