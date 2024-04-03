@@ -204,13 +204,14 @@
     "amount": "Số lượng",
     "currentBalance": "Số dư hiện tại:",
     "allBalance": "Tất cả sự cân bằng",
-    "manageTheWithdrawalPassword": "Manage the withdrawal password",
+    "manageTheWithdrawalPassword": "Quản lý mật khẩu rút tiền",
     "managementOfWithdrawal": "Quản lý rút tiền",
     "fees": "Phí xử lý",
     "amountReceived": "Số tiền tài khoản",
     "confirm": "Xác nhận",
     "msgAccountError": "Vui lòng điền vào tài khoản nhận",
-    "msgAmountError": "Số tiền tối thiểu là 1"
+    "msgAmountError": "Số tiền tối thiểu là 1",
+    "securityCode": "Security Code"
   },
   "order": {
     "title": "Đặt hàng",
@@ -230,9 +231,15 @@
   },
   "securityCode": {
     "title": "Đặt mật khẩu bảo mật",
+    "oldPassword": "Mật khẩu cũ",
     "newPassword": "Mật khẩu mới",
-    "newPasswordInvalidError": "8-20 các ký tự riêng lẻ",
-    "confirmBtn": "Xác nhận"
+    "oldPasswordRequiredError": "Vui lòng nhập mật khẩu cũ",
+    "newPasswordRequiredError": "Vui lòng nhập mật khẩu mới",
+    "invalidError": "6-10 ký tự",
+    "pinIsNumberError": "PIN phải là số",
+    "confirmBtn": "Xác nhận",
+    "createdPinSuccessfully": "Tạo mã PIN thành công",
+    "changedPinSuccessfully": "Đổi mã PIN thành công"
   },
   "tradePage": {
     "position": "Vị thế",
@@ -358,7 +365,10 @@
     "tradeCompleted": "Giao dịch hoàn thành",
     "tradeSettled": "Giao dịch giải quyết",
     "unauthorized": "Không có quyền",
-    "usernameAlreadyExists": "Tên người dùng đã tồn tại"
+    "usernameAlreadyExists": "Tên người dùng đã tồn tại",
+    "invalidPin": "Mã bảo mật không đúng",
+    "userPinNotSet": "Người dùng chưa thiết lập mã PIN",
+    "pinAlreadySet": "Mã PIN chưa được thiết lập"
   },
   "permissionDenied": {
     "trade": "Bạn đã bị chặn giao dịch. Vui lòng liên hệ quản trị viên để được hỗ trợ",

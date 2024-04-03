@@ -1,6 +1,7 @@
 import { TabOptions } from "@/components/layouts/Tab";
 import { t } from "i18next";
 
+export const WithdrawalProfit = 0.02;
 export const getStaticURL = () => process.env.NEXT_PUBLIC_STATIC_URL;
 export const OptionsLanguage = [
   {
@@ -1361,4 +1362,7 @@ export const ERR_CODE = {
   INVALID_WITHDRAW_TYPE: 'INVALID_WITHDRAW_TYPE'.toLowerCase(),
   NOT_ENOUGH_WITHDRAWAL_ACCOUNT_INFORMATION: 'NOT_ENOUGH_WITHDRAWAL_ACCOUNT_INFORMATION'.toLowerCase(),
   PERMISSION_DENIED: 'PERMISSION_DENIED'.toLowerCase(),
+  INVALID_PIN: 'INVALID_PIN'.toLowerCase(),
+  USER_PIN_NOT_SET: 'USER_PIN_NOT_SET'.toLowerCase(),
+  PIN_ALREADY_SET: 'PIN_ALREADY_SET'.toLowerCase(),
 };

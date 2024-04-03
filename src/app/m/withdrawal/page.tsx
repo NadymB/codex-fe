@@ -3,16 +3,18 @@
 import { FormControlCustom } from "@/components/FormControlCustom";
 import { GoBack } from "@/components/layouts/GoBack";
 import { useAuth } from "@/hooks/useAuth";
+import { onToast } from "@/hooks/useToast";
 import { TWithdrawalRequest } from "@/models/Transaction";
 import { paymentService } from "@/services/PaymentService";
 import { transactionService } from "@/services/TransactionService";
-import { getStaticURL } from "@/utils/constants";
+import { TRADE_CURRENCY, WithdrawalProfit, getStaticURL } from "@/utils/constants";
+import { errorMsg } from "@/utils/errorMsg";
 import { formatNumberToCurrency } from "@/utils/formatNumber";
 import { InputLabel, MenuItem, Select } from "@mui/material";
 import { useFormik } from "formik";
 import { t } from "i18next";
-import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import * as Yup from "yup";
 
@@ -23,8 +25,8 @@ const WithdrawPage = () => {
     ? `${userWithdrawalAccountInfo?.bankNumber?.slice(0, 1)}*******${userWithdrawalAccountInfo?.bankNumber?.slice(userWithdrawalAccountInfo?.bankNumber?.length - 1, userWithdrawalAccountInfo?.bankNumber?.length)} (${userWithdrawalAccountInfo?.bankName})`
     : "";
   const { fetchUserBalance, currentBalance, currentUser } = useAuth();
-  console.log("userWithdrawalAccountInfo", userWithdrawalAccountInfo);
   const confirmRef = useRef(null);
+  const router = useRouter();
 
   useEffect(() => {
     if (currentUser) {
@@ -52,7 +54,12 @@ const WithdrawPage = () => {
   const createdWithdrawalResquest = async (values: TWithdrawalRequest) => {
     try {
       const response = await transactionService.createWithdrawalRequest(values);
-      console.log("response");
+      if(response.success && response.data) {
+        onToast("Withdrawal Successfully", "success");
+        router.push("/m/billing");
+      } else {
+        onToast(t(`errorMessages.${errorMsg(response.code)}`), "error");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +87,7 @@ const WithdrawPage = () => {
   const handleConfirm = () => {
     createdWithdrawalResquest({
       amount: Number(formik.values.amount),
-      currency: "usd",
+      currency: TRADE_CURRENCY.USD,
       pin: formik.values.pin,
       userAccountId: userWithdrawalAccountInfo?.id,
     });
@@ -175,11 +182,11 @@ const WithdrawPage = () => {
               <input
                 id="pin"
                 name="pin"
-                type="string"
+                type="password"
                 className="w-full bg-[#1d1c22] rounded p-4 text-base text-white placeholder:text-[#888]"
                 value={formik.values.pin}
                 onChange={formik.handleChange}
-                placeholder={t("withdraw.amount")}
+                placeholder={t("withdraw.securityCode")}
                 min={0}
                 max={currentBalance}
                 step={0.001}
@@ -194,7 +201,7 @@ const WithdrawPage = () => {
           {userWithdrawalAccountInfo && (
             <Link
               href={"/m/setting/password/security"}
-              className="w-full py-[6px] px-4 bg-[#3d5afe] hover:bg-[#3d5afe80] text-sm font-medium text-black text-center rounded"
+              className="w-full py-[6px] px-4 bg-[#3d5afe] hover:bg-[#2a3eb1] text-sm font-medium text-white text-center rounded"
             >
               {t("withdraw.manageTheWithdrawalPassword")}
             </Link>
@@ -209,15 +216,15 @@ const WithdrawPage = () => {
         <div id="confirm-withdraw" className="fixed bottom-0 left-0 flex flex-col gap-2 w-full pb-10 p-4 bg-black">
           <div className="w-full flex justify-between text-base text-white">
             <span className="text-[#888]">{t("withdraw.fees")}</span>
-            <span>0.00 USDT</span>
+            <span>{formatNumberToCurrency(Number(formik.values.amount) * WithdrawalProfit)} USDT</span>
           </div>
           <div className="w-full flex justify-between text-sm text-white">
             <span className="text-[#888]">{t("withdraw.amountReceived")}</span>
-            <span>{formatNumberToCurrency(Number(formik.values.amount))} USDT</span>
+            <span>{formatNumberToCurrency(Number(formik.values.amount) * (1 - WithdrawalProfit))} USDT</span>
           </div>
           <button
             type="submit"
-            className={`w-full py-[6px] px-4 rounded ${formik.values.amount ? "bg-[#3d5afe] text-white" : "bg-[#343338] text-[#676769]"}`}
+            className={`w-full py-[6px] px-4 rounded ${formik.values.amount ? "bg-[#3d5afe] hover:bg-[#2a3eb1] text-white" : "bg-[#343338] text-[#676769]"}`}
             style={{backgroundColor: formik.values.amount ? "#3d5afe" : "#343338"}}
             onClick={handleConfirm}
           >

@@ -204,12 +204,14 @@
     "amount": "राशि",
     "currentBalance": "वर्तमान शेष:",
     "allBalance": "सभी शेष",
+    "manageTheWithdrawalPassword": "वापसी पासवर्ड का प्रबंधन करें",
     "managementOfWithdrawal": "निकास का प्रबंधन",
     "fees": "शुल्क",
     "amountReceived": "प्राप्त राशि",
     "confirm": "पुष्टि कर",
     "msgAccountError": "कृपया प्राप्ति खाता भरें",
-    "msgAmountError": "न्यूनतम राशि 1 है"
+    "msgAmountError": "न्यूनतम राशि 1 है",
+    "securityCode": "सुरक्षा कोड"
   },
   "order": {
     "title": "आदेश",
@@ -229,9 +231,15 @@
   },
   "securityCode": {
     "title": "एक सुरक्षा पासवर्ड सेट करें",
+    "oldPassword": "पुराना पासवर्ड",
     "newPassword": "नया पासवर्ड",
-    "newPasswordInvalidError": "6-20 व्यक्तिगत वर्ण",
-    "confirmBtn": "पुष्टि"
+    "oldPasswordRequiredError": "कृपया पुराना पासवर्ड डालें",
+    "newPasswordRequiredError": "कृपया नया पासवर्ड डालें",
+    "invalidError": "6-10 व्यक्तिगत वर्ण",
+    "pinIsNumberError": "पिन को नंबर होना चाहिए",
+    "confirmBtn": "पुष्टि",
+    "createdPinSuccessfully": "पिन कोड सफलतापूर्वक बनाया गया",
+    "changedPinSuccessfully": "पिन कोड सफलतापूर्वक बदल दिया गया"
   },
   "tradePage": {
     "position": "स्थिति",
@@ -352,7 +360,15 @@
     "permissionDenied": "अनुमति निषेध",
     "phoneNumberAlreadyExists": "फ़ोन नंबर पहले से मौजूद है",
     "previousVerifyRequestNotApproved": "पिछला सत्यापन अनुरोध मंजूर नहीं है",
-    "proofOfAddressIsRequired": "पते का सबूत आवश्यक है"
+    "proofOfAddressIsRequired": "पते का सबूत आवश्यक है",
+    "requiredEmailOrPhoneNumber": "आवश्यक ईमेल या फ़ोन नंबर",
+    "tradeCompleted": "व्यापार पूरा हुआ",
+    "tradeSettled": "व्यापार ठीक किया गया",
+    "unauthorized": "अनधिकृत",
+    "usernameAlreadyExists": "उपयोगकर्ता नाम पहले से मौजूद है",
+    "invalidPin": "सुरक्षा पासवर्ड गलत है",
+    "userPinNotSet": "उपयोगकर्ता ने अभी तक पिन सेट नहीं किया है",
+    "pinAlreadySet": "पिन अभी तक सेट नहीं किया गया है"
   },
   "permissionDenied": {
     "trade": "आपको ट्रेडिंग करने से निषेधित किया गया है। सहायता के लिए व्यवस्थापक से संपर्क करें",

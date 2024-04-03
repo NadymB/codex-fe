@@ -204,12 +204,14 @@
     "amount": "額",
     "currentBalance": "経常収支:",
     "allBalance": "すべてのバランス",
+    "manageTheWithdrawalPassword": "引き出しパスワードを管理します",
     "managementOfWithdrawal": "撤退の管理",
     "fees": "手数料",
     "amountReceived": "アカウントの金額",
     "confirm": "確認",
     "msgAccountError": "受信アカウントに記入してください",
-    "msgAmountError": "最小金額は1"
+    "msgAmountError": "最小金額は1",
+    "securityCode": "セキュリティコード"
   },
   "order": {
     "title": "注文",
@@ -229,9 +231,15 @@
   },
   "securityCode": {
     "title": "セキュリティパスワードを設定します",
+    "oldPassword": "古いパスワード",
     "newPassword": "新しいパスワード",
-    "newPasswordInvalidError": "6  -  30個々の文字",
-    "confirmBtn": "確認"
+    "oldPasswordRequiredError": "古いパスワードを入力してください",
+    "newPasswordRequiredError": "新しいパスワードを入力してください",
+    "invalidError": "6-10個の個別の文字",
+    "pinIsNumberError": "PINは数字でなければなりません",
+    "confirmBtn": "確認",
+    "createdPinSuccessfully": "PINコードが正常に作成されました",
+    "changedPinSuccessfully": "PINコードが正常に変更されました"
   },
   "tradePage": {
     "position": "ポジション",
@@ -352,7 +360,15 @@
     "permissionDenied": "アクセスが拒否されました",
     "phoneNumberAlreadyExists": "電話番号はすでに存在します",
     "previousVerifyRequestNotApproved": "以前の検証リクエストは承認されていません",
-    "proofOfAddressIsRequired": "住所の証明が必要です"
+    "proofOfAddressIsRequired": "住所の証明が必要です",
+    "requiredEmailOrPhoneNumber": "メールアドレスまたは電話番号が必要です",
+"tradeCompleted": "取引完了",
+"tradeSettled": "取引決済",
+"unauthorized": "未承認",
+"usernameAlreadyExists": "ユーザー名がすでに存在します",
+"invalidPin": "セキュリティパスワードが間違っています",
+"userPinNotSet": "ユーザーはまだPINを設定していません",
+"pinAlreadySet": "PINはまだ設定されていません"
   },
   "permissionDenied": {
     "trade": "取引がブロックされています。サポートを受けるには管理者に連絡してください。",

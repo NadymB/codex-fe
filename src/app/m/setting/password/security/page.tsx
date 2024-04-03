@@ -1,15 +1,14 @@
 "use client";
 import { GoBack } from "@/components/layouts/GoBack";
-import { t } from "i18next";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { userService } from "@/services/UserService";
-import { onToast } from "@/hooks/useToast";
-import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
+import { onToast } from "@/hooks/useToast";
+import { userService } from "@/services/UserService";
+import { errorMsg } from "@/utils/errorMsg";
+import { useFormik } from "formik";
+import { t } from "i18next";
+import * as Yup from "yup";
 
 const PasswordPage = () => {
-
   const { currentUser } = useAuth();
 
   const createSecurityCode = async (pinCode: string) => {
@@ -28,6 +27,8 @@ const PasswordPage = () => {
       const response = await userService.changePIN(oldPin, newPin);
       if (response.data && response.success) {
         onToast(t("securityCode.changedPinSuccessfully"), "success");
+      } else {
+        onToast(t(`errorMessages.${errorMsg(response.code)}`), "error");
       }
     } catch (error) {
       console.log(error);
@@ -51,8 +52,16 @@ const PasswordPage = () => {
   });
 
   const changePinValidationSchema = Yup.object({
-    oldPassword: Yup.string().required(t("securityCode.oldPasswordRequiredError")),
-    newPassword: Yup.string().required(t("securityCode.newPasswordRequiredError")),
+    oldPassword: Yup.string()
+      .required(t("securityCode.oldPasswordRequiredError"))
+      .matches(/^[0-9]+$/, t("securityCode.pinIsNumberError"))
+      .min(6, t("securityCode.newPasswordInvalidError"))
+      .max(10, t("securityCode.newPasswordInvalidError")),
+    newPassword: Yup.string()
+      .required(t("securityCode.newPasswordRequiredError"))
+      .matches(/^[0-9]+$/, t("securityCode.pinIsNumberError"))
+      .min(6, t("securityCode.newPasswordInvalidError"))
+      .max(10, t("securityCode.newPasswordInvalidError")),
   });
   const changePinFormik = useFormik({
     initialValues: {
