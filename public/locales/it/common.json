@@ -28,7 +28,7 @@
     "vip": "VIP",
     "leaderBoard": "classifica",
     "inviteFriends": "invita gli amici",
-    "savings": "risparmio",
+    "savings": "Interessi sul risparmio",
     "tradingRobot": "robot commerciale",
     "mining": "estrazione"
   },
@@ -144,7 +144,15 @@
     "howToMakeADepositContent": "Stai cercando una guida su come depositare fondi? Ti ascoltiamo! Ecco un dettagliato processo operativo in modo che tu possa facilmente effettuare un deposito trasferendo criptovaluta dal tuo portafoglio o depositando valuta fiat sul tuo account."
   },
   "vip": {
-    "title": "Piano di Privilegi di Membri VIP",
+    "title": "Piano di privilegi dei membri",
+    "upgradeMyMemberLevelTitle": "Aggiorna il mio livello di membro",
+    "upgradeMyMemberLevelContent": "Progettiamo diversi livelli di appartenenza in base agli utenti. Puoi aggiornare il tuo livello di appartenenza completando il compito e godere di più privilegi. Per i dettagli, clicca il pulsante qui sotto per una consulenza.",
+    "currentLevelTitle": "Livello attuale:",
+    "currentLevelContent": "Non sei ancora un membro",
+    "contactBtn": "Contatta il servizio clienti per una consulenza"
+  },
+  "savings": {
+    "title": "Interessi sul risparmio",
     "depositInterestTitle": "Interessi di deposito oltre 24 ore presso il Gruppo CME",
     "depositInterestContent": "Per garantire i diritti di investimento e la sicurezza degli asset. Il sistema del Gruppo CME può accettare depositi di asset oltre 24 ore. Per i dettagli, fare clic sul pulsante sottostante per inviare una richiesta.",
     "depositInterestSubContent": "Il tempo di deposito degli interessi durante la notte verrà calcolato dal momento della richiesta del deposito. Riceverai un tasso di interesse dell'1%. Il prelievo non è possibile entro 24 ore.",
@@ -352,7 +360,12 @@
     "permissionDenied": "Permesso negato",
     "phoneNumberAlreadyExists": "Numero di telefono già esistente",
     "previousVerifyRequestNotApproved": "Richiesta di verifica precedente non approvata",
-    "proofOfAddressIsRequired": "È richiesta la prova di indirizzo"
+    "proofOfAddressIsRequired": "È richiesta la prova di indirizzo",
+    "requiredEmailOrPhoneNumber": "Email o numero di telefono richiesto",
+    "tradeCompleted": "Scambio completato",
+    "tradeSettled": "Scambio liquidato",
+    "unauthorized": "Non autorizzato",
+    "usernameAlreadyExists": "Il nome utente esiste già"
   },
   "permissionDenied": {
     "trade": "Sei stato bloccato dal fare trading. Contatta l'amministratore per assistenza.",

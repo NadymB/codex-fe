@@ -28,7 +28,7 @@
     "vip": "VIP",
     "leaderBoard": "Leaderboard",
     "inviteFriends": "Invite friends",
-    "savings": "Savings",
+    "savings": "Savings interest",
     "tradingRobot": "Trading robot",
     "mining": "Mining"
   },
@@ -145,10 +145,18 @@
   },
   "vip": {
     "title": "VIP Membership Privilege Plan",
+    "upgradeMyMemberLevelTitle": "Upgrade my member level",
+    "upgradeMyMemberLevelContent": "We tailor different membership levels according to different users. You can upgrade your membership level by completing the task and enjoy more privileges. For details, click the button below for consultation.",
+    "currentLevelTitle": "Current level:",
+    "currentLevelContent": "You are not yet a member",
+    "contactBtn": "Contact customer service consultation"
+  },
+  "savings": {
+    "title": "Savings interest",
     "depositInterestTitle": "Deposit Interest over 24 hours at CME Group",
     "depositInterestContent": "To ensure investment rights and the security of assets. The CME Group system can accept asset deposits over 24 hours. For details, click the button below to submit a request.",
     "depositInterestSubContent": "The overnight interest deposit time will be calculated from the time of requesting the deposit. You will receive a 1% interest rate. Withdrawal is not possible within 24 hours.",
-    "contactBtn": "Contact customer service consultation"
+    "contactBtn": "Contact customer service consultation"  
   },
   "color": {
     "title": "Colors of ups and downs",
