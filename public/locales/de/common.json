@@ -365,5 +365,14 @@
   "leaderBoardPage": {
     "profit7day": "Gewinn 7 Tage",
     "income7day": "Einkommen 7 Tage"
-  }
+  },
+  "invitePage": {
+    "title": "Freunde vorstellen",
+    "content": "Erhalten Sie 100 USDT Kreditgebühr pro Transaktion.",
+    "sub-content": "Es sind nur noch ein paar Schritte erforderlich, um Ihren Bonus zu erhalten.",
+    "howToInvite": "So stellen Sie Freunde vor",
+    "step1": "Teilen Sie den Link mit Ihren Freunden",
+    "step2": "Laden Sie Ihre Freunde ein, sich anzumelden und über 50 USD einzuzahlen",
+    "step3": "Jeder erhält einen Gutschein für eine kostenlose Transaktion im Wert von 100 USDT"
+ }
 }

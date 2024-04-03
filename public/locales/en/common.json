@@ -370,5 +370,14 @@
   "leaderBoardPage": {
     "profit7day": "Profit 7 days",
     "income7day": "Income 7 days"
-  }
+  },
+  "invitePage": {
+    "title": "Invite Friends",
+    "content": "Receive 100 USDT credit fee for each transaction.",
+    "sub-content": "Just a few more steps and you'll receive your reward.",
+    "howToInvite": "How to Invite Friends",
+    "step1": "Share the link with your friends",
+    "step2": "Invite friends to sign up and deposit over 50 USD",
+    "step3": "Each person receives a voucher for a free transaction of 100 USDT"
+ }
 }

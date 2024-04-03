@@ -370,5 +370,14 @@
   "leaderBoardPage": {
     "profit7day": "Lợi nhuận 7 ngày",
     "income7day": "Thu nhập 7 ngày"
-  }
+  },
+  "invitePage": {
+    "title": "Giới thiệu bạn bè",
+    "content": "Nhận 100 USDT phí tín dụng cho mỗi giao dịch.",
+    "sub-content": "Chỉ còn vài bước nữa là bạn sẽ nhận được phần thưởng.",
+    "howToInvite": "Cách giới thiệu bạn bè",
+    "step1": "Chia sẻ liên kết với bạn bè",
+    "step2": "Mời bạn bè đăng ký và nạp số tiền trên 50 USD",
+    "step3": "Mỗi người nhận được voucher hoàn phí giao dịch 100 USDT"
+ }
 }

@@ -365,5 +365,14 @@
   "leaderBoardPage": {
     "profit7day": "Profit 7 giorni",
     "income7day": "Entrate 7 giorni"
-  }
+  },
+  "invitePage": {
+    "title": "Presenta amici",
+    "content": "Ricevi 100 USDT di tassa di credito per ogni transazione.",
+    "sub-content": "Manca solo qualche passaggio per ottenere il tuo premio.",
+    "howToInvite": "Come presentare amici",
+    "step1": "Condividi il link con i tuoi amici",
+    "step2": "Invita i tuoi amici a registrarsi e depositare più di 50 USD",
+    "step3": "Ognuno riceve un voucher per una transazione gratuita di 100 USDT"
+ }
 }

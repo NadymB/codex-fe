@@ -365,5 +365,14 @@
   "leaderBoardPage": {
     "profit7day": "이익 7일",
     "income7day": "수입 7일"
-  }
+  },
+  "invitePage": {
+    "title": "친구 소개",
+    "content": "거래마다 100 USDT의 크레딧 수수료를 받으세요.",
+    "sub-content": "보상을 받으려면 몇 가지 단계만 남아 있습니다.",
+    "howToInvite": "친구 소개 방법",
+    "step1": "친구와 링크 공유하기",
+    "step2": "친구를 초대하여 등록하고 50달러 이상을 입금하십시오.",
+    "step3": "각 사람은 100 USDT 상당의 무료 거래 쿠폰을 받게 됩니다."
+ }
 }

@@ -365,5 +365,14 @@
   "leaderBoardPage": {
     "profit7day": "Profit 7 jours",
     "income7day": "Revenu 7 jours"
-  }
+  },
+  "invitePage": {
+    "title": "Présenter des amis",
+    "content": "Recevez 100 USDT de frais de crédit par transaction.",
+    "sub-content": "Il ne reste plus que quelques étapes avant de recevoir votre récompense.",
+    "howToInvite": "Comment présenter des amis",
+    "step1": "Partagez le lien avec vos amis",
+    "step2": "Invitez vos amis à s'inscrire et à déposer plus de 50 USD",
+    "step3": "Chaque personne reçoit un bon pour une transaction gratuite de 100 USDT"
+ }
 }
