@@ -13,7 +13,7 @@ const OfferPage = () => {
       <div
         className="min-h-screen overflow-auto bg-[#000000]"
         style={{
-          backgroundImage: "url('/assets/images/offer-bg.png')",
+          backgroundImage: `url(${getStaticURL()}/assets/images/offer-bg.png)`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "100%",
         }}
