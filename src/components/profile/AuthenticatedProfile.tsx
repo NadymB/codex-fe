@@ -9,9 +9,21 @@ import { VisaIcon } from "@/assets/icons/VisaIcon";
 import { ProfileItem } from "./ProfileItem";
 import { t } from "i18next";
 import { useAuth } from "@/hooks/useAuth";
+import { useMemo } from "react";
 
 export const AuthenticatedProfile = () => {
   const { currentUser } = useAuth();
+
+  const kycLevel = useMemo(() => {
+    switch (currentUser?.kycLevel) {
+      case 1:
+        return t("authentication.lv1");
+      case 2:
+        return t("authentication.lv2");
+      default:
+        return t("profilePage.notCertified");
+    }
+  }, [currentUser?.kycLevel]);
   return (
     <div>
       <div className="bg-[#1C1C1E] mt-2 rounded-sm">
@@ -56,7 +68,7 @@ export const AuthenticatedProfile = () => {
         <ProfileItem
           icon={<VisaIcon />}
           filedName={t("profilePage.authentication")}
-          value={t("profilePage.notCertified")}
+          value={kycLevel}
           rightIcon={<ArrowRightIcon />}
           link="/m/setting/kyc"
         />
