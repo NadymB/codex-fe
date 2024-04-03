@@ -376,7 +376,8 @@
     "usernameAlreadyExists": "ユーザー名がすでに存在します",
     "invalidPin": "セキュリティパスワードが間違っています",
     "userPinNotSet": "ユーザーはまだPINを設定していません",
-    "pinAlreadySet": "PINはまだ設定されていません"
+    "pinAlreadySet": "PINはまだ設定されていません",
+    "withdrawalAccountNotApproved": "支払い口座は承認されていません"
   },
   "permissionDenied": {
     "trade": "取引がブロックされています。サポートを受けるには管理者に連絡してください。",

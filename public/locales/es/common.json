@@ -376,7 +376,8 @@
     "usernameAlreadyExists": "Nombre de usuario ya existe",
     "invalidPin": "La contraseña de seguridad es incorrecta",
     "userPinNotSet": "El usuario aún no ha configurado el PIN",
-    "pinAlreadySet": "PIN aún no configurado"
+    "pinAlreadySet": "PIN aún no configurado",
+    "withdrawalAccountNotApproved": "La cuenta de pago no ha pasado la revisión"
   },
   "permissionDenied": {
     "trade": "Se le ha prohibido comerciar. Por favor, póngase en contacto con el administrador para obtener ayuda",

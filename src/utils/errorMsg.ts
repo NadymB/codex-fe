@@ -65,11 +65,13 @@ export const errorMsg = (errorCode: string) => {
     case ERR_CODE.USER_NOT_FOUND:
       return "userNotFound";
     case ERR_CODE.INVALID_PIN:
-        return "invalidPin";
+      return "invalidPin";
     case ERR_CODE.USER_PIN_NOT_SET:
       return "userPinNotSet";
     case ERR_CODE.PIN_ALREADY_SET:
-      return "pinAlreadySet"
+      return "pinAlreadySet";
+    case ERR_CODE.WITHDRAWAL_ACCOUNT_NOT_APPROVED:
+      return "withdrawalAccountNotApproved";
     default:
       return "unknownError";
   }

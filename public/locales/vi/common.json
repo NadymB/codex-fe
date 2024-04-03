@@ -376,7 +376,8 @@
     "usernameAlreadyExists": "Tên người dùng đã tồn tại",
     "invalidPin": "Mã bảo mật không đúng",
     "userPinNotSet": "Người dùng chưa thiết lập mã PIN",
-    "pinAlreadySet": "Mã PIN chưa được thiết lập"
+    "pinAlreadySet": "Mã PIN chưa được thiết lập",
+    "withdrawalAccountNotApproved": "Tài khoản thanh toán chưa được thông qua đánh giá"
   },
   "permissionDenied": {
     "trade": "Bạn đã bị chặn giao dịch. Vui lòng liên hệ quản trị viên để được hỗ trợ",

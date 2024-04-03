@@ -376,7 +376,8 @@
     "usernameAlreadyExists": "Benutzername existiert bereits",
     "invalidPin": "Das Sicherheitspasswort ist falsch",
     "userPinNotSet": "Benutzer hat noch keinen PIN eingerichtet",
-    "pinAlreadySet": "PIN wurde noch nicht festgelegt"
+    "pinAlreadySet": "PIN wurde noch nicht festgelegt",
+    "withdrawalAccountNotApproved": "Das Zahlungskonto wurde noch nicht genehmigt"
   },
   "permissionDenied": {
     "trade": "Sie sind vom Handel ausgeschlossen. Bitte kontaktieren Sie den Administrator für Unterstützung",

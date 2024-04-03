@@ -219,7 +219,8 @@
     "confirm": "Confirm",
     "msgAccountError": "Please fill in the receiving account",
     "msgAmountError": "The minimum amount is 1",
-    "securityCode": "Security Code"
+    "securityCode": "Security Code",
+    "withdrawalAccountNotApproved": "The payment account has not passed the review"
   },
   "order": {
     "title": "Order",

@@ -376,7 +376,8 @@
     "usernameAlreadyExists": "用户名已存在",
     "invalidPin": "安全密码不正确",
     "userPinNotSet": "用户尚未设置 PIN",
-    "pinAlreadySet": "PIN 尚未设置"
+    "pinAlreadySet": "PIN 尚未设置",
+    "withdrawalAccountNotApproved": "提款账户尚未通过审核"
   },
   "permissionDenied": {
     "trade": "您被禁止进行交易。请联系管理员以获取支持",
