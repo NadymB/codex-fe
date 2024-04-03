@@ -14,7 +14,7 @@ const InviteFriendPage = () => {
         style={{
           backgroundImage: `url(${getStaticURL()}/assets/images/offer-bg.png)`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "100%",
+          backgroundSize: "cover",
         }}
       >
         <div className="sticky top-0 left-0 w-full px-4 py-4  bg-[#100F14] flex items-center gap-2">
@@ -23,15 +23,9 @@ const InviteFriendPage = () => {
           </div>
           <span className="text-[#fff]">{t("invitePage.title")}</span>
         </div>
-        <div className="flex flex-col text-[#fff] max-w-[1200px] mx-auto">
+        <div className="flex flex-col text-[#fff] max-w-[1200px] mx-auto px-5">
           <div>
-            {/* <div className="flex items-center  relative z-10  ">
-            <div className="py-4 mr-12 text-[20px] relative">
-              Giới thiệu bạn bè
-                <div className="absolute w-1/2 bg-[#fff] h-1 bottom-0 left-[50%] translate-x-[-50%] "></div>
-            </div>
-          </div> */}
-            <div className="pt-[60px] pb-[60px] grid grid-cols-2">
+            <div className="pt-[60px] pb-[60px] grid grid-cols-1 lg:grid-cols-2">
               <div className="flex flex-col">
                 <h1 className="pb-4 text-[40px] text-[#fff] flex flex-col">
                   <span>{t("invitePage.title")}.</span>
@@ -41,7 +35,7 @@ const InviteFriendPage = () => {
                   {t("invitePage.sub-content")}
                 </div>
               </div>
-              <div>
+              <div className="hidden lg:block" >
                 <img
                   className="w-full"
                   src={`${getStaticURL()}/assets/images/banner-offer.png`}
@@ -51,12 +45,12 @@ const InviteFriendPage = () => {
             </div>
           </div>
         </div>
-        <div className="py-[10px] bg-[#1E2329] pb-10">
+        <div className="py-[10px] bg-[#1E2329] pb-10 px-5">
           <div className="max-w-[1200px] mx-auto">
             <h2 className="my-12 text-[32px] text-[#fff]">
               {t("invitePage.howToInvite")}
             </h2>
-            <div className="grid grid-cols-3 gap-12 text-[#fff]">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 text-[#fff] ">
               <div>
                 <img
                   className="w-full pb-4"
