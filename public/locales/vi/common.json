@@ -204,10 +204,11 @@
     "amount": "Số lượng",
     "currentBalance": "Số dư hiện tại:",
     "allBalance": "Tất cả sự cân bằng",
+    "manageTheWithdrawalPassword": "Manage the withdrawal password",
     "managementOfWithdrawal": "Quản lý rút tiền",
     "fees": "Phí xử lý",
     "amountReceived": "Số tiền tài khoản",
-    "confirm": "xác nhận",
+    "confirm": "Xác nhận",
     "msgAccountError": "Vui lòng điền vào tài khoản nhận",
     "msgAmountError": "Số tiền tối thiểu là 1"
   },
@@ -234,7 +235,7 @@
     "confirmBtn": "Xác nhận"
   },
   "tradePage": {
-    "position": "Vị trí",
+    "position": "Vị thế",
     "order": "Đơn hàng",
     "long": "Mua lên",
     "short": "Mua xuống",

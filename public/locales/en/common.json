@@ -229,13 +229,19 @@
   },
   "securityCode": {
     "title": "Set a security password",
+    "oldPassword": "Old Password",
     "newPassword": "New Password",
-    "newPasswordInvalidError": "8-20 individual characters",
-    "confirmBtn": "Confirm"
+    "oldPasswordRequiredError": "Please enter the old password",
+    "newPasswordRequiredError": "Please enter the new password",
+    "invalidError": "6-10 individual characters",
+    "pinIsNumberError": "Pin must be a number",
+    "confirmBtn": "Confirm",
+    "createdPinSuccessfully": "Created PIN code successfully",
+    "changedPinSuccessfully": "Changed PIN code successfully"
   },
   "tradePage": {
-    "position": "Position",
-    "order": "Order",
+    "position": "Positions",
+    "order": "Orders",
     "long": "Long",
     "short": "Short",
     "trade": {
