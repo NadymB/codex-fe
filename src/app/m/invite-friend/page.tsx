@@ -1,15 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { BackIcon } from "@/assets/icons/BackIcon";
-import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { getStaticURL } from "@/utils/constants";
-import { t } from "i18next";
 import { useRouter } from "next/navigation";
+import { t } from "i18next";
 
-const OfferPage = () => {
+
+const InviteFriendPage = () => {
   const router = useRouter();
   return (
-    <DefaultLayout isShowMenubar={false} containerStyle={""}>
       <div
         className="min-h-screen overflow-auto bg-[#000000]"
         style={{
@@ -86,7 +85,6 @@ const OfferPage = () => {
           </div>
         </div>
       </div>
-    </DefaultLayout>
   );
 };
-export default OfferPage;
+export default InviteFriendPage;
