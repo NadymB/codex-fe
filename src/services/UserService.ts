@@ -32,6 +32,27 @@ export class UserService {
 
     return data;
   };
+
+  public createPIN = async (pin: string) => {
+    const { data } = await this.restConnector.post(
+      `/users/pin`, {
+        pin
+      }
+    );
+
+    return data;
+  };
+
+  public changePIN = async (oldPin: string, newPin: string) => {
+    const { data } = await this.restConnector.patch(
+      `/users/pin`, {
+        oldPin,
+        newPin
+      }
+    );
+    
+    return data;
+  };
 }
 
 export const userService = new UserService({ restConnector });

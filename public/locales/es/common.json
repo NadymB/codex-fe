@@ -212,12 +212,14 @@
     "amount": "La cantidad",
     "currentBalance": "saldo actual:",
     "allBalance": "saldo total",
+    "manageTheWithdrawalPassword": "Administrar contraseña de retiro",
     "managementOfWithdrawal": "Administrar métodos de retiro",
     "fees": "tasa de tramitación",
     "amountReceived": "Importe del recibo",
     "confirm": "confirmar",
     "msgAccountError": "Por favor complete la cuenta receptora",
-    "msgAmountError": "La cantidad mínima es 1"
+    "msgAmountError": "La cantidad mínima es 1",
+    "securityCode": "Código de seguridad"
   },
   "order": {
     "title": "Orden",
@@ -237,9 +239,15 @@
   },
   "securityCode": {
     "title": "Establecer una contraseña segura",
+    "oldPassword": "Contraseña anterior",
     "newPassword": "Nueva contraseña",
-    "newPasswordInvalidError": "Nueva contraseña",
-    "confirmBtn": "confirmar"
+    "oldPasswordRequiredError": "Por favor ingrese la contraseña anterior",
+    "newPasswordRequiredError": "Por favor ingrese la nueva contraseña",
+    "invalidError": "6-10 caracteres individuales",
+    "pinIsNumberError": "El PIN debe ser un número",
+    "confirmBtn": "confirmar",
+    "createdPinSuccessfully": "Código PIN creado exitosamente",
+    "changedPinSuccessfully": "Código PIN cambiado exitosamente"
   },
   "tradePage": {
     "position": "posición",
@@ -365,7 +373,11 @@
     "tradeCompleted": "Comercio completado",
     "tradeSettled": "Comercio liquidado",
     "unauthorized": "No autorizado",
-    "usernameAlreadyExists": "El nombre de usuario ya existe"
+    "usernameAlreadyExists": "Nombre de usuario ya existe",
+    "invalidPin": "La contraseña de seguridad es incorrecta",
+    "userPinNotSet": "El usuario aún no ha configurado el PIN",
+    "pinAlreadySet": "PIN aún no configurado",
+    "withdrawalAccountNotApproved": "La cuenta de pago no ha pasado la revisión"
   },
   "permissionDenied": {
     "trade": "Se le ha prohibido comerciar. Por favor, póngase en contacto con el administrador para obtener ayuda",

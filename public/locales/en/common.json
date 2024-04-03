@@ -212,12 +212,14 @@
     "amount": "Amount",
     "currentBalance": "Current balance:",
     "allBalance": "All balance",
+    "manageTheWithdrawalPassword": "Manage the withdrawal password",
     "managementOfWithdrawal": "Management of withdrawal",
     "fees": "Fees",
     "amountReceived": "Amount Received",
     "confirm": "Confirm",
     "msgAccountError": "Please fill in the receiving account",
-    "msgAmountError": "The minimum amount is 1"
+    "msgAmountError": "The minimum amount is 1",
+    "securityCode": "Security Code"
   },
   "order": {
     "title": "Order",
@@ -237,13 +239,19 @@
   },
   "securityCode": {
     "title": "Set a security password",
+    "oldPassword": "Old Password",
     "newPassword": "New Password",
-    "newPasswordInvalidError": "8-20 individual characters",
-    "confirmBtn": "Confirm"
+    "oldPasswordRequiredError": "Please enter the old password",
+    "newPasswordRequiredError": "Please enter the new password",
+    "invalidError": "6-10 individual characters",
+    "pinIsNumberError": "Pin must be a number",
+    "confirmBtn": "Confirm",
+    "createdPinSuccessfully": "Created PIN code successfully",
+    "changedPinSuccessfully": "Changed PIN code successfully"
   },
   "tradePage": {
-    "position": "Position",
-    "order": "Order",
+    "position": "Positions",
+    "order": "Orders",
     "long": "Long",
     "short": "Short",
     "trade": {
@@ -365,7 +373,11 @@
     "tradeCompleted": "Trade Completed",
     "tradeSettled": "Trade Settled",
     "unauthorized": "Unauthorized",
-    "usernameAlreadyExists": "Username Already Exists"
+    "usernameAlreadyExists": "Username Already Exists",
+    "invalidPin": "The security password is incorrect",
+    "userPinNotSet": "User has not yet setup pin",
+    "pinAlreadySet": "Pin not yet set",
+    "withdrawalAccountNotApproved": "The payment account has not passed the review"
   },
   "permissionDenied": {
     "trade": "You have been denied trading. Please contact the administrator for assistance.",

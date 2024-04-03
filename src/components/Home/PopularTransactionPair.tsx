@@ -10,28 +10,79 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+const MOCKUP_COMMON_PRICE = [
+  {
+    metadata: {
+      name: "aluminium_futures",
+      type: "commodity",
+    },
+    value: 2370.50,
+  },
+  {
+    metadata: {
+      name: "gold_futures",
+      type: "commodity",
+    },
+    value: 2271.72,
+  },
+  {
+    metadata: {
+      name: "silver_futures",
+      type: "commodity",
+    },
+    value: 26.292,
+  },
+];
+
+const MOCKUP_FOREX_PRICE = [
+  {
+    metadata: {
+      name: "cny_usd",
+      type: "foreign_exchange",
+    },
+    value: 7.2358,
+  },
+  {
+    metadata: {
+      name: "gbp_usd",
+      type: "foreign_exchange",
+    },
+    value: 0.7954,
+  },
+  {
+    metadata: {
+      name: "jpy_usd",
+      type: "foreign_exchange",
+    },
+    value: 151.7325,
+  },
+];
+
 export const PopularTransactionPair = () => {
-  const [dataCommon, setDataCommon] = useState([]);
   const [dataCrypto, setDataCrypto] = useState([]);
-  const [dataForex, setDataForex] = useState([]);
+  const [dataCommon, setDataCommon] = useState<Array<any>>([]);
+  const [dataForex, setDataForex] = useState<Array<any>>([]);
   const router = useRouter();
-  
+
   const handleSelectCrypto = (metadata: any) => {
-    const token = metadata.type === PRICE_TYPE.CRYPTO ? metadata.name.replace("usdt", "").toUpperCase() : metadata.name.split("_")[0].toUpperCase();
+    const token =
+      metadata.type === PRICE_TYPE.CRYPTO
+        ? metadata.name.replace("usdt", "").toUpperCase()
+        : metadata.name.split("_")[0].toUpperCase();
     Cookies.set(
       "crypto",
-      JSON.stringify({ token, values: "USDT", type: metadata.type})
+      JSON.stringify({ token, values: "USDT", type: metadata.type })
     );
-    router.push(`/m/trade/${token}/USDT`)
-  }
+    router.push(`/m/trade/${token}/USDT`);
+  };
 
   const handleCrawlDataFeed = async () => {
     try {
       const response = await priceFeedService.getCommonPriceFeed();
       if (response.success) {
-        setDataCommon(response.data.commodityPrices);
         setDataCrypto(response.data.cryptoPrices);
-        setDataForex(response.data.forexPrices);
+        setDataCommon(MOCKUP_COMMON_PRICE);
+        setDataForex(MOCKUP_FOREX_PRICE);
       }
     } catch (error) {
       console.log(error);
@@ -40,7 +91,7 @@ export const PopularTransactionPair = () => {
 
   useEffect(() => {
     handleCrawlDataFeed();
-    const inteval = setInterval(handleCrawlDataFeed, 10000);
+    const inteval = setInterval(handleCrawlDataFeed, 2000);
 
     return () => clearInterval(inteval);
   }, []);
@@ -52,12 +103,11 @@ export const PopularTransactionPair = () => {
       <div className="flex gap-1 pb-3 overflow-auto">
         {dataCrypto?.length > 0 &&
           dataCrypto.map((item: any) => {
-            let priceRandom = getRnd(0, 100000);
-            let percentRandom = getRnd(-10, 10);
+            let percentRandom = getRnd(-5, 5);
             return (
               <button
                 key={Math.random()}
-                onClick={()=> handleSelectCrypto(item.metadata)}
+                onClick={() => handleSelectCrypto(item.metadata)}
                 className="flex flex-col gap-3 min-w-[120px] p-2 rounded-lg bg-[#1c1c1e] overflow-hidden"
               >
                 <div>
@@ -72,7 +122,7 @@ export const PopularTransactionPair = () => {
                     className={`${Number(percentRandom) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
                   >
                     {convertNumberToFormattedString(
-                      removeTrailingZeros(Number(item.value).toFixed(8))
+                      removeTrailingZeros(Number(item.value * (1 + Number(percentRandom) / 100)).toFixed(6))
                     )}
                   </span>
                   <span
@@ -93,11 +143,11 @@ export const PopularTransactionPair = () => {
         {dataCommon.length > 0 &&
           dataCommon.map((item: any) => {
             let priceRandom = getRnd(0, 100000);
-            let percentRandom = getRnd(-10, 10);
+            let percentRandom = getRnd(-1, 1);
             return (
               <button
                 key={Math.random()}
-                onClick={()=> handleSelectCrypto(item.metadata)}
+                onClick={() => handleSelectCrypto(item.metadata)}
                 className="flex flex-col gap-3 min-w-[120px] p-2 rounded-lg bg-[#1c1c1e] overflow-hidden"
               >
                 <div>
@@ -112,7 +162,11 @@ export const PopularTransactionPair = () => {
                     className={`${Number(percentRandom) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
                   >
                     {convertNumberToFormattedString(
-                      removeTrailingZeros(Number(item.value).toFixed(8))
+                      removeTrailingZeros(
+                        Number(
+                          item.value * (1 + Number(percentRandom) / 100)
+                        ).toFixed(6)
+                      )
                     )}
                   </span>
                   <span
@@ -133,11 +187,11 @@ export const PopularTransactionPair = () => {
         {dataForex?.length > 0 &&
           dataForex.map((item: any) => {
             let priceRandom = getRnd(0, 100000);
-            let percentRandom = getRnd(-10, 10);
+            let percentRandom = getRnd(-0.1, 1.1);
             return (
               <button
                 key={Math.random()}
-                onClick={()=> handleSelectCrypto(item.metadata)}
+                onClick={() => handleSelectCrypto(item.metadata)}
                 className="flex flex-col gap-3 min-w-[120px] p-2 rounded-lg bg-[#1c1c1e] overflow-hidden"
               >
                 <div>
@@ -152,7 +206,11 @@ export const PopularTransactionPair = () => {
                     className={`${Number(percentRandom) > 0 ? "text-[#55af72]" : "text-[#dd5350]"}`}
                   >
                     {convertNumberToFormattedString(
-                      removeTrailingZeros(Number(item.value).toFixed(8))
+                      removeTrailingZeros(
+                        Number(
+                          item.value * (1 + Number(percentRandom) / 100)
+                        ).toFixed(6)
+                      )
                     )}
                   </span>
                   <span
