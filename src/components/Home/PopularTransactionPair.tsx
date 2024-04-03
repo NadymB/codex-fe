@@ -91,7 +91,7 @@ export const PopularTransactionPair = () => {
 
   useEffect(() => {
     handleCrawlDataFeed();
-    const inteval = setInterval(handleCrawlDataFeed, 2000);
+    const inteval = setInterval(handleCrawlDataFeed, 10000);
 
     return () => clearInterval(inteval);
   }, []);
