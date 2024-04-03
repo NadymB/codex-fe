@@ -4,9 +4,10 @@ import { IsTypingIcon } from "@/assets/icons/IsTypingIcon";
 import { ReceivedIcon } from "@/assets/icons/ReceivedIcon";
 import { SentIcon } from "@/assets/icons/SentIcon";
 import { Messages } from "@/models/Chat";
-import { getStaticURL } from "@/utils/constants";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { WS_TOPIC, getStaticURL } from "@/utils/constants";
 import { DateTime } from "luxon";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 interface IProp {
   message: Messages;
@@ -14,6 +15,19 @@ interface IProp {
 }
 export const InComingMessage = ({ message }: IProp) => {
   const [isTyping, setIsTyping] = useState(false);
+  const [isRead, setIsRead] = useState(false);
+  const { webSocket } = useContext(WebSocketCtx);
+  useEffect(() => {
+    if (webSocket) {
+      webSocket.on(WS_TOPIC.READ_MESSAGE, (data) => {
+        setIsRead(data?.messageIds?.includes(message._id));
+      });
+    }
+
+    return () => {
+      webSocket?.off(WS_TOPIC.READ_MESSAGE);
+    };
+  }, [webSocket]);
 
   return (
     <div className="flex flex-col items-start py-1">
@@ -51,7 +65,7 @@ export const InComingMessage = ({ message }: IProp) => {
                 <SendingIcon />
               ) : (
               )} */}
-                {message?.metadata?.readStatus.length > 1 ? (
+                {isRead || message?.metadata?.readStatus.length > 1 ? (
                   <ReceivedIcon />
                 ) : (
                   <SentIcon />
