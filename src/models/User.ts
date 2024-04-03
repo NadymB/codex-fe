@@ -25,6 +25,7 @@ export type Account = {
     permissions: PERMISSION_REQUIRED [];
   },
   vipLevel?: number;
+  kycLevel?: number;
 };
 export type DataLogin = {
   access_token: string;
