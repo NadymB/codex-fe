@@ -212,12 +212,14 @@
     "amount": "la quantité",
     "currentBalance": "Solde actuel :",
     "allBalance": "solde complet",
+    "manageTheWithdrawalPassword": "Gérer le mot de passe de retrait",
     "managementOfWithdrawal": "Gérer les méthodes de retrait",
     "fees": "frais de gestion",
     "amountReceived": "Montant du reçu",
     "confirm": "confirmer",
     "msgAccountError": "Veuillez remplir le compte de réception",
-    "msgAmountError": "Le montant est d'au moins 1"
+    "msgAmountError": "Le montant est d'au moins 1",
+    "securityCode": "Code de sécurité"
   },
   "order": {
     "title": "Commande",
@@ -237,9 +239,15 @@
   },
   "securityCode": {
     "title": "Définir un mot de passe sécurisé",
+    "oldPassword": "Ancien mot de passe",
     "newPassword": "nouveau mot de passe",
-    "newPasswordInvalidError": "6-30 caractères",
-    "confirmBtn": "confirmer"
+    "oldPasswordRequiredError": "Veuillez entrer l'ancien mot de passe",
+    "newPasswordRequiredError": "Veuillez entrer le nouveau mot de passe",
+    "invalidError": "6-10 caractères individuels",
+    "pinIsNumberError": "Le PIN doit être un nombre",
+    "confirmBtn": "confirmer",
+    "createdPinSuccessfully": "Code PIN créé avec succès",
+    "changedPinSuccessfully": "Code PIN modifié avec succès"
   },
   "tradePage": {
     "position": "position",
@@ -362,10 +370,14 @@
     "previousVerifyRequestNotApproved": "Demande de vérification précédente non approuvée",
     "proofOfAddressIsRequired": "La preuve d'adresse est requise",
     "requiredEmailOrPhoneNumber": "E-mail ou numéro de téléphone requis",
-    "tradeCompleted": "Échange terminé",
-    "tradeSettled": "Échange réglé",
+    "tradeCompleted": "Transaction terminée",
+    "tradeSettled": "Transaction réglée",
     "unauthorized": "Non autorisé",
-    "usernameAlreadyExists": "Le nom d'utilisateur existe déjà"
+    "usernameAlreadyExists": "Nom d'utilisateur déjà existant",
+    "invalidPin": "Le mot de passe de sécurité est incorrect",
+    "userPinNotSet": "L'utilisateur n'a pas encore configuré de code PIN",
+    "pinAlreadySet": "Code PIN non encore défini",
+    "withdrawalAccountNotApproved": "Le compte de paiement n'a pas été approuvé"
   },
   "permissionDenied": {
     "trade": "Vous n'êtes pas autorisé à effectuer des transactions. Veuillez contacter l'administrateur pour obtenir de l'aide",

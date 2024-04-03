@@ -212,12 +212,14 @@
     "amount": "I'importo",
     "currentBalance": "bilancio corrente:",
     "allBalance": "pieno equilibrio",
+    "manageTheWithdrawalPassword": "Gestisci la password di prelievo",
     "managementOfWithdrawal": "Gestisci i metodi di prelievo",
     "fees": "tassa di gestione",
     "amountReceived": "Importo Ricevuta",
     "confirm": "Confermare",
     "msgAccountError": "Si prega di compilare il conto ricevente",
-    "msgAmountError": "L'importo è di almeno 1"
+    "msgAmountError": "L'importo è di almeno 1",
+    "securityCode": "Codice di sicurezza"
   },
   "order": {
     "title": "Ordine",
@@ -237,9 +239,15 @@
   },
   "securityCode": {
     "title": "Imposta una password sicura",
+    "oldPassword": "Vecchia password",
     "newPassword": "nuova password",
-    "newPasswordInvalidError": "Imposta una password sicura",
-    "confirmBtn": "Confermare"
+    "oldPasswordRequiredError": "Inserisci la vecchia password",
+    "newPasswordRequiredError": "Imposta una password sicura",
+    "invalidError": "6-10 caratteri individuali",
+    "pinIsNumberError": "Il PIN deve essere un numero",
+    "confirmBtn": "Confermare",
+    "createdPinSuccessfully": "Codice PIN creato con successo",
+    "changedPinSuccessfully": "Codice PIN modificato con successo"
   },
   "tradePage": {
     "position": "posizione",
@@ -362,10 +370,14 @@
     "previousVerifyRequestNotApproved": "Richiesta di verifica precedente non approvata",
     "proofOfAddressIsRequired": "È richiesta la prova di indirizzo",
     "requiredEmailOrPhoneNumber": "Email o numero di telefono richiesto",
-    "tradeCompleted": "Scambio completato",
-    "tradeSettled": "Scambio liquidato",
+    "tradeCompleted": "Transazione completata",
+    "tradeSettled": "Transazione liquidata",
     "unauthorized": "Non autorizzato",
-    "usernameAlreadyExists": "Il nome utente esiste già"
+    "usernameAlreadyExists": "Nome utente già esistente",
+    "invalidPin": "La password di sicurezza non è corretta",
+    "userPinNotSet": "L'utente non ha ancora impostato il PIN",
+    "pinAlreadySet": "PIN non ancora impostato",
+    "withdrawalAccountNotApproved": "L'account di pagamento non ha superato la revisione"
   },
   "permissionDenied": {
     "trade": "Sei stato bloccato dal fare trading. Contatta l'amministratore per assistenza.",

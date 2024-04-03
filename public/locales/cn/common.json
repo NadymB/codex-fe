@@ -212,12 +212,14 @@
     "amount": "金额",
     "currentBalance": "当前余额:",
     "allBalance": "全部余额",
+    "manageTheWithdrawalPassword": "管理提现密码",
     "managementOfWithdrawal": "管理提现方式",
     "fees": "手续费",
     "amountReceived": "到账金额",
     "confirm": "确认",
     "msgAccountError": "请填写收款账户",
-    "msgAmountError": "金额最少为1"
+    "msgAmountError": "金额最少为1",
+    "securityCode": "安全码"
   },
   "order": {
     "title": "订单",
@@ -237,9 +239,15 @@
   },
   "securityCode": {
     "title": "设置安全密码",
+    "oldPassword": "旧密码",
     "newPassword": "新密码",
-    "newPasswordInvalidError": "6-30个字符",
-    "confirmBtn": "确认"
+    "oldPasswordRequiredError": "请输入旧密码",
+    "newPasswordRequiredError": "请输入新密码",
+    "invalidError": "6-30个字符",
+    "pinIsNumberError": "PIN必须是数字",
+    "confirmBtn": "确认",
+    "createdPinSuccessfully": "成功创建PIN码",
+    "changedPinSuccessfully": "成功更改PIN码"
   },
   "tradePage": {
     "position": "持仓",
@@ -365,7 +373,11 @@
     "tradeCompleted": "交易完成",
     "tradeSettled": "交易已结算",
     "unauthorized": "未经授权",
-    "usernameAlreadyExists": "用户名已存在"
+    "usernameAlreadyExists": "用户名已存在",
+    "invalidPin": "安全密码不正确",
+    "userPinNotSet": "用户尚未设置 PIN",
+    "pinAlreadySet": "PIN 尚未设置",
+    "withdrawalAccountNotApproved": "提款账户尚未通过审核"
   },
   "permissionDenied": {
     "trade": "您被禁止进行交易。请联系管理员以获取支持",
