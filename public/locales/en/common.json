@@ -108,7 +108,9 @@
     "searchCountryOrRegion": "Search country or region",
     "required": "Required",
     "walletAddress": "Wallet Address",
-    "walletAddressPlaceholder": "Enter or long press to paste wallet address"
+    "walletAddressPlaceholder": "Enter or long press to paste wallet address",
+    "editBtn": "Edit",
+    "verified": "Verified"
   },
   "authentication": {
     "title": "Authentication",

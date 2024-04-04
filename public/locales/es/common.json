@@ -108,7 +108,9 @@
     "searchCountryOrRegion": "Buscar país o región",
     "required": "requerido",
     "walletAddress": "Wallet-Adresse",
-    "walletAddressPlaceholder": "Geben Sie die Wallet-Adresse ein oder halten Sie sie gedrückt, um sie einzufügen"
+    "walletAddressPlaceholder": "Geben Sie die Wallet-Adresse ein oder halten Sie sie gedrückt, um sie einzufügen",
+    "editBtn": "editar",
+    "verified": "verificado"
   },
   "authentication": {
     "title": "Autenticación",
