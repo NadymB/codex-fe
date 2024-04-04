@@ -4,10 +4,15 @@ import { FormControlCustom } from "@/components/FormControlCustom";
 import { GoBack } from "@/components/layouts/GoBack";
 import { useAuth } from "@/hooks/useAuth";
 import { onToast } from "@/hooks/useToast";
+import { WITHDRAW_TYPE } from "@/models/Payment";
 import { TWithdrawalRequest } from "@/models/Transaction";
 import { paymentService } from "@/services/PaymentService";
 import { transactionService } from "@/services/TransactionService";
-import { TRADE_CURRENCY, WithdrawalProfit, getStaticURL } from "@/utils/constants";
+import {
+  TRADE_CURRENCY,
+  WithdrawalProfit,
+  getStaticURL,
+} from "@/utils/constants";
 import { errorMsg } from "@/utils/errorMsg";
 import { formatNumberToCurrency } from "@/utils/formatNumber";
 import { InputLabel, MenuItem, Select } from "@mui/material";
@@ -21,9 +26,17 @@ import * as Yup from "yup";
 const WithdrawPage = () => {
   const [userWithdrawalAccountInfo, setUserWithdrawalAccountInfo] =
     useState<any>();
-  const account = userWithdrawalAccountInfo?.bankNumber
-    ? `${userWithdrawalAccountInfo?.bankNumber?.slice(0, 1)}*******${userWithdrawalAccountInfo?.bankNumber?.slice(userWithdrawalAccountInfo?.bankNumber?.length - 1, userWithdrawalAccountInfo?.bankNumber?.length)} (${userWithdrawalAccountInfo?.bankName})`
-    : "";
+  const walletAddressEncrytion =
+    userWithdrawalAccountInfo?.walletAddress?.length > 8
+      ? `${userWithdrawalAccountInfo?.walletAddress?.slice(0, 4)}*${userWithdrawalAccountInfo?.walletAddress?.slice(userWithdrawalAccountInfo?.walletAddress?.length - 4, userWithdrawalAccountInfo?.walletAddress?.length)}`
+      : userWithdrawalAccountInfo?.walletAddress;
+  const bankNameEncrytion = `${userWithdrawalAccountInfo?.bankNumber?.slice(0, 1)}*******${userWithdrawalAccountInfo?.bankNumber?.slice(userWithdrawalAccountInfo?.bankNumber?.length - 1, userWithdrawalAccountInfo?.bankNumber?.length)} (${userWithdrawalAccountInfo?.bankName})`;
+  const account =
+    userWithdrawalAccountInfo?.type === WITHDRAW_TYPE.CRYPTO_CURRENCY
+      ? walletAddressEncrytion
+      : userWithdrawalAccountInfo?.type === WITHDRAW_TYPE.FIAT_CURRENCY
+        ? bankNameEncrytion
+        : "";
   const { fetchUserBalance, currentBalance, currentUser } = useAuth();
   const confirmRef = useRef(null);
   const router = useRouter();
@@ -54,7 +67,7 @@ const WithdrawPage = () => {
   const createdWithdrawalResquest = async (values: TWithdrawalRequest) => {
     try {
       const response = await transactionService.createWithdrawalRequest(values);
-      if(response.success && response.data) {
+      if (response.success && response.data) {
         onToast("Withdrawal Successfully", "success");
         router.push("/m/billing");
       } else {
@@ -79,9 +92,7 @@ const WithdrawPage = () => {
       pin: "",
     },
     validationSchema: validationSchema,
-    onSubmit: async (values) => {
-      
-    },
+    onSubmit: async (values) => {},
   });
 
   const handleConfirm = () => {
@@ -91,15 +102,15 @@ const WithdrawPage = () => {
       pin: formik.values.pin,
       userAccountId: userWithdrawalAccountInfo?.id,
     });
-  }
+  };
 
   useEffect(() => {
     const withdraw = document.getElementById("confirm-withdraw");
     const ref = confirmRef.current as any;
-    if(withdraw && ref) {
+    if (withdraw && ref) {
       ref.style.marginBottom = `${withdraw.offsetHeight}px`;
     }
-  },[])
+  }, []);
 
   return (
     <div className="bg-black min-h-screen">
@@ -109,7 +120,10 @@ const WithdrawPage = () => {
         className="flex flex-col items-center gap-4 p-4 bg-black"
         autoComplete="off"
       >
-        <div ref={confirmRef} className="flex flex-col items-center gap-4 w-full">
+        <div
+          ref={confirmRef}
+          className="flex flex-col items-center gap-4 w-full"
+        >
           <img
             src={`${getStaticURL()}/assets/images/atm.svg`}
             alt="ATM"
@@ -119,7 +133,9 @@ const WithdrawPage = () => {
           />
           <div className="w-full">
             <FormControlCustom fullWidth>
-              <InputLabel id="select-method">{t("withdraw.account")}</InputLabel>
+              <InputLabel id="select-method">
+                {t("withdraw.account")}
+              </InputLabel>
               <Select
                 labelId="select-method"
                 id="demo-simple-select"
@@ -168,7 +184,8 @@ const WithdrawPage = () => {
           </div>
           <div className="w-full flex justify-between text-sm">
             <div className="text-white">
-              {t("withdraw.currentBalance")} &nbsp; {formatNumberToCurrency(currentBalance)} USDT
+              {t("withdraw.currentBalance")} &nbsp;{" "}
+              {formatNumberToCurrency(currentBalance)} USDT
             </div>
             <div
               className="text-[#3d5afe] cursor-pointer"
@@ -177,7 +194,7 @@ const WithdrawPage = () => {
               {t("withdraw.allBalance")}
             </div>
           </div>
-          {currentUser?.isPinSet && (
+          {userWithdrawalAccountInfo && (
             <div className="w-full">
               <input
                 id="pin"
@@ -213,19 +230,34 @@ const WithdrawPage = () => {
             {t("withdraw.managementOfWithdrawal")}
           </Link>
         </div>
-        <div id="confirm-withdraw" className="fixed bottom-0 left-0 flex flex-col gap-2 w-full pb-10 p-4 bg-black">
+        <div
+          id="confirm-withdraw"
+          className="fixed bottom-0 left-0 flex flex-col gap-2 w-full pb-10 p-4 bg-black"
+        >
           <div className="w-full flex justify-between text-base text-white">
             <span className="text-[#888]">{t("withdraw.fees")}</span>
-            <span>{formatNumberToCurrency(Number(formik.values.amount) * WithdrawalProfit)} USDT</span>
+            <span>
+              {formatNumberToCurrency(
+                Number(formik.values.amount) * WithdrawalProfit
+              )}{" "}
+              USDT
+            </span>
           </div>
           <div className="w-full flex justify-between text-sm text-white">
             <span className="text-[#888]">{t("withdraw.amountReceived")}</span>
-            <span>{formatNumberToCurrency(Number(formik.values.amount) * (1 - WithdrawalProfit))} USDT</span>
+            <span>
+              {formatNumberToCurrency(
+                Number(formik.values.amount) * (1 - WithdrawalProfit)
+              )}{" "}
+              USDT
+            </span>
           </div>
           <button
             type="submit"
             className={`w-full py-[6px] px-4 rounded ${formik.values.amount ? "bg-[#3d5afe] hover:bg-[#2a3eb1] text-white" : "bg-[#343338] text-[#676769]"}`}
-            style={{backgroundColor: formik.values.amount ? "#3d5afe" : "#343338"}}
+            style={{
+              backgroundColor: formik.values.amount ? "#3d5afe" : "#343338",
+            }}
             onClick={handleConfirm}
           >
             {t("withdraw.confirm")}

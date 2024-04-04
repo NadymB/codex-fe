@@ -6,10 +6,10 @@ import { NextIcon } from "@/assets/icons/NextIcon";
 import { BillHistory } from "@/components/Billing/BillHistory";
 import { GoBack } from "@/components/layouts/GoBack";
 import { useAuth } from "@/hooks/useAuth";
-import { userService } from "@/services/UserService";
+import { PaginationQuery } from "@/models/Transaction";
+import { transactionService } from "@/services/TransactionService";
 import { getStaticURL } from "@/utils/constants";
 import { t } from "i18next";
-import Image from "next/image";
 import { Fragment, useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 
@@ -25,29 +25,29 @@ const OrderPage = () => {
   });
   const [bill, setBill] = useState([]);
   const [total, setTotal] = useState(0);
-  const getBill = async (limit = 20, offset = 0) => {
+  const getListTransaction = async (pagination: PaginationQuery) => {
     try {
-      const response = await userService.getBalanceHistory(tradeCurrenty, {
-        limit,
-        offset,
-      });
-      if (response.success) {
+      const response = await transactionService.getListTransactions(pagination);
+      if (response.success && response.data) {
         setBill(response.data.items);
         setTotal(response.data.totalCount);
       }
-
       return [];
     } catch (error) {
       console.log(error);
       return [];
     }
   };
+
+  useEffect(() => {
+    getListTransaction({offset: 0, limit: 20})
+  }, [])
   const handlePageClick = async (selectedItem: { selected: number }) => {
     const newOffset = selectedItem.selected * limit;
-    await getBill(limit, newOffset);
+    await getListTransaction({limit, offset: newOffset});
   };
   useEffect(() => {
-    getBill();
+    getListTransaction({limit, offset});
   }, []);
   return (
       <div className="min-h-screen bg-[#000000]">
@@ -59,10 +59,11 @@ const OrderPage = () => {
                 <Fragment key={index}>
                   <BillHistory
                     key={index}
-                    id={item.id}
+                    id={item.refCode}
                     amount={item.amount}
+                    fee={item.fee ? item.fee : 0}
                     createdAt={item.createdAt}
-                    isSuccess={true}
+                    status={item.status}
                     action={item.type}
                   />
                 </Fragment>
