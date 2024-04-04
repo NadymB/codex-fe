@@ -10,23 +10,20 @@ export class TransactionService {
   }
 
   public createWithdrawalRequest = async (values: TWithdrawalRequest) => {
-    const { data } = await this.restConnector.post(
-      `/transactions/withdraw`, {
-        ...values
-      });
+    const { data } = await this.restConnector.post(`/transactions/withdraw`, {
+      ...values,
+    });
 
     return data;
   };
 
   public getListTransactions = async (paginate: PaginationQuery) => {
-    const params = {...paginate};
-    const { data } = await this.restConnector.get(
-      `/transactions`, {
-        params
-      });
+    const params = { ...paginate };
+    const { data } = await this.restConnector.get(`/transactions`, {
+      params,
+    });
 
     return data;
-
   };
 }
 

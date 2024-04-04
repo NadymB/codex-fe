@@ -108,7 +108,9 @@
     "searchCountryOrRegion": "देश या क्षेत्र खोजें",
     "required": "आवश्यक",
     "walletAddress": "वॉलेट पता",
-    "walletAddressPlaceholder": "वॉलेट पता दर्ज करें या लंबे समय तक दबाएँ ताकि पेस्ट कर सकें"
+    "walletAddressPlaceholder": "वॉलेट पता दर्ज करें या लंबे समय तक दबाएँ ताकि पेस्ट कर सकें",
+    "editBtn": "संपादित करें",
+    "verified": "सत्यापित"
   },
   "authentication": {
     "title": "प्रमाणीकरण",

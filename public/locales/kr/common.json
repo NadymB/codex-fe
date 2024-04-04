@@ -108,7 +108,9 @@
     "searchCountryOrRegion": "국가 또는 지역 검색",
     "required": "필수의",
     "walletAddress": "지갑 주소",
-    "walletAddressPlaceholder": "지갑 주소를 입력하거나 길게 눌러 붙여넣기"
+    "walletAddressPlaceholder": "지갑 주소를 입력하거나 길게 눌러 붙여넣기",
+    "editBtn": "편집하다",
+    "verified": "확인"
   },
   "authentication": {
     "title": "인증",
