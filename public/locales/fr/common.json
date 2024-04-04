@@ -400,6 +400,9 @@
     "howToInvite": "Comment présenter des amis",
     "step1": "Partagez le lien avec vos amis",
     "step2": "Invitez vos amis à s'inscrire et à déposer plus de 50 USD",
-    "step3": "Chaque personne reçoit un bon pour une transaction gratuite de 100 USDT"
+    "step3": "Chaque personne reçoit un bon pour une transaction gratuite de 100 USDT",
+    "makingMoney": "Commencez à gagner de l'argent tout de suite",
+    "transactionBtn": "Transaction",
+    "loginBtn": "Se connecter"
  }
 }

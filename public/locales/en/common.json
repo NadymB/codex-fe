@@ -400,6 +400,9 @@
     "howToInvite": "How to Invite Friends",
     "step1": "Share the link with your friends",
     "step2": "Invite friends to sign up and deposit over 50 USD",
-    "step3": "Each person receives a voucher for a free transaction of 100 USDT"
+    "step3": "Each person receives a voucher for a free transaction of 100 USDT",
+    "makingMoney": "Start making money right away",
+    "transactionBtn": "Transaction",
+    "loginBtn": "Log in"
  }
 }

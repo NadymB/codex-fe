@@ -13,6 +13,10 @@ import {
   WithdrawalProfit,
   getStaticURL,
 } from "@/utils/constants";
+import {
+  convertNumberToFormattedString,
+  removeTrailingZeros,
+} from "@/utils/converter";
 import { errorMsg } from "@/utils/errorMsg";
 import { formatNumberToCurrency } from "@/utils/formatNumber";
 import { InputLabel, MenuItem, Select } from "@mui/material";
@@ -185,7 +189,10 @@ const WithdrawPage = () => {
           <div className="w-full flex justify-between text-sm">
             <div className="text-white">
               {t("withdraw.currentBalance")} &nbsp;{" "}
-              {formatNumberToCurrency(currentBalance)} USDT
+              {convertNumberToFormattedString(
+                removeTrailingZeros(Number(currentBalance).toFixed(8))
+              )}{" "}
+              USDT
             </div>
             <div
               className="text-[#3d5afe] cursor-pointer"
@@ -237,8 +244,10 @@ const WithdrawPage = () => {
           <div className="w-full flex justify-between text-base text-white">
             <span className="text-[#888]">{t("withdraw.fees")}</span>
             <span>
-              {formatNumberToCurrency(
-                Number(formik.values.amount) * WithdrawalProfit
+              {convertNumberToFormattedString(
+                removeTrailingZeros(
+                  (Number(formik.values.amount) * WithdrawalProfit).toFixed(8)
+                )
               )}{" "}
               USDT
             </span>
@@ -246,8 +255,13 @@ const WithdrawPage = () => {
           <div className="w-full flex justify-between text-sm text-white">
             <span className="text-[#888]">{t("withdraw.amountReceived")}</span>
             <span>
-              {formatNumberToCurrency(
-                Number(formik.values.amount) * (1 - WithdrawalProfit)
+              {convertNumberToFormattedString(
+                removeTrailingZeros(
+                  (
+                    Number(formik.values.amount) *
+                    (1 - WithdrawalProfit)
+                  ).toFixed(8)
+                )
               )}{" "}
               USDT
             </span>
