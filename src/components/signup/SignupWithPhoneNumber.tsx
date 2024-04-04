@@ -1,17 +1,17 @@
 "use client";
+import { useAuth } from "@/hooks/useAuth";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 import { authService } from "@/services/AuthServices";
 import { geolocationService } from "@/services/GeolocationService";
 import { COUNTRIES, LOGIN_MODE } from "@/utils/constants";
 import { Button } from "@mui/material";
 import { useFormik } from "formik";
 import { t } from "i18next";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
 import SelectCountries from "../SelectCountries";
-import { useAuth } from "@/hooks/useAuth";
-import { WebSocketCtx } from "@/providers/WebSocketProvider";
 
 interface country {
   code: string;
@@ -26,6 +26,8 @@ const SignupWithPhoneNumber = () => {
   const { setCurrentUser, login, currentUser } = useAuth();
   const [messageFail, setMassageFail] = useState<string>("");
   const [currentCountry, setCurrentCountry] = useState<any>();
+
+  const refCode = useSearchParams().get("c");
   const validationSchema = Yup.object({
     phoneNumber: Yup.string().required(
       t("authenticationPage.phoneNumberIsInvalid")
@@ -50,7 +52,7 @@ const SignupWithPhoneNumber = () => {
       phoneNumber: "",
       password: "",
       username: "",
-      managerRefCode: undefined,
+      managerRefCode: "",
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
@@ -97,6 +99,7 @@ const SignupWithPhoneNumber = () => {
     }
   };
   useEffect(() => {
+    formik.setFieldValue("managerRefCode", refCode);
     handleCheckUserLocation();
   }, []);
   return (
