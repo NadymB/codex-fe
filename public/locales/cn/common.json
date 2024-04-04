@@ -221,7 +221,8 @@
     "confirm": "确认",
     "msgAccountError": "请填写收款账户",
     "msgAmountError": "金额最少为1",
-    "securityCode": "安全码"
+    "securityCode": "安全码",
+    "msgAmountMaxError": "超出当前金额"
   },
   "order": {
     "title": "订单",

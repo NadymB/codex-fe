@@ -221,7 +221,8 @@
     "confirm": "bestätigen",
     "msgAccountError": "Bitte füllen Sie das Empfängerkonto aus",
     "msgAmountError": "Der Mindestbetrag beträgt 1",
-    "securityCode": "Sicherheitscode"
+    "securityCode": "Sicherheitscode",
+    "msgAmountMaxError": "Überschreitet den aktuellen Betrag"
   },
   "order": {
     "title": "Befehl",

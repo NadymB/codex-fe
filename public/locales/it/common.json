@@ -221,7 +221,8 @@
     "confirm": "Confermare",
     "msgAccountError": "Si prega di compilare il conto ricevente",
     "msgAmountError": "L'importo è di almeno 1",
-    "securityCode": "Codice di sicurezza"
+    "securityCode": "Codice di sicurezza",
+    "msgAmountMaxError": "Superato l'importo attuale"
   },
   "order": {
     "title": "Ordine",
