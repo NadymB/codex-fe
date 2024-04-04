@@ -1,15 +1,15 @@
 "use client";
 import { BackIcon } from "@/assets/icons/BackIcon";
+import { Logo } from "@/components/Logo";
 import Tabs from "@/components/Tabs";
 import SignupWithEmail from "@/components/signup/SignupWithEmail";
 import SignupWithPhoneNumber from "@/components/signup/SignupWithPhoneNumber";
+import { useAuth } from "@/hooks/useAuth";
+import { OptionsLanguage, getStaticURL } from "@/utils/constants";
 import i18next, { t } from "i18next";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { useAuth } from "@/hooks/useAuth";
-import { Logo } from "@/components/Logo";
-import { OptionsLanguage, getStaticURL } from "@/utils/constants";
 
 const SignUpPage = () => {
   const { fetchCurrentUser } = useAuth();
@@ -37,7 +37,7 @@ const SignUpPage = () => {
       name: `${t("authenticationPage.email")}`,
       content: (
         <>
-          <SignupWithEmail />
+          <SignupWithEmail/>
         </>
       ),
     },
@@ -45,7 +45,7 @@ const SignUpPage = () => {
       name: `${t("authenticationPage.phoneNumber")}`,
       content: (
         <>
-          <SignupWithPhoneNumber />
+          <SignupWithPhoneNumber/>
         </>
       ),
     },

@@ -1,15 +1,15 @@
 "use client";
-import { Button, TextField, Tooltip, styled } from "@mui/material";
-import { useFormik } from "formik";
-import { t } from "i18next";
-import { useRouter } from "next/navigation";
-import React, { useContext, useState } from "react";
-import * as Yup from "yup";
-import { InputCustom } from "../InputCustom";
+import { useAuth } from "@/hooks/useAuth";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
 import { authService } from "@/services/AuthServices";
 import { LOGIN_MODE } from "@/utils/constants";
-import { WebSocketCtx } from "@/providers/WebSocketProvider";
-import { useAuth } from "@/hooks/useAuth";
+import { Button } from "@mui/material";
+import { useFormik } from "formik";
+import { t } from "i18next";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useContext, useEffect, useState } from "react";
+import * as Yup from "yup";
+import { InputCustom } from "../InputCustom";
 
 const SignupWithEmail = () => {
   const router = useRouter();
@@ -17,6 +17,7 @@ const SignupWithEmail = () => {
 
   const { webSocket, register } = useContext(WebSocketCtx);
   const { setCurrentUser, login, currentUser } = useAuth();
+  const refCode = useSearchParams().get("c");
 
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -44,7 +45,7 @@ const SignupWithEmail = () => {
       email: "",
       username: "",
       password: "",
-      managerRefCode: undefined,
+      managerRefCode: "",
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
@@ -74,6 +75,10 @@ const SignupWithEmail = () => {
       console.log("error", error);
     }
   };
+
+  useEffect(() => {
+    formik.setFieldValue("managerRefCode", refCode);
+  }, [])
 
   return (
     <form
