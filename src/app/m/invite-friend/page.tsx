@@ -4,9 +4,11 @@ import { BackIcon } from "@/assets/icons/BackIcon";
 import { getStaticURL } from "@/utils/constants";
 import { useRouter } from "next/navigation";
 import { t } from "i18next";
-
+import { useAuth } from "@/hooks/useAuth";
+import Link from "next/link";
 
 const InviteFriendPage = () => {
+  const { currentUser } = useAuth();
   const router = useRouter();
   return (
       <div
@@ -77,6 +79,14 @@ const InviteFriendPage = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="flex flex-col gap-6 items-center justify-center bg-[#0b0e11] xs:py-6 lg:py-10 px-4">
+          <h2 className="text-[#eaecef] text-2xl lg:text-[32px]">{t("invitePage.makingMoney")}</h2>
+          {currentUser ? (
+            <Link href={"/m/trade/DOGE/USDT"} className="xs:w-full lg:w-[164px] py-[10px] lg:py-[14px] px-4 text-[#181a20] bg-[#fcd535] rounded font-medium text-base text-center">{t("invitePage.transactionBtn")}</Link>
+          ) : (
+            <Link href={"/m/login"} className="xs:w-full lg:w-[164px] py-[10px] lg:py-[14px] px-4 text-[#181a20] bg-[#fcd535] rounded font-medium text-base text-center">{t("invitePage.loginBtn")}</Link>
+          )}
         </div>
       </div>
   );

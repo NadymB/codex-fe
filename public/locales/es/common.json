@@ -400,6 +400,9 @@
     "howToInvite": "Cómo presentar a tus amigos",
     "step1": "Comparte el enlace con tus amigos",
     "step2": "Invita a tus amigos a registrarse y depositar más de 50 USD",
-    "step3": "Cada persona recibe un vale para una transacción gratuita de 100 USDT"
+    "step3": "Cada persona recibe un vale para una transacción gratuita de 100 USDT",
+    "makingMoney": "Comience a ganar dinero de inmediato",
+    "transactionBtn": "Transacción",
+    "loginBtn": "Iniciar sesión"
  }
 }

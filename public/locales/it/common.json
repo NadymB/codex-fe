@@ -400,6 +400,9 @@
     "howToInvite": "Come presentare amici",
     "step1": "Condividi il link con i tuoi amici",
     "step2": "Invita i tuoi amici a registrarsi e depositare più di 50 USD",
-    "step3": "Ognuno riceve un voucher per una transazione gratuita di 100 USDT"
+    "step3": "Ognuno riceve un voucher per una transazione gratuita di 100 USDT",
+    "makingMoney": "Inizia a fare soldi subito",
+    "transactionBtn": "Transazione",
+    "loginBtn": "Accedi"
  }
 }
