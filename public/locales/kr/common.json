@@ -221,7 +221,8 @@
     "confirm": "확인하다",
     "msgAccountError": "수취계좌를 작성해주세요",
     "msgAmountError": "금액이 1 이상입니다.",
-    "securityCode": "보안 코드"
+    "securityCode": "보안 코드",
+    "msgAmountMaxError": "현재 금액을 초과했습니다"
   },
   "order": {
     "title": "주문하다",

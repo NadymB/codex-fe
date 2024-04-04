@@ -221,7 +221,8 @@
     "confirm": "confirmer",
     "msgAccountError": "Veuillez remplir le compte de réception",
     "msgAmountError": "Le montant est d'au moins 1",
-    "securityCode": "Code de sécurité"
+    "securityCode": "Code de sécurité",
+    "msgAmountMaxError": "Dépassement du montant actuel"
   },
   "order": {
     "title": "Commande",

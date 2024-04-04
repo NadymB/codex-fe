@@ -17,7 +17,7 @@ const PaymentPage = () => {
   const [withdrawAccountInfo, setWithdrawAccountInfo] = useState<any>();
   const [cryptoCurrencyCurrent, setCryptoCurrencyCurrent] = useState<Currency>();
   const bankNameSecure = `${withdrawAccountInfo?.bankNumber?.slice(0,1)}*******${withdrawAccountInfo?.bankNumber?.slice(withdrawAccountInfo?.bankNumber?.length - 1, withdrawAccountInfo?.bankNumber?.length)}`;
-  const walletAddressSecure = `${withdrawAccountInfo?.walletAddress?.slice(0,4)}*${withdrawAccountInfo?.walletAddress?.slice(withdrawAccountInfo?.walletAddress?.length - 4, withdrawAccountInfo?.walletAddress?.length)}`;
+  const walletAddressSecure = withdrawAccountInfo?.walletAddress?.length > 8 ?`${withdrawAccountInfo?.walletAddress?.slice(0,4)}*${withdrawAccountInfo?.walletAddress?.slice(withdrawAccountInfo?.walletAddress?.length - 4, withdrawAccountInfo?.walletAddress?.length)}` : withdrawAccountInfo?.walletAddress;
 
   const getWithdrawalAccount = async () => {
     try {

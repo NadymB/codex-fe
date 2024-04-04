@@ -221,7 +221,8 @@
     "confirm": "confirmar",
     "msgAccountError": "Por favor complete la cuenta receptora",
     "msgAmountError": "La cantidad mínima es 1",
-    "securityCode": "Código de seguridad"
+    "securityCode": "Código de seguridad",
+    "msgAmountMaxError": "Ha excedido el monto actual"
   },
   "order": {
     "title": "Orden",
