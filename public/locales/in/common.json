@@ -221,7 +221,8 @@
     "confirm": "पुष्टि कर",
     "msgAccountError": "कृपया प्राप्ति खाता भरें",
     "msgAmountError": "न्यूनतम राशि 1 है",
-    "securityCode": "सुरक्षा कोड"
+    "securityCode": "सुरक्षा कोड",
+    "msgAmountMaxError": "वर्तमान राशि से अधिक है"
   },
   "order": {
     "title": "आदेश",

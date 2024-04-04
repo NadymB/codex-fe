@@ -221,7 +221,8 @@
     "confirm": "Xác nhận",
     "msgAccountError": "Vui lòng điền vào tài khoản nhận",
     "msgAmountError": "Số tiền tối thiểu là 1",
-    "securityCode": "Security Code"
+    "securityCode": "Mã bảo mật",
+    "msgAmountMaxError": "Vượt quá số tiền hiện tại"
   },
   "order": {
     "title": "Đặt hàng",

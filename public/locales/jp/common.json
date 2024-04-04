@@ -221,7 +221,8 @@
     "confirm": "確認",
     "msgAccountError": "受信アカウントに記入してください",
     "msgAmountError": "最小金額は1",
-    "securityCode": "セキュリティコード"
+    "securityCode": "セキュリティコード",
+    "msgAmountMaxError": "現在の金額を超えています"
   },
   "order": {
     "title": "注文",

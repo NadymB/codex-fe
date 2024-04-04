@@ -84,15 +84,16 @@ const WithdrawPage = () => {
 
   const validationSchema = Yup.object({
     account: Yup.string().required(t("withdraw.msgAccountError")),
-    amount: Yup.string()
-      .required(t("withdraw.msgAmountError"))
-      .matches(/^[0-9]+$/, t("withdraw.msgAmountError"))
-      .min(1, t("withdraw.msgAmountError")),
+    amount: Yup.number()
+      .integer()
+      .min(1, t("withdraw.msgAmountError"))
+      .max(currentBalance, t("withdraw.msgAmountMaxError"))
+      .required(t("withdraw.msgAmountError")),
   });
   const formik = useFormik({
     initialValues: {
       account: "",
-      amount: "",
+      amount: 0,
       pin: "",
     },
     validationSchema: validationSchema,
@@ -168,23 +169,17 @@ const WithdrawPage = () => {
               type="number"
               className="w-full bg-[#1d1c22] rounded p-4 text-base text-white placeholder:text-[#888]"
               value={formik.values.amount}
-              onChange={(e) => {
-                if (Number(e.target.value) > 0) {
-                  formik.setFieldValue("amount", e.target.value);
-                } else {
-                  formik.setFieldValue("amount", "");
-                }
-              }}
+              onChange={formik.handleChange}
               placeholder={t("withdraw.amount")}
               min={0}
               max={currentBalance}
-              step={0.001}
             />
             {formik.touched.amount && formik.errors.amount ? (
               <div className="text-[#d32f2f] text-xs px-4 py-1">
                 {formik.errors.amount}
               </div>
             ) : null}
+            
           </div>
           <div className="w-full flex justify-between text-sm">
             <div className="text-white">
@@ -211,9 +206,6 @@ const WithdrawPage = () => {
                 value={formik.values.pin}
                 onChange={formik.handleChange}
                 placeholder={t("withdraw.securityCode")}
-                min={0}
-                max={currentBalance}
-                step={0.001}
               />
               {formik.touched.pin && formik.errors.pin ? (
                 <div className="text-[#d32f2f] text-xs px-4 py-1">
