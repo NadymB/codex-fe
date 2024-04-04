@@ -108,7 +108,9 @@
     "searchCountryOrRegion": "Tìm kiếm quốc gia hoặc khu vực",
     "required": "Bắt buộc",
     "walletAddress": "Địa chỉ ví",
-    "walletAddressPlaceholder": "Nhập hoặc nhấn Long Press và dán địa chỉ ví"
+    "walletAddressPlaceholder": "Nhập hoặc nhấn Long Press và dán địa chỉ ví",
+    "editBtn": "Biên tập",
+    "verified": "Đã xác minh"
   },
   "authentication": {
     "title": "Xác thực",

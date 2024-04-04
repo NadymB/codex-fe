@@ -108,7 +108,9 @@
     "searchCountryOrRegion": "Cerca paese o regione",
     "required": "necessario",
     "walletAddress": "indirizzo del portafoglio",
-    "walletAddressPlaceholder": "Inserisci o premi a lungo per incollare l'indirizzo del portafoglio"
+    "walletAddressPlaceholder": "Inserisci o premi a lungo per incollare l'indirizzo del portafoglio",
+    "editBtn": "modificare",
+    "verified": "verificato"
   },
   "authentication": {
     "title": "Autenticazione",

@@ -2,16 +2,16 @@
 "use client";
 
 import { CardIcon } from "@/assets/icons/CardIcon";
+import { DeleteIcon } from "@/assets/icons/DeleteIcon";
 import { GoBack } from "@/components/layouts/GoBack";
-import { WITHDRAW_TYPE } from "@/models/Payment";
+import { onToast } from "@/hooks/useToast";
+import { WITHDRAWAL_ACCOUNT_STATUS, WITHDRAW_TYPE } from "@/models/Payment";
 import { paymentService } from "@/services/PaymentService";
 import { CURRENCIES, Currency, getStaticURL } from "@/utils/constants";
 import { Button } from "@mui/material";
 import { t } from "i18next";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const listWithdrawAccount = true;
 
 const PaymentPage = () => {
   const [withdrawAccountInfo, setWithdrawAccountInfo] = useState<any>();
@@ -33,6 +33,22 @@ const PaymentPage = () => {
     }
   };
 
+  const deleteWithdrawAccount = async (withdrawalAccountId: string) => {
+    try {
+      const response = await paymentService.deletePaymentInfo(withdrawalAccountId)
+      if(response.data && response.success) {
+        onToast("Delete Withdrawal Account Successfully");
+      }
+      getWithdrawalAccount();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const handleDeleteWithdrawAccount = async (id: string) => {
+    deleteWithdrawAccount(id)
+  }
+
   useEffect(() => {
     getWithdrawalAccount();
   }, []);
@@ -49,13 +65,26 @@ const PaymentPage = () => {
             className="h-80 w-80"
           />
           <div className="flex flex-col rounded bg-[#1c1c1e] w-full">
-            <div className="flex gap-2 items-center py-2 border-b border-[#ffffff1a] text-[#888] text-base">
-              <div className="h-8 w-[3px] bg-[#f7a600]" />
-              <CardIcon />
-              {withdrawAccountInfo.type === WITHDRAW_TYPE.FIAT_CURRENCY ? (
-                <span>{withdrawAccountInfo.bankName}</span>
-              ) : (
-                <span>{cryptoCurrencyCurrent && `${cryptoCurrencyCurrent.acronym} (${cryptoCurrencyCurrent.name})`}</span>
+            <div className="flex justify-between border-b border-[#ffffff1a]">
+              <div className="flex gap-2 items-center py-2 text-[#888] text-base">
+                <div className="h-8 w-[3px] bg-[#f7a600]" />
+                <CardIcon />
+                {withdrawAccountInfo.type === WITHDRAW_TYPE.FIAT_CURRENCY ? (
+                  <span>{withdrawAccountInfo.bankName}</span>
+                ) : (
+                  <span>{cryptoCurrencyCurrent && `${cryptoCurrencyCurrent.acronym} (${cryptoCurrencyCurrent.name})`}</span>
+                )}
+                {withdrawAccountInfo.status === WITHDRAWAL_ACCOUNT_STATUS.APPROVED && (
+                  <div className="border border-[#2e7d32b3] text-[#2e7d32] text-xs rounded-2xl text-nowrap py-1 px-[7px]">Da xac minh</div>
+                )}
+              </div>
+              {withdrawAccountInfo.isCanEdit && (
+                <div className="flex gap-2 items-center pr-1">
+                  <Link href={"/m/setting/payment/create"} className="py-[6px] px-2 font-bold text-sm text-white hover:bg-[#ffffff0a] rounded">Bien tap</Link>
+                  <button className="p-[5px]" onClick={() => handleDeleteWithdrawAccount(withdrawAccountInfo.id)}>
+                    <DeleteIcon />
+                  </button>
+                </div>
               )}
             </div>
             <div className="flex flex-col gap-[2px] p-4 text-sm text-white">

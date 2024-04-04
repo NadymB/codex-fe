@@ -108,7 +108,9 @@
     "searchCountryOrRegion": "搜索国家或地区",
     "required": "必填",
     "walletAddress": "钱包地址",
-    "walletAddressPlaceholder": "输入或长按粘贴钱包地址"
+    "walletAddressPlaceholder": "输入或长按粘贴钱包地址",
+    "editBtn": "编辑",
+    "verified": "已认证"
   },
   "authentication": {
     "title": "身份认证",

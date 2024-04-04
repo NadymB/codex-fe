@@ -10,16 +10,26 @@ export class PaymentService {
   }
 
   public getPaymentInfo = async () => {
-    const { data } = await this.restConnector.get(
-      `/users/withdrawal-account`
-    );
+    const { data } = await this.restConnector.get(`/users/withdrawal-account`);
 
     return data;
   };
 
   public createPaymentInfo = async (values: TPaymentInfo) => {
     const { data } = await this.restConnector.post(
-      `/users/withdrawal-account`, values
+      `/users/withdrawal-account`,
+      values
+    );
+
+    return data;
+  };
+
+  public deletePaymentInfo = async (withdrawalAccountId: string) => {
+    const { data } = await this.restConnector.delete(
+      `/users/withdrawal-account`,
+      {
+        data: { withdrawalAccountId },
+      }
     );
 
     return data;

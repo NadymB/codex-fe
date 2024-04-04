@@ -108,7 +108,9 @@
     "searchCountryOrRegion": "国または地域を検索します",
     "required": "持つ必要があります",
     "walletAddress": "ウォレットアドレス",
-    "walletAddressPlaceholder": "ロングプレスを入力または押すと、ウォレットアドレスを貼り付けます"
+    "walletAddressPlaceholder": "ロングプレスを入力または押すと、ウォレットアドレスを貼り付けます",
+    "editBtn": "編集",
+    "verified": "検証"
   },
   "authentication": {
     "title": "認証",
