@@ -1,20 +1,23 @@
-import { BALANCE_ACTION, TRADE_TYPE } from "@/utils/constants";
+import { TRANSACTION_STATUS } from "@/models/Transaction";
+import { TRADE_TYPE } from "@/utils/constants";
 import { convertNumberToFormattedString } from "@/utils/converter";
 import { t } from "i18next";
 import { DateTime } from "luxon";
 
 interface IOrderItem {
-  amount: string;
+  amount: number;
+  fee: number;
   id: string;
   createdAt: string;
-  isSuccess: boolean;
+  status: string;
   action: TRADE_TYPE;
 }
 export const BillHistory = ({
   amount,
+  fee,
   id,
   createdAt,
-  isSuccess,
+  status,
   action,
 }: IOrderItem) => {
   const handleReturnTransactiionTitle = (type: string) => {
@@ -78,6 +81,29 @@ export const BillHistory = ({
         return "";
     }
   };
+
+  const statusColor =
+    status === TRANSACTION_STATUS.COMPLETED
+      ? "text-[#00b42a]"
+      : status === TRANSACTION_STATUS.PENDING
+        ? "text-[#c9cdd4]"
+        : status === TRANSACTION_STATUS.PAYMENT_PROCESSING
+          ? "text-[#165dff]"
+          : status === TRANSACTION_STATUS.AUDITING_IN_PROGRESS
+            ? "text-[#ff7d00]"
+            : "text-[#f53f3f]";
+  const statusLabel =
+    status === TRANSACTION_STATUS.COMPLETED
+      ? "Success"
+      : status === TRANSACTION_STATUS.PENDING
+        ? "Pending"
+        : status ===
+            TRANSACTION_STATUS.PAYMENT_PROCESSING
+          ? "Payment In Progress"
+          : status ===
+              TRANSACTION_STATUS.AUDITING_IN_PROGRESS
+            ? "Under Review"
+            : "Fail";
   return (
     <div
       className="p-4 bg-[#1c1c1e] rounded"
@@ -123,18 +149,16 @@ export const BillHistory = ({
             {t("tradePage.trade.handlingFee")}
           </span>
           <span className="text-xs text-white">
-            {convertNumberToFormattedString(String(0.0))} USDT
+            {convertNumberToFormattedString(String(fee))} USDT
           </span>
         </div>
 
         <div className="flex justify-between text-base text-white">
-          <span className="text-sm text-[#A3A3A3]">{t("tradePage.trade.status")}</span>
-          <span
-            className={`text-base ${isSuccess ? "text-[#55af72]" : "text-[#dd5350]"}`}
-          >
-            {isSuccess
-              ? t("tradePage.trade.success")
-              : t("tradePage.trade.fail")}
+          <span className="text-sm text-[#A3A3A3]">
+            {t("tradePage.trade.status")}
+          </span>
+          <span className={`text-base ${statusColor}`}>
+            {statusLabel}
           </span>
         </div>
       </div>
