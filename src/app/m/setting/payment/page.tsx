@@ -1,23 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { GoBack } from "@/components/layouts/GoBack";
-import { CURRENCIES, Currency, getStaticURL } from "@/utils/constants";
-import { t } from "i18next";
-import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@mui/material";
 import { CardIcon } from "@/assets/icons/CardIcon";
-import { paymentService } from "@/services/PaymentService";
-import { useEffect, useState } from "react";
+import { GoBack } from "@/components/layouts/GoBack";
 import { WITHDRAW_TYPE } from "@/models/Payment";
+import { paymentService } from "@/services/PaymentService";
+import { CURRENCIES, Currency, getStaticURL } from "@/utils/constants";
+import { Button } from "@mui/material";
+import { t } from "i18next";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const listWithdrawAccount = true;
 
 const PaymentPage = () => {
   const [withdrawAccountInfo, setWithdrawAccountInfo] = useState<any>();
   const [cryptoCurrencyCurrent, setCryptoCurrencyCurrent] = useState<Currency>();
-  const bankNameSecure = `${withdrawAccountInfo?.bankNumber?.slice(0,1)}*******${withdrawAccountInfo?.bankNumber?.slice(withdrawAccountInfo?.bankNumber?.length - 1, withdrawAccountInfo?.bankNumber?.length)}`
+  const bankNameSecure = `${withdrawAccountInfo?.bankNumber?.slice(0,1)}*******${withdrawAccountInfo?.bankNumber?.slice(withdrawAccountInfo?.bankNumber?.length - 1, withdrawAccountInfo?.bankNumber?.length)}`;
+  const walletAddressSecure = `${withdrawAccountInfo?.walletAddress?.slice(0,4)}*${withdrawAccountInfo?.walletAddress?.slice(withdrawAccountInfo?.walletAddress?.length - 4, withdrawAccountInfo?.walletAddress?.length)}`;
 
   const getWithdrawalAccount = async () => {
     try {
@@ -78,7 +78,7 @@ const PaymentPage = () => {
                 <span className="text-[#888]">{withdrawAccountInfo.nationalIdCard}</span>
               )}
               {withdrawAccountInfo.walletAddress && (
-                <span>{withdrawAccountInfo.walletAddress}</span>
+                <span>{walletAddressSecure}</span>
               )}
               {cryptoCurrencyCurrent && (
                 <span>{`${cryptoCurrencyCurrent.acronym} (${cryptoCurrencyCurrent.name})`}</span>

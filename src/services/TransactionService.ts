@@ -1,6 +1,6 @@
 import { AxiosInstance } from "axios";
 import restConnector from "../connectors/axiosRestConnector";
-import { TWithdrawalRequest } from "@/models/Transaction";
+import { PaginationQuery, TWithdrawalRequest } from "@/models/Transaction";
 
 export class TransactionService {
   private restConnector: AxiosInstance;
@@ -16,6 +16,17 @@ export class TransactionService {
       });
 
     return data;
+  };
+
+  public getListTransactions = async (paginate: PaginationQuery) => {
+    const params = {...paginate};
+    const { data } = await this.restConnector.get(
+      `/transactions`, {
+        params
+      });
+
+    return data;
+
   };
 }
 
