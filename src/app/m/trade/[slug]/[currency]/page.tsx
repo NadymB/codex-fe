@@ -13,16 +13,23 @@ import { onToast } from "@/hooks/useToast";
 import { PERMISSION_REQUIRED } from "@/models/User";
 import { tradeService } from "@/services/TradeService";
 import {
+  AdvancedChart,
+  AdvancedChartWidgetProps,
+} from "react-tradingview-embed";
+import {
   CHART_CODE,
   CRYPTOCURRENCY_CODE,
+  PAIR_CODE,
   PAIR_TYPE,
   PRICE_TYPE,
+  TRADE_CHART,
   getStaticURL,
 } from "@/utils/constants";
 import { BetType } from "@/utils/type";
 import { Button } from "@mui/material";
 import { t } from "i18next";
 import { useEffect, useRef, useState } from "react";
+import CustomSelect from "@/components/controls/CustomSelect";
 
 const TradePage = ({
   params,
@@ -43,9 +50,27 @@ const TradePage = ({
   });
   const [isRefresh, setIsRefresh] = useState(false);
   const [tokenPrice, setTokenPrice] = useState<number>(0);
+  const [typeOfChart, setTypeOfChart] = useState<TRADE_CHART>();
+  const [pairCode, setPairCode] = useState<string>();
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
   };
+
+  useEffect(() => {
+    if (params.slug && params.currency) {
+      const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
+        .split(" ")
+        .join("_");
+        
+      setPairCode(PAIR_CODE[tokenKey.toLocaleUpperCase() as keyof typeof PAIR_CODE]);
+      setTypeOfChart(
+        PAIR_TYPE[tokenKey.toLocaleLowerCase() as keyof typeof PAIR_TYPE] ===
+          PRICE_TYPE.CRYPTO
+          ? TRADE_CHART.CANDLE
+          : TRADE_CHART.TRADING_VIEW
+      );
+    }
+  }, [params]);
 
   const tradeBtnRef = useRef(null);
   const orderRef = useRef(null);
@@ -56,7 +81,7 @@ const TradePage = ({
         (item: string) => item === PERMISSION_REQUIRED.TRADE
       );
 
-      if (checkPermissions === undefined) {
+      if (!checkPermissions) {
         onToast(t("permissionDenied.trade"), "error");
       } else {
         const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
@@ -133,33 +158,45 @@ const TradePage = ({
       name: `${t("tradePage.chart.title")}`,
       content: (
         <div className=" flex flex-col ">
-          <div className="flex flex-row space-x-1 px-4 py-3 items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img
-                className="w-8 h-8"
-                src={`${getStaticURL()}/assets/images/tokens/${params.slug}.svg`}
-                alt=""
-              />
-              <div className="text-[16px]">
-                <span className="text-white">
-                  {params.slug} / {params.currency}
-                </span>
-                <span className="text-green-600 bg-[#55AF7233] px-2 py-1 rounded ml-1 text-[14px]">
-                  +0.44%
-                </span>
+          {typeOfChart === TRADE_CHART.CANDLE && (
+            <>
+              <div className="flex flex-row space-x-1 px-4 py-3 items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <img
+                    className="w-8 h-8"
+                    src={`${getStaticURL()}/assets/images/tokens/${params.slug}.svg`}
+                    alt=""
+                  />
+                  <div className="text-[16px]">
+                    <span className="text-white">
+                      {params.slug} / {params.currency}
+                    </span>
+                    <span className="text-green-600 bg-[#55AF7233] px-2 py-1 rounded ml-1 text-[14px]">
+                      +0.44%
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <FavoriteIcon />
+                </div>
               </div>
-            </div>
-            <div>
-              <FavoriteIcon />
-            </div>
-          </div>
-          <div className="px-4">
-            <TradingCandleChart
-              setValueToken={setTokenPrice}
-              token={params.slug}
-              currency={params.currency}
+              <div className="px-4">
+                <TradingCandleChart
+                  setValueToken={setTokenPrice}
+                  token={params.slug}
+                  currency={params.currency}
+                />
+              </div>
+            </>
+          )}
+          {typeOfChart === TRADE_CHART.TRADING_VIEW && (
+            <AdvancedChart
+              widgetProps={{
+                allow_symbol_change: true,
+                symbol: pairCode,
+              }}
             />
-          </div>
+          )}
           <div ref={orderRef}>
             <OrderSection
               isRefresh={isRefresh}
