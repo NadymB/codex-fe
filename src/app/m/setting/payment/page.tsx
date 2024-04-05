@@ -15,17 +15,25 @@ import { useEffect, useState } from "react";
 
 const PaymentPage = () => {
   const [withdrawAccountInfo, setWithdrawAccountInfo] = useState<any>();
-  const [cryptoCurrencyCurrent, setCryptoCurrencyCurrent] = useState<Currency>();
-  const bankNameSecure = `${withdrawAccountInfo?.bankNumber?.slice(0,1)}*******${withdrawAccountInfo?.bankNumber?.slice(withdrawAccountInfo?.bankNumber?.length - 1, withdrawAccountInfo?.bankNumber?.length)}`;
-  const walletAddressSecure = withdrawAccountInfo?.walletAddress?.length > 8 ?`${withdrawAccountInfo?.walletAddress?.slice(0,4)}*${withdrawAccountInfo?.walletAddress?.slice(withdrawAccountInfo?.walletAddress?.length - 4, withdrawAccountInfo?.walletAddress?.length)}` : withdrawAccountInfo?.walletAddress;
+  const [cryptoCurrencyCurrent, setCryptoCurrencyCurrent] =
+    useState<Currency>();
+  const bankNameSecure = `${withdrawAccountInfo?.bankNumber?.slice(0, 1)}*******${withdrawAccountInfo?.bankNumber?.slice(withdrawAccountInfo?.bankNumber?.length - 1, withdrawAccountInfo?.bankNumber?.length)}`;
+  const walletAddressSecure =
+    withdrawAccountInfo?.walletAddress?.length > 8
+      ? `${withdrawAccountInfo?.walletAddress?.slice(0, 4)}*${withdrawAccountInfo?.walletAddress?.slice(withdrawAccountInfo?.walletAddress?.length - 4, withdrawAccountInfo?.walletAddress?.length)}`
+      : withdrawAccountInfo?.walletAddress;
 
   const getWithdrawalAccount = async () => {
     try {
       const response = await paymentService.getPaymentInfo();
       if (response.data && response.success) {
         setWithdrawAccountInfo(response.data);
-        if(response.data.cryptoCurrency) {
-          setCryptoCurrencyCurrent(CURRENCIES.find((item) => item.value === response.data.cryptoCurrency))
+        if (response.data.cryptoCurrency) {
+          setCryptoCurrencyCurrent(
+            CURRENCIES.find(
+              (item) => item.value === response.data.cryptoCurrency
+            )
+          );
         }
       }
     } catch (error) {
@@ -35,19 +43,20 @@ const PaymentPage = () => {
 
   const deleteWithdrawAccount = async (withdrawalAccountId: string) => {
     try {
-      const response = await paymentService.deletePaymentInfo(withdrawalAccountId)
-      if(response.data && response.success) {
+      const response =
+        await paymentService.deletePaymentInfo(withdrawalAccountId);
+      if (response.data && response.success) {
         onToast("Delete Withdrawal Account Successfully");
       }
       getWithdrawalAccount();
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const handleDeleteWithdrawAccount = async (id: string) => {
-    deleteWithdrawAccount(id)
-  }
+    deleteWithdrawAccount(id);
+  };
 
   useEffect(() => {
     getWithdrawalAccount();
@@ -72,45 +81,62 @@ const PaymentPage = () => {
                 {withdrawAccountInfo.type === WITHDRAW_TYPE.FIAT_CURRENCY ? (
                   <span>{withdrawAccountInfo.bankName}</span>
                 ) : (
-                  <span>{cryptoCurrencyCurrent && `${cryptoCurrencyCurrent.acronym} (${cryptoCurrencyCurrent.name})`}</span>
+                  <span>
+                    {cryptoCurrencyCurrent &&
+                      `${cryptoCurrencyCurrent.acronym} (${cryptoCurrencyCurrent.name})`}
+                  </span>
                 )}
-                {withdrawAccountInfo.status === WITHDRAWAL_ACCOUNT_STATUS.APPROVED && (
-                  <div className="border border-[#2e7d32b3] text-[#2e7d32] text-xs rounded-2xl text-nowrap py-1 px-[7px]">Da xac minh</div>
+                {withdrawAccountInfo.status ===
+                  WITHDRAWAL_ACCOUNT_STATUS.APPROVED && (
+                  <div className="border border-[#2e7d32b3] text-[#2e7d32] text-xs rounded-2xl text-nowrap py-1 px-[7px]">
+                    {t("withdrawAccount.verified")}
+                  </div>
                 )}
               </div>
               {withdrawAccountInfo.isCanEdit && (
                 <div className="flex gap-2 items-center pr-1">
-                  <Link href={"/m/setting/payment/create"} className="py-[6px] px-2 font-bold text-sm text-white hover:bg-[#ffffff0a] rounded">Bien tap</Link>
-                  <button className="p-[5px]" onClick={() => handleDeleteWithdrawAccount(withdrawAccountInfo.id)}>
+                  <Link
+                    href={"/m/setting/payment/create"}
+                    className="py-[6px] px-2 font-bold text-sm text-white hover:bg-[#ffffff0a] rounded"
+                  >
+                    {t("withdrawAccount.editBtn")}
+                  </Link>
+                  <button
+                    className="p-[5px]"
+                    onClick={() =>
+                      handleDeleteWithdrawAccount(withdrawAccountInfo.id)
+                    }
+                  >
                     <DeleteIcon />
                   </button>
                 </div>
               )}
             </div>
             <div className="flex flex-col gap-[2px] p-4 text-sm text-white">
-              {withdrawAccountInfo.bankNumber && (
-                <span>{bankNameSecure}</span>
-              )}
-              {withdrawAccountInfo.country && (
-                <span className="text-[#888]">{withdrawAccountInfo.country}</span>
-              )}
-              {withdrawAccountInfo.bankName && (
-                <span className="text-[#888]">{withdrawAccountInfo.bankName}</span>
-              )}
-              {withdrawAccountInfo.address && (
-                <span className="text-[#888]">{withdrawAccountInfo.address}</span>
-              )}
-              {withdrawAccountInfo.phoneNumber && (
-                <span className="text-[#888]">{withdrawAccountInfo.phoneNumber}</span>
-              )}
-              {withdrawAccountInfo.nationalIdCard && (
-                <span className="text-[#888]">{withdrawAccountInfo.nationalIdCard}</span>
-              )}
-              {withdrawAccountInfo.walletAddress && (
-                <span>{walletAddressSecure}</span>
-              )}
-              {cryptoCurrencyCurrent && (
-                <span>{`${cryptoCurrencyCurrent.acronym} (${cryptoCurrencyCurrent.name})`}</span>
+              {withdrawAccountInfo.type === WITHDRAW_TYPE.CRYPTO_CURRENCY ? (
+                <>
+                  <span>{walletAddressSecure}</span>
+                  <span>{`${cryptoCurrencyCurrent?.acronym} (${cryptoCurrencyCurrent?.name})`}</span>
+                </>
+              ) : (
+                <>
+                  <span>{bankNameSecure}</span>
+                  <span className="text-[#888]">
+                    {withdrawAccountInfo.country}
+                  </span>
+                  <span className="text-[#888]">
+                    {withdrawAccountInfo.bankName}
+                  </span>
+                  <span className="text-[#888]">
+                    {withdrawAccountInfo.address}
+                  </span>
+                  <span className="text-[#888]">
+                    {withdrawAccountInfo.phoneNumber}
+                  </span>
+                  <span className="text-[#888]">
+                    {withdrawAccountInfo.nationalIdCard}
+                  </span>
+                </>
               )}
             </div>
           </div>
