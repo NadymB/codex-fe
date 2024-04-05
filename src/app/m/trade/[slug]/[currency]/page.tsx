@@ -60,7 +60,8 @@ const TradePage = ({
         onToast(t("permissionDenied.trade"), "error");
       } else {
         const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
-          .replace(" ", "_")
+          .split(" ")
+          .join("_")
           .toLowerCase();
         const response = await tradeService.placeOrders({
           ...value,
@@ -82,7 +83,8 @@ const TradePage = ({
     try {
       if (!currentUser) return [];
       const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
-        .replace(" ", "_")
+        .split(" ")
+        .join("_")
         .toLowerCase();
 
       const response = await tradeService.getOrders(
@@ -105,7 +107,8 @@ const TradePage = ({
     try {
       if (!currentUser) return [];
       const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
-        .replace(" ", "_")
+        .split(" ")
+        .join("_")
         .toLowerCase();
 
       const response = await tradeService.getOrdersPending(
