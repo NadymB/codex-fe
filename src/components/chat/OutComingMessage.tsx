@@ -35,7 +35,7 @@ export const OutComingMessage = ({ message, sender }: IProp) => {
         {sender?.username}
       </div>
       {message && (
-        <div className="my-1 py-1 px-2 flex flex-col bg-[#637BFE] rounded-lg  max-w-full">
+        <div className="my-1 py-1 px-2 flex flex-col bg-[#637BFE] rounded-lg max-w-[80%] lg:max-w-[50%]">
           <div className="max-w-md">{message?.content?.text}</div>
           {!!message?.content?.images.length && (
             <div className="">

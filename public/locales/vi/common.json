@@ -74,7 +74,7 @@
     "login": "Đăng nhập",
     "signup": "Đăng ký",
     "notCertified": "Chưa xác thực",
-    "greenRiseAndRed": "Xanh lên đỏ xuống",
+    "greenRiseAndRed": "Xanh lên, đỏ xuống",
     "notSet": "Chưa đặt"
   },
   "announcementPage": {
@@ -108,6 +108,7 @@
     "searchCountryOrRegion": "Tìm kiếm quốc gia hoặc khu vực",
     "required": "Bắt buộc",
     "walletAddress": "Địa chỉ ví",
+    "cryptocurrencyPlaceholder": "Bấm để chọn tiền điện tử",
     "walletAddressPlaceholder": "Nhập hoặc nhấn Long Press và dán địa chỉ ví",
     "editBtn": "Biên tập",
     "verified": "Đã xác minh"
@@ -187,7 +188,7 @@
     "userNameIsInvalid": "Xin hãy điền tên đăng nhập",
     "required": "Phải có",
     "passwordIsInvalid": "Vui lòng điền mật khẩu",
-    "phoneNumberIsInvalid": "Vui lòng điền vào số điện thoại của bạn",
+    "phoneNumberIsReuired": "Vui lòng điền vào số điện thoại của bạn",
     "phoneNumberIsNotTrue": "Số điện thoại di động không chính xác",
     "passwordMinLength": "Mật khẩu phải có ít nhất 8 ký tự",
     "passwordLowercase": "Mật khẩu phải chứa ít nhất một chữ thường",
@@ -198,7 +199,8 @@
     "usernameTooLong": "Tên người dùng quá dài",
     "allowLettersAndNumbers": "Vui lòng chỉ sử dụng chữ cái và số cho tên người dùng",
     "phoneNumberMustBeAValidPhoneNumber": "Số điện thoại phải là số điện thoại hợp lệ",
-    "withdrawalAccountCreatedSuccessfully": "Tạo tài khoản rút tiền thành công."
+    "withdrawalAccountCreatedSuccessfully": "Tạo tài khoản rút tiền thành công.",
+    "phoneNumberIsInvalid": "Số điện thoại di động không chính xác"
   },
   "deposit": {
     "title": "Nạp Tiền",

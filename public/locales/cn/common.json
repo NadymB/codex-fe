@@ -108,6 +108,7 @@
     "searchCountryOrRegion": "搜索国家或地区",
     "required": "必填",
     "walletAddress": "钱包地址",
+    "cryptocurrencyPlaceholder": "点击选择加密货币",
     "walletAddressPlaceholder": "输入或长按粘贴钱包地址",
     "editBtn": "编辑",
     "verified": "已认证"
@@ -187,7 +188,7 @@
     "userNameIsInvalid": "用户名必填",
     "required": "必填",
     "passwordIsInvalid": "8-20个字符",
-    "phoneNumberIsInvalid": "手机号不正确",
+    "phoneNumberIsReuired": "请填写手机号",
     "phoneNumberIsNotTrue": "手机号码不正确",
     "passwordMinLength": "密码至少需要8个字符",
     "passwordLowercase": "密码必须至少包含一个小写字母",
@@ -198,7 +199,8 @@
     "usernameTooLong": "用户名太长",
     "allowLettersAndNumbers": "请只使用字母和数字作为用户名",
     "phoneNumberMustBeAValidPhoneNumber": "电话号码必须是有效的电话号码",
-    "withdrawalAccountCreatedSuccessfully": "提现账户创建成功。"
+    "withdrawalAccountCreatedSuccessfully": "提现账户创建成功。",
+    "phoneNumberIsInvalid": "手机号不正确"
   },
   "deposit": {
     "title": "学习",

@@ -108,6 +108,7 @@
     "searchCountryOrRegion": "Search country or region",
     "required": "Required",
     "walletAddress": "Wallet Address",
+    "cryptocurrencyPlaceholder": "Click to select a cryptocurrency",
     "walletAddressPlaceholder": "Enter or long press to paste wallet address",
     "editBtn": "Edit",
     "verified": "Verified"
@@ -178,7 +179,7 @@
     "login": "Login",
     "register": "Register",
     "email": "E-mail",
-    "username": "User name",
+    "username": "Username",
     "phoneNumber": "Phone number",
     "setPassword": "Set password",
     "loginPassword": "Login password",
@@ -187,7 +188,7 @@
     "userNameIsInvalid": "Please enter your username",
     "required": "Required",
     "passwordIsInvalid": "Please fill in the password",
-    "phoneNumberIsInvalid": "Please fill in your phone number",
+    "phoneNumberIsReuired": "Please fill in your phone number",
     "phoneNumberIsNotTrue": "Mobile phone number is incorrect",
     "passwordMinLength": "Password must be at least 8 characters long",
     "passwordLowercase": "Password must contain at least one lowercase letter",
@@ -198,7 +199,8 @@
     "usernameTooLong": "Username is too long",
     "allowLettersAndNumbers": "Please use only letters and numbers for the username",
     "phoneNumberMustBeAValidPhoneNumber": "Phonenumber must be a valid phone number",
-    "withdrawalAccountCreatedSuccessfully": "Withdrawal Account created successfully."
+    "withdrawalAccountCreatedSuccessfully": "Withdrawal Account created successfully.",
+    "phoneNumberIsInvalid": "The mobile phone number is incorrect"
   },
   "deposit": {
     "title": "Deposit",

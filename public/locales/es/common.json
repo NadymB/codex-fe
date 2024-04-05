@@ -108,6 +108,7 @@
     "searchCountryOrRegion": "Buscar país o región",
     "required": "requerido",
     "walletAddress": "Wallet-Adresse",
+    "cryptocurrencyPlaceholder": "Haga clic para seleccionar una criptomoneda",
     "walletAddressPlaceholder": "Geben Sie die Wallet-Adresse ein oder halten Sie sie gedrückt, um sie einzufügen",
     "editBtn": "editar",
     "verified": "verificado"
@@ -187,7 +188,7 @@
     "userNameIsInvalid": "Se requiere nombre de usuario",
     "required": "requerido",
     "passwordIsInvalid": "8-20 caracteres",
-    "phoneNumberIsInvalid": "Por favor completa tu número de teléfono",
+    "phoneNumberIsReuired": "Por favor complete su número de teléfono",
     "phoneNumberIsNotTrue": "El número de teléfono móvil es incorrecto",
     "passwordMinLength": "La contraseña debe tener al menos 8 caracteres",
     "passwordLowercase": "La contraseña debe contener al menos una letra minúscula",
@@ -198,7 +199,8 @@
     "usernameTooLong": "Nombre de usuario demasiado largo",
     "allowLettersAndNumbers": "Por favor, use solo letras y números para el nombre de usuario",
     "phoneNumberMustBeAValidPhoneNumber": "El número de teléfono debe ser un número de teléfono válido",
-    "withdrawalAccountCreatedSuccessfully": "La cuenta de retiro se creó correctamente."
+    "withdrawalAccountCreatedSuccessfully": "La cuenta de retiro se creó correctamente.",
+    "phoneNumberIsInvalid": "El número de móvil es incorrecto"
   },
   "deposit": {
     "title": "Cuenta retiro",
