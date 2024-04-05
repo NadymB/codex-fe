@@ -5,7 +5,7 @@ export const InputCustom = styled(TextField)({
     color: "#3D5AFE",
   },
   "& label": {
-    color: "#fff",
+    color: "#888888",
   },
   "& .MuiInput-underline:after": {
     borderBottomColor: "#B2BAC2",

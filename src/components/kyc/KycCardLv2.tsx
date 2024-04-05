@@ -4,6 +4,7 @@ import { t } from "i18next";
 import { useState } from "react";
 import { KycIntroduceLv2 } from "./KycIntroduceLv2";
 import { KycStatus } from "./KycStatus";
+import { AddressIcon } from "@/assets/icons/AddressIcon";
 
 export const KycCardLv2 = ({
   kyc,
@@ -54,13 +55,8 @@ export const KycCardLv2 = ({
           </div>
           <div className="flex gap-4">
             <div className="flex items-center gap-2 text-base text-white">
-              <VisaIcon />
-              <span>{t(`authentication.id`)}</span>
-            </div>
-            {/*  */}
-            <div className="flex items-center gap-2 text-base text-white">
-              <PhoneIcon />
-              <span>{t(`authentication.selfie`)}</span>
+              <AddressIcon />
+              <span>{t(`authentication.proofOfAddress`)}</span>
             </div>
           </div>
           {kyc?.isCanEdit === false ?"" : (

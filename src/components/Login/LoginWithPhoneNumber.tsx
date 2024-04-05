@@ -28,9 +28,12 @@ const LoginWithPhoneNumber = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentCountry, setCurrentCountry] = useState<any>();
   const validationSchema = Yup.object({
-    phoneNumber: Yup.string().required(
-      t("authenticationPage.phoneNumberIsInvalid")
-    ),
+    phoneNumber: Yup.string()
+      .matches(
+        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+        t("authenticationPage.phoneNumberIsInvalid")
+      )
+      .required(t("authenticationPage.phoneNumberIsReuired")),
     password: Yup.string().required(t("authenticationPage.passwordIsInvalid")),
   });
   const formik = useFormik({

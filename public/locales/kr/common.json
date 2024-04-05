@@ -108,6 +108,7 @@
     "searchCountryOrRegion": "국가 또는 지역 검색",
     "required": "필수의",
     "walletAddress": "지갑 주소",
+    "cryptocurrencyPlaceholder": "암호화폐를 선택하려면 클릭하세요.",
     "walletAddressPlaceholder": "지갑 주소를 입력하거나 길게 눌러 붙여넣기",
     "editBtn": "편집하다",
     "verified": "확인"
@@ -187,7 +188,7 @@
     "userNameIsInvalid": "사용자 이름이 필요합니다",
     "required": "필수의",
     "passwordIsInvalid": "8-20자",
-    "phoneNumberIsInvalid": "휴대폰 번호가 잘못되었습니다.",
+    "phoneNumberIsReuired": "전화번호를 입력하세요.",
     "phoneNumberIsNotTrue": "휴대폰 번호가 잘못되었습니다",
     "passwordMinLength": "비밀번호는 최소 8 자 이상이어야합니다",
     "passwordLowercase": "비밀번호에는 최소한 하나의 소문자가 포함되어야합니다",
@@ -198,7 +199,8 @@
     "usernameTooLong": "사용자 이름이 너무 깁니다",
     "allowLettersAndNumbers": "사용자 이름에는 문자와 숫자만 사용하십시오",
     "phoneNumberMustBeAValidPhoneNumber": "전화 번호는 유효한 전화 번호여야 합니다",
-    "withdrawalAccountCreatedSuccessfully": "출금 계좌가 성공적으로 생성되었습니다."
+    "withdrawalAccountCreatedSuccessfully": "출금 계좌가 성공적으로 생성되었습니다.",
+    "phoneNumberIsInvalid": "휴대폰 번호가 잘못되었습니다."
   },
   "deposit": {
     "title": "재충전",

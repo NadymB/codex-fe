@@ -108,6 +108,7 @@
     "searchCountryOrRegion": "देश या क्षेत्र खोजें",
     "required": "आवश्यक",
     "walletAddress": "वॉलेट पता",
+    "cryptocurrencyPlaceholder": "क्रिप्टोकरेंसी का चयन करें",
     "walletAddressPlaceholder": "वॉलेट पता दर्ज करें या लंबे समय तक दबाएँ ताकि पेस्ट कर सकें",
     "editBtn": "संपादित करें",
     "verified": "सत्यापित"
@@ -187,7 +188,7 @@
     "userNameIsInvalid": "कृपया अपना उपयोगकर्ता नाम दर्ज करें",
     "required": "आवश्यक",
     "passwordIsInvalid": "कृपया पासवर्ड भरें",
-    "phoneNumberIsInvalid": "कृपया अपना फ़ोन नंबर भरें",
+    "phoneNumberIsReuired": "कृपया अपना फ़ोन नंबर भरें",
     "phoneNumberIsNotTrue": "मोबाइल नंबर गलत है",
     "passwordMinLength": "पासवर्ड कम से कम 8 वर्णों का होना चाहिए",
     "passwordLowercase": "पासवर्ड में कम से कम एक छोटा अक्षर होना चाहिए",
@@ -198,7 +199,8 @@
     "usernameTooLong": "उपयोगकर्ता नाम बहुत लंबा है",
     "allowLettersAndNumbers": "कृपया उपयोगकर्ता नाम के लिए केवल अक्षर और संख्याएँ प्रयोग करें",
     "phoneNumberMustBeAValidPhoneNumber": "फोन नंबर को एक वैध फोन नंबर होना चाहिए",
-    "withdrawalAccountCreatedSuccessfully": "निकासी खाता सफलतापूर्वक बनाया गया।"
+    "withdrawalAccountCreatedSuccessfully": "निकासी खाता सफलतापूर्वक बनाया गया।",
+    "phoneNumberIsInvalid": "मोबाइल नंबर गलत है।"
   },
   "deposit": {
     "title": "जमा",
