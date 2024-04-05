@@ -260,6 +260,7 @@ const WithdrawPage = () => {
           </div>
           <button
             type="submit"
+            disabled={userWithdrawalAccountInfo ? false : true}
             className={`w-full py-[6px] px-4 rounded ${formik.values.amount ? "bg-[#3d5afe] hover:bg-[#2a3eb1] text-white" : "bg-[#343338] text-[#676769]"}`}
             style={{
               backgroundColor: formik.values.amount ? "#3d5afe" : "#343338",

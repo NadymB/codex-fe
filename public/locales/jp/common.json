@@ -108,6 +108,7 @@
     "searchCountryOrRegion": "国または地域を検索します",
     "required": "持つ必要があります",
     "walletAddress": "ウォレットアドレス",
+    "cryptocurrencyPlaceholder": "クリックして暗号通貨を選択します",
     "walletAddressPlaceholder": "ロングプレスを入力または押すと、ウォレットアドレスを貼り付けます",
     "editBtn": "編集",
     "verified": "検証"
@@ -187,7 +188,7 @@
     "userNameIsInvalid": "ユーザー名は入力する必要があります",
     "required": "持つ必要があります",
     "passwordIsInvalid": "6 - 20個々の文字",
-    "phoneNumberIsInvalid": "携帯電話番号が正しくありません",
+    "phoneNumberIsReuired": "電話番号に記入してください",
     "phoneNumberIsNotTrue": "携帯電話番号が間違っています",
     "passwordMinLength": "パスワードは少なくとも8文字以上である必要があります",
     "passwordLowercase": "パスワードには少なくとも1つの小文字を含める必要があります",
@@ -198,7 +199,8 @@
     "usernameTooLong": "ユーザー名が長すぎます",
     "allowLettersAndNumbers": "ユーザー名には文字と数字のみを使用してください",
     "phoneNumberMustBeAValidPhoneNumber": "電話番号は有効な電話番号でなければなりません",
-    "withdrawalAccountCreatedSuccessfully": "出金口座が正常に作成されました。"
+    "withdrawalAccountCreatedSuccessfully": "出金口座が正常に作成されました。",
+    "phoneNumberIsInvalid": "携帯電話番号が正しくありません"
   },
   "deposit": {
     "title": "充電",

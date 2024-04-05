@@ -108,6 +108,7 @@
     "searchCountryOrRegion": "Cerca paese o regione",
     "required": "necessario",
     "walletAddress": "indirizzo del portafoglio",
+    "cryptocurrencyPlaceholder": "Fare clic per selezionare il paese",
     "walletAddressPlaceholder": "Inserisci o premi a lungo per incollare l'indirizzo del portafoglio",
     "editBtn": "modificare",
     "verified": "verificato"
@@ -187,7 +188,7 @@
     "userNameIsInvalid": "è richiesto il nome utente",
     "required": "necessario",
     "passwordIsInvalid": "8-20 caratteri",
-    "phoneNumberIsInvalid": "Il numero di cellulare non è corretto",
+    "phoneNumberIsReuired": "Inserisci il tuo numero di telefono",
     "phoneNumberIsNotTrue": "Il numero di cellulare non è corretto",
     "passwordMinLength": "La contraseña debe tener al menos 8 caracteres",
     "passwordLowercase": "La contraseña debe contener al menos una letra minúscula",
@@ -198,7 +199,8 @@
     "usernameTooLong": "Nome utente troppo lungo",
     "allowLettersAndNumbers": "Si prega di utilizzare solo lettere e numeri per il nome utente",
     "phoneNumberMustBeAValidPhoneNumber": "Il numero di telefono deve essere un numero di telefono valido",
-    "withdrawalAccountCreatedSuccessfully": "Account prelievo creato con successo."
+    "withdrawalAccountCreatedSuccessfully": "Account prelievo creato con successo.",
+    "phoneNumberIsInvalid": "Il numero di cellulare non è corretto"
   },
   "deposit": {
     "title": "ricaricare",

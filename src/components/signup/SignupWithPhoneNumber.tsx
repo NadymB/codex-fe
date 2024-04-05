@@ -29,9 +29,12 @@ const SignupWithPhoneNumber = () => {
 
   const refCode = useSearchParams().get("c");
   const validationSchema = Yup.object({
-    phoneNumber: Yup.string().required(
-      t("authenticationPage.phoneNumberIsInvalid")
-    ),
+    phoneNumber: Yup.string()
+      .matches(
+        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+        t("authenticationPage.phoneNumberIsInvalid")
+      )
+      .required(t("authenticationPage.phoneNumberIsReuired")),
     username: Yup.string()
       .required(t("authenticationPage.userNameIsInvalid"))
       .max(255, t("authenticationPage.usernameTooLong"))
@@ -147,6 +150,7 @@ const SignupWithPhoneNumber = () => {
               className=" bg-transparent w-full text-[16px]"
               label={t("authenticationPage.phoneNumber")}
               name="phoneNumber"
+              type="phone"
               autoComplete="new-phoneNumber"
               value={formik.values.phoneNumber}
               onChange={formik.handleChange}
