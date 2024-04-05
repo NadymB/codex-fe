@@ -45,11 +45,12 @@ const SignupWithEmail = () => {
       email: "",
       username: "",
       password: "",
-      managerRefCode: "",
+      managerRefCode: undefined,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
+        if(!values.managerRefCode) delete values.managerRefCode;
         const response = await authService.signup(values);
         if (response.success) {
           handleLogin(values.password, values.email);

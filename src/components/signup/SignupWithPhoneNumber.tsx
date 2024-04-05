@@ -55,11 +55,12 @@ const SignupWithPhoneNumber = () => {
       phoneNumber: "",
       password: "",
       username: "",
-      managerRefCode: "",
+      managerRefCode: undefined,
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
+        if(!values.managerRefCode) delete values.managerRefCode;
         const response = await authService.signup({
           ...values,
           phoneNumber: currentCountry.phone + values.phoneNumber,
