@@ -1,35 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { FavoriteIcon } from "@/assets/icons/FavoriteIcon";
 import Tabs from "@/components/Tabs";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { ConfirmPaymentModal } from "@/components/trade/ConfirmPaymentModal";
 import { OrderSection } from "@/components/trade/OrderSection";
 import Trading from "@/components/trade/Trading";
-import { TradingCandleChart } from "@/components/trade/TradingCandleChart";
 import { useAuth } from "@/hooks/useAuth";
 import { onToast } from "@/hooks/useToast";
 import { PERMISSION_REQUIRED } from "@/models/User";
 import { tradeService } from "@/services/TradeService";
-import {
-  AdvancedChart,
-  AdvancedChartWidgetProps,
-} from "react-tradingview-embed";
 import {
   CHART_CODE,
   CRYPTOCURRENCY_CODE,
   PAIR_CODE,
   PAIR_TYPE,
   PRICE_TYPE,
-  TRADE_CHART,
-  getStaticURL,
+  TRADE_CHART
 } from "@/utils/constants";
 import { BetType } from "@/utils/type";
 import { Button } from "@mui/material";
 import { t } from "i18next";
 import { useEffect, useRef, useState } from "react";
-import CustomSelect from "@/components/controls/CustomSelect";
+import {
+  AdvancedChart
+} from "react-tradingview-embed";
 
 const TradePage = ({
   params,
@@ -48,6 +43,7 @@ const TradePage = ({
     timeoutInMinutes: 0,
     position: "long",
   });
+
   const [isRefresh, setIsRefresh] = useState(false);
   const [tokenPrice, setTokenPrice] = useState<number>(0);
   const [typeOfChart, setTypeOfChart] = useState<TRADE_CHART>();
@@ -61,8 +57,10 @@ const TradePage = ({
       const tokenKey = CHART_CODE[params.slug as keyof typeof CHART_CODE]
         .split(" ")
         .join("_");
-        
-      setPairCode(PAIR_CODE[tokenKey.toLocaleUpperCase() as keyof typeof PAIR_CODE]);
+
+      setPairCode(
+        PAIR_CODE[tokenKey.toLocaleUpperCase() as keyof typeof PAIR_CODE]
+      );
       setTypeOfChart(
         PAIR_TYPE[tokenKey.toLocaleLowerCase() as keyof typeof PAIR_TYPE] ===
           PRICE_TYPE.CRYPTO
@@ -158,7 +156,7 @@ const TradePage = ({
       name: `${t("tradePage.chart.title")}`,
       content: (
         <div className=" flex flex-col ">
-          {typeOfChart === TRADE_CHART.CANDLE && (
+          {/* {typeOfChart === TRADE_CHART.CANDLE && (
             <>
               <div className="flex flex-row space-x-1 px-4 py-3 items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -188,12 +186,14 @@ const TradePage = ({
                 />
               </div>
             </>
-          )}
-          {typeOfChart === TRADE_CHART.TRADING_VIEW && (
+          )} */}
+          {pairCode && (
             <AdvancedChart
               widgetProps={{
                 allow_symbol_change: true,
                 symbol: pairCode,
+                interval: "15",
+                locale: "vi_VN",
               }}
             />
           )}
