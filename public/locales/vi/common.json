@@ -232,7 +232,12 @@
   },
   "bill": {
     "title": "Hóa đơn",
-    "noData": "Không có dữ liệu"
+    "noData": "Không có dữ liệu",
+    "success": "Thành công",
+    "fail": "Thất bại",
+    "pending": "Chưa giải quyết",
+    "auditing": "Đang kiểm toán",
+    "paying": "Đang thanh toán"
   },
   "password": {
     "title": "Mật khẩu đăng nhập",
