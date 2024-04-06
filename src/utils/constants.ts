@@ -25,7 +25,7 @@ export const OptionsLanguage = [
   {
     label: "Deutsch",
     International: "German",
-    value: "de",
+    value: "de_DE",
     flag: "/assets/images/flags/de.svg",
   },
   {
@@ -43,19 +43,19 @@ export const OptionsLanguage = [
   {
     label: "简体中文",
     International: "Simplified Chinese",
-    value: "cn",
+    value: "zh_CN",
     flag: "/assets/images/flags/cn.svg",
   },
   {
     label: "日本語",
     International: "Japanese",
-    value: "jp",
+    value: "ja",
     flag: "/assets/images/flags/jp.svg",
   },
   {
     label: "Tiếng Việt",
     International: "Vietnamese",
-    value: "vi",
+    value: "vi_VN",
     flag: "/assets/images/flags/vn.svg",
   },
   {
