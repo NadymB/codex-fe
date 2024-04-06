@@ -16,8 +16,8 @@ const PasswordPage = () => {
       const response = await userService.createPIN(pinCode);
       if (response.data && response.success) {
         onToast(t("securityCode.createdPinSuccessfully"), "success");
+        fetchCurrentUser()
       }
-      fetchCurrentUser()
     } catch (error) {
       console.log(error);
     }
