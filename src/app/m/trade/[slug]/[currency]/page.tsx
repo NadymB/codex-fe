@@ -2,6 +2,7 @@
 "use client";
 
 import Tabs from "@/components/Tabs";
+import TradingViewWidget from "@/components/TradingViewWidget";
 import { DefaultLayout } from "@/components/layouts/DefaultLayout";
 import { ConfirmPaymentModal } from "@/components/trade/ConfirmPaymentModal";
 import { OrderSection } from "@/components/trade/OrderSection";
@@ -16,15 +17,13 @@ import {
   PAIR_CODE,
   PAIR_TYPE,
   PRICE_TYPE,
-  TRADE_CHART
+  TRADE_CHART,
 } from "@/utils/constants";
 import { BetType } from "@/utils/type";
 import { Button } from "@mui/material";
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 import { useEffect, useRef, useState } from "react";
-import {
-  AdvancedChart
-} from "react-tradingview-embed";
+import { AdvancedChart } from "react-tradingview-embed";
 
 const TradePage = ({
   params,
@@ -51,6 +50,8 @@ const TradePage = ({
   const changeTab = (tabNumber: number) => {
     setIsSelectTab(tabNumber);
   };
+
+  const { language } = i18next;
 
   useEffect(() => {
     if (params.slug && params.currency) {
@@ -188,14 +189,7 @@ const TradePage = ({
             </>
           )} */}
           {pairCode && (
-            <AdvancedChart
-              widgetProps={{
-                allow_symbol_change: true,
-                symbol: pairCode,
-                interval: "15",
-                locale: "vi_VN",
-              }}
-            />
+            <TradingViewWidget symbol={pairCode} locale={language} />
           )}
           <div ref={orderRef}>
             <OrderSection
