@@ -232,7 +232,12 @@
   },
   "bill": {
     "title": "청구서",
-    "noData": "데이터 없음"
+    "noData": "데이터 없음",
+    "success": "성공",
+    "fail": "실패하다",
+    "pending": "보류 중",
+    "auditing": "심사 중",
+    "paying": "지불 중"
   },
   "password": {
     "title": "로그인 비밀번호 설정",

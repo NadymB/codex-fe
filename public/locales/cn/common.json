@@ -232,7 +232,12 @@
   },
   "bill": {
     "title": "账单",
-    "noData": "暂无数据"
+    "noData": "暂无数据",
+    "success": "打款中",
+    "fail": "打款中",
+    "pending": "待处理",
+    "auditing": "审核中",
+    "paying": "打款中"
   },
   "password": {
     "title": "设置登录密码",

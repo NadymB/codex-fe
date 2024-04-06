@@ -232,7 +232,12 @@
   },
   "bill": {
     "title": "Bill",
-    "noData": "No data"
+    "noData": "No data",
+    "success": "Success",
+    "fail": "Fail",
+    "pending": "Pending",
+    "auditing": "Auditing",
+    "paying": "Paying"
   },
   "password": {
     "title": "Login password",

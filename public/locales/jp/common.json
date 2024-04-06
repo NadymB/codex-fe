@@ -232,7 +232,12 @@
   },
   "bill": {
     "title": "注文",
-    "noData": "データなし"
+    "noData": "データなし",
+    "success": "成功",
+    "fail": "失敗",
+    "pending": "保留中",
+    "auditing": "監査中",
+    "paying": "支払い中"
   },
   "password": {
     "title": "ログインパスワード",

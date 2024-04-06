@@ -94,16 +94,14 @@ export const BillHistory = ({
             : "text-[#f53f3f]";
   const statusLabel =
     status === TRANSACTION_STATUS.COMPLETED
-      ? "Success"
+      ? t("bill.success")
       : status === TRANSACTION_STATUS.PENDING
-        ? "Pending"
-        : status ===
-            TRANSACTION_STATUS.PAYMENT_PROCESSING
-          ? "Payment In Progress"
-          : status ===
-              TRANSACTION_STATUS.AUDITING_IN_PROGRESS
-            ? "Under Review"
-            : "Fail";
+        ? t("bill.pending")
+        : status === TRANSACTION_STATUS.PAYMENT_PROCESSING
+          ? t("bill.paying")
+          : status === TRANSACTION_STATUS.AUDITING_IN_PROGRESS
+            ? t("bill.auditing")
+            : t("bill.fail");
   return (
     <div
       className="p-4 bg-[#1c1c1e] rounded"
@@ -157,9 +155,7 @@ export const BillHistory = ({
           <span className="text-sm text-[#A3A3A3]">
             {t("tradePage.trade.status")}
           </span>
-          <span className={`text-base ${statusColor}`}>
-            {statusLabel}
-          </span>
+          <span className={`text-base ${statusColor}`}>{statusLabel}</span>
         </div>
       </div>
     </div>

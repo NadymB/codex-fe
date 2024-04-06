@@ -232,7 +232,12 @@
   },
   "bill": {
     "title": "Rechnung",
-    "noData": "Keine Daten"
+    "noData": "Keine Daten",
+    "success": "Erfolg",
+    "fail": "scheitern",
+    "pending": "Ausstehend",
+    "auditing": "Prüfung",
+    "paying": "Zahlung"
   },
   "password": {
     "title": "Login-Passwort festlegen",
