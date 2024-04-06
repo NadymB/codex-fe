@@ -232,7 +232,12 @@
   },
   "bill": {
     "title": "conto",
-    "noData": "Nessun dato"
+    "noData": "Nessun dato",
+    "success": "successo",
+    "fail": "fallire",
+    "pending": "In attesa di",
+    "auditing": "In attesa di revisione",
+    "paying": "In attesa di pagamento"
   },
   "password": {
     "title": "Impostazione della password di accesso",

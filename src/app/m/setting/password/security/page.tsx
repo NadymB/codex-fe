@@ -9,7 +9,7 @@ import { t } from "i18next";
 import * as Yup from "yup";
 
 const PasswordPage = () => {
-  const { currentUser } = useAuth();
+  const { currentUser, fetchCurrentUser } = useAuth();
 
   const createSecurityCode = async (pinCode: string) => {
     try {
@@ -17,6 +17,7 @@ const PasswordPage = () => {
       if (response.data && response.success) {
         onToast(t("securityCode.createdPinSuccessfully"), "success");
       }
+      fetchCurrentUser()
     } catch (error) {
       console.log(error);
     }

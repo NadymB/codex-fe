@@ -232,7 +232,12 @@
   },
   "bill": {
     "title": "facture",
-    "noData": "Pas de données"
+    "noData": "Pas de données",
+    "success": "succès",
+    "fail": "échouer",
+    "pending": "En attente",
+    "auditing": "Audit",
+    "paying": "Paiement"
   },
   "password": {
     "title": "Définition du mot de passe de connexion",

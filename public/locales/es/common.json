@@ -232,7 +232,12 @@
   },
   "bill": {
     "title": "factura",
-    "noData": "Sin datos"
+    "noData": "Sin datos",
+    "success": "éxito",
+    "fail": "fallar",
+    "pending": "Pendiente",
+    "auditing": "Auditoría",
+    "paying": "Pagando"
   },
   "password": {
     "title": "Configuración de la contraseña de inicio de sesión",
