@@ -21,7 +21,13 @@ const resources = {
 	vi_VN: {
     translation: viJson
   },
+  vi: {
+    translation: viJson
+  },
   zh_CN: {
+    translation: cnJson
+  },
+  cn: {
     translation: cnJson
   },
   fr: {
@@ -31,6 +37,9 @@ const resources = {
     translation: esJson
   },
   de_DE: {
+    translation: deJson
+  },
+  de: {
     translation: deJson
   },
   it: {
