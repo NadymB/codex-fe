@@ -1,3 +1,5 @@
+"use client";
+import { countdownInSeconds } from "@/utils";
 import { TRADE_TYPE_CODE } from "@/utils/constants";
 import {
   convertNumberToFormattedString,
@@ -6,7 +8,6 @@ import {
 import { CircularProgress } from "@mui/material";
 import { t } from "i18next";
 import { useEffect, useState } from "react";
-const { DateTime } = require("luxon");
 interface IOrderItem {
   isLong: boolean;
   price: string;
@@ -14,6 +15,7 @@ interface IOrderItem {
   profit: string | number;
   timeoutInMinutes: number;
   endAt?: string;
+  countDownTime?: string;
   token: string;
   balanceAtStart: string;
   balanceAtEnd?: number;
@@ -24,41 +26,26 @@ export const OrderItem = ({
   amount,
   profit,
   timeoutInMinutes,
+  countDownTime,
   endAt,
   token,
   balanceAtStart,
   balanceAtEnd,
 }: IOrderItem) => {
-  const calculateRemainingSeconds = () => {
-    if (endAt) {
-      const now = DateTime.utc().toMillis(); 
-      const end = DateTime.fromISO(endAt, { zone: "utc" }).toMillis();
-      return Math.floor((end - now) / 1000);
+  const [remainingSeconds, setRemainingSeconds] = useState(() => {
+    if (endAt && countDownTime) {
+      return countdownInSeconds(countDownTime, endAt);
     }
     return 0;
-  };
-
-  const [remainingSeconds, setRemainingSeconds] = useState(
-    calculateRemainingSeconds()
-  );
+  });
 
   useEffect(() => {
-    let animationFrameId: number;
+    const intervalTime = setInterval(() => {
+      setRemainingSeconds((time) => time - 1);
+    }, 1000);
 
-    const updateCountdown = () => {
-      const newRemainingSeconds = calculateRemainingSeconds();
-      setRemainingSeconds(newRemainingSeconds);
-      if (newRemainingSeconds > 0) {
-        animationFrameId = requestAnimationFrame(updateCountdown);
-      }
-    };
-
-    if (remainingSeconds > 0) {
-      animationFrameId = requestAnimationFrame(updateCountdown);
-    }
-
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [endAt]);
+    return () => clearInterval(intervalTime);
+  }, [endAt, countDownTime]);
 
   return (
     <div className="flex flex-col gap-1 p-4 border-b border-[#ffffff1a]">
@@ -76,7 +63,7 @@ export const OrderItem = ({
               : `${t("tradePage.trade.bearishAMinute", { number: timeoutInMinutes })}`}
           </div>
         </div>
-        {remainingSeconds > 0 && (
+        {!!remainingSeconds && (
           <div className="flex-1 flex justify-end gap-1 text-[#fff] mt-2">
             <div className="relative inline-flex">
               <CircularProgress
@@ -84,7 +71,7 @@ export const OrderItem = ({
                 value={100 - (remainingSeconds / (timeoutInMinutes * 60)) * 100}
               />
               <div className="w-full h-10  absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center">
-                <span className="text-[12px]">{remainingSeconds}</span>
+                <div className="text-[12px]">{remainingSeconds}</div>
               </div>
             </div>
           </div>
