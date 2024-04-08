@@ -200,7 +200,10 @@
     "allowLettersAndNumbers": "Por favor, use solo letras y números para el nombre de usuario",
     "phoneNumberMustBeAValidPhoneNumber": "El número de teléfono debe ser un número de teléfono válido",
     "withdrawalAccountCreatedSuccessfully": "La cuenta de retiro se creó correctamente.",
-    "phoneNumberIsInvalid": "El número de móvil es incorrecto"
+    "phoneNumberIsInvalid": "El número de móvil es incorrecto",
+    "loginWrongWithEmailPassword": "Correo electrónico o contraseña incorrectos",
+    "loginWrongWithPhoneNumberPassword": "Número de teléfono o contraseña incorrectos",
+    "loginWrongWithUsernamePassword": "Nombre de usuario o contraseña incorrectos"
   },
   "deposit": {
     "title": "Cuenta retiro",
@@ -412,5 +415,5 @@
     "makingMoney": "Comience a ganar dinero de inmediato",
     "transactionBtn": "Transacción",
     "loginBtn": "Iniciar sesión"
- }
+  }
 }

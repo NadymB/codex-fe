@@ -59,7 +59,7 @@ const LoginWithPhoneNumber = () => {
             register(user.access_token);
             router.push("/m");
           } else {
-            setMassageLoginFail("Incorrect email or password");
+            setMassageLoginFail(t("authenticationPage.loginWrongWithPhoneNumberPassword"));
           }
         }
       } catch (error) {

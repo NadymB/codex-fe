@@ -200,7 +200,10 @@
     "allowLettersAndNumbers": "请只使用字母和数字作为用户名",
     "phoneNumberMustBeAValidPhoneNumber": "电话号码必须是有效的电话号码",
     "withdrawalAccountCreatedSuccessfully": "提现账户创建成功。",
-    "phoneNumberIsInvalid": "手机号不正确"
+    "phoneNumberIsInvalid": "手机号不正确",
+    "loginWrongWithEmailPassword": "电子邮件或密码不正确",
+    "loginWrongWithPhoneNumberPassword": "电话号码或密码不正确",
+    "loginWrongWithUsernamePassword": "用户名或密码不正确"
   },
   "deposit": {
     "title": "学习",
@@ -412,5 +415,5 @@
     "makingMoney": "立即开始赚钱",
     "transactionBtn": "交易",
     "loginBtn": "登录"
- }
+  }
 }

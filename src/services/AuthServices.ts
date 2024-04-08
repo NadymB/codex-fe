@@ -69,6 +69,7 @@ export class AuthService {
   }
 
   logout() {
+    this.jwt = null;
     localStorage.removeItem(ACCESS_TOKEN);
   }
   public async changePassword(values: {

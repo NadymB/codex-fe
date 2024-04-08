@@ -200,7 +200,10 @@
     "allowLettersAndNumbers": "사용자 이름에는 문자와 숫자만 사용하십시오",
     "phoneNumberMustBeAValidPhoneNumber": "전화 번호는 유효한 전화 번호여야 합니다",
     "withdrawalAccountCreatedSuccessfully": "출금 계좌가 성공적으로 생성되었습니다.",
-    "phoneNumberIsInvalid": "휴대폰 번호가 잘못되었습니다."
+    "phoneNumberIsInvalid": "휴대폰 번호가 잘못되었습니다.",
+    "loginWrongWithEmailPassword": "잘못된 이메일 또는 비밀번호",
+    "loginWrongWithPhoneNumberPassword": "잘못된 전화 번호 또는 비밀번호",
+    "loginWrongWithUsernamePassword": "잘못된 사용자 이름 또는 비밀번호"
   },
   "deposit": {
     "title": "재충전",
@@ -412,5 +415,5 @@
     "makingMoney": "즉시 돈 벌기 시작",
     "transactionBtn": "거래",
     "loginBtn": "로그인"
- }
+  }
 }
