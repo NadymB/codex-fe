@@ -355,6 +355,7 @@
   "somethingWentWrong": "कुछ गलत हो गया। कृपया बाद में पुन: प्रयास करें।",
   "orderConfirmed": "आदेश की पुष्टि की गई",
   "amountMustBeGreaterThan0": "राशि 0 से अधिक होनी चाहिए",
+  "amountMustBeLessThanOrEqualToBalance": "राशि आपकी शेष राशि से कम या उसके बराबर होनी चाहिए",
   "phoneNumberMustBeAValidPhoneNumber": "राशि शेष से कम या बराबर होनी चाहिए",
   "errorMessages": {
     "notFound": "ढूँढा नहीं गया",

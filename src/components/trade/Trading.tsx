@@ -160,10 +160,10 @@ const Trading: FC<Props> = ({
               onChange={(e) => {
                 const data = e.target as any;
                 const amount = (Number(data.value) / 100) * currentBalance;
-                setAmount(Number(amount.toFixed(2)));
+                setAmount(Number(amount));
                 setMarkPercent(data.value);
                 const ref = inputRef.current as any;
-                ref.value = amount.toFixed(2);
+                ref.value = amount;
               }}
               max={100}
               valueLabelFormat={valueLabelFormat}

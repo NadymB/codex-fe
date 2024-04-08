@@ -355,6 +355,7 @@
   "somethingWentWrong": "Qualcosa è andato storto. Si prega di riprovare più tardi.",
   "orderConfirmed": "Ordine confermato",
   "amountMustBeGreaterThan0": "L'importo deve essere maggiore di 0",
+  "amountMustBeLessThanOrEqualToBalance": "L'importo deve essere inferiore o uguale al tuo saldo",
   "phoneNumberMustBeAValidPhoneNumber": "L'importo deve essere inferiore o uguale al saldo",
   "errorMessages": {
     "notFound": "Non trovato",

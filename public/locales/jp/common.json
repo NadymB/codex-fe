@@ -355,6 +355,7 @@
   "somethingWentWrong": "何か問題が発生しました。後でやり直してください。",
   "orderConfirmed": "注文が確認されました",
   "amountMustBeGreaterThan0": "金額は0より大きくなければなりません",
+  "amountMustBeLessThanOrEqualToBalance": "金額は残高以下でなければなりません",
   "phoneNumberMustBeAValidPhoneNumber": "金額は残高以下でなければなりません",
   "errorMessages": {
     "notFound": "見つかりません",

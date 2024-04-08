@@ -355,6 +355,7 @@
   "somethingWentWrong": "出现了问题，请稍后再试",
   "orderConfirmed": "订单已确认",
   "amountMustBeGreaterThan0": "金额必须大于0",
+  "amountMustBeLessThanOrEqualToBalance": "金额必须小于或等于您的余额",
   "phoneNumberMustBeAValidPhoneNumber": "金额必须小于或等于余额",
   "errorMessages": {
     "notFound": "未找到",

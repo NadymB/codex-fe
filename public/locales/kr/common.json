@@ -355,6 +355,7 @@
   "somethingWentWrong": "문제가 발생했습니다. 나중에 다시 시도해주세요.",
   "orderConfirmed": "주문 확인됨",
   "amountMustBeGreaterThan0": "금액은 0보다 커야 합니다",
+  "amountMustBeLessThanOrEqualToBalance": "금액은 잔액보다 작거나 같아야 합니다",
   "phoneNumberMustBeAValidPhoneNumber": "금액은 잔액 이하이어야 합니다",
   "errorMessages": {
     "notFound": "찾을 수 없음",

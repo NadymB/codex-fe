@@ -355,6 +355,7 @@
   "somethingWentWrong": "Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut.",
   "orderConfirmed": "Bestellung bestätigt",
   "amountMustBeGreaterThan0": "Der Betrag muss größer als 0 sein",
+  "amountMustBeLessThanOrEqualToBalance": "Der Betrag muss kleiner oder gleich Ihrem Guthaben sein",
   "phoneNumberMustBeAValidPhoneNumber": "Betrag muss kleiner oder gleich dem Guthaben sein",
   "errorMessages": {
     "notFound": "Nicht gefunden",
