@@ -227,7 +227,9 @@
     "msgAccountError": "Veuillez remplir le compte de réception",
     "msgAmountError": "Le montant est d'au moins 1",
     "securityCode": "Code de sécurité",
-    "msgAmountMaxError": "Dépassement du montant actuel"
+    "msgAmountMaxError": "Dépassement du montant actuel",
+    "deleteWithdrawalSuccessfully": "Suppression du compte de retrait réussie",
+    "sucessfullyWithdrawal": "Retrait réussi"
   },
   "order": {
     "title": "Commande",

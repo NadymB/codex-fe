@@ -227,7 +227,9 @@
     "msgAccountError": "कृपया प्राप्ति खाता भरें",
     "msgAmountError": "न्यूनतम राशि 1 है",
     "securityCode": "सुरक्षा कोड",
-    "msgAmountMaxError": "वर्तमान राशि से अधिक है"
+    "msgAmountMaxError": "वर्तमान राशि से अधिक है",
+    "deleteWithdrawalSuccessfully": "सफलतापूर्वक वापसी खाता हटाएं",
+    "sucessfullyWithdrawal": "सफलतापूर्वक निकासी"
   },
   "order": {
     "title": "आदेश",

@@ -227,7 +227,9 @@
     "msgAccountError": "Please fill in the receiving account",
     "msgAmountError": "The minimum amount is 1",
     "securityCode": "Security Code",
-    "msgAmountMaxError": "Exceeded the current amount"
+    "msgAmountMaxError": "Exceeded the current amount",
+    "deleteWithdrawalSuccessfully": "Delete Withdrawal Account Successfully",
+    "sucessfullyWithdrawal": "Sucessfully Withdrawal"
   },
   "order": {
     "title": "Order",

@@ -227,7 +227,9 @@
     "msgAccountError": "수취계좌를 작성해주세요",
     "msgAmountError": "금액이 1 이상입니다.",
     "securityCode": "보안 코드",
-    "msgAmountMaxError": "현재 금액을 초과했습니다"
+    "msgAmountMaxError": "현재 금액을 초과했습니다",
+    "deleteWithdrawalSuccessfully": "출금 계좌 삭제 성공",
+    "sucessfullyWithdrawal": "출금 성공"
   },
   "order": {
     "title": "주문하다",

@@ -801,3 +801,7 @@ input:-webkit-autofill {
 .tradingview-widget-copyright {
   display: none;
 }
+
+.stroke-primary-main {
+    stroke: #f7a600;
+}
