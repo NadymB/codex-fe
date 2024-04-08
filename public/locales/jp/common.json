@@ -200,7 +200,10 @@
     "allowLettersAndNumbers": "ユーザー名には文字と数字のみを使用してください",
     "phoneNumberMustBeAValidPhoneNumber": "電話番号は有効な電話番号でなければなりません",
     "withdrawalAccountCreatedSuccessfully": "出金口座が正常に作成されました。",
-    "phoneNumberIsInvalid": "携帯電話番号が正しくありません"
+    "phoneNumberIsInvalid": "携帯電話番号が正しくありません",
+    "loginWrongWithEmailPassword": "間違った電子メールまたはパスワード",
+    "loginWrongWithPhoneNumberPassword": "間違った電話番号またはパスワード",
+    "loginWrongWithUsernamePassword": "間違ったユーザー名またはパスワード"
   },
   "deposit": {
     "title": "充電",

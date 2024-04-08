@@ -133,7 +133,7 @@ const Trading: FC<Props> = ({
                 <h6 className="text-[20px] font-bold mx-2 my-0 text-[#fff]">
                   {item.betPercentage}%
                 </h6>
-                <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff]">
+                <div className="text-[14px] w-full text-center bg-[#3D5AFE] rounded-b-lg text-[#fff] whitespace-nowrap">
                   {item.timeoutInMinutes} {t("tradePage.trade.minute")}
                 </div>
               </div>
