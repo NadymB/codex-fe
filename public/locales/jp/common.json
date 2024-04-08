@@ -227,7 +227,9 @@
     "msgAccountError": "受信アカウントに記入してください",
     "msgAmountError": "最小金額は1",
     "securityCode": "セキュリティコード",
-    "msgAmountMaxError": "現在の金額を超えています"
+    "msgAmountMaxError": "現在の金額を超えています",
+    "deleteWithdrawalSuccessfully": "引き出し口座の削除に成功しました",
+    "sucessfullyWithdrawal": "引き出しに成功しました"
   },
   "order": {
     "title": "注文",

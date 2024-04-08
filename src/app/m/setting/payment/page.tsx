@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { BitcoinIcon } from "@/assets/icons/BitcoinIcon";
 import { CardIcon } from "@/assets/icons/CardIcon";
 import { DeleteIcon } from "@/assets/icons/DeleteIcon";
 import { GoBack } from "@/components/layouts/GoBack";
@@ -46,7 +47,7 @@ const PaymentPage = () => {
       const response =
         await paymentService.deletePaymentInfo(withdrawalAccountId);
       if (response.data && response.success) {
-        onToast("Delete Withdrawal Account Successfully");
+        onToast(t("withdraw.deleteWithdrawalSuccessfully", "success"));
       }
       getWithdrawalAccount();
     } catch (error) {
@@ -77,14 +78,19 @@ const PaymentPage = () => {
             <div className="flex justify-between border-b border-[#ffffff1a]">
               <div className="flex gap-2 items-center py-2 text-[#888] text-base">
                 <div className="h-8 w-[3px] bg-[#f7a600]" />
-                <CardIcon />
                 {withdrawAccountInfo.type === WITHDRAW_TYPE.FIAT_CURRENCY ? (
-                  <span>{withdrawAccountInfo.bankName}</span>
+                  <>
+                    <CardIcon />
+                    <span>{withdrawAccountInfo.bankName}</span>
+                  </>
                 ) : (
-                  <span>
-                    {cryptoCurrencyCurrent &&
-                      `${cryptoCurrencyCurrent.acronym} (${cryptoCurrencyCurrent.name})`}
-                  </span>
+                  <>
+                    <BitcoinIcon />
+                    <span>
+                      {cryptoCurrencyCurrent &&
+                        `${cryptoCurrencyCurrent.acronym} (${cryptoCurrencyCurrent.name})`}
+                    </span>
+                  </>
                 )}
                 {withdrawAccountInfo.status ===
                   WITHDRAWAL_ACCOUNT_STATUS.APPROVED && (

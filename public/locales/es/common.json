@@ -227,7 +227,9 @@
     "msgAccountError": "Por favor complete la cuenta receptora",
     "msgAmountError": "La cantidad mínima es 1",
     "securityCode": "Código de seguridad",
-    "msgAmountMaxError": "Ha excedido el monto actual"
+    "msgAmountMaxError": "Ha excedido el monto actual",
+    "deleteWithdrawalSuccessfully": "Eliminar cuenta de retiro correctamente",
+    "sucessfullyWithdrawal": "Retiro realizado correctamente"
   },
   "order": {
     "title": "Orden",

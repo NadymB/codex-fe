@@ -227,7 +227,9 @@
     "msgAccountError": "Vui lòng điền vào tài khoản nhận",
     "msgAmountError": "Số tiền tối thiểu là 1",
     "securityCode": "Mã bảo mật",
-    "msgAmountMaxError": "Vượt quá số tiền hiện tại"
+    "msgAmountMaxError": "Vượt quá số tiền hiện tại",
+    "deleteWithdrawalSuccessfully": "Xóa tài khoản rút tiền thành công",
+    "sucessfullyWithdrawal": "Rút tiền thành công"
   },
   "order": {
     "title": "Đặt hàng",

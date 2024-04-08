@@ -72,7 +72,7 @@ const WithdrawPage = () => {
     try {
       const response = await transactionService.createWithdrawalRequest(values);
       if (response.success && response.data) {
-        onToast("Withdrawal Successfully", "success");
+        onToast(t("withdraw.sucessfullyWithdrawal"), "success");
         router.push("/m/billing");
       } else {
         onToast(t(`errorMessages.${errorMsg(response.code)}`), "error");

@@ -227,7 +227,9 @@
     "msgAccountError": "请填写收款账户",
     "msgAmountError": "金额最少为1",
     "securityCode": "安全码",
-    "msgAmountMaxError": "超出当前金额"
+    "msgAmountMaxError": "超出当前金额",
+    "deleteWithdrawalSuccessfully": "成功删除提款账户",
+    "sucessfullyWithdrawal": "成功提款"
   },
   "order": {
     "title": "订单",
