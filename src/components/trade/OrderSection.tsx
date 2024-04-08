@@ -67,9 +67,9 @@ export const OrderSection = ({
         orderPending?.length > 0 ? (
           <div className="flex flex-col gap-2">
             <div className="flex flex-col">
-              {orderPending.map((item: any, index: number) => (
+              {orderPending.map((item: any) => (
                 <OrderItem
-                  key={index}
+                  key={item.endAt}
                   isLong={item.position === "long"}
                   price={item.orderValue}
                   amount={item.amount}
