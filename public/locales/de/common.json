@@ -200,7 +200,10 @@
     "allowLettersAndNumbers": "Bitte verwenden Sie nur Buchstaben und Zahlen für den Benutzernamen",
     "phoneNumberMustBeAValidPhoneNumber": "Die Telefonnummer muss eine gültige Telefonnummer sein",
     "withdrawalAccountCreatedSuccessfully": "Abhebungskonto erfolgreich erstellt.",
-    "phoneNumberIsInvalid": "Handynummer ist falsch"
+    "phoneNumberIsInvalid": "Handynummer ist falsch",
+    "loginWrongWithEmailPassword": "Falsche E-Mail oder Passwort",
+    "loginWrongWithPhoneNumberPassword": "Falsche Telefonnummer oder Passwort",
+    "loginWrongWithUsernamePassword": "Falscher Benutzername oder Passwort"
   },
   "deposit": {
     "title": "aufladen",
@@ -412,5 +415,5 @@
     "makingMoney": "Beginnen Sie sofort, Geld zu verdienen",
     "transactionBtn": "Transaktion",
     "loginBtn": "Anmelden"
- }
+  }
 }

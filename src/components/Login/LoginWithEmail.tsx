@@ -46,7 +46,7 @@ const LoginWithEmail = () => {
             register(data.access_token);
             router.push("/m");
           } else {
-            setMassageLoginFail("Incorrect email or password");
+            setMassageLoginFail(t("authenticationPage.loginWrongWithEmailPassword"));
           }
         }
       } catch (error) {
