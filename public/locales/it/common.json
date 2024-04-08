@@ -204,7 +204,6 @@
     "loginWrongWithEmailPassword": "Email o password errati",
     "loginWrongWithPhoneNumberPassword": "Numero di telefono o password errati",
     "loginWrongWithUsernamePassword": "Nome utente o password errati"
-    
   },
   "deposit": {
     "title": "ricaricare",
@@ -228,7 +227,9 @@
     "msgAccountError": "Si prega di compilare il conto ricevente",
     "msgAmountError": "L'importo è di almeno 1",
     "securityCode": "Codice di sicurezza",
-    "msgAmountMaxError": "Superato l'importo attuale"
+    "msgAmountMaxError": "Superato l'importo attuale",
+    "deleteWithdrawalSuccessfully": "Elimina Account Prelievo con Successo",
+    "sucessfullyWithdrawal": "Prelievo Eseguito con Successo"
   },
   "order": {
     "title": "Ordine",
