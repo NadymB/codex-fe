@@ -355,6 +355,7 @@
   "somethingWentWrong": "Something went wrong. Please try again later",
   "orderConfirmed": "Order Comfirmed",
   "amountMustBeGreaterThan0": "Amount must be greater than 0",
+  "amountMustBeLessThanOrEqualToBalance": "Amount must be less than or equal your balance",
   "phoneNumberMustBeAValidPhoneNumber": "Amount must be less than or equal to balance",
   "errorMessages": {
     "notFound": "Not found",
