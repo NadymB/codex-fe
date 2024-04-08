@@ -36,12 +36,11 @@ const LoginWithUserName = () => {
     onSubmit: async (values) => {
       try {
           const user = await login(values);
-          console.log("user", user);
           if (user) {
             register(user.access_token);
             router.push("/m");
           } else {
-            setMassageLoginFail("Incorrect email or password");
+            setMassageLoginFail(t("authenticationPage.loginWrongWithUsernamePassword"));
           }
       } catch (error) {
         onToast(t(`errorMessages.permissionDenied`), "error")

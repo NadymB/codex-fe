@@ -55,6 +55,7 @@ export class AuthService {
     return null;
   }
   public async fetchCurrentUser() {
+    console.log("this jwt", this.jwt);
     if (!this.jwt) {
       return null;
     }
@@ -69,6 +70,7 @@ export class AuthService {
   }
 
   logout() {
+    this.jwt = null;
     localStorage.removeItem(ACCESS_TOKEN);
   }
   public async changePassword(values: {

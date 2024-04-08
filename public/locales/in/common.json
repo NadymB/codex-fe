@@ -200,7 +200,10 @@
     "allowLettersAndNumbers": "कृपया उपयोगकर्ता नाम के लिए केवल अक्षर और संख्याएँ प्रयोग करें",
     "phoneNumberMustBeAValidPhoneNumber": "फोन नंबर को एक वैध फोन नंबर होना चाहिए",
     "withdrawalAccountCreatedSuccessfully": "निकासी खाता सफलतापूर्वक बनाया गया।",
-    "phoneNumberIsInvalid": "मोबाइल नंबर गलत है।"
+    "phoneNumberIsInvalid": "मोबाइल नंबर गलत है।",
+    "loginWrongWithEmailPassword": "गलत ईमेल या पासवर्ड",
+    "loginWrongWithPhoneNumberPassword": "गलत फ़ोन नंबर या पासवर्ड",
+    "loginWrongWithUsernamePassword": "गलत उपयोगकर्ता नाम या पासवर्ड"
   },
   "deposit": {
     "title": "जमा",

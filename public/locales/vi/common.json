@@ -200,7 +200,10 @@
     "allowLettersAndNumbers": "Vui lòng chỉ sử dụng chữ cái và số cho tên người dùng",
     "phoneNumberMustBeAValidPhoneNumber": "Số điện thoại phải là số điện thoại hợp lệ",
     "withdrawalAccountCreatedSuccessfully": "Tạo tài khoản rút tiền thành công.",
-    "phoneNumberIsInvalid": "Số điện thoại di động không chính xác"
+    "phoneNumberIsInvalid": "Số điện thoại di động không chính xác",
+    "loginWrongWithEmailPassword": "Email hoặc mật khẩu không đúng",
+    "loginWrongWithPhoneNumberPassword": "Số điện thoại hoặc mật khẩu không đúng",
+    "loginWrongWithUsernamePassword": "Tên đăng nhập hoặc mật khẩu không đúng"
   },
   "deposit": {
     "title": "Nạp Tiền",
@@ -412,5 +415,5 @@
     "makingMoney": "Bắt đầu kiếm tiền ngay",
     "transactionBtn": "Giao dịch",
     "loginBtn": "Đăng nhập"
- }
+  }
 }
