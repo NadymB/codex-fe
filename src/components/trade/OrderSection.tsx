@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
-import Tabs from "../Tabs";
-import Link from "next/link";
-import Image from "next/image";
-import { t } from "i18next";
-import { ORDERS_DATA, WS_TOPIC, getStaticURL } from "@/utils/constants";
-import { OrderItem } from "./OrderItem";
-import { WebSocketCtx } from "@/providers/WebSocketProvider";
+"use client";
 import { useAuth } from "@/hooks/useAuth";
+import { WebSocketCtx } from "@/providers/WebSocketProvider";
+import { WS_TOPIC, getStaticURL } from "@/utils/constants";
+import { t } from "i18next";
+import Link from "next/link";
+import { useContext, useEffect, useState } from "react";
+import Tabs from "../Tabs";
+import { OrderItem } from "./OrderItem";
 const orders = true;
 
 export const OrderSection = ({
@@ -73,6 +73,7 @@ export const OrderSection = ({
                   isLong={item.position === "long"}
                   price={item.orderValue}
                   amount={item.amount}
+                  countDownTime={item.countDownTime}
                   profit={(item.amount * item.betPercentage) / 100}
                   timeoutInMinutes={item.timeoutInMinutes}
                   endAt={item.endAt}
