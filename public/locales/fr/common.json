@@ -200,7 +200,10 @@
     "allowLettersAndNumbers": "Veuillez utiliser uniquement des lettres et des chiffres pour le nom d'utilisateur",
     "phoneNumberMustBeAValidPhoneNumber": "Le numéro de téléphone doit être un numéro de téléphone valide",
     "withdrawalAccountCreatedSuccessfully": "Compte de retrait créé avec succès.",
-    "phoneNumberIsInvalid": "Le numéro de portable est incorrect"
+    "phoneNumberIsInvalid": "Le numéro de portable est incorrect",
+    "loginWrongWithEmailPassword": "Email ou mot de passe incorrect",
+    "loginWrongWithPhoneNumberPassword": "Numéro de téléphone ou mot de passe incorrect",
+    "loginWrongWithUsernamePassword": "Nom d'utilisateur ou mot de passe incorrect"
   },
   "deposit": {
     "title": "recharger",
@@ -412,5 +415,5 @@
     "makingMoney": "Commencez à gagner de l'argent tout de suite",
     "transactionBtn": "Transaction",
     "loginBtn": "Se connecter"
- }
+  }
 }
