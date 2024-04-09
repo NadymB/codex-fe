@@ -9,6 +9,7 @@ import SelectCryptoCurrency from "@/components/SelectCryptocurrency";
 import { onToast } from "@/hooks/useToast";
 import { TPaymentInfo, WITHDRAW_TYPE } from "@/models/Payment";
 import { paymentService } from "@/services/PaymentService";
+import { CURRENCIES, Currency } from "@/utils/constants";
 import { toCamelCase } from "@/utils/convertString";
 
 import {
@@ -18,7 +19,7 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { useFormik } from "formik";
+import { Formik, useFormik } from "formik";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -31,6 +32,9 @@ const CreatePaymentPage = () => {
   const [currentCurrency, setCurrentCurrency] = useState<any>();
   const [type, setType] = useState<WITHDRAW_TYPE>(WITHDRAW_TYPE.FIAT_CURRENCY);
   const router = useRouter();
+  const [withdrawAccountInfo, setWithdrawAccountInfo] = useState<any>();
+  const [cryptoCurrencyCurrent, setCryptoCurrencyCurrent] =
+  useState<Currency>();
 
   const handleChangeType = (e: any) => {
     setType(e.target.value);
@@ -41,7 +45,7 @@ const CreatePaymentPage = () => {
       const response = await paymentService.createPaymentInfo(values);
       if (response.data && response.success) {
         onToast(t("authenticationPage.withdrawalAccountCreatedSuccessfully"), "success");
-        // router.back()
+        router.back()
       } else {
         onToast(t(`authenticationPage.${toCamelCase(response.response.message[0])}`), "error");
       }
@@ -50,6 +54,44 @@ const CreatePaymentPage = () => {
     }
   };
 
+  const getWithdrawalAccount = async () => {
+    try {
+      const response = await paymentService.getPaymentInfo();
+      if (response.data && response.success) {
+        setType(response.data.type)
+        if(response.data.type===WITHDRAW_TYPE.FIAT_CURRENCY){
+            fiatCurrencyformik.setFieldValue("country", response.data.country)
+            fiatCurrencyformik.setFieldValue("bankName", response.data.bankName)
+            fiatCurrencyformik.setFieldValue("bankAccount", response.data.bankAccount)
+            fiatCurrencyformik.setFieldValue("bankNumber", response.data.bankNumber)
+            fiatCurrencyformik.setFieldValue("comment", response.data.comment)
+            fiatCurrencyformik.setFieldValue("address", response.data.address)
+            fiatCurrencyformik.setFieldValue("nationalIdCard", response.data.nationalIdCard)
+            fiatCurrencyformik.setFieldValue("phoneNumber", response.data.phoneNumber)
+        }
+        else if (response.data.type===WITHDRAW_TYPE.CRYPTO_CURRENCY) {
+            cryptoCurrencyformik.setFieldValue("cryptoCurrency", response.data.cryptoCurrency)
+            cryptoCurrencyformik.setFieldValue("walletAddress", response.data.walletAddress)
+            cryptoCurrencyformik.setFieldValue("comment", response.data.comment)
+        }
+        setWithdrawAccountInfo(response.data);
+        if (response.data.cryptoCurrency) {
+          setCryptoCurrencyCurrent(
+            CURRENCIES.find(
+              (item) => item.value === response.data.cryptoCurrency
+            )
+          );
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getWithdrawalAccount();
+  }, []);
+  console.log(withdrawAccountInfo);
+  console.log(cryptoCurrencyCurrent);
   const fiatCurrencyValidationSchema = Yup.object({
     country: Yup.string().required(t("authenticationPage.required")),
     bankName: Yup.string().required(t("authenticationPage.required")),
@@ -77,7 +119,6 @@ const CreatePaymentPage = () => {
     },
     validationSchema: fiatCurrencyValidationSchema,
     onSubmit: async (values) => {
-      console.log(values);
       const {
         country,
         bankName,
@@ -120,7 +161,6 @@ const CreatePaymentPage = () => {
     },
     validationSchema: cryptoCurrencyValidationSchema,
     onSubmit: async (values) => {
-      console.log(values);
       const { comment, cryptoCurrency, walletAddress } = values;
       createWithdrawalAccount({
         type,
@@ -468,7 +508,7 @@ const CreatePaymentPage = () => {
               setCurrentCurrency(value.value);
               cryptoCurrencyformik.setFieldValue(
                 "cryptoCurrency",
-                `${value.acronym} (${value.name})`
+                value.value
               );
               setIsOpenCryptoCurrency(false);
             }}
