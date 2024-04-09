@@ -40,11 +40,13 @@ export const OrderItem = ({
   });
 
   useEffect(() => {
-    const intervalTime = setInterval(() => {
-      setRemainingSeconds((time) => time - 1);
-    }, 1000);
+    if (endAt && countDownTime) {
+      const intervalTime = setInterval(() => {
+        setRemainingSeconds((time) => time - 1);
+      }, 1000);
 
-    return () => clearInterval(intervalTime);
+      return () => clearInterval(intervalTime);
+    }
   }, [endAt, countDownTime]);
 
   return (
