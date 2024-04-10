@@ -150,7 +150,6 @@ const CreatePaymentPage = () => {
             />
           </div>
           <div className="bg-[#1D1C22]">
-            {/* KIỂU */}
             <FormControlCustom fullWidth>
               <InputLabel id="select-method">
                 {t("withdrawAccount.type")}
@@ -179,7 +178,6 @@ const CreatePaymentPage = () => {
               </Select>
             </FormControlCustom>
           </div>
-          {/* QUỐC GIA */}
           {type === WITHDRAW_TYPE.FIAT_CURRENCY ? (
             <>
               <form
@@ -205,7 +203,6 @@ const CreatePaymentPage = () => {
                     onClick={() => setIsOpen(true)}
                   />
                 </div>
-                {/* NGÂN HÀNG */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -230,7 +227,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* TÀI KHOẢN NGÂN HÀNG */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -254,7 +250,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* TÊN THỰC TẾ */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -279,7 +274,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* ĐỊA CHỈ LIÊN HỆ */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -304,7 +298,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* SỐ LIÊN LẠC */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -328,7 +321,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* THẺ ID */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={

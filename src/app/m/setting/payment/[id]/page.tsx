@@ -219,7 +219,6 @@ const CreatePaymentPage = () => {
               </Select>
             </FormControlCustom>
           </div>
-          {/* QUỐC GIA */}
           {type === WITHDRAW_TYPE.FIAT_CURRENCY ? (
             <>
               <form
@@ -245,7 +244,6 @@ const CreatePaymentPage = () => {
                     onClick={() => setIsOpen(true)}
                   />
                 </div>
-                {/* NGÂN HÀNG */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -270,7 +268,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* TÀI KHOẢN NGÂN HÀNG */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -294,7 +291,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* TÊN THỰC TẾ */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -319,7 +315,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* ĐỊA CHỈ LIÊN HỆ */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -344,7 +339,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* SỐ LIÊN LẠC */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -368,7 +362,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* THẺ ID */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     error={
@@ -392,7 +385,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* COMMNENT */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     className=" bg-transparent w-full text-[16px]"
@@ -416,7 +408,6 @@ const CreatePaymentPage = () => {
             </>
           ) : (
             <>
-              {/* CRYPTOCURRENCY */}
               <form className="flex flex-col gap-4" onSubmit={cryptoCurrencyformik.handleSubmit} autoComplete="off">
                 <div className="bg-[#1D1C22]">
                   <InputCustom
