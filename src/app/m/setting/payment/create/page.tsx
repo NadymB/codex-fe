@@ -41,7 +41,7 @@ const CreatePaymentPage = () => {
       const response = await paymentService.createPaymentInfo(values);
       if (response.data && response.success) {
         onToast(t("authenticationPage.withdrawalAccountCreatedSuccessfully"), "success");
-        // router.back()
+        router.back()
       } else {
         onToast(t(`authenticationPage.${toCamelCase(response.response.message[0])}`), "error");
       }
