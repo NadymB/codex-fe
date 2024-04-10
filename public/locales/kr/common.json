@@ -111,7 +111,8 @@
     "cryptocurrencyPlaceholder": "암호화폐를 선택하려면 클릭하세요.",
     "walletAddressPlaceholder": "지갑 주소를 입력하거나 길게 눌러 붙여넣기",
     "editBtn": "편집하다",
-    "verified": "확인"
+    "verified": "확인",
+    "updateWithdrawAccountBtn": "출금 계정 업데이트"
   },
   "authentication": {
     "title": "인증",

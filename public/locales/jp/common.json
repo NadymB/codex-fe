@@ -111,7 +111,8 @@
     "cryptocurrencyPlaceholder": "クリックして暗号通貨を選択します",
     "walletAddressPlaceholder": "ロングプレスを入力または押すと、ウォレットアドレスを貼り付けます",
     "editBtn": "編集",
-    "verified": "検証"
+    "verified": "検証",
+    "updateWithdrawAccountBtn": "引き出し口座を更新する"
   },
   "authentication": {
     "title": "認証",

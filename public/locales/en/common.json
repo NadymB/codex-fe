@@ -111,7 +111,8 @@
     "cryptocurrencyPlaceholder": "Click to select a cryptocurrency",
     "walletAddressPlaceholder": "Enter or long press to paste wallet address",
     "editBtn": "Edit",
-    "verified": "Verified"
+    "verified": "Verified",
+    "updateWithdrawAccountBtn": "Update withdrawal account"
   },
   "authentication": {
     "title": "Authentication",

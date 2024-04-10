@@ -32,8 +32,6 @@ const CreatePaymentPage = () => {
   const [currentCurrency, setCurrentCurrency] = useState<any>();
   const [type, setType] = useState<WITHDRAW_TYPE>(WITHDRAW_TYPE.FIAT_CURRENCY);
   const router = useRouter();
-  const [withdrawAccountInfo, setWithdrawAccountInfo] = useState<any>();
-  const [cryptoCurrencyCurrent, setCryptoCurrencyCurrent] =
   useState<Currency>();
 
   const handleChangeType = (e: any) => {
@@ -70,18 +68,22 @@ const CreatePaymentPage = () => {
             fiatCurrencyformik.setFieldValue("phoneNumber", response.data.phoneNumber)
         }
         else if (response.data.type===WITHDRAW_TYPE.CRYPTO_CURRENCY) {
-            cryptoCurrencyformik.setFieldValue("cryptoCurrency", response.data.cryptoCurrency)
+           
             cryptoCurrencyformik.setFieldValue("walletAddress", response.data.walletAddress)
             cryptoCurrencyformik.setFieldValue("comment", response.data.comment)
         }
-        setWithdrawAccountInfo(response.data);
         if (response.data.cryptoCurrency) {
-          setCryptoCurrencyCurrent(
-            CURRENCIES.find(
+          
+            setCurrentCurrency(CURRENCIES.find(
               (item) => item.value === response.data.cryptoCurrency
-            )
-          );
+            ))
+            cryptoCurrencyformik.setFieldValue("cryptoCurrency", response.data.cryptoCurrency)
+
+          
         }
+      }
+      else{
+        router.push('/m/setting/payment')
       }
     } catch (error) {
       console.log(error);
@@ -90,8 +92,6 @@ const CreatePaymentPage = () => {
   useEffect(() => {
     getWithdrawalAccount();
   }, []);
-  console.log(withdrawAccountInfo);
-  console.log(cryptoCurrencyCurrent);
   const fiatCurrencyValidationSchema = Yup.object({
     country: Yup.string().required(t("authenticationPage.required")),
     bankName: Yup.string().required(t("authenticationPage.required")),
@@ -164,7 +164,7 @@ const CreatePaymentPage = () => {
       const { comment, cryptoCurrency, walletAddress } = values;
       createWithdrawalAccount({
         type,
-        cryptoCurrency: currentCurrency,
+        cryptoCurrency,
         walletAddress,
       });
     },
@@ -178,7 +178,7 @@ const CreatePaymentPage = () => {
             <BackIcon />
           </div>
           <span className="text-[#fff]">
-            {t("withdrawAccount.withdrawAccountBtn")}
+            {t("withdrawAccount.updateWithdrawAccountBtn")}
           </span>
         </div>
         <div className="flex flex-col gap-4 p-4">
@@ -424,7 +424,7 @@ const CreatePaymentPage = () => {
                     placeholder={t("withdrawAccount.cryptocurrencyPlaceholder")}
                     className="w-full"
                     name="cryptoCurrency"
-                    value={cryptoCurrencyformik.values.cryptoCurrency}
+                    value={`${currentCurrency?.acronym} (${currentCurrency?.name})`}
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
@@ -432,7 +432,7 @@ const CreatePaymentPage = () => {
                         </InputAdornment>
                       ),
                     }}
-                    onChange={cryptoCurrencyformik.handleChange}
+                    // onChange={cryptoCurrencyformik.handleChange}
                     aria-describedby="outlined-weight-helper-text"
                     onClick={() => setIsOpenCryptoCurrency(true)}
                   />
@@ -504,11 +504,11 @@ const CreatePaymentPage = () => {
         <div className="fixed z-20 top-0 left-0 w-full h-full overflow-auto">
           <SelectCryptoCurrency
             onBack={() => setIsOpenCryptoCurrency(false)}
-            onChange={(value) => {
-              setCurrentCurrency(value.value);
+            onChange={(item) => {
+              setCurrentCurrency(item);
               cryptoCurrencyformik.setFieldValue(
                 "cryptoCurrency",
-                value.value
+                item.value
               );
               setIsOpenCryptoCurrency(false);
             }}
