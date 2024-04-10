@@ -12,6 +12,7 @@ import { useContext, useEffect, useState } from "react";
 import * as Yup from "yup";
 import { InputCustom } from "../InputCustom";
 import SelectCountries from "../SelectCountries";
+import { CheckIcon } from "@/assets/icons/CheckIcon";
 
 interface country {
   code: string;
@@ -26,6 +27,7 @@ const SignupWithPhoneNumber = () => {
   const { setCurrentUser, login, currentUser } = useAuth();
   const [messageFail, setMassageFail] = useState<string>("");
   const [currentCountry, setCurrentCountry] = useState<any>();
+  const [focusPassword, setIsFocusPassword] = useState<boolean>(false);
 
   const refCode = useSearchParams().get("c");
   const validationSchema = Yup.object({
@@ -60,7 +62,7 @@ const SignupWithPhoneNumber = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        if(!values.managerRefCode) delete values.managerRefCode;
+        if (!values.managerRefCode) delete values.managerRefCode;
         const response = await authService.signup({
           ...values,
           phoneNumber: currentCountry.phone + values.phoneNumber,
@@ -164,7 +166,52 @@ const SignupWithPhoneNumber = () => {
             ) : null}
           </div>
         </div>
-        <div className="bg-[#1D1C22]">
+        <div className="relative bg-[#1D1C22]">
+          <div
+            className={`appear-item ${focusPassword ? "block" : "hidden"} absolute right-0 -top-32`}
+          >
+            <div className="relative py-1 px-2 bg-white rounded-[4px] mb-2">
+              <span className="w-[14px] h-[14px] bg-white absolute left-[7px] -bottom-[5px] rotate-45" />
+              <div className="flex gap-[10px] items-center py-1 px-2">
+                <div
+                  className={`flex items-center justify-center w-[18px] h-[18px] rounded-full ${formik.values.password.length > 8 ? "bg-[#2f7c31] border-[#2f7c31]" : "bg-white border-[2px] border-[#0000008a]"}`}
+                >
+                  <CheckIcon color="#fff" />
+                </div>
+                <label className="text-xs text-black">
+                  8-20 các kí tự riêng lẻ
+                </label>
+              </div>
+              <div className="flex gap-[10px] items-center py-1 px-2">
+                <div
+                  className={`flex items-center justify-center w-[18px] h-[18px] rounded-full border-[2px] ${/[A-Z]/.test(formik.values.password) ? "bg-[#2f7c31] border-[#2f7c31]" : "bg-white border-[#0000008a]"}`}
+                >
+                  <CheckIcon color="#fff" />
+                </div>
+                <label className="text-xs text-black">
+                  Tối thiểu một chữ hoa
+                </label>
+              </div>
+              <div className="flex gap-[10px] items-center py-1 px-2">
+                <div
+                  className={`flex items-center justify-center w-[18px] h-[18px] rounded-full border-[2px] ${/[a-z]/.test(formik.values.password) ? "bg-[#2f7c31] border-[#2f7c31]" : "bg-white border-[#0000008a]"}`}
+                >
+                  <CheckIcon color="#fff" />
+                </div>
+                <label className="text-xs text-black">
+                  Tối thiểu một chữ thường
+                </label>
+              </div>
+              <div className="flex gap-[10px] items-center py-1 px-2">
+                <div
+                  className={`flex items-center justify-center w-[18px] h-[18px] rounded-full border-[2px] ${/[0-9]/.test(formik.values.password) ? "bg-[#2f7c31] border-[#2f7c31]" : "bg-white border-[#0000008a]"}`}
+                >
+                  <CheckIcon color="#fff" />
+                </div>
+                <label className="text-xs text-black">Ít nhất một số</label>
+              </div>
+            </div>
+          </div>
           <InputCustom
             error={
               formik.touched.password && formik.errors.password ? true : false
@@ -176,7 +223,8 @@ const SignupWithPhoneNumber = () => {
             autoComplete="new-password"
             value={formik.values.password}
             onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
+            onBlur={() => setIsFocusPassword(false)}
+            onFocus={() => setIsFocusPassword(true)}
           />
           {formik.touched.password && formik.errors.password ? (
             <div className="text-[#FF4444]  text-[14px] px-4 py-1">
