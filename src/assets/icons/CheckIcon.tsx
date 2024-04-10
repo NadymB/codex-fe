@@ -1,6 +1,6 @@
 import React from "react";
 
-export const CheckIcon = () => {
+export const CheckIcon = (props: any) => {
   return (
     <svg
       aria-hidden="true"
@@ -10,7 +10,7 @@ export const CheckIcon = () => {
       data-testid="CheckIcon"
     >
       <path
-        fill="#3D5AFE"
+        fill={props.color || "#3D5AFE"}
         d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
       />
     </svg>
