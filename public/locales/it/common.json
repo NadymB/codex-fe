@@ -111,7 +111,8 @@
     "cryptocurrencyPlaceholder": "Fare clic per selezionare il paese",
     "walletAddressPlaceholder": "Inserisci o premi a lungo per incollare l'indirizzo del portafoglio",
     "editBtn": "modificare",
-    "verified": "verificato"
+    "verified": "verificato",
+    "updateWithdrawAccountBtn": "Aggiorna conto di prelievo"
   },
   "authentication": {
     "title": "Autenticazione",

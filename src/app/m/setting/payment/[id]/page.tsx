@@ -9,6 +9,7 @@ import SelectCryptoCurrency from "@/components/SelectCryptocurrency";
 import { onToast } from "@/hooks/useToast";
 import { TPaymentInfo, WITHDRAW_TYPE } from "@/models/Payment";
 import { paymentService } from "@/services/PaymentService";
+import { CURRENCIES, Currency } from "@/utils/constants";
 import { toCamelCase } from "@/utils/convertString";
 
 import {
@@ -18,7 +19,7 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { useFormik } from "formik";
+import { Formik, useFormik } from "formik";
 import { t } from "i18next";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -31,6 +32,7 @@ const CreatePaymentPage = () => {
   const [currentCurrency, setCurrentCurrency] = useState<any>();
   const [type, setType] = useState<WITHDRAW_TYPE>(WITHDRAW_TYPE.FIAT_CURRENCY);
   const router = useRouter();
+  useState<Currency>();
 
   const handleChangeType = (e: any) => {
     setType(e.target.value);
@@ -50,6 +52,46 @@ const CreatePaymentPage = () => {
     }
   };
 
+  const getWithdrawalAccount = async () => {
+    try {
+      const response = await paymentService.getPaymentInfo();
+      if (response.data && response.success) {
+        setType(response.data.type)
+        if(response.data.type===WITHDRAW_TYPE.FIAT_CURRENCY){
+            fiatCurrencyformik.setFieldValue("country", response.data.country)
+            fiatCurrencyformik.setFieldValue("bankName", response.data.bankName)
+            fiatCurrencyformik.setFieldValue("bankAccount", response.data.bankAccount)
+            fiatCurrencyformik.setFieldValue("bankNumber", response.data.bankNumber)
+            fiatCurrencyformik.setFieldValue("comment", response.data.comment)
+            fiatCurrencyformik.setFieldValue("address", response.data.address)
+            fiatCurrencyformik.setFieldValue("nationalIdCard", response.data.nationalIdCard)
+            fiatCurrencyformik.setFieldValue("phoneNumber", response.data.phoneNumber)
+        }
+        else if (response.data.type===WITHDRAW_TYPE.CRYPTO_CURRENCY) {
+           
+            cryptoCurrencyformik.setFieldValue("walletAddress", response.data.walletAddress)
+            cryptoCurrencyformik.setFieldValue("comment", response.data.comment)
+        }
+        if (response.data.cryptoCurrency) {
+          
+            setCurrentCurrency(CURRENCIES.find(
+              (item) => item.value === response.data.cryptoCurrency
+            ))
+            cryptoCurrencyformik.setFieldValue("cryptoCurrency", response.data.cryptoCurrency)
+
+          
+        }
+      }
+      else{
+        router.push('/m/setting/payment')
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getWithdrawalAccount();
+  }, []);
   const fiatCurrencyValidationSchema = Yup.object({
     country: Yup.string().required(t("authenticationPage.required")),
     bankName: Yup.string().required(t("authenticationPage.required")),
@@ -77,7 +119,6 @@ const CreatePaymentPage = () => {
     },
     validationSchema: fiatCurrencyValidationSchema,
     onSubmit: async (values) => {
-      console.log(values);
       const {
         country,
         bankName,
@@ -120,11 +161,10 @@ const CreatePaymentPage = () => {
     },
     validationSchema: cryptoCurrencyValidationSchema,
     onSubmit: async (values) => {
-      console.log(values);
       const { comment, cryptoCurrency, walletAddress } = values;
       createWithdrawalAccount({
         type,
-        cryptoCurrency: currentCurrency,
+        cryptoCurrency,
         walletAddress,
       });
     },
@@ -138,7 +178,7 @@ const CreatePaymentPage = () => {
             <BackIcon />
           </div>
           <span className="text-[#fff]">
-            {t("withdrawAccount.withdrawAccountBtn")}
+            {t("withdrawAccount.updateWithdrawAccountBtn")}
           </span>
         </div>
         <div className="flex flex-col gap-4 p-4">
@@ -150,6 +190,7 @@ const CreatePaymentPage = () => {
             />
           </div>
           <div className="bg-[#1D1C22]">
+            {/* KIỂU */}
             <FormControlCustom fullWidth>
               <InputLabel id="select-method">
                 {t("withdrawAccount.type")}
@@ -344,7 +385,6 @@ const CreatePaymentPage = () => {
                     </div>
                   ) : null}
                 </div>
-                {/* COMMNENT */}
                 <div className="bg-[#1D1C22]">
                   <InputCustom
                     className=" bg-transparent w-full text-[16px]"
@@ -368,7 +408,6 @@ const CreatePaymentPage = () => {
             </>
           ) : (
             <>
-              {/* CRYPTOCURRENCY */}
               <form className="flex flex-col gap-4" onSubmit={cryptoCurrencyformik.handleSubmit} autoComplete="off">
                 <div className="bg-[#1D1C22]">
                   <InputCustom
@@ -376,7 +415,7 @@ const CreatePaymentPage = () => {
                     placeholder={t("withdrawAccount.cryptocurrencyPlaceholder")}
                     className="w-full"
                     name="cryptoCurrency"
-                    value={cryptoCurrencyformik.values.cryptoCurrency}
+                    value={`${currentCurrency?.acronym} (${currentCurrency?.name})`}
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
@@ -384,7 +423,7 @@ const CreatePaymentPage = () => {
                         </InputAdornment>
                       ),
                     }}
-                    onChange={cryptoCurrencyformik.handleChange}
+                    // onChange={cryptoCurrencyformik.handleChange}
                     aria-describedby="outlined-weight-helper-text"
                     onClick={() => setIsOpenCryptoCurrency(true)}
                   />
@@ -456,11 +495,11 @@ const CreatePaymentPage = () => {
         <div className="fixed z-20 top-0 left-0 w-full h-full overflow-auto">
           <SelectCryptoCurrency
             onBack={() => setIsOpenCryptoCurrency(false)}
-            onChange={(value) => {
-              setCurrentCurrency(value.value);
+            onChange={(item) => {
+              setCurrentCurrency(item);
               cryptoCurrencyformik.setFieldValue(
                 "cryptoCurrency",
-                `${value.acronym} (${value.name})`
+                item.value
               );
               setIsOpenCryptoCurrency(false);
             }}

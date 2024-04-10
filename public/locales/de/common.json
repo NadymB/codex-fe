@@ -111,7 +111,8 @@
     "cryptocurrencyPlaceholder": "Klicken Sie, um eine Kryptowährung auszuwählen",
     "walletAddressPlaceholder": "Geben Sie die Wallet-Adresse ein oder halten Sie sie gedrückt, um sie einzufügen",
     "editBtn": "bearbeiten",
-    "verified": "verifiziert"
+    "verified": "verifiziert",
+    "updateWithdrawAccountBtn": "Auszahlungskonto aktualisieren"
   },
   "authentication": {
     "title": "Authentifizierung",
