@@ -28,16 +28,16 @@ const SignupWithEmail = () => {
     username: Yup.string()
       .required(t("authenticationPage.userNameIsInvalid"))
       .max(255, t("authenticationPage.usernameTooLong"))
-      .matches(/^[a-zA-Z0-9]*$/, t("authenticationPage.allowLettersAndNumbers")),
+      .matches(
+        /^[a-zA-Z0-9]*$/,
+        t("authenticationPage.allowLettersAndNumbers")
+      ),
     password: Yup.string()
       .min(8, t("authenticationPage.passwordMinLength"))
       .matches(/[a-z]/, t("authenticationPage.passwordLowercase"))
       .matches(/[A-Z]/, t("authenticationPage.passwordUppercase"))
       .matches(/[0-9]/, t("authenticationPage.passwordNumber"))
-      .matches(
-        /[^a-zA-Z0-9.]/,
-        t("authenticationPage.passwordSpecialChar"),
-      )
+      .matches(/[^a-zA-Z0-9.]/, t("authenticationPage.passwordSpecialChar"))
       .required(t("authenticationPage.passwordIsInvalid")),
   });
   const formik = useFormik({
@@ -50,7 +50,7 @@ const SignupWithEmail = () => {
     validationSchema: validationSchema,
     onSubmit: async (values) => {
       try {
-        if(!values.managerRefCode) delete values.managerRefCode;
+        if (!values.managerRefCode) delete values.managerRefCode;
         const response = await authService.signup(values);
         if (response.success) {
           handleLogin(values.password, values.email);
@@ -79,7 +79,7 @@ const SignupWithEmail = () => {
 
   useEffect(() => {
     formik.setFieldValue("managerRefCode", refCode);
-  }, [])
+  }, []);
 
   return (
     <form
@@ -123,7 +123,29 @@ const SignupWithEmail = () => {
           </div>
         ) : null}
       </div>
-      <div className="bg-[#1D1C22]">
+      <div className="relative bg-[#1D1C22]">
+        <div className="root w-full h-full absolute top-0 left-0 right-0 bottom-0 bg-red-500"/>
+        {/* <div className="appear-item right-0 -top-32">
+          <div className="relative py-1 px-2 bg-white rounded-[4px] mb-2">
+            <span className="w-[14px] h-[14px] bg-white absolute left-[7px] -bottom-[5px] rotate-45" />
+            <div className="flex gap-[10px] items-center py-1 px-2">
+              <div className="w-[18px] h-[18px] rounded-full bg-white border-[2px] border-[#0000008a]"/>
+              <label className="text-xs text-black">8-20 các kí tự riêng lẻ</label>
+            </div>
+            <div className="flex gap-[10px] items-center py-1 px-2">
+              <div className="w-[18px] h-[18px] rounded-full bg-white border-[2px] border-[#0000008a]"/>
+              <label className="text-xs text-black">Tối thiểu một chữ hoa</label>
+            </div>
+            <div className="flex gap-[10px] items-center py-1 px-2">
+              <div className="w-[18px] h-[18px] rounded-full bg-white border-[2px] border-[#0000008a]"/>
+              <label className="text-xs text-black">Tối thiểu một chữ thường</label>
+            </div>
+            <div className="flex gap-[10px] items-center py-1 px-2">
+              <div className="w-[18px] h-[18px] rounded-full bg-white border-[2px] border-[#0000008a]"/>
+              <label className="text-xs text-black">Ít nhất một số</label>
+            </div>
+          </div>
+        </div> */}
         <InputCustom
           error={
             formik.touched.password && formik.errors.password ? true : false

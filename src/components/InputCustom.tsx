@@ -26,5 +26,12 @@ export const InputCustom = styled(TextField)({
     "& .MuiInputAdornment-root p": {
       color: "#fff !important",
     },
+    "& .appear-item": {
+      display: "none"
+    },
+    "&:focus .appear-item": {
+      display: "block",
+      backgroundColor: "red",
+    }
   },
 });
