@@ -60,16 +60,10 @@ const CreatePaymentPage = () => {
         if(response.data.type===WITHDRAW_TYPE.FIAT_CURRENCY){
             fiatCurrencyformik.setFieldValue("country", response.data.country)
             fiatCurrencyformik.setFieldValue("bankName", response.data.bankName)
-            // fiatCurrencyformik.setFieldValue("bankAccount", response.data.bankAccount)
-            // fiatCurrencyformik.setFieldValue("bankNumber", response.data.bankNumber)
             fiatCurrencyformik.setFieldValue("comment", response.data.comment)
             fiatCurrencyformik.setFieldValue("address", response.data.address)
-            // fiatCurrencyformik.setFieldValue("nationalIdCard", response.data.nationalIdCard)
-            // fiatCurrencyformik.setFieldValue("phoneNumber", response.data.phoneNumber)
         }
         else if (response.data.type===WITHDRAW_TYPE.CRYPTO_CURRENCY) {
-           
-            // cryptoCurrencyformik.setFieldValue("walletAddress", response.data.walletAddress)
             cryptoCurrencyformik.setFieldValue("comment", response.data.comment)
         }
         if (response.data.cryptoCurrency) {
