@@ -179,7 +179,7 @@ const SignupWithPhoneNumber = () => {
                   <CheckIcon color="#fff" />
                 </div>
                 <label className="text-xs text-black">
-                  8-20 các kí tự riêng lẻ
+                  {t("authenticationPage.passwordMinLength")}
                 </label>
               </div>
               <div className="flex gap-[10px] items-center py-1 px-2">
@@ -189,7 +189,7 @@ const SignupWithPhoneNumber = () => {
                   <CheckIcon color="#fff" />
                 </div>
                 <label className="text-xs text-black">
-                  Tối thiểu một chữ hoa
+                  {t("authenticationPage.passwordUppercase")}
                 </label>
               </div>
               <div className="flex gap-[10px] items-center py-1 px-2">
@@ -199,7 +199,7 @@ const SignupWithPhoneNumber = () => {
                   <CheckIcon color="#fff" />
                 </div>
                 <label className="text-xs text-black">
-                  Tối thiểu một chữ thường
+                  {t("authenticationPage.passwordLowercase")}
                 </label>
               </div>
               <div className="flex gap-[10px] items-center py-1 px-2">
@@ -208,7 +208,9 @@ const SignupWithPhoneNumber = () => {
                 >
                   <CheckIcon color="#fff" />
                 </div>
-                <label className="text-xs text-black">Ít nhất một số</label>
+                <label className="text-xs text-black">
+                  {t("authenticationPage.passwordNumber")}
+                </label>
               </div>
             </div>
           </div>
