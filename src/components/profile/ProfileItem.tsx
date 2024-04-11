@@ -19,7 +19,7 @@ export const ProfileItem: FC<Props> = ({
   return (
     <Link
       href={link}
-      className="flex justify-between items-center text-white p-4"
+      className="flex justify-between items-center text-white p-4 focus:bg-[#303032]"
     >
       <div className="flex items-center gap-2">
         {icon}
