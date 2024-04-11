@@ -111,7 +111,8 @@
     "cryptocurrencyPlaceholder": "Cliquez pour sélectionner une crypto-monnaie",
     "walletAddressPlaceholder": "Entrez ou appuyez longuement pour coller l'adresse du portefeuille",
     "editBtn": "modifier",
-    "verified": "vérifié"
+    "verified": "vérifié",
+    "updateWithdrawAccountBtn": "Mettre à jour le compte de retrait"
   },
   "authentication": {
     "title": "Authentification",

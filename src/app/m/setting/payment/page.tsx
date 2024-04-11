@@ -41,6 +41,7 @@ const PaymentPage = () => {
       console.log(error);
     }
   };
+  
 
   const deleteWithdrawAccount = async (withdrawalAccountId: string) => {
     try {
@@ -102,7 +103,7 @@ const PaymentPage = () => {
               {withdrawAccountInfo.isCanEdit && (
                 <div className="flex gap-2 items-center pr-1">
                   <Link
-                    href={"/m/setting/payment/create"}
+                    href={`/m/setting/payment/${withdrawAccountInfo.id}`}
                     className="py-[6px] px-2 font-bold text-sm text-white hover:bg-[#ffffff0a] rounded"
                   >
                     {t("withdrawAccount.editBtn")}

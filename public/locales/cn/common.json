@@ -111,7 +111,8 @@
     "cryptocurrencyPlaceholder": "点击选择加密货币",
     "walletAddressPlaceholder": "输入或长按粘贴钱包地址",
     "editBtn": "编辑",
-    "verified": "已认证"
+    "verified": "已认证",
+    "updateWithdrawAccountBtn": "更新提款账户"
   },
   "authentication": {
     "title": "身份认证",

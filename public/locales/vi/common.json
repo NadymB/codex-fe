@@ -111,7 +111,8 @@
     "cryptocurrencyPlaceholder": "Bấm để chọn tiền điện tử",
     "walletAddressPlaceholder": "Nhập hoặc nhấn Long Press và dán địa chỉ ví",
     "editBtn": "Biên tập",
-    "verified": "Đã xác minh"
+    "verified": "Đã xác minh",
+    "updateWithdrawAccountBtn": "Cập nhật tài khoản rút tiền"
   },
   "authentication": {
     "title": "Xác thực",

@@ -111,7 +111,8 @@
     "cryptocurrencyPlaceholder": "क्रिप्टोकरेंसी का चयन करें",
     "walletAddressPlaceholder": "वॉलेट पता दर्ज करें या लंबे समय तक दबाएँ ताकि पेस्ट कर सकें",
     "editBtn": "संपादित करें",
-    "verified": "सत्यापित"
+    "verified": "सत्यापित",
+    "updateWithdrawAccountBtn": "वापसी खाता अपडेट करें"
   },
   "authentication": {
     "title": "प्रमाणीकरण",
