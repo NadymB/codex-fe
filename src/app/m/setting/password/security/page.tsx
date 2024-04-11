@@ -149,7 +149,7 @@ const PasswordPage = () => {
           <button
             type="submit"
             style={{ background: "#3D5AFE" }}
-            className="p-4 mt-6 flex items-center justify-center text-[18px] text-[#fff] font-bold rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
+            className="p-2 mt-6 flex items-center justify-center text-base font-medium text-[#fff] rounded bg-[#3D5AFE] hover:bg-[#2a3eb1]"
           >
             {t("password.confirmBtn")}
           </button>
